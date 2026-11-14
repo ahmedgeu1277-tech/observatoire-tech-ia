@@ -1,1 +1,4 @@
-regles_apprises.txt
+- Toujours commencer par un fait concret et vérifié dès les 3 premières secondes.
+- Distinguer clairement les promesses marketing de la réalité technique mesurée.
+- Ne jamais divulguer de données personnelles et toujours inclure la mention IA.
+
