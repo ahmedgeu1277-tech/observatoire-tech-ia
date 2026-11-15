@@ -96,9 +96,15 @@ Sources :
         ],
         temperature=0.25,
         max_tokens=550,
-        response_format={"type": "json_object"}
     )
-    raw = completion.choices[0].message.content or "{}"
+    raw = (completion.choices[0].message.content or "").strip()
+    # Certains modèles renvoient le JSON dans un bloc Markdown : on extrait l'objet.
+    raw = re.sub(r"^\s*```(?:json)?\s*", "", raw, flags=re.IGNORECASE)
+    raw = re.sub(r"\s*```\s*$", "", raw)
+    if not raw.startswith("{"):
+        start, end = raw.find("{"), raw.rfind("}")
+        if start >= 0 and end > start:
+            raw = raw[start:end + 1]
     data = json.loads(raw)
 
     title = str(data.get("title", theme["name"]))[:140]
