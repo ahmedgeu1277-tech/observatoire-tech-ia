@@ -45,7 +45,8 @@ jobs:
         run: |
           git config user.name "Usine IA Tech & Gaming"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          mkdir -p agents_dynamiques archives site/audio\n          git add -A
+          mkdir -p agents_dynamiques archives site/audio
+          git add -A
           if git diff --cached --quiet; then
             echo "Aucune nouvelle archive à enregistrer."
             exit 0

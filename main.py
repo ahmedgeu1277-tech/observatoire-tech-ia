@@ -236,10 +236,10 @@ def archive_memory(article):
     memory = ROOT / "memoire_tech.txt"
     with memory.open("a", encoding="utf-8") as f:
         f.write(
-            f"\\n[{article['date']}] {article['theme']} — {article['title']}\\n"
-            f"{article['summary']}\\nSources : "
+            f"\n[{article['date']}] {article['theme']} — {article['title']}\n"
+            f"{article['summary']}\nSources : "
             + " ; ".join(s.get("url", "") for s in article.get("sources", [])[:5])
-            + "\\n"
+            + "\n"
         )
 
 async def create_audio(article):

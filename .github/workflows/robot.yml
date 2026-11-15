@@ -40,7 +40,9 @@ jobs:
         run: |
           git config user.name "Usine IA Tech & Gaming"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add site/articles.json site/audio memoire_tech.txt .theme-index journal_conformite_legale.txt
+          mkdir -p site/audio
+          touch journal_conformite_legale.txt
+          git add -A
           if git diff --cached --quiet; then
             echo "Aucun changement à enregistrer."
             exit 0
