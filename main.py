@@ -1,179 +1,174 @@
-import os
+import html
 import json
-import random
-import asyncio
-import importlib.util
-from datetime import datetime
-import yt_dlp
-from groq import Groq
-from huggingface_hub import InferenceClient
-import edge_tts
+import os
+import re
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+from urllib.parse import quote
+import xml.etree.ElementTree as ET
+
 import requests
-from agent_gardien import verifier_conformite_legale
+from groq import Groq
 
-def lire_regles_apprises():
-    if os.path.exists("regles_apprises.txt"):
-        with open("regles_apprises.txt", "r", encoding="utf-8") as f:
-            return f.read()
-    return "Sois objectif, clair et cite toujours tes sources."
+ROOT = Path(__file__).resolve().parent
+SITE_DIR = ROOT / "site"
+ARTICLES_FILE = SITE_DIR / "articles.json"
+THEMES_FILE = ROOT / "themes.json"
+MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-20b")
+MAX_ARTICLES = 40
+TIMEOUT = 25
 
-def choisir_theme_et_mode():
-    with open("themes.json", "r", encoding="utf-8") as f:
-        catalogue = json.load(f)["thematiques"]
-    theme = random.choice(catalogue)
-    aujourd_hui = datetime.now().strftime("%Y-%m-%d")
-    if aujourd_hui < theme["date_lancement"]:
-        return theme["nom"], "AVANT_SORTIE", theme["recherche_avant"]
-    return theme["nom"], "APRES_SORTIE", theme["recherche_apres"]
+def load_themes():
+    with THEMES_FILE.open("r", encoding="utf-8") as f:
+        data = json.load(f)
+    themes = data.get("themes", [])
+    if not themes:
+        raise ValueError("Aucun thème n'est configuré dans themes.json.")
+    return themes
 
-def agent_radar(recherche):
-    options = {'quiet': True, 'extract_flat': True}
-    with yt_dlp.YoutubeDL(options) as ydl:
-        res = ydl.extract_info(f"ytsearch5:{recherche}", download=False)
-        return "\n".join([f"- {v.get('title')}" for v in res.get('entries', [])])
+def choose_theme(themes):
+    state_file = ROOT / ".theme-index"
+    try:
+        index = int(state_file.read_text(encoding="utf-8").strip())
+    except (OSError, ValueError):
+        index = 0
+    theme = themes[index % len(themes)]
+    state_file.write_text(str((index + 1) % len(themes)), encoding="utf-8")
+    return theme
 
-def chef_orchestre_labo(titres, nom_theme, mode):
-    client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+def fetch_news(query, limit=8):
+    url = (
+        "https://news.google.com/rss/search?q="
+        + quote(query + " when:7d")
+        + "&hl=fr&gl=FR&ceid=FR:fr"
+    )
+    response = requests.get(
+        url, timeout=TIMEOUT,
+        headers={"User-Agent": "UsineIATechGaming/1.0"}
+    )
+    response.raise_for_status()
+    root = ET.fromstring(response.content)
+    items = []
+    for item in root.findall(".//item")[:limit]:
+        title = (item.findtext("title") or "").strip()
+        link = (item.findtext("link") or "").strip()
+        description = (item.findtext("description") or "").strip()
+        description = re.sub(r"<[^>]+>", " ", description)
+        description = html.unescape(re.sub(r"\\s+", " ", description)).strip()
+        if title and link:
+            items.append({
+                "title": title[:300],
+                "description": description[:700],
+                "url": link
+            })
+    return items
+
+def create_article(theme, sources):
+    api_key = os.getenv("GROQ_API_KEY")
+    if not api_key:
+        raise RuntimeError("Secret GROQ_API_KEY absent dans GitHub Actions.")
+
+    client = Groq(api_key=api_key, timeout=45, max_retries=2)
+    source_text = json.dumps(sources, ensure_ascii=False)
     prompt = f"""
-Tu es le directeur d'un laboratoire de test Tech, IA et Gaming.
-Thème : {nom_theme} (Mode : {mode})
-Titres trouvés :
-{titres}
-Choisis la nouveauté la plus importante. Résume en 2 phrases : ce qui est annoncé vs ce qu'il faut vérifier techniquement.
+Tu es le rédacteur d'un observatoire francophone Tech & Gaming.
+Thème : {theme['name']}
+
+Utilise UNIQUEMENT les informations contenues dans les sources ci-dessous.
+N'invente aucun fait, aucune date, aucun chiffre et aucune annonce.
+Si les sources sont trop vagues, dis clairement que l'information reste à confirmer.
+Ne prétends pas avoir testé un produit ou un jeu.
+Ne copie pas les articles : fais une synthèse originale et courte.
+Réponds en français sous forme d'un objet JSON avec exactement ces clés :
+"title" (titre court), "summary" (2 à 4 phrases), "verdict" (une phrase prudente),
+"tip" (une astuce utile), "source_indices" (liste d'indices des sources utilisées).
+Les indices commencent à 0. N'ajoute aucun autre texte.
+
+Sources :
+{source_text}
 """
-    rep = client.chat.completions.create(
-        messages=[{"role": "user", "content": prompt}],
-        model="llama-3.3-70b-versatile"
+    completion = client.chat.completions.create(
+        model=MODEL,
+        messages=[
+            {"role": "system", "content": "Tu produis des synthèses factuelles, prudentes et lisibles."},
+            {"role": "user", "content": prompt}
+        ],
+        temperature=0.25,
+        max_tokens=550,
+        response_format={"type": "json_object"}
     )
-    return rep.choices[0].message.content
+    raw = completion.choices[0].message.content or "{}"
+    data = json.loads(raw)
 
-def executer_agents_dynamiques(sujet):
-    if not os.path.exists("agents_dynamiques"):
-        return ""
-    rapports = []
-    for fichier in os.listdir("agents_dynamiques"):
-        if fichier.endswith(".py"):
-            chemin = os.path.join("agents_dynamiques", fichier)
-            spec = importlib.util.spec_from_file_location(fichier[:-3], chemin)
-            module = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(module)
-            if hasattr(module, "executer_mission"):
-                rapports.append(module.executer_mission(sujet))
-    return "\n".join(rapports)
+    title = str(data.get("title", theme["name"]))[:140]
+    summary = str(data.get("summary", ""))[:1200]
+    verdict = str(data.get("verdict", ""))[:500]
+    tip = str(data.get("tip", ""))[:500]
 
-def agent_scenariste_verite(sujet, rapports_specialistes):
-    client = InferenceClient(token=os.environ.get("HF_API_KEY"))
-    regles = lire_regles_apprises()
-    prompt = f"""
-Tu es le présentateur d'un laboratoire de décryptage Tech, IA et Gaming réputé pour sa rigueur.
-Sujet : {sujet}
-Analyses complémentaires : {rapports_specialistes}
-Règles apprises : {regles}
-Rédige un flash de 85 mots en français en 3 étapes :
-1. LA NOUVEAUTÉ : Ce qui vient d'être annoncé ou lancé.
-2. LE VERDICT LABO : Est-ce vraiment utile et vérifié, ou juste du marketing ?
-3. L'ASTUCE PRATIQUE : Comment en profiter ou le tester aujourd'hui.
-Uniquement le texte parlé, sans emojis ni titres.
-"""
-    rep = client.chat_completion(
-        model="Qwen/Qwen2.5-72B-Instruct",
-        messages=[{"role": "user", "content": prompt}],
-        max_tokens=250
+    indices = data.get("source_indices", [])
+    used_sources = []
+    for index in indices:
+        if isinstance(index, int) and 0 <= index < len(sources):
+            used_sources.append(sources[index])
+    if not used_sources:
+        used_sources = sources[:3]
+    if not summary.strip():
+        raise ValueError("La réponse IA ne contient pas de résumé.")
+
+    return {
+        "id": datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ"),
+        "date": datetime.now(timezone.utc).isoformat(timespec="minutes"),
+        "theme": theme["name"],
+        "title": title,
+        "summary": summary,
+        "verdict": verdict,
+        "tip": tip,
+        "sources": used_sources[:5],
+        "ai_notice": "Article rédigé avec l'aide d'une intelligence artificielle. Vérifiez les sources."
+    }
+
+def load_previous_articles():
+    if not ARTICLES_FILE.exists():
+        return []
+    try:
+        data = json.loads(ARTICLES_FILE.read_text(encoding="utf-8"))
+        return data if isinstance(data, list) else []
+    except (json.JSONDecodeError, OSError):
+        return []
+
+def save_articles(article):
+    SITE_DIR.mkdir(parents=True, exist_ok=True)
+    articles = load_previous_articles()
+    articles.insert(0, article)
+    unique = []
+    seen = set()
+    for item in articles:
+        key = item.get("id")
+        if key and key not in seen:
+            unique.append(item)
+            seen.add(key)
+    ARTICLES_FILE.write_text(
+        json.dumps(unique[:MAX_ARTICLES], ensure_ascii=False, indent=2),
+        encoding="utf-8"
     )
-    return rep.choices[0].message.content
 
-def agent_controleur_et_coach(script, sujet):
-    client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
-    prompt = f"""
-Vérifie ce script sur '{sujet}' :
-"{script}"
-S'il fait moins de 105 mots, est objectif, en bon français et sans emojis, réponds UNIQUEMENT : VALIDE.
-Sinon, réécris-le proprement et ajoute à la fin sur une nouvelle ligne : REGLE: [leçon apprise en 1 phrase].
-"""
-    rep = client.chat.completions.create(
-        messages=[{"role": "user", "content": prompt}],
-        model="llama-3.3-70b-versatile"
-    )
-    res = rep.choices[0].message.content.strip()
-    if res == "VALIDE":
-        return script
-    if "REGLE:" in res:
-        parties = res.split("REGLE:")
-        with open("regles_apprises.txt", "a", encoding="utf-8") as f:
-            f.write(f"- {parties[1].strip()}\n")
-        return parties[0].strip()
-    return res
-
-def agent_tri_secret(info_brute):
-    client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
-    prompt = f"Cette astuce Tech/IA/Gaming est-elle une pépite rare peu connue du grand public ? '{info_brute}'. Réponds UNIQUEMENT : SECRET ou PUBLIC."
-    rep = client.chat.completions.create(
-        messages=[{"role": "user", "content": prompt}],
-        model="llama-3.3-70b-versatile"
-    )
-    if "SECRET" in rep.choices[0].message.content:
-        with open("coffre_secret_livre.txt", "a", encoding="utf-8") as f:
-            f.write(f"[EXCLUSIF LIVRE] {info_brute}\n")
-        return True
-    return False
-
-async def agent_voix(texte, nom_audio):
-    texte_avec_mention = texte + " Analyse générée par intelligence artificielle."
-    comm = edge_tts.Communicate(texte_avec_mention, "fr-FR-HenriNeural")
-    await comm.save(nom_audio)
-
-def publier_site_et_discord(script, nom_audio, nom_theme):
-    maintenant = datetime.now().strftime("%d/%m/%Y à %H:%M")
-    mention = "Analyse générée par l'Observatoire IA (Conformité AI Act)."
-    nouvel_article = f"""
-  <div class="carte">
-    <span class="date">[{nom_theme}] Flash Labo du {maintenant}</span>
-    <p>{script}</p>
-    <audio controls src="{nom_audio}"></audio>
-    <div class="mention-ia">{mention}</div>
-  </div>
-"""
-    with open("index.html", "r", encoding="utf-8") as f:
-        html = f.read()
-    html = html.replace("<!-- NOUVEAUX_ARTICLES -->", f"<!-- NOUVEAUX_ARTICLES -->\n{nouvel_article}")
-    with open("index.html", "w", encoding="utf-8") as f:
-        f.write(html)
-
-    url_webhook = os.environ.get("DISCORD_WEBHOOK")
-    if url_webhook:
-        with open(nom_audio, "rb") as f:
-            requests.post(
-                url_webhook,
-                data={"content": f"**[{nom_theme}] Verdict Labo ({maintenant}) :**\n{script}\n*({mention})*"},
-                files={"file": (nom_audio, f)}
-            )
-
-async def main():
-    nom_theme, mode, requete = choisir_theme_et_mode()
-    if datetime.now().weekday() == 1:
-        requete += " weekly release update"
-    infos = agent_radar(requete)
-    sujet = chef_orchestre_labo(infos, nom_theme, mode)
-    rapports_dyn = executer_agents_dynamiques(sujet)
-    brouillon = agent_scenariste_verite(sujet, rapports_dyn)
-    script_final = agent_controleur_et_coach(brouillon, sujet)
-
-    if not verifier_conformite_legale(script_final, type_action="PUBLICATION_WEB_DISCORD"):
-        print("Publication annulée par l'Agent Gardien Juridique.")
-        return
-
-    with open("memoire_tech.txt", "a", encoding="utf-8") as f:
-        f.write(f"[{nom_theme}] {script_final}\n")
-
-    if agent_tri_secret(script_final):
-        print("Pépite archivée uniquement pour le livre annuel.")
-        return
-
-    horodatage = datetime.now().strftime("%Y%m%d_%H%M")
-    nom_audio = f"flash_{horodatage}.mp3"
-    await agent_voix(script_final, nom_audio)
-    publier_site_et_discord(script_final, nom_audio, nom_theme)
+def main():
+    themes = load_themes()
+    theme = choose_theme(themes)
+    print(f"Thème choisi : {theme['name']}")
+    sources = fetch_news(theme["query"])
+    if not sources:
+        raise RuntimeError("Aucune source RSS exploitable. Aucun article publié.")
+    print(f"{len(sources)} source(s) récupérée(s).")
+    article = create_article(theme, sources)
+    save_articles(article)
+    print(f"Article créé : {article['title']}")
+    print("Terminé. GitHub Actions enregistrera les fichiers du site.")
 
 if __name__ == "__main__":
-    asyncio.run(main())
-
+    try:
+        main()
+    except Exception as exc:
+        print(f"ERREUR : {exc}", file=sys.stderr)
+        raise
