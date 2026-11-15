@@ -83,6 +83,9 @@ def initial_state():
         "ledger": [],
         "directors": directors,
         "ministries": MINISTRIES,
+        "teams": [],
+        "workforce": [],
+        "activity_log": [],
         "projects": [],
         "meetings": [],
         "laws": [],
@@ -107,6 +110,10 @@ def load_state(path=STATE_FILE):
         raise ValueError("Version de données gouvernementales non prise en charge.")
     if len(state.get("directors", [])) != 30:
         raise ValueError("Le conseil doit contenir exactement 30 administrateurs.")
+    # Migration additive : conserve les anciennes sauvegardes du gouvernement.
+    state.setdefault("teams", [])
+    state.setdefault("workforce", [])
+    state.setdefault("activity_log", [])
     return state
 
 def save_state(state, path=STATE_FILE):
@@ -138,6 +145,73 @@ def allocate_budget(state, ministry, amount, reason):
                             "amount": -amount, "balance": state["treasury"],
                             "reason": reason, "real_money": False})
     return state["treasury"]
+
+def _record_activity(state, event_type, description, details=None):
+    entry = {"date": now(), "type": event_type, "description": description,
+             "details": details or {}}
+    state.setdefault("activity_log", []).append(entry)
+    state["activity_log"] = state["activity_log"][-200:]
+    return entry
+
+
+def create_team(state, name, ministry, mission):
+    name = str(name).strip()
+    mission = str(mission).strip()
+    if not name or not mission:
+        raise ValueError("Une équipe doit avoir un nom et une mission.")
+    if ministry not in state["ministries"]:
+        raise ValueError("Ministère inconnu.")
+    if any(team["name"].casefold() == name.casefold() for team in state["teams"]):
+        raise ValueError("Une équipe porte déjà ce nom.")
+    team = {"id": f"TEAM-{len(state['teams']) + 1:04d}", "name": name,
+            "ministry": ministry, "mission": mission[:500], "status": "active",
+            "members": [], "created_at": now()}
+    state["teams"].append(team)
+    _record_activity(state, "équipe créée", f"Équipe {name} créée dans {ministry}.",
+                     {"team_id": team["id"]})
+    return team
+
+
+def recruit_agent(state, name, role, team_id):
+    name, role = str(name).strip(), str(role).strip()
+    team = next((t for t in state["teams"] if t["id"] == team_id), None)
+    if team is None or team["status"] != "active":
+        raise ValueError("Équipe introuvable ou inactive.")
+    if not name or not role:
+        raise ValueError("Le nom et le rôle de l'agent sont obligatoires.")
+    agent_id = f"AGT-{len(state['workforce']) + 1:05d}"
+    agent = {"id": agent_id, "name": name[:80], "role": role[:80],
+             "team_id": team_id, "grade": "junior", "status": "actif",
+             "experience": 0, "created_at": now()}
+    state["workforce"].append(agent)
+    team["members"].append(agent_id)
+    _record_activity(state, "agent recruté", f"{name} rejoint {team['name']}.",
+                     {"agent_id": agent_id, "team_id": team_id})
+    return agent
+
+
+def dissolve_team(state, team_id, reason):
+    team = next((t for t in state["teams"] if t["id"] == team_id), None)
+    if team is None or team["status"] != "active":
+        raise ValueError("Équipe introuvable ou déjà inactive.")
+    active_projects = [p for p in state["projects"]
+                       if team["name"] in p.get("team", [])
+                       and p.get("status") not in {"terminé", "annulé"}]
+    if active_projects:
+        raise ValueError("Impossible de dissoudre une équipe affectée à un projet actif.")
+    reason = str(reason).strip()
+    if len(reason) < 12:
+        raise ValueError("Une justification d'au moins 12 caractères est nécessaire.")
+    team["status"] = "dissoute"
+    team["dissolved_at"] = now()
+    team["dissolution_reason"] = reason[:500]
+    for agent in state["workforce"]:
+        if agent["team_id"] == team_id:
+            agent["status"] = "en attente de réaffectation"
+    _record_activity(state, "équipe dissoute", f"L'équipe {team['name']} a été dissoute.",
+                     {"team_id": team_id, "reason": reason[:500]})
+    return team
+
 
 def promote_agent(state, agent_id, new_grade, evidence):
     agent = next((a for a in state["directors"] if a["id"] == agent_id), None)
