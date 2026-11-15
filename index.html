@@ -1,25 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Observatoire Tech, IA &amp; Gaming — Labo 24/7</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="Observatoire indépendant Tech, IA et Gaming.">
+  <title>Usine IA Tech &amp; Gaming 24-7</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #0f172a; color: #f8fafc; max-width: 720px; margin: auto; padding: 20px; }
-    h1 { color: #38bdf8; text-align: center; }
-    .bandeau-legal { background: #1e293b; border: 1px solid #38bdf8; padding: 10px; border-radius: 8px; font-size: 12px; color: #bae6fd; margin-bottom: 20px; text-align: center; }
-    .carte { background: #1e293b; padding: 15px; border-radius: 10px; margin-bottom: 15px; border-left: 4px solid #38bdf8; }
-    .date { font-size: 12px; color: #94a3b8; }
-    .mention-ia { font-size: 11px; color: #64748b; font-style: italic; margin-top: 8px; }
-    audio { width: 100%; margin-top: 10px; }
+    :root { color-scheme: dark; font-family: system-ui, Arial, sans-serif; }
+    body { margin: 0; background: #101827; color: #eef4ff; }
+    header { padding: 42px 18px 30px; text-align: center; background: linear-gradient(130deg,#172554,#0f766e); }
+    header h1 { margin: 0 0 10px; font-size: clamp(1.7rem,5vw,2.8rem); }
+    header p { margin: 0; color: #dbeafe; }
+    main { max-width: 900px; margin: 28px auto; padding: 0 16px; }
+    .notice { background: #1e293b; border: 1px solid #475569; border-radius: 12px; padding: 14px; color: #cbd5e1; font-size: .92rem; }
+    .card { background: #1e293b; border: 1px solid #334155; border-radius: 14px; padding: 20px; margin: 18px 0; }
+    .meta { color: #7dd3fc; font-size: .85rem; }
+    h2 { margin: 8px 0 12px; }
+    .label { color: #93c5fd; font-weight: 700; }
+    a { color: #7dd3fc; overflow-wrap: anywhere; }
+    li { margin: 8px 0; }
+    footer { text-align: center; color: #94a3b8; padding: 30px 15px; }
+    #status { color: #cbd5e1; }
   </style>
 </head>
 <body>
-  <h1>Observatoire Tech, IA &amp; Gaming (Labo 24/7)</h1>
-  <div class="bandeau-legal">
-    Conformité Règlement Européen AI Act &amp; RGPD : Les analyses et synthèses vocales de ce site sont générées et vérifiées par un système multi-agents IA sous supervision humaine.
-  </div>
-  <!-- NOUVEAUX_ARTICLES -->
+<header>
+  <h1>Usine IA Tech &amp; Gaming 24-7</h1>
+  <p>Observatoire des nouveautés Tech, IA, Roblox et jeux vidéo</p>
+</header>
+<main>
+  <p class="notice">Les articles sont préparés avec l'aide d'une intelligence artificielle. Les résumés peuvent contenir des erreurs : consulte les sources avant de prendre une décision.</p>
+  <p id="status">Chargement des publications…</p>
+  <section id="articles" aria-live="polite"></section>
+</main>
+<footer>Projet indépendant · Site informatif · Contenus assistés par IA</footer>
+<script>
+(async function () {
+  const status = document.getElementById("status");
+  const container = document.getElementById("articles");
+  try {
+    const response = await fetch("./site/articles.json", {cache: "no-store"});
+    if (!response.ok) throw new Error("Fichier des articles indisponible");
+    const articles = await response.json();
+    status.textContent = articles.length ? `${articles.length} publication(s)` : "Aucun article pour le moment.";
+    for (const item of articles) {
+      const card = document.createElement("article");
+      card.className = "card";
+      const meta = document.createElement("div");
+      meta.className = "meta";
+      meta.textContent = `${item.theme || "Actualité"} · ${item.date || ""}`;
+      const title = document.createElement("h2");
+      title.textContent = item.title || "Publication";
+      const summary = document.createElement("p");
+      summary.textContent = item.summary || "";
+      card.append(meta, title, summary);
+      if (item.verdict) {
+        const verdict = document.createElement("p");
+        const label = document.createElement("span");
+        label.className = "label";
+        label.textContent = "Verdict du labo : ";
+        verdict.append(label, document.createTextNode(item.verdict));
+        card.append(verdict);
+      }
+      if (item.tip) {
+        const tip = document.createElement("p");
+        const label = document.createElement("span");
+        label.className = "label";
+        label.textContent = "À retenir : ";
+        tip.append(label, document.createTextNode(item.tip));
+        card.append(tip);
+      }
+      if (Array.isArray(item.sources) && item.sources.length) {
+        const heading = document.createElement("p");
+        heading.className = "label";
+        heading.textContent = "Sources :";
+        const list = document.createElement("ul");
+        for (const source of item.sources) {
+          if (!source.url || !/^https?:\/\//i.test(source.url)) continue;
+          const li = document.createElement("li");
+          const link = document.createElement("a");
+          link.href = source.url;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.textContent = source.title || "Consulter la source";
+          li.append(link);
+          list.append(li);
+        }
+        card.append(heading, list);
+      }
+      const notice = document.createElement("p");
+      notice.className = "meta";
+      notice.textContent = item.ai_notice || "Contenu assisté par intelligence artificielle.";
+      card.append(notice);
+      container.append(card);
+    }
+  } catch (error) {
+    status.textContent = "Impossible de charger les articles. Réessaie plus tard.";
+    console.error(error);
+  }
+})();
+</script>
 </body>
 </html>
-
