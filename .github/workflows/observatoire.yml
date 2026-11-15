@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - "main.py"
+      - "gouvernement.py"
+      - "tests/**"
       - "agent_gardien.py"
       - "themes.json"
       - "requirements.txt"
@@ -46,7 +48,8 @@ jobs:
 
       - name: Vérifier la syntaxe Python et les fichiers JSON
         run: |
-          python -m compileall -q main.py agent_gardien.py
+          python -m compileall -q main.py agent_gardien.py gouvernement.py tests
+          python -m unittest discover -s tests -v
           python -c "import json; json.load(open('themes.json', encoding='utf-8')); json.load(open('site/articles.json', encoding='utf-8')); print('JSON et Python OK')"
           test -f index.html
           test -f site/index.html
