@@ -95,7 +95,9 @@ Sources :
             {"role": "user", "content": prompt}
         ],
         temperature=0.25,
-        max_tokens=550,
+        max_completion_tokens=1200,
+        reasoning_effort="low",
+        response_format={"type": "json_object"},
     )
     raw = (completion.choices[0].message.content or "").strip()
     # Certains modèles renvoient le JSON dans un bloc Markdown : on extrait l'objet.
