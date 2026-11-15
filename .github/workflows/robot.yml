@@ -1,6 +1,8 @@
 name: Usine IA Tech & Gaming 24-7
 
 on:
+  push:
+    branches: [main]
   schedule:
     - cron: '0 9,18 * * *'
   workflow_dispatch:
