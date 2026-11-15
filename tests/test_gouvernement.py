@@ -40,6 +40,29 @@ class GovernmentTests(unittest.TestCase):
         event = gov.simulate_social_climate(state, "réforme budgétaire", -30)
         self.assertIn(event["type"], {"pétition simulée", "manifestation simulée", "grève simulée"})
 
+    def test_create_team_and_recruit_agent(self):
+        state = gov.initial_state()
+        team = gov.create_team(state, "Roblox Studio", "Gaming", "Créer des prototypes de jeux.")
+        agent = gov.recruit_agent(state, "Agent Builder", "Développeur IA", team["id"])
+        self.assertEqual(team["members"], [agent["id"]])
+        self.assertEqual(agent["status"], "actif")
+        self.assertEqual(len(state["activity_log"]), 2)
+
+    def test_cannot_dissolve_team_with_active_project(self):
+        state = gov.initial_state()
+        team = gov.create_team(state, "Équipe test", "Technologie", "Maintenir les outils.")
+        gov.create_project(state, "Projet actif", "normale", 4, "2027-01-01", [team["name"]])
+        with self.assertRaises(ValueError):
+            gov.dissolve_team(state, team["id"], "Réorganisation temporaire")
+
+    def test_dissolving_team_keeps_agent_history(self):
+        state = gov.initial_state()
+        team = gov.create_team(state, "Équipe archives", "Recherche", "Classer les documents.")
+        agent = gov.recruit_agent(state, "Agent archive", "Archiviste", team["id"])
+        gov.dissolve_team(state, team["id"], "Fin du projet et réaffectation")
+        self.assertEqual(team["status"], "dissoute")
+        self.assertEqual(agent["status"], "en attente de réaffectation")
+
 
 if __name__ == "__main__":
     unittest.main()
