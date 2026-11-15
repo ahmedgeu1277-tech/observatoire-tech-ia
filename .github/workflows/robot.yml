@@ -1,33 +1,47 @@
 name: Usine IA Tech & Gaming 24-7
+
 on:
   schedule:
     - cron: '0 9,18 * * *'
-    - cron: '0 14 * * 2'
   workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: usine-publication
+  cancel-in-progress: false
+
 jobs:
-  executer-usine:
+  generer-et-publier:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+      - name: Installer Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Installer les dependances
-        run: pip install yt-dlp groq huggingface_hub edge-tts requests
-      - name: Lancer les agents principaux
+          cache: pip
+      - name: Installer les dépendances
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Générer un article
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          HF_API_KEY: ${{ secrets.HF_API_KEY }}
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          GROQ_MODEL: openai/gpt-oss-20b
         run: python main.py
-      - name: Publier sur le site
+      - name: Enregistrer le site
+        if: success()
         run: |
-          git config --global user.name "Observatoire IA"
-          git config --global user.email "bot@github.com"
-          git add .
-          git commit -m "Publication Labo Tech & Gaming par IA" || exit 0
+          git config user.name "Usine IA Tech & Gaming"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/articles.json .theme-index
+          if git diff --cached --quiet; then
+            echo "Aucun changement à enregistrer."
+            exit 0
+          fi
+          git commit -m "Publication automatique d'un article IA"
           git push
