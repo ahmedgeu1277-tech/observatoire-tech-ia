@@ -1,5 +1,37 @@
 [
   {
+    "id": "20261115T193731Z",
+    "date": "2026-11-15T19:37+00:00",
+    "theme": "Gaming et jeux vidéo",
+    "title": "Mises à jour et nouveautés à surveiller",
+    "summary": "Une mise à jour de GTA 6 est déjà disponible avant la sortie officielle, tandis que League of Legends prévoit la version New Dawn en 2027. Le service eShop 23.5.0 facilite l’envoi de jeux en cadeau, et Logitech a annoncé un jour de congé dédié aux joueurs.",
+    "verdict": "Les informations indiquées restent à confirmer avant la disponibilité officielle.",
+    "tip": "Profitez de la fonction d’envoi de jeux en cadeau sur eShop pour partager vos titres préférés avec des amis.",
+    "sources": [
+      {
+        "title": "Sorties jeux vidéo novembre 2026 : les nouveautés attendues sur PC et consoles - Sortir à Paris",
+        "description": "Sorties jeux vidéo novembre 2026 : les nouveautés attendues sur PC et consoles    Sortir à Paris",
+        "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPWlBsWmdBZml4b3VoSEtpeWpnTVEySmpNWGtpVWtRRXB0enpLRXBDWUx0VVZLeGZmSjhXYkhacmxtQ0RTSkdWMzNETFJrYUE3RzdrMmQxMnMzX0dVal9Mb3dwTzZwV3hReUdNT3BuWmhRdVJrTFVOck9MbUpnUF95LWhJR2J5eENBMTk2VGJfTldjSlFsSWlMRmZVaGFBZ2Q0eXRDaS1EX1dtVGRGMHZoQzdNbFZzenBiRGJLYmFiRk1mRVM4dnF1TDM0ZWR5WDVlX2c?oc=5"
+      },
+      {
+        "title": "League of Legends : New Dawn, la nouvelle version du jeu phare de Riot Games, arrive en 2027 - JeuxVideo.com",
+        "description": "League of Legends : New Dawn, la nouvelle version du jeu phare de Riot Games, arrive en 2027    JeuxVideo.com",
+        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOMF9iTVhoaFdzT1FPVFF1bkFrNlBHejh1ZXdIWXliUUh6N3otczRjRkdlTU10UHNuNW5DV3lFQ3laZDlTNG9jdlFoazNiaGVQbnhieVNhSWw2b0M5OXc5NVh4SDhIc3ZWYldRRjBLV0pTT2tyWVhfTlozYkJkUms4YkRxZGV3MlA5cWtaWjFmUGp2RFFyWnhjWnl5QUpUX3JWQTh6LXhRVUJIUldoOEMxRHBMZmJfWWlIWDdMeGlUR0FGckNiMHBFVmhBSQ?oc=5"
+      },
+      {
+        "title": "eShop : la 23.5.0 prépare vraiment l'envoi de jeux en cadeau - SpiritGamer",
+        "description": "eShop : la 23.5.0 prépare vraiment l'envoi de jeux en cadeau    SpiritGamer",
+        "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE92eFhVcldybFF3TGpKdmlGVTFYRUxxQUtrSGxURl9yMHZ1cTc1LUdLclVVNXNjMEhWakN2QTZtV3FwODRoRXFUNG5Md2dJYU52b21wQ1RFNHVycG5famZ0SGpXODNEa1JFQWlYX0dWUU9kUDg?oc=5"
+      },
+      {
+        "title": "GTA 6 : toutes les informations : date de sortie, prix, PC et autres spéculations - EGW.News",
+        "description": "GTA 6 : toutes les informations : date de sortie, prix, PC et autres spéculations    EGW.News",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNbEpGU0pfQjZaYlZfaTV3b0RyWnZqRklnb0FrUnhnMElwUDhiQUh3dGRoV0tKZ2FxWmxEMUs5U0NOQ1pCc3VDaXdpeHdYUG5RbWdzcHBNZWZ2OEl0MzBnWV85WmtOR2Rud0dvdHZrWDRJSkhCbm40UWU3RjhjWG80V2NOUGdHNktlT3dsbHJMZzlhZVdqWTV4TmxHbTFNdFk?oc=5"
+      }
+    ],
+    "ai_notice": "Contenu assisté par IA ou synthèse de secours à partir des titres. Vérifiez toujours les sources originales."
+  },
+  {
     "id": "20261115T193654Z",
     "date": "2026-11-15T19:36+00:00",
     "theme": "Actualités intelligence artificielle",
