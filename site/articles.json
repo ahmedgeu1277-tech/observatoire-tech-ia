@@ -1,5 +1,43 @@
 [
   {
+    "id": "20261115T201331Z",
+    "date": "2026-11-15T20:13+00:00",
+    "theme": "Actualités intelligence artificielle",
+    "title": "IA : de la création visuelle aux prévisions météo, en passant par la défense",
+    "summary": "Canva intègre l’IA dans ses outils créatifs, tandis que Roland Berger lance une start‑up dédiée à l’IA. En météorologie, l’IA améliore les prévisions d’ouragans. Rennes prévoit un centre international d’IA de défense en 2027. Des partenariats émergent, comme Helicon‑ia, et des services d’abonnement (1min.AI) offrent l’accès à OpenAI et Midjourney. Meta annonce un modèle IA compact, Meta Muse Ember, pour des tâches gourmandes en jetons.",
+    "verdict": "Les avancées montrent une adoption croissante de l’IA dans divers secteurs, mais les détails opérationnels restent à confirmer.",
+    "tip": "Pour les créateurs, tester l’IA de Canva peut accélérer la production visuelle sans compromettre la qualité.",
+    "sources": [
+      {
+        "title": "Canva se restructure : l’IA bouscule aussi les fabricants d’outils créatifs - Etapes",
+        "description": "Canva se restructure : l’IA bouscule aussi les fabricants d’outils créatifs    Etapes",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPQ0lDbU1sRzhhcHl1Tlg3b3ZHQVktQkd4U3ByQ0U5N1UtdnlycWs3cWI0RTFZekV0eFVXaDdwMUs4U3ZJLXFLOWxNMDJFczZFdHk4RmFRc3NFcElwV0p1T0NtMWxiWlgzckF1aGIzVEpNY1RZVHFZUHozQkhwN0pkdUU5RS1XTmVpSm40QklJcHFxTVlFZFJwYjJXZnBOX1pNZlF4S09OSDJ6dw?oc=5"
+      },
+      {
+        "title": "Avec sa start-up dédiée, Roland Berger joue gros sur l'intelligence artificielle - Consultor",
+        "description": "Avec sa start-up dédiée, Roland Berger joue gros sur l'intelligence artificielle    Consultor",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPODZLdnlUZndDYU1iTU0zamI2ck5iaVpySU1BNl9Lbzcxelg5VnR3Z1lSM2RSWjBuMVhHLTJSbmhnQ2x0TGU2ek9QNHFhN0R3b1drcks4dTk3ZTUzbHJmLXR6ek5ONmlPbnI0ZGJ2WE9qRVR1NVJ6SWdLWGIwODVZRGFEYmxtZ0tmM0JaN0JEaGprdmNiRE9YWXdRYk84aVdHZDZlZ3pEaU5aOVMzOVM0Wkdn?oc=5"
+      },
+      {
+        "title": "L'IA, un outil précieux pour les prévisions météo des ouragans - Outre-mer La 1ère",
+        "description": "L'IA, un outil précieux pour les prévisions météo des ouragans    Outre-mer La 1ère",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQYU5udDJNRUFMUFZfcFg2bFNGRWxlVjM0OUZtM191MF9XMFlBQWZKOVBSczc5em9ReUF4THR4b0FkeXFVT3dHSE4wQlgxanVIeGdGMUtUc1UzS3VkMjNvS0c5Ti14SWdONHdDcjctZEtNV2RoUS1TbnRGc2JRT2VXcGJvb2tBc2ExeWNvU0pncEppS2xtX0phTGJnS3FPNmdkdVBLVVJXYmVqZE5Qd3FCbTVGQkU?oc=5"
+      },
+      {
+        "title": "Rennes accueillera un centre international dédié à l’IA de défense en 2027 - Bretagne Économique",
+        "description": "Rennes accueillera un centre international dédié à l’IA de défense en 2027    Bretagne Économique",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNbFhVUUY1TUZBdHVMdW5lUGxsbmdCdE9xb3Y3ektEajJhSWk5dk5fT0F2Uk80VndNVHFJM21OdHhnZVZrcTFJcGctZFNQMHllamlLTEZ4cHBvTlR1bW9rQ1o0Sm5jeG14M0xQa3l0NC1fZXFkcEtIRWhtUVJHWmd1ZXdSNkNKczNaZW14cEU5dE9oT1RzS1dFS0lKT1l3ZWNtTFJ2cTZFUTJ2N1VWWFF2dDgzVlktU0pabTZqZWtB?oc=5"
+      },
+      {
+        "title": "🤝 NOUVEAU PARTENARIAT : Helicon-ia 🤝 - District des Ardennes",
+        "description": "🤝 NOUVEAU PARTENARIAT : Helicon-ia 🤝    District des Ardennes",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNcVdYZk5qN0ZyS2F0amJzS09TbnY1TVBZeGhuazFKZC0xYTkwTFE3dDl1YXdzU1ZlTnFselQ0OEh1d3ZwSkdYWWRqMThBREQtRF9LaW9vT3VuX0dHcFhzaVZ4OTFZaFB1M2p5WC1wRnZ5TVlmRFI0eGJqcnJZdzZ2NDZ3QjkyOVZBbmkxZXRnd25Bejh4OHhoN2JR?oc=5"
+      }
+    ],
+    "ai_notice": "Contenu assisté par IA ou synthèse de secours à partir des titres. Vérifiez toujours les sources originales.",
+    "audio_url": "audio/20261115T201331Z.mp3"
+  },
+  {
     "id": "20261115T194945Z",
     "date": "2026-11-15T19:49+00:00",
     "theme": "Sécurité numérique",
