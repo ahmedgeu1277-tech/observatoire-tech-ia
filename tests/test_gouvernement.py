@@ -67,7 +67,7 @@ class GovernmentTests(unittest.TestCase):
         state = gov.initial_state()
         team = gov.create_team(state, "Équipe IA", "Technologie", "Développer des outils IA.")
         agent = gov.recruit_agent(state, "Agent Python", "Développeur", team["id"])
-        promoted = gov.promote_agent(agent["id"], "confirmé", "Tests réussis et contributions vérifiées.")
+        promoted = gov.promote_agent(state, agent["id"], "confirmé", "Tests réussis et contributions vérifiées.")
         self.assertEqual(promoted["grade"], "confirmé")
 
 
