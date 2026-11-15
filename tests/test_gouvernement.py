@@ -38,7 +38,7 @@ class GovernmentTests(unittest.TestCase):
     def test_social_events_are_simulated(self):
         state = gov.initial_state()
         event = gov.simulate_social_climate(state, "réforme budgétaire", -30)
-        self.assertIn(event["type"], {"manifestation simulée", "grève simulée"})
+        self.assertIn(event["type"], {"pétition simulée", "manifestation simulée", "grève simulée"})
 
 
 if __name__ == "__main__":
