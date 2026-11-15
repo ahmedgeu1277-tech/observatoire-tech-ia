@@ -1,0 +1,54 @@
+name: Maintenance hebdomadaire Tech & IA
+
+on:
+  schedule:
+    - cron: '0 16 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: usine-publication
+  cancel-in-progress: false
+
+jobs:
+  maintenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Installer les dépendances
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Découvrir de nouveaux thèmes
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_MODEL: openai/gpt-oss-20b
+        run: python agent_nouveaux_themes.py
+      - name: Créer un profil d'agent spécialisé
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_MODEL: openai/gpt-oss-20b
+        run: python agent_architecte.py
+      - name: Préparer le documentaire hebdomadaire
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_MODEL: openai/gpt-oss-20b
+        run: python video_longue.py
+      - name: Enregistrer les archives
+        run: |
+          git config user.name "Usine IA Tech & Gaming"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add themes.json agents_dynamiques archives site/audio memoire_tech.txt journal_conformite_legale.txt
+          if git diff --cached --quiet; then
+            echo "Aucune nouvelle archive à enregistrer."
+            exit 0
+          fi
+          git commit -m "Maintenance hebdomadaire Tech IA"
+          git push

@@ -1,2 +1,1 @@
-groq>=1.0.0
-requests>=2.31.0
+groq>=1.0.0\nrequests>=2.31.0\nedge-tts>=7.0.0\n
