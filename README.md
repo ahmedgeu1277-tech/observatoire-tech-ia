@@ -1,25 +1,40 @@
 # Usine IA Tech & Gaming 24-7
 
-Observatoire automatisé en français sur l'IA, les jeux vidéo, Roblox, le matériel et la cybersécurité.
+Observatoire automatisé francophone consacré à l'IA, au gaming, à Roblox, au matériel et à la cybersécurité.
 
-## Fonctionnement
-- GitHub Actions lance le programme deux fois par jour (09 h et 18 h UTC).
-- Le programme récupère des actualités publiques via Google News RSS.
-- Groq rédige une synthèse prudente à partir des titres et descriptions récupérés.
-- Les articles sont enregistrés dans `site/articles.json`.
-- Le site public affiche les articles et leurs liens sources.
+## Site
+GitHub Pages : https://ahmedgeu1277-tech.github.io/observatoire-tech-ia/
 
-## Configuration
-1. Dans GitHub, ouvrir Settings → Secrets and variables → Actions.
-2. Vérifier que le secret `GROQ_API_KEY` existe. Ne jamais le copier dans le code.
-3. Dans Settings → Actions → General, autoriser les workflows à écrire dans le dépôt (Read and write permissions).
-4. Dans Settings → Pages, choisir Deploy from a branch, branche `main`, dossier `/ (root)` ou `/site`.
-   - Si tu choisis `/ (root)`, le fichier `index.html` de la racine charge `site/articles.json`.
-   - Si tu choisis `/site`, le fichier `site/index.html` charge `site/articles.json`.
-5. Dans Actions, lancer « Usine IA Tech & Gaming 24-7 » avec Run workflow.
+Dans Settings → Pages, choisir la branche `main` et le dossier `/ (root)`. Le fichier racine `index.html` charge les articles depuis `site/articles.json`.
 
-## Limites
-- GitHub Actions n'est pas un serveur permanent : il exécute le programme aux horaires prévus.
-- Le site est public si GitHub Pages est activé sur un dépôt public.
-- Les résumés IA peuvent contenir des erreurs. Vérifie les sources.
-- Respecte les conditions d'âge et d'utilisation de GitHub et de Groq. Demande l'aide d'un parent ou tuteur pour les comptes et services qui l'exigent.
+## Cycle quotidien
+- GitHub Actions lance la veille à 09 h et 18 h UTC.
+- Google News RSS récupère des titres, descriptions et liens publics.
+- Groq rédige une synthèse française structurée.
+- Les profils de `agents_dynamiques/` peuvent effectuer jusqu'à trois analyses spécialisées.
+- Un filtre technique bloque les clés API et adresses e-mail détectées dans les contenus.
+- Edge TTS crée un court audio quand le service vocal est disponible.
+- Les articles sont publiés dans `site/articles.json`, les audios dans `site/audio/` et les résumés sont archivés dans `memoire_tech.txt`.
+
+## Agents et tâches hebdomadaires
+Le workflow du dimanche :
+- propose un thème de veille dans `themes.json` ;
+- crée une fiche d'agent spécialisée en JSON dans `agents_dynamiques/` ;
+- prépare un documentaire écrit et, si possible, audio.
+
+Les profils d'agents sont des configurations JSON : ils ne génèrent ni n'exécutent librement du code Python.
+
+## Encyclopédie annuelle
+Le générateur `ecrire_livre.py` est manuel. Il utilise `memoire_tech.txt` et, si présent, `coffre_secret_livre.txt`.
+
+## Secrets et permissions
+- Settings → Secrets and variables → Actions : vérifier `GROQ_API_KEY`.
+- Settings → Actions → General : autoriser les workflows à écrire dans le dépôt.
+- Ne jamais placer une clé API dans un fichier du dépôt.
+- Aucun composant Discord n'est utilisé.
+
+## Limites et sécurité
+- GitHub Actions exécute des tâches planifiées : ce n'est pas un serveur permanent 24 h/24.
+- Le filtre automatique est une protection technique de premier niveau, pas un avis juridique ni une certification de conformité.
+- Les résumés et audios IA peuvent contenir des erreurs : vérifier les sources originales.
+- Respecter les conditions d'âge et d'utilisation des services ; demander l'aide d'un parent ou tuteur lorsque nécessaire.
