@@ -214,7 +214,7 @@ def dissolve_team(state, team_id, reason):
 
 
 def promote_agent(state, agent_id, new_grade, evidence):
-    agent = next((a for a in state["directors"] if a["id"] == agent_id), None)
+    agent = next((a for a in state["directors"] + state.get("workforce", []) if a["id"] == agent_id), None)
     if agent is None:
         raise ValueError("Agent introuvable.")
     if not evidence or len(str(evidence).strip()) < 12:
