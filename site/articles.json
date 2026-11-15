@@ -1,1 +1,29 @@
-[]
+[
+  {
+    "id": "20261115T193654Z",
+    "date": "2026-11-15T19:36+00:00",
+    "theme": "Actualités intelligence artificielle",
+    "title": "Le point sur Actualités intelligence artificielle",
+    "summary": "Les sources consultées signalent notamment : Canva se restructure : l’IA bouscule aussi les fabricants d’outils créatifs - Etapes ; Avec sa start-up dédiée, Roland Berger joue gros sur l'intelligence artificielle - Consultor ; L'IA, un outil précieux pour les prévisions météo des ouragans - Outre-mer La 1ère",
+    "verdict": "Cette synthèse de secours reprend les titres des sources ; consulte les liens pour vérifier les informations.",
+    "tip": "Ouvre les sources originales avant de partager ou d'utiliser une information.",
+    "sources": [
+      {
+        "title": "Canva se restructure : l’IA bouscule aussi les fabricants d’outils créatifs - Etapes",
+        "description": "Canva se restructure : l’IA bouscule aussi les fabricants d’outils créatifs    Etapes",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPQ0lDbU1sRzhhcHl1Tlg3b3ZHQVktQkd4U3ByQ0U5N1UtdnlycWs3cWI0RTFZekV0eFVXaDdwMUs4U3ZJLXFLOWxNMDJFczZFdHk4RmFRc3NFcElwV0p1T0NtMWxiWlgzckF1aGIzVEpNY1RZVHFZUHozQkhwN0pkdUU5RS1XTmVpSm40QklJcHFxTVlFZFJwYjJXZnBOX1pNZlF4S09OSDJ6dw?oc=5"
+      },
+      {
+        "title": "Avec sa start-up dédiée, Roland Berger joue gros sur l'intelligence artificielle - Consultor",
+        "description": "Avec sa start-up dédiée, Roland Berger joue gros sur l'intelligence artificielle    Consultor",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPODZLdnlUZndDYU1iTU0zamI2ck5iaVpySU1BNl9Lbzcxelg5VnR3Z1lSM2RSWjBuMVhHLTJSbmhnQ2x0TGU2ek9QNHFhN0R3b1drcks4dTk3ZTUzbHJmLXR6ek5ONmlPbnI0ZGJ2WE9qRVR1NVJ6SWdLWGIwODVZRGFEYmxtZ0tmM0JaN0JEaGprdmNiRE9YWXdRYk84aVdHZDZlZ3pEaU5aOVMzOVM0Wkdn?oc=5"
+      },
+      {
+        "title": "L'IA, un outil précieux pour les prévisions météo des ouragans - Outre-mer La 1ère",
+        "description": "L'IA, un outil précieux pour les prévisions météo des ouragans    Outre-mer La 1ère",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQYU5udDJNRUFMUFZfcFg2bFNGRWxlVjM0OUZtM191MF9XMFlBQWZKOVBSczc5em9ReUF4THR4b0FkeXFVT3dHSE4wQlgxanVIeGdGMUtUc1UzS3VkMjNvS0c5Ti14SWdONHdDcjctZEtNV2RoUS1TbnRGc2JRT2VXcGJvb2tBc2ExeWNvU0pncEppS2xtX0phTGJnS3FPNmdkdVBLVVJXYmVqZE5Qd3FCbTVGQkU?oc=5"
+      }
+    ],
+    "ai_notice": "Contenu assisté par IA ou synthèse de secours à partir des titres. Vérifiez toujours les sources originales."
+  }
+]
