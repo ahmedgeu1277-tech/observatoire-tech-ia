@@ -1,6 +1,15 @@
 name: Observatoire Tech IA Gaming
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "main.py"
+      - "agent_gardien.py"
+      - "themes.json"
+      - "requirements.txt"
+      - "site/**"
+      - ".github/workflows/observatoire.yml"
   workflow_dispatch:
   schedule:
     - cron: "0 9,18 * * *"
