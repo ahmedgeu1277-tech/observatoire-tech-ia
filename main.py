@@ -105,7 +105,30 @@ Sources :
         start, end = raw.find("{"), raw.rfind("}")
         if start >= 0 and end > start:
             raw = raw[start:end + 1]
-    data = json.loads(raw)
+    data = None
+    parse_warning = None
+    if raw:
+        try:
+            data = json.loads(raw)
+        except json.JSONDecodeError as exc:
+            parse_warning = f"Réponse IA non JSON ({exc.msg}); publication de secours utilisée."
+    else:
+        parse_warning = "Réponse IA vide; publication de secours utilisée."
+
+    if not isinstance(data, dict) or not str(data.get("summary", "")).strip():
+        # Ne bloque pas la publication si le modèle renvoie une réponse vide
+        # ou un format inattendu. Les titres restent liés aux sources originales.
+        selected = sources[:3]
+        titles = [item["title"] for item in selected if item.get("title")]
+        summary = "Les sources consultées signalent notamment : " + " ; ".join(titles)
+        data = {
+            "title": f"Le point sur {theme['name']}",
+            "summary": summary[:1200],
+            "verdict": "Cette synthèse de secours reprend les titres des sources ; consulte les liens pour vérifier les informations.",
+            "tip": "Ouvre les sources originales avant de partager ou d'utiliser une information.",
+            "source_indices": list(range(len(selected)))
+        }
+        print(f"AVERTISSEMENT : {parse_warning or 'Réponse IA incomplète'}")
 
     title = str(data.get("title", theme["name"]))[:140]
     summary = str(data.get("summary", ""))[:1200]
@@ -114,13 +137,14 @@ Sources :
 
     indices = data.get("source_indices", [])
     used_sources = []
-    for index in indices:
-        if isinstance(index, int) and 0 <= index < len(sources):
-            used_sources.append(sources[index])
+    if isinstance(indices, list):
+        for index in indices:
+            if isinstance(index, int) and 0 <= index < len(sources):
+                used_sources.append(sources[index])
     if not used_sources:
         used_sources = sources[:3]
     if not summary.strip():
-        raise ValueError("La réponse IA ne contient pas de résumé.")
+        raise ValueError("Impossible de créer un résumé, même en mode de secours.")
 
     return {
         "id": datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ"),
@@ -131,7 +155,7 @@ Sources :
         "verdict": verdict,
         "tip": tip,
         "sources": used_sources[:5],
-        "ai_notice": "Article rédigé avec l'aide d'une intelligence artificielle. Vérifiez les sources."
+        "ai_notice": "Contenu assisté par IA ou synthèse de secours à partir des titres. Vérifiez toujours les sources originales."
     }
 
 def load_previous_articles():
