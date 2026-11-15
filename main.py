@@ -55,7 +55,7 @@ def fetch_news(query, limit=8):
         link = (item.findtext("link") or "").strip()
         description = (item.findtext("description") or "").strip()
         description = re.sub(r"<[^>]+>", " ", description)
-        description = html.unescape(re.sub(r"\\s+", " ", description)).strip()
+        description = html.unescape(re.sub(r"\s+", " ", description)).strip()
         if title and link:
             items.append({
                 "title": title[:300],
