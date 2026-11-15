@@ -1,5 +1,43 @@
 [
   {
+    "id": "20261115T194945Z",
+    "date": "2026-11-15T19:49+00:00",
+    "theme": "Sécurité numérique",
+    "title": "Sécurité numérique : vulnérabilités et correctifs majeurs",
+    "summary": "Scality est désormais l’autorité de numérotation des vulnérabilités sous l’égide de l’Agence européenne de cybersécurité. Plusieurs failles critiques ont été corrigées récemment : Outlook, SAP, Apache HTTP/2, ainsi qu’une faille mondiale ayant paralysé les sites officiels de Monaco et de la Côte d’Azur.",
+    "verdict": "Il est recommandé de mettre à jour immédiatement les systèmes concernés et de surveiller les alertes de sécurité.",
+    "tip": "Activez les mises à jour automatiques pour les logiciels critiques afin de réduire les risques d’exploitation.",
+    "sources": [
+      {
+        "title": "Scality devient autorité de numérotation des vulnérabilités sous l’égide de l’Agence européenne de cybersécurité - it social",
+        "description": "Scality devient autorité de numérotation des vulnérabilités sous l’égide de l’Agence européenne de cybersécurité    it social",
+        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNYW83UDZHd1ZMaVJsdVJMX0ZtQTZzbmp3RC1uVFZzcFlfWk93U2FTempQU0JWRDdkd2pqOFVJT2JXSFBoSlphb2Fta0k4Yl9rbF9lSndGd01yMHZ4VmkteEMyN2YyWGxZeFdzYW1FV2J1bG5WRTNBMF9DWG4zZnEtTmxYR1h2ZFZPNUdsZVllVU1paWh3Q1haQkQyencxdUNGRE02dU9lZ1NkT0lweS0yM011UDdfZGxDVlFqYkpiUGNOT2dlWGdWdDI4OV9Uc2pBUTlzaGRTQkJMSU5ySTFLWFZOTXZZUQ?oc=5"
+      },
+      {
+        "title": "Alerte cybersécurité : une faille mondiale met à l’arrêt les sites officiels de Monaco et de la Côte d’Azur - Radio Monaco",
+        "description": "Alerte cybersécurité : une faille mondiale met à l’arrêt les sites officiels de Monaco et de la Côte d’Azur    Radio Monaco",
+        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxORkViaFV4ZnBHX3Ftdzc0T0ZOUVg2VGhhRzV5eUxZVXMteVpLLVpIRUVBdndTLUQ4bkM4eWtGenA1SUJFMEtnc0Q1ZWthQXBNV0w2cm5INjd5czlZMjQ5b3hxRm1GYzNCd1cyYURNVUsyVDhXemEzWUtOSjN1dWJyNjFwRS13WHdLRVhFOXNlOXdTY2JmRGVLajFQUG1kbXRyVkROaVlYWFBYR05QMjBQVHN4WUVwRi1VOHVzNmlCQlo4ZzY3bXZtRA?oc=5"
+      },
+      {
+        "title": "Le Patch Tuesday de Microsoft corrige une faille d'Outlook déjà exploitée. - Malwarebytes",
+        "description": "Le Patch Tuesday de Microsoft corrige une faille d'Outlook déjà exploitée.    Malwarebytes",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPb3NaYy1mbVE2YXplMHp0SXNkdjJWc3ZLOXlQVk8zeXk3S2V5SkU0cmI1SWp0VnFXeVNycG1PbmQ4MHptNFZiYnVpTVhMSjd2eWl4RUJTYkctOEhEc05WNl9OeHFHMGk3b19FN2VpcUdreFJiMEtMUERmNGJTNVNoZ2owVE5pS2FmVndZcE9PX0N1Zl9jZVVvdmhkY2FWdzgxWW9ZT3RfbFU3Q2lqYmJzbHQtVQ?oc=5"
+      },
+      {
+        "title": "SAP corrige quatre failles notées 10 sur 10 au Patch Day de novembre - Pasquale Pillitteri",
+        "description": "SAP corrige quatre failles notées 10 sur 10 au Patch Day de novembre    Pasquale Pillitteri",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQWGVHM3Zxc2hOaFNZUVhFdmtkVGU4VTFMTk84WlMzQmZoYTUtLWpORU5jS0xOT3ZKUHhyZGVYSGlnd0FuY2c4OU9neEF6ZFRIZGZRRXFuN3ZNQTFXdzJPVU1SRVlYQnV4TF80SDJ0RFQ4cjNkMUF2ZUZfTWxwc011RU14MTZ1MWk3OHdmNHBTRUFRY2tUNUF6QUJR?oc=5"
+      },
+      {
+        "title": "Faille critique dans Apache HTTP/2 : comment la mise à jour renforce la sécurité des serveurs Web ? - EmarketerZ",
+        "description": "Faille critique dans Apache HTTP/2 : comment la mise à jour renforce la sécurité des serveurs Web ?    EmarketerZ",
+        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQZW1zeVNXSHhTTTBvX0dpQlJlYVZsSFpVNkNMbnNjd0hNQ0lQTS14clZMWU40X25Mc2VzRWwwXzZ5Z3R6NzJwSWFLc0RfeDJYUWRDTEVxWWpBMWw0ZFFORGdEZVZDNGZNSFNjZGVHTjd4elZTSE5pWnV4b1pQb0FGWl9vdElQNXVZTTJnMnM1dHZ6d3J3bWlEZi10SWtLeC03akJCcThObmpOazNRYzZIQ1A1Q0RrRFJOU0pRMHZ3Zw?oc=5"
+      }
+    ],
+    "ai_notice": "Contenu assisté par IA ou synthèse de secours à partir des titres. Vérifiez toujours les sources originales.",
+    "audio_url": "audio/20261115T194945Z.mp3"
+  },
+  {
     "id": "20261115T194232Z",
     "date": "2026-11-15T19:42+00:00",
     "theme": "Matériel et smartphones",
