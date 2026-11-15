@@ -71,7 +71,6 @@ def create_article(theme, sources, agent_reports=None):
     if not api_key:
         raise RuntimeError("Secret GROQ_API_KEY absent dans GitHub Actions.")
 
-    client = Groq(api_key=api_key, timeout=45, max_retries=2)
     source_text = json.dumps(sources, ensure_ascii=False)
     prompt = f"""
 Tu es le rédacteur d'un observatoire francophone Tech & Gaming.
@@ -91,18 +90,38 @@ Les indices commencent à 0. N'ajoute aucun autre texte.
 Sources :
 {source_text}
 """
-    completion = client.chat.completions.create(
-        model=MODEL,
-        messages=[
-            {"role": "system", "content": "Tu produis des synthèses factuelles, prudentes et lisibles."},
-            {"role": "user", "content": prompt}
-        ],
-        temperature=0.25,
-        max_completion_tokens=1200,
-        reasoning_effort="low",
-        response_format={"type": "json_object"},
-    )
-    raw = (completion.choices[0].message.content or "").strip()
+    messages = [
+        {"role": "system", "content": "Tu produis des synthèses factuelles, prudentes et lisibles."},
+        {"role": "user", "content": prompt}
+    ]
+    raw = ""
+    groq_error = None
+    try:
+        client = Groq(api_key=api_key, timeout=45, max_retries=2)
+        completion = client.chat.completions.create(
+            model=MODEL, messages=messages, temperature=0.25,
+            max_completion_tokens=1200, reasoning_effort="low",
+            response_format={"type": "json_object"},
+        )
+        raw = (completion.choices[0].message.content or "").strip()
+    except Exception as exc:
+        groq_error = exc
+        hf_key = os.getenv("HF_API_KEY") or os.getenv("HF_TOKEN")
+        if not hf_key:
+            raise RuntimeError(f"Groq indisponible et aucun secret HF_API_KEY/HF_TOKEN configuré : {exc}") from exc
+        try:
+            from huggingface_hub import InferenceClient
+            hf = InferenceClient(
+                model=os.getenv("HF_MODEL", "openai/gpt-oss-20b:fastest"),
+                token=hf_key, timeout=60
+            )
+            fallback = hf.chat.completions.create(
+                messages=messages, max_tokens=1200, temperature=0.25
+            )
+            raw = (fallback.choices[0].message.content or "").strip()
+            print("INFO : génération effectuée via Hugging Face après échec de Groq.")
+        except Exception as hf_error:
+            raise RuntimeError(f"Groq et Hugging Face indisponibles. Groq: {groq_error}; HF: {hf_error}") from hf_error
     # Certains modèles renvoient le JSON dans un bloc Markdown : on extrait l'objet.
     raw = re.sub(r"^\s*```(?:json)?\s*", "", raw, flags=re.IGNORECASE)
     raw = re.sub(r"\s*```\s*$", "", raw)
