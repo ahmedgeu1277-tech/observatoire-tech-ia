@@ -1,3 +1,4 @@
+import asyncio
 import html
 import json
 import os
@@ -10,6 +11,7 @@ import xml.etree.ElementTree as ET
 
 import requests
 from groq import Groq
+from agent_gardien import verifier_conformite_legale
 
 ROOT = Path(__file__).resolve().parent
 SITE_DIR = ROOT / "site"
@@ -64,7 +66,7 @@ def fetch_news(query, limit=8):
             })
     return items
 
-def create_article(theme, sources):
+def create_article(theme, sources, agent_reports=None):
     api_key = os.getenv("GROQ_API_KEY")
     if not api_key:
         raise RuntimeError("Secret GROQ_API_KEY absent dans GitHub Actions.")
@@ -74,6 +76,7 @@ def create_article(theme, sources):
     prompt = f"""
 Tu es le rédacteur d'un observatoire francophone Tech & Gaming.
 Thème : {theme['name']}
+Analyses des agents spécialisés (pistes, pas des preuves) : {json.dumps(agent_reports or [], ensure_ascii=False)}
 
 Utilise UNIQUEMENT les informations contenues dans les sources ci-dessous.
 N'invente aucun fait, aucune date, aucun chiffre et aucune annonce.
@@ -185,6 +188,78 @@ def save_articles(article):
         encoding="utf-8"
     )
 
+
+def load_agent_profiles():
+    folder = ROOT / "agents_dynamiques"
+    if not folder.exists():
+        return []
+    profiles = []
+    for path in sorted(folder.glob("*.json"))[:5]:
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            if data.get("mission") and data.get("instructions"):
+                profiles.append(data)
+        except (OSError, json.JSONDecodeError):
+            print(f"Profil d'agent ignoré : {path.name}")
+    return profiles
+
+def executer_agents_dynamiques(theme, sources, profiles):
+    if not profiles or not os.getenv("GROQ_API_KEY"):
+        return []
+    client = Groq(api_key=os.environ["GROQ_API_KEY"], timeout=45, max_retries=1)
+    source_text = json.dumps(sources[:5], ensure_ascii=False)
+    reports = []
+    for profile in profiles[:3]:
+        try:
+            prompt = f"""Mission : {profile.get('mission', '')}
+Instructions : {profile.get('instructions', '')}
+Thème : {theme['name']}
+Sources publiques : {source_text}
+Rédige 2 phrases en français. Utilise seulement les sources. Indique les incertitudes."""
+            result = client.chat.completions.create(
+                model=MODEL,
+                messages=[
+                    {"role": "system", "content": "Tu es un analyste spécialisé prudent."},
+                    {"role": "user", "content": prompt}
+                ],
+                reasoning_effort="low",
+                max_completion_tokens=350,
+            )
+            report = (result.choices[0].message.content or "").strip()
+            if report:
+                reports.append({"agent": profile.get("name", "agent"), "report": report})
+        except Exception as exc:
+            print(f"Agent {profile.get('name', 'inconnu')} ignoré : {type(exc).__name__}.")
+    return reports
+
+def archive_memory(article):
+    memory = ROOT / "memoire_tech.txt"
+    with memory.open("a", encoding="utf-8") as f:
+        f.write(
+            f"\\n[{article['date']}] {article['theme']} — {article['title']}\\n"
+            f"{article['summary']}\\nSources : "
+            + " ; ".join(s.get("url", "") for s in article.get("sources", [])[:5])
+            + "\\n"
+        )
+
+async def create_audio(article):
+    try:
+        import edge_tts
+        audio_dir = SITE_DIR / "audio"
+        audio_dir.mkdir(parents=True, exist_ok=True)
+        filename = f"{article['id']}.mp3"
+        spoken = (
+            f"{article['title']}. {article['summary']} "
+            f"Verdict du laboratoire : {article['verdict']}. "
+            f"À retenir : {article['tip']}. "
+            "Analyse préparée avec l'aide d'une intelligence artificielle."
+        )
+        await edge_tts.Communicate(spoken, "fr-FR-HenriNeural").save(str(audio_dir / filename))
+        return f"audio/{filename}"
+    except Exception as exc:
+        print(f"Audio non créé ({type(exc).__name__}: {exc}); article texte conservé.")
+        return None
+
 def main():
     themes = load_themes()
     theme = choose_theme(themes)
@@ -193,10 +268,18 @@ def main():
     if not sources:
         raise RuntimeError("Aucune source RSS exploitable. Aucun article publié.")
     print(f"{len(sources)} source(s) récupérée(s).")
-    article = create_article(theme, sources)
+    profiles = load_agent_profiles()
+    reports = executer_agents_dynamiques(theme, sources, profiles)
+    if reports:
+        print(f"{len(reports)} agent(s) spécialisé(s) ont rendu une analyse.")
+    article = create_article(theme, sources, reports)
+    if not verifier_conformite_legale(json.dumps(article, ensure_ascii=False), "PUBLICATION_WEB"):
+        raise RuntimeError("Publication bloquée par le contrôle de sécurité.")
+    article["audio_url"] = asyncio.run(create_audio(article))
     save_articles(article)
+    archive_memory(article)
     print(f"Article créé : {article['title']}")
-    print("Terminé. GitHub Actions enregistrera les fichiers du site.")
+    print("Article, mémoire et audio éventuel enregistrés.")
 
 if __name__ == "__main__":
     try:

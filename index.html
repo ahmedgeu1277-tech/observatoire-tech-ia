@@ -71,7 +71,7 @@
         tip.append(label, document.createTextNode(item.tip));
         card.append(tip);
       }
-      if (Array.isArray(item.sources) && item.sources.length) {
+      if (item.audio_url) {\n        const audio = document.createElement("audio");\n        audio.controls = true;\n        audio.preload = "none";\n        audio.src = "./site/" + item.audio_url;\n        card.append(audio);\n      }\n      if (Array.isArray(item.sources) && item.sources.length) {
         const heading = document.createElement("p");
         heading.className = "label";
         heading.textContent = "Sources :";
