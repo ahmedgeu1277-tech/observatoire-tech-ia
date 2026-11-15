@@ -63,6 +63,13 @@ class GovernmentTests(unittest.TestCase):
         self.assertEqual(team["status"], "dissoute")
         self.assertEqual(agent["status"], "en attente de réaffectation")
 
+    def test_promote_recruited_agent(self):
+        state = gov.initial_state()
+        team = gov.create_team(state, "Équipe IA", "Technologie", "Développer des outils IA.")
+        agent = gov.recruit_agent(state, "Agent Python", "Développeur", team["id"])
+        promoted = gov.promote_agent(agent["id"], "confirmé", "Tests réussis et contributions vérifiées.")
+        self.assertEqual(promoted["grade"], "confirmé")
+
 
 if __name__ == "__main__":
     unittest.main()
