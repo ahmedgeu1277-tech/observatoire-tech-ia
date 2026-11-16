@@ -9,13 +9,13 @@ permissions:
   contents: write
 
 concurrency:
-  group: usine-publication
+  group: publication-depot
   cancel-in-progress: false
 
 jobs:
   generer-et-publier:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - name: Récupérer le dépôt
         uses: actions/checkout@v4
@@ -45,7 +45,9 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           mkdir -p site/audio
           touch journal_conformite_legale.txt
-          git add -A
+          for path in site/articles.json site/audio data/gouvernement.json memoire_tech.txt .theme-index journal_conformite_legale.txt; do
+            if [ -e "$path" ]; then git add -A -- "$path"; fi
+          done
           if git diff --cached --quiet; then
             echo "Aucun changement à enregistrer."
             exit 0
