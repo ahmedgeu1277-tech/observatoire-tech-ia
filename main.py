@@ -59,12 +59,44 @@ def load_themes():
     now = datetime.now(timezone.utc)
     return [appliquer_cycle_vie(theme, now) for theme in themes]
 
+def get_priority_event_theme(themes, now=None):
+    """Retourne un thème événementiel uniquement pendant sa fenêtre configurée."""
+    now = now or datetime.now(timezone.utc)
+    for theme in themes:
+        lifecycle = theme.get("lifecycle", {})
+        if not isinstance(lifecycle, dict):
+            continue
+        try:
+            start_at = datetime.fromisoformat(
+                lifecycle.get("start_at", lifecycle["launch_at"]).replace("Z", "+00:00")
+            )
+            end_at = datetime.fromisoformat(lifecycle["end_at"].replace("Z", "+00:00"))
+        except (KeyError, TypeError, ValueError):
+            continue
+        if start_at.tzinfo and end_at.tzinfo and start_at <= now <= end_at:
+            return theme
+    return None
+
+
 def choose_theme(themes):
     state_file = ROOT / ".theme-index"
     try:
         index = int(state_file.read_text(encoding="utf-8").strip())
     except (OSError, ValueError):
         index = 0
+
+    event_theme = get_priority_event_theme(themes)
+    if event_theme:
+        regular_themes = [theme for theme in themes if theme is not event_theme]
+        if regular_themes and index % 2 == 0:
+            theme = event_theme
+        elif regular_themes:
+            theme = regular_themes[(index // 2) % len(regular_themes)]
+        else:
+            theme = event_theme
+        state_file.write_text(str((index + 1) % (2 * max(1, len(regular_themes)))), encoding="utf-8")
+        return theme
+
     theme = themes[index % len(themes)]
     state_file.write_text(str((index + 1) % len(themes)), encoding="utf-8")
     return theme
@@ -215,9 +247,13 @@ def load_previous_articles():
         return []
     try:
         data = json.loads(ARTICLES_FILE.read_text(encoding="utf-8"))
-        return data if isinstance(data, list) else []
-    except (json.JSONDecodeError, OSError):
-        return []
+        if not isinstance(data, list):
+            raise RuntimeError("site/articles.json n'est pas une liste. Publication annulée pour préserver les archives.")
+        return data
+    except json.JSONDecodeError as exc:
+        raise RuntimeError("site/articles.json est invalide. Publication annulée pour préserver les archives.") from exc
+    except OSError as exc:
+        raise RuntimeError("Impossible de lire les archives existantes. Publication annulée.") from exc
 
 def save_articles(article):
     SITE_DIR.mkdir(parents=True, exist_ok=True)
