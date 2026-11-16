@@ -11,8 +11,8 @@ Dans Settings → Pages, choisir la branche `main` et le dossier `/ (root)`. Le 
 - GitHub Actions lance la veille à 09 h et 18 h UTC.
 - Google News RSS récupère des titres, descriptions et liens publics.
 - Groq rédige une synthèse française structurée.
-- Les profils de `agents_dynamiques/` peuvent effectuer jusqu'à trois analyses spécialisées.
-- Un filtre technique bloque les clés API et adresses e-mail détectées dans les contenus.
+- Les profils de `agents_dynamiques/` peuvent effectuer jusqu'à deux analyses spécialisées par publication.
+- Un filtre technique recherche les clés API, jetons, clés privées, secrets courants et adresses e-mail détectables.
 - Edge TTS crée un court audio quand le service vocal est disponible.
 - Les articles sont publiés dans `site/articles.json`, les audios dans `site/audio/` et les résumés sont archivés dans `memoire_tech.txt`.
 
@@ -34,7 +34,7 @@ Le générateur `ecrire_livre.py` est manuel. Il utilise `memoire_tech.txt` et, 
 - Aucun composant Discord n'est utilisé.
 
 ## Limites et sécurité
-- GitHub Actions exécute des tâches planifiées : ce n'est pas un serveur permanent 24 h/24.
+- GitHub Actions exécute des tâches planifiées : ce n'est pas un serveur permanent 24 h/24. Les horaires cron peuvent être retardés par GitHub.
 - Le filtre automatique est une protection technique de premier niveau, pas un avis juridique ni une certification de conformité.
-- Les résumés et audios IA peuvent contenir des erreurs : vérifier les sources originales.
+- Limites anti-ralentissement : six sources maximum par article, deux agents spécialisés maximum, 30 articles conservés et délai réseau de 20 secondes.\n- Priorités d'exécution : sécurité, tests et intégrité des données ; publication essentielle ; audio facultatif ; archives secondaires.\n- Les résumés et audios IA peuvent contenir des erreurs : vérifier les sources originales.
 - Respecter les conditions d'âge et d'utilisation des services ; demander l'aide d'un parent ou tuteur lorsque nécessaire.
