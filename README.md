@@ -42,3 +42,6 @@ Le générateur `ecrire_livre.py` est manuel. Il utilise `memoire_tech.txt` et, 
 
 ## Architecture modulaire et continuité
 Voir [docs/ARCHITECTURE_SECURITE.md](docs/ARCHITECTURE_SECURITE.md) pour les modules séparés, le basculement IA, les règles de compartimentation et le plan de reprise.
+
+## Publication cloisonnée et hébergement de secours
+Voir [docs/PLAN_PUBLICATION_SECOURS.md](docs/PLAN_PUBLICATION_SECOURS.md) : dépôt privé de préparation, assemblage contrôlé cinq minutes avant publication, et hébergement secondaire avec domaine personnalisé. Le secours sur la même adresse n'est pas encore activé.
