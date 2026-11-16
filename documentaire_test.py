@@ -15,7 +15,7 @@ AUDIO_DIR = SITE / "audio"
 MANIFEST = SITE / "documentaire-test.json"
 PAGE = SITE / "documentaire-test.html"
 SCRIPT = SITE / "documentaire-test.md"
-MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-20b")
+MODEL = os.getenv("GROQ_MODEL") or "openai/gpt-oss-20b"
 
 
 def lire_notes():
