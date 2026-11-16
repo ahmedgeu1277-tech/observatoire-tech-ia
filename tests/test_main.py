@@ -41,6 +41,15 @@ class ThemeLifecycleTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             main.appliquer_cycle_vie(broken, datetime.now(timezone.utc))
 
+    def test_event_theme_is_prioritized_only_during_its_window(self):
+        themes = [self.theme, {"name": "IA", "query": "ia"}]
+        before_window = datetime(2026, 11, 15, 23, 59, tzinfo=timezone.utc)
+        during_window = datetime(2026, 11, 20, 12, 0, tzinfo=timezone.utc)
+        after_window = datetime(2026, 11, 27, 0, 0, tzinfo=timezone.utc)
+        self.assertIsNone(main.get_priority_event_theme(themes, before_window))
+        self.assertIs(main.get_priority_event_theme(themes, during_window), self.theme)
+        self.assertIsNone(main.get_priority_event_theme(themes, after_window))
+
 
 class ArticleValidationTests(unittest.TestCase):
     def setUp(self):
@@ -70,3 +79,16 @@ class ArticleValidationTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+class ArchiveSafetyTests(unittest.TestCase):
+    def test_corrupted_archive_is_not_silently_replaced(self):
+        from tempfile import TemporaryDirectory
+        from pathlib import Path
+        with TemporaryDirectory() as folder:
+            target = Path(folder) / "articles.json"
+            target.write_text("{broken", encoding="utf-8")
+            with patch.object(main, "ARTICLES_FILE", target):
+                with self.assertRaisesRegex(RuntimeError, "préserver les archives"):
+                    main.load_previous_articles()
+
+
