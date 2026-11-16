@@ -12,6 +12,7 @@ class ThemeLifecycleTests(unittest.TestCase):
             "name": "Gaming",
             "query": "gaming",
             "lifecycle": {
+                "start_at": "2026-11-16T00:00:00Z",
                 "launch_at": "2026-11-18T17:00:00Z",
                 "end_at": "2026-11-26T23:59:59Z",
                 "before": {"name": "Avant lancement", "query": "préparation"},
@@ -77,9 +78,6 @@ class ArticleValidationTests(unittest.TestCase):
             main.create_article(self.theme, self.sources)
 
 
-if __name__ == "__main__":
-    unittest.main()
-
 class ArchiveSafetyTests(unittest.TestCase):
     def test_corrupted_archive_is_not_silently_replaced(self):
         from tempfile import TemporaryDirectory
@@ -92,3 +90,28 @@ class ArchiveSafetyTests(unittest.TestCase):
                     main.load_previous_articles()
 
 
+
+class ThemeSelectionTests(unittest.TestCase):
+    def test_event_theme_gets_alternating_priority(self):
+        from pathlib import Path
+        from tempfile import TemporaryDirectory
+        event = {
+            "name": "GTA VI",
+            "query": "GTA VI",
+            "lifecycle": {
+                "start_at": "2026-11-16T00:00:00Z",
+                "launch_at": "2026-11-18T17:00:00Z",
+                "end_at": "2026-11-26T23:59:59Z",
+                "before": {"name": "GTA VI avant", "query": "GTA VI préparation"},
+                "after": {"name": "GTA VI après", "query": "GTA VI tests"},
+            },
+        }
+        other = {"name": "IA", "query": "IA"}
+        with TemporaryDirectory() as folder:
+            with patch.object(main, "ROOT", Path(folder)):
+                self.assertEqual(main.choose_theme([event, other])["name"], "GTA VI")
+                self.assertEqual(main.choose_theme([event, other])["name"], "IA")
+
+
+if __name__ == "__main__":
+    unittest.main()
