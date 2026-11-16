@@ -1,5 +1,43 @@
 [
   {
+    "id": "20261116T131642Z",
+    "date": "2026-11-16T13:16+00:00",
+    "theme": "Sécurité numérique",
+    "title": "Sécurité numérique : mises à jour critiques",
+    "summary": "Scality est désormais autorité de numérotation des vulnérabilités sous l’égide de l’Agence européenne de cybersécurité. Microsoft a corrigé une faille d’Outlook déjà exploitée lors du Patch Tuesday. SAP et PostgreSQL ont publié des correctifs pour plusieurs failles critiques, tandis qu’Apache HTTP/2 a renforcé la sécurité de ses serveurs Web.",
+    "verdict": "Les organisations doivent appliquer rapidement ces mises à jour pour réduire les risques d’exploitation.",
+    "tip": "Planifiez un audit de vos dépendances logicielles et appliquez les correctifs dans les 48 heures suivant leur publication.",
+    "sources": [
+      {
+        "title": "Scality devient autorité de numérotation des vulnérabilités sous l’égide de l’Agence européenne de cybersécurité - it social",
+        "description": "Scality devient autorité de numérotation des vulnérabilités sous l’égide de l’Agence européenne de cybersécurité    it social",
+        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNYW83UDZHd1ZMaVJsdVJMX0ZtQTZzbmp3RC1uVFZzcFlfWk93U2FTempQU0JWRDdkd2pqOFVJT2JXSFBoSlphb2Fta0k4Yl9rbF9lSndGd01yMHZ4VmkteEMyN2YyWGxZeFdzYW1FV2J1bG5WRTNBMF9DWG4zZnEtTmxYR1h2ZFZPNUdsZVllVU1paWh3Q1haQkQyencxdUNGRE02dU9lZ1NkT0lweS0yM011UDdfZGxDVlFqYkpiUGNOT2dlWGdWdDI4OV9Uc2pBUTlzaGRTQkJMSU5ySTFLWFZOTXZZUQ?oc=5"
+      },
+      {
+        "title": "Le Patch Tuesday de Microsoft corrige une faille d'Outlook déjà exploitée. - Malwarebytes",
+        "description": "Le Patch Tuesday de Microsoft corrige une faille d'Outlook déjà exploitée.    Malwarebytes",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPb3NaYy1mbVE2YXplMHp0SXNkdjJWc3ZLOXlQVk8zeXk3S2V5SkU0cmI1SWp0VnFXeVNycG1PbmQ4MHptNFZiYnVpTVhMSjd2eWl4RUJTYkctOEhEc05WNl9OeHFHMGk3b19FN2VpcUdreFJiMEtMUERmNGJTNVNoZ2owVE5pS2FmVndZcE9PX0N1Zl9jZVVvdmhkY2FWdzgxWW9ZT3RfbFU3Q2lqYmJzbHQtVQ?oc=5"
+      },
+      {
+        "title": "SAP corrige quatre failles notées 10 sur 10 au Patch Day de novembre - Pasquale Pillitteri",
+        "description": "SAP corrige quatre failles notées 10 sur 10 au Patch Day de novembre    Pasquale Pillitteri",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQWGVHM3Zxc2hOaFNZUVhFdmtkVGU4VTFMTk84WlMzQmZoYTUtLWpORU5jS0xOT3ZKUHhyZGVYSGlnd0FuY2c4OU9neEF6ZFRIZGZRRXFuN3ZNQTFXdzJPVU1SRVlYQnV4TF80SDJ0RFQ4cjNkMUF2ZUZfTWxwc011RU14MTZ1MWk3OHdmNHBTRUFRY2tUNUF6QUJR?oc=5"
+      },
+      {
+        "title": "PostgreSQL corrige 52 failles de sécurité et abandonne la version 14 - Pasquale Pillitteri",
+        "description": "PostgreSQL corrige 52 failles de sécurité et abandonne la version 14    Pasquale Pillitteri",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQcGZXeFN6aUJBU0p1X043b3FadDZ2cUg3T3daN05UaFpxbjV1LWswVExjUEE0R1dUbUw4QXYxVjRqVTlIMXRnZTRIVURNcWl0RkU2REF4V0N3YW5BR2UwcFdwZXBBdlNEcm5mM3MtZ0lvX2dNOG9SM29BU0VVdkRPRklBQXV6SC1MUFB3ZVlibTA?oc=5"
+      },
+      {
+        "title": "Faille critique dans Apache HTTP/2 : comment la mise à jour renforce la sécurité des serveurs Web ? - EmarketerZ",
+        "description": "Faille critique dans Apache HTTP/2 : comment la mise à jour renforce la sécurité des serveurs Web ?    EmarketerZ",
+        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQZW1zeVNXSHhTTTBvX0dpQlJlYVZsSFpVNkNMbnNjd0hNQ0lQTS14clZMWU40X25Mc2VzRWwwXzZ5Z3R6NzJwSWFLc0RfeDJYUWRDTEVxWWpBMWw0ZFFORGdEZVZDNGZNSFNjZGVHTjd4elZTSE5pWnV4b1pQb0FGWl9vdElQNXVZTTJnMnM1dHZ6d3J3bWlEZi10SWtLeC03akJCcThObmpOazNRYzZIQ1A1Q0RrRFJOU0pRMHZ3Zw?oc=5"
+      }
+    ],
+    "ai_notice": "Contenu assisté par IA ou synthèse de secours à partir des titres. Vérifiez toujours les sources originales.",
+    "audio_url": "audio/20261116T131642Z.mp3"
+  },
+  {
     "id": "20261116T103227Z",
     "date": "2026-11-16T10:32+00:00",
     "theme": "Matériel et smartphones",
