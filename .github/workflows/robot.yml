@@ -1,10 +1,7 @@
 name: Usine IA Tech & Gaming 24-7
 
 on:
-  push:
-    branches: [main]
-  schedule:
-    - cron: '0 9,18 * * *'
+  # Lancement manuel de secours ; la publication automatique est gérée par observatoire.yml.
   workflow_dispatch:
 
 permissions:
