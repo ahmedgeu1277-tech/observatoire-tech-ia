@@ -25,13 +25,41 @@ TIMEOUT = 20
 MAX_SOURCES = 6
 MAX_DYNAMIC_AGENTS = 2
 
+def appliquer_cycle_vie(theme, now=None):
+    """Applique une variante avant/après événement, sans modifier le fichier source."""
+    result = dict(theme)
+    lifecycle = result.get("lifecycle")
+    if not isinstance(lifecycle, dict):
+        return result
+    now = now or datetime.now(timezone.utc)
+    try:
+        launch_at = datetime.fromisoformat(lifecycle["launch_at"].replace("Z", "+00:00"))
+        end_at = datetime.fromisoformat(lifecycle["end_at"].replace("Z", "+00:00"))
+    except (KeyError, TypeError, ValueError) as exc:
+        raise ValueError(f"Cycle de vie invalide pour le thème {theme.get('name', 'inconnu')}.") from exc
+    if launch_at.tzinfo is None or end_at.tzinfo is None or end_at <= launch_at:
+        raise ValueError(f"Dates de cycle de vie invalides pour {theme.get('name', 'inconnu')}.")
+    if now < launch_at:
+        variant = lifecycle.get("before", {})
+    elif now <= end_at:
+        variant = lifecycle.get("after", {})
+    else:
+        return result
+    if not isinstance(variant, dict) or not variant.get("name") or not variant.get("query"):
+        raise ValueError(f"Variante avant/après manquante pour {theme.get('name', 'inconnu')}.")
+    result["name"] = str(variant["name"])
+    result["query"] = str(variant["query"])
+    return result
+
+
 def load_themes():
     with THEMES_FILE.open("r", encoding="utf-8") as f:
         data = json.load(f)
     themes = data.get("themes", [])
     if not themes:
         raise ValueError("Aucun thème n'est configuré dans themes.json.")
-    return themes
+    now = datetime.now(timezone.utc)
+    return [appliquer_cycle_vie(theme, now) for theme in themes]
 
 def choose_theme(themes):
     state_file = ROOT / ".theme-index"
@@ -116,7 +144,7 @@ Analyses des agents spécialisés (simples pistes à vérifier, jamais des preuv
 RÈGLES DE RÉDACTION :
 - Appuie chaque information factuelle uniquement sur les sources fournies. N'invente aucun fait, chiffre, citation, date, test, expérience personnelle ou annonce.
 - Fais une synthèse originale : ne recopie pas les titres et ne paraphrase pas chaque source l'une après l'autre.
-- Écris un résumé de 3 à 5 phrases, naturel et précis. Varie les débuts de phrases et la structure d'un article à l'autre.
+- Écris un résumé de 3 à 5 phrases, autour de 85 mots (entre 70 et 100 si les sources le permettent), naturel et précis. Varie les débuts de phrases et la structure d'un article à l'autre.
 - Explique ce qui s'est passé, pourquoi cela peut intéresser les lecteurs et ce qu'on ne sait pas encore, si c'est pertinent.
 - Évite les expressions automatiques et le remplissage : « dans un monde en constante évolution », « révolutionnaire », « il est important de noter », « plongeons dans », « une avancée majeure » sans preuve.
 - Pas de ton publicitaire, de fausse excitation, de fausse opinion personnelle ni de conclusion passe-partout.
@@ -140,46 +168,37 @@ Sources :
         start, end = raw.find("{"), raw.rfind("}")
         if start >= 0 and end > start:
             raw = raw[start:end + 1]
-    data = None
-    parse_warning = None
-    if raw:
-        try:
-            data = json.loads(raw)
-        except json.JSONDecodeError as exc:
-            parse_warning = f"Réponse IA non JSON ({exc.msg}); publication de secours utilisée."
-    else:
-        parse_warning = "Réponse IA vide; publication de secours utilisée."
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"Réponse IA invalide : JSON illisible ({exc.msg}). Aucun article publié.") from exc
 
-    if not isinstance(data, dict) or not str(data.get("summary", "")).strip():
-        # Ne bloque pas la publication si le modèle renvoie une réponse vide
-        # ou un format inattendu. Les titres restent liés aux sources originales.
-        selected = sources[:3]
-        titles = [item["title"] for item in selected if item.get("title")]
-        summary = "Les sources consultées signalent notamment : " + " ; ".join(titles)
-        data = {
-            "title": f"Le point sur {theme['name']}",
-            "summary": summary[:1200],
-            "verdict": "Cette synthèse de secours reprend les titres des sources ; consulte les liens pour vérifier les informations.",
-            "tip": "Ouvre les sources originales avant de partager ou d'utiliser une information.",
-            "source_indices": list(range(len(selected)))
-        }
-        print(f"AVERTISSEMENT : {parse_warning or 'Réponse IA incomplète'}")
+    required = ("title", "summary", "verdict", "tip", "source_indices")
+    if not isinstance(data, dict) or any(key not in data for key in required):
+        raise ValueError("Réponse IA incomplète : champs obligatoires manquants. Aucun article publié.")
+    if any(not isinstance(data[key], str) or not data[key].strip()
+           for key in ("title", "summary", "verdict", "tip")):
+        raise ValueError("Réponse IA incomplète : texte vide ou invalide. Aucun article publié.")
+    summary_words = len(data["summary"].split())
+    if summary_words < 35 or summary_words > 140:
+        raise ValueError(f"Résumé IA hors longueur acceptable ({summary_words} mots). Aucun article publié.")
 
-    title = str(data.get("title", theme["name"]))[:140]
-    summary = str(data.get("summary", ""))[:1200]
-    verdict = str(data.get("verdict", ""))[:500]
-    tip = str(data.get("tip", ""))[:500]
+    title = data["title"].strip()[:140]
+    summary = data["summary"].strip()[:1200]
+    verdict = data["verdict"].strip()[:500]
+    tip = data["tip"].strip()[:500]
 
-    indices = data.get("source_indices", [])
+    indices = data["source_indices"]
+    if not isinstance(indices, list) or not indices:
+        raise ValueError("La réponse IA ne référence aucune source. Aucun article publié.")
     used_sources = []
-    if isinstance(indices, list):
-        for index in indices:
-            if isinstance(index, int) and 0 <= index < len(sources):
-                used_sources.append(sources[index])
+    for index in indices:
+        if isinstance(index, bool) or not isinstance(index, int) or not 0 <= index < len(sources):
+            raise ValueError("La réponse IA contient un indice de source invalide. Aucun article publié.")
+        if sources[index] not in used_sources:
+            used_sources.append(sources[index])
     if not used_sources:
-        used_sources = sources[:3]
-    if not summary.strip():
-        raise ValueError("Impossible de créer un résumé, même en mode de secours.")
+        raise ValueError("Aucune source valide sélectionnée. Aucun article publié.")
 
     return {
         "id": datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ"),
