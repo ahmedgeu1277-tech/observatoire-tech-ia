@@ -33,4 +33,5 @@ jobs:
             exit 0
           fi
           git commit -m "Retirer le documentaire de test expiré"
+          git pull --rebase origin main
           git push
