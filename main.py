@@ -10,7 +10,6 @@ from urllib.parse import quote, urlparse
 import xml.etree.ElementTree as ET
 
 import requests
-from groq import Groq
 from agent_gardien import verifier_conformite_legale
 from sources_specialisees import fetch_specialized_sources
 from ai_providers import generate_text
@@ -19,7 +18,6 @@ ROOT = Path(__file__).resolve().parent
 SITE_DIR = ROOT / "site"
 ARTICLES_FILE = SITE_DIR / "articles.json"
 THEMES_FILE = ROOT / "themes.json"
-MODEL = os.getenv("GROQ_MODEL") or "openai/gpt-oss-20b"
 MAX_ARTICLES = 30
 TIMEOUT = 20
 MAX_SOURCES = 6
@@ -94,7 +92,7 @@ def fetch_news(query, limit=8):
         description = (item.findtext("description") or "").strip()
         published = (item.findtext("pubDate") or "").strip()
         description = re.sub(r"<[^>]+>", " ", description)
-        description = html.unescape(re.sub(r"\\s+", " ", description)).strip()
+        description = html.unescape(re.sub(r"\s+", " ", description)).strip()
         if not title or not link:
             continue
         host = (urlparse(link).hostname or "").lower()
@@ -253,9 +251,8 @@ def load_agent_profiles():
     return profiles
 
 def executer_agents_dynamiques(theme, sources, profiles):
-    if not profiles or not os.getenv("GROQ_API_KEY"):
+    if not profiles:
         return []
-    client = Groq(api_key=os.environ["GROQ_API_KEY"], timeout=45, max_retries=1)
     source_text = json.dumps(sources[:5], ensure_ascii=False)
     reports = []
     for profile in profiles[:MAX_DYNAMIC_AGENTS]:
@@ -265,18 +262,20 @@ Instructions : {profile.get('instructions', '')}
 Thème : {theme['name']}
 Sources publiques : {source_text}
 Rédige 2 phrases en français. Utilise seulement les sources. Indique les incertitudes."""
-            result = client.chat.completions.create(
-                model=MODEL,
-                messages=[
+            report, provider = generate_text(
+                [
                     {"role": "system", "content": "Tu es un analyste spécialisé prudent."},
                     {"role": "user", "content": prompt}
                 ],
-                reasoning_effort="low",
-                max_completion_tokens=350,
+                max_tokens=350,
+                temperature=0.2,
             )
-            report = (result.choices[0].message.content or "").strip()
-            if report:
-                reports.append({"agent": profile.get("name", "agent"), "report": report})
+            if report.strip():
+                reports.append({
+                    "agent": profile.get("name", "agent"),
+                    "provider": provider,
+                    "report": report.strip()
+                })
         except Exception as exc:
             print(f"Agent {profile.get('name', 'inconnu')} ignoré : {type(exc).__name__}.")
     return reports
