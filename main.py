@@ -10,6 +10,7 @@ from urllib.parse import quote, urlparse
 import xml.etree.ElementTree as ET
 
 import requests
+from groq import Groq
 from agent_gardien import verifier_conformite_legale
 from sources_specialisees import fetch_specialized_sources
 from ai_providers import generate_text
@@ -48,12 +49,16 @@ def fetch_news(query, limit=8):
         + quote(query + " when:7d")
         + "&hl=fr&gl=FR&ceid=FR:fr"
     )
-    response = requests.get(
-        url, timeout=TIMEOUT,
-        headers={"User-Agent": "UsineIATechGaming/1.0"}
-    )
-    response.raise_for_status()
-    root = ET.fromstring(response.content)
+    try:
+        response = requests.get(
+            url, timeout=TIMEOUT,
+            headers={"User-Agent": "ObservatoireTechGaming/1.0"}
+        )
+        response.raise_for_status()
+        root = ET.fromstring(response.content)
+    except (requests.RequestException, ET.ParseError) as exc:
+        print(f"AVERTISSEMENT : Google Actualités indisponible ({type(exc).__name__}); les autres sources seront utilisées.")
+        return []
     items = []
     for item in root.findall(".//item"):
         title = (item.findtext("title") or "").strip()
