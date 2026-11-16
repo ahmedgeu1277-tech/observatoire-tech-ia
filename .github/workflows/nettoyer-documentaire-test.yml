@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: documentaire-test
+  group: publication-depot
   cancel-in-progress: false
 
 jobs:
