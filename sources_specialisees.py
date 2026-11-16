@@ -26,7 +26,7 @@ FEEDS = {
 
 def _clean(value):
     value = re.sub(r"<[^>]+>", " ", value or "")
-    return html.unescape(re.sub(r"\\s+", " ", value)).strip()
+    return html.unescape(re.sub(r"\s+", " ", value)).strip()
 
 def _text(element, names):
     for name in names:
