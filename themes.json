@@ -17,7 +17,8 @@
         "after": {
           "name": "GTA VI — lancement et premiers retours vérifiés",
           "query": "GTA VI lancement 19 novembre 2026 disponibilité officielle mises à jour premiers tests analyses techniques"
-        }
+        },
+        "start_at": "2026-11-16T00:00:00Z"
       }
     },
     {
