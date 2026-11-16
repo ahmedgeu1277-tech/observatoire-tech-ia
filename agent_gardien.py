@@ -8,6 +8,14 @@ SECRET_PATTERNS = [
     re.compile(r"gsk_[A-Za-z0-9]{20,}"), re.compile(r"hf_[A-Za-z0-9]{20,}"),
     re.compile(r"ghp_[A-Za-z0-9]{20,}"), re.compile(r"github_pat_[A-Za-z0-9_]{20,}"),
     re.compile(r"sk-[A-Za-z0-9_-]{20,}"),
+    re.compile(r"AKIA[0-9A-Z]{16}"),
+    re.compile(r"xox[baprs]-[A-Za-z0-9-]{10,}"),
+    re.compile(r"AIza[0-9A-Za-z_-]{30,}"),
+    re.compile(r"gho_[A-Za-z0-9]{20,}"),
+    re.compile(r"ghu_[A-Za-z0-9]{20,}"),
+    re.compile(r"ghs_[A-Za-z0-9]{20,}"),
+    re.compile(r"ghr_[A-Za-z0-9]{20,}"),
+    re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
 ]
 EMAIL_RE = re.compile(r"\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b", re.I)
 
