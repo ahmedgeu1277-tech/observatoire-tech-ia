@@ -95,6 +95,22 @@ class GuardTests(unittest.TestCase):
             "Résumé public : cette mise à jour ajoute un mode de jeu.", "TEST"
         ))
 
+    def test_blocks_bearer_token(self):
+        with tempfile.TemporaryDirectory() as folder:
+            log = Path(folder) / "guard.log"
+            with patch.object(agent_gardien, "LOG_FILE", log):
+                self.assertFalse(agent_gardien.verifier_conformite_legale(
+                    "Authorization: Bearer abcdefghijklmnopqrstuvwxyz1234567890", "TEST"
+                ))
+
+    def test_blocks_secret_assignment(self):
+        with tempfile.TemporaryDirectory() as folder:
+            log = Path(folder) / "guard.log"
+            with patch.object(agent_gardien, "LOG_FILE", log):
+                self.assertFalse(agent_gardien.verifier_conformite_legale(
+                    "api_key=abcdefghijklmnopqrstuvwxyz123456", "TEST"
+                ))
+
 
 if __name__ == "__main__":
     unittest.main()
