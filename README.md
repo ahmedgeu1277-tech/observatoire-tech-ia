@@ -38,3 +38,7 @@ Le générateur `ecrire_livre.py` est manuel. Il utilise `memoire_tech.txt` et, 
 - Le filtre automatique est une protection technique de premier niveau, pas un avis juridique ni une certification de conformité.
 - Limites anti-ralentissement : six sources maximum par article, deux agents spécialisés maximum, 30 articles conservés et délai réseau de 20 secondes.\n- Priorités d'exécution : sécurité, tests et intégrité des données ; publication essentielle ; audio facultatif ; archives secondaires.\n- Les résumés et audios IA peuvent contenir des erreurs : vérifier les sources originales.
 - Respecter les conditions d'âge et d'utilisation des services ; demander l'aide d'un parent ou tuteur lorsque nécessaire.
+
+
+## Architecture modulaire et continuité
+Voir [docs/ARCHITECTURE_SECURITE.md](docs/ARCHITECTURE_SECURITE.md) pour les modules séparés, le basculement IA, les règles de compartimentation et le plan de reprise.
