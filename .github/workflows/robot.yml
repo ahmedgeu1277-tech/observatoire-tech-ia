@@ -42,8 +42,8 @@ jobs:
           GROQ_MODEL: ${{ vars.GROQ_MODEL || 'openai/gpt-oss-20b' }}
           HF_MODEL: ${{ vars.HF_MODEL || 'Qwen/Qwen2.5-7B-Instruct' }}
         run: |
-          if [ -z "$GROQ_API_KEY" ] && [ -z "$HF_API_KEY" ] && [ -z "$HF_TOKEN" ]; then
-            echo "::error::Aucune clé IA n'est configurée."
+          if [ -z "$GROQ_API_KEY" ]; then
+            echo "::error::Le secret GROQ_API_KEY est obligatoire. HF_API_KEY/HF_TOKEN ne servent que de secours."
             exit 1
           fi
           python main.py
