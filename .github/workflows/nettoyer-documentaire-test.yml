@@ -1,0 +1,36 @@
+name: Retrait automatique du documentaire test
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: documentaire-test
+  cancel-in-progress: false
+
+jobs:
+  retirer-si-expire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Vérifier l'expiration
+        run: python nettoyer_documentaire_test.py
+      - name: Enregistrer le retrait si nécessaire
+        run: |
+          git config user.name "Usine IA Tech & Gaming"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A site/documentaire-test.html site/documentaire-test.md site/documentaire-test.json site/audio/
+          if git diff --cached --quiet; then
+            echo "Aucun retrait à effectuer."
+            exit 0
+          fi
+          git commit -m "Retirer le documentaire de test expiré"
+          git push
