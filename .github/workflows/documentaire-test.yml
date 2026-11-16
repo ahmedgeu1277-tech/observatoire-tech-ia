@@ -51,4 +51,5 @@ jobs:
             exit 1
           fi
           git commit -m "Publier le documentaire de test pour 24 heures"
+          git pull --rebase origin main
           git push
