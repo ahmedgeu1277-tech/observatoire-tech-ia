@@ -19,9 +19,7 @@ FEEDS = {
     "gaming": [
         ("Unreal Engine / Epic", "https://www.unrealengine.com/rss"),
     ],
-    "roblox": [
-        ("Unreal Engine / Epic", "https://www.unrealengine.com/rss"),
-    ],
+    "roblox": [],
 }
 
 def _clean(value):
