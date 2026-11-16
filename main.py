@@ -17,7 +17,8 @@ ROOT = Path(__file__).resolve().parent
 SITE_DIR = ROOT / "site"
 ARTICLES_FILE = SITE_DIR / "articles.json"
 THEMES_FILE = ROOT / "themes.json"
-MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-20b")
+MODEL = os.getenv("GROQ_MODEL") or "openai/gpt-oss-20b"
+HF_MODEL = os.getenv("HF_MODEL") or "openai/gpt-oss-20b:fastest"
 MAX_ARTICLES = 40
 TIMEOUT = 25
 
@@ -112,7 +113,7 @@ Sources :
         try:
             from huggingface_hub import InferenceClient
             hf = InferenceClient(
-                model=os.getenv("HF_MODEL", "openai/gpt-oss-20b:fastest"),
+                model=HF_MODEL,
                 token=hf_key, timeout=60
             )
             fallback = hf.chat.completions.create(
