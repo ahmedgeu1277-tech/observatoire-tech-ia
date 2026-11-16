@@ -24,10 +24,11 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
+          cache-dependency-path: requirements.txt
       - name: Installer les dépendances
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          python -m pip install --disable-pip-version-check --upgrade pip
+          pip install --disable-pip-version-check -r requirements.txt
       - name: Vérifier la syntaxe et les tests
         run: |
           python -m compileall -q .
@@ -36,8 +37,16 @@ jobs:
       - name: Générer un article
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GROQ_MODEL: openai/gpt-oss-20b
-        run: python main.py
+          HF_API_KEY: ${{ secrets.HF_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GROQ_MODEL: ${{ vars.GROQ_MODEL || 'openai/gpt-oss-20b' }}
+          HF_MODEL: ${{ vars.HF_MODEL || 'Qwen/Qwen2.5-7B-Instruct' }}
+        run: |
+          if [ -z "$GROQ_API_KEY" ] && [ -z "$HF_API_KEY" ] && [ -z "$HF_TOKEN" ]; then
+            echo "::error::Aucune clé IA n'est configurée."
+            exit 1
+          fi
+          python main.py
       - name: Enregistrer le site
         if: success()
         run: |
