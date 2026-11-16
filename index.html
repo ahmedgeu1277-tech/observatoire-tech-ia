@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#080b18">
-<meta name="description" content="Le centre de contrôle de l'Usine IA Tech & Gaming 24-7.">
-<title>Usine IA — Centre de contrôle</title>
+<meta name="description" content="Un regard clair sur l'actualité de la technologie, de l'intelligence artificielle et du jeu vidéo.">
+<title>Observatoire Tech & Gaming</title>
 <style>
 :root{color-scheme:dark;--bg:#080b18;--panel:#11172a;--panel2:#151d34;--line:#26314d;--text:#f3f6ff;--muted:#9aa8c7;--cyan:#52e3ff;--violet:#9b83ff;--green:#54e6ad;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 75% -10%,#25215a 0,transparent 38%),var(--bg);color:var(--text);min-height:100vh}
@@ -22,33 +22,55 @@ main{max-width:1500px;width:100%;margin:auto;padding:28px clamp(18px,4vw,54px) 6
 .articlegrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.article{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:19px}.article .meta{font-size:10px;color:var(--cyan);font-weight:800;letter-spacing:.07em;text-transform:uppercase}.article h3{font-size:16px;line-height:1.4;margin:10px 0}.article p{font-size:12px;color:#b2bdd5;line-height:1.7}.article .label{color:#a99bff;font-weight:800}.article audio{width:100%;height:34px;margin:10px 0}.article ul{padding-left:18px}.article li{font-size:11px;margin:7px 0;color:var(--muted)}.article a{color:var(--cyan)}.notice{border:1px solid #554a2c;background:#292313;color:#dfc98d;padding:12px 14px;border-radius:12px;font-size:11px;line-height:1.6;margin-top:22px}#status{color:var(--muted);font-size:12px}.empty{border:1px dashed #35415f;border-radius:15px;padding:28px;text-align:center;color:var(--muted);font-size:13px;grid-column:1/-1}footer{color:#687797;font-size:10px;text-align:center;padding:35px 0 5px}
 @media(max-width:900px){.shell{grid-template-columns:1fr}aside{position:relative;height:auto;padding:13px 16px;border-right:0;border-bottom:1px solid var(--line)}.brand{padding:0}.nav{display:flex;overflow:auto;gap:4px;margin-top:12px}.navlabel,.sidebottom{display:none}.nav a{white-space:nowrap;padding:9px 11px;font-size:11px}.nav a i{display:none}main{padding-top:22px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.hero{display:block}.hero-actions{margin-top:18px}.featuregrid,.articlegrid{grid-template-columns:1fr}.grid{gap:9px}.stat{padding:14px}.stat strong{font-size:23px}.topbar{margin-bottom:24px}.hero h1{font-size:34px}}
+
+/* Présentation éditoriale : sobre, lisible et moins futuriste. */
+:root{color-scheme:light;--bg:#f5f3ee;--panel:#fff;--panel2:#f0eee8;--line:#e4e0d7;--text:#252820;--muted:#6c7168;--cyan:#55745f;--violet:#8b7960;--green:#52785b}
+body{background:#f5f3ee;color:#252820}
+aside{background:#fff;border-color:#e4e0d7}
+.logo{background:#e4eadf;color:#344b39;box-shadow:none}
+.nav a{color:#62695f}
+.nav a:hover,.nav a.active{background:#edf1e9;color:#283d2d}
+.nav a.active{box-shadow:inset 3px 0 #66836a}
+.sidebottom,.stat,.feature,.article{background:#fff;border-color:#e4e0d7;box-shadow:0 2px 10px #292b2010}
+.hero .eyebrow,.article .meta{color:#55745f}
+.hero p,.feature p,.article p{color:#62695f}
+.btn{background:#fff;border-color:#dedbd2;color:#30362d}
+.btn.primary{background:#58765d;color:#fff;border:1px solid #58765d}
+.live{background:#edf3ec;border-color:#d4e1d1;color:#426548}
+.dot{background:#648b69;box-shadow:none}
+.feature:after{background:#8a9c7820}
+.article a{color:#476d50}
+.notice{background:#f4f0e4;border-color:#e6ddc6;color:#6d5b32}
+.empty{border-color:#d8d5cb;color:#6c7168}
+footer{color:#777b72}
+
 </style>
 </head>
 <body>
 <div class="shell">
 <aside>
-<div class="brand"><div class="logo">U</div><div><strong>USINE IA</strong><small>TECH & GAMING · 24/7</small></div></div>
-<div class="navlabel">ESPACE DE TRAVAIL</div>
+<div class="brand"><div class="logo">U</div><div><strong>OBSERVATOIRE</strong><small>TECHNOLOGIE · IA · JEUX VIDÉO</small></div></div>
+<div class="navlabel">LE MÉDIA</div>
 <nav class="nav">
-<a class="active" href="#accueil"><i>⌂</i>Vue d'ensemble</a>
-<a href="#activite"><i>◈</i>Activité IA</a>
-<a href="#projets"><i>▦</i>Projets & 3D</a>
+<a class="active" href="#accueil"><i>⌂</i>Accueil</a>
+<a href="#activite"><i>◈</i>Le projet</a>
+<a href="#projets"><i>▦</i>Laboratoire 3D</a>
 <a href="#actualites"><i>◉</i>Actualités</a>
 </nav>
 
-<div class="sidebottom"><b>✦ Le laboratoire évolue</b><p>Les fonctions affichées correspondent aux outils réellement intégrés. Les simulations sont signalées clairement.</p></div>
+<div class="sidebottom"><b>Un projet en construction</b><p>Un média indépendant qui apprend et s'améliore au fil des publications.</p></div>
 </aside>
 <main id="accueil">
-<div class="topbar"><div class="crumb">WORKSPACE <span style="color:#56617e">/</span> TABLEAU DE BORD</div><div class="live"><span class="dot"></span> SYSTÈME EN LIGNE</div></div>
-<section class="hero"><div><div class="eyebrow">✦ Le futur se construit ici</div><h1>Bienvenue dans<br>ton usine IA.</h1><p>Le centre de contrôle de tes projets Tech, intelligence artificielle et gaming. Suis les publications, explore le laboratoire et découvre ce qui avance.</p></div><div class="hero-actions"><a class="btn primary" href="#projets">Explorer l'usine&nbsp; →</a><a class="btn" href="#actualites">Voir les actualités</a></div></section>
-<section class="grid" aria-label="Indicateurs"><div class="stat"><span>PUBLICATIONS</span><strong id="count">—</strong><small>Articles disponibles</small></div><div class="stat"><span>LABORATOIRE</span><strong>24/7</strong><small>Objectif du projet</small></div><div class="stat"><span>DOMAINES</span><strong>03</strong><small>Tech · IA · Gaming</small></div><div class="stat"><span>ÉTAT DU SITE</span><strong style="color:var(--green);font-size:20px">Actif</strong><small>Page chargée</small></div></section>
-<section id="activite"><div class="sectionhead"><div><h2>Centre des opérations</h2><p>Les portes d'entrée du laboratoire.</p></div></div><div class="featuregrid">
-<article class="feature"><div class="featureicon">🎙️</div><div class="eyebrow">PRODUCTION TEMPORAIRE</div><h3>Documentaire de test</h3><p>Découvre un documentaire audio préparé avec l’aide de l’IA. La publication de démonstration reste en ligne 24 heures.</p><a class="btn" href="./site/documentaire-test.html">Voir le documentaire →</a></article>
-<article class="feature" id="projets"><div class="featureicon">🌌</div><div class="eyebrow">EXPLORATION IMMERSIVE</div><h3>La ville virtuelle 3D</h3><p>Explore une représentation visuelle de l'organisation de l'usine.</p><a class="btn primary" href="./site/ville-virtuelle.html">Entrer dans la ville 3D →</a></article>
+<div class="topbar"><div class="crumb">OBSERVATOIRE <span style="color:#56617e">/</span> ACTUALITÉS</div><div class="live"><span class="dot"></span> VEILLE EN COURS</div></div>
+<section class="hero"><div><div class="eyebrow">TECHNOLOGIE, IA ET JEUX VIDÉO</div><h1>L'actualité tech,<br>sans le bruit.</h1><p>Des informations récentes, expliquées simplement. Des nouveautés IA aux jeux vidéo, retrouve l'essentiel et les sources pour aller plus loin.</p></div><div class="hero-actions"><a class="btn primary" href="#projets">Découvrir le projet&nbsp; →</a><a class="btn" href="#actualites">Voir les actualités</a></div></section>
+<section class="grid" aria-label="Indicateurs"><div class="stat"><span>ARTICLES</span><strong id="count">—</strong><small>Articles disponibles</small></div><div class="stat"><span>RYTHME</span><strong>24/7</strong><small>Publications automatisées</small></div><div class="stat"><span>DOMAINES</span><strong>03</strong><small>Tech · IA · Gaming</small></div><div class="stat"><span>SITE</span><strong style="color:var(--green);font-size:20px">En ligne</strong><small>Page chargée</small></div></section>
+<section id="activite"><div class="sectionhead"><div><h2>À découvrir</h2><p>Les différents espaces du site.</p></div></div><div class="featuregrid">
+<article class="feature"><div class="featureicon">🎙️</div><div class="eyebrow">FORMAT AUDIO</div><h3>Documentaire de test</h3><p>Découvre un documentaire audio préparé avec l’aide de l’IA. La publication de démonstration reste en ligne 24 heures.</p><a class="btn" href="./site/documentaire-test.html">Voir le documentaire →</a></article>
+<article class="feature" id="projets"><div class="featureicon">🌌</div><div class="eyebrow">EXPÉRIENCE 3D</div><h3>La ville virtuelle</h3><p>Explore une représentation visuelle de l'organisation de l'usine.</p><a class="btn primary" href="./site/ville-virtuelle.html">Entrer dans la ville 3D →</a></article>
 </div></section>
-<section id="actualites"><div class="sectionhead"><div><h2>Dernières actualités</h2><p>Veille Tech, IA, Roblox et jeux vidéo.</p></div><span id="status">Chargement…</span></div><div id="articles" class="articlegrid"><div class="empty">Récupération des publications…</div></div></section>
-<div class="notice">⚠️ Les contenus sont préparés avec l'aide d'une IA et peuvent contenir des erreurs. Consulte les sources originales avant de prendre une décision. Les indicateurs ne prétendent pas montrer une activité d'agents en direct si celle-ci n'est pas connectée.</div>
-<footer>USINE IA TECH & GAMING 24-7 · Projet indépendant · Interface en évolution</footer>
+<section id="actualites"><div class="sectionhead"><div><h2>À la une</h2><p>Les dernières publications de l'observatoire.</p></div><span id="status">Chargement…</span></div><div id="articles" class="articlegrid"><div class="empty">Récupération des publications…</div></div></section>
+<div class="notice">⚠️ Certains textes sont préparés avec l'aide de l'intelligence artificielle. Ils sont à lire avec recul : les sources originales restent la référence. Le site est un projet indépendant en développement.</div>
+<footer>OBSERVATOIRE TECH & GAMING · Média indépendant en construction</footer>
 </main></div>
 <script>
 (async()=>{const status=document.getElementById("status"),box=document.getElementById("articles");try{const res=await fetch("./site/articles.json",{cache:"no-store"});if(!res.ok)throw new Error("HTTP "+res.status);const items=await res.json();document.getElementById("count").textContent=items.length;status.textContent=items.length+" publication(s)";box.replaceChildren();if(!items.length){box.innerHTML='<div class="empty">Aucune publication pour le moment. Reviens bientôt !</div>';return;}for(const item of items){const card=document.createElement("article");card.className="article";const meta=document.createElement("div");meta.className="meta";meta.textContent=(item.theme||"Actualité")+" · "+(item.date||"");const title=document.createElement("h3");title.textContent=item.title||"Publication";const summary=document.createElement("p");summary.textContent=item.summary||"";card.append(meta,title,summary);for(const [label,key] of [["Verdict du labo : ","verdict"],["À retenir : ","tip"]])if(item[key]){const p=document.createElement("p"),b=document.createElement("span");b.className="label";b.textContent=label;p.append(b,document.createTextNode(item[key]));card.append(p);}if(item.audio_url){const audio=document.createElement("audio");audio.controls=true;audio.preload="none";let audioPath=String(item.audio_url).replace(/^\\.\\//,'');audio.src = audioPath.startsWith('site/') ? './'+audioPath : './site/'+audioPath;card.append(audio);}if(Array.isArray(item.sources)&&item.sources.length){const h=document.createElement("p");h.className="label";h.textContent="Sources";const ul=document.createElement("ul");for(const s of item.sources){if(!s.url||!(s.url.startsWith('https://')||s.url.startsWith('http://')))continue;const li=document.createElement("li"),a=document.createElement("a");a.href=s.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=s.title||"Consulter la source";li.append(a);ul.append(li);}card.append(h,ul);}const note=document.createElement("p");note.className="meta";note.textContent=item.ai_notice||"Contenu assisté par IA";card.append(note);box.append(card);}}catch(e){status.textContent="Erreur de chargement";box.innerHTML='<div class="empty">Impossible de charger les articles. Réessaie plus tard.</div>';console.error(e);}})();
