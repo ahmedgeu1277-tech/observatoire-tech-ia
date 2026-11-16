@@ -54,6 +54,9 @@ def generer_documentaire():
         )}
     ], 2200)
 
+    plan = plan.strip()
+    if plan.startswith("```"):
+        plan = plan.split("\n", 1)[-1].rsplit("```", 1)[0].strip()
     try:
         data = json.loads(plan)
     except json.JSONDecodeError as exc:
