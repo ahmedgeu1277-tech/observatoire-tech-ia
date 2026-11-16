@@ -53,4 +53,5 @@ jobs:
             exit 0
           fi
           git commit -m "Publication automatique d'un article IA"
+          git pull --rebase origin main
           git push
