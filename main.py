@@ -6,7 +6,7 @@ import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import quote, urlparse
 import xml.etree.ElementTree as ET
 
 import requests
@@ -54,19 +54,51 @@ def fetch_news(query, limit=8):
     response.raise_for_status()
     root = ET.fromstring(response.content)
     items = []
-    for item in root.findall(".//item")[:limit]:
+    for item in root.findall(".//item"):
         title = (item.findtext("title") or "").strip()
         link = (item.findtext("link") or "").strip()
         description = (item.findtext("description") or "").strip()
+        published = (item.findtext("pubDate") or "").strip()
         description = re.sub(r"<[^>]+>", " ", description)
-        description = html.unescape(re.sub(r"\s+", " ", description)).strip()
-        if title and link:
-            items.append({
-                "title": title[:300],
-                "description": description[:700],
-                "url": link
-            })
-    return items
+        description = html.unescape(re.sub(r"\\s+", " ", description)).strip()
+        if not title or not link:
+            continue
+        host = (urlparse(link).hostname or "").lower()
+        if host.startswith("www."):
+            host = host[4:]
+        publisher = title.rsplit(" - ", 1)[-1].strip() if " - " in title else host
+        headline = title.rsplit(" - ", 1)[0].strip() if " - " in title else title
+        items.append({
+            "title": headline[:260],
+            "publisher": publisher[:100],
+            "domain": host[:120],
+            "published": published[:100],
+            "description": description[:700],
+            "url": link
+        })
+
+    # Sélectionne d'abord des médias différents, puis complète si nécessaire.
+    diversified = []
+    seen_domains = set()
+    seen_titles = set()
+    for source in items:
+        title_key = re.sub(r"[^a-z0-9]+", "", source["title"].lower())
+        if title_key in seen_titles:
+            continue
+        seen_titles.add(title_key)
+        if source["domain"] not in seen_domains:
+            diversified.append(source)
+            seen_domains.add(source["domain"])
+        if len(diversified) >= limit:
+            break
+    if len(diversified) < limit:
+        for source in items:
+            title_key = re.sub(r"[^a-z0-9]+", "", source["title"].lower())
+            if title_key not in {re.sub(r"[^a-z0-9]+", "", x["title"].lower()) for x in diversified}:
+                diversified.append(source)
+            if len(diversified) >= limit:
+                break
+    return diversified[:limit]
 
 def create_article(theme, sources, agent_reports=None):
     api_key = os.getenv("GROQ_API_KEY")
@@ -75,20 +107,22 @@ def create_article(theme, sources, agent_reports=None):
 
     source_text = json.dumps(sources, ensure_ascii=False)
     prompt = f"""
-Tu es le rédacteur d'un observatoire francophone Tech & Gaming.
+Tu es journaliste-rédacteur pour un petit média indépendant francophone consacré à la technologie, à l'IA et aux jeux vidéo. Écris comme une personne qui explique clairement une actualité à ses lecteurs, pas comme une publicité ni comme un robot.
 Thème : {theme['name']}
-Analyses des agents spécialisés (pistes, pas des preuves) : {json.dumps(agent_reports or [], ensure_ascii=False)}
+Analyses des agents spécialisés (simples pistes à vérifier, jamais des preuves) : {json.dumps(agent_reports or [], ensure_ascii=False)}
 
-Utilise UNIQUEMENT les informations contenues dans les sources ci-dessous.
-N'invente aucun fait, aucune date, aucun chiffre et aucune annonce.
-Si les sources sont trop vagues, dis clairement que l'information reste à confirmer.
-Ne prétends pas avoir testé un produit ou un jeu.
-Ne copie pas les articles : fais une synthèse originale et courte.
-Réponds en français sous forme d'un objet JSON avec exactement ces clés :
-"title" (titre court), "summary" (2 à 4 phrases), "verdict" (une phrase prudente),
-"tip" (une astuce utile), "source_indices" (liste d'indices des sources utilisées).
-Les indices commencent à 0. N'ajoute aucun autre texte.
-
+RÈGLES DE RÉDACTION :
+- Appuie chaque information factuelle uniquement sur les sources fournies. N'invente aucun fait, chiffre, citation, date, test, expérience personnelle ou annonce.
+- Fais une synthèse originale : ne recopie pas les titres et ne paraphrase pas chaque source l'une après l'autre.
+- Écris un résumé de 3 à 5 phrases, naturel et précis. Varie les débuts de phrases et la structure d'un article à l'autre.
+- Explique ce qui s'est passé, pourquoi cela peut intéresser les lecteurs et ce qu'on ne sait pas encore, si c'est pertinent.
+- Évite les expressions automatiques et le remplissage : « dans un monde en constante évolution », « révolutionnaire », « il est important de noter », « plongeons dans », « une avancée majeure » sans preuve.
+- Pas de ton publicitaire, de fausse excitation, de fausse opinion personnelle ni de conclusion passe-partout.
+- Un titre informatif, court et spécifique. Pas de clickbait.
+- Si les sources se contredisent ou restent vagues, indique-le franchement. Si elles ne suffisent pas, ne transforme pas une rumeur en fait.
+- Les agents spécialisés ne sont pas des sources indépendantes : ne reprends leurs affirmations que si les liens fournis les confirment.
+- Choisis uniquement les indices des sources réellement utiles. Les indices commencent à 0.
+- Réponds en français avec un objet JSON contenant exactement : "title", "summary", "verdict", "tip", "source_indices". Aucun texte hors JSON.
 Sources :
 {source_text}
 """
@@ -181,7 +215,7 @@ Sources :
         "verdict": verdict,
         "tip": tip,
         "sources": used_sources[:5],
-        "ai_notice": "Contenu assisté par IA ou synthèse de secours à partir des titres. Vérifiez toujours les sources originales."
+        "ai_notice": "Article rédigé avec l’aide de l’IA à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet."
     }
 
 def load_previous_articles():
