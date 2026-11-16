@@ -7,7 +7,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: observatoire-publication
+  group: publication-depot
   cancel-in-progress: false
 
 jobs:
