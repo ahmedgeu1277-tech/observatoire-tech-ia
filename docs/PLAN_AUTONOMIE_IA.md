@@ -60,9 +60,9 @@ Le délai de cinq minutes est une cible d'orchestration, pas une garantie : les 
 
 ## État réel au 16 novembre 2026
 
-Déjà présent dans le projet : génération d'articles par IA, bascule Groq/Hugging Face, récupération de flux, quelques tests, filtre de secrets de premier niveau, publication planifiée via GitHub Actions et création audio facultative.
+Déjà présent dans le projet : génération d'articles par IA, bascule Groq/Hugging Face pour les articles et les tâches hebdomadaires, récupération de flux, profils JSON d'agents spécialisés, fenêtre de priorité événementielle (GTA VI), validation stricte du JSON et des sources avant publication, protection contre l'écrasement d'archives JSON corrompues, tests automatiques, filtre de secrets de premier niveau et publication planifiée. Le documentaire hebdomadaire prépare cinq chapitres écrits et des pistes audio séparées ; il ne produit pas de MP4.
 
-Pas encore réalisé : agents autonomes indépendants qui se contrôlent entre eux, validation factuelle robuste, espace privé de préparation, assemblage atomique cinq minutes avant publication, hébergement secondaire actif, bascule automatique entre hébergeurs, supervision 24 h/24 et génération vidéo MP4.
+Pas encore réalisé : agents autonomes indépendants qui se contrôlent entre eux, validation factuelle robuste, espace privé de préparation, assemblage atomique cinq minutes avant publication, hébergement secondaire actif, bascule automatique entre hébergeurs, supervision 24 h/24, génération vidéo MP4 et fusion automatique des pistes audio en un seul fichier.
 
 GitHub Actions n'est pas un serveur permanent : les tâches planifiées peuvent être retardées et les exécutions ont une durée limitée. Le projet ne doit donc pas promettre une disponibilité continue avant d'avoir un hébergement et une supervision adaptés.
 
