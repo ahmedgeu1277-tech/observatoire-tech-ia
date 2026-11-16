@@ -10,9 +10,9 @@ from urllib.parse import quote, urlparse
 import xml.etree.ElementTree as ET
 
 import requests
-from groq import Groq
 from agent_gardien import verifier_conformite_legale
 from sources_specialisees import fetch_specialized_sources
+from ai_providers import generate_text
 
 ROOT = Path(__file__).resolve().parent
 SITE_DIR = ROOT / "site"
@@ -102,10 +102,6 @@ def fetch_news(query, limit=8):
     return diversified[:limit]
 
 def create_article(theme, sources, agent_reports=None):
-    api_key = os.getenv("GROQ_API_KEY")
-    if not api_key:
-        raise RuntimeError("Secret GROQ_API_KEY absent dans GitHub Actions.")
-
     source_text = json.dumps(sources, ensure_ascii=False)
     prompt = f"""
 Tu es journaliste-rédacteur pour un petit média indépendant francophone consacré à la technologie, à l'IA et aux jeux vidéo. Écris comme une personne qui explique clairement une actualité à ses lecteurs, pas comme une publicité ni comme un robot.
@@ -131,34 +127,7 @@ Sources :
         {"role": "system", "content": "Tu produis des synthèses factuelles, prudentes et lisibles."},
         {"role": "user", "content": prompt}
     ]
-    raw = ""
-    groq_error = None
-    try:
-        client = Groq(api_key=api_key, timeout=45, max_retries=2)
-        completion = client.chat.completions.create(
-            model=MODEL, messages=messages, temperature=0.25,
-            max_completion_tokens=1200, reasoning_effort="low",
-            response_format={"type": "json_object"},
-        )
-        raw = (completion.choices[0].message.content or "").strip()
-    except Exception as exc:
-        groq_error = exc
-        hf_key = os.getenv("HF_API_KEY") or os.getenv("HF_TOKEN")
-        if not hf_key:
-            raise RuntimeError(f"Groq indisponible et aucun secret HF_API_KEY/HF_TOKEN configuré : {exc}") from exc
-        try:
-            from huggingface_hub import InferenceClient
-            hf = InferenceClient(
-                model=os.getenv("HF_MODEL") or "Qwen/Qwen2.5-7B-Instruct",
-                token=hf_key, timeout=60
-            )
-            fallback = hf.chat.completions.create(
-                messages=messages, max_tokens=1200, temperature=0.25
-            )
-            raw = (fallback.choices[0].message.content or "").strip()
-            print("INFO : génération effectuée via Hugging Face après échec de Groq.")
-        except Exception as hf_error:
-            raise RuntimeError(f"Groq et Hugging Face indisponibles. Groq: {groq_error}; HF: {hf_error}") from hf_error
+    raw, ai_provider = generate_text(messages, max_tokens=1200, temperature=0.25, json_mode=True)
     # Certains modèles renvoient le JSON dans un bloc Markdown : on extrait l'objet.
     raw = re.sub(r"^\s*```(?:json)?\s*", "", raw, flags=re.IGNORECASE)
     raw = re.sub(r"\s*```\s*$", "", raw)
@@ -216,7 +185,7 @@ Sources :
         "verdict": verdict,
         "tip": tip,
         "sources": used_sources[:5],
-        "ai_notice": "Article rédigé avec l’aide de l’IA à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet."
+        "ai_notice": f"Article rédigé avec l’aide de {ai_provider} à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet."
     }
 
 def load_previous_articles():
