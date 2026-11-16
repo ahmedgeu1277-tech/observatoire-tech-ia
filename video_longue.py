@@ -6,7 +6,7 @@ from groq import Groq
 from agent_gardien import verifier_conformite_legale
 
 ROOT=Path(__file__).resolve().parent
-MODEL=os.getenv("GROQ_MODEL","openai/gpt-oss-20b")
+MODEL=os.getenv("GROQ_MODEL") or "openai/gpt-oss-20b"
 
 async def creer_documentaire_tech():
     memory=ROOT/"memoire_tech.txt"
