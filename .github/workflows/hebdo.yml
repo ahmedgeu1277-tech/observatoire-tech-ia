@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: usine-publication
+  group: publication-depot
   cancel-in-progress: false
 
 jobs:
@@ -46,10 +46,13 @@ jobs:
           git config user.name "Usine IA Tech & Gaming"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           mkdir -p agents_dynamiques archives site/audio
-          git add -A
+          for path in themes.json agents_dynamiques archives site/audio memoire_tech.txt; do
+            if [ -e "$path" ]; then git add -A -- "$path"; fi
+          done
           if git diff --cached --quiet; then
             echo "Aucune nouvelle archive à enregistrer."
             exit 0
           fi
           git commit -m "Maintenance hebdomadaire Tech IA"
+          git pull --rebase origin main
           git push
