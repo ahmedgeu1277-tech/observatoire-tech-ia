@@ -6,7 +6,19 @@
     },
     {
       "name": "Gaming et jeux vidéo",
-      "query": "jeux vidéo gaming actualité sortie mise à jour"
+      "query": "jeux vidéo gaming actualité sortie mise à jour",
+      "lifecycle": {
+        "launch_at": "2026-11-18T17:00:00Z",
+        "end_at": "2026-11-26T23:59:59Z",
+        "before": {
+          "name": "GTA VI — préparation du lancement en Thaïlande",
+          "query": "GTA VI sortie 19 novembre 2026 Thaïlande heure locale lancement officiel Rockstar préchargement actualité"
+        },
+        "after": {
+          "name": "GTA VI — lancement et premiers retours vérifiés",
+          "query": "GTA VI lancement 19 novembre 2026 disponibilité officielle mises à jour premiers tests analyses techniques"
+        }
+      }
     },
     {
       "name": "Roblox et création de jeux",
