@@ -69,3 +69,19 @@ GitHub Actions n'est pas un serveur permanent : les tâches planifiées peuvent 
 ## Principe de fonctionnement
 
 **Autonomie maximale pour les tâches ordinaires ; limites strictes pour la sécurité, les coûts, les données et les décisions engageant une personne.** Une personne responsable doit pouvoir surveiller le service, intervenir et l'arrêter.
+
+## Échéance de lancement GTA VI — Thaïlande
+
+Rockstar indique que GTA VI sort à minuit, heure locale, le 19 novembre 2026 sur PS5 et Xbox Series X|S. En Thaïlande (UTC+7), cela correspond à 00 h 00 le jeudi 19 novembre. L'heure locale thaïlandaise est donc le repère de lancement ; la conversion est à revalider sur le compte/store régional avant le jour J.
+
+**Objectif de déploiement : mercredi 18 novembre 2026 à 12 h 00 en Thaïlande (ICT, UTC+7), soit mercredi 18 novembre à 06 h 00 en France métropolitaine (CET).** Cela représente 12 heures avant le lancement thaïlandais visé.
+
+### Priorités avant cette échéance
+1. Faire passer les tests Python et vérifier les dernières exécutions GitHub Actions.
+2. Vérifier que le site public charge les articles et que les liens fonctionnent sur téléphone.
+3. Générer et contrôler au moins un article et un documentaire audio de test ; la vidéo MP4 est une priorité ultérieure si elle ne peut pas être fiabilisée à temps.
+4. Vérifier les secrets sans jamais afficher leurs valeurs, les permissions et les journaux.
+5. Préparer une copie de secours du site sur un hébergeur secondaire si le compte et la configuration sont disponibles.
+6. Déployer une version stable avant l'heure cible, puis surveiller les erreurs.
+
+Cette date est un objectif de projet, pas une garantie de livraison de toutes les fonctions ambitieuses. En cas de défaut, privilégier un site stable plutôt qu'activer des fonctions non testées. Le secours sur la même adresse nécessite un domaine personnalisé ; sans domaine, l'adresse de secours sera différente.
