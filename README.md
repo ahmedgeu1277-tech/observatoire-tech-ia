@@ -10,8 +10,8 @@ Dans Settings → Pages, choisir la branche `main` et le dossier `/ (root)`. Le 
 ## Cycle quotidien
 - GitHub Actions lance la veille à 09 h et 18 h UTC.
 - Google News RSS récupère des titres, descriptions et liens publics.
-- Groq rédige une synthèse française structurée.
-- Les profils de `agents_dynamiques/` peuvent effectuer jusqu'à deux analyses spécialisées par publication.
+- Le gestionnaire IA essaie les fournisseurs configurés dans l'ordre (Groq puis Hugging Face par défaut) et bascule si le premier échoue.
+- Les profils de `agents_dynamiques/` peuvent fournir jusqu'à deux analyses spécialisées par publication ; ce sont des profils pilotés par le programme, pas des agents autonomes indépendants.
 - Un filtre technique recherche les clés API, jetons, clés privées, secrets courants et adresses e-mail détectables.
 - Edge TTS crée un court audio quand le service vocal est disponible.
 - Les articles sont publiés dans `site/articles.json`, les audios dans `site/audio/` et les résumés sont archivés dans `memoire_tech.txt`.
@@ -45,3 +45,6 @@ Voir [docs/ARCHITECTURE_SECURITE.md](docs/ARCHITECTURE_SECURITE.md) pour les mod
 
 ## Publication cloisonnée et hébergement de secours
 Voir [docs/PLAN_PUBLICATION_SECOURS.md](docs/PLAN_PUBLICATION_SECOURS.md) : dépôt privé de préparation, assemblage contrôlé cinq minutes avant publication, et hébergement secondaire avec domaine personnalisé. Le secours sur la même adresse n'est pas encore activé.
+
+## Vision d'autonomie IA
+Voir [docs/PLAN_AUTONOMIE_IA.md](docs/PLAN_AUTONOMIE_IA.md) pour la cible : veille, rédaction, vérification, médias, publication, surveillance et reprise automatisées, avec des limites strictes de sécurité. Cette architecture complète n'est pas encore entièrement construite.
