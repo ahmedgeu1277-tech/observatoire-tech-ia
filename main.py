@@ -12,6 +12,7 @@ import xml.etree.ElementTree as ET
 import requests
 from groq import Groq
 from agent_gardien import verifier_conformite_legale
+from sources_specialisees import fetch_specialized_sources
 
 ROOT = Path(__file__).resolve().parent
 SITE_DIR = ROOT / "site"
@@ -320,6 +321,20 @@ def main():
     theme = choose_theme(themes)
     print(f"Thème choisi : {theme['name']}")
     sources = fetch_news(theme["query"], limit=MAX_SOURCES)
+    specialized = fetch_specialized_sources(theme["name"], limit=4)
+    # Les flux officiels apportent des annonces primaires ; les médias généralistes
+    # complètent le contexte. On déduplique les URL avant de transmettre à l'IA.
+    merged = []
+    seen_urls = set()
+    for source in specialized + sources:
+        key = source.get("url", "").split("#", 1)[0]
+        if key and key not in seen_urls:
+            merged.append(source)
+            seen_urls.add(key)
+        if len(merged) >= MAX_SOURCES:
+            break
+    sources = merged
+    print(f"{len(specialized)} source(s) spécialisée(s) officielle(s) disponible(s).")
     if not sources:
         raise RuntimeError("Aucune source RSS exploitable. Aucun article publié.")
     print(f"{len(sources)} source(s) récupérée(s).")
