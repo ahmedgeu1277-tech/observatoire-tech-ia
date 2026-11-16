@@ -8,10 +8,10 @@ GitHub Pages : https://ahmedgeu1277-tech.github.io/observatoire-tech-ia/
 Dans Settings → Pages, choisir la branche `main` et le dossier `/ (root)`. Le fichier racine `index.html` charge les articles depuis `site/articles.json`.
 
 ## Cycle quotidien
-- GitHub Actions lance la veille à 09 h et 18 h UTC.
+- GitHub Actions planifie deux cycles de veille par jour, à 09 h et 18 h UTC ; GitHub peut retarder les tâches planifiées et ce n'est pas un serveur permanent.
 - Google News RSS récupère des titres, descriptions et liens publics.
 - Le gestionnaire IA essaie les fournisseurs configurés dans l'ordre (Groq puis Hugging Face par défaut) et bascule si le premier échoue.
-- Les profils de `agents_dynamiques/` peuvent fournir jusqu'à deux analyses spécialisées par publication ; ce sont des profils pilotés par le programme, pas des agents autonomes indépendants.
+- Les profils de `agents_dynamiques/` peuvent fournir jusqu'à deux analyses spécialisées par publication, en utilisant le basculement Groq/Hugging Face ; ce sont des profils pilotés par le programme, pas des agents autonomes indépendants.
 - Un filtre technique recherche les clés API, jetons, clés privées, secrets courants et adresses e-mail détectables.
 - Edge TTS crée un court audio quand le service vocal est disponible.
 - Les articles sont publiés dans `site/articles.json`, les audios dans `site/audio/` et les résumés sont archivés dans `memoire_tech.txt`.
@@ -36,7 +36,7 @@ Le générateur `ecrire_livre.py` est manuel. Il utilise `memoire_tech.txt` et, 
 ## Limites et sécurité
 - GitHub Actions exécute des tâches planifiées : ce n'est pas un serveur permanent 24 h/24. Les horaires cron peuvent être retardés par GitHub.
 - Le filtre automatique est une protection technique de premier niveau, pas un avis juridique ni une certification de conformité.
-- Limites anti-ralentissement : six sources maximum par article, deux agents spécialisés maximum, 30 articles conservés et délai réseau de 20 secondes.\n- Priorités d'exécution : sécurité, tests et intégrité des données ; publication essentielle ; audio facultatif ; archives secondaires.\n- Les résumés et audios IA peuvent contenir des erreurs : vérifier les sources originales.
+- Limites anti-ralentissement : six sources maximum par article, deux agents spécialisés maximum, 30 articles conservés et délai réseau de 20 secondes.\n- Priorités d'exécution : sécurité, tests et intégrité des données ; publication essentielle ; audio facultatif ; archives secondaires.\n- Les résumés et audios IA peuvent contenir des erreurs : vérifier les sources originales. Une réponse IA mal formée ou sans référence valide est désormais refusée au lieu d'être transformée en faux article.\n- Le thème Gaming adapte automatiquement sa requête avant et après le lancement de GTA VI, du 18 au 26 novembre 2026 (horodatages UTC).
 - Respecter les conditions d'âge et d'utilisation des services ; demander l'aide d'un parent ou tuteur lorsque nécessaire.
 
 
