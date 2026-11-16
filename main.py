@@ -18,8 +18,10 @@ SITE_DIR = ROOT / "site"
 ARTICLES_FILE = SITE_DIR / "articles.json"
 THEMES_FILE = ROOT / "themes.json"
 MODEL = os.getenv("GROQ_MODEL") or "openai/gpt-oss-20b"
-MAX_ARTICLES = 40
-TIMEOUT = 25
+MAX_ARTICLES = 30
+TIMEOUT = 20
+MAX_SOURCES = 6
+MAX_DYNAMIC_AGENTS = 2
 
 def load_themes():
     with THEMES_FILE.open("r", encoding="utf-8") as f:
@@ -228,7 +230,7 @@ def executer_agents_dynamiques(theme, sources, profiles):
     client = Groq(api_key=os.environ["GROQ_API_KEY"], timeout=45, max_retries=1)
     source_text = json.dumps(sources[:5], ensure_ascii=False)
     reports = []
-    for profile in profiles[:3]:
+    for profile in profiles[:MAX_DYNAMIC_AGENTS]:
         try:
             prompt = f"""Mission : {profile.get('mission', '')}
 Instructions : {profile.get('instructions', '')}
@@ -283,7 +285,7 @@ def main():
     themes = load_themes()
     theme = choose_theme(themes)
     print(f"Thème choisi : {theme['name']}")
-    sources = fetch_news(theme["query"])
+    sources = fetch_news(theme["query"], limit=MAX_SOURCES)
     if not sources:
         raise RuntimeError("Aucune source RSS exploitable. Aucun article publié.")
     print(f"{len(sources)} source(s) récupérée(s).")
