@@ -52,3 +52,7 @@ Voir [docs/PLAN_AUTONOMIE_IA.md](docs/PLAN_AUTONOMIE_IA.md) pour la cible : veil
 
 ## Atelier R&D et produits commercialisables
 Voir [docs/ATELIER_PRODUITS.md](docs/ATELIER_PRODUITS.md). Le module `atelier_produits.py` transforme une opportunité décrite et notée en fiche de décision locale. Son score est une présélection, pas une étude de marché ; aucune vente, publication ou exécution de code n'est automatique.
+
+
+## Auto-évaluation et amélioration continue
+Voir [docs/AUTO_AMELIORATION.md](docs/AUTO_AMELIORATION.md). `auto_amelioration.py` exécute des contrôles bornés et prépare un backlog priorisé. Un workflow quotidien conserve le rapport ; il ne modifie ni ne déploie automatiquement le code.
