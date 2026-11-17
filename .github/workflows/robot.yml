@@ -10,6 +10,8 @@ on:
       - "ai_providers.py"
       - "sources_specialisees.py"
       - "agent_gardien.py"
+      - "tests/test_main.py"
+      - "tests/test_sources_specialisees.py"
       - "requirements.txt"
       - ".github/workflows/robot.yml"
   workflow_dispatch:
