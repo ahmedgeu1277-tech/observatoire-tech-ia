@@ -13,13 +13,13 @@ class AtelierCreationTests(unittest.TestCase):
                 "video": "storyboard.md", "audio": "script.md", "logiciel-python": "main.py",
             }.items():
                 with self.subTest(kind=kind):
-                    result = generate_project("Projet Test", folder, kind)
+                    result = generate_project(f"Projet-{kind}", folder, kind)
                     self.assertTrue((Path(result["directory"]) / expected).is_file())
                     self.assertFalse(result["code_executed"])
                     self.assertFalse(result["published"])
 
     def test_rejects_traversal_and_bad_names(self):
-        for name in ("../escape", "1invalid", "", "x" * 51, "a\\\\b"):
+        for name in ("../escape", "1invalid", "", "x" * 51, "a" + chr(92) + "b"):
             with self.subTest(name=name), self.assertRaises(ValueError):
                 project_slug(name)
 
