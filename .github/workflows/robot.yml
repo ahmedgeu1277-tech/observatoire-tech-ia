@@ -12,6 +12,7 @@ on:
       - "agent_gardien.py"
       - "tests/test_main.py"
       - "tests/test_sources_specialisees.py"
+      - "site/articles.json"
       - "requirements.txt"
       - ".github/workflows/robot.yml"
   workflow_dispatch:
