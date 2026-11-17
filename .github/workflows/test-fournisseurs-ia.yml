@@ -1,0 +1,57 @@
+name: Test réel des fournisseurs IA
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "ai_providers.py"
+      - "scripts/test_ai_provider_live.py"
+      - ".github/workflows/test-fournisseurs-ia.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  test-groq:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Installer le client Groq
+        run: pip install --disable-pip-version-check groq
+      - name: Tester Groq sans publier
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          TEST_PROVIDER: groq
+        run: |
+          if [ -z "$GROQ_API_KEY" ]; then
+            echo "TEST IGNORÉ : secret GROQ_API_KEY absent."
+            exit 0
+          fi
+          python scripts/test_ai_provider_live.py
+
+  test-huggingface:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Installer le client Hugging Face
+        run: pip install --disable-pip-version-check huggingface_hub
+      - name: Tester Hugging Face sans publier
+        env:
+          HF_API_KEY: ${{ secrets.HF_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          TEST_PROVIDER: huggingface
+        run: |
+          if [ -z "$HF_API_KEY" ] && [ -z "$HF_TOKEN" ]; then
+            echo "TEST IGNORÉ : secret HF_API_KEY/HF_TOKEN absent."
+            exit 0
+          fi
+          python scripts/test_ai_provider_live.py
