@@ -251,10 +251,57 @@ Sources :
     indices = data["source_indices"]
     if not isinstance(indices, list) or not indices:
         raise ValueError("La réponse IA ne référence aucune source. Aucun article publié.")
+
+    def indices_valides(values):
+        return (
+            isinstance(values, list)
+            and bool(values)
+            and all(
+                isinstance(index, int)
+                and not isinstance(index, bool)
+                and 0 <= index < len(sources)
+                for index in values
+            )
+        )
+
+    if not indices_valides(indices):
+        # Répare une sélection d'indices erronée sans modifier le texte généré.
+        repair_messages = [
+            {
+                "role": "system",
+                "content": "Tu sélectionnes des sources. Réponds uniquement en JSON valide avec la clé source_indices.",
+            },
+            {
+                "role": "user",
+                "content": (
+                    "Choisis les indices des sources qui soutiennent réellement cet article. "
+                    f"Les indices commencent à 0 et vont de 0 à {len(sources) - 1}. "
+                    "N'invente aucun indice. Réponds avec {\"source_indices\": [0]} au format JSON.\n"
+                    + json.dumps(
+                        {"title": title, "summary": summary, "verdict": verdict,
+                         "tip": tip, "sources": sources},
+                        ensure_ascii=False,
+                    )
+                ),
+            },
+        ]
+        try:
+            repaired_raw, _ = generate_text(
+                repair_messages, max_tokens=300, temperature=0.0, json_mode=True
+            )
+            repaired_raw = re.sub(r"^\s*\x60{3}(?:json)?\s*", "", repaired_raw, flags=re.IGNORECASE)
+            repaired_raw = re.sub(r"\s*\x60{3}\s*$", "", repaired_raw)
+            repaired_data = json.loads(repaired_raw)
+            indices = repaired_data.get("source_indices") if isinstance(repaired_data, dict) else None
+        except Exception as exc:
+            raise ValueError(
+                "La réponse IA contient un indice de source invalide. Aucun article publié."
+            ) from exc
+        if not indices_valides(indices):
+            raise ValueError("La réponse IA contient un indice de source invalide. Aucun article publié.")
+
     used_sources = []
     for index in indices:
-        if isinstance(index, bool) or not isinstance(index, int) or not 0 <= index < len(sources):
-            raise ValueError("La réponse IA contient un indice de source invalide. Aucun article publié.")
         if sources[index] not in used_sources:
             used_sources.append(sources[index])
     if not used_sources:
