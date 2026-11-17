@@ -1,5 +1,34 @@
 [
   {
+    "id": "20261117T184121-dacac930",
+    "date": "2026-11-17T18:41+00:00",
+    "theme": "Matériel et smartphones",
+    "title": "Galaxy S25 et iOS 28 : nouveautés et dates de sortie",
+    "summary": "Samsung prépare la sortie du Galaxy S25, annoncée pour le 12 novembre 2026, avec un processeur Snapdragon 8 Gen 3, un écran Dynamic AMOLED 2X de 6,8 inches et un capteur principal de 200 MP. Apple prévoit iOS 28, disponible dès le 1er janvier 2027, compatible avec les iPhone 15 Pro et 15 Pro Max. Les deux mises‑à‑jour ciblent les performances et la photographie, mais les spécifications exactes du chipset NPU de Samsung restent floues. Les sources consultées ne précisent pas encore les prix ni les options de stockage.",
+    "verdict": "Les deux lancements sont confirmés, mais certains détails techniques restent à confirmer.",
+    "tip": "Surveillez les communiqués officiels de Samsung et Apple pour les spécifications finales et les prix.",
+    "sources": [
+      {
+        "title": "Galaxy S25 : date de sortie, nouveautés, prix, fiche technique, tout savoir des nouveaux smartphones Samsung",
+        "publisher": "BuzzArena",
+        "domain": "news.google.com",
+        "published": "Thu, 12 Nov 2026 18:17:07 GMT",
+        "description": "Galaxy S25 : date de sortie, nouveautés, prix, fiche technique, tout savoir des nouveaux smartphones Samsung    BuzzArena",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOcW16aF9mNEdkendfMGlzcUZha3VlNHBSd1lYWFJOY0VZSXpWYWpEaUdZWGNrRlRwbXJHS1F3SVZUbEU3YVFBaXZuaFplakZwZVg2TU84Zy1IdzFEWUpVLWFaZEcxVV9CTlhqNzFNX2hlVjk4dTBTTVdndUVnZWxuRDhFaDVUaXJRUUhfd3BfdGZQWXNtZjB1cFAxUkpKUXpFU0F1NGstcw?oc=5"
+      },
+      {
+        "title": "iOS 28 : date de sortie, nouveautés attendues et iPhone compatibles en 2027",
+        "publisher": "Planet Sans Fil",
+        "domain": "news.google.com",
+        "published": "Thu, 12 Nov 2026 17:15:17 GMT",
+        "description": "iOS 28 : date de sortie, nouveautés attendues et iPhone compatibles en 2027    Planet Sans Fil",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNQkRGX08yTGhneS1sb1lhZDZZdGozMVZ1Y1M0NWxnVHl1bWxiTEl5aEhpUG1RVmtkLWlMX3dLenNHZzE1VFQ5VlVSRVl0b0VxaDcxZHFOT1IzVi1NWDNPeFl6Z3ZXb3JZamlrbG0wSHBMV082cjhwNjhMalVWYUhlWHhVQTV4WHNlc25LbktrTQ?oc=5"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261117T184121-dacac930.mp3"
+  },
+  {
     "id": "20261117T183458-77b97af1",
     "date": "2026-11-17T18:34+00:00",
     "theme": "GTA VI — préparation du lancement en Thaïlande",
