@@ -8,8 +8,36 @@ from ai_providers import generate_text
 
 ROOT = Path(__file__).resolve().parent
 PROFILE_DIR = ROOT / "agents_dynamiques"
+PUBLIC_INDEX = ROOT / "site" / "data" / "agents.json"
+
+
+def exporter_index_public():
+    """Publie les fiches existantes comme profils configurés, jamais comme agents actifs."""
+    profiles = []
+    for path in sorted(PROFILE_DIR.glob("*.json")):
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            if not isinstance(data, dict) or not data.get("name") or not data.get("mission"):
+                continue
+            profiles.append({
+                "name": str(data["name"])[:40],
+                "role": str(data.get("role", "Analyste"))[:120],
+                "mission": str(data["mission"])[:500],
+                "status": "profil configuré — non exécuté en continu",
+            })
+        except (OSError, json.JSONDecodeError):
+            continue
+    PUBLIC_INDEX.parent.mkdir(parents=True, exist_ok=True)
+    temp = PUBLIC_INDEX.with_suffix(".json.tmp")
+    temp.write_text(json.dumps({
+        "updated_at": __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat(),
+        "profiles": profiles,
+    }, ensure_ascii=False, indent=2), encoding="utf-8")
+    temp.replace(PUBLIC_INDEX)
+    return profiles
 
 def creer_nouvel_agent_autonome():
+    exporter_index_public()
     if not any(os.getenv(key) for key in ("GROQ_API_KEY", "HF_API_KEY", "HF_TOKEN")):
         print("Architecte ignoré : aucune clé IA configurée.")
         return None
@@ -46,6 +74,7 @@ Réponds en JSON avec name, role, mission, instructions. name : minuscules et un
             return None
         path = PROFILE_DIR / f"{name}.json"
         path.write_text(json.dumps(profile, ensure_ascii=False, indent=2), encoding="utf-8")
+        exporter_index_public()
         print(f"Profil d’agent créé : {path}")
         return str(path)
     except Exception as exc:  # noqa: BLE001 — l'agent ne doit jamais interrompre le pipeline.
