@@ -34,6 +34,8 @@ jobs:
           python -m compileall -q .
           python -m unittest discover -s tests -v
           python -c "import json; json.load(open('themes.json', encoding='utf-8')); json.load(open('site/articles.json', encoding='utf-8')); print('Fichiers JSON valides')"
+      - name: Générer les données de la ville virtuelle
+        run: python gouvernement.py
       - name: Générer un article
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
