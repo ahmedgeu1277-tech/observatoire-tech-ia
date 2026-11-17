@@ -15,9 +15,11 @@ class InventionRegistryTests(unittest.TestCase):
             self.assertEqual(list_ideas(path)[0]["id"], item["id"])
 
     def test_rejects_empty_fields(self):
-        with tempfile.TemporaryDirectory() as folder:
-            with self.assertRaises(ValueError):
-                create_idea("", "proposition", "logiciel", Path(folder) / "ideas.json")
+        with (
+            tempfile.TemporaryDirectory() as folder,
+            self.assertRaises(ValueError),
+        ):
+            create_idea("", "proposition", "logiciel", Path(folder) / "ideas.json")
 
     def test_corrupt_registry_is_not_overwritten(self):
         with tempfile.TemporaryDirectory() as folder:
