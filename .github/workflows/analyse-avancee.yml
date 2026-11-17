@@ -211,3 +211,8 @@ jobs:
             }
           })().catch(error => { console.error(error); process.exit(1); });
           NODE
+
+      - name: Parcours utilisateurs synthétiques sur mobile, tablette et ordinateur
+        env:
+          NODE_PATH: /tmp/pw/node_modules
+        run: node scripts/test_site_responsive.js
