@@ -2,13 +2,11 @@
 import asyncio
 import html
 import json
-import os
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
-from groq import Groq
-
 from agent_gardien import verifier_conformite_legale
+from ai_providers import generate_text
 
 ROOT = Path(__file__).resolve().parent
 SITE = ROOT / "site"
@@ -16,9 +14,6 @@ AUDIO_DIR = SITE / "audio"
 MANIFEST = SITE / "documentaire-test.json"
 PAGE = SITE / "documentaire-test.html"
 SCRIPT = SITE / "documentaire-test.md"
-MODEL = os.getenv("GROQ_MODEL") or "openai/gpt-oss-20b"
-
-
 def lire_notes():
     path = ROOT / "memoire_tech.txt"
     if not path.exists() or not path.read_text(encoding="utf-8").strip():
@@ -26,25 +21,10 @@ def lire_notes():
     return path.read_text(encoding="utf-8")[-18000:]
 
 
-def demander(client, messages, max_tokens=1200):
-    result = client.chat.completions.create(
-        model=MODEL,
-        messages=messages,
-        temperature=0.25,
-        reasoning_effort="low",
-        max_completion_tokens=max_tokens,
-    )
-    return (result.choices[0].message.content or "").strip()
-
-
 def generer_documentaire():
-    key = os.getenv("GROQ_API_KEY")
-    if not key:
-        raise RuntimeError("Secret GROQ_API_KEY absent.")
     notes = lire_notes()
-    client = Groq(api_key=key, timeout=60, max_retries=2)
 
-    plan = demander(client, [
+    plan, provider = generate_text([
         {"role": "system", "content": "Tu es un journaliste documentaire francophone prudent."},
         {"role": "user", "content": (
             "Prépare un documentaire court intitulé « Les technologies qui changent notre quotidien » "
@@ -53,7 +33,7 @@ def generer_documentaire():
             "Réponds en JSON avec les clés title, introduction et chapters. chapters doit être une liste "
             "de 4 objets contenant title et text.\nNOTES :\n" + notes
         )}
-    ], 2200)
+    ], max_tokens=2200, temperature=0.25, json_mode=True)
 
     plan = plan.strip()
     if plan.startswith("```"):
@@ -80,7 +60,7 @@ def generer_documentaire():
     script = "# " + title + "\n\n" + intro + "\n\n"
     for number, (heading, body) in enumerate(clean_chapters, 1):
         script += f"## Chapitre {number} — {heading}\n\n{body}\n\n"
-    script += "\n---\nDocumentaire de démonstration assisté par IA. Les informations sont issues des notes archivées ; consulte les sources d'origine pour les vérifier.\n"
+    script += f"\n---\nDocumentaire de démonstration assisté par {provider}. Les informations sont issues des notes archivées ; consulte les sources d'origine pour les vérifier.\n"
     if len(script) < 1200 or not verifier_conformite_legale(script, "DOCUMENTAIRE_TEST"):
         raise RuntimeError("Le contrôle de publication a bloqué le documentaire.")
 
