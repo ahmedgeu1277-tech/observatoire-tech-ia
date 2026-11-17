@@ -398,8 +398,6 @@ Sources :
     tip = data["tip"].strip()[:500]
 
     indices = data["source_indices"]
-    if not isinstance(indices, list) or not indices:
-        raise ValueError("La réponse IA ne référence aucune source. Aucun article publié.")
 
     def indices_valides(values):
         return (
