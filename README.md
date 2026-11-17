@@ -24,7 +24,7 @@ Le workflow du dimanche :
 
 Les profils d'agents sont des configurations JSON : ils ne génèrent ni n'exécutent librement du code Python.
 
-## Encyclopédie annuelle
+## Orchestrateur de missions IA (prototype contrôlé)\n- `orchestrateur.py` permet de lancer une mission JSON avec jusqu'à trois rôles spécialisés : chercheur, critique et architecte.\n- Chaque agent produit uniquement une analyse textuelle ; aucun code n'est exécuté, aucun compte externe n'est piloté et aucune publication n'est automatique.\n- Les rapports sont enregistrés dans `.laboratoire_prive/missions/`, dossier ignoré par Git. Ils ne sont pas publiés sur le site.\n- Les missions sont limitées à 180 secondes maximum, avec au moins 60 secondes prévues par agent ; les appels réseau ont leurs propres délais d'expiration.\n- Cette première brique est un orchestrateur séquentiel borné, pas encore une équipe d'agents persistants ni un service de chat public.\n\n## Encyclopédie annuelle
 Le générateur `ecrire_livre.py` est manuel. Il utilise `memoire_tech.txt` et, si présent, `coffre_secret_livre.txt`.
 
 ## Secrets et permissions
