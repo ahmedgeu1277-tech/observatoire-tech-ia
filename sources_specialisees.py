@@ -17,7 +17,10 @@ FEEDS = {
         ("arXiv Machine Learning", "https://rss.arxiv.org/rss/cs.LG"),
     ],
     "gaming": [
-        ("Unreal Engine / Epic", "https://www.unrealengine.com/rss"),
+        ("Unity", "https://blog.unity.com/feed"),
+        ("Unreal Engine / Epic", "https://www.unrealengine.com/rss?lang=en-US"),
+        ("Godot", "https://godotengine.org/rss.xml"),
+        ("GameMaker", "https://gamemaker.io/en/blog/rss"),
     ],
     "roblox": [],
 }
@@ -68,9 +71,9 @@ def parse_feed(content, publisher, feed_url):
 def fetch_specialized_sources(theme_name, limit=5):
     """Récupère uniquement les flux correspondant au thème ; un flux en panne est ignoré."""
     theme = (theme_name or "").lower()
-    if "roblox" in theme or "création de jeux" in theme:
+    if "roblox" in theme:
         feeds = FEEDS["roblox"]
-    elif any(word in theme for word in ("gaming", "jeux vidéo", "jeu vidéo")):
+    elif any(word in theme for word in ("gaming", "jeux vidéo", "jeu vidéo", "moteur", "logiciel de création", "game engine", "unity", "unreal", "godot", "gamemaker")):
         feeds = FEEDS["gaming"]
     elif any(word in theme for word in ("intelligence artificielle", "ia", "machine learning")):
         feeds = FEEDS["ai"]
