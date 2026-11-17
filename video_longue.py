@@ -75,7 +75,7 @@ async def creer_documentaire_tech():
             raise RuntimeError(f"Chapitre {number} invalide.")
         heading = str(item.get("title") or f"Chapitre {number}")[:140]
         body = str(item.get("text") or "").strip()[:5000]
-        if len(body.split()) < 80:
+        if len(body.split()) < 60:
             raise RuntimeError(f"Chapitre {number} trop court ({len(body.split())} mots) : documentaire incomplet.")
         chapters.append((number, heading, body))
 
