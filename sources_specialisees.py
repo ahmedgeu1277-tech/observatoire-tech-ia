@@ -20,6 +20,8 @@ FEEDS = {
         ("IGN France", "https://fr.ign.com/feed.xml"),
         ("IGN", "https://www.ign.com/rss/v2/articles/feed"),
         ("GameSpot", "https://www.gamespot.com/feeds/news/"),
+    ],
+    "engines": [
         ("Unity", "https://blog.unity.com/feed"),
         ("Unreal Engine / Epic", "https://www.unrealengine.com/rss?lang=en-US"),
         ("Godot", "https://godotengine.org/rss.xml"),
@@ -84,10 +86,13 @@ def fetch_specialized_sources(theme_name, limit=5):
     if "roblox" in theme:
         feeds = FEEDS["roblox"]
         keywords = ("roblox",)
+    elif any(word in theme for word in ("moteur", "logiciel de création", "game engine", "unity", "unreal", "godot", "gamemaker")):
+        feeds = FEEDS["engines"]
+        keywords = ("unity", "unreal", "godot", "gamemaker", "engine", "moteur")
     elif any(word in theme for word in ("gta", "grand theft auto", "rockstar")):
         feeds = FEEDS["gaming"]
         keywords = ("gta", "grand theft auto", "rockstar")
-    elif any(word in theme for word in ("gaming", "jeux vidéo", "jeu vidéo", "moteur", "logiciel de création", "game engine", "unity", "unreal", "godot", "gamemaker")):
+    elif any(word in theme for word in ("gaming", "jeux vidéo", "jeu vidéo")):
         feeds = FEEDS["gaming"]
     elif any(word in theme for word in ("intelligence artificielle", "ia", "machine learning")):
         feeds = FEEDS["ai"]
