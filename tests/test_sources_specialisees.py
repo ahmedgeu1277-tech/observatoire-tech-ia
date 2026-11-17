@@ -26,7 +26,7 @@ class SpecializedFeedTests(unittest.TestCase):
         mock_get.return_value = Response()
         result = fetch_specialized_sources("Moteurs et logiciels de création de jeux", limit=10)
         self.assertEqual(len(result), 1)
-        self.assertEqual(mock_get.call_count, 4)
+        self.assertEqual(mock_get.call_count, len(FEEDS["gaming"]))
 
     def test_rejects_non_http_links(self):
         xml = b"""<rss><channel><item><title>Bad</title><link>javascript:alert(1)</link></item></channel></rss>"""
