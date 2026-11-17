@@ -1,26 +1,5 @@
 [
   {
-    "id": "20261117T184452-92b127b9",
-    "date": "2026-11-17T18:44+00:00",
-    "theme": "Sécurité numérique",
-    "title": "Scality devient autorité de numérotation des vulnérabilités",
-    "summary": "Scality a été désignée par l’Agence européenne de cybersécurité comme nouvelle autorité chargée de numérotation des vulnérabilités. Cette nomination vise à standardiser la classification des failles et à faciliter la communication entre les acteurs de la sécurité. L’initiative devrait accélérer la diffusion d’informations sur les vulnérabilités critiques et améliorer la coordination des réponses. Les détails sur la portée exacte de cette responsabilité restent à préciser, notamment les systèmes ciblés et les mécanismes de suivi.",
-    "verdict": "neutral",
-    "tip": "Vérifiez les communiqués officiels de l’Agence européenne de cybersécurité pour confirmer les modalités de mise en œuvre.",
-    "sources": [
-      {
-        "title": "Scality devient autorité de numérotation des vulnérabilités sous l’égide de l’Agence européenne de cybersécurité",
-        "publisher": "it social",
-        "domain": "news.google.com",
-        "published": "Thu, 12 Nov 2026 06:51:14 GMT",
-        "description": "Scality devient autorité de numérotation des vulnérabilités sous l’égide de l’Agence européenne de cybersécurité    it social",
-        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNYW83UDZHd1ZMaVJsdVJMX0ZtQTZzbmp3RC1uVFZzcFlfWk93U2FTempQU0JWRDdkd2pqOFVJT2JXSFBoSlphb2Fta0k4Yl9rbF9lSndGd01yMHZ4VmkteEMyN2YyWGxZeFdzYW1FV2J1bG5WRTNBMF9DWG4zZnEtTmxYR1h2ZFZPNUdsZVllVU1paWh3Q1haQkQyencxdUNGRE02dU9lZ1NkT0lweS0yM011UDdfZGxDVlFqYkpiUGNOT2dlWGdWdDI4OV9Uc2pBUTlzaGRTQkJMSU5ySTFLWFZOTXZZUQ?oc=5"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261117T184452-92b127b9.mp3"
-  },
-  {
     "id": "20261117T184405-f387119a",
     "date": "2026-11-17T18:44+00:00",
     "theme": "GTA VI — préparation du lancement en Thaïlande",
