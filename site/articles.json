@@ -1,5 +1,36 @@
 [
   {
+    "id": "20261117T200811-74ceca99",
+    "date": "2026-11-17T20:08+00:00",
+    "theme": "Gaming et jeux vidéo — veille générale (recherche de secours)",
+    "title": "Gaming et jeux vidéo : détails chiffrés non confirmés",
+    "summary": "Les sources consultées mentionnent Gaming et jeux vidéo, mais elles ne fournissent pas suffisamment d'éléments pour confirmer les dates et caractéristiques chiffrées avancées. Les détails précis de lancement, de performances et de compatibilité doivent être vérifiés dans les annonces et fiches techniques officielles.",
+    "verdict": "Les chiffres et caractéristiques détaillés ne sont pas établis par les sources consultées.",
+    "tip": "Consulter les annonces et fiches techniques officielles avant de retenir des chiffres précis.",
+    "sources": [
+      {
+        "title": "Dawn of Defense - Trailer de lancement",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Tue, 17 Nov 2026 19:30:27 +0000",
+        "description": "Découvrez la bande-annonce de lancement de Dawn of Defense, un jeu de stratégie en temps réel (RTS) de type tower defense développé par 6side Studio. Les joueurs commanderont des guerriers au cœur des combats pour assurer la tenue des défenses, affronteront l’Empire et reconquerront leur patrie à tout prix. Dawn of Defense est désormais disponible sur PC (Steam).",
+        "url": "https://fr.ign.com/dawn-of-defense/94021/dawn-of-defense-trailer-de-lancement",
+        "source_type": "flux_officiel"
+      },
+      {
+        "title": "Wartales - Trailer de gameplay pour l'extension Knights of Fardensa",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Tue, 17 Nov 2026 18:30:29 +0000",
+        "description": "Voici un aperçu de la bande-annonce présentant le gameplay de l’extension Knights of Fardensa pour Wartales, un RPG stratégique médiéval en monde ouvert et au tour par tour développé par Shiro Games. Les joueurs se lanceront dans de nouvelles aventures à Fardensa pour découvrir de nouveaux systèmes de jeu, influencer la lutte entre les maisons nobles et explorer les nouvelles fonctionnalités, notamment l’introduction de la classe de maîtrise « Cavalier », l’élevage de chevaux et bien plus encore. L’extension Knights of Fardensa sortira le 9 décembre pour Wartales sur PC (Steam et Epic Games Store).",
+        "url": "https://fr.ign.com/wartales/94020/wartales-trailer-de-gameplay-pour-lextension-knights-of-fardensa",
+        "source_type": "flux_officiel"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261117T200811-74ceca99.mp3"
+  },
+  {
     "id": "20261117T195841-de3acfa7",
     "date": "2026-11-17T19:58+00:00",
     "theme": "GTA VI — préparation du lancement en Thaïlande",
