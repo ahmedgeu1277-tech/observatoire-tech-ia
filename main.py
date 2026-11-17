@@ -5,7 +5,7 @@ import re
 import sys
 from datetime import UTC, datetime
 from pathlib import Path
-from urllib.parse import quote, urlparse
+from urllib.parse import parse_qs, quote, urlparse
 from uuid import uuid4
 
 import requests
@@ -145,6 +145,12 @@ def fetch_news(query, limit=8):
     for item in root.findall(".//item"):
         title = (item.findtext("title") or "").strip()
         link = (item.findtext("link") or "").strip()
+        parsed_link = urlparse(link)
+        if (parsed_link.hostname or "").lower().removeprefix("www.") == "bing.com" and parsed_link.path.startswith("/news/apiclick"):
+            target = parse_qs(parsed_link.query).get("url", [""])[0]
+            link = target if urlparse(target).scheme == "https" else ""
+        if urlparse(link).scheme != "https" or not urlparse(link).netloc:
+            continue
         description = (item.findtext("description") or "").strip()
         published = (item.findtext("pubDate") or "").strip()
         description = re.sub(r"<[^>]+>", " ", description)
@@ -203,6 +209,7 @@ RÈGLES DE RÉDACTION :
 - Pas de ton publicitaire, de fausse excitation, de fausse opinion personnelle ni de conclusion passe-partout.
 - Un titre informatif, court et spécifique. Pas de clickbait.
 - Si les sources se contredisent ou restent vagues, indique-le franchement. Si elles ne suffisent pas, ne transforme pas une rumeur en fait.
+- Ne conclus jamais qu'une annonce ou une disponibilité n'existe pas simplement parce que les sources récupérées n'en parlent pas. Écris plutôt « les sources consultées ne précisent pas... ».
 - Les agents spécialisés ne sont pas des sources indépendantes : ne reprends leurs affirmations que si les liens fournis les confirment.
 - Choisis uniquement les indices des sources réellement utiles. Les indices commencent à 0.
 - Réponds en français avec un objet JSON contenant exactement : "title", "summary", "verdict", "tip", "source_indices". Aucun texte hors JSON.
