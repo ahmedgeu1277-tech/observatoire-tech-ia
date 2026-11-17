@@ -171,3 +171,21 @@ class NewsFallbackTests(unittest.TestCase):
         result = main.fetch_news("test", limit=1)
         self.assertEqual(result[0]["url"], "https://example.org/article")
         self.assertEqual(result[0]["domain"], "example.org")
+
+
+    @patch("main.generate_text")
+    def test_invalid_source_selection_is_repaired_once(self, mock_generate):
+        payload = {
+            "title": "Titre test",
+            "summary": " ".join(["mot"] * 70),
+            "verdict": "Verdict prudent",
+            "tip": "Consulter la source originale",
+            "source_indices": [9],
+        }
+        mock_generate.side_effect = [
+            (json.dumps(payload), "groq"),
+            (json.dumps({"source_indices": [0]}), "groq"),
+        ]
+        article = main.create_article(self.theme, self.sources)
+        self.assertEqual(article["sources"], self.sources)
+        self.assertEqual(mock_generate.call_count, 2)
