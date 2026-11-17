@@ -1,0 +1,142 @@
+name: Analyse avancée - sécurité, qualité et site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '23 5 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: analyse-avancee-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  qualite-python:
+    name: Qualité Python (Ruff et Bandit)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - name: Installer les analyseurs
+        run: python -m pip install --disable-pip-version-check ruff bandit
+      - name: Analyser le style et les erreurs Python
+        continue-on-error: true
+        run: ruff check . --output-format=github
+      - name: Analyser les risques de sécurité Python
+        continue-on-error: true
+        run: bandit -r . -x ./tests -ll
+
+  secrets:
+    name: Recherche de secrets (Gitleaks)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Scanner l'historique Git et les fichiers
+        uses: gitleaks/gitleaks-action@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_ENABLE_COMMENTS: 'false'
+
+  codeql:
+    name: Analyse de sécurité CodeQL
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ['python', 'javascript-typescript']
+    steps:
+      - uses: actions/checkout@v6
+      - name: Initialiser CodeQL
+        uses: github/codeql-action/init@v4
+        with:
+          languages: ${{ matrix.language }}
+          build-mode: none
+      - name: Analyser le code
+        uses: github/codeql-action/analyze@v4
+        with:
+          category: '/language:${{ matrix.language }}'
+
+  test-site:
+    name: Test navigateur de toutes les pages HTML
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Installer Playwright
+        run: |
+          npm install --prefix /tmp/pw --no-audit --no-fund playwright
+          /tmp/pw/node_modules/.bin/playwright install --with-deps chromium
+      - name: Démarrer le site et tester les pages
+        env:
+          NODE_PATH: /tmp/pw/node_modules
+        run: |
+          python -m http.server 4173 --bind 127.0.0.1 > /tmp/site-server.log 2>&1 &
+          echo $! > /tmp/site-server.pid
+          for attempt in $(seq 1 30); do
+            if curl --silent --fail http://127.0.0.1:4173/ > /dev/null; then break; fi
+            sleep 1
+          done
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+          const { chromium } = require('playwright');
+
+          function htmlFiles(dir) {
+            return fs.readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
+              if (entry.name === '.git' || entry.name === 'node_modules') return [];
+              const full = path.join(dir, entry.name);
+              if (entry.isDirectory()) return htmlFiles(full);
+              return entry.isFile() && entry.name.toLowerCase().endsWith('.html') ? [full] : [];
+            });
+          }
+
+          (async () => {
+            const files = htmlFiles('.');
+            if (!files.length) throw new Error('Aucun fichier HTML trouvé.');
+            const browser = await chromium.launch({ headless: true });
+            const page = await browser.newPage();
+            const failures = [];
+            page.on('pageerror', error => failures.push('Erreur JavaScript: ' + error.message));
+
+            for (const file of files) {
+              const route = '/' + file.split(path.sep).join('/');
+              const response = await page.goto('http://127.0.0.1:4173' + route, { waitUntil: 'domcontentloaded' });
+              if (!response || response.status() >= 400) {
+                failures.push(route + ' : HTTP ' + (response ? response.status() : 'aucune réponse'));
+              } else {
+                const title = await page.title();
+                console.log('OK ' + route + ' | ' + (title || 'sans titre'));
+              }
+            }
+
+            await browser.close();
+            console.log('Pages HTML testées : ' + files.length);
+            if (failures.length) {
+              console.error(failures.join('\n'));
+              process.exit(1);
+            }
+          })().catch(error => { console.error(error); process.exit(1); });
+          NODE
