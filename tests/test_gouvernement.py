@@ -1,3 +1,4 @@
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -69,6 +70,14 @@ class GovernmentTests(unittest.TestCase):
         agent = gov.recruit_agent(state, "Agent Python", "Développeur", team["id"])
         promoted = gov.promote_agent(state, agent["id"], "confirmé", "Tests réussis et contributions vérifiées.")
         self.assertEqual(promoted["grade"], "confirmé")
+
+    def test_save_state_creates_public_dashboard_json(self):
+        with tempfile.TemporaryDirectory() as directory:
+            target = Path(directory) / "data" / "gouvernement.json"
+            gov.save_state(gov.initial_state(), target)
+            saved = json.loads(target.read_text(encoding="utf-8"))
+            self.assertEqual(len(saved["directors"]), 30)
+            self.assertEqual(saved["treasury"], 0)
 
 
 if __name__ == "__main__":
