@@ -6,7 +6,6 @@ n'est exécuté, aucune publication ni action sur un compte n'est autorisée.
 from __future__ import annotations
 
 import json
-import os
 import sys
 import time
 from datetime import UTC, datetime
@@ -20,7 +19,7 @@ PRIVATE_DIR = ROOT / ".laboratoire_prive" / "missions"
 MAX_MISSION_CHARS = 12_000
 MAX_CONTEXT_CHARS = 8_000
 MAX_AGENTS = 3
-MAX_DURATION_SECONDS = 300
+MAX_DURATION_SECONDS = 180
 MAX_TOKENS_PER_AGENT = 900
 
 AGENTS = {
@@ -61,8 +60,8 @@ def valider_mission(data: object) -> dict:
         raise ValueError("Un agent demandé est inconnu ou répété.")
     if isinstance(duration, bool) or not isinstance(duration, int):
         raise ValueError("La durée doit être un nombre entier de secondes.")
-    if not 10 <= duration <= MAX_DURATION_SECONDS:
-        raise ValueError(f"La durée doit être comprise entre 10 et {MAX_DURATION_SECONDS} secondes.")
+    if not 60 * len(agents) <= duration <= MAX_DURATION_SECONDS:
+        raise ValueError(f"La durée doit couvrir au moins 60 secondes par agent et ne pas dépasser {MAX_DURATION_SECONDS} secondes.")
     return {
         "mission": mission.strip(),
         "context": context.strip(),
