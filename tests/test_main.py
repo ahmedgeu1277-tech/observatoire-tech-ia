@@ -256,3 +256,21 @@ class NewsFallbackTests(unittest.TestCase):
         article = main.create_article(theme, sources)
         self.assertEqual(article["sources"], sources)
         self.assertEqual(mock_generate.call_count, 2)
+
+
+    @patch("main.requests.get")
+    def test_news_search_discards_items_older_than_seven_days(self, mock_get):
+        class Response:
+            def __init__(self, content):
+                self.content = content
+            def raise_for_status(self):
+                return None
+
+        empty = b"<rss><channel></channel></rss>"
+        fresh = b"""<rss><channel>
+        <item><title>Actualite recente</title><link>https://example.org/fresh</link><description>Information recente et suffisamment longue.</description><pubDate>Mon, 16 Nov 2026 10:00:00 GMT</pubDate></item>
+        <item><title>Actualite ancienne</title><link>https://example.org/old</link><description>Information ancienne et suffisamment longue.</description><pubDate>Mon, 01 Oct 2026 10:00:00 GMT</pubDate></item>
+        </channel></rss>"""
+        mock_get.side_effect = [Response(empty), Response(fresh)]
+        result = main.fetch_news("test actualité", limit=5)
+        self.assertEqual([item["title"] for item in result], ["Actualite recente"])
