@@ -54,6 +54,19 @@ def check_repository(root: Path = ROOT) -> dict:
                 raise ValueError(f"Fichier audio absent ou vide : {audio_url}.")
             audio_count += 1
 
+    profiles_count = 0
+    profiles_path = root / "site" / "data" / "agents.json"
+    if profiles_path.exists():
+        profile_index = _read_json(profiles_path)
+        if not isinstance(profile_index, dict) or not isinstance(profile_index.get("profiles"), list):
+            raise ValueError("site/data/agents.json doit contenir une liste de profils.")
+        for profile in profile_index["profiles"]:
+            if not isinstance(profile, dict) or not all(profile.get(key) for key in ("name", "role", "mission", "status")):
+                raise ValueError("Profil IA incomplet dans agents.json.")
+            if "non exécuté" not in str(profile["status"]).casefold():
+                raise ValueError("Un profil configuré ne doit pas être présenté comme un agent actif.")
+        profiles_count = len(profile_index["profiles"])
+
     government = _read_json(root / "site" / "data" / "gouvernement.json")
     if not isinstance(government, dict) or len(government.get("directors", [])) != 30:
         raise ValueError("Le tableau de bord gouvernemental doit contenir 30 administrateurs.")
@@ -66,6 +79,7 @@ def check_repository(root: Path = ROOT) -> dict:
         "sources": source_count,
         "audio_files": audio_count,
         "directors": len(government["directors"]),
+        "agent_profiles": profiles_count,
     }
 
 
