@@ -52,7 +52,7 @@ def generate_text(messages, max_tokens=1200, temperature=0.25, json_mode=False):
                     print("INFO : génération IA via Hugging Face.")
                     return content, "huggingface"
                 raise RuntimeError("réponse vide")
-        except Exception as exc:
+        except Exception as exc:  # noqa: BLE001 — exceptions variables selon le fournisseur IA.
             # Le journal ne contient ni clé, ni contenu de requête.
             failures.append(f"{provider}:{type(exc).__name__}")
             print(f"AVERTISSEMENT : fournisseur IA {provider} indisponible ({type(exc).__name__}).")
