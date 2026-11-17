@@ -39,7 +39,8 @@ def generate_text(messages, max_tokens=1200, temperature=0.25, json_mode=False):
                 from huggingface_hub import InferenceClient
                 client = InferenceClient(
                     model=os.getenv("HF_MODEL") or "Qwen/Qwen2.5-7B-Instruct",
-                    token=hf_key,
+                    api_key=hf_key,
+                    provider="auto",
                     timeout=60,
                 )
                 result = client.chat.completions.create(
@@ -54,8 +55,10 @@ def generate_text(messages, max_tokens=1200, temperature=0.25, json_mode=False):
                 raise RuntimeError("réponse vide")
         except Exception as exc:  # noqa: BLE001 — exceptions variables selon le fournisseur IA.
             # Le journal ne contient ni clé, ni contenu de requête.
-            failures.append(f"{provider}:{type(exc).__name__}")
-            print(f"AVERTISSEMENT : fournisseur IA {provider} indisponible ({type(exc).__name__}).")
+            status_code = getattr(exc, "status_code", None)
+            detail = f"{type(exc).__name__}:{status_code}" if status_code else type(exc).__name__
+            failures.append(f"{provider}:{detail}")
+            print(f"AVERTISSEMENT : fournisseur IA {provider} indisponible ({detail}).")
 
     raise RuntimeError(
         "Aucun fournisseur IA configuré n'a répondu. "
