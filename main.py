@@ -352,8 +352,8 @@ Sources :
         raise ValueError(f"Résumé IA hors longueur acceptable ({summary_words} mots). Aucun article publié.")
 
     data = appliquer_garde_regionale(theme, data, sources)
-    data = appliquer_garde_versions(data, sources)
     data = appliquer_garde_chiffres(theme, data, sources)
+    data = appliquer_garde_versions(data, sources)
     title = data["title"].strip()[:140]
     summary = data["summary"].strip()[:1200]
     verdict = data["verdict"].strip()[:500]
