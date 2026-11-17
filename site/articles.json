@@ -3,26 +3,26 @@
     "id": "20261117T183458-77b97af1",
     "date": "2026-11-17T18:34+00:00",
     "theme": "GTA VI — préparation du lancement en Thaïlande",
-    "title": "GTA VI : aucune confirmation de lancement en Thaïlande",
-    "summary": "Les communiqués officiels d’IGN et de Tom’s Guide détaillent la date, l’heure et le préchargement de GTA VI en France, mais aucune source ne mentionne la Thaïlande. Les articles se concentrent sur les nominations aux Game Awards, les acteurs et les mises à jour de sécurité PS5. Sans information locale, les lecteurs ne savent pas encore si le jeu sera disponible dans ce pays ou à quelle heure.",
-    "verdict": "Non confirmé",
-    "tip": "Surveillez les communiqués de Rockstar ou les sites de presse thaïlandais pour des annonces futures.",
+    "title": "GTA VI : les sources consultées ne précisent pas la Thaïlande",
+    "summary": "Les articles consultés abordent les horaires annoncés pour GTA VI et une méthode régionale évoquée pour tenter d'y jouer plus tôt. Ils ne donnent toutefois aucune précision sur la disponibilité du jeu en Thaïlande. Il faut donc attendre une information de Rockstar ou une confirmation du magasin régional avant de conclure.",
+    "verdict": "Information locale non précisée par les sources consultées",
+    "tip": "Consulter les annonces de Rockstar et la boutique de la région concernée avant le lancement.",
     "sources": [
       {
         "title": "GTA 6 : date, heure de sortie, taille du jeu et préchargement, quand pourrez-vous jouer ?",
-        "publisher": "bing.com",
-        "domain": "bing.com",
+        "publisher": "Tom's Guide",
+        "domain": "tomsguide.fr",
         "published": "Tue, 27 Oct 2026 22:59:00 GMT",
         "description": "Le compte à rebours touche à sa fin. Rockstar a levé les dernières inconnues sur le lancement de GTA 6 : l’horaire officiel, un préchargement avancé de deux jours et un poids colossal, désormais ...",
-        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6afc9e36440f4d37b89eb3920051fc77&url=https%3a%2f%2fwww.tomsguide.fr%2fgta-6-date-heure-de-sortie-taille-du-jeu-et-prechargement-quand-pourrez-vous-jouer%2f&c=6119315519666063109&mkt=en-us"
+        "url": "https://www.tomsguide.fr/gta-6-date-heure-de-sortie-taille-du-jeu-et-prechargement-quand-pourrez-vous-jouer/"
       },
       {
         "title": "GTA 6 : comment jouer avant le 19 novembre grâce à l'astuce de la Nouvelle-Zélande",
-        "publisher": "bing.com",
-        "domain": "bing.com",
+        "publisher": "msn.com",
+        "domain": "msn.com",
         "published": "Tue, 17 Nov 2026 05:30:17 GMT",
         "description": "Jeudi 19 novembre à 0 h, GTA 6 se débloque officiellement en France, mais certains viseront midi la veille grâce à l’astuce Nouvelle-Zélande. Entre gain de 12 heures et risque de sanction, mieux vaut ...",
-        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6afc9e36440f4d37b89eb3920051fc77&url=https%3a%2f%2fwww.msn.com%2ffr-fr%2factualite%2fother%2fgta-6-comment-jouer-avant-le-19-novembre-gr%25C3%25A2ce-%25C3%25A0-lastuce-de-la-nouvelle-z%25C3%25A9lande%2far-AA2hD8py&c=13019282974852379266&mkt=en-us"
+        "url": "https://www.msn.com/fr-fr/actualite/other/gta-6-comment-jouer-avant-le-19-novembre-gr%C3%A2ce-%C3%A0-lastuce-de-la-nouvelle-z%C3%A9lande/ar-AA2hD8py"
       }
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
