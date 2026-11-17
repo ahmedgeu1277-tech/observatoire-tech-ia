@@ -17,3 +17,5 @@ Le dossier généré contient une configuration Rojo, des scripts Luau serveur/c
 - Le code doit être testé dans une expérience privée avant tout partage ou publication.
 
 C'est un premier générateur déterministe, pas encore un créateur de jeux IA autonome. L'intégration de génération assistée, de tests de gameplay et de synchronisation contrôlée reste à développer.
+
+Après génération, lancer le contrôle statique : python validateur_roblox.py .laboratoire_prive/prototypes/Mon_Obby. Ce contrôle est une première barrière, pas une certification.

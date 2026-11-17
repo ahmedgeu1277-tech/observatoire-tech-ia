@@ -72,3 +72,6 @@ Voir [docs/FILE_MISSIONS.md](docs/FILE_MISSIONS.md). `gestionnaire_missions.py` 
 
 ## Générateur de projets Roblox
 Voir docs/GENERATEUR_ROBLOX.md. Le module studio_roblox.py génère un squelette Rojo de jeu obby avec scripts serveur/client et monnaie gérée côté serveur. Il ne se connecte pas à Roblox, n'exécute pas le code Luau et ne publie aucun jeu.
+ 
+## Validation statique des projets Roblox
+Voir docs/VALIDATEUR_ROBLOX.md. Le module validateur_roblox.py analyse les fichiers Luau et la configuration Rojo sans exécuter le code ; ses limites sont documentées.
