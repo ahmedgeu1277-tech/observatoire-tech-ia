@@ -141,3 +141,20 @@ class ThemeSelectionTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class NewsFallbackTests(unittest.TestCase):
+    @patch("main.requests.get")
+    def test_bing_is_used_when_google_news_fails(self, mock_get):
+        import requests
+
+        class Response:
+            content = b"""<rss><channel><item><title>Actualite de secours</title><link>https://example.org/news</link><description>Information de test.</description></item></channel></rss>"""
+            def raise_for_status(self):
+                return None
+
+        mock_get.side_effect = [requests.ConnectionError("Google indisponible"), Response()]
+        result = main.fetch_news("test actualité", limit=2)
+        self.assertEqual(len(result), 1)
+        self.assertEqual(result[0]["title"], "Actualite de secours")
+        self.assertEqual(mock_get.call_count, 2)
