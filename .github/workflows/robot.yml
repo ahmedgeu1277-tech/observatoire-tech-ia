@@ -62,6 +62,7 @@ jobs:
             exit 1
           fi
           python main.py
+          python healthcheck.py
       - name: Enregistrer le site
         if: success()
         run: |
