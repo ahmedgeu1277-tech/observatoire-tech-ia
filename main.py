@@ -7,7 +7,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import quote, urlparse
-import xml.etree.ElementTree as ET
+from defusedxml import ElementTree as ET
 
 import requests
 from agent_gardien import verifier_conformite_legale
