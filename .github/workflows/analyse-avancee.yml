@@ -144,6 +144,16 @@ jobs:
               } else {
                 const title = await page.title();
                 console.log('OK ' + route + ' | ' + (title || 'sans titre'));
+                const links = await page.locator('a[href]').evaluateAll(nodes =>
+                  nodes.map(node => node.getAttribute('href')).filter(Boolean)
+                );
+                for (const href of links) {
+                  if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) continue;
+                  const target = new URL(href, page.url());
+                  if (target.origin !== 'http://127.0.0.1:4173') continue;
+                  const check = await page.request.get(target.href);
+                  if (!check.ok()) failures.push(route + ' : lien cassé ' + href + ' (HTTP ' + check.status() + ')');
+                }
               }
             }
 
