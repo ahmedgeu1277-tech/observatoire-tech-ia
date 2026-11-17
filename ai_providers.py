@@ -38,9 +38,8 @@ def generate_text(messages, max_tokens=1200, temperature=0.25, json_mode=False):
             if provider in ("huggingface", "hf") and hf_key:
                 from huggingface_hub import InferenceClient
                 client = InferenceClient(
-                    model=os.getenv("HF_MODEL") or "Qwen/Qwen2.5-7B-Instruct",
+                    model=os.getenv("HF_MODEL") or "Qwen/Qwen2.5-7B-Instruct-1M",
                     api_key=hf_key,
-                    provider="auto",
                     timeout=60,
                 )
                 result = client.chat.completions.create(
