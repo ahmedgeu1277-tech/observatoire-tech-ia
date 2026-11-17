@@ -20,14 +20,14 @@ def lire_notes():
     path = ROOT / "memoire_tech.txt"
     if not path.exists() or not path.read_text(encoding="utf-8").strip():
         raise RuntimeError("La mémoire est vide : lance d'abord une collecte d'actualités.")
-    return path.read_text(encoding="utf-8")[-18000:]
+    return path.read_text(encoding="utf-8")[-6000:]
 
 
 def generer_documentaire():
     notes = lire_notes()
 
     plan, provider = generate_text([
-        {"role": "system", "content": "Tu es un journaliste documentaire francophone prudent."},
+        {"role": "system", "content": "Tu es un journaliste documentaire francophone prudent. Réponds toujours en JSON valide."},
         {"role": "user", "content": (
             "Prépare un documentaire court intitulé « Les technologies qui changent notre quotidien » "
             "avec une introduction et exactement 4 chapitres. Base-toi uniquement sur les notes ci-dessous. "
@@ -35,7 +35,7 @@ def generer_documentaire():
             "Réponds en JSON avec les clés title, introduction et chapters. chapters doit être une liste "
             "de 4 objets contenant title et text.\nNOTES :\n" + notes
         )}
-    ], max_tokens=2200, temperature=0.25, json_mode=True)
+    ], max_tokens=1400, temperature=0.25, json_mode=True)
 
     plan = plan.strip()
     if plan.startswith("```"):
