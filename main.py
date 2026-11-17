@@ -193,6 +193,46 @@ def fetch_news(query, limit=8):
                 break
     return diversified[:limit]
 
+
+REGION_ALIASES = {
+    "thaïlande": ("thaïlande", "thailand", "thai", "thaïlandais", "thailandais"),
+    "france": ("france", "français", "française", "french"),
+    "états-unis": ("états-unis", "united states", "usa", "american"),
+    "royaume-uni": ("royaume-uni", "united kingdom", "britain", "british"),
+    "japon": ("japon", "japan", "japanese"),
+    "canada": ("canada", "canadian"),
+}
+
+
+def appliquer_garde_regionale(theme, data, sources):
+    """Empêche d'affirmer une disponibilité locale sans source qui mentionne la région."""
+    theme_text = str(theme.get("name", "")).casefold()
+    corpus = " ".join(
+        str(source.get(field, ""))
+        for source in sources
+        for field in ("title", "description", "url", "publisher")
+    ).casefold()
+    for region, aliases in REGION_ALIASES.items():
+        if region not in theme_text:
+            continue
+        if any(alias in corpus for alias in aliases):
+            return data
+        base_title = theme_text.split("—", 1)[0].strip().upper()
+        data["title"] = f"{base_title} : les sources ne précisent pas la {region.title()}"
+        data["summary"] = (
+            f"Les sources consultées abordent l'actualité de {base_title}, mais aucune ne mentionne "
+            f"la {region.title()}. Elles ne permettent donc pas de confirmer la disponibilité du jeu "
+            f"ni son heure de lancement dans ce pays. Les informations régionales doivent être vérifiées "
+            "auprès de l'éditeur et de la boutique officielle de la région concernée."
+        )
+        data["verdict"] = f"Disponibilité en {region.title()} non confirmée par les sources consultées."
+        data["tip"] = (
+            "Consulter les annonces de l'éditeur et la boutique officielle de la région avant de conclure."
+        )
+        print(f"INFO : garde régionale appliquée — aucune source ne mentionne {region.title()}.")
+        return data
+    return data
+
 def create_article(theme, sources, agent_reports=None):
     source_text = json.dumps(sources, ensure_ascii=False)
     prompt = f"""
@@ -243,6 +283,7 @@ Sources :
     if summary_words < 35 or summary_words > 140:
         raise ValueError(f"Résumé IA hors longueur acceptable ({summary_words} mots). Aucun article publié.")
 
+    data = appliquer_garde_regionale(theme, data, sources)
     title = data["title"].strip()[:140]
     summary = data["summary"].strip()[:1200]
     verdict = data["verdict"].strip()[:500]
