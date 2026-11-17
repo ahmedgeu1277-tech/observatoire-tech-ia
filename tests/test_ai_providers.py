@@ -6,7 +6,7 @@ from ai_providers import generate_text
 
 
 class AIProviderTests(unittest.TestCase):
-    @patch.dict(os.environ, {"GROQ_API_KEY": "", "HF_API_KEY": ""}, clear=False)
+    @patch.dict(os.environ, {"GROQ_API_KEY": "", "HF_API_KEY": "", "HF_TOKEN": ""}, clear=False)
     def test_no_keys_fails_without_leaking_secrets(self):
         with self.assertRaisesRegex(RuntimeError, "Aucun fournisseur IA"):
             generate_text([{"role": "user", "content": "test"}])
@@ -19,16 +19,12 @@ class AIProviderTests(unittest.TestCase):
         }):
             self.assertEqual(os.environ["AI_PROVIDER_ORDER"], "huggingface,groq")
 
-
-if __name__ == "__main__":
-    unittest.main()
-
-
     @patch("groq.Groq")
     @patch("huggingface_hub.InferenceClient")
     @patch.dict(os.environ, {
         "GROQ_API_KEY": "test-groq",
         "HF_API_KEY": "test-hf",
+        "HF_TOKEN": "",
         "AI_PROVIDER_ORDER": "groq,huggingface",
     }, clear=False)
     def test_huggingface_is_used_when_groq_fails(self, mock_hf, mock_groq):
@@ -36,6 +32,26 @@ if __name__ == "__main__":
         mock_hf.return_value.chat.completions.create.return_value.choices = [
             type("Choice", (), {"message": type("Message", (), {"content": "réponse de secours"})()})()
         ]
-        text, provider = generate_text([{"role": "user", "content": "test"}])
-        self.assertEqual(text, "réponse de secours")
+        generated, provider = generate_text([{"role": "user", "content": "test"}])
+        self.assertEqual(generated, "réponse de secours")
         self.assertEqual(provider, "huggingface")
+        mock_hf.assert_called_once()
+
+    @patch("groq.Groq")
+    @patch.dict(os.environ, {
+        "GROQ_API_KEY": "test-groq",
+        "HF_API_KEY": "",
+        "HF_TOKEN": "",
+        "AI_PROVIDER_ORDER": "groq",
+    }, clear=False)
+    def test_groq_returns_provider_name(self, mock_groq):
+        mock_groq.return_value.chat.completions.create.return_value.choices = [
+            type("Choice", (), {"message": type("Message", (), {"content": "réponse Groq"})()})()
+        ]
+        generated, provider = generate_text([{"role": "user", "content": "test"}])
+        self.assertEqual(generated, "réponse Groq")
+        self.assertEqual(provider, "groq")
+
+
+if __name__ == "__main__":
+    unittest.main()
