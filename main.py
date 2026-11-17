@@ -255,7 +255,7 @@ def load_previous_articles():
     try:
         data = json.loads(ARTICLES_FILE.read_text(encoding="utf-8"))
         if not isinstance(data, list):
-            raise RuntimeError("site/articles.json n'est pas une liste. Publication annulée pour préserver les archives.")
+            raise TypeError("site/articles.json n'est pas une liste. Publication annulée pour préserver les archives.")
         return data
     except json.JSONDecodeError as exc:
         raise RuntimeError("site/articles.json est invalide. Publication annulée pour préserver les archives.") from exc
