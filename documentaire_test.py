@@ -14,6 +14,8 @@ AUDIO_DIR = SITE / "audio"
 MANIFEST = SITE / "documentaire-test.json"
 PAGE = SITE / "documentaire-test.html"
 SCRIPT = SITE / "documentaire-test.md"
+
+
 def lire_notes():
     path = ROOT / "memoire_tech.txt"
     if not path.exists() or not path.read_text(encoding="utf-8").strip():
