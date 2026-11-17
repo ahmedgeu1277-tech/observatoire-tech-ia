@@ -2,21 +2,21 @@
 
 Ce documentaire de démonstration compile quatre dossiers récents déjà publiés par l'Observatoire. Les résumés, verdicts et conseils sont repris sans ajouter de nouveaux faits. Les liens permettent de consulter les sources originales et les incertitudes restent signalées.
 
-## Chapitre 1 — Call of Duty: Modern Warfare 4 : détails chiffrés non confirmés
+## Chapitre 1 — GTA VI : les sources ne précisent pas la Thaïlande
+
+Résumé éditorial : Les sources consultées abordent l'actualité de GTA VI, mais aucune ne mentionne la Thaïlande. Elles ne permettent donc pas de confirmer la disponibilité du jeu ni son heure de lancement dans ce pays. Les informations régionales doivent être vérifiées auprès de l'éditeur et de la boutique officielle de la région concernée. Évaluation : Disponibilité en Thaïlande non confirmée par les sources consultées. Conseil : Consulter les annonces de l'éditeur et la boutique officielle de la région avant de conclure. Les références associées sont : IGN France, IGN France, msn.com. Les éléments signalés comme incertains ne doivent pas être considérés comme confirmés. Pour approfondir, il faut ouvrir les sources originales et vérifier leur date et leur contexte.
+
+Sources :
+- IGN France : https://fr.ign.com/project-007/94022/les-nominations-des-game-awards-2026-devoilees-gta-6-en-tete
+- IGN France : https://fr.ign.com/grand-theft-auto-6/93998/gta-6-voici-comment-y-jouer-en-avance-grace-a-lastuce-de-la-nouvelle-zelande
+- msn.com : https://www.msn.com/fr-fr/actualite/other/gta-6-comment-jouer-avant-le-19-novembre-gr%C3%A2ce-%C3%A0-lastuce-de-la-nouvelle-z%C3%A9lande/ar-AA2hD8py
+
+## Chapitre 2 — Call of Duty: Modern Warfare 4 : détails chiffrés non confirmés
 
 Résumé éditorial : Les sources consultées mentionnent Call of Duty: Modern Warfare 4, mais elles ne fournissent pas suffisamment d'éléments pour confirmer les dates et caractéristiques chiffrées avancées. Les détails précis de lancement, de performances et de compatibilité doivent être vérifiés dans les annonces et fiches techniques officielles. Évaluation : Les chiffres et caractéristiques détaillés ne sont pas établis par les sources consultées. Conseil : Consulter les annonces et fiches techniques officielles avant de retenir des chiffres précis. Les références associées sont : msn.com. Les éléments signalés comme incertains ne doivent pas être considérés comme confirmés. Pour approfondir, il faut ouvrir les sources originales et vérifier leur date et leur contexte.
 
 Sources :
 - msn.com : https://www.msn.com/fr-fr/gaming/prochaines-sorties-jeux/modern-warfare-4-confirme-le-retour-d-un-mode-tant-attendu-en-saison-2-et-warzone-en-profitera-aussi/ar-AA2hpEzq
-
-## Chapitre 2 — GTA VI : les sources ne précisent pas la Thaïlande
-
-Résumé éditorial : Les sources consultées abordent l'actualité de GTA VI, mais aucune ne mentionne la Thaïlande. Elles ne permettent donc pas de confirmer la disponibilité du jeu ni son heure de lancement dans ce pays. Les informations régionales doivent être vérifiées auprès de l'éditeur et de la boutique officielle de la région concernée. Évaluation : Disponibilité en Thaïlande non confirmée par les sources consultées. Conseil : Consulter les annonces de l'éditeur et la boutique officielle de la région avant de conclure. Les références associées sont : IGN France, IGN France, IGN France. Les éléments signalés comme incertains ne doivent pas être considérés comme confirmés. Pour approfondir, il faut ouvrir les sources originales et vérifier leur date et leur contexte.
-
-Sources :
-- IGN France : https://fr.ign.com/project-007/94022/les-nominations-des-game-awards-2026-devoilees-gta-6-en-tete
-- IGN France : https://fr.ign.com/grand-theft-auto-6/94017/lactrice-qui-incarne-lucia-dans-grand-theft-auto-6-enfin-revelee
-- IGN France : https://fr.ign.com/grand-theft-auto-6/93999/sony-pousse-une-derniere-petite-mise-a-jour-de-securite-ps5-avant-gta-6-pendant-que-les-hackers-font
 
 ## Chapitre 3 — Roblox met l’IA au cœur du prototypage de jeux
 
