@@ -69,3 +69,6 @@ Voir [docs/AUTO_AMELIORATION.md](docs/AUTO_AMELIORATION.md). `auto_amelioration.
 
 ## File locale de missions IA
 Voir [docs/FILE_MISSIONS.md](docs/FILE_MISSIONS.md). `gestionnaire_missions.py` ajoute une file SQLite persistante pour préparer, lister, annuler les missions en attente et exécuter la suivante. Les données restent dans `.laboratoire_prive/`, ignoré par Git. Un seul worker est autorisé ; une mission active n'est pas annulable en direct et reste limitée par l'orchestrateur à 180 secondes maximum.
+
+## Générateur de projets Roblox
+Voir docs/GENERATEUR_ROBLOX.md. Le module studio_roblox.py génère un squelette Rojo de jeu obby avec scripts serveur/client et monnaie gérée côté serveur. Il ne se connecte pas à Roblox, n'exécute pas le code Luau et ne publie aucun jeu.
