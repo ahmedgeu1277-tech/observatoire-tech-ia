@@ -233,6 +233,39 @@ def appliquer_garde_regionale(theme, data, sources):
         return data
     return data
 
+
+VERSION_CLAIM_RE = re.compile(
+    r"\\b(?:Unreal Engine|Unity|Godot|GameMaker)\\s+\\d+(?:\\.\\d+)*\\b",
+    re.IGNORECASE,
+)
+
+
+def appliquer_garde_versions(data, sources):
+    """Empêche d'annoncer une version logicielle absente des sources consultées."""
+    corpus = " ".join(
+        str(source.get(field, ""))
+        for source in sources
+        for field in ("title", "description", "url")
+    ).casefold()
+    claims = VERSION_CLAIM_RE.findall(
+        " ".join(str(data.get(field, "")) for field in ("title", "summary", "verdict", "tip"))
+    )
+    unsupported = sorted({claim for claim in claims if claim.casefold() not in corpus})
+    if not unsupported:
+        return data
+    claim_text = " et ".join(unsupported)
+    data["title"] = "Moteurs de jeu : versions non confirmées par les sources"
+    data["summary"] = (
+        f"Les sources consultées abordent les moteurs et outils de création de jeux, mais elles ne "
+        f"confirment pas l'annonce ou la disponibilité de {claim_text}. Il serait donc prématuré de "
+        "présenter cette version comme une nouveauté publiée. Les notes de version et annonces des "
+        "éditeurs restent les références à consulter pour vérifier ces informations."
+    )
+    data["verdict"] = "Version précise non confirmée par les sources consultées."
+    data["tip"] = "Consulter les notes de version officielles de l'éditeur avant de retenir un numéro de version."
+    print("INFO : garde de version appliquée — affirmation non présente dans les sources.")
+    return data
+
 def create_article(theme, sources, agent_reports=None):
     source_text = json.dumps(sources, ensure_ascii=False)
     prompt = f"""
@@ -284,6 +317,7 @@ Sources :
         raise ValueError(f"Résumé IA hors longueur acceptable ({summary_words} mots). Aucun article publié.")
 
     data = appliquer_garde_regionale(theme, data, sources)
+    data = appliquer_garde_versions(data, sources)
     title = data["title"].strip()[:140]
     summary = data["summary"].strip()[:1200]
     verdict = data["verdict"].strip()[:500]
