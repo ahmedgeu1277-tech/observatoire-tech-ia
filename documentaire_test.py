@@ -109,7 +109,10 @@ def generer_documentaire():
         spoken = title + ". " + intro + " " + " ".join(
             heading + ". " + body for heading, body, _sources in chapters
         ) + " Fin du documentaire de démonstration."
-        await asyncio.wait_for(\n            edge_tts.Communicate(spoken[:24000], "fr-FR-HenriNeural").save(str(audio_path)),\n            timeout=180,\n        )
+        await asyncio.wait_for(
+            edge_tts.Communicate(spoken[:24000], "fr-FR-HenriNeural").save(str(audio_path)),
+            timeout=180,
+        )
 
     asyncio.run(produire_audio())
     if not audio_path.exists() or audio_path.stat().st_size < 1000:
