@@ -24,7 +24,14 @@ Le workflow du dimanche :
 
 Les profils d'agents sont des configurations JSON : ils ne génèrent ni n'exécutent librement du code Python.
 
-## Orchestrateur de missions IA (prototype contrôlé)\n- `orchestrateur.py` permet de lancer une mission JSON avec jusqu'à trois rôles spécialisés : chercheur, critique et architecte.\n- Chaque agent produit uniquement une analyse textuelle ; aucun code n'est exécuté, aucun compte externe n'est piloté et aucune publication n'est automatique.\n- Les rapports sont enregistrés dans `.laboratoire_prive/missions/`, dossier ignoré par Git. Ils ne sont pas publiés sur le site.\n- Les missions sont limitées à 180 secondes maximum, avec au moins 60 secondes prévues par agent ; les appels réseau ont leurs propres délais d'expiration.\n- Cette première brique est un orchestrateur séquentiel borné, pas encore une équipe d'agents persistants ni un service de chat public.\n\n## Encyclopédie annuelle
+## Orchestrateur de missions IA (prototype contrôlé)
+- `orchestrateur.py` permet de lancer une mission JSON avec jusqu'à trois rôles spécialisés : chercheur, critique et architecte.
+- Chaque agent produit uniquement une analyse textuelle ; aucun code n'est exécuté, aucun compte externe n'est piloté et aucune publication n'est automatique.
+- Les rapports sont enregistrés dans `.laboratoire_prive/missions/`, dossier ignoré par Git. Ils ne sont pas publiés sur le site.
+- Les missions sont limitées à 180 secondes maximum, avec au moins 60 secondes prévues par agent ; les appels réseau ont leurs propres délais d'expiration.
+- Cette première brique est un orchestrateur séquentiel borné, pas encore une équipe d'agents persistants ni un service de chat public.
+
+## Encyclopédie annuelle
 Le générateur `ecrire_livre.py` est manuel. Il utilise `memoire_tech.txt` et, si présent, `coffre_secret_livre.txt`.
 
 ## Secrets et permissions
@@ -36,7 +43,10 @@ Le générateur `ecrire_livre.py` est manuel. Il utilise `memoire_tech.txt` et, 
 ## Limites et sécurité
 - GitHub Actions exécute des tâches planifiées : ce n'est pas un serveur permanent 24 h/24. Les horaires cron peuvent être retardés par GitHub.
 - Le filtre automatique est une protection technique de premier niveau, pas un avis juridique ni une certification de conformité.
-- Limites anti-ralentissement : six sources maximum par article, deux agents spécialisés maximum, 30 articles conservés et délai réseau de 20 secondes.\n- Priorités d'exécution : sécurité, tests et intégrité des données ; publication essentielle ; audio facultatif ; archives secondaires.\n- Les résumés et audios IA peuvent contenir des erreurs : vérifier les sources originales. Une réponse IA mal formée ou sans référence valide est désormais refusée au lieu d'être transformée en faux article.\n- Le thème Gaming adapte automatiquement sa requête avant et après le lancement de GTA VI, du 18 au 26 novembre 2026 (horodatages UTC).
+- Limites anti-ralentissement : six sources maximum par article, deux agents spécialisés maximum, 30 articles conservés et délai réseau de 20 secondes.
+- Priorités d'exécution : sécurité, tests et intégrité des données ; publication essentielle ; audio facultatif ; archives secondaires.
+- Les résumés et audios IA peuvent contenir des erreurs : vérifier les sources originales. Une réponse IA mal formée ou sans référence valide est désormais refusée au lieu d'être transformée en faux article.
+- Le thème Gaming adapte automatiquement sa requête avant et après le lancement de GTA VI, du 18 au 26 novembre 2026 (horodatages UTC).
 - Respecter les conditions d'âge et d'utilisation des services ; demander l'aide d'un parent ou tuteur lorsque nécessaire.
 
 
