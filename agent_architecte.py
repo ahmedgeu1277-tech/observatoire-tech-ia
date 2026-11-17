@@ -2,6 +2,7 @@
 import json
 import os
 import re
+from datetime import UTC, datetime
 from pathlib import Path
 
 from ai_providers import generate_text
@@ -30,7 +31,7 @@ def exporter_index_public():
     PUBLIC_INDEX.parent.mkdir(parents=True, exist_ok=True)
     temp = PUBLIC_INDEX.with_suffix(".json.tmp")
     temp.write_text(json.dumps({
-        "updated_at": __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat(),
+        "updated_at": datetime.now(UTC).isoformat(),
         "profiles": profiles,
     }, ensure_ascii=False, indent=2), encoding="utf-8")
     temp.replace(PUBLIC_INDEX)
