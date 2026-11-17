@@ -1,10 +1,9 @@
 import asyncio
 import html
 import json
-import os
 import re
 import sys
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from urllib.parse import quote, urlparse
 from defusedxml import ElementTree as ET
@@ -29,10 +28,10 @@ def appliquer_cycle_vie(theme, now=None):
     lifecycle = result.get("lifecycle")
     if not isinstance(lifecycle, dict):
         return result
-    now = now or datetime.now(timezone.utc)
+    now = now or datetime.now(UTC)
     try:
-        launch_at = datetime.fromisoformat(lifecycle["launch_at"].replace("Z", "+00:00"))
-        end_at = datetime.fromisoformat(lifecycle["end_at"].replace("Z", "+00:00"))
+        launch_at = datetime.fromisoformat(lifecycle["launch_at"])
+        end_at = datetime.fromisoformat(lifecycle["end_at"])
     except (KeyError, TypeError, ValueError) as exc:
         raise ValueError(f"Cycle de vie invalide pour le thème {theme.get('name', 'inconnu')}.") from exc
     if launch_at.tzinfo is None or end_at.tzinfo is None or end_at <= launch_at:
@@ -56,12 +55,12 @@ def load_themes():
     themes = data.get("themes", [])
     if not themes:
         raise ValueError("Aucun thème n'est configuré dans themes.json.")
-    now = datetime.now(timezone.utc)
+    now = datetime.now(UTC)
     return [appliquer_cycle_vie(theme, now) for theme in themes]
 
 def get_priority_event_theme(themes, now=None):
     """Retourne un thème événementiel uniquement pendant sa fenêtre configurée."""
-    now = now or datetime.now(timezone.utc)
+    now = now or datetime.now(UTC)
     for theme in themes:
         lifecycle = theme.get("lifecycle", {})
         if not isinstance(lifecycle, dict):
@@ -73,8 +72,8 @@ def get_priority_event_theme(themes, now=None):
             end_value = lifecycle.get("end_at")
             if not isinstance(start_value, str) or not isinstance(end_value, str):
                 continue
-            start_at = datetime.fromisoformat(start_value.replace("Z", "+00:00"))
-            end_at = datetime.fromisoformat(end_value.replace("Z", "+00:00"))
+            start_at = datetime.fromisoformat(start_value)
+            end_at = datetime.fromisoformat(end_value)
         except (TypeError, ValueError):
             continue
         if (
@@ -239,8 +238,8 @@ Sources :
         raise ValueError("Aucune source valide sélectionnée. Aucun article publié.")
 
     return {
-        "id": datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ"),
-        "date": datetime.now(timezone.utc).isoformat(timespec="minutes"),
+        "id": datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ"),
+        "date": datetime.now(UTC).isoformat(timespec="minutes"),
         "theme": theme["name"],
         "title": title,
         "summary": summary,
@@ -320,7 +319,7 @@ Rédige 2 phrases en français. Utilise seulement les sources. Indique les incer
                     "provider": provider,
                     "report": report.strip()
                 })
-        except Exception as exc:
+        except Exception as exc:  # noqa: BLE001 - les SDK IA ont des exceptions spécifiques.
             print(f"Agent {profile.get('name', 'inconnu')} ignoré : {type(exc).__name__}.")
     return reports
 
@@ -348,7 +347,7 @@ async def create_audio(article):
         )
         await edge_tts.Communicate(spoken, "fr-FR-HenriNeural").save(str(audio_dir / filename))
         return f"audio/{filename}"
-    except Exception as exc:
+    except Exception as exc:  # noqa: BLE001 - edge-tts et ses transports ont plusieurs exceptions spécifiques.
         print(f"Audio non créé ({type(exc).__name__}: {exc}); article texte conservé.")
         return None
 
