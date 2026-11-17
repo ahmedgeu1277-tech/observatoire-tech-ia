@@ -54,7 +54,7 @@ async def creer_documentaire_tech():
             audio_file = audio_folder / f"documentaire_tech_{stamp}_chapitre_{number}.mp3"
             await edge_tts.Communicate(spoken, "fr-FR-HenriNeural").save(str(audio_file))
         print("Cinq pistes audio de chapitres créées.")
-    except Exception as exc:
+    except Exception as exc:  # noqa: BLE001 — l'audio est facultatif, le script reste conservé.
         print(f"Audio documentaire incomplet ({type(exc).__name__}); le script écrit est conservé.")
     print(f"Documentaire écrit : {markdown}")
     return str(markdown)
