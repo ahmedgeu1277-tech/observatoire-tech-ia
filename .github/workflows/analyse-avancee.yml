@@ -184,6 +184,13 @@ jobs:
             if (!city || !city.ok()) failures.push('Ville virtuelle : page inaccessible.');
             await page.waitForFunction(() => document.querySelector('#connection')?.textContent === 'Données enregistrées chargées', { timeout: 10000 })
               .catch(() => failures.push('Ville virtuelle : données gouvernementales non chargées.'));
+            await page.locator('#profiles').waitFor({ state: 'visible' });
+            await page.locator('#agent-profiles').waitFor({ state: 'visible' });
+            const profileCountText = await page.locator('#profiles').textContent();
+            const profileListText = await page.locator('#agent-profiles').innerText();
+            if (profileCountText && !profileCountText.includes('0') && !profileListText.includes('non exécuté')) {
+              failures.push('Ville virtuelle : les profils IA ne sont pas clairement marqués comme configurés et non exécutés.');
+            }
             const canvas = await page.locator('#world').evaluate(el => ({ width: el.width, height: el.height, box: el.getBoundingClientRect().toJSON() }));
             if (canvas.width < 1 || canvas.height < 1 || canvas.box.width < 1 || canvas.box.height < 1) failures.push('Ville virtuelle : canvas non visible ou sans dimensions.');
             const pause = page.locator('#pause');
