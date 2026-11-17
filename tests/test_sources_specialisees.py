@@ -14,7 +14,7 @@ class SpecializedFeedTests(unittest.TestCase):
         self.assertEqual(result[0]["source_type"], "flux_officiel")
 
     def test_game_engine_official_feeds_are_configured(self):
-        publishers = {publisher for publisher, _ in FEEDS["gaming"]}
+        publishers = {publisher for publisher, _ in FEEDS["engines"]}
         self.assertTrue({"Unity", "Unreal Engine / Epic", "Godot", "GameMaker"}.issubset(publishers))
 
     @patch("sources_specialisees.requests.get")
@@ -26,7 +26,7 @@ class SpecializedFeedTests(unittest.TestCase):
         mock_get.return_value = Response()
         result = fetch_specialized_sources("Moteurs et logiciels de création de jeux", limit=10)
         self.assertEqual(len(result), 1)
-        self.assertEqual(mock_get.call_count, len(FEEDS["gaming"]))
+        self.assertEqual(mock_get.call_count, len(FEEDS["engines"]))
 
     def test_rejects_non_http_links(self):
         xml = b"""<rss><channel><item><title>Bad</title><link>javascript:alert(1)</link></item></channel></rss>"""
