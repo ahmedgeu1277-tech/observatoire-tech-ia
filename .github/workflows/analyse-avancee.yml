@@ -187,8 +187,9 @@ jobs:
             await page.locator('#profiles').waitFor({ state: 'visible' });
             await page.locator('#agent-profiles').waitFor({ state: 'visible' });
             const profileCountText = await page.locator('#profiles').textContent();
+            const profileCount = Number(profileCountText?.match(/:\s*(\d+)/)?.[1] ?? 0);
             const profileListText = await page.locator('#agent-profiles').innerText();
-            if (profileCountText && !profileCountText.includes('0') && !profileListText.includes('non exécuté')) {
+            if (profileCount > 0 && !profileListText.includes('non exécuté')) {
               failures.push('Ville virtuelle : les profils IA ne sont pas clairement marqués comme configurés et non exécutés.');
             }
             const canvas = await page.locator('#world').evaluate(el => ({ width: el.width, height: el.height, box: el.getBoundingClientRect().toJSON() }));
