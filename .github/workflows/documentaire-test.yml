@@ -65,7 +65,7 @@ jobs:
           git fetch origin main
           git reset --hard origin/main
           mkdir -p site/audio
-          cp "$RUNNER_TEMP/documentaire-test/site/"* site/
+          cp "$RUNNER_TEMP/documentaire-test/site/"*.html "$RUNNER_TEMP/documentaire-test/site/"*.md "$RUNNER_TEMP/documentaire-test/site/"*.json site/
           cp "$RUNNER_TEMP/documentaire-test/site/audio/"* site/audio/
           git config user.name "Usine IA Tech & Gaming"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
