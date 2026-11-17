@@ -157,6 +157,44 @@ jobs:
               }
             }
 
+            // Vérifications fonctionnelles des données et interactions.
+            const home = await page.goto('http://127.0.0.1:4173/site/index.html', { waitUntil: 'networkidle' });
+            if (!home || !home.ok()) failures.push('Accueil : impossible à charger.');
+            await page.waitForFunction(() => {
+              const status = document.querySelector('#status');
+              return status && status.textContent !== 'Chargement…';
+            }, { timeout: 10000 }).catch(() => failures.push('Accueil : les actualités ne terminent pas leur chargement.'));
+            const articleData = await page.request.get('http://127.0.0.1:4173/site/articles.json');
+            if (!articleData.ok()) {
+              failures.push('Actualités : site/articles.json inaccessible.');
+            } else {
+              const articles = await articleData.json();
+              const displayed = await page.locator('#count').textContent();
+              if (Number(displayed) !== articles.length) failures.push('Actualités : compteur différent du nombre d’articles.');
+              for (const article of articles) {
+                if (!article.audio_url) continue;
+                let audioPath = String(article.audio_url).replace(/^\.\//, '');
+                if (audioPath.startsWith('site/')) audioPath = audioPath.slice(5);
+                const audioResponse = await page.request.get('http://127.0.0.1:4173/site/' + audioPath);
+                if (!audioResponse.ok()) failures.push('Audio inaccessible : ' + audioPath + ' (HTTP ' + audioResponse.status() + ')');
+              }
+            }
+
+            const city = await page.goto('http://127.0.0.1:4173/site/ville-virtuelle.html', { waitUntil: 'networkidle' });
+            if (!city || !city.ok()) failures.push('Ville virtuelle : page inaccessible.');
+            await page.waitForFunction(() => document.querySelector('#connection')?.textContent === 'Données enregistrées chargées', { timeout: 10000 })
+              .catch(() => failures.push('Ville virtuelle : données gouvernementales non chargées.'));
+            const canvas = await page.locator('#world').evaluate(el => ({ width: el.width, height: el.height, box: el.getBoundingClientRect().toJSON() }));
+            if (canvas.width < 1 || canvas.height < 1 || canvas.box.width < 1 || canvas.box.height < 1) failures.push('Ville virtuelle : canvas non visible ou sans dimensions.');
+            const pause = page.locator('#pause');
+            await pause.click();
+            if ((await pause.textContent()).trim() !== 'Reprendre l’animation') failures.push('Ville virtuelle : bouton pause inopérant.');
+            await pause.click();
+            if ((await pause.textContent()).trim() !== 'Mettre l’animation en pause') failures.push('Ville virtuelle : bouton reprise inopérant.');
+            await page.locator('#refresh').click();
+            await page.waitForFunction(() => document.querySelector('#connection')?.textContent === 'Données enregistrées chargées', { timeout: 10000 })
+              .catch(() => failures.push('Ville virtuelle : actualisation des données en échec.'));
+
             await browser.close();
             console.log('Pages HTML testées : ' + files.length);
             if (failures.length) {
