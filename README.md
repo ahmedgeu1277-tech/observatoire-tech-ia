@@ -75,3 +75,6 @@ Voir docs/GENERATEUR_ROBLOX.md. Le module studio_roblox.py génère un squelette
  
 ## Validation statique des projets Roblox
 Voir docs/VALIDATEUR_ROBLOX.md. Le module validateur_roblox.py analyse les fichiers Luau et la configuration Rojo sans exécuter le code ; ses limites sont documentées.
+
+## État d'avancement global
+Voir docs/ETAT_AVANCEMENT_GLOBAL.md pour la grille pondérée, les preuves, les limites et les prochaines étapes. L'estimation actuelle est de 50,5 % selon cette grille, sans signifier que le produit complet est prêt pour la production.
