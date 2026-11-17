@@ -318,7 +318,7 @@ def appliquer_garde_sources_faibles(theme, data, sources):
     """N'autorise pas une synthèse détaillée quand les extraits ne font que répéter les titres."""
     substantive = False
     for source in sources:
-        title_words = set(re.findall(r"[^\\W_]+", str(source.get("title", "")).casefold()))
+        title_words = set(re.findall(r"\w+", str(source.get("title", "")).casefold()))
         description_words = set(re.findall(r"[^\\W_]+", str(source.get("description", "")).casefold()))
         if len(description_words - title_words) >= 6:
             substantive = True
