@@ -3,7 +3,8 @@ import html
 import json
 import re
 import sys
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
+from email.utils import parsedate_to_datetime
 from pathlib import Path
 from urllib.parse import parse_qs, quote, urlparse
 from uuid import uuid4
@@ -153,6 +154,15 @@ def fetch_news(query, limit=8):
             continue
         description = (item.findtext("description") or "").strip()
         published = (item.findtext("pubDate") or "").strip()
+        if published:
+            try:
+                published_at = parsedate_to_datetime(published)
+                if published_at.tzinfo is None:
+                    published_at = published_at.replace(tzinfo=UTC)
+                if datetime.now(UTC) - published_at > timedelta(days=7):
+                    continue
+            except (TypeError, ValueError, OverflowError):
+                pass
         description = re.sub(r"<[^>]+>", " ", description)
         description = html.unescape(re.sub(r"\s+", " ", description)).strip()
         if not title or not link:
