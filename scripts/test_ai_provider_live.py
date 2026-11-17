@@ -1,5 +1,12 @@
 """Test réel isolé d'un fournisseur IA, sans publication et sans afficher la réponse."""
 import os
+import sys
+from pathlib import Path
+
+# Permet l'exécution directe depuis scripts/ et depuis n'importe quel répertoire.
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from ai_providers import generate_text
 
