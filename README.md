@@ -48,3 +48,7 @@ Voir [docs/PLAN_PUBLICATION_SECOURS.md](docs/PLAN_PUBLICATION_SECOURS.md) : dép
 
 ## Vision d'autonomie IA
 Voir [docs/PLAN_AUTONOMIE_IA.md](docs/PLAN_AUTONOMIE_IA.md) pour la cible : veille, rédaction, vérification, médias, publication, surveillance et reprise automatisées, avec des limites strictes de sécurité. Cette architecture complète n'est pas encore entièrement construite.
+
+
+## Atelier R&D et produits commercialisables
+Voir [docs/ATELIER_PRODUITS.md](docs/ATELIER_PRODUITS.md). Le module `atelier_produits.py` transforme une opportunité décrite et notée en fiche de décision locale. Son score est une présélection, pas une étude de marché ; aucune vente, publication ou exécution de code n'est automatique.
