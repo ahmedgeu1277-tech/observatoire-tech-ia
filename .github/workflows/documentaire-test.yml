@@ -58,13 +58,21 @@ jobs:
         run: python documentaire_test.py
       - name: Publier sur le site
         run: |
+          mkdir -p "$RUNNER_TEMP/documentaire-test/site/audio"
+          cp site/documentaire-test.html site/documentaire-test.md site/documentaire-test.json "$RUNNER_TEMP/documentaire-test/site/"
+          AUDIO_FILE=$(python -c 'import json; print(json.load(open("site/documentaire-test.json", encoding="utf-8"))["audio_file"])')
+          cp "site/audio/$AUDIO_FILE" "$RUNNER_TEMP/documentaire-test/site/audio/"
+          git fetch origin main
+          git reset --hard origin/main
+          mkdir -p site/audio
+          cp "$RUNNER_TEMP/documentaire-test/site/"* site/
+          cp "$RUNNER_TEMP/documentaire-test/site/audio/"* site/audio/
           git config user.name "Usine IA Tech & Gaming"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add site/documentaire-test.html site/documentaire-test.md site/documentaire-test.json site/audio/
+          git add site/documentaire-test.html site/documentaire-test.md site/documentaire-test.json "site/audio/$AUDIO_FILE"
           if git diff --cached --quiet; then
             echo "::error::Aucun fichier de documentaire généré."
             exit 1
           fi
           git commit -m "Publier le documentaire de test pour 24 heures"
-          git pull --rebase origin main
-          git push
+          git push origin HEAD:main
