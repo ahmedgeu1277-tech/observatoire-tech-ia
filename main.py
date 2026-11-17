@@ -266,6 +266,41 @@ def appliquer_garde_versions(data, sources):
     print("INFO : garde de version appliquée — affirmation non présente dans les sources.")
     return data
 
+
+NUMBER_CLAIM_RE = re.compile(r"\\d+(?:[.,]\\d+)?")
+
+
+def appliquer_garde_chiffres(theme, data, sources):
+    """Refuse les chiffres et caractéristiques numériques absents des titres/descriptions sources."""
+    source_text = " ".join(
+        str(source.get(field, ""))
+        for source in sources
+        for field in ("title", "description")
+    )
+    supported_numbers = set(NUMBER_CLAIM_RE.findall(source_text))
+    article_text = " ".join(
+        str(data.get(field, ""))
+        for field in ("title", "summary", "verdict", "tip")
+    )
+    unsupported = sorted({
+        number for number in NUMBER_CLAIM_RE.findall(article_text)
+        if number not in supported_numbers
+    })
+    if not unsupported:
+        return data
+    base_title = str(theme.get("name", "Actualités Tech")).split("—", 1)[0].strip()
+    data["title"] = f"{base_title} : détails chiffrés non confirmés"
+    data["summary"] = (
+        f"Les sources consultées mentionnent {base_title}, mais elles ne fournissent pas suffisamment "
+        "d'éléments pour confirmer les dates et caractéristiques chiffrées avancées. Les détails précis "
+        "de lancement, de performances et de compatibilité doivent être vérifiés dans les annonces "
+        "et fiches techniques officielles."
+    )
+    data["verdict"] = "Les chiffres et caractéristiques détaillés ne sont pas établis par les sources consultées."
+    data["tip"] = "Consulter les annonces et fiches techniques officielles avant de retenir des chiffres précis."
+    print("INFO : garde des chiffres appliquée — données numériques non présentes dans les sources.")
+    return data
+
 def create_article(theme, sources, agent_reports=None):
     source_text = json.dumps(sources, ensure_ascii=False)
     prompt = f"""
@@ -318,6 +353,7 @@ Sources :
 
     data = appliquer_garde_regionale(theme, data, sources)
     data = appliquer_garde_versions(data, sources)
+    data = appliquer_garde_chiffres(theme, data, sources)
     title = data["title"].strip()[:140]
     summary = data["summary"].strip()[:1200]
     verdict = data["verdict"].strip()[:500]
