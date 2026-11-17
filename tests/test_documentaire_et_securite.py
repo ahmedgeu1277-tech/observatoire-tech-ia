@@ -66,10 +66,12 @@ class CleanupTests(unittest.TestCase):
 
     def test_invalid_manifest_fails_closed(self):
         self.manifest.write_text("{invalid", encoding="utf-8")
-        with patch.multiple(cleanup, MANIFEST=self.manifest, PAGE=self.page,
-                            SCRIPT=self.script, AUDIO_DIR=self.audio):
-            with self.assertRaises(RuntimeError):
-                cleanup.main()
+        with (
+            patch.multiple(cleanup, MANIFEST=self.manifest, PAGE=self.page,
+                           SCRIPT=self.script, AUDIO_DIR=self.audio),
+            self.assertRaises(RuntimeError),
+        ):
+            cleanup.main()
 
 
 class GuardTests(unittest.TestCase):
