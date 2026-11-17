@@ -144,6 +144,27 @@ class ArticleValidationTests(unittest.TestCase):
         self.assertIn("ne confirment pas", article["summary"])
 
 
+    @patch("main.generate_text")
+    def test_unsupported_technical_numbers_are_rewritten_safely(self, mock_generate):
+        theme = {"name": "Matériel et smartphones"}
+        sources = [{
+            "title": "Galaxy S25 et iOS 28 : nouveautés attendues en 2027",
+            "description": "Présentation générale des prochains appareils.",
+            "url": "https://example.com/phones",
+        }]
+        payload = {
+            "title": "Galaxy S25 : Snapdragon 8 Gen 3 et capteur 200 MP",
+            "summary": " ".join(["mot"] * 70) + " L'écran mesure 6.8 inches et la sortie est prévue le 1 janvier 2027.",
+            "verdict": "Caractéristiques confirmées",
+            "tip": "Acheter le modèle",
+            "source_indices": [0],
+        }
+        mock_generate.return_value = (json.dumps(payload), "groq")
+        article = main.create_article(theme, sources)
+        self.assertIn("détails chiffrés non confirmés", article["title"])
+        self.assertIn("ne fournissent pas suffisamment", article["summary"])
+
+
 class ArchiveSafetyTests(unittest.TestCase):
     def test_corrupted_archive_is_not_silently_replaced(self):
         from pathlib import Path
