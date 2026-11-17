@@ -101,29 +101,32 @@ async def creer_documentaire_tech():
 
     audio_folder = ROOT / "site" / "audio"
     audio_folder.mkdir(parents=True, exist_ok=True)
-    created_audio = []
-
     async def produire_audio():
         import edge_tts
 
+        created = 0
         for number, heading, body in chapters:
             spoken = (
                 f"Chapitre {number}. {heading}. {body}. "
                 "Ce chapitre a été préparé avec l’aide d’une intelligence artificielle."
             )
             audio_file = audio_folder / f"documentaire_tech_{stamp}_chapitre_{number}.mp3"
-            await edge_tts.Communicate(spoken, "fr-FR-HenriNeural").save(str(audio_file))
-            if not audio_file.exists() or audio_file.stat().st_size < 1000:
-                raise RuntimeError(f"Piste audio {number} absente ou trop petite.")
-            created_audio.append(audio_file)
+            try:
+                await edge_tts.Communicate(spoken, "fr-FR-HenriNeural").save(str(audio_file))
+                if not audio_file.exists() or audio_file.stat().st_size < 1000:
+                    audio_file.unlink(missing_ok=True)
+                    raise RuntimeError("fichier audio absent ou trop petit")
+                created += 1
+                print(f"Piste audio {number} créée.")
+            except Exception as exc:  # noqa: BLE001 — une piste défaillante ne bloque pas les autres.
+                print(f"Piste audio {number} indisponible ({type(exc).__name__}: {str(exc)[:120]}).")
+            await asyncio.sleep(2)
+        print(f"Pistes audio créées : {created}/5.")
 
     try:
         asyncio.run(produire_audio())
-        print("Cinq pistes audio de chapitres créées.")
-    except Exception as exc:  # noqa: BLE001 — le script reste conservé si la synthèse échoue.
-        for audio_file in created_audio:
-            audio_file.unlink(missing_ok=True)
-        print(f"Audio documentaire incomplet ({type(exc).__name__}); le script écrit est conservé.")
+    except Exception as exc:  # noqa: BLE001 — le script écrit reste conservé.
+        print(f"Synthèse audio indisponible ({type(exc).__name__}: {str(exc)[:120]}).")
 
     print(f"Documentaire écrit : {markdown}")
     return str(markdown)
