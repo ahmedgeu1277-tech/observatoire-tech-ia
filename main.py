@@ -572,23 +572,38 @@ def main():
     themes = load_themes()
     theme = choose_theme(themes)
     print(f"Thème choisi : {theme['name']}")
-    sources = fetch_news(theme["query"], limit=MAX_SOURCES)
-    specialized = fetch_specialized_sources(theme["name"], limit=4)
-    # Les flux officiels apportent des annonces primaires ; les médias généralistes
-    # complètent le contexte. On déduplique les URL avant de transmettre à l'IA.
-    merged = []
-    seen_urls = set()
-    for source in specialized + sources:
-        key = source.get("url", "").split("#", 1)[0]
-        if key and key not in seen_urls:
-            merged.append(source)
-            seen_urls.add(key)
-        if len(merged) >= MAX_SOURCES:
-            break
-    sources = merged
-    print(f"{len(specialized)} source(s) spécialisée(s) officielle(s) disponible(s).")
+    def collect_sources(selected_theme):
+        general = fetch_news(selected_theme["query"], limit=MAX_SOURCES)
+        official = fetch_specialized_sources(selected_theme["name"], limit=4)
+        merged = []
+        seen_urls = set()
+        # Les flux officiels apportent des annonces primaires ; les médias généralistes
+        # complètent le contexte. On déduplique les URL avant de transmettre à l'IA.
+        for source in official + general:
+            key = source.get("url", "").split("#", 1)[0]
+            if key and key not in seen_urls:
+                merged.append(source)
+                seen_urls.add(key)
+            if len(merged) >= MAX_SOURCES:
+                break
+        return merged, len(official)
+
+    sources, official_count = collect_sources(theme)
+    print(f"{official_count} source(s) spécialisée(s) officielle(s) disponible(s).")
     if not sources:
-        raise RuntimeError("Aucune source RSS exploitable. Aucun article publié.")
+        # Un thème de jeu précis peut ne rien retourner pendant quelques heures.
+        # Le plan B bascule explicitement sur la veille gaming générale : aucun
+        # article générique ne sera présenté comme une actualité du jeu ciblé.
+        fallback_theme = {
+            "name": "Gaming et jeux vidéo — veille générale (recherche de secours)",
+            "query": "jeux vidéo gaming actualité officielle mises à jour annonces éditeurs"
+        }
+        print("AVERTISSEMENT : aucune source pour le thème ciblé ; tentative de veille gaming générale.")
+        theme = fallback_theme
+        sources, official_count = collect_sources(theme)
+        print(f"{official_count} source(s) officielle(s) disponible(s) après recherche de secours.")
+    if not sources:
+        raise RuntimeError("Aucune source RSS exploitable, même après recherche de secours. Aucun article publié.")
     print(f"{len(sources)} source(s) récupérée(s).")
     profiles = load_agent_profiles()
     reports = executer_agents_dynamiques(theme, sources, profiles)
