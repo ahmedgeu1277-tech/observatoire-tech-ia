@@ -75,4 +75,21 @@ jobs:
             exit 1
           fi
           git commit -m "Publier le documentaire de test pour 24 heures"
-          git push origin HEAD:main
+          # Un autre workflow peut publier entre le fetch et le push.
+          # Rebase et nouvelle tentative pour éviter un échec non déterministe.
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            if ! git rebase origin/main; then
+              git rebase --abort || true
+              echo "::error::Conflit Git pendant le rebase du documentaire."
+              exit 1
+            fi
+            if git push origin HEAD:main; then
+              echo "Documentaire publié (tentative $attempt)."
+              exit 0
+            fi
+            echo "Push refusé (tentative $attempt/5) ; nouvelle tentative dans 3 secondes."
+            sleep 3
+          done
+          echo "::error::Publication impossible après cinq tentatives."
+          exit 1
