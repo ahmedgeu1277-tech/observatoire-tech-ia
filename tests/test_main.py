@@ -123,6 +123,27 @@ class ArticleValidationTests(unittest.TestCase):
         self.assertIn("non confirmée", article["verdict"])
 
 
+    @patch("main.generate_text")
+    def test_unverified_engine_version_is_rewritten_safely(self, mock_generate):
+        theme = {"name": "Moteurs et logiciels de création de jeux"}
+        sources = [{
+            "title": "Un projet européen veut concurrencer Unreal et Unity",
+            "description": "Un nouveau moteur 3D est en développement.",
+            "url": "https://example.com/engine",
+        }]
+        payload = {
+            "title": "Unreal Engine 6 ajoute une IA générative",
+            "summary": " ".join(["mot"] * 70),
+            "verdict": "Nouvelle version annoncée",
+            "tip": "Consulter la documentation",
+            "source_indices": [0],
+        }
+        mock_generate.return_value = (json.dumps(payload), "groq")
+        article = main.create_article(theme, sources)
+        self.assertEqual(article["title"], "Moteurs de jeu : versions non confirmées par les sources")
+        self.assertIn("ne confirment pas", article["summary"])
+
+
 class ArchiveSafetyTests(unittest.TestCase):
     def test_corrupted_archive_is_not_silently_replaced(self):
         from pathlib import Path
