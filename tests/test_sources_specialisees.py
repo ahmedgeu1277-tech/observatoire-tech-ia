@@ -1,5 +1,6 @@
 import unittest
-from sources_specialisees import parse_feed
+from unittest.mock import patch
+from sources_specialisees import FEEDS, fetch_specialized_sources, parse_feed
 
 class SpecializedFeedTests(unittest.TestCase):
     def test_parse_rss_feed(self):
@@ -9,6 +10,21 @@ class SpecializedFeedTests(unittest.TestCase):
         self.assertEqual(result[0]["publisher"], "Source test")
         self.assertEqual(result[0]["title"], "Annonce IA")
         self.assertEqual(result[0]["source_type"], "flux_officiel")
+
+    def test_game_engine_official_feeds_are_configured(self):
+        publishers = {publisher for publisher, _ in FEEDS["gaming"]}
+        self.assertTrue({"Unity", "Unreal Engine / Epic", "Godot", "GameMaker"}.issubset(publishers))
+
+    @patch("sources_specialisees.requests.get")
+    def test_game_engine_theme_collects_sources(self, mock_get):
+        class Response:
+            content = b"""<rss><channel><item><title>Engine update</title><link>https://example.org/update</link><description>Release notes</description></item></channel></rss>"""
+            def raise_for_status(self):
+                pass
+        mock_get.return_value = Response()
+        result = fetch_specialized_sources("Moteurs et logiciels de création de jeux", limit=10)
+        self.assertEqual(len(result), 1)
+        self.assertEqual(mock_get.call_count, 4)
 
     def test_rejects_non_http_links(self):
         xml = b"""<rss><channel><item><title>Bad</title><link>javascript:alert(1)</link></item></channel></rss>"""
