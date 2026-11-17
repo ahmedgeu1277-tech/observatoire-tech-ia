@@ -28,7 +28,7 @@ class WeeklyDocumentaryTests(unittest.TestCase):
         chapters = video_longue.construire_chapitres(dossiers)
         self.assertEqual(len(dossiers), 3)
         self.assertEqual(len(chapters), 5)
-        self.assertIn("https://example.org/1", chapters[0][3][0]["url"])
+        self.assertEqual(chapters[0][3][0]["url"], "https://example.org/3")
 
     def test_rejects_articles_without_https_sources(self):
         articles = [{
