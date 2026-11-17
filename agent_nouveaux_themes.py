@@ -46,7 +46,7 @@ def decouvrir_nouvelle_tendance_tech():
         FILE.write_text(json.dumps(existing, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"Nouveau thème ajouté via {provider} : {name}")
         return True
-    except Exception as exc:
+    except Exception as exc:  # noqa: BLE001 — la veille est facultative et isolée.
         print(f"Veille hebdomadaire : {type(exc).__name__}")
         return False
 
