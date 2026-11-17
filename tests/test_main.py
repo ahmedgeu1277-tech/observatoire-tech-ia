@@ -158,3 +158,16 @@ class NewsFallbackTests(unittest.TestCase):
         self.assertEqual(len(result), 1)
         self.assertEqual(result[0]["title"], "Actualite de secours")
         self.assertEqual(mock_get.call_count, 2)
+
+
+    @patch("main.requests.get")
+    def test_bing_tracking_link_is_replaced_with_https_article_url(self, mock_get):
+        class Response:
+            content = b"""<rss><channel><item><title>Actualite</title><link>http://www.bing.com/news/apiclick?url=https%3A%2F%2Fexample.org%2Farticle</link><description>Resume.</description></item></channel></rss>"""
+            def raise_for_status(self):
+                return None
+
+        mock_get.side_effect = [Response()]
+        result = main.fetch_news("test", limit=1)
+        self.assertEqual(result[0]["url"], "https://example.org/article")
+        self.assertEqual(result[0]["domain"], "example.org")
