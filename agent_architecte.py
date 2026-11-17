@@ -48,7 +48,7 @@ Réponds en JSON avec name, role, mission, instructions. name : minuscules et un
         path.write_text(json.dumps(profile, ensure_ascii=False, indent=2), encoding="utf-8")
         print(f"Profil d’agent créé : {path}")
         return str(path)
-    except Exception as exc:
+    except Exception as exc:  # noqa: BLE001 — l'agent ne doit jamais interrompre le pipeline.
         print(f"Architecte : {type(exc).__name__}")
         return None
 
