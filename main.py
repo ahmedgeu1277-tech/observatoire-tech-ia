@@ -313,6 +313,31 @@ def appliquer_garde_chiffres(theme, data, sources):
     print("INFO : garde des chiffres appliquée — données numériques non présentes dans les sources.")
     return data
 
+
+def appliquer_garde_sources_faibles(theme, data, sources):
+    """N'autorise pas une synthèse détaillée quand les extraits ne font que répéter les titres."""
+    substantive = False
+    for source in sources:
+        title_words = set(re.findall(r"[^\\W_]+", str(source.get("title", "")).casefold()))
+        description_words = set(re.findall(r"[^\\W_]+", str(source.get("description", "")).casefold()))
+        if len(description_words - title_words) >= 6:
+            substantive = True
+            break
+    if substantive:
+        return data
+    base_title = str(theme.get("name", "Actualités Tech")).split("—", 1)[0].strip()
+    data["title"] = f"{base_title} : détails insuffisants dans les sources"
+    data["summary"] = (
+        f"Les résultats récupérés signalent une actualité liée à {base_title}, mais les extraits disponibles "
+        "reprennent surtout les titres et ne fournissent pas assez d'éléments pour confirmer la portée, "
+        "les effets ou les modalités de l'annonce. Consultez l'article d'origine et le communiqué de "
+        "l'organisation concernée avant de retenir des détails."
+    )
+    data["verdict"] = "Les extraits récupérés ne suffisent pas pour confirmer les détails."
+    data["tip"] = "Lire l'article original et rechercher un communiqué officiel avant de partager l'information."
+    print("INFO : garde de qualité des sources appliquée — extraits trop courts ou redondants.")
+    return data
+
 def create_article(theme, sources, agent_reports=None):
     source_text = json.dumps(sources, ensure_ascii=False)
     prompt = f"""
@@ -363,6 +388,7 @@ Sources :
     if summary_words < 35 or summary_words > 140:
         raise ValueError(f"Résumé IA hors longueur acceptable ({summary_words} mots). Aucun article publié.")
 
+    data = appliquer_garde_sources_faibles(theme, data, sources)
     data = appliquer_garde_regionale(theme, data, sources)
     data = appliquer_garde_versions(data, sources)
     data = appliquer_garde_chiffres(theme, data, sources)
