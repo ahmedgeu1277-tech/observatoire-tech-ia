@@ -3,7 +3,7 @@ import json
 import os
 from pathlib import Path
 from urllib.parse import quote
-import xml.etree.ElementTree as ET
+from defusedxml import ElementTree as ET
 
 import requests
 from ai_providers import generate_text
