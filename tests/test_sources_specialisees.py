@@ -34,3 +34,31 @@ class SpecializedFeedTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+    @patch("sources_specialisees.requests.get")
+    def test_roblox_theme_uses_filtered_gaming_feeds(self, mock_get):
+        class Response:
+            content = b"""<rss><channel>
+            <item><title>Roblox Studio update</title><link>https://example.org/roblox</link><description>Roblox creation tools.</description></item>
+            <item><title>Unrelated game news</title><link>https://example.org/other</link><description>Other game.</description></item>
+            </channel></rss>"""
+            def raise_for_status(self):
+                pass
+        mock_get.return_value = Response()
+        result = fetch_specialized_sources("Roblox et création de jeux", limit=10)
+        self.assertTrue(result)
+        self.assertTrue(all("roblox" in (item["title"] + item["description"]).lower() for item in result))
+        self.assertEqual(mock_get.call_count, 3)
+
+    @patch("sources_specialisees.requests.get")
+    def test_gta_theme_uses_gaming_feeds(self, mock_get):
+        class Response:
+            content = b"""<rss><channel><item><title>GTA VI news</title><link>https://example.org/gta</link><description>Rockstar update.</description></item></channel></rss>"""
+            def raise_for_status(self):
+                pass
+        mock_get.return_value = Response()
+        result = fetch_specialized_sources("GTA VI — préparation du lancement", limit=10)
+        self.assertTrue(result)
+        self.assertTrue(all("gta" in (item["title"] + item["description"]).lower() or
+                            "rockstar" in (item["title"] + item["description"]).lower() for item in result))
