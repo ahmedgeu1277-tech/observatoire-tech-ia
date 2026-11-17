@@ -165,6 +165,28 @@ class ArticleValidationTests(unittest.TestCase):
         self.assertIn("ne fournissent pas suffisamment", article["summary"])
 
 
+    @patch("main.generate_text")
+    def test_title_only_source_does_not_produce_detailed_claims(self, mock_generate):
+        theme = {"name": "Sécurité numérique"}
+        title = "Scality devient autorité de numérotation des vulnérabilités"
+        sources = [{
+            "title": title,
+            "description": title + "  it social",
+            "url": "https://example.com/scality",
+        }]
+        payload = {
+            "title": "Scality améliore la coordination européenne des failles",
+            "summary": " ".join(["mot"] * 70),
+            "verdict": "Impact majeur",
+            "tip": "Suivre les annonces",
+            "source_indices": [0],
+        }
+        mock_generate.return_value = (json.dumps(payload), "groq")
+        article = main.create_article(theme, sources)
+        self.assertIn("détails insuffisants dans les sources", article["title"])
+        self.assertIn("reprennent surtout les titres", article["summary"])
+
+
 class ArchiveSafetyTests(unittest.TestCase):
     def test_corrupted_archive_is_not_silently_replaced(self):
         from pathlib import Path
