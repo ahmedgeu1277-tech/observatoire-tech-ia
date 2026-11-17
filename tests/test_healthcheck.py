@@ -21,12 +21,18 @@ class RepositoryHealthTests(unittest.TestCase):
         (root / "site" / "articles.json").write_text(json.dumps([article]), encoding="utf-8")
         government = {"directors": [{} for _ in range(30)], "currency": {"real_value": 0}}
         (root / "site" / "data" / "gouvernement.json").write_text(json.dumps(government), encoding="utf-8")
+        profile_index = {"profiles": [{
+            "name": "veilleur", "role": "Analyste", "mission": "Veille publique",
+            "status": "profil configuré — non exécuté en continu"
+        }]}
+        (root / "site" / "data" / "agents.json").write_text(json.dumps(profile_index), encoding="utf-8")
 
     def test_valid_repository(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
             self._fixture(root)
             self.assertEqual(check_repository(root)["articles"], 1)
+            self.assertEqual(check_repository(root)["agent_profiles"], 1)
 
     def test_duplicate_article_ids_are_rejected(self):
         with tempfile.TemporaryDirectory() as folder:
@@ -45,6 +51,18 @@ class RepositoryHealthTests(unittest.TestCase):
             self._fixture(root)
             (root / "site" / "audio" / "demo.mp3").unlink()
             with self.assertRaisesRegex(ValueError, "audio absent"):
+                check_repository(root)
+
+
+    def test_profiles_cannot_be_marked_as_running_agents(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            self._fixture(root)
+            path = root / "site" / "data" / "agents.json"
+            data = json.loads(path.read_text(encoding="utf-8"))
+            data["profiles"][0]["status"] = "actif"
+            path.write_text(json.dumps(data), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "ne doit pas être présenté"):
                 check_repository(root)
 
     def test_insecure_source_url_is_rejected(self):
