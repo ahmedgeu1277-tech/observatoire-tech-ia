@@ -1,6 +1,6 @@
 """Contrôles techniques avant publication ; ne constitue pas une certification juridique."""
 import re
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 LOG_FILE = Path("journal_conformite_legale.txt")
@@ -17,7 +17,7 @@ SECRET_PATTERNS = [
     re.compile(r"AIza[0-9A-Za-z_-]{30,}"),
     re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH |DSA )?PRIVATE KEY-----"),
     re.compile(r"(?i)\b(?:api[_-]?key|access[_-]?token|client[_-]?secret|password)\s*[:=]\s*['\"]?[^\s'\"]{12,}"),
-    re.compile(r"(?i)\bBearer\s+[A-Za-z0-9._~+/=-]{20,}"),
+    re.compile(r"\bBearer\s+[A-Za-z0-9._~+/=-]{20,}", re.IGNORECASE),
 ]
 EMAIL_RE = re.compile(r"\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b", re.I)
 
@@ -33,7 +33,7 @@ def verifier_conformite_legale(proposition_action, type_action="PUBLICATION"):
         LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
         with LOG_FILE.open("a", encoding="utf-8") as log:
             log.write(
-                f"[{datetime.now(timezone.utc).isoformat()}] "
+                f"[{datetime.now(UTC).isoformat()}] "
                 f"[{type_action}] REFUS : {'; '.join(problemes)}\n"
             )
         print(f"Publication bloquée : {'; '.join(problemes)}")
