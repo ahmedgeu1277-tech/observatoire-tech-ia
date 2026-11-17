@@ -17,7 +17,7 @@ async def creer_documentaire_tech():
     if not any(os.getenv(key) for key in ("GROQ_API_KEY", "HF_API_KEY", "HF_TOKEN")):
         print("Documentaire ignoré : aucune clé IA configurée.")
         return None
-    notes = memory.read_text(encoding="utf-8")[-16000:]
+    notes = memory.read_text(encoding="utf-8")[-7000:]
     plan_text, provider = generate_text([
         {"role": "system", "content": "Tu construis un plan de documentaire factuel en français."},
         {"role": "user", "content": f"Propose exactement cinq titres de chapitres distincts pour un documentaire Tech & IA fondé uniquement sur ces notes. Un titre par ligne. Signale les limites des informations.\n{notes}"},
@@ -31,7 +31,7 @@ async def creer_documentaire_tech():
         body, chapter_provider = generate_text([
             {"role": "system", "content": "Tu rédiges en français, distingues faits et incertitudes, et n’inventes aucune source ni aucun chiffre."},
             {"role": "user", "content": f"Rédige un chapitre documentaire de 400 à 450 mots sur « {title} ». Appuie-toi uniquement sur les notes ci-dessous. Si elles ne permettent pas cette longueur, sois plus court et dis ce qui manque. Ne prétends pas avoir vérifié des faits.\nNOTES :\n{notes}"},
-        ], max_tokens=1100, temperature=0.2)
+        ], max_tokens=850, temperature=0.2)
         body = body.strip()
         if len(body.split()) < 180:
             raise RuntimeError(f"Chapitre {number} trop court : documentaire incomplet.")
