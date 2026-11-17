@@ -17,10 +17,10 @@ FEEDS = {
         ("arXiv Machine Learning", "https://rss.arxiv.org/rss/cs.LG"),
     ],
     "gaming": [
-        ("Unity", "https://unity.com/blog/rss"),
-        ("Unreal Engine / Epic", "https://www.unrealengine.com/rss"),
+        ("Unity", "https://blog.unity.com/feed"),
+        ("Unreal Engine / Epic", "https://www.unrealengine.com/rss?lang=en-US"),
         ("Godot", "https://godotengine.org/rss.xml"),
-        ("GameMaker", "https://gamemaker.io/blog/rss"),
+        ("GameMaker", "https://gamemaker.io/en/blog/rss"),
     ],
     "roblox": [],
 }
