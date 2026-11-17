@@ -28,18 +28,24 @@ jobs:
         run: |
           python -m compileall -q documentaire_test.py nettoyer_documentaire_test.py agent_gardien.py tests
           python -m unittest discover -s tests -v
-      - name: Vérifier la présence du secret IA
+      - name: Vérifier la présence d'au moins un fournisseur IA
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          HF_API_KEY: ${{ secrets.HF_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          if [ -z "$GROQ_API_KEY" ]; then
-            echo "::error::Le secret GROQ_API_KEY est absent."
+          if [ -z "$GROQ_API_KEY" ] && [ -z "$HF_API_KEY" ] && [ -z "$HF_TOKEN" ]; then
+            echo "::error::Configure GROQ_API_KEY ou HF_API_KEY/HF_TOKEN."
             exit 1
           fi
       - name: Générer le documentaire et sa narration
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GROQ_MODEL: openai/gpt-oss-20b
+          HF_API_KEY: ${{ secrets.HF_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GROQ_MODEL: ${{ vars.GROQ_MODEL || 'openai/gpt-oss-20b' }}
+          HF_MODEL: ${{ vars.HF_MODEL || 'Qwen/Qwen2.5-7B-Instruct' }}
+          AI_PROVIDER_ORDER: ${{ vars.AI_PROVIDER_ORDER || 'groq,huggingface' }}
         run: python documentaire_test.py
       - name: Publier sur le site
         run: |
