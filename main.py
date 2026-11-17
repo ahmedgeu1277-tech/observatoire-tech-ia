@@ -272,6 +272,8 @@ NUMBER_CLAIM_RE = re.compile(r"\d+(?:[.,]\d+)?")
 
 def appliquer_garde_chiffres(theme, data, sources):
     """Refuse les chiffres et caractéristiques numériques absents des titres/descriptions sources."""
+    if "version précise non confirmée" in str(data.get("verdict", "")).casefold():
+        return data
     source_text = " ".join(
         str(source.get(field, ""))
         for source in sources
@@ -352,8 +354,8 @@ Sources :
         raise ValueError(f"Résumé IA hors longueur acceptable ({summary_words} mots). Aucun article publié.")
 
     data = appliquer_garde_regionale(theme, data, sources)
-    data = appliquer_garde_chiffres(theme, data, sources)
     data = appliquer_garde_versions(data, sources)
+    data = appliquer_garde_chiffres(theme, data, sources)
     title = data["title"].strip()[:140]
     summary = data["summary"].strip()[:1200]
     verdict = data["verdict"].strip()[:500]
