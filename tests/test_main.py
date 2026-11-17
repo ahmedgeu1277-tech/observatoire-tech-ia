@@ -107,9 +107,11 @@ class ArchiveSafetyTests(unittest.TestCase):
         with TemporaryDirectory() as folder:
             target = Path(folder) / "articles.json"
             target.write_text("{broken", encoding="utf-8")
-            with patch.object(main, "ARTICLES_FILE", target):
-                with self.assertRaisesRegex(RuntimeError, "préserver les archives"):
-                    main.load_previous_articles()
+            with (
+                patch.object(main, "ARTICLES_FILE", target),
+                self.assertRaisesRegex(RuntimeError, "préserver les archives"),
+            ):
+                main.load_previous_articles()
 
 
 
@@ -129,10 +131,12 @@ class ThemeSelectionTests(unittest.TestCase):
             },
         }
         other = {"name": "IA", "query": "IA"}
-        with TemporaryDirectory() as folder:
-            with patch.object(main, "ROOT", Path(folder)):
-                self.assertEqual(main.choose_theme([event, other])["name"], "GTA VI")
-                self.assertEqual(main.choose_theme([event, other])["name"], "IA")
+        with (
+            TemporaryDirectory() as folder,
+            patch.object(main, "ROOT", Path(folder)),
+        ):
+            self.assertEqual(main.choose_theme([event, other])["name"], "GTA VI")
+            self.assertEqual(main.choose_theme([event, other])["name"], "IA")
 
 
 if __name__ == "__main__":
