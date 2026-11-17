@@ -1,5 +1,62 @@
 [
   {
+    "id": "20261117T184725-11b5cb11",
+    "date": "2026-11-17T18:47+00:00",
+    "theme": "GTA VI — préparation du lancement en Thaïlande",
+    "title": "GTA VI : les sources ne précisent pas la Thaïlande",
+    "summary": "Les sources consultées abordent l'actualité de GTA VI, mais aucune ne mentionne la Thaïlande. Elles ne permettent donc pas de confirmer la disponibilité du jeu ni son heure de lancement dans ce pays. Les informations régionales doivent être vérifiées auprès de l'éditeur et de la boutique officielle de la région concernée.",
+    "verdict": "Disponibilité en Thaïlande non confirmée par les sources consultées.",
+    "tip": "Consulter les annonces de l'éditeur et la boutique officielle de la région avant de conclure.",
+    "sources": [
+      {
+        "title": "Les nominations des Game Awards 2026 dévoilées : GTA 6 en tête",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Tue, 17 Nov 2026 17:51:18 +0000",
+        "description": "Le nommé du turfu",
+        "url": "https://fr.ign.com/project-007/94022/les-nominations-des-game-awards-2026-devoilees-gta-6-en-tete",
+        "source_type": "flux_officiel"
+      },
+      {
+        "title": "L’actrice qui incarne Lucia dans Grand Theft Auto 6 enfin révélée",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Tue, 17 Nov 2026 17:35:39 +0000",
+        "description": "Et ce n'est pas vraiment un spoiler....",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94017/lactrice-qui-incarne-lucia-dans-grand-theft-auto-6-enfin-revelee",
+        "source_type": "flux_officiel"
+      },
+      {
+        "title": "Sony pousse une dernière petite mise à jour de sécurité PS5 avant GTA 6, pendant que les hackers font du bruit",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Tue, 17 Nov 2026 10:52:35 +0000",
+        "description": "C'est la guerre.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/93999/sony-pousse-une-derniere-petite-mise-a-jour-de-securite-ps5-avant-gta-6-pendant-que-les-hackers-font",
+        "source_type": "flux_officiel"
+      },
+      {
+        "title": "GTA 6 : voici comment y jouer en avance grâce à l'astuce de la Nouvelle-Zélande",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Tue, 17 Nov 2026 10:42:09 +0000",
+        "description": "C'est bientôt l'heure.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/93998/gta-6-voici-comment-y-jouer-en-avance-grace-a-lastuce-de-la-nouvelle-zelande",
+        "source_type": "flux_officiel"
+      },
+      {
+        "title": "GTA 6 : comment jouer avant le 19 novembre grâce à l'astuce de la Nouvelle-Zélande",
+        "publisher": "msn.com",
+        "domain": "msn.com",
+        "published": "Tue, 17 Nov 2026 05:30:17 GMT",
+        "description": "Jeudi 19 novembre à 0 h, GTA 6 se débloque officiellement en France, mais certains viseront midi la veille grâce à l’astuce Nouvelle-Zélande. Entre gain de 12 heures et risque de sanction, mieux vaut ...",
+        "url": "https://www.msn.com/fr-fr/actualite/other/gta-6-comment-jouer-avant-le-19-novembre-gr%C3%A2ce-%C3%A0-lastuce-de-la-nouvelle-z%C3%A9lande/ar-AA2hD8py"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261117T184725-11b5cb11.mp3"
+  },
+  {
     "id": "20261117T184405-f387119a",
     "date": "2026-11-17T18:44+00:00",
     "theme": "GTA VI — préparation du lancement en Thaïlande",
