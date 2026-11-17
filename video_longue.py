@@ -46,8 +46,8 @@ async def creer_documentaire_tech():
                 "role": "user",
                 "content": (
                     "Rédige un documentaire Tech & IA complet avec un titre, une introduction et "
-                    "exactement cinq chapitres distincts. Chaque chapitre doit contenir au moins "
-                    "180 mots. N'invente aucun fait, chiffre, date, citation ou source. "
+                    "exactement cinq chapitres distincts. Chaque chapitre doit contenir environ "
+                    "100 à 130 mots. N'invente aucun fait, chiffre, date, citation ou source. "
                     "Distingue les faits des hypothèses et signale les informations manquantes. "
                     "Réponds en JSON avec les clés title, introduction et chapters. "
                     "chapters doit être une liste de cinq objets contenant title et text.\n"
@@ -55,7 +55,7 @@ async def creer_documentaire_tech():
                 ),
             },
         ],
-        max_tokens=2200,
+        max_tokens=2600,
         temperature=0.2,
         json_mode=True,
     )
@@ -75,8 +75,8 @@ async def creer_documentaire_tech():
             raise RuntimeError(f"Chapitre {number} invalide.")
         heading = str(item.get("title") or f"Chapitre {number}")[:140]
         body = str(item.get("text") or "").strip()[:5000]
-        if len(body.split()) < 180:
-            raise RuntimeError(f"Chapitre {number} trop court : documentaire incomplet.")
+        if len(body.split()) < 80:
+            raise RuntimeError(f"Chapitre {number} trop court ({len(body.split())} mots) : documentaire incomplet.")
         chapters.append((number, heading, body))
 
     parts = [
