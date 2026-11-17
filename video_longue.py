@@ -124,7 +124,7 @@ async def creer_documentaire_tech():
         print(f"Pistes audio créées : {created}/5.")
 
     try:
-        asyncio.run(produire_audio())
+        await produire_audio()
     except Exception as exc:  # noqa: BLE001 — le script écrit reste conservé.
         print(f"Synthèse audio indisponible ({type(exc).__name__}: {str(exc)[:120]}).")
 
