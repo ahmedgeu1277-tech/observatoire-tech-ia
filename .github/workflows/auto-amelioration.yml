@@ -1,0 +1,39 @@
+name: Boucle d'auto-évaluation et amélioration continue
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 4 * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: auto-evaluation
+  cancel-in-progress: false
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Installer les dépendances du projet
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Exécuter la boucle bornée
+        run: python auto_amelioration.py
+      - name: Conserver le rapport
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rapport-auto-evaluation
+          path: self_improvement_report.json
+          if-no-files-found: warn
+          retention-days: 14
