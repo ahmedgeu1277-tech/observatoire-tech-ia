@@ -186,6 +186,8 @@ class NewsFallbackTests(unittest.TestCase):
             (json.dumps(payload), "groq"),
             (json.dumps({"source_indices": [0]}), "groq"),
         ]
-        article = main.create_article(self.theme, self.sources)
-        self.assertEqual(article["sources"], self.sources)
+        theme = {"name": "Test"}
+        sources = [{"title": "Source test", "url": "https://example.com/article"}]
+        article = main.create_article(theme, sources)
+        self.assertEqual(article["sources"], sources)
         self.assertEqual(mock_generate.call_count, 2)
