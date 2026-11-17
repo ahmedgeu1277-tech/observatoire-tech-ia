@@ -37,6 +37,28 @@ class ThemeLifecycleTests(unittest.TestCase):
         self.assertEqual(result["name"], "Gaming")
         self.assertEqual(result["query"], "gaming")
 
+    def test_event_window_works_without_launch_at_when_start_at_exists(self):
+        theme = {
+            "name": "Événement",
+            "lifecycle": {
+                "start_at": "2026-11-16T00:00:00Z",
+                "end_at": "2026-11-26T23:59:59Z",
+            },
+        }
+        now = datetime(2026, 11, 20, 12, 0, tzinfo=timezone.utc)
+        self.assertIs(main.get_priority_event_theme([theme], now), theme)
+
+    def test_event_window_falls_back_to_launch_at_when_start_at_is_missing(self):
+        theme = {
+            "name": "Événement",
+            "lifecycle": {
+                "launch_at": "2026-11-18T17:00:00Z",
+                "end_at": "2026-11-26T23:59:59Z",
+            },
+        }
+        now = datetime(2026, 11, 20, 12, 0, tzinfo=timezone.utc)
+        self.assertIs(main.get_priority_event_theme([theme], now), theme)
+
     def test_invalid_lifecycle_is_rejected(self):
         broken = {"name": "Gaming", "lifecycle": {"launch_at": "date"}}
         with self.assertRaises(ValueError):

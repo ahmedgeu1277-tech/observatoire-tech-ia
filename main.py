@@ -67,13 +67,21 @@ def get_priority_event_theme(themes, now=None):
         if not isinstance(lifecycle, dict):
             continue
         try:
-            start_at = datetime.fromisoformat(
-                lifecycle.get("start_at", lifecycle["launch_at"]).replace("Z", "+00:00")
-            )
-            end_at = datetime.fromisoformat(lifecycle["end_at"].replace("Z", "+00:00"))
-        except (KeyError, TypeError, ValueError):
+            # dict.get avec une valeur par défaut évaluée immédiatement provoquait
+            # un KeyError si launch_at était absent, même avec start_at présent.
+            start_value = lifecycle.get("start_at") or lifecycle.get("launch_at")
+            end_value = lifecycle.get("end_at")
+            if not isinstance(start_value, str) or not isinstance(end_value, str):
+                continue
+            start_at = datetime.fromisoformat(start_value.replace("Z", "+00:00"))
+            end_at = datetime.fromisoformat(end_value.replace("Z", "+00:00"))
+        except (TypeError, ValueError):
             continue
-        if start_at.tzinfo and end_at.tzinfo and start_at <= now <= end_at:
+        if (
+            start_at.tzinfo is not None
+            and end_at.tzinfo is not None
+            and start_at <= now <= end_at
+        ):
             return theme
     return None
 
