@@ -14,7 +14,7 @@ def generer_encyclopedie_annuelle():
         print("Livre non créé : aucune mémoire disponible.")
         return None
 
-    public_notes = memory.read_text(encoding="utf-8")[-24000:]
+    public_notes = memory.read_text(encoding="utf-8")[-12000:]
     result, provider = generate_text(
         [
             {"role": "system", "content": "Tu écris un guide documentaire en français, sans inventer de faits."},
@@ -25,7 +25,7 @@ def generer_encyclopedie_annuelle():
                 "Indique les limites des notes disponibles.\nNOTES PUBLIQUES :\n" + public_notes
             )},
         ],
-        max_tokens=6000,
+        max_tokens=4000,
         temperature=0.2,
     )
     content = result.strip()
