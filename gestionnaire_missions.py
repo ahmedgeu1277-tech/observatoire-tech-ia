@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import json
 import sqlite3
+from contextlib import contextmanager
 from datetime import UTC, datetime
 from pathlib import Path
 from uuid import uuid4
@@ -28,7 +29,7 @@ class MissionQueue:
     def __init__(self, database: Path | str = DEFAULT_DB):
         self.database = Path(database)
         self.database.parent.mkdir(parents=True, exist_ok=True)
-        with self._connect() as db:
+        with self._session() as db:
             db.execute("""
                 CREATE TABLE IF NOT EXISTS missions (
                     id TEXT PRIMARY KEY,
@@ -48,6 +49,18 @@ class MissionQueue:
         db = sqlite3.connect(self.database, timeout=10)
         db.row_factory = sqlite3.Row
         return db
+
+    @contextmanager
+    def _session(self):
+        db = self._connect()
+        try:
+            yield db
+            db.commit()
+        except Exception:
+            db.rollback()
+            raise
+        finally:
+            db.close()
 
     def enqueue(self, payload: object) -> str:
         mission = orchestrateur.valider_mission(payload)
