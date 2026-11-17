@@ -128,6 +128,8 @@ async def creer_documentaire_tech():
 
     audio_folder = ROOT / "site" / "audio"
     audio_folder.mkdir(parents=True, exist_ok=True)
+    for number in range(1, 6):
+        (audio_folder / f"documentaire_tech_{stamp}_chapitre_{number}.mp3").unlink(missing_ok=True)
 
     async def produire_audio():
         import edge_tts
