@@ -32,9 +32,6 @@ class SpecializedFeedTests(unittest.TestCase):
         xml = b"""<rss><channel><item><title>Bad</title><link>javascript:alert(1)</link></item></channel></rss>"""
         self.assertEqual(parse_feed(xml, "Test", "https://example.org/feed.xml"), [])
 
-if __name__ == "__main__":
-    unittest.main()
-
 
     @patch("sources_specialisees.requests.get")
     def test_roblox_theme_uses_filtered_gaming_feeds(self, mock_get):
@@ -62,3 +59,6 @@ if __name__ == "__main__":
         self.assertTrue(result)
         self.assertTrue(all("gta" in (item["title"] + item["description"]).lower() or
                             "rockstar" in (item["title"] + item["description"]).lower() for item in result))
+
+if __name__ == "__main__":
+    unittest.main()
