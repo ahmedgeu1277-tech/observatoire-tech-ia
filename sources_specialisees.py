@@ -65,7 +65,7 @@ def parse_feed(content, publisher, feed_url):
         published = _text(item, ["pubDate", "published", "updated",
                                  "{http://www.w3.org/2005/Atom}published",
                                  "{http://www.w3.org/2005/Atom}updated"])
-        if title and link.startswith(("https://", "http://")):
+        if title and link.startswith("https://"):
             results.append({
                 "title": title[:260],
                 "publisher": publisher[:100],
