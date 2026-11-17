@@ -235,7 +235,7 @@ def appliquer_garde_regionale(theme, data, sources):
 
 
 VERSION_CLAIM_RE = re.compile(
-    r"\\b(?:Unreal Engine|Unity|Godot|GameMaker)\\s+\\d+(?:\\.\\d+)*\\b",
+    r"\b(?:Unreal Engine|Unity|Godot|GameMaker)\s+\d+(?:\.\d+)*\b",
     re.IGNORECASE,
 )
 
@@ -267,7 +267,7 @@ def appliquer_garde_versions(data, sources):
     return data
 
 
-NUMBER_CLAIM_RE = re.compile(r"\\d+(?:[.,]\\d+)?")
+NUMBER_CLAIM_RE = re.compile(r"\d+(?:[.,]\d+)?")
 
 
 def appliquer_garde_chiffres(theme, data, sources):
