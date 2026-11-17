@@ -34,24 +34,27 @@ jobs:
         run: |
           python -m compileall -q documentaire_test.py nettoyer_documentaire_test.py agent_gardien.py tests
           python -m unittest discover -s tests -v
-      - name: Vérifier la présence d'au moins un fournisseur IA
-        env:
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          HF_API_KEY: ${{ secrets.HF_API_KEY }}
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      - name: Vérifier les articles et leurs sources HTTPS
         run: |
-          if [ -z "$GROQ_API_KEY" ] && [ -z "$HF_API_KEY" ] && [ -z "$HF_TOKEN" ]; then
-            echo "::error::Configure GROQ_API_KEY ou HF_API_KEY/HF_TOKEN."
-            exit 1
-          fi
-      - name: Générer le documentaire et sa narration
-        env:
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          HF_API_KEY: ${{ secrets.HF_API_KEY }}
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          GROQ_MODEL: ${{ vars.GROQ_MODEL || 'openai/gpt-oss-20b' }}
-          HF_MODEL: ${{ vars.HF_MODEL || 'Qwen/Qwen2.5-7B-Instruct' }}
-          AI_PROVIDER_ORDER: ${{ vars.AI_PROVIDER_ORDER || 'groq,huggingface' }}
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          articles = json.loads(Path("site/articles.json").read_text(encoding="utf-8"))
+          themes = {
+              article.get("theme")
+              for article in articles
+              if article.get("theme")
+              and article.get("summary")
+              and any(
+                  isinstance(source, dict) and str(source.get("url", "")).startswith("https://")
+                  for source in article.get("sources", [])
+              )
+          }
+          if len(themes) < 4:
+              raise SystemExit("Il faut au moins quatre thèmes publiés avec des sources HTTPS.")
+          print(f"{len(themes)} thèmes publiés disponibles.")
+          PY
+      - name: Générer le documentaire compilé et sa narration
         run: python documentaire_test.py
       - name: Publier sur le site
         run: |
