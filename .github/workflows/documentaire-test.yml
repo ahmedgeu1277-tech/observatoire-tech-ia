@@ -1,6 +1,12 @@
 name: Documentaire test (publication temporaire)
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "documentaire_test.py"
+      - "ai_providers.py"
+      - ".github/workflows/documentaire-test.yml"
   workflow_dispatch:
 
 permissions:
