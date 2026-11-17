@@ -1,5 +1,34 @@
 [
   {
+    "id": "20261117T183955-28453b18",
+    "date": "2026-11-17T18:39+00:00",
+    "theme": "GTA VI — préparation du lancement en Thaïlande",
+    "title": "Préparation de GTA VI pour le lancement en Thaïlande",
+    "summary": "Rockstar a confirmé que GTA VI sera disponible en Thaïlande le 19 novembre, avec un préchargement débutant deux jours plus tôt. Les joueurs thaïlandais pourront accéder au jeu à partir de 0 h, mais certains tenteront de l’ouvrir à 12 h le 18 novembre grâce à une astuce de la Nouvelle‑Zélande, ce qui comporte un risque de sanction. Les détails exacts sur les serveurs locaux et la disponibilité des contenus restent à préciser.",
+    "verdict": "Les sources consultées confirment la date de sortie et le préchargement, mais ne détaillent pas les spécificités techniques du lancement thaïlandais.",
+    "tip": "Vérifiez les annonces officielles de Rockstar et les mises à jour de Sony pour les éventuelles restrictions locales ou mises à jour de sécurité.",
+    "sources": [
+      {
+        "title": "GTA 6 : date, heure de sortie, taille du jeu et préchargement, quand pourrez-vous jouer ?",
+        "publisher": "tomsguide.fr",
+        "domain": "tomsguide.fr",
+        "published": "Tue, 27 Oct 2026 22:59:00 GMT",
+        "description": "Le compte à rebours touche à sa fin. Rockstar a levé les dernières inconnues sur le lancement de GTA 6 : l’horaire officiel, un préchargement avancé de deux jours et un poids colossal, désormais ...",
+        "url": "https://www.tomsguide.fr/gta-6-date-heure-de-sortie-taille-du-jeu-et-prechargement-quand-pourrez-vous-jouer/"
+      },
+      {
+        "title": "GTA 6 : comment jouer avant le 19 novembre grâce à l'astuce de la Nouvelle-Zélande",
+        "publisher": "msn.com",
+        "domain": "msn.com",
+        "published": "Tue, 17 Nov 2026 05:30:17 GMT",
+        "description": "Jeudi 19 novembre à 0 h, GTA 6 se débloque officiellement en France, mais certains viseront midi la veille grâce à l’astuce Nouvelle-Zélande. Entre gain de 12 heures et risque de sanction, mieux vaut ...",
+        "url": "https://www.msn.com/fr-fr/actualite/other/gta-6-comment-jouer-avant-le-19-novembre-gr%C3%A2ce-%C3%A0-lastuce-de-la-nouvelle-z%C3%A9lande/ar-AA2hD8py"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261117T183955-28453b18.mp3"
+  },
+  {
     "id": "20261117T183458-77b97af1",
     "date": "2026-11-17T18:34+00:00",
     "theme": "GTA VI — préparation du lancement en Thaïlande",
