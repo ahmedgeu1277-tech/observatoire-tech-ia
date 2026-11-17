@@ -149,7 +149,7 @@ class ArticleValidationTests(unittest.TestCase):
         theme = {"name": "Matériel et smartphones"}
         sources = [{
             "title": "Galaxy S25 et iOS 28 : nouveautés attendues en 2027",
-            "description": "Présentation générale des prochains appareils.",
+            "description": "Présentation détaillée des prochains appareils, des composants internes, des performances et des capacités photographiques.",
             "url": "https://example.com/phones",
         }]
         payload = {
