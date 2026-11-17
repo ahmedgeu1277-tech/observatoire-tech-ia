@@ -50,7 +50,7 @@ async function inspectPage(browser, route, viewport) {
       const href = await link.getAttribute("href");
       if (href && href.startsWith("#")) {
         const target = href.slice(1);
-        if (target && !(await page.locator("#" + CSS.escape(target)).count())) {
+        if (target && !(await page.locator(`[id="${target}"]`).count())) {
           fail("Accueil : ancre de navigation introuvable " + href);
         }
       }
