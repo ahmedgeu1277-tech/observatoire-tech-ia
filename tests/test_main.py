@@ -100,6 +100,29 @@ class ArticleValidationTests(unittest.TestCase):
             main.create_article(self.theme, self.sources)
 
 
+    @patch("main.generate_text")
+    def test_unverified_country_availability_is_rewritten_safely(self, mock_generate):
+        theme = {"name": "GTA VI — préparation du lancement en Thaïlande"}
+        sources = [{
+            "title": "GTA VI release date and preload",
+            "description": "The release timing and preload schedule.",
+            "url": "https://example.com/gta",
+            "publisher": "Example",
+        }]
+        payload = {
+            "title": "GTA VI disponible en Thaïlande le 19 novembre",
+            "summary": " ".join(["mot"] * 70),
+            "verdict": "Confirmé",
+            "tip": "Consulter les annonces",
+            "source_indices": [0],
+        }
+        mock_generate.return_value = (json.dumps(payload), "groq")
+        article = main.create_article(theme, sources)
+        self.assertIn("ne précisent pas la Thaïlande", article["title"])
+        self.assertIn("aucune ne mentionne", article["summary"])
+        self.assertIn("non confirmée", article["verdict"])
+
+
 class ArchiveSafetyTests(unittest.TestCase):
     def test_corrupted_archive_is_not_silently_replaced(self):
         from pathlib import Path
