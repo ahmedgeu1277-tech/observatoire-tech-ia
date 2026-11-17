@@ -137,6 +137,8 @@ Le générateur ne se connecte pas à un compte Roblox et ne publie rien. Il pro
 def project_slug(name: str) -> str:
     if not isinstance(name, str) or not name.strip():
         raise ValueError("Le nom du projet est obligatoire.")
+    if "/" in name or "\\" in name or ".." in name:
+        raise ValueError("Le nom ne doit pas contenir de chemin ou de séquence de traversée.")
     slug = re.sub(r"[^A-Za-z0-9_]+", "_", name.strip()).strip("_")
     if not re.fullmatch(r"[A-Za-z][A-Za-z0-9_]{1,39}", slug):
         raise ValueError("Nom invalide : utilise 2 à 40 caractères, lettres/chiffres/underscore, en commençant par une lettre.")
@@ -149,8 +151,8 @@ def generate_project(name: str, output_dir: str | Path, template: str = "obby") 
         raise ValueError("Modèle inconnu.")
     root = Path(output_dir).expanduser().resolve()
     destination = root / slug
-    if destination.exists() and any(destination.iterdir()):
-        raise FileExistsError("Le dossier de destination existe déjà et n'est pas vide.")
+    if destination.is_symlink() or (destination.exists() and (not destination.is_dir() or any(destination.iterdir()))):
+        raise FileExistsError("Dossier de destination non vide, lien symbolique ou fichier.")
     destination.mkdir(parents=True, exist_ok=True)
 
     created = []
