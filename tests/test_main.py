@@ -1,6 +1,6 @@
 import json
 import unittest
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from unittest.mock import patch
 
 import main
@@ -21,18 +21,18 @@ class ThemeLifecycleTests(unittest.TestCase):
         }
 
     def test_uses_before_variant_before_launch(self):
-        now = datetime(2026, 11, 18, 16, 59, tzinfo=timezone.utc)
+        now = datetime(2026, 11, 18, 16, 59, tzinfo=UTC)
         result = main.appliquer_cycle_vie(self.theme, now)
         self.assertEqual(result["name"], "Avant lancement")
         self.assertEqual(result["query"], "préparation")
 
     def test_switches_to_after_variant_at_launch(self):
-        now = datetime(2026, 11, 18, 17, 0, tzinfo=timezone.utc)
+        now = datetime(2026, 11, 18, 17, 0, tzinfo=UTC)
         result = main.appliquer_cycle_vie(self.theme, now)
         self.assertEqual(result["name"], "Après lancement")
 
     def test_returns_base_theme_after_campaign(self):
-        now = datetime(2026, 11, 27, 0, 0, tzinfo=timezone.utc)
+        now = datetime(2026, 11, 27, 0, 0, tzinfo=UTC)
         result = main.appliquer_cycle_vie(self.theme, now)
         self.assertEqual(result["name"], "Gaming")
         self.assertEqual(result["query"], "gaming")
@@ -45,7 +45,7 @@ class ThemeLifecycleTests(unittest.TestCase):
                 "end_at": "2026-11-26T23:59:59Z",
             },
         }
-        now = datetime(2026, 11, 20, 12, 0, tzinfo=timezone.utc)
+        now = datetime(2026, 11, 20, 12, 0, tzinfo=UTC)
         self.assertIs(main.get_priority_event_theme([theme], now), theme)
 
     def test_event_window_falls_back_to_launch_at_when_start_at_is_missing(self):
@@ -56,19 +56,19 @@ class ThemeLifecycleTests(unittest.TestCase):
                 "end_at": "2026-11-26T23:59:59Z",
             },
         }
-        now = datetime(2026, 11, 20, 12, 0, tzinfo=timezone.utc)
+        now = datetime(2026, 11, 20, 12, 0, tzinfo=UTC)
         self.assertIs(main.get_priority_event_theme([theme], now), theme)
 
     def test_invalid_lifecycle_is_rejected(self):
         broken = {"name": "Gaming", "lifecycle": {"launch_at": "date"}}
         with self.assertRaises(ValueError):
-            main.appliquer_cycle_vie(broken, datetime.now(timezone.utc))
+            main.appliquer_cycle_vie(broken, datetime.now(UTC))
 
     def test_event_theme_is_prioritized_only_during_its_window(self):
         themes = [self.theme, {"name": "IA", "query": "ia"}]
-        before_window = datetime(2026, 11, 15, 23, 59, tzinfo=timezone.utc)
-        during_window = datetime(2026, 11, 20, 12, 0, tzinfo=timezone.utc)
-        after_window = datetime(2026, 11, 27, 0, 0, tzinfo=timezone.utc)
+        before_window = datetime(2026, 11, 15, 23, 59, tzinfo=UTC)
+        during_window = datetime(2026, 11, 20, 12, 0, tzinfo=UTC)
+        after_window = datetime(2026, 11, 27, 0, 0, tzinfo=UTC)
         self.assertIsNone(main.get_priority_event_theme(themes, before_window))
         self.assertIs(main.get_priority_event_theme(themes, during_window), self.theme)
         self.assertIsNone(main.get_priority_event_theme(themes, after_window))
@@ -102,8 +102,8 @@ class ArticleValidationTests(unittest.TestCase):
 
 class ArchiveSafetyTests(unittest.TestCase):
     def test_corrupted_archive_is_not_silently_replaced(self):
-        from tempfile import TemporaryDirectory
         from pathlib import Path
+        from tempfile import TemporaryDirectory
         with TemporaryDirectory() as folder:
             target = Path(folder) / "articles.json"
             target.write_text("{broken", encoding="utf-8")

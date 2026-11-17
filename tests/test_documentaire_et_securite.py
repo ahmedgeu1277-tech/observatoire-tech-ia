@@ -1,12 +1,12 @@
 import json
 import tempfile
 import unittest
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from unittest.mock import patch
 
-import nettoyer_documentaire_test as cleanup
 import agent_gardien
+import nettoyer_documentaire_test as cleanup
 
 
 class CleanupTests(unittest.TestCase):
@@ -25,7 +25,7 @@ class CleanupTests(unittest.TestCase):
         self.script.write_text("script", encoding="utf-8")
         self.page.write_text("documentaire", encoding="utf-8")
         self.manifest.write_text(json.dumps({
-            "expires_at": (datetime.now(timezone.utc) - timedelta(minutes=1)).isoformat(),
+            "expires_at": (datetime.now(UTC) - timedelta(minutes=1)).isoformat(),
             "audio_file": self.audio_file.name
         }), encoding="utf-8")
 
@@ -43,7 +43,7 @@ class CleanupTests(unittest.TestCase):
 
     def test_unexpired_documentary_is_kept(self):
         self.manifest.write_text(json.dumps({
-            "expires_at": (datetime.now(timezone.utc) + timedelta(hours=1)).isoformat(),
+            "expires_at": (datetime.now(UTC) + timedelta(hours=1)).isoformat(),
             "audio_file": self.audio_file.name
         }), encoding="utf-8")
         with patch.multiple(cleanup, MANIFEST=self.manifest, PAGE=self.page,
@@ -55,7 +55,7 @@ class CleanupTests(unittest.TestCase):
 
     def test_invalid_audio_filename_cannot_escape_audio_folder(self):
         self.manifest.write_text(json.dumps({
-            "expires_at": (datetime.now(timezone.utc) - timedelta(minutes=1)).isoformat(),
+            "expires_at": (datetime.now(UTC) - timedelta(minutes=1)).isoformat(),
             "audio_file": "../../important.txt"
         }), encoding="utf-8")
         with patch.multiple(cleanup, MANIFEST=self.manifest, PAGE=self.page,

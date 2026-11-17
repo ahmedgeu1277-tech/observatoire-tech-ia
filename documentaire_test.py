@@ -3,10 +3,11 @@ import asyncio
 import html
 import json
 import os
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 from groq import Groq
+
 from agent_gardien import verifier_conformite_legale
 
 ROOT = Path(__file__).resolve().parent
@@ -83,7 +84,7 @@ def generer_documentaire():
     if len(script) < 1200 or not verifier_conformite_legale(script, "DOCUMENTAIRE_TEST"):
         raise RuntimeError("Le contrôle de publication a bloqué le documentaire.")
 
-    now = datetime.now(timezone.utc)
+    now = datetime.now(UTC)
     expires = now + timedelta(hours=24)
     stamp = now.strftime("%Y%m%dT%H%M%SZ")
     AUDIO_DIR.mkdir(parents=True, exist_ok=True)

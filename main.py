@@ -6,12 +6,13 @@ import sys
 from datetime import UTC, datetime
 from pathlib import Path
 from urllib.parse import quote, urlparse
-from defusedxml import ElementTree as ET
 
 import requests
+from defusedxml import ElementTree as ET
+
 from agent_gardien import verifier_conformite_legale
-from sources_specialisees import fetch_specialized_sources
 from ai_providers import generate_text
+from sources_specialisees import fetch_specialized_sources
 
 ROOT = Path(__file__).resolve().parent
 SITE_DIR = ROOT / "site"
@@ -135,8 +136,7 @@ def fetch_news(query, limit=8):
         if not title or not link:
             continue
         host = (urlparse(link).hostname or "").lower()
-        if host.startswith("www."):
-            host = host[4:]
+        host = host.removeprefix("www.")
         publisher = title.rsplit(" - ", 1)[-1].strip() if " - " in title else host
         headline = title.rsplit(" - ", 1)[0].strip() if " - " in title else title
         items.append({

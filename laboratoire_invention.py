@@ -8,8 +8,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
-import re
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from uuid import uuid4
 
@@ -47,7 +46,7 @@ def create_idea(problem: str, proposal: str, domain: str, path: Path = DATA_FILE
     item = {
         "id": uuid4().hex[:12],
         **values,
-        "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "created_at": datetime.now(UTC).isoformat(timespec="seconds"),
         "status": "idee",
         "prior_art_checked": False,
         "novelty_claim": "non_verifiee",

@@ -3,9 +3,10 @@ import json
 import os
 from pathlib import Path
 from urllib.parse import quote
-from defusedxml import ElementTree as ET
 
 import requests
+from defusedxml import ElementTree as ET
+
 from ai_providers import generate_text
 
 ROOT = Path(__file__).resolve().parent

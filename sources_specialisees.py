@@ -1,10 +1,10 @@
 """Collecte prudente de flux RSS officiels spécialisés."""
 import html
 import re
-from defusedxml import ElementTree as ET
 from urllib.parse import urlparse
 
 import requests
+from defusedxml import ElementTree as ET
 
 TIMEOUT = 12
 FEEDS = {

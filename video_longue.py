@@ -1,11 +1,11 @@
 """Documentaire hebdomadaire : cinq chapitres, script et pistes audio séparées."""
 import asyncio
 import os
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
-from ai_providers import generate_text
 from agent_gardien import verifier_conformite_legale
+from ai_providers import generate_text
 
 ROOT = Path(__file__).resolve().parent
 
@@ -40,7 +40,7 @@ async def creer_documentaire_tech():
     script = "\n".join(parts)
     if not verifier_conformite_legale(script, "DOCUMENTAIRE"):
         raise RuntimeError("Documentaire bloqué par le contrôle de sécurité.")
-    stamp = datetime.now(timezone.utc).strftime("%Y%m%d")
+    stamp = datetime.now(UTC).strftime("%Y%m%d")
     folder = ROOT / "archives"
     folder.mkdir(exist_ok=True)
     markdown = folder / f"documentaire_tech_{stamp}.md"

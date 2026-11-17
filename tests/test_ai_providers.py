@@ -17,7 +17,6 @@ class AIProviderTests(unittest.TestCase):
             "GROQ_API_KEY": "fake-groq",
             "HF_API_KEY": "fake-hf",
         }):
-            from ai_providers import generate_text
             self.assertEqual(os.environ["AI_PROVIDER_ORDER"], "huggingface,groq")
 
 

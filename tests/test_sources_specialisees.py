@@ -1,6 +1,8 @@
 import unittest
 from unittest.mock import patch
+
 from sources_specialisees import FEEDS, fetch_specialized_sources, parse_feed
+
 
 class SpecializedFeedTests(unittest.TestCase):
     def test_parse_rss_feed(self):

@@ -1,7 +1,9 @@
 """Générateur manuel d'encyclopédie annuelle à partir des archives."""
 import os
 from pathlib import Path
+
 from groq import Groq
+
 from agent_gardien import verifier_conformite_legale
 
 ROOT=Path(__file__).resolve().parent

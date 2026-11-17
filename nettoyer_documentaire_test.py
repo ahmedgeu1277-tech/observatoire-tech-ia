@@ -1,6 +1,6 @@
 """Retire uniquement le documentaire de test lorsqu'il a dépassé ses 24 heures."""
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -20,7 +20,7 @@ def main():
         expires = datetime.fromisoformat(data["expires_at"])
     except (OSError, ValueError, KeyError, json.JSONDecodeError) as exc:
         raise RuntimeError(f"Manifeste d'expiration invalide : {exc}") from exc
-    if datetime.now(timezone.utc) < expires.astimezone(timezone.utc):
+    if datetime.now(UTC) < expires.astimezone(UTC):
         print("Documentaire encore dans sa période de test.")
         return
 

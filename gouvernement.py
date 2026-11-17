@@ -6,7 +6,7 @@ Les grèves, manifestations et opinions sont des simulations logicielles, pas de
 from __future__ import annotations
 
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -62,7 +62,7 @@ MINISTRIES = {
 }
 
 def now():
-    return datetime.now(timezone.utc).isoformat(timespec="seconds")
+    return datetime.now(UTC).isoformat(timespec="seconds")
 
 def initial_state():
     directors = []
