@@ -56,6 +56,21 @@ def generate_text(messages, max_tokens=1200, temperature=0.25, json_mode=False):
             # Le journal ne contient ni clé, ni contenu de requête.
             status_code = getattr(exc, "status_code", None)
             detail = f"{type(exc).__name__}:{status_code}" if status_code else type(exc).__name__
+            # Extraire uniquement le champ d'erreur serveur, jamais les en-têtes,
+            # jetons, requêtes complètes ou réponses générées.
+            response = getattr(exc, "response", None)
+            if response is not None:
+                try:
+                    payload = response.json()
+                    message = payload.get("error") or payload.get("message") if isinstance(payload, dict) else None
+                    if message:
+                        message = str(message)
+                        for secret in (groq_key, hf_key):
+                            if secret:
+                                message = message.replace(secret, "[SECRET MASQUÉ]")
+                        detail += ":" + message[:180]
+                except Exception:  # noqa: BLE001
+                    pass
             failures.append(f"{provider}:{detail}")
             print(f"AVERTISSEMENT : fournisseur IA {provider} indisponible ({detail}).")
 
