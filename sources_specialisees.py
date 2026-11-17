@@ -17,12 +17,21 @@ FEEDS = {
         ("arXiv Machine Learning", "https://rss.arxiv.org/rss/cs.LG"),
     ],
     "gaming": [
+        ("IGN France", "https://fr.ign.com/feed.xml"),
+        ("IGN", "https://www.ign.com/rss/v2/articles/feed"),
+        ("GameSpot", "https://www.gamespot.com/feeds/news/"),
         ("Unity", "https://blog.unity.com/feed"),
         ("Unreal Engine / Epic", "https://www.unrealengine.com/rss?lang=en-US"),
         ("Godot", "https://godotengine.org/rss.xml"),
         ("GameMaker", "https://gamemaker.io/en/blog/rss"),
     ],
-    "roblox": [],
+    # Roblox n'ayant pas de flux éditorial dédié validé ici, on utilise
+    # des médias gaming et on filtre strictement sur le mot-clé Roblox.
+    "roblox": [
+        ("IGN France", "https://fr.ign.com/feed.xml"),
+        ("IGN", "https://www.ign.com/rss/v2/articles/feed"),
+        ("GameSpot", "https://www.gamespot.com/feeds/news/"),
+    ],
 }
 
 def _clean(value):
@@ -71,8 +80,13 @@ def parse_feed(content, publisher, feed_url):
 def fetch_specialized_sources(theme_name, limit=5):
     """Récupère uniquement les flux correspondant au thème ; un flux en panne est ignoré."""
     theme = (theme_name or "").lower()
+    keywords = ()
     if "roblox" in theme:
         feeds = FEEDS["roblox"]
+        keywords = ("roblox",)
+    elif any(word in theme for word in ("gta", "grand theft auto", "rockstar")):
+        feeds = FEEDS["gaming"]
+        keywords = ("gta", "grand theft auto", "rockstar")
     elif any(word in theme for word in ("gaming", "jeux vidéo", "jeu vidéo", "moteur", "logiciel de création", "game engine", "unity", "unreal", "godot", "gamemaker")):
         feeds = FEEDS["gaming"]
     elif any(word in theme for word in ("intelligence artificielle", "ia", "machine learning")):
@@ -88,6 +102,9 @@ def fetch_specialized_sources(theme_name, limit=5):
             })
             response.raise_for_status()
             for source in parse_feed(response.content, publisher, url):
+                searchable = (source["title"] + " " + source["description"]).casefold()
+                if keywords and not any(keyword in searchable for keyword in keywords):
+                    continue
                 key = source["url"].split("#", 1)[0]
                 if key not in seen:
                     collected.append(source)
