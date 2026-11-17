@@ -37,7 +37,7 @@ class MissionValidationTests(unittest.TestCase):
                 {
                     "mission": "Étudier une architecture de test.",
                     "agents": ["chercheur", "critique"],
-                    "max_duration_seconds": 60,
+                    "max_duration_seconds": 120,
                 },
                 Path(folder),
             )
