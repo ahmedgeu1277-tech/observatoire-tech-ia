@@ -6,6 +6,7 @@ import sys
 from datetime import UTC, datetime
 from pathlib import Path
 from urllib.parse import quote, urlparse
+from uuid import uuid4
 
 import requests
 from defusedxml import ElementTree as ET
@@ -238,7 +239,7 @@ Sources :
         raise ValueError("Aucune source valide sélectionnée. Aucun article publié.")
 
     return {
-        "id": datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ"),
+        "id": datetime.now(UTC).strftime("%Y%m%dT%H%M%S") + "-" + uuid4().hex[:8],
         "date": datetime.now(UTC).isoformat(timespec="minutes"),
         "theme": theme["name"],
         "title": title,
