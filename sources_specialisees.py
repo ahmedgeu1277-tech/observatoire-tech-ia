@@ -1,7 +1,7 @@
 """Collecte prudente de flux RSS officiels spécialisés."""
 import html
 import re
-import xml.etree.ElementTree as ET
+from defusedxml import ElementTree as ET
 from urllib.parse import urlparse
 
 import requests
