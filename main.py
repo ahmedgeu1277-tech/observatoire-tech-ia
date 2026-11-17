@@ -111,20 +111,35 @@ def choose_theme(themes):
     return theme
 
 def fetch_news(query, limit=8):
-    url = (
+    google_url = (
         "https://news.google.com/rss/search?q="
         + quote(query + " when:7d")
         + "&hl=fr&gl=FR&ceid=FR:fr"
     )
-    try:
-        response = requests.get(
-            url, timeout=TIMEOUT,
-            headers={"User-Agent": "ObservatoireTechGaming/1.0"}
-        )
-        response.raise_for_status()
-        root = ET.fromstring(response.content)
-    except (requests.RequestException, ET.ParseError) as exc:
-        print(f"AVERTISSEMENT : Google Actualités indisponible ({type(exc).__name__}); les autres sources seront utilisées.")
+    bing_url = (
+        "https://www.bing.com/news/search?q="
+        + quote(query)
+        + "&format=rss&setlang=fr-FR"
+    )
+    root = None
+    failures = []
+    for provider, url in (("Google Actualités", google_url), ("Bing News", bing_url)):
+        try:
+            response = requests.get(
+                url, timeout=TIMEOUT,
+                headers={"User-Agent": "Mozilla/5.0 (compatible; ObservatoireTechGaming/1.0)"}
+            )
+            response.raise_for_status()
+            candidate = ET.fromstring(response.content)
+            if candidate.findall(".//item"):
+                root = candidate
+                print(f"INFO : flux d'actualités utilisé : {provider}.")
+                break
+            failures.append(f"{provider}:flux vide")
+        except (requests.RequestException, ET.ParseError) as exc:
+            failures.append(f"{provider}:{type(exc).__name__}")
+    if root is None:
+        print("AVERTISSEMENT : moteurs d'actualités indisponibles (" + ", ".join(failures) + "); les flux spécialisés seront utilisés.")
         return []
     items = []
     for item in root.findall(".//item"):
