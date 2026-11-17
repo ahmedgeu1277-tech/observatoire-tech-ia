@@ -66,3 +66,6 @@ Voir [docs/ATELIER_PRODUITS.md](docs/ATELIER_PRODUITS.md). Le module `atelier_pr
 
 ## Auto-évaluation et amélioration continue
 Voir [docs/AUTO_AMELIORATION.md](docs/AUTO_AMELIORATION.md). `auto_amelioration.py` exécute des contrôles bornés et prépare un backlog priorisé. Un workflow quotidien conserve le rapport ; il ne modifie ni ne déploie automatiquement le code.
+
+## File locale de missions IA
+Voir [docs/FILE_MISSIONS.md](docs/FILE_MISSIONS.md). `gestionnaire_missions.py` ajoute une file SQLite persistante pour préparer, lister, annuler les missions en attente et exécuter la suivante. Les données restent dans `.laboratoire_prive/`, ignoré par Git. Un seul worker est autorisé ; une mission active n'est pas annulable en direct et reste limitée par l'orchestrateur à 180 secondes maximum.
