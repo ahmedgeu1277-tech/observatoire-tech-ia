@@ -188,9 +188,9 @@ jobs:
             if (canvas.width < 1 || canvas.height < 1 || canvas.box.width < 1 || canvas.box.height < 1) failures.push('Ville virtuelle : canvas non visible ou sans dimensions.');
             const pause = page.locator('#pause');
             await pause.click();
-            if ((await pause.textContent()).trim() !== 'Reprendre l’animation') failures.push('Ville virtuelle : bouton pause inopérant.');
+            if ((await pause.textContent()).trim() !== "Reprendre l'animation") failures.push('Ville virtuelle : bouton pause inopérant.');
             await pause.click();
-            if ((await pause.textContent()).trim() !== 'Mettre l’animation en pause') failures.push('Ville virtuelle : bouton reprise inopérant.');
+            if ((await pause.textContent()).trim() !== "Mettre l'animation en pause") failures.push('Ville virtuelle : bouton reprise inopérant.');
             await page.locator('#refresh').click();
             await page.waitForFunction(() => document.querySelector('#connection')?.textContent === 'Données enregistrées chargées', { timeout: 10000 })
               .catch(() => failures.push('Ville virtuelle : actualisation des données en échec.'));
