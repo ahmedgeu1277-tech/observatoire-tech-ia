@@ -3,11 +3,20 @@
     "id": "20261118T220135-7d27652d",
     "date": "2026-11-18T22:01+00:00",
     "theme": "Calendrier des sorties jeux vidéo 2026 et annonces",
-    "title": "GTA 6 et Burning Sword Death Sun dominent le calendrier 2026",
-    "summary": "Selon IGN France, GTA 6 a déjà battu tous les records de streaming avant sa sortie mondiale, mais la date officielle reste à confirmer. Le même site indique que Burning Sword Death Sun est prévu en accès anticipé, sans préciser la date finale ni la disponibilité sur PS5. Ces deux titres sont les seuls à ressortir clairement dans les sources consultées, tandis que les autres jeux mentionnés restent indéterminés.",
-    "verdict": "Les informations disponibles confirment la présence de GTA 6 et de Burning Sword Death Sun dans le calendrier 2026, mais les dates exactes et la disponibilité sur certaines plateformes ne sont pas encore précisées.",
-    "tip": "Surveillez les communiqués officiels de Rockstar et de l’éditeur de Burning Sword Death Sun pour les dates de sortie définitives.",
+    "title": "GTA VI : lancement officiel confirmé pour le 19 novembre 2026",
+    "summary": "Rockstar confirme que Grand Theft Auto VI sortira le jeudi 19 novembre 2026 sur PlayStation 5 et Xbox Series X|S. La page officielle présente également le préchargement et les contenus de lancement. Les sources consultées au sujet de Burning Sword: Death Sun ne permettent pas de confirmer ici une date finale ni sa disponibilité sur PS5 ; ces informations doivent être vérifiées séparément auprès de son éditeur.",
+    "verdict": "La date et les plateformes de GTA VI sont confirmées par Rockstar ; les détails de sortie de Burning Sword: Death Sun restent à vérifier.",
+    "tip": "Vérifier chaque date et chaque plateforme auprès de l’éditeur concerné avant de publier un calendrier de sorties.",
     "sources": [
+      {
+        "title": "Grand Theft Auto VI — page officielle",
+        "publisher": "Rockstar Games",
+        "domain": "rockstargames.com",
+        "published": "",
+        "description": "Rockstar indique une sortie le 19 novembre 2026 sur PlayStation 5 et Xbox Series X|S.",
+        "url": "https://www.rockstargames.com/VI",
+        "source_type": "source_officielle"
+      },
       {
         "title": "GTA 6 bat tous les records de streaming avant même sa sortie mondiale",
         "publisher": "IGN France",
@@ -25,19 +34,9 @@
         "description": "",
         "url": "https://fr.ign.com/burning-sword-death-sun/94077/burning-sword-screen-editeur",
         "source_type": "flux_officiel"
-      },
-      {
-        "title": "Preview Burning Sword Death Sun : des premiers pas prometteurs",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 17:27:34 +0000",
-        "description": "Burning Sword: Death Sun pose les bases d’un hack-and-slash wuxia nerveux et spectaculaire, dont l’accès anticipé doit désormais enrichir le contenu et affiner les mécaniques.",
-        "url": "https://fr.ign.com/burning-sword-death-sun/94075/preview-burning-sword-death-sun-des-premiers-pas-prometteurs",
-        "source_type": "flux_officiel"
       }
     ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261118T220135-7d27652d.mp3"
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet."
   },
   {
     "id": "20261118T215043-9c20a25a",
