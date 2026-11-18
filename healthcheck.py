@@ -67,18 +67,17 @@ def check_repository(root: Path = ROOT) -> dict:
                 raise ValueError("Un profil configuré ne doit pas être présenté comme un agent actif.")
         profiles_count = len(profile_index["profiles"])
 
-    government = _read_json(root / "site" / "data" / "gouvernement.json")
-    if not isinstance(government, dict) or len(government.get("directors", [])) != 30:
-        raise ValueError("Le tableau de bord gouvernemental doit contenir 30 administrateurs.")
-    if government.get("currency", {}).get("real_value") != 0:
-        raise ValueError("La monnaie virtuelle ne doit avoir aucune valeur réelle.")
+    # Les données de la ville sont internes : leur présence dans site/ est une fuite.
+    public_city_state = root / "site" / "data" / "gouvernement.json"
+    if public_city_state.exists():
+        raise ValueError("Données internes interdites dans site/data/gouvernement.json.")
 
     return {
         "themes": len(themes["themes"]),
         "articles": len(articles),
         "sources": source_count,
         "audio_files": audio_count,
-        "directors": len(government["directors"]),
+        "city_state_public": False,
         "agent_profiles": profiles_count,
     }
 
