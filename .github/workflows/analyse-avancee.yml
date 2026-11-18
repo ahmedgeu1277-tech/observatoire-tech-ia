@@ -163,28 +163,12 @@ jobs:
               }
             }
 
-            const city = await page.goto('http://127.0.0.1:4173/site/ville-virtuelle.html', { waitUntil: 'networkidle' });
-            if (!city || !city.ok()) failures.push('Ville virtuelle : page inaccessible.');
-            await page.waitForFunction(() => document.querySelector('#connection')?.textContent === 'Données enregistrées chargées', { timeout: 10000 })
-              .catch(() => failures.push('Ville virtuelle : données gouvernementales non chargées.'));
-            await page.locator('#profiles').waitFor({ state: 'visible' });
-            await page.locator('#agent-profiles').waitFor({ state: 'visible' });
-            const profileCountText = await page.locator('#profiles').textContent();
-            const profileCount = Number(profileCountText?.match(/:\s*(\d+)/)?.[1] ?? 0);
-            const profileListText = await page.locator('#agent-profiles').innerText();
-            if (profileCount > 0 && !profileListText.includes('non exécuté')) {
-              failures.push('Ville virtuelle : les profils IA ne sont pas clairement marqués comme configurés et non exécutés.');
-            }
-            const canvas = await page.locator('#world').evaluate(el => ({ width: el.width, height: el.height, box: el.getBoundingClientRect().toJSON() }));
-            if (canvas.width < 1 || canvas.height < 1 || canvas.box.width < 1 || canvas.box.height < 1) failures.push('Ville virtuelle : canvas non visible ou sans dimensions.');
-            const pause = page.locator('#pause');
-            await pause.click();
-            if ((await pause.textContent()).trim() !== "Reprendre l'animation") failures.push('Ville virtuelle : bouton pause inopérant.');
-            await pause.click();
-            if ((await pause.textContent()).trim() !== "Mettre l'animation en pause") failures.push('Ville virtuelle : bouton reprise inopérant.');
-            await page.locator('#refresh').click();
-            await page.waitForFunction(() => document.querySelector('#connection')?.textContent === 'Données enregistrées chargées', { timeout: 10000 })
-              .catch(() => failures.push('Ville virtuelle : actualisation des données en échec.'));
+            // La ville est volontairement retirée du site public : elle ne doit pas exposer
+            // son état interne tant qu'un backend privé avec authentification n'existe pas.
+            const privateCity = await page.request.get('http://127.0.0.1:4173/site/ville-virtuelle.html');
+            if (privateCity.status() !== 404) failures.push('Sécurité : la ville virtuelle ne doit pas être accessible publiquement.');
+            const privateState = await page.request.get('http://127.0.0.1:4173/site/data/gouvernement.json');
+            if (privateState.status() !== 404) failures.push('Sécurité : les données de la ville ne doivent pas être publiées.');
 
             await browser.close();
             console.log('Pages HTML testées : ' + files.length);
