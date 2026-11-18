@@ -42,6 +42,13 @@ async function inspectPage(browser, route, viewport) {
     if (await navLinks.count() < 3) fail("Accueil : navigation principale incomplète.");
     const articles = page.locator("#articles");
     if (!(await articles.count())) fail("Accueil : zone des actualités absente.");
+    await page.waitForFunction(() => {
+      const status = document.querySelector("#status");
+      return status && status.textContent !== "Chargement…";
+    }, { timeout: 10000 }).catch(() => fail("Accueil : les actualités ne terminent pas leur chargement."));
+    if (await page.locator("#articles > .article").count() < 1) {
+      fail("Accueil : aucune carte d'actualité n'est affichée.");
+    }
     const audioControls = await page.locator("audio").evaluateAll(nodes =>
       nodes.every(node => node.controls)
     );
