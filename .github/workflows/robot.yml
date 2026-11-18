@@ -3,6 +3,7 @@ name: Usine IA Tech & Gaming 24-7
 on:
   schedule:
     - cron: '0 9,18 * * *'
+    - cron: '0 14 * * 2'
   push:
     branches: [main]
     paths:
