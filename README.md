@@ -14,14 +14,14 @@ Dans Settings → Pages, choisir la branche `main` et le dossier `/ (root)`. Le 
 - Les profils de `agents_dynamiques/` peuvent fournir jusqu'à deux analyses spécialisées par publication, en utilisant le basculement Groq/Hugging Face ; ce sont des profils pilotés par le programme, pas des agents autonomes indépendants.
 - Un filtre technique recherche les clés API, jetons, clés privées, secrets courants et adresses e-mail détectables.
 - Edge TTS crée une narration quand le service vocal est disponible.
-- Le workflow de documentaire assemble quatre dossiers publiés, crée des diapositives originales avec Pillow et produit une vidéo MP4 H.264/AAC avec FFmpeg.
+- Un workflow quotidien assemble quatre dossiers publiés, crée des diapositives originales avec Pillow et produit une vidéo MP4 H.264/AAC avec FFmpeg ; cette vidéo de démonstration est temporaire et retirée après 24 heures.
 - Les articles sont publiés dans `site/articles.json`, les audios dans `site/audio/`, la vidéo temporaire dans `site/video/` et les résumés dans `memoire_tech.txt`.
 
 ## Agents et tâches hebdomadaires
 Le workflow du dimanche :
 - propose un thème de veille dans `themes.json` ;
 - crée une fiche d'agent spécialisée en JSON dans `agents_dynamiques/` ;
-- prépare un documentaire écrit et audio ; le workflow de test peut aussi produire une vidéo MP4 narrée.
+- prépare un documentaire écrit et audio. La vidéo MP4 temporaire est générée par le workflow quotidien distinct.
 
 Les profils d'agents sont des configurations JSON : ils ne génèrent ni n'exécutent librement du code Python.
 
