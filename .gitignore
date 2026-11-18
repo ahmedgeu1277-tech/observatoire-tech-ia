@@ -220,3 +220,7 @@ __marimo__/
 
 # Données privées du laboratoire (idées, notes et prototypes non publiés)
 .laboratoire_prive/
+
+# Etat interne de la ville virtuelle : ne jamais versionner ni publier
+/data/gouvernement.json
+/site/data/gouvernement.json
