@@ -44,6 +44,44 @@ aside{background:#fff;border-color:#e4e0d7}
 .empty{border-color:#d8d5cb;color:#6c7168}
 footer{color:#777b72}
 
+
+/* Identité originale Observatoire — dessinée en CSS, sans police ni image distante. */
+:root{
+  --bg:#f1f0e9;--panel:#fffefa;--panel2:#e9ede4;--line:#d9ded3;
+  --text:#202b25;--muted:#66736a;--cyan:#426b57;--violet:#a47750;--green:#477b58;
+  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+body{background:linear-gradient(145deg,#f6f5ef 0%,#ecefe7 58%,#f4eee5 100%);color:var(--text)}
+aside{background:rgba(255,254,250,.92);backdrop-filter:blur(12px);border-color:var(--line)}
+.brand{padding-bottom:34px}
+.logo{position:relative;border-radius:13px;background:#243d31;color:#f8f4e9;font-family:Georgia,serif;font-size:25px;font-weight:400;box-shadow:0 7px 18px #243d3124}
+.logo:after{content:"";position:absolute;width:25px;height:25px;border:1px solid #d9c49c;border-radius:50%;transform:translate(5px,-5px)}
+.brand strong{font-family:Georgia,"Times New Roman",serif;font-size:16px;letter-spacing:.12em;color:#243d31}
+.brand small{letter-spacing:.08em}
+.nav a{border-radius:8px}
+.nav a.active{background:#e9eee7;color:#263f30;box-shadow:inset 3px 0 #52785b}
+main{max-width:1440px}
+.hero{position:relative;isolation:isolate;overflow:hidden;padding:clamp(24px,4vw,48px);border:1px solid #dce2d7;border-radius:22px;background:linear-gradient(115deg,#fffefa 0%,#f3f4ed 65%,#e8eee5 100%);box-shadow:0 16px 44px #263b2c0c}
+.hero:after{content:"";position:absolute;z-index:-1;right:5%;top:8%;width:clamp(130px,19vw,240px);aspect-ratio:1;border:1px solid #66836a40;border-radius:50%;background:repeating-radial-gradient(circle at center,transparent 0 24px,#66836a22 25px 26px,transparent 27px 48px);mask-image:linear-gradient(135deg,#000,transparent 78%)}
+.hero h1,.sectionhead h2,.feature h3{font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.035em}
+.hero h1{font-size:clamp(36px,5vw,62px);line-height:1.02;max-width:720px}
+.hero .eyebrow,.article .meta{letter-spacing:.16em}
+.hero p{max-width:540px;font-size:15px;line-height:1.85}
+.btn{border-radius:7px;transition:transform .18s ease,box-shadow .18s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 7px 16px #263b2c18}
+.btn.primary{background:#294b38;border-color:#294b38}
+.stat,.feature,.article{border-radius:10px;box-shadow:0 5px 18px #263b2c08}
+.stat strong{font-family:Georgia,"Times New Roman",serif;font-weight:500}
+.feature{background:linear-gradient(145deg,#fffefa,#f4f5ef)}
+.feature:after{background:repeating-radial-gradient(circle,transparent 0 16px,#6b886c18 17px 18px,transparent 19px 34px);filter:none}
+.article{border-top:3px solid #718b70}
+.article h3{font-family:Georgia,"Times New Roman",serif;font-size:19px;font-weight:500;letter-spacing:-.015em}
+.article p{font-size:13px;line-height:1.8}
+.notice{border-radius:8px}
+footer{letter-spacing:.12em;line-height:1.8}
+@media(max-width:600px){.hero{padding:23px 19px}.hero:after{right:-35px;top:5%;opacity:.55}.hero h1{font-size:37px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
 </style>
 </head>
 <body>
@@ -62,7 +100,7 @@ footer{color:#777b72}
 </aside>
 <main id="accueil">
 <div class="topbar"><div class="crumb">OBSERVATOIRE <span style="color:#56617e">/</span> ACTUALITÉS</div><div class="live"><span class="dot"></span> VEILLE AUTOMATISÉE</div></div>
-<section class="hero"><div><div class="eyebrow">TECHNOLOGIE, IA ET JEUX VIDÉO</div><h1>L'actualité tech,<br>sans le bruit.</h1><p>Des informations récentes, expliquées simplement. Des nouveautés IA aux jeux vidéo, retrouve l'essentiel et les sources pour aller plus loin.</p></div><div class="hero-actions"><a class="btn primary" href="#projets">Découvrir le projet&nbsp; →</a><a class="btn" href="#actualites">Voir les actualités</a></div></section>
+<section class="hero"><div><div class="eyebrow">TECHNOLOGIE, IA ET JEUX VIDÉO</div><h1>Comprendre ce qui change.<br>Distinguer l'essentiel.</h1><p>Un regard indépendant sur les technologies, l’intelligence artificielle et les jeux vidéo. Des faits vérifiés, des explications accessibles et des sources pour approfondir.</p></div><div class="hero-actions"><a class="btn primary" href="#projets">Découvrir le projet&nbsp; →</a><a class="btn" href="#actualites">Voir les actualités</a></div></section>
 <section class="grid" aria-label="Indicateurs"><div class="stat"><span>ARTICLES</span><strong id="count">—</strong><small>Articles disponibles</small></div><div class="stat"><span>RYTHME</span><strong>2 / jour</strong><small>Cycles planifiés, horaires susceptibles de varier</small></div><div class="stat"><span>DOMAINES</span><strong>03</strong><small>Tech · IA · Gaming</small></div><div class="stat"><span>SITE</span><strong style="color:var(--green);font-size:20px">En ligne</strong><small>Page chargée</small></div></section>
 <section id="activite"><div class="sectionhead"><div><h2>À découvrir</h2><p>Les différents espaces du site.</p></div></div><div class="featuregrid">
 <article class="feature"><div class="featureicon">🎙️</div><div class="eyebrow">FORMAT AUDIO</div><h3>Documentaire de test</h3><p>Découvre un documentaire audio préparé avec l’aide de l’IA. La publication de démonstration reste en ligne 24 heures.</p><a class="btn" href="./documentaire-test.html">Voir le documentaire →</a></article>
@@ -70,7 +108,7 @@ footer{color:#777b72}
 </div></section>
 <section id="actualites"><div class="sectionhead"><div><h2>À la une</h2><p>Les dernières publications de l'observatoire.</p></div><span id="status">Chargement…</span></div><div id="articles" class="articlegrid"><div class="empty">Récupération des publications…</div></div></section>
 <div class="notice">⚠️ Certains textes sont préparés avec l'aide de l'intelligence artificielle. Ils sont à lire avec recul : les sources originales restent la référence. Le site est un projet indépendant en développement.</div>
-<footer>OBSERVATOIRE TECH & GAMING · Média indépendant en construction</footer>
+<footer>OBSERVATOIRE · REGARD INDÉPENDANT SUR LA TECH, L’IA ET LE JEU VIDÉO</footer>
 </main></div>
 <script>
 (async()=>{const status=document.getElementById("status"),box=document.getElementById("articles");try{const res=await fetch("./articles.json",{cache:"no-store"});if(!res.ok)throw new Error("HTTP "+res.status);const items=await res.json();document.getElementById("count").textContent=items.length;status.textContent=items.length+" publication(s)";box.replaceChildren();if(!items.length){box.innerHTML='<div class="empty">Aucune publication pour le moment. Reviens bientôt !</div>';return;}for(const item of items){const card=document.createElement("article");card.className="article";const meta=document.createElement("div");meta.className="meta";meta.textContent=(item.theme||"Actualité")+" · "+(item.date||"");const title=document.createElement("h3");title.textContent=item.title||"Publication";const summary=document.createElement("p");summary.textContent=item.summary||"";card.append(meta,title,summary);for(const [label,key] of [["Verdict du labo : ","verdict"],["À retenir : ","tip"]])if(item[key]){const p=document.createElement("p"),b=document.createElement("span");b.className="label";b.textContent=label;p.append(b,document.createTextNode(item[key]));card.append(p);}if(item.audio_url){const audio=document.createElement("audio");audio.controls=true;audio.preload="none";let audioPath=String(item.audio_url).replace(/^\.\//,'');audio.src = './'+(audioPath.startsWith('site/')?audioPath.slice(5):audioPath);card.append(audio);}if(Array.isArray(item.sources)&&item.sources.length){const h=document.createElement("p");h.className="label";h.textContent="Sources";const ul=document.createElement("ul");for(const s of item.sources){if(!s.url||!(s.url.startsWith('https://')||s.url.startsWith('http://')))continue;const li=document.createElement("li"),a=document.createElement("a");a.href=s.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=s.title||"Consulter la source";li.append(a);ul.append(li);}card.append(h,ul);}const note=document.createElement("p");note.className="meta";note.textContent=item.ai_notice||"Contenu assisté par IA";card.append(note);box.append(card);}}catch(e){status.textContent="Erreur de chargement";box.innerHTML='<div class="empty">Impossible de charger les articles. Réessaie plus tard.</div>';console.error(e);}})();
