@@ -1,45 +1,5 @@
 [
   {
-    "id": "20261118T220616-464bc67e",
-    "date": "2026-11-18T22:06+00:00",
-    "theme": "Jeux vidéo annoncés pour 2027 et dates à confirmer",
-    "title": "GTA 6 et Burning Sword Death Sun : dates de sortie toujours incertaines",
-    "summary": "Les derniers articles IGN France montrent que GTA 6 a déjà battu les records de streaming avant sa sortie mondiale, mais aucune date officielle n’est encore communiquée. De même, Burning Sword Death Sun, annoncé comme un hack‑and‑slash wuxia, prévoit un accès anticipé sans préciser de date précise, laissant les fans dans l’attente. Ces deux titres suscitent l’intérêt des joueurs, mais les informations restent vagues quant à leur calendrier de lancement.",
-    "verdict": "Les sources consultées ici ne documentent pas de date de sortie précise pour GTA 6 ni pour Burning Sword Death Sun ; cela ne signifie pas qu’elle n’a pas déjà été annoncée ailleurs.",
-    "tip": "Vérifiez les communiqués officiels des éditeurs pour confirmer les dates de lancement.",
-    "sources": [
-      {
-        "title": "GTA 6 bat tous les records de streaming avant même sa sortie mondiale",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 18:54:26 +0000",
-        "description": "Si on ne fait qu'en parler, ça compte ?",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94079/gta-6-bat-tous-les-records-de-streaming-avant-meme-sa-sortie-mondiale",
-        "source_type": "media"
-      },
-      {
-        "title": "Burning Sword : screen éditeur",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 17:27:34 +0000",
-        "description": "",
-        "url": "https://fr.ign.com/burning-sword-death-sun/94077/burning-sword-screen-editeur",
-        "source_type": "media"
-      },
-      {
-        "title": "Preview Burning Sword Death Sun : des premiers pas prometteurs",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 17:27:34 +0000",
-        "description": "Burning Sword: Death Sun pose les bases d’un hack-and-slash wuxia nerveux et spectaculaire, dont l’accès anticipé doit désormais enrichir le contenu et affiner les mécaniques.",
-        "url": "https://fr.ign.com/burning-sword-death-sun/94075/preview-burning-sword-death-sun-des-premiers-pas-prometteurs",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261118T220616-464bc67e.mp3"
-  },
-  {
     "id": "20261118T220352-aa1acc7c",
     "date": "2026-11-18T22:03+00:00",
     "theme": "GTA VI — lancement et premiers retours vérifiés",
