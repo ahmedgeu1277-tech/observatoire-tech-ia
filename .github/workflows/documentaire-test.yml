@@ -10,6 +10,8 @@ on:
       - "requirements.txt"
       - "ai_providers.py"
       - ".github/workflows/documentaire-test.yml"
+  schedule:
+    - cron: '15 10 * * *'
   workflow_dispatch:
 
 permissions:
