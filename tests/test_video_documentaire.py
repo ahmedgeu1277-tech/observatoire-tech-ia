@@ -20,6 +20,14 @@ class VideoDocumentaireTests(unittest.TestCase):
                 self.assertEqual(image.size, (1280, 720))
                 self.assertEqual(image.format, "PNG")
 
+
+    def test_documentary_page_template_has_mobile_overflow_guards(self):
+        source = Path(__file__).resolve().parents[1] / "documentaire_test.py"
+        template = source.read_text(encoding="utf-8")
+        self.assertIn("*{box-sizing:border-box;min-width:0}", template)
+        self.assertIn("overflow-x:hidden", template)
+        self.assertIn("<video controls", template)
+
     def test_rejects_missing_audio(self):
         with tempfile.TemporaryDirectory() as folder:
             with self.assertRaises(ValueError):
