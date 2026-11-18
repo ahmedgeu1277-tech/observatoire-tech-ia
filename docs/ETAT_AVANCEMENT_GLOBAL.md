@@ -42,7 +42,7 @@ L'atelier de sélection de produits note les opportunités selon la douleur clie
 Un générateur crée un squelette de jeu Roblox obby au format Rojo, avec scripts serveur/client et monnaie gérée côté serveur. Un validateur statique contrôle certains fichiers et motifs dangereux sans exécuter le code. Le projet sait aussi générer une vidéo éditoriale MP4 narrée à partir de dossiers publiés. Il n'y a toujours pas de connexion directe à Roblox Studio, de génération IA complète d'un jeu, de test de gameplay automatisé ni de publication Roblox.
 
 ### Tests et amélioration continue — 80 %
-La suite compte 98 tests Python réussis lors du workflow documentaire du 18 novembre. Les workflows exécutent Ruff, Bandit, Gitleaks, CodeQL et des tests Playwright de navigation et d'affichage ; les exécutions de sécurité et de qualité associées au moteur vidéo ont réussi. La boucle d'auto-évaluation produit un rapport et un backlog ; elle ne réécrit pas le code de production et ne déploie pas de corrections de façon autonome.
+La suite compte 99 tests Python réussis lors des contrôles du 18 novembre. Les workflows exécutent Ruff, Bandit, Gitleaks, CodeQL et des tests Playwright de navigation et d'affichage ; les exécutions de sécurité et de qualité associées au moteur vidéo ont réussi. La boucle d'auto-évaluation produit un rapport et un backlog ; elle ne réécrit pas le code de production et ne déploie pas de corrections de façon autonome.
 
 ## Conditions pour augmenter le score
 
