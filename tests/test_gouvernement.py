@@ -71,21 +71,19 @@ class GovernmentTests(unittest.TestCase):
         self.assertEqual(promoted["grade"], "confirmé")
 
 
-    def test_save_public_state_creates_both_dashboard_files(self):
+    def test_save_private_state_never_creates_public_dashboard_file(self):
         import json
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             state = gov.initial_state()
-            gov.save_public_state(state, root)
-            for target in (
-                root / "data" / "gouvernement.json",
-                root / "site" / "data" / "gouvernement.json",
-            ):
-                saved = json.loads(target.read_text(encoding="utf-8"))
-                self.assertEqual(len(saved["directors"]), 30)
-                self.assertEqual(saved["treasury"], 0)
+            gov.save_private_state(state, root)
+            target = root / "data" / "gouvernement.json"
+            saved = json.loads(target.read_text(encoding="utf-8"))
+            self.assertEqual(len(saved["directors"]), 30)
+            self.assertEqual(saved["treasury"], 0)
+            self.assertFalse((root / "site" / "data" / "gouvernement.json").exists())
 
-    def test_save_state_creates_public_dashboard_json(self):
+    def test_save_state_creates_private_json(self):
         import json
         with tempfile.TemporaryDirectory() as directory:
             target = Path(directory) / "data" / "gouvernement.json"
