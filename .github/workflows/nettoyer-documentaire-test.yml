@@ -1,4 +1,4 @@
-name: Retrait automatique du documentaire test
+name: Nettoyage des archives documentaires (rétention 30 jours)
 
 on:
   schedule:
@@ -21,21 +21,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Vérifier l'expiration
+      - name: Supprimer uniquement les archives âgées de plus de 30 jours
         run: python nettoyer_documentaire_test.py
-      - name: Enregistrer le retrait si nécessaire
+      - name: Enregistrer le nettoyage si nécessaire
         run: |
           git config user.name "Usine IA Tech & Gaming"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for path in site/documentaire-test.html site/documentaire-test.md site/documentaire-test.json site/audio/ site/video/; do
-            if [ -e "$path" ]; then
-              git add -A -- "$path"
-            fi
-          done
-          if git diff --cached --quiet; then
-            echo "Aucun retrait à effectuer."
-            exit 0
-          fi
-          git commit -m "Retirer le documentaire de test expiré"
+          git add -A -- site/documentaire-test.html site/documentaire-test.md site/documentaire-test.json site/audio/ site/video/ site/archives/
+          if git diff --cached --quiet; then echo "Aucune archive de plus de 30 jours."; exit 0; fi
+          git commit -m "Nettoyer les archives documentaires de plus de 30 jours"
           git pull --rebase origin main
           git push
