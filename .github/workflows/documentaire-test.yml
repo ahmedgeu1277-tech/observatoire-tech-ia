@@ -26,6 +26,8 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
+      - name: Installer FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - name: Installer les dépendances
         run: |
           python -m pip install --upgrade pip
@@ -60,6 +62,9 @@ jobs:
         run: |
           mkdir -p "$RUNNER_TEMP/documentaire-test/site/audio"
           cp site/documentaire-test.html site/documentaire-test.md site/documentaire-test.json "$RUNNER_TEMP/documentaire-test/site/"
+          VIDEO_FILE=$(python -c 'import json; print(json.load(open("site/documentaire-test.json", encoding="utf-8"))["video_file"])')
+          mkdir -p "$RUNNER_TEMP/documentaire-test/site/video"
+          cp "site/video/$VIDEO_FILE" "$RUNNER_TEMP/documentaire-test/site/video/"
           AUDIO_FILE=$(python -c 'import json; print(json.load(open("site/documentaire-test.json", encoding="utf-8"))["audio_file"])')
           cp "site/audio/$AUDIO_FILE" "$RUNNER_TEMP/documentaire-test/site/audio/"
           git fetch origin main
@@ -67,9 +72,11 @@ jobs:
           mkdir -p site/audio
           cp "$RUNNER_TEMP/documentaire-test/site/"*.html "$RUNNER_TEMP/documentaire-test/site/"*.md "$RUNNER_TEMP/documentaire-test/site/"*.json site/
           cp "$RUNNER_TEMP/documentaire-test/site/audio/"* site/audio/
+          mkdir -p site/video
+          cp "$RUNNER_TEMP/documentaire-test/site/video/"* site/video/
           git config user.name "Usine IA Tech & Gaming"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add site/documentaire-test.html site/documentaire-test.md site/documentaire-test.json "site/audio/$AUDIO_FILE"
+          git add site/documentaire-test.html site/documentaire-test.md site/documentaire-test.json "site/audio/$AUDIO_FILE" "site/video/$VIDEO_FILE"
           if git diff --cached --quiet; then
             echo "::error::Aucun fichier de documentaire généré."
             exit 1
