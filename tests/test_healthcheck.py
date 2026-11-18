@@ -19,8 +19,6 @@ class RepositoryHealthTests(unittest.TestCase):
             "audio_url": "audio/demo.mp3"
         }
         (root / "site" / "articles.json").write_text(json.dumps([article]), encoding="utf-8")
-        government = {"directors": [{} for _ in range(30)], "currency": {"real_value": 0}}
-        (root / "site" / "data" / "gouvernement.json").write_text(json.dumps(government), encoding="utf-8")
         profile_index = {"profiles": [{
             "name": "veilleur", "role": "Analyste", "mission": "Veille publique",
             "status": "profil configuré — non exécuté en continu"
@@ -33,6 +31,16 @@ class RepositoryHealthTests(unittest.TestCase):
             self._fixture(root)
             self.assertEqual(check_repository(root)["articles"], 1)
             self.assertEqual(check_repository(root)["agent_profiles"], 1)
+
+
+    def test_private_city_state_must_not_be_published(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            self._fixture(root)
+            path = root / "site" / "data" / "gouvernement.json"
+            path.write_text(json.dumps({"private": True}), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "Données internes interdites"):
+                check_repository(root)
 
     def test_duplicate_article_ids_are_rejected(self):
         with tempfile.TemporaryDirectory() as folder:
