@@ -15,7 +15,7 @@ Dans Settings → Pages, choisir la branche `main` et le dossier `/ (root)`. Le 
 - Un filtre technique recherche les clés API, jetons, clés privées, secrets courants et adresses e-mail détectables.
 - Edge TTS crée une narration quand le service vocal est disponible.
 - Le workflow de documentaire assemble quatre dossiers publiés, crée des diapositives originales avec Pillow et produit une vidéo MP4 H.264/AAC avec FFmpeg.
-- Les articles sont publiés dans `site/articles.json`, les audios dans `site/audio/`, les vidéos temporaires dans `site/video/` et les résumés dans `memoire_tech.txt`.
+- Les articles sont publiés dans `site/articles.json`, les audios dans `site/audio/`, la vidéo temporaire dans `site/video/` et les résumés dans `memoire_tech.txt`.
 
 ## Agents et tâches hebdomadaires
 Le workflow du dimanche :
