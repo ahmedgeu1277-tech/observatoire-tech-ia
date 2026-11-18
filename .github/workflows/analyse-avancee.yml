@@ -152,8 +152,10 @@ jobs:
               failures.push('Actualités : site/articles.json inaccessible.');
             } else {
               const articles = await articleData.json();
-              const displayed = await page.locator('#count').textContent();
-              if (Number(displayed) !== articles.length) failures.push('Actualités : compteur différent du nombre d’articles.');
+              const displayed = await page.locator('#articles > .article').count();
+              if (displayed !== articles.length) failures.push('Actualités : nombre de cartes affichées différent du nombre d’articles.');
+              const statusText = await page.locator('#status').textContent();
+              if (!String(statusText).includes(String(articles.length))) failures.push('Actualités : statut affiché incohérent avec le nombre d’articles.');
               for (const article of articles) {
                 if (!article.audio_url) continue;
                 let audioPath = String(article.audio_url).replace(/^\.\//, '');
