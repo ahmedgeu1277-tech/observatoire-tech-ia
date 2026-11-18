@@ -305,11 +305,10 @@ def simulate_social_climate(state, policy_name, satisfaction_change):
     state["social_events"].append(event)
     return event
 
-def save_public_state(state, root=ROOT):
-    """Sauvegarde l'état pour le programme et pour le tableau de bord public."""
+def save_private_state(state, root=ROOT):
+    """Sauvegarde l'état de la ville uniquement dans le stockage interne hors site public."""
     root = Path(root)
     save_state(state, root / "data" / "gouvernement.json")
-    save_state(state, root / "site" / "data" / "gouvernement.json")
 
 
 def dashboard(state):
@@ -326,5 +325,5 @@ def dashboard(state):
 
 if __name__ == "__main__":
     state = load_state()
-    save_public_state(state)
+    save_private_state(state)
     print(json.dumps(dashboard(state), ensure_ascii=False, indent=2))
