@@ -268,7 +268,7 @@ class ArticleValidationTests(unittest.TestCase):
         }]
         payload = {
             "title": "Galaxy S25 : Snapdragon 8 Gen 3 et capteur 200 MP",
-            "summary": " ".join(["mot"] * 70) + " L'écran mesure 6.8 inches et la sortie est prévue le 1 janvier 2027.",
+            "summary": " ".join(["mot"] * 70) + " L'écran mesure 6.8 inches et le capteur atteint 200 MP.",
             "verdict": "Caractéristiques confirmées",
             "tip": "Acheter le modèle",
             "source_indices": [0],
