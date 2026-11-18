@@ -25,15 +25,29 @@ async function inspectPage(browser, route, viewport) {
     return;
   }
 
-  const layout = await page.evaluate(() => ({
-    viewport: document.documentElement.clientWidth,
-    document: document.documentElement.scrollWidth,
-    body: document.body.scrollWidth,
-    title: document.title,
-  }));
+  const layout = await page.evaluate(() => {
+    const offenders = [...document.querySelectorAll("body *")].map(el => {
+      const rect = el.getBoundingClientRect();
+      const style = getComputedStyle(el);
+      return {
+        node: el.tagName.toLowerCase() + (el.id ? "#" + el.id : "") +
+          (typeof el.className === "string" && el.className ? "." + el.className.trim().replace(/\\s+/g, ".") : ""),
+        left: Math.round(rect.left), right: Math.round(rect.right),
+        width: Math.round(rect.width), position: style.position,
+      };
+    }).filter(x => x.right > document.documentElement.clientWidth + 1 || x.left < -1)
+      .sort((a, b) => b.right - a.right).slice(0, 8);
+    return {
+      viewport: document.documentElement.clientWidth,
+      document: document.documentElement.scrollWidth,
+      body: document.body.scrollWidth,
+      title: document.title,
+      offenders,
+    };
+  });
   if (layout.document > layout.viewport + 1 || layout.body > layout.viewport + 1) {
     fail(route + " : débordement horizontal à " + viewport.width + "px (" +
-      layout.document + "px de contenu).");
+      layout.document + "px de contenu). Éléments : " + JSON.stringify(layout.offenders));
   }
   if (!layout.title.trim()) fail(route + " : titre de page absent.");
 
