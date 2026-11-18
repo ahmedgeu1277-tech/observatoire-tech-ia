@@ -71,7 +71,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           mkdir -p site/audio
           touch journal_conformite_legale.txt
-          for path in site/articles.json site/audio data/gouvernement.json site/data/gouvernement.json memoire_tech.txt .theme-index journal_conformite_legale.txt; do
+          for path in site/articles.json site/audio memoire_tech.txt .theme-index journal_conformite_legale.txt; do
             if [ -e "$path" ]; then git add -A -- "$path"; fi
           done
           if git diff --cached --quiet; then
