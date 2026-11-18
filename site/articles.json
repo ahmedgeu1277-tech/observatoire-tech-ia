@@ -1,5 +1,62 @@
 [
   {
+    "id": "20261118T095053-7b310326",
+    "date": "2026-11-18T09:50+00:00",
+    "theme": "GTA VI — préparation du lancement en Thaïlande",
+    "title": "GTA VI : les sources ne précisent pas la Thaïlande",
+    "summary": "Les sources consultées abordent l'actualité de GTA VI, mais aucune ne mentionne la Thaïlande. Elles ne permettent donc pas de confirmer la disponibilité du jeu ni son heure de lancement dans ce pays. Les informations régionales doivent être vérifiées auprès de l'éditeur et de la boutique officielle de la région concernée.",
+    "verdict": "Disponibilité en Thaïlande non confirmée par les sources consultées.",
+    "tip": "Consulter les annonces de l'éditeur et la boutique officielle de la région avant de conclure.",
+    "sources": [
+      {
+        "title": "Avant la sortie de GTA 6, Sony publie un dernier avertissement contre les hackers de la PlayStation",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Wed, 18 Nov 2026 08:42:27 +0000",
+        "description": "Quand est-ce que ce petit jeu du chat et de la souris s'arrêtera ?",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94030/avant-la-sortie-de-gta-6-sony-publie-un-dernier-avertissement-contre-les-hackers-de-la-playstation",
+        "source_type": "flux_officiel"
+      },
+      {
+        "title": "Le terrain GTA 6 Vice City de la NBA dévoilé par Miami Heat",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Wed, 18 Nov 2026 06:50:33 +0000",
+        "description": "Le reste de la ligue doit être bien jaloux.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94025/le-terrain-gta-6-vice-city-de-la-nba-devoile-par-miami-heat",
+        "source_type": "flux_officiel"
+      },
+      {
+        "title": "Les fans de GTA 6 sont surpris que l'acteur de Jason ne soit pas nommés aux Game Awards",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Wed, 18 Nov 2026 06:43:04 +0000",
+        "description": "Snobbé.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94024/les-fans-de-gta-6-sont-surpris-que-lacteur-de-jason-ne-soit-pas-nommes-aux-game-awards",
+        "source_type": "flux_officiel"
+      },
+      {
+        "title": "Les nominations des Game Awards 2026 dévoilées : GTA 6 en tête",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Tue, 17 Nov 2026 17:51:18 +0000",
+        "description": "Le nommé du turfu",
+        "url": "https://fr.ign.com/project-007/94022/les-nominations-des-game-awards-2026-devoilees-gta-6-en-tete",
+        "source_type": "flux_officiel"
+      },
+      {
+        "title": "Sortie de GTA VI : à quelle heure les joueurs français pourront-ils commencer leur aventure ce jeudi ?",
+        "publisher": "msn.com",
+        "domain": "msn.com",
+        "published": "Wed, 18 Nov 2026 00:40:50 GMT",
+        "description": "Après deux reports, un des jeux vidéo les plus attendus de la décennie sort ce jeudi sur PS5 et Xbox Series X|S.",
+        "url": "https://www.msn.com/fr-fr/gaming/jeux-rockstar/sortie-de-gta-vi-%C3%A0-quelle-heure-les-joueurs-fran%C3%A7ais-pourront-ils-commencer-leur-aventure-ce-jeudi/ar-AA2hGg4C"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261118T095053-7b310326.mp3"
+  },
+  {
     "id": "20261117T200811-74ceca99",
     "date": "2026-11-17T20:08+00:00",
     "theme": "Gaming et jeux vidéo — veille générale (recherche de secours)",
