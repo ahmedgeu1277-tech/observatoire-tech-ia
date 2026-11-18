@@ -98,7 +98,7 @@ class ArticleValidationTests(unittest.TestCase):
         theme = {"name": "Jeux vidéo annoncés pour 2027"}
         sources = [{
             "title": "GTA VI streaming records",
-            "description": "Gaming news",
+            "description": "IGN reports on a streaming record and preview impressions, but this article contains no statement from the game publisher about its release date.",
             "url": "https://example.com/gta",
             "publisher": "IGN France",
             "source_type": "media",
