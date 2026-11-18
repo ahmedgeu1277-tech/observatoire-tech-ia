@@ -15,62 +15,72 @@ class CleanupTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         self.site = self.root / "site"
         self.audio = self.site / "audio"
-        self.site.mkdir()
-        self.audio.mkdir()
+        self.video = self.site / "video"
+        self.archive = self.site / "archives"
+        for folder in (self.site, self.audio, self.video, self.archive):
+            folder.mkdir(parents=True, exist_ok=True)
         self.manifest = self.site / "documentaire-test.json"
         self.page = self.site / "documentaire-test.html"
         self.script = self.site / "documentaire-test.md"
-        self.audio_file = self.audio / "documentaire-test-example.mp3"
-        self.audio_file.write_bytes(b"audio-test")
-        self.script.write_text("script", encoding="utf-8")
         self.page.write_text("documentaire", encoding="utf-8")
+        self.script.write_text("script", encoding="utf-8")
         self.manifest.write_text(json.dumps({
-            "expires_at": (datetime.now(UTC) - timedelta(minutes=1)).isoformat(),
-            "audio_file": self.audio_file.name
+            "expires_at": (datetime.now(UTC) + timedelta(days=30)).isoformat()
         }), encoding="utf-8")
+        self.patches = patch.multiple(cleanup, MANIFEST=self.manifest, PAGE=self.page,
+            SCRIPT=self.script, AUDIO_DIR=self.audio, VIDEO_DIR=self.video,
+            ARCHIVE_DIR=self.archive)
 
     def tearDown(self):
         self.temp.cleanup()
 
-    def test_expired_documentary_is_removed_and_page_replaced(self):
-        with patch.multiple(cleanup, MANIFEST=self.manifest, PAGE=self.page,
-                            SCRIPT=self.script, AUDIO_DIR=self.audio):
+    def test_recent_audio_video_and_written_archive_are_kept(self):
+        stamp = datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ")
+        audio = self.audio / f"documentaire-test-{stamp}.mp3"
+        video = self.video / f"documentaire-test-{stamp}.mp4"
+        archive = self.archive / f"documentaire-test-{stamp}.md"
+        for path in (audio, video, archive):
+            path.write_text("recent", encoding="utf-8")
+        with self.patches:
             cleanup.main()
-        self.assertFalse(self.audio_file.exists())
-        self.assertFalse(self.script.exists())
-        self.assertFalse(self.manifest.exists())
-        self.assertIn("période de test est terminée", self.page.read_text(encoding="utf-8"))
+        self.assertTrue(audio.exists())
+        self.assertTrue(video.exists())
+        self.assertTrue(archive.exists())
+        self.assertTrue(self.page.exists())
 
-    def test_unexpired_documentary_is_kept(self):
-        self.manifest.write_text(json.dumps({
-            "expires_at": (datetime.now(UTC) + timedelta(hours=1)).isoformat(),
-            "audio_file": self.audio_file.name
-        }), encoding="utf-8")
-        with patch.multiple(cleanup, MANIFEST=self.manifest, PAGE=self.page,
-                            SCRIPT=self.script, AUDIO_DIR=self.audio):
+    def test_only_archives_older_than_30_days_are_removed(self):
+        old_stamp = (datetime.now(UTC) - timedelta(days=31)).strftime("%Y%m%dT%H%M%SZ")
+        recent_stamp = datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ")
+        old_video = self.video / f"documentaire-test-{old_stamp}.mp4"
+        recent_video = self.video / f"documentaire-test-{recent_stamp}.mp4"
+        old_video.write_text("old", encoding="utf-8")
+        recent_video.write_text("recent", encoding="utf-8")
+        with self.patches:
             cleanup.main()
-        self.assertTrue(self.audio_file.exists())
-        self.assertTrue(self.script.exists())
+        self.assertFalse(old_video.exists())
+        self.assertTrue(recent_video.exists())
         self.assertTrue(self.manifest.exists())
 
-    def test_invalid_audio_filename_cannot_escape_audio_folder(self):
+    def test_expired_current_page_is_replaced_but_recent_media_remains(self):
+        stamp = datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ")
+        audio = self.audio / f"documentaire-test-{stamp}.mp3"
+        video = self.video / f"documentaire-test-{stamp}.mp4"
+        audio.write_text("audio", encoding="utf-8")
+        video.write_text("video", encoding="utf-8")
         self.manifest.write_text(json.dumps({
-            "expires_at": (datetime.now(UTC) - timedelta(minutes=1)).isoformat(),
-            "audio_file": "../../important.txt"
+            "expires_at": (datetime.now(UTC) - timedelta(minutes=1)).isoformat()
         }), encoding="utf-8")
-        with patch.multiple(cleanup, MANIFEST=self.manifest, PAGE=self.page,
-                            SCRIPT=self.script, AUDIO_DIR=self.audio):
+        with self.patches:
             cleanup.main()
-        self.assertTrue(self.audio_file.exists())
+        self.assertTrue(audio.exists())
+        self.assertTrue(video.exists())
         self.assertFalse(self.script.exists())
+        self.assertFalse(self.manifest.exists())
+        self.assertIn("archives de moins de 30 jours", self.page.read_text(encoding="utf-8"))
 
     def test_invalid_manifest_fails_closed(self):
         self.manifest.write_text("{invalid", encoding="utf-8")
-        with (
-            patch.multiple(cleanup, MANIFEST=self.manifest, PAGE=self.page,
-                           SCRIPT=self.script, AUDIO_DIR=self.audio),
-            self.assertRaises(RuntimeError),
-        ):
+        with self.patches, self.assertRaises(RuntimeError):
             cleanup.main()
 
 
