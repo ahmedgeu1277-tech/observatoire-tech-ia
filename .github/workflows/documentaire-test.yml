@@ -72,7 +72,7 @@ jobs:
           cp "site/audio/$AUDIO_FILE" "$RUNNER_TEMP/documentaire-test/site/audio/"
           git fetch origin main
           git reset --hard origin/main
-          mkdir -p site/audio
+          mkdir -p site/audio site/video
           find site/audio -maxdepth 1 -type f -name 'documentaire-test-*.mp3' -delete
           find site/video -maxdepth 1 -type f -name 'documentaire-test-*.mp4' -delete
           cp "$RUNNER_TEMP/documentaire-test/site/"*.html "$RUNNER_TEMP/documentaire-test/site/"*.md "$RUNNER_TEMP/documentaire-test/site/"*.json site/
