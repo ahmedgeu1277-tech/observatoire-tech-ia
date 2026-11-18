@@ -25,6 +25,39 @@ TIMEOUT = 20
 MAX_SOURCES = 6
 MAX_DYNAMIC_AGENTS = 2
 
+SOURCE_EDITOR_DOMAINS = {
+    "rockstargames.com", "openai.com", "deepmind.google", "huggingface.co",
+    "unity.com", "blog.unity.com", "unrealengine.com", "godotengine.org",
+    "gamemaker.io",
+}
+SOURCE_RESEARCH_DOMAINS = {"arxiv.org"}
+RELEASE_UNCERTAINTY_RE = re.compile(
+    r"\\b(?:dates?\\s+(?:de\\s+)?sortie|date\\s+officielle|calendrier\\s+(?:de\\s+)?lancement|disponibilit[ée])"
+    r".{0,90}\\b(?:incertain(?:e|es|s)?|à confirmer|a confirmer|non confirm[ée]s?|reste(?:nt)? à confirmer)\\b"
+    r"|\\b(?:aucune|pas de)\\s+(?:date(?:\\s+officielle)?|date de sortie)\\b.{0,70}\\b(?:communiqu[ée]e?|annonc[ée]e?|confirm[ée]e?)\\b",
+    re.IGNORECASE,
+)
+
+def classify_news_source(domain):
+    """Classe une source directe : éditeur si domaine primaire connu, sinon média."""
+    host = (domain or "").lower().removeprefix("www.")
+    if host in SOURCE_RESEARCH_DOMAINS:
+        return "source_recherche"
+    if any(host == item or host.endswith("." + item) for item in SOURCE_EDITOR_DOMAINS):
+        return "source_editeur"
+    return "media"
+
+def verifier_dates_incertaines(article_data, selected_sources):
+    """Bloque une affirmation d'incertitude sur une date sans source primaire sélectionnée."""
+    text = " ".join(str(article_data.get(key, "")) for key in ("title", "summary", "verdict", "tip"))
+    if RELEASE_UNCERTAINTY_RE.search(text) and not any(
+        source.get("source_type") == "source_editeur" for source in selected_sources
+    ):
+        raise ValueError(
+            "Publication bloquée : une date ou disponibilité est qualifiée d'incertaine "
+            "sans source directe de l'éditeur. Vérification requise."
+        )
+
 def appliquer_cycle_vie(theme, now=None):
     """Applique une variante avant/après événement, sans modifier le fichier source."""
     result = dict(theme)
@@ -177,7 +210,8 @@ def fetch_news(query, limit=8):
             "domain": host[:120],
             "published": published[:100],
             "description": description[:700],
-            "url": link
+            "url": link,
+            "source_type": classify_news_source(host),
         })
 
     # Sélectionne d'abord des médias différents, puis complète si nécessaire.
@@ -457,6 +491,10 @@ Sources :
             used_sources.append(sources[index])
     if not used_sources:
         raise ValueError("Aucune source valide sélectionnée. Aucun article publié.")
+    verifier_dates_incertaines(
+        {"title": title, "summary": summary, "verdict": verdict, "tip": tip},
+        used_sources,
+    )
 
     return {
         "id": datetime.now(UTC).strftime("%Y%m%dT%H%M%S") + "-" + uuid4().hex[:8],
