@@ -56,7 +56,7 @@ ORGANIZATION_DOMAINS = {
     "Hugging Face": {"huggingface.co"},
 }
 OFFICIAL_ANNOUNCEMENT_VERBS = (
-    r"(?:a\\s+(?:officiellement\\s+)?(?:annonc[ée]|confirm[ée]|révél[ée]|déclar[ée]|publi[ée]|présent[ée])"
+    r"(?:a\s+(?:officiellement\s+)?(?:annonc[ée]|confirm[ée]|révél[ée]|déclar[ée]|publi[ée]|présent[ée])"
     r"|announced|confirmed|revealed|declared|published|released)"
 )
 SOURCE_RESEARCH_DOMAINS = {"arxiv.org"}
@@ -98,8 +98,8 @@ def verifier_attributions_officielles(article_data, selected_sources):
     }
     for organization, official_domains in ORGANIZATION_DOMAINS.items():
         org = re.escape(organization)
-        forward = re.search(rf"\\b{org}\\b.{{0,55}}\\b{OFFICIAL_ANNOUNCEMENT_VERBS}\\b", text, re.IGNORECASE)
-        reverse = re.search(rf"\\b{OFFICIAL_ANNOUNCEMENT_VERBS}\\b.{{0,55}}\\b{org}\\b", text, re.IGNORECASE)
+        forward = re.search(rf"\b{org}\b.{{0,55}}\b{OFFICIAL_ANNOUNCEMENT_VERBS}\b", text, re.IGNORECASE)
+        reverse = re.search(rf"\b{OFFICIAL_ANNOUNCEMENT_VERBS}\b.{{0,55}}\b{org}\b", text, re.IGNORECASE)
         if (forward or reverse) and not any(
             domain == official or domain.endswith("." + official)
             for domain in selected_domains for official in official_domains
