@@ -574,6 +574,7 @@ def load_previous_articles():
     except OSError as exc:
         raise RuntimeError("Impossible de lire les archives existantes. Publication annulée.") from exc
 
+# Le flux public ne conserve qu'une occurrence par titre ou résumé normalisé.
 def normaliser_texte_article(value):
     """Normalise titre et résumé pour éviter les doublons exacts de publication."""
     return re.sub(r"\s+", " ", re.sub(r"[^\w\s]", " ", str(value or "").casefold())).strip()
