@@ -159,8 +159,12 @@ def generer_documentaire():
 <meta name="description" content="Documentaire audio de démonstration Tech & Gaming, compilé à partir des articles publiés.">
 <title>Documentaire test — Usine Tech & Gaming</title>
 <style>
+*{box-sizing:border-box;min-width:0}
+html,body{width:100%;max-width:100%;overflow-x:hidden}
 body{margin:0;background:#0b1020;color:#eef3ff;font:17px/1.7 system-ui,Arial,sans-serif}
-main{max-width:850px;margin:auto;padding:36px 20px}
+main{width:100%;max-width:850px;margin:auto;padding:36px 20px}
+video{display:block;width:100%;max-width:100%;height:auto}
+h1,h2,p,li{overflow-wrap:anywhere}
 header,section{background:#151e35;border:1px solid #2b3858;border-radius:18px;padding:24px;margin:18px 0}
 h1{font-size:clamp(28px,5vw,44px);line-height:1.15}h2{color:#65ddff}
 p,li{color:#cbd5eb}a{color:#65ddff}audio{width:100%;margin-top:12px}
