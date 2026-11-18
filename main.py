@@ -359,6 +359,7 @@ RÈGLES DE RÉDACTION :
 - Si la source disponible ne documente pas une date, écris précisément : « les sources consultées ici ne documentent pas cette date ; cela ne signifie pas qu'elle n'a pas déjà été annoncée ».
 - Pour les dates, prix, plateformes et caractéristiques techniques, privilégie une source primaire de l'éditeur ou du fabricant. Si elle manque, limite clairement la portée de l'affirmation et ne présente pas une absence de preuve comme une preuve d'absence.
 - Les agents spécialisés ne sont pas des sources indépendantes : ne reprends leurs affirmations que si les liens fournis les confirment.
+- Un média (par exemple IGN ou GameSpot) est une source journalistique, pas une annonce officielle de l'éditeur du jeu. Seules les sources classées "source_editeur" peuvent être présentées comme une confirmation de l'éditeur ; les sources de recherche et les médias doivent être nommés correctement.
 - Choisis uniquement les indices des sources réellement utiles. Les indices commencent à 0.
 - Réponds en français avec un objet JSON contenant exactement : "title", "summary", "verdict", "tip", "source_indices". Aucun texte hors JSON.
 Sources :
