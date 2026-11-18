@@ -135,6 +135,49 @@ class ArticleValidationTests(unittest.TestCase):
         article = main.create_article(theme, sources)
         self.assertEqual(article["sources"][0]["source_type"], "source_editeur")
 
+
+    @patch("main.generate_text")
+    def test_company_announcement_requires_direct_official_domain(self, mock_generate):
+        theme = {"name": "Actualités gaming"}
+        sources = [{
+            "title": "GTA VI update report",
+            "description": "A gaming outlet reports a mandatory game update, without linking to the publisher announcement.",
+            "url": "https://fr.ign.com/gta",
+            "publisher": "IGN France",
+            "source_type": "media",
+        }]
+        payload = {
+            "title": "GTA VI : Rockstar a annoncé une mise à jour obligatoire",
+            "summary": " ".join(["mot"] * 70),
+            "verdict": "Rockstar a confirmé cette mise à jour.",
+            "tip": "Vérifier les notes de version",
+            "source_indices": [0],
+        }
+        mock_generate.return_value = (json.dumps(payload), "groq")
+        with self.assertRaisesRegex(ValueError, "sans source directe"):
+            main.create_article(theme, sources)
+
+    @patch("main.generate_text")
+    def test_company_announcement_accepts_direct_official_domain(self, mock_generate):
+        theme = {"name": "Actualités gaming"}
+        sources = [{
+            "title": "Rockstar official update",
+            "description": "Official publisher announcement.",
+            "url": "https://www.rockstargames.com/newswire",
+            "publisher": "Rockstar Games",
+            "source_type": "source_editeur",
+        }]
+        payload = {
+            "title": "Rockstar a annoncé une mise à jour",
+            "summary": " ".join(["mot"] * 70),
+            "verdict": "Rockstar a confirmé cette mise à jour.",
+            "tip": "Lire les notes officielles",
+            "source_indices": [0],
+        }
+        mock_generate.return_value = (json.dumps(payload), "groq")
+        article = main.create_article(theme, sources)
+        self.assertEqual(article["sources"][0]["source_type"], "source_editeur")
+
     @patch("main.generate_text")
     def test_invalid_source_index_is_rejected(self, mock_generate):
         payload = {
