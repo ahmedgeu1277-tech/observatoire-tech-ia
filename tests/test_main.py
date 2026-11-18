@@ -86,6 +86,49 @@ class ArticleValidationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Aucun article publié"):
             main.create_article(self.theme, self.sources)
 
+
+    @patch("main.generate_text")
+    def test_release_date_uncertainty_is_blocked_without_editor_source(self, mock_generate):
+        theme = {"name": "Jeux vidéo annoncés pour 2027"}
+        sources = [{
+            "title": "GTA VI streaming records",
+            "description": "Gaming news",
+            "url": "https://example.com/gta",
+            "publisher": "IGN France",
+            "source_type": "media",
+        }]
+        payload = {
+            "title": "GTA VI : dates de sortie toujours incertaines",
+            "summary": " ".join(["mot"] * 70),
+            "verdict": "La date officielle n'est pas encore communiquée.",
+            "tip": "Vérifier les annonces",
+            "source_indices": [0],
+        }
+        mock_generate.return_value = (json.dumps(payload), "groq")
+        with self.assertRaisesRegex(ValueError, "source directe de l'éditeur"):
+            main.create_article(theme, sources)
+
+    @patch("main.generate_text")
+    def test_release_date_uncertainty_requires_and_accepts_editor_source(self, mock_generate):
+        theme = {"name": "GTA VI"}
+        sources = [{
+            "title": "GTA VI release update",
+            "description": "The publisher says the date is not yet fixed.",
+            "url": "https://www.rockstargames.com/VI",
+            "publisher": "Rockstar Games",
+            "source_type": "source_editeur",
+        }]
+        payload = {
+            "title": "GTA VI : date de sortie incertaine selon Rockstar",
+            "summary": " ".join(["mot"] * 70),
+            "verdict": "L'éditeur n'a pas encore communiqué la date.",
+            "tip": "Suivre la page officielle",
+            "source_indices": [0],
+        }
+        mock_generate.return_value = (json.dumps(payload), "groq")
+        article = main.create_article(theme, sources)
+        self.assertEqual(article["sources"][0]["source_type"], "source_editeur")
+
     @patch("main.generate_text")
     def test_invalid_source_index_is_rejected(self, mock_generate):
         payload = {
