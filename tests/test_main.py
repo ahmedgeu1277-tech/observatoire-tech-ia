@@ -75,6 +75,12 @@ class ThemeLifecycleTests(unittest.TestCase):
 
 
 class ArticleValidationTests(unittest.TestCase):
+    def test_news_source_classification_requires_direct_editor_domain(self):
+        self.assertEqual(main.classify_news_source("www.rockstargames.com"), "source_editeur")
+        self.assertEqual(main.classify_news_source("news.google.com"), "media")
+        self.assertEqual(main.classify_news_source("fr.ign.com"), "media")
+
+
     def setUp(self):
         self.theme = {"name": "Test"}
         self.sources = [
