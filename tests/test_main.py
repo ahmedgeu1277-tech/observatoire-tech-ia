@@ -178,6 +178,28 @@ class ArticleValidationTests(unittest.TestCase):
         article = main.create_article(theme, sources)
         self.assertEqual(article["sources"][0]["source_type"], "source_editeur")
 
+
+    @patch("main.generate_text")
+    def test_date_claim_is_not_described_as_unconfirmed_without_editor_source(self, mock_generate):
+        theme = {"name": "GTA VI"}
+        sources = [{
+            "title": "GTA VI technical details",
+            "description": "IGN reports on technical details but does not include an official publisher statement about release dates.",
+            "url": "https://fr.ign.com/gta",
+            "publisher": "IGN France",
+            "source_type": "media",
+        }]
+        payload = {
+            "title": "GTA VI : détails chiffrés non confirmés",
+            "summary": "Les sources consultées ne fournissent pas suffisamment d'éléments pour confirmer les dates et caractéristiques chiffrées avancées. " + " ".join(["mot"] * 60),
+            "verdict": "Les dates restent incertaines.",
+            "tip": "Vérifier les fiches techniques",
+            "source_indices": [0],
+        }
+        mock_generate.return_value = (json.dumps(payload), "groq")
+        with self.assertRaisesRegex(ValueError, "source directe de l'éditeur"):
+            main.create_article(theme, sources)
+
     @patch("main.generate_text")
     def test_invalid_source_index_is_rejected(self, mock_generate):
         payload = {
