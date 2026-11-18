@@ -562,7 +562,7 @@ async def create_audio(article):
             f"À retenir : {article['tip']}. "
             "Analyse préparée avec l'aide d'une intelligence artificielle."
         )
-        await edge_tts.Communicate(spoken, "fr-FR-HenriNeural").save(str(audio_dir / filename))
+        await edge_tts.Communicate(spoken, "fr-FR-RemyMultilingualNeural").save(str(audio_dir / filename))
         return f"audio/{filename}"
     except Exception as exc:  # noqa: BLE001 - edge-tts et ses transports ont plusieurs exceptions spécifiques.
         print(f"Audio non créé ({type(exc).__name__}: {exc}); article texte conservé.")
