@@ -10,7 +10,7 @@ Construire un média numérique exploité automatiquement par des logiciels et d
 2. **Tri** : dédoublonner les sujets, classer les thèmes et écarter les sources trop faibles.
 3. **Rédaction** : produire des synthèses en français avec les liens vers les sources.
 4. **Contrôle** : vérifier le format, les liens, les champs obligatoires, les doublons et les règles de sécurité.
-5. **Médias** : préparer une narration audio ; la vidéo MP4 reste une fonction à développer et tester séparément.
+5. **Médias** : préparer des narrations audio et des documentaires MP4 à partir de contenus sourcés ; le rendu vidéo de démonstration existe, mais ne constitue pas un studio de montage universel.
 6. **Publication** : publier uniquement après réussite des contrôles automatiques.
 7. **Surveillance** : conserver les journaux techniques, détecter les échecs et envoyer des alertes.
 8. **Reprise** : réessayer les tâches temporaires, utiliser un fournisseur IA de secours et conserver la dernière version valide du site.
@@ -21,7 +21,7 @@ Construire un média numérique exploité automatiquement par des logiciels et d
 - **Agents de veille** : un module par domaine (IA, jeux vidéo, Roblox, matériel, cybersécurité).
 - **Agent rédacteur** : transforme les informations sourcées en article.
 - **Agent vérificateur** : contrôle les citations, les liens, les dates et les affirmations.
-- **Agent média** : prépare audio, images autorisées et, plus tard, vidéos.
+- **Agent média** : prépare audio et documentaires MP4 à partir de diapositives locales ; les images et médias tiers nécessitent une vérification des droits.
 - **Agent publication** : assemble le site et déploie les fichiers validés.
 - **Agent gardien** : bloque les secrets détectés, les fichiers inattendus et les publications non conformes.
 - **Agent de santé** : suit les erreurs, quotas, temps d'exécution et disponibilité.
@@ -58,11 +58,11 @@ Le délai de cinq minutes est une cible d'orchestration, pas une garantie : les 
 - Un domaine personnalisé pourra plus tard pointer vers une couche de distribution indépendante, configurée pour servir le site depuis l'hébergement disponible.
 - Le dépôt public actuel ne devient pas privé par la simple création de ce document. Les brouillons confidentiels et fichiers de préparation devront être déplacés dans un dépôt privé distinct.
 
-## État réel au 16 novembre 2026
+## État réel au 18 novembre 2026
 
-Déjà présent dans le projet : génération d'articles par IA, bascule Groq/Hugging Face pour les articles et les tâches hebdomadaires, récupération de flux, profils JSON d'agents spécialisés, fenêtre de priorité événementielle (GTA VI), validation stricte du JSON et des sources avant publication, protection contre l'écrasement d'archives JSON corrompues, tests automatiques, filtre de secrets de premier niveau et publication planifiée. Le documentaire hebdomadaire prépare cinq chapitres écrits et des pistes audio séparées ; il ne produit pas de MP4.
+Déjà présent dans le projet : génération d'articles par IA, bascule Groq/Hugging Face pour les articles et les tâches hebdomadaires, récupération de flux, profils JSON d'agents spécialisés, fenêtre de priorité événementielle (GTA VI), validation stricte du JSON et des sources avant publication, protection contre l'écrasement d'archives JSON corrompues, tests automatiques, filtre de secrets de premier niveau et publication planifiée. Le documentaire de démonstration produit un MP4 H.264/AAC avec narration et diapositives locales ; la génération et le contrôle du rendu sont couverts par des tests.
 
-Première brique ajoutée : un orchestrateur séquentiel de missions (orchestrateur.py), limité à trois rôles, avec durée bornée, délais réseau, rapports locaux ignorés par Git et aucune exécution de code ni publication automatique. Tests unitaires dédiés.\n\nPas encore réalisé : agents autonomes indépendants qui se contrôlent entre eux, exécution de missions de longue durée (plusieurs heures/jours), chat public connecté à un backend sécurisé, validation factuelle robuste, espace privé de préparation hébergé, assemblage atomique cinq minutes avant publication, hébergement secondaire actif, bascule automatique entre hébergeurs, supervision 24 h/24, génération vidéo MP4 et fusion automatique des pistes audio en un seul fichier.
+Première brique ajoutée : un orchestrateur séquentiel de missions (orchestrateur.py), limité à trois rôles, avec durée bornée, délais réseau, rapports locaux ignorés par Git et aucune exécution de code ni publication automatique. Tests unitaires dédiés.\n\nPas encore réalisé : agents autonomes indépendants qui se contrôlent entre eux, exécution de missions de longue durée (plusieurs heures/jours), chat public connecté à un backend sécurisé, validation factuelle robuste, espace privé de préparation hébergé, assemblage atomique cinq minutes avant publication, hébergement secondaire actif, bascule automatique entre hébergeurs, supervision 24 h/24, studio de montage universel, production vidéo multi-formats avancée et fusion/mixage audio avancé.
 
 GitHub Actions n'est pas un serveur permanent : les tâches planifiées peuvent être retardées et les exécutions ont une durée limitée. Le projet ne doit donc pas promettre une disponibilité continue avant d'avoir un hébergement et une supervision adaptés.
 
