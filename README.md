@@ -13,14 +13,15 @@ Dans Settings → Pages, choisir la branche `main` et le dossier `/ (root)`. Le 
 - Le gestionnaire IA essaie les fournisseurs configurés dans l'ordre (Groq puis Hugging Face par défaut) et bascule si le premier échoue.
 - Les profils de `agents_dynamiques/` peuvent fournir jusqu'à deux analyses spécialisées par publication, en utilisant le basculement Groq/Hugging Face ; ce sont des profils pilotés par le programme, pas des agents autonomes indépendants.
 - Un filtre technique recherche les clés API, jetons, clés privées, secrets courants et adresses e-mail détectables.
-- Edge TTS crée un court audio quand le service vocal est disponible.
-- Les articles sont publiés dans `site/articles.json`, les audios dans `site/audio/` et les résumés sont archivés dans `memoire_tech.txt`.
+- Edge TTS crée une narration quand le service vocal est disponible.
+- Le workflow de documentaire assemble quatre dossiers publiés, crée des diapositives originales avec Pillow et produit une vidéo MP4 H.264/AAC avec FFmpeg.
+- Les articles sont publiés dans `site/articles.json`, les audios dans `site/audio/`, les vidéos temporaires dans `site/video/` et les résumés dans `memoire_tech.txt`.
 
 ## Agents et tâches hebdomadaires
 Le workflow du dimanche :
 - propose un thème de veille dans `themes.json` ;
 - crée une fiche d'agent spécialisée en JSON dans `agents_dynamiques/` ;
-- prépare un documentaire écrit et, si possible, audio.
+- prépare un documentaire écrit et audio ; le workflow de test peut aussi produire une vidéo MP4 narrée.
 
 Les profils d'agents sont des configurations JSON : ils ne génèrent ni n'exécutent librement du code Python.
 
@@ -70,11 +71,19 @@ Voir [docs/AUTO_AMELIORATION.md](docs/AUTO_AMELIORATION.md). `auto_amelioration.
 ## File locale de missions IA
 Voir [docs/FILE_MISSIONS.md](docs/FILE_MISSIONS.md). `gestionnaire_missions.py` ajoute une file SQLite persistante pour préparer, lister, annuler les missions en attente et exécuter la suivante. Les données restent dans `.laboratoire_prive/`, ignoré par Git. Un seul worker est autorisé ; une mission active n'est pas annulable en direct et reste limitée par l'orchestrateur à 180 secondes maximum.
 
-## Atelier de création numérique multi-format\n\nVoir [docs/ATELIER_CREATION_MULTI_FORMAT.md](docs/ATELIER_CREATION_MULTI_FORMAT.md). Le module `atelier_creation.py` prépare des squelettes de sites, applications web, jeux 2D navigateur, dossiers vidéo/audio et logiciels Python. Il ne produit pas encore des applications ou médias finis.\n\n## Hébergement, anti-abus et stockage\n\nVoir [docs/SECURITE_HEBERGEMENT_STOCKAGE.md](docs/SECURITE_HEBERGEMENT_STOCKAGE.md) pour les limites GitHub Pages, l'architecture nécessaire à une vraie limitation par IP et la mesure de stockage.\n\n## Générateur de projets Roblox
+## Atelier de création numérique multi-format
+
+Voir [docs/ATELIER_CREATION_MULTI_FORMAT.md](docs/ATELIER_CREATION_MULTI_FORMAT.md). Le module `atelier_creation.py` prépare des squelettes de sites, applications web, jeux 2D navigateur, dossiers vidéo/audio et logiciels Python. Il ne produit pas encore des applications ou médias finis.
+
+## Hébergement, anti-abus et stockage
+
+Voir [docs/SECURITE_HEBERGEMENT_STOCKAGE.md](docs/SECURITE_HEBERGEMENT_STOCKAGE.md) pour les limites GitHub Pages, l'architecture nécessaire à une vraie limitation par IP et la mesure de stockage.
+
+## Générateur de projets Roblox
 Voir docs/GENERATEUR_ROBLOX.md. Le module studio_roblox.py génère un squelette Rojo de jeu obby avec scripts serveur/client et monnaie gérée côté serveur. Il ne se connecte pas à Roblox, n'exécute pas le code Luau et ne publie aucun jeu.
  
 ## Validation statique des projets Roblox
 Voir docs/VALIDATEUR_ROBLOX.md. Le module validateur_roblox.py analyse les fichiers Luau et la configuration Rojo sans exécuter le code ; ses limites sont documentées.
 
 ## État d'avancement global
-Voir docs/ETAT_AVANCEMENT_GLOBAL.md pour la grille pondérée, les preuves, les limites et les prochaines étapes. L'estimation actuelle est de 50,5 % selon cette grille, sans signifier que le produit complet est prêt pour la production.
+Voir docs/ETAT_AVANCEMENT_GLOBAL.md pour la grille pondérée, les preuves, les limites et les prochaines étapes. L'estimation actuelle est de 52,75 % selon cette grille, sans signifier que le produit complet est prêt pour la production.
