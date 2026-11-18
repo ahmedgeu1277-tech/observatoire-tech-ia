@@ -6,6 +6,7 @@ from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 from agent_gardien import verifier_conformite_legale
+from video_documentaire import generer_video
 
 ROOT = Path(__file__).resolve().parent
 SITE = ROOT / "site"
@@ -118,11 +119,23 @@ def generer_documentaire():
     if not audio_path.exists() or audio_path.stat().st_size < 1000:
         raise RuntimeError("Le fichier audio n'a pas été créé correctement.")
 
+    video_dir = SITE / "video"
+    video_name = f"documentaire-test-{stamp}.mp4"
+    video_path = video_dir / video_name
+    slides = [("Introduction", title, intro)]
+    slides.extend(
+        (f"Dossier {number}", heading, dossier["summary"] + " " + dossier["verdict"])
+        for number, (heading, _body, _sources), dossier
+        in zip(range(1, len(chapters) + 1), chapters, dossiers)
+    )
+    generer_video(audio_path, slides, video_path)
+
     SCRIPT.write_text(script, encoding="utf-8")
     manifest = {
         "created_at": now.isoformat(),
         "expires_at": expires.isoformat(),
         "audio_file": audio_name,
+        "video_file": video_name,
         "title": title,
     }
     MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -156,8 +169,9 @@ small{color:#9eafd0}.tag{display:inline-block;background:#20304f;padding:5px 10p
 <header><span class="tag">TEST TEMPORAIRE · 24 H</span>
 <h1>""" + html.escape(title) + """</h1>
 <p>Documentaire compilé à partir des articles publiés. Consultez les sources originales.</p>
-<audio controls preload="metadata" src="audio/""" + html.escape(audio_name, quote=True) + """"></audio>
-<small>Expiration automatique prévue : """ + html.escape(expires.isoformat()) + """</small></header>
+<video controls preload="metadata" playsinline style="width:100%;border-radius:12px;background:#101820" src="video/""" + html.escape(video_name, quote=True) + """"></video>
+<audio controls preload="none" src="audio/""" + html.escape(audio_name, quote=True) + """"></audio>
+<small>Vidéo MP4 avec narration originale. Expiration automatique prévue : """ + html.escape(expires.isoformat()) + """</small></header>
 """ + "".join(sections) + """
 </main></body></html>"""
     PAGE.write_text(page, encoding="utf-8")
