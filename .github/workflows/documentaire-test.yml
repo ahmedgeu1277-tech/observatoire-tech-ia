@@ -9,6 +9,7 @@ on:
       - "nettoyer_documentaire_test.py"
       - "requirements.txt"
       - "ai_providers.py"
+      - "tests/test_documentaire_et_securite.py"
       - ".github/workflows/documentaire-test.yml"
   schedule:
     - cron: '15 10 * * *'
