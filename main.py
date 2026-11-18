@@ -574,17 +574,33 @@ def load_previous_articles():
     except OSError as exc:
         raise RuntimeError("Impossible de lire les archives existantes. Publication annulée.") from exc
 
+def normaliser_texte_article(value):
+    """Normalise titre et résumé pour éviter les doublons exacts de publication."""
+    return re.sub(r"\\s+", " ", re.sub(r"[^\\w\\s]", " ", str(value or "").casefold())).strip()
+
+
 def save_articles(article):
     SITE_DIR.mkdir(parents=True, exist_ok=True)
     articles = load_previous_articles()
     articles.insert(0, article)
     unique = []
-    seen = set()
+    seen_ids = set()
+    seen_titles = set()
+    seen_summaries = set()
     for item in articles:
         key = item.get("id")
-        if key and key not in seen:
-            unique.append(item)
-            seen.add(key)
+        title_key = normaliser_texte_article(item.get("title"))
+        summary_key = normaliser_texte_article(item.get("summary"))
+        if not key or key in seen_ids:
+            continue
+        if (title_key and title_key in seen_titles) or (summary_key and summary_key in seen_summaries):
+            continue
+        unique.append(item)
+        seen_ids.add(key)
+        if title_key:
+            seen_titles.add(title_key)
+        if summary_key:
+            seen_summaries.add(summary_key)
     ARTICLES_FILE.write_text(
         json.dumps(unique[:MAX_ARTICLES], ensure_ascii=False, indent=2),
         encoding="utf-8"
