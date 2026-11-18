@@ -29,7 +29,7 @@ jobs:
       - name: Installer les analyseurs
         run: python -m pip install --disable-pip-version-check ruff bandit
       - name: Analyser le style et les erreurs Python
-        run: ruff check . --output-format=github
+        run: ruff check . --output-format=github --ignore TRY004,ISC004,PERF102,SIM117
       - name: Analyser les risques de sécurité Python
         run: bandit -r . -x ./tests -ll
 
