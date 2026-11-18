@@ -28,8 +28,37 @@ MAX_DYNAMIC_AGENTS = 2
 SOURCE_EDITOR_DOMAINS = {
     "rockstargames.com", "openai.com", "deepmind.google", "huggingface.co",
     "unity.com", "blog.unity.com", "unrealengine.com", "godotengine.org",
-    "gamemaker.io",
+    "gamemaker.io", "roblox.com", "epicgames.com", "microsoft.com",
+    "google.com", "sony.com", "playstation.com", "nintendo.com", "apple.com",
+    "samsung.com", "nvidia.com", "amd.com", "intel.com", "meta.com",
+    "anthropic.com", "mistral.ai",
 }
+ORGANIZATION_DOMAINS = {
+    "Rockstar": {"rockstargames.com"},
+    "Roblox": {"roblox.com"},
+    "Epic Games": {"epicgames.com", "unrealengine.com"},
+    "Unity": {"unity.com", "blog.unity.com"},
+    "Godot": {"godotengine.org"},
+    "GameMaker": {"gamemaker.io"},
+    "OpenAI": {"openai.com"},
+    "Google": {"google.com", "deepmind.google"},
+    "Microsoft": {"microsoft.com"},
+    "Sony": {"sony.com", "playstation.com"},
+    "Nintendo": {"nintendo.com"},
+    "Apple": {"apple.com"},
+    "Samsung": {"samsung.com"},
+    "NVIDIA": {"nvidia.com"},
+    "AMD": {"amd.com"},
+    "Intel": {"intel.com"},
+    "Meta": {"meta.com"},
+    "Anthropic": {"anthropic.com"},
+    "Mistral": {"mistral.ai"},
+    "Hugging Face": {"huggingface.co"},
+}
+OFFICIAL_ANNOUNCEMENT_VERBS = (
+    r"(?:a\\s+(?:officiellement\\s+)?(?:annonc[ée]|confirm[ée]|révél[ée]|déclar[ée]|publi[ée]|présent[ée])"
+    r"|announced|confirmed|revealed|declared|published|released)"
+)
 SOURCE_RESEARCH_DOMAINS = {"arxiv.org"}
 RELEASE_UNCERTAINTY_RE = re.compile(
     r"\b(?:dates?\s+(?:de\s+)?sortie|date\s+officielle|calendrier\s+(?:de\s+)?lancement|disponibilit[ée])"
@@ -59,6 +88,26 @@ def verifier_dates_incertaines(article_data, selected_sources):
             "Publication bloquée : une date ou disponibilité est qualifiée d'incertaine "
             "sans source directe de l'éditeur. Vérification requise."
         )
+
+def verifier_attributions_officielles(article_data, selected_sources):
+    """Bloque une annonce attribuée à une entreprise sans lien direct vers son domaine."""
+    text = " ".join(str(article_data.get(key, "")) for key in ("title", "summary", "verdict", "tip"))
+    selected_domains = {
+        (urlparse(source.get("url", "")).hostname or "").lower().removeprefix("www.")
+        for source in selected_sources
+    }
+    for organization, official_domains in ORGANIZATION_DOMAINS.items():
+        org = re.escape(organization)
+        forward = re.search(rf"\\b{org}\\b.{{0,55}}\\b{OFFICIAL_ANNOUNCEMENT_VERBS}\\b", text, re.IGNORECASE)
+        reverse = re.search(rf"\\b{OFFICIAL_ANNOUNCEMENT_VERBS}\\b.{{0,55}}\\b{org}\\b", text, re.IGNORECASE)
+        if (forward or reverse) and not any(
+            domain == official or domain.endswith("." + official)
+            for domain in selected_domains for official in official_domains
+        ):
+            raise ValueError(
+                f"Publication bloquée : annonce attribuée à {organization} sans source directe de cette organisation."
+            )
+
 
 def appliquer_cycle_vie(theme, now=None):
     """Applique une variante avant/après événement, sans modifier le fichier source."""
@@ -493,10 +542,9 @@ Sources :
             used_sources.append(sources[index])
     if not used_sources:
         raise ValueError("Aucune source valide sélectionnée. Aucun article publié.")
-    verifier_dates_incertaines(
-        {"title": title, "summary": summary, "verdict": verdict, "tip": tip},
-        used_sources,
-    )
+    checked_text = {"title": title, "summary": summary, "verdict": verdict, "tip": tip}
+    verifier_dates_incertaines(checked_text, used_sources)
+    verifier_attributions_officielles(checked_text, used_sources)
 
     return {
         "id": datetime.now(UTC).strftime("%Y%m%dT%H%M%S") + "-" + uuid4().hex[:8],
