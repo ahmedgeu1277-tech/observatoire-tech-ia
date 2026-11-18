@@ -32,9 +32,9 @@ SOURCE_EDITOR_DOMAINS = {
 }
 SOURCE_RESEARCH_DOMAINS = {"arxiv.org"}
 RELEASE_UNCERTAINTY_RE = re.compile(
-    r"\\b(?:dates?\\s+(?:de\\s+)?sortie|date\\s+officielle|calendrier\\s+(?:de\\s+)?lancement|disponibilit[ée])"
-    r".{0,90}\\b(?:incertain(?:e|es|s)?|à confirmer|a confirmer|non confirm[ée]s?|reste(?:nt)? à confirmer)\\b"
-    r"|\\b(?:aucune|pas de)\\s+(?:date(?:\\s+officielle)?|date de sortie)\\b.{0,70}\\b(?:communiqu[ée]e?|annonc[ée]e?|confirm[ée]e?)\\b",
+    r"\b(?:dates?\s+(?:de\s+)?sortie|date\s+officielle|calendrier\s+(?:de\s+)?lancement|disponibilit[ée])"
+    r".{0,90}\b(?:incertain(?:e|es|s)?|à confirmer|a confirmer|non confirm[ée]s?|reste(?:nt)? à confirmer)\b"
+    r"|\b(?:aucune|pas de)\s+(?:date(?:\s+officielle)?|date de sortie)\b.{0,70}\b(?:communiqu[ée]e?|annonc[ée]e?|confirm[ée]e?)\b",
     re.IGNORECASE,
 )
 
