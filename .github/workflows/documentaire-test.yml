@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - "documentaire_test.py"
+      - "video_documentaire.py"
+      - "nettoyer_documentaire_test.py"
+      - "requirements.txt"
       - "ai_providers.py"
       - ".github/workflows/documentaire-test.yml"
   workflow_dispatch:
