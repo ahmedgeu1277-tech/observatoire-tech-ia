@@ -1,5 +1,54 @@
 [
   {
+    "id": "20261118T223737-400efa45",
+    "date": "2026-11-18T22:37+00:00",
+    "theme": "Actualités intelligence artificielle",
+    "title": "OpenAI renforce le contrôle des IA et s’associe au Figaro",
+    "summary": "OpenAI a publié « The Silent Consensus », soulignant que les IA futures pourraient transformer les institutions tout en nécessitant des mécanismes de contrôle solides, sans préciser ces mécanismes. Le même jour, le groupe Figaro a annoncé un partenariat pour diffuser ses articles via ChatGPT, mais l’impact sur la qualité et la neutralité reste incertain. Par ailleurs, OpenAI a détaillé son approche de sandboxing pour Codex, limitant l’accès aux fichiers et au réseau, tout en mentionnant que la portée exacte de ces mesures demeure partiellement opaque.",
+    "verdict": "Les informations proviennent directement des communiqués d’OpenAI ; les effets pratiques des partenariats et des mécanismes de contrôle ne sont pas encore confirmés.",
+    "tip": "Surveillez les mises à jour d’OpenAI et du Figaro pour clarifier l’efficacité des contrôles et l’impact éditorial.",
+    "sources": [
+      {
+        "title": "The Silent Consensus",
+        "publisher": "OpenAI",
+        "domain": "openai.com",
+        "published": "Wed, 18 Nov 2026 10:00:00 GMT",
+        "description": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
+        "url": "https://openai.com/index/the-silent-consensus",
+        "source_type": "source_editeur"
+      },
+      {
+        "title": "Inside the Codex sandbox",
+        "publisher": "OpenAI",
+        "domain": "openai.com",
+        "published": "Wed, 18 Nov 2026 08:00:00 GMT",
+        "description": "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
+        "url": "https://openai.com/index/inside-the-codex-sandbox",
+        "source_type": "source_editeur"
+      },
+      {
+        "title": "Managing frontier AI risk: From training to deployment",
+        "publisher": "OpenAI",
+        "domain": "openai.com",
+        "published": "Wed, 18 Nov 2026 06:00:00 GMT",
+        "description": "OpenAI explains how it manages frontier AI risk from training through deployment with model alignment, sandboxing, blocking safeguards, and monitoring.",
+        "url": "https://openai.com/index/managing-frontier-ai-risk",
+        "source_type": "source_editeur"
+      },
+      {
+        "title": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT",
+        "publisher": "OpenAI",
+        "domain": "openai.com",
+        "published": "Wed, 18 Nov 2026 00:00:00 GMT",
+        "description": "Le Groupe Figaro and OpenAI partner to bring Le Figaro’s journalism to ChatGPT through summaries and excerpts, with links to original stories.",
+        "url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership",
+        "source_type": "source_editeur"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261118T223737-400efa45.mp3"
+  },
+  {
     "id": "20261118T223049-c65e19ac",
     "date": "2026-11-18T22:30+00:00",
     "theme": "GTA VI — lancement et premiers retours vérifiés",
