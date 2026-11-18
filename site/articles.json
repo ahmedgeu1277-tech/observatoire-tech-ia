@@ -1,5 +1,45 @@
 [
   {
+    "id": "20261118T221641-fc077122",
+    "date": "2026-11-18T22:16+00:00",
+    "theme": "Technologies d’IA et innovations disruptives dans le gaming",
+    "title": "IA et streaming : GTA 6 et Burning Sword Death Sun en tête des attentes",
+    "summary": "Les jeux GTA 6 et Burning Sword Death Sun illustrent comment l’IA influence le streaming et la conception de gameplay. GTA 6 a déjà battu tous les records de streaming avant sa sortie, signe d’une forte anticipation du public, tandis que Burning Sword propose des mécaniques de hack‑and‑slash prometteuses grâce à des innovations IA. Cependant, l’efficacité réelle de ces technologies reste incertaine sans données d’utilisation à grande échelle, et la durabilité de ces avancées dépendra de la capacité des studios à maintenir l’engagement des joueurs sur le long terme.",
+    "verdict": "Les sources indiquent des performances prometteuses mais soulignent l’incertitude quant à l’impact à long terme.",
+    "tip": "Surveillez les retours d’expérience des joueurs et les métriques de streaming post‑lancement pour évaluer l’efficacité réelle des innovations IA.",
+    "sources": [
+      {
+        "title": "GTA 6 bat tous les records de streaming avant même sa sortie mondiale",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Wed, 18 Nov 2026 18:54:26 +0000",
+        "description": "Si on ne fait qu'en parler, ça compte ?",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94079/gta-6-bat-tous-les-records-de-streaming-avant-meme-sa-sortie-mondiale",
+        "source_type": "media"
+      },
+      {
+        "title": "Burning Sword : screen éditeur",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Wed, 18 Nov 2026 17:27:34 +0000",
+        "description": "",
+        "url": "https://fr.ign.com/burning-sword-death-sun/94077/burning-sword-screen-editeur",
+        "source_type": "media"
+      },
+      {
+        "title": "Preview Burning Sword Death Sun : des premiers pas prometteurs",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Wed, 18 Nov 2026 17:27:34 +0000",
+        "description": "Burning Sword: Death Sun pose les bases d’un hack-and-slash wuxia nerveux et spectaculaire, dont l’accès anticipé doit désormais enrichir le contenu et affiner les mécaniques.",
+        "url": "https://fr.ign.com/burning-sword-death-sun/94075/preview-burning-sword-death-sun-des-premiers-pas-prometteurs",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261118T221641-fc077122.mp3"
+  },
+  {
     "id": "20261118T221539-c58ca70c",
     "date": "2026-11-18T22:15+00:00",
     "theme": "GTA VI — lancement et premiers retours vérifiés",
@@ -1117,35 +1157,5 @@
     ],
     "ai_notice": "Contenu assisté par IA ou synthèse de secours à partir des titres. Vérifiez toujours les sources originales.",
     "audio_url": "audio/20261115T194232Z.mp3"
-  },
-  {
-    "id": "20261115T194043Z",
-    "date": "2026-11-15T19:40+00:00",
-    "theme": "Roblox et création de jeux",
-    "title": "Roblox : création de jeux en 2026",
-    "summary": "David Baszucki évoque les évolutions de la plateforme et l’importance de la communauté. Un créateur chinois partage ses stratégies de succès, soulignant l’accessibilité des outils. Un nouveau jeu, *Codes Survive your Ideas*, illustre les possibilités de design créatif.",
-    "verdict": "Les informations indiquées restent à confirmer par des sources supplémentaires.",
-    "tip": "Explorez les tutoriels officiels pour maîtriser les bases du scripting avant de lancer votre propre projet.",
-    "sources": [
-      {
-        "title": "David Baszucki s'entretient avec Bloxy News - Roblox",
-        "description": "David Baszucki s'entretient avec Bloxy News    Roblox",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPUTI0YnE1ZUpnODhlZUo4N3VpbGphaExuUzhudmVYRm1kUldESElJWHdsOEJTTDZELVhaUmNjWC1oWnRVeG00SFFwYXQ3eVdfS21sRWRTVjZUTHluSGYtclhhaWFIZHJydDdOR29wUDlQc3hfajlFVUQ2S2J0blcwRC0zbHJNTW1YNllTQmx3?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "Dans les coulisses de Roblox : le créateur Chichine nous dévoile les clés de son succès - gamewave",
-        "description": "Dans les coulisses de Roblox : le créateur Chichine nous dévoile les clés de son succès    gamewave",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOMEVTdl9LT0VvMU4tcXlhQ2twT3hKanp0VUVNU3lWWjBGLXpVU1lCWlpSNXVWbXh1eWxrb3Aydk1KQ09VYzVxOHd5SzZ6SU9leXBBN24yV3JlRTJJSFJlV3hkbEhYUGdzVC1tY1NDaTVPbVV6c3kyMW0xTHZEVmhqaTZjZ0RkcVhiYWh4M2JOMnViZUU1ZXExQTNFY3ZnWkMtS3NjSnIwM0tPblJkd0YxSHM4MA?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "Roblox : Codes Survive your Ideas (Novembre 2026) - gamewave",
-        "description": "Roblox : Codes Survive your Ideas (Novembre 2026)    gamewave",
-        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5DM05aTlNDa0pjemh1SFlsQjhkbVkzbFlxcDNvYzd4YUszQm03VUh1QTlZTDVJc3lvZjl1VWYwNzNMbzgzallsWS1nbjBMeUktTkg1RHZ0dnJMZVotVjVvWlJVRFlhY0FIeGww?oc=5",
-        "source_type": "source_externe"
-      }
-    ],
-    "ai_notice": "Contenu assisté par IA ou synthèse de secours à partir des titres. Vérifiez toujours les sources originales."
   }
 ]
