@@ -1,7 +1,9 @@
 {
-  "created_at": "2026-11-18T21:06:37.160823+00:00",
-  "expires_at": "2026-11-19T21:06:37.160823+00:00",
-  "audio_file": "documentaire-test-20261118T210637Z.mp3",
-  "video_file": "documentaire-test-20261118T210637Z.mp4",
-  "title": "Les actualités Tech & Gaming : quatre dossiers à vérifier"
+  "created_at": "2026-11-18T21:22:08.693951+00:00",
+  "expires_at": "2026-12-18T21:22:08.693951+00:00",
+  "audio_file": "documentaire-test-20261118T212208Z.mp3",
+  "video_file": "documentaire-test-20261118T212208Z.mp4",
+  "archive_file": "documentaire-test-20261118T212208Z.md",
+  "title": "Les actualités Tech & Gaming : quatre dossiers à vérifier",
+  "retention_days": 30
 }
