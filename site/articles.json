@@ -89,45 +89,6 @@
     "audio_url": "audio/20261118T221641-fc077122.mp3"
   },
   {
-    "id": "20261118T221539-c58ca70c",
-    "date": "2026-11-18T22:15+00:00",
-    "theme": "GTA VI — lancement et premiers retours vérifiés",
-    "title": "GTA VI : détails chiffrés non confirmés",
-    "summary": "Les sources consultées mentionnent GTA VI, mais elles ne fournissent pas suffisamment d'éléments pour confirmer les caractéristiques chiffrées avancées. Les performances, la compatibilité PC et les détails techniques doivent être vérifiés dans les annonces et fiches techniques officielles. La date de sortie officielle est traitée séparément dans une publication sourcée par Rockstar.",
-    "verdict": "Les caractéristiques chiffrées et les détails techniques ne sont pas établis par les sources consultées.",
-    "tip": "Consulter les fiches techniques et annonces officielles avant de retenir des chiffres précis.",
-    "sources": [
-      {
-        "title": "GTA 6 bat tous les records de streaming avant même sa sortie mondiale",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 18:54:26 +0000",
-        "description": "Si on ne fait qu'en parler, ça compte ?",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94079/gta-6-bat-tous-les-records-de-streaming-avant-meme-sa-sortie-mondiale",
-        "source_type": "media"
-      },
-      {
-        "title": "Dans GTA 6, vous serez obligé de doomscroller si vous voulez voir tout ce que le jeu a à offrir",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 16:00:35 +0000",
-        "description": "Scroller, encore scroller, toujours scroller...",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94069/dans-gta-6-vous-serez-oblige-de-doomscroller-si-vous-voulez-voir-tout-ce-que-le-jeu-a-a-offrir",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 : la mise à jour 1.002.000 est obligatoire pour jouer, voici ce qu’elle contient",
-        "publisher": "big-n.fr",
-        "domain": "news.google.com",
-        "published": "Fri, 13 Nov 2026 14:20:45 GMT",
-        "description": "GTA 6 : la mise à jour 1.002.000 est obligatoire pour jouer, voici ce qu’elle contient    big-n.fr",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB6SHhSMEVYal9QemZqcC1ERTRGZmVIVGxBTWlENW1LOE9qZUN4cnZrOUdzNFA1VHhSdlBEckNUeWZlTTFsV2hpZ2dzZHJIR1JOTzlnMFJEZnZXYl9GZFh4VjU4R1ZCSEFEQVRMLUZfUDI2S3FEQkV2aEJEWm52dk0?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet."
-  },
-  {
     "id": "20261118T221413-4d00add9",
     "date": "2026-11-18T22:14+00:00",
     "theme": "Technologies d'IA et d'accessibilité dans le gaming moderne",
@@ -278,37 +239,6 @@
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet."
   },
   {
-    "id": "20261118T215043-9c20a25a",
-    "date": "2026-11-18T21:50+00:00",
-    "theme": "GTA VI — lancement et premiers retours vérifiés",
-    "title": "GTA VI : détails chiffrés non confirmés",
-    "summary": "Les sources consultées mentionnent GTA VI, mais elles ne fournissent pas suffisamment d'éléments pour confirmer les dates et caractéristiques chiffrées avancées. Les détails précis de lancement, de performances et de compatibilité doivent être vérifiés dans les annonces et fiches techniques officielles.",
-    "verdict": "Les chiffres et caractéristiques détaillés ne sont pas établis par les sources consultées.",
-    "tip": "Consulter les annonces et fiches techniques officielles avant de retenir des chiffres précis.",
-    "sources": [
-      {
-        "title": "GTA 6 bat tous les records de streaming avant même sa sortie mondiale",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 18:54:26 +0000",
-        "description": "Si on ne fait qu'en parler, ça compte ?",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94079/gta-6-bat-tous-les-records-de-streaming-avant-meme-sa-sortie-mondiale",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 : la mise à jour 1.002.000 est obligatoire pour jouer, voici ce qu’elle contient",
-        "publisher": "big-n.fr",
-        "domain": "news.google.com",
-        "published": "Fri, 13 Nov 2026 14:20:45 GMT",
-        "description": "GTA 6 : la mise à jour 1.002.000 est obligatoire pour jouer, voici ce qu’elle contient    big-n.fr",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB6SHhSMEVYal9QemZqcC1ERTRGZmVIVGxBTWlENW1LOE9qZUN4cnZrOUdzNFA1VHhSdlBEckNUeWZlTTFsV2hpZ2dzZHJIR1JOTzlnMFJEZnZXYl9GZFh4VjU4R1ZCSEFEQVRMLUZfUDI2S3FEQkV2aEJEWm52dk0?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261118T215043-9c20a25a.mp3"
-  },
-  {
     "id": "20261118T213728-9fc41933",
     "date": "2026-11-18T21:37+00:00",
     "theme": "Dragon Quest Monsters: The Withered World — sortie annoncée le 3 décembre 2026",
@@ -338,37 +268,6 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261118T213728-9fc41933.mp3"
-  },
-  {
-    "id": "20261118T203355-828bbe37",
-    "date": "2026-11-18T20:33+00:00",
-    "theme": "GTA VI — lancement et premiers retours vérifiés",
-    "title": "GTA VI : détails chiffrés non confirmés",
-    "summary": "Les sources consultées mentionnent GTA VI, mais elles ne fournissent pas suffisamment d'éléments pour confirmer les dates et caractéristiques chiffrées avancées. Les détails précis de lancement, de performances et de compatibilité doivent être vérifiés dans les annonces et fiches techniques officielles.",
-    "verdict": "Les chiffres et caractéristiques détaillés ne sont pas établis par les sources consultées.",
-    "tip": "Consulter les annonces et fiches techniques officielles avant de retenir des chiffres précis.",
-    "sources": [
-      {
-        "title": "GTA 6 bat tous les records de streaming avant même sa sortie mondiale",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 18:54:26 +0000",
-        "description": "Si on ne fait qu'en parler, ça compte ?",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94079/gta-6-bat-tous-les-records-de-streaming-avant-meme-sa-sortie-mondiale",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 : la mise à jour 1.002.000 est obligatoire pour jouer, voici ce qu’elle contient",
-        "publisher": "big-n.fr",
-        "domain": "news.google.com",
-        "published": "Fri, 13 Nov 2026 14:20:45 GMT",
-        "description": "GTA 6 : la mise à jour 1.002.000 est obligatoire pour jouer, voici ce qu’elle contient    big-n.fr",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB6SHhSMEVYal9QemZqcC1ERTRGZmVIVGxBTWlENW1LOE9qZUN4cnZrOUdzNFA1VHhSdlBEckNUeWZlTTFsV2hpZ2dzZHJIR1JOTzlnMFJEZnZXYl9GZFh4VjU4R1ZCSEFEQVRMLUZfUDI2S3FEQkV2aEJEWm52dk0?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261118T203355-828bbe37.mp3"
   },
   {
     "id": "20261118T194922-2ce4acdb",
@@ -580,46 +479,6 @@
     "audio_url": "audio/20261117T200811-74ceca99.mp3"
   },
   {
-    "id": "20261117T195841-de3acfa7",
-    "date": "2026-11-17T19:58+00:00",
-    "theme": "GTA VI — préparation du lancement en Thaïlande",
-    "title": "GTA VI : les sources ne précisent pas la Thaïlande",
-    "summary": "Les sources consultées abordent l'actualité de GTA VI, mais aucune ne mentionne la Thaïlande. Elles ne permettent donc pas de confirmer la disponibilité du jeu ni son heure de lancement dans ce pays. Les informations régionales doivent être vérifiées auprès de l'éditeur et de la boutique officielle de la région concernée.",
-    "verdict": "Disponibilité en Thaïlande non confirmée par les sources consultées.",
-    "tip": "Consulter les annonces de l'éditeur et la boutique officielle de la région avant de conclure.",
-    "sources": [
-      {
-        "title": "Les nominations des Game Awards 2026 dévoilées : GTA 6 en tête",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Tue, 17 Nov 2026 17:51:18 +0000",
-        "description": "Le nommé du turfu",
-        "url": "https://fr.ign.com/project-007/94022/les-nominations-des-game-awards-2026-devoilees-gta-6-en-tete",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 : voici comment y jouer en avance grâce à l'astuce de la Nouvelle-Zélande",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Tue, 17 Nov 2026 10:42:09 +0000",
-        "description": "C'est bientôt l'heure.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/93998/gta-6-voici-comment-y-jouer-en-avance-grace-a-lastuce-de-la-nouvelle-zelande",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 : comment jouer avant le 19 novembre grâce à l'astuce de la Nouvelle-Zélande",
-        "publisher": "msn.com",
-        "domain": "msn.com",
-        "published": "Tue, 17 Nov 2026 05:30:17 GMT",
-        "description": "Jeudi 19 novembre à 0 h, GTA 6 se débloque officiellement en France, mais certains viseront midi la veille grâce à l’astuce Nouvelle-Zélande. Entre gain de 12 heures et risque de sanction, mieux vaut ...",
-        "url": "https://www.msn.com/fr-fr/actualite/other/gta-6-comment-jouer-avant-le-19-novembre-gr%C3%A2ce-%C3%A0-lastuce-de-la-nouvelle-z%C3%A9lande/ar-AA2hD8py",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261117T195841-de3acfa7.mp3"
-  },
-  {
     "id": "20261117T184859-bc5208b0",
     "date": "2026-11-17T18:48+00:00",
     "theme": "Call of Duty: Modern Warfare 4 — suivi après lancement (23 octobre 2026)",
@@ -640,95 +499,6 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261117T184859-bc5208b0.mp3"
-  },
-  {
-    "id": "20261117T184725-11b5cb11",
-    "date": "2026-11-17T18:47+00:00",
-    "theme": "GTA VI — préparation du lancement en Thaïlande",
-    "title": "GTA VI : les sources ne précisent pas la Thaïlande",
-    "summary": "Les sources consultées abordent l'actualité de GTA VI, mais aucune ne mentionne la Thaïlande. Elles ne permettent donc pas de confirmer la disponibilité du jeu ni son heure de lancement dans ce pays. Les informations régionales doivent être vérifiées auprès de l'éditeur et de la boutique officielle de la région concernée.",
-    "verdict": "Disponibilité en Thaïlande non confirmée par les sources consultées.",
-    "tip": "Consulter les annonces de l'éditeur et la boutique officielle de la région avant de conclure.",
-    "sources": [
-      {
-        "title": "Les nominations des Game Awards 2026 dévoilées : GTA 6 en tête",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Tue, 17 Nov 2026 17:51:18 +0000",
-        "description": "Le nommé du turfu",
-        "url": "https://fr.ign.com/project-007/94022/les-nominations-des-game-awards-2026-devoilees-gta-6-en-tete",
-        "source_type": "media"
-      },
-      {
-        "title": "L’actrice qui incarne Lucia dans Grand Theft Auto 6 enfin révélée",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Tue, 17 Nov 2026 17:35:39 +0000",
-        "description": "Et ce n'est pas vraiment un spoiler....",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94017/lactrice-qui-incarne-lucia-dans-grand-theft-auto-6-enfin-revelee",
-        "source_type": "media"
-      },
-      {
-        "title": "Sony pousse une dernière petite mise à jour de sécurité PS5 avant GTA 6, pendant que les hackers font du bruit",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Tue, 17 Nov 2026 10:52:35 +0000",
-        "description": "C'est la guerre.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/93999/sony-pousse-une-derniere-petite-mise-a-jour-de-securite-ps5-avant-gta-6-pendant-que-les-hackers-font",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 : voici comment y jouer en avance grâce à l'astuce de la Nouvelle-Zélande",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Tue, 17 Nov 2026 10:42:09 +0000",
-        "description": "C'est bientôt l'heure.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/93998/gta-6-voici-comment-y-jouer-en-avance-grace-a-lastuce-de-la-nouvelle-zelande",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 : comment jouer avant le 19 novembre grâce à l'astuce de la Nouvelle-Zélande",
-        "publisher": "msn.com",
-        "domain": "msn.com",
-        "published": "Tue, 17 Nov 2026 05:30:17 GMT",
-        "description": "Jeudi 19 novembre à 0 h, GTA 6 se débloque officiellement en France, mais certains viseront midi la veille grâce à l’astuce Nouvelle-Zélande. Entre gain de 12 heures et risque de sanction, mieux vaut ...",
-        "url": "https://www.msn.com/fr-fr/actualite/other/gta-6-comment-jouer-avant-le-19-novembre-gr%C3%A2ce-%C3%A0-lastuce-de-la-nouvelle-z%C3%A9lande/ar-AA2hD8py",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261117T184725-11b5cb11.mp3"
-  },
-  {
-    "id": "20261117T184405-f387119a",
-    "date": "2026-11-17T18:44+00:00",
-    "theme": "GTA VI — préparation du lancement en Thaïlande",
-    "title": "GTA VI : les sources ne précisent pas la Thaïlande",
-    "summary": "Les sources consultées abordent l'actualité de GTA VI, mais aucune ne mentionne la Thaïlande. Elles ne permettent donc pas de confirmer la disponibilité du jeu ni son heure de lancement dans ce pays. Les informations régionales doivent être vérifiées auprès de l'éditeur et de la boutique officielle de la région concernée.",
-    "verdict": "Disponibilité en Thaïlande non confirmée par les sources consultées.",
-    "tip": "Consulter les annonces de l'éditeur et la boutique officielle de la région avant de conclure.",
-    "sources": [
-      {
-        "title": "GTA 6 : date, heure de sortie, taille du jeu et préchargement, quand pourrez-vous jouer ?",
-        "publisher": "tomsguide.fr",
-        "domain": "tomsguide.fr",
-        "published": "Tue, 27 Oct 2026 22:59:00 GMT",
-        "description": "Le compte à rebours touche à sa fin. Rockstar a levé les dernières inconnues sur le lancement de GTA 6 : l’horaire officiel, un préchargement avancé de deux jours et un poids colossal, désormais ...",
-        "url": "https://www.tomsguide.fr/gta-6-date-heure-de-sortie-taille-du-jeu-et-prechargement-quand-pourrez-vous-jouer/",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 : comment jouer avant le 19 novembre grâce à l'astuce de la Nouvelle-Zélande",
-        "publisher": "msn.com",
-        "domain": "msn.com",
-        "published": "Tue, 17 Nov 2026 05:30:17 GMT",
-        "description": "Jeudi 19 novembre à 0 h, GTA 6 se débloque officiellement en France, mais certains viseront midi la veille grâce à l’astuce Nouvelle-Zélande. Entre gain de 12 heures et risque de sanction, mieux vaut ...",
-        "url": "https://www.msn.com/fr-fr/actualite/other/gta-6-comment-jouer-avant-le-19-novembre-gr%C3%A2ce-%C3%A0-lastuce-de-la-nouvelle-z%C3%A9lande/ar-AA2hD8py",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261117T184405-f387119a.mp3"
   },
   {
     "id": "20261117T183458-77b97af1",
