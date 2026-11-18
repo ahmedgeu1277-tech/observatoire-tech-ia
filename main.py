@@ -70,6 +70,8 @@ RELEASE_UNCERTAINTY_RE = re.compile(
 def classify_news_source(domain):
     """Classe une source directe : éditeur si domaine primaire connu, sinon média."""
     host = (domain or "").lower().removeprefix("www.")
+    if host in {"news.google.com", "news.bing.com"}:
+        return "media"
     if host in SOURCE_RESEARCH_DOMAINS:
         return "source_recherche"
     if any(host == item or host.endswith("." + item) for item in SOURCE_EDITOR_DOMAINS):
