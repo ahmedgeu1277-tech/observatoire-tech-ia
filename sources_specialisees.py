@@ -7,6 +7,21 @@ import requests
 from defusedxml import ElementTree as ET
 
 TIMEOUT = 12
+PUBLISHER_TYPES = {
+    "openai": "source_editeur",
+    "google deepmind": "source_editeur",
+    "hugging face": "source_editeur",
+    "unity": "source_editeur",
+    "unreal engine / epic": "source_editeur",
+    "godot": "source_editeur",
+    "gamemaker": "source_editeur",
+    "google research": "source_recherche",
+    "arxiv intelligence artificielle": "source_recherche",
+    "arxiv machine learning": "source_recherche",
+    "ign france": "media",
+    "ign": "media",
+    "gamespot": "media",
+}
 FEEDS = {
     "ai": [
         ("OpenAI", "https://openai.com/news/rss.xml"),
@@ -75,7 +90,7 @@ def parse_feed(content, publisher, feed_url):
                 "published": published[:100],
                 "description": _clean(description)[:700],
                 "url": link,
-                "source_type": "flux_officiel"
+                "source_type": PUBLISHER_TYPES.get(publisher.casefold(), "source_externe")
             })
     return results
 
