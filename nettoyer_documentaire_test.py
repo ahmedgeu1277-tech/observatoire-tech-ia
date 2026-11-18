@@ -9,6 +9,7 @@ MANIFEST = SITE / "documentaire-test.json"
 PAGE = SITE / "documentaire-test.html"
 SCRIPT = SITE / "documentaire-test.md"
 AUDIO_DIR = SITE / "audio"
+VIDEO_DIR = SITE / "video"
 
 
 def main():
@@ -29,6 +30,11 @@ def main():
         audio = AUDIO_DIR / audio_name
         if audio.exists():
             audio.unlink()
+    video_name = data.get("video_file", "")
+    if video_name and Path(video_name).name == video_name:
+        video = VIDEO_DIR / video_name
+        if video.exists():
+            video.unlink()
     for path in (SCRIPT, MANIFEST):
         if path.exists():
             path.unlink()
