@@ -1,5 +1,54 @@
 [
   {
+    "id": "20261118T221900-536a6b8c",
+    "date": "2026-11-18T22:19+00:00",
+    "theme": "GTA VI — lancement et premiers retours vérifiés",
+    "title": "GTA VI : détails chiffrés non confirmés",
+    "summary": "Les sources consultées mentionnent GTA VI, mais elles ne fournissent pas suffisamment d'éléments pour confirmer les caractéristiques chiffrées avancées. Les performances, la compatibilité et les spécifications techniques doivent être vérifiées dans les fiches officielles.",
+    "verdict": "Les chiffres et caractéristiques détaillés ne sont pas établis par les sources consultées.",
+    "tip": "Consulter les annonces et fiches techniques officielles avant de retenir des chiffres précis.",
+    "sources": [
+      {
+        "title": "GTA 6 bat tous les records de streaming avant même sa sortie mondiale",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Wed, 18 Nov 2026 18:54:26 +0000",
+        "description": "Si on ne fait qu'en parler, ça compte ?",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94079/gta-6-bat-tous-les-records-de-streaming-avant-meme-sa-sortie-mondiale",
+        "source_type": "media"
+      },
+      {
+        "title": "GTA 6 : la mise à jour 1.002.000 est obligatoire pour jouer, voici ce qu’elle contient",
+        "publisher": "big-n.fr",
+        "domain": "news.google.com",
+        "published": "Fri, 13 Nov 2026 14:20:45 GMT",
+        "description": "GTA 6 : la mise à jour 1.002.000 est obligatoire pour jouer, voici ce qu’elle contient    big-n.fr",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB6SHhSMEVYal9QemZqcC1ERTRGZmVIVGxBTWlENW1LOE9qZUN4cnZrOUdzNFA1VHhSdlBEckNUeWZlTTFsV2hpZ2dzZHJIR1JOTzlnMFJEZnZXYl9GZFh4VjU4R1ZCSEFEQVRMLUZfUDI2S3FEQkV2aEJEWm52dk0?oc=5",
+        "source_type": "media"
+      },
+      {
+        "title": "Dans GTA 6, vous serez obligé de doomscroller si vous voulez voir tout ce que le jeu a à offrir",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Wed, 18 Nov 2026 16:00:35 +0000",
+        "description": "Scroller, encore scroller, toujours scroller...",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94069/dans-gta-6-vous-serez-oblige-de-doomscroller-si-vous-voulez-voir-tout-ce-que-le-jeu-a-a-offrir",
+        "source_type": "media"
+      },
+      {
+        "title": "GTA 6 : le FSR 4.1 apparaît dans les fichiers du jeu sur Xbox, faut-il espérer une meilleure qualité d’image ?",
+        "publisher": "Xboxygen",
+        "domain": "news.google.com",
+        "published": "Thu, 12 Nov 2026 15:51:50 GMT",
+        "description": "GTA 6 : le FSR 4.1 apparaît dans les fichiers du jeu sur Xbox, faut-il espérer une meilleure qualité d’image ?    Xboxygen",
+        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPNkQtSTRnYWlTcHRaMjlvUmhsOHBET29hRTlRX29mVl8zQU5CdVV0SktEODNqUTlVQ182d2tLSHJ1WjkyTTJRRE85cFQtNjVqa203RmstODBHbE94OXQta2VWZUFRdElILTVZU2RuRVZuTFF0Vk1JQTloSzlPNXpVT1RfQ2VfQTBjZDBpOWREV2h5NzBjLUZsNkctV0ZQY3JyVlNTNlp6T0MwTXVMejNsdkVFNTBPd0NWNjNpQVhyRTZreFZndFFTS05HQkJSTlYyQ0J3RU5FanE?oc=5",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261118T221900-536a6b8c.mp3"
+  },
+  {
     "id": "20261118T221641-fc077122",
     "date": "2026-11-18T22:16+00:00",
     "theme": "Technologies d’IA et innovations disruptives dans le gaming",
@@ -1120,42 +1169,5 @@
     ],
     "ai_notice": "Contenu assisté par IA ou synthèse de secours à partir des titres. Vérifiez toujours les sources originales.",
     "audio_url": "audio/20261115T194945Z.mp3"
-  },
-  {
-    "id": "20261115T194232Z",
-    "date": "2026-11-15T19:42+00:00",
-    "theme": "Matériel et smartphones",
-    "title": "Smartphones et PC portables : quelles offres à surveiller",
-    "summary": "Le Black Friday propose des promotions sur smartphones, tablettes et ordinateurs, mais les bonnes affaires varient selon les modèles. Le Galaxy S25, annoncé par Samsung, est attendu avec des nouveautés, tandis que les PC portables de rentrée restent un choix important pour les étudiants. Les souris gaming sans fil combinant Bluetooth LE et UWB offrent une nouvelle expérience de jeu.",
-    "verdict": "Les offres actuelles sont prometteuses, mais il est conseillé de comparer les spécifications et les prix avant d'acheter.",
-    "tip": "Profitez des périodes de soldes pour tester les nouveaux modèles en magasin avant de vous engager en ligne.",
-    "sources": [
-      {
-        "title": "Smartphone, ordinateur, tablette : quels achats high-tech valent vraiment le coup pendant le Black Friday ? - Futura, le média qui explore le monde",
-        "description": "Smartphone, ordinateur, tablette : quels achats high-tech valent vraiment le coup pendant le Black Friday ?    Futura, le média qui explore le monde",
-        "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPLWJ4ckVSYmlqNXFSaDNaR1FpMTRHMjVrYzIxZEN2TE4xMDFjaVU0Q1VRTW1lUUtxajFmckEyU3gzd1N4bjZWX2dNemdjZ3NqVkFpWTJmWmxUdVpFLXlKX01VNU5Wc3Z1eGRfZkptM29IbjNfaEh6Y3Q2bEt4TzZfc2xqdEdTME5kM2U2VUxURDZiMGZiY1RvUXN1c1h0U1Eya2lBRzRKRkItR1JFUkNmWXhFRjlqbEVaQkNiTEotMm9DSWI4YkFWeXhXamtyeEFuQlhKYVVHTGQzQ2NFUkZEMHh2Z3JCcUFsUHczSi1FSU0?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "Galaxy S25 : date de sortie, nouveautés, prix, fiche technique, tout savoir des nouveaux smartphones Samsung - BuzzArena",
-        "description": "Galaxy S25 : date de sortie, nouveautés, prix, fiche technique, tout savoir des nouveaux smartphones Samsung    BuzzArena",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOcW16aF9mNEdkendfMGlzcUZha3VlNHBSd1lYWFJOY0VZSXpWYWpEaUdZWGNrRlRwbXJHS1F3SVZUbEU3YVFBaXZuaFplakZwZVg2TU84Zy1IdzFEWUpVLWFaZEcxVV9CTlhqNzFNX2hlVjk4dTBTTVdndUVnZWxuRDhFaDVUaXJRUUhfd3BfdGZQWXNtZjB1cFAxUkpKUXpFU0F1NGstcw?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "Quel PC portable acheter pour la rentrée ? - Frandroid",
-        "description": "Quel PC portable acheter pour la rentrée ?    Frandroid",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNX3kwaEV3cTRtbmNlRmhnV045cWtveDU4ajZseDMtRmoyWWhMN19MTWo1QWM3a2Rvbk5weVRfZS0zcGRUa1I0eGFCcTdPd3UydFU5Y1V4aW5NWHdjekxpX3VMclRydW14TVkzZkFBelpzRlFxd3VuSmx3SU9IS082Y1BTUDhUTUdxSzd1YjMwbHRkU1VNSXdjVDlwQ1JScTdkX2IzUGJSNkQ?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "SPARK Microsystems et Nordic : Bluetooth LE et UWB réunis pour les souris gaming sans fil - Planet Sans Fil",
-        "description": "SPARK Microsystems et Nordic : Bluetooth LE et UWB réunis pour les souris gaming sans fil    Planet Sans Fil",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOanNkLTF3TUhYNW1wZ0FvbzY1RFQ3OU5kV0dyaHRZWUtMYmd5bzRqZ1JSYmo0NDlLR0FWWmpHaWVFdUpMa0U2RmtZLUNLV3hHVHBDWkVZZlgzZ1p6TFJRT1lmb1JfeDJGYWtnSklVbUx2ZXNQeFVYbTlGRlFKcWphSzNuQnh5N2o3MzNnemo3eGdVTGZQLVF2RG9mc096S1JMak9LOEtEY0M?oc=5",
-        "source_type": "source_externe"
-      }
-    ],
-    "ai_notice": "Contenu assisté par IA ou synthèse de secours à partir des titres. Vérifiez toujours les sources originales.",
-    "audio_url": "audio/20261115T194232Z.mp3"
   }
 ]
