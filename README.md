@@ -19,6 +19,10 @@ Dans Settings → Pages, choisir la branche `main` et le dossier `/ (root)`. Le 
 - La page de documentaire présente la dernière édition ; les éditions précédentes restent dans les archives du site.
 - Les articles sont publiés dans `site/articles.json` et les résumés dans `memoire_tech.txt`.
 
+## Ville virtuelle et séparation des données
+
+La ville virtuelle est retirée du site public. Ses données de fonctionnement ne doivent jamais être enregistrées dans le dépôt public ni dans GitHub Pages. Les workflows peuvent initialiser un état temporaire pendant une exécution, mais GitHub Actions détruit l'environnement à la fin : cela ne constitue pas une base de données persistante. La ville ne sera réactivée qu'après la mise en place d'un backend privé avec authentification et stockage persistant. Le fichier `data/gouvernement.json` et son ancien emplacement public sont ignorés par Git.
+
 ## Agents et tâches hebdomadaires
 Le workflow du dimanche propose un thème, crée une fiche d'agent spécialisée et prépare un documentaire écrit et audio. Les profils d'agents sont des configurations JSON : ils ne génèrent ni n'exécutent librement du code Python.
 
