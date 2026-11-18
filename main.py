@@ -393,9 +393,8 @@ def appliquer_garde_chiffres(theme, data, sources):
     data["title"] = f"{base_title} : détails chiffrés non confirmés"
     data["summary"] = (
         f"Les sources consultées mentionnent {base_title}, mais elles ne fournissent pas suffisamment "
-        "d'éléments pour confirmer les dates et caractéristiques chiffrées avancées. Les détails précis "
-        "de lancement, de performances et de compatibilité doivent être vérifiés dans les annonces "
-        "et fiches techniques officielles."
+        "d'éléments pour confirmer les caractéristiques chiffrées avancées. Les performances, la "
+        "compatibilité et les spécifications techniques doivent être vérifiées dans les fiches officielles."
     )
     data["verdict"] = "Les chiffres et caractéristiques détaillés ne sont pas établis par les sources consultées."
     data["tip"] = "Consulter les annonces et fiches techniques officielles avant de retenir des chiffres précis."
