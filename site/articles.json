@@ -1,5 +1,45 @@
 [
   {
+    "id": "20261118T221539-c58ca70c",
+    "date": "2026-11-18T22:15+00:00",
+    "theme": "GTA VI — lancement et premiers retours vérifiés",
+    "title": "GTA VI : détails chiffrés non confirmés",
+    "summary": "Les sources consultées mentionnent GTA VI, mais elles ne fournissent pas suffisamment d'éléments pour confirmer les dates et caractéristiques chiffrées avancées. Les détails précis de lancement, de performances et de compatibilité doivent être vérifiés dans les annonces et fiches techniques officielles.",
+    "verdict": "Les chiffres et caractéristiques détaillés ne sont pas établis par les sources consultées.",
+    "tip": "Consulter les annonces et fiches techniques officielles avant de retenir des chiffres précis.",
+    "sources": [
+      {
+        "title": "GTA 6 bat tous les records de streaming avant même sa sortie mondiale",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Wed, 18 Nov 2026 18:54:26 +0000",
+        "description": "Si on ne fait qu'en parler, ça compte ?",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94079/gta-6-bat-tous-les-records-de-streaming-avant-meme-sa-sortie-mondiale",
+        "source_type": "media"
+      },
+      {
+        "title": "Dans GTA 6, vous serez obligé de doomscroller si vous voulez voir tout ce que le jeu a à offrir",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Wed, 18 Nov 2026 16:00:35 +0000",
+        "description": "Scroller, encore scroller, toujours scroller...",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94069/dans-gta-6-vous-serez-oblige-de-doomscroller-si-vous-voulez-voir-tout-ce-que-le-jeu-a-a-offrir",
+        "source_type": "media"
+      },
+      {
+        "title": "GTA 6 : la mise à jour 1.002.000 est obligatoire pour jouer, voici ce qu’elle contient",
+        "publisher": "big-n.fr",
+        "domain": "news.google.com",
+        "published": "Fri, 13 Nov 2026 14:20:45 GMT",
+        "description": "GTA 6 : la mise à jour 1.002.000 est obligatoire pour jouer, voici ce qu’elle contient    big-n.fr",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB6SHhSMEVYal9QemZqcC1ERTRGZmVIVGxBTWlENW1LOE9qZUN4cnZrOUdzNFA1VHhSdlBEckNUeWZlTTFsV2hpZ2dzZHJIR1JOTzlnMFJEZnZXYl9GZFh4VjU4R1ZCSEFEQVRMLUZfUDI2S3FEQkV2aEJEWm52dk0?oc=5",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261118T221539-c58ca70c.mp3"
+  },
+  {
     "id": "20261118T221413-4d00add9",
     "date": "2026-11-18T22:14+00:00",
     "theme": "Technologies d'IA et d'accessibilité dans le gaming moderne",
@@ -1104,42 +1144,6 @@
         "title": "Roblox : Codes Survive your Ideas (Novembre 2026) - gamewave",
         "description": "Roblox : Codes Survive your Ideas (Novembre 2026)    gamewave",
         "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5DM05aTlNDa0pjemh1SFlsQjhkbVkzbFlxcDNvYzd4YUszQm03VUh1QTlZTDVJc3lvZjl1VWYwNzNMbzgzallsWS1nbjBMeUktTkg1RHZ0dnJMZVotVjVvWlJVRFlhY0FIeGww?oc=5",
-        "source_type": "source_externe"
-      }
-    ],
-    "ai_notice": "Contenu assisté par IA ou synthèse de secours à partir des titres. Vérifiez toujours les sources originales."
-  },
-  {
-    "id": "20261115T193731Z",
-    "date": "2026-11-15T19:37+00:00",
-    "theme": "Gaming et jeux vidéo",
-    "title": "Mises à jour et nouveautés à surveiller",
-    "summary": "Une mise à jour de GTA 6 est déjà disponible avant la sortie officielle, tandis que League of Legends prévoit la version New Dawn en 2027. Le service eShop 23.5.0 facilite l’envoi de jeux en cadeau, et Logitech a annoncé un jour de congé dédié aux joueurs.",
-    "verdict": "Les informations indiquées restent à confirmer avant la disponibilité officielle.",
-    "tip": "Profitez de la fonction d’envoi de jeux en cadeau sur eShop pour partager vos titres préférés avec des amis.",
-    "sources": [
-      {
-        "title": "Sorties jeux vidéo novembre 2026 : les nouveautés attendues sur PC et consoles - Sortir à Paris",
-        "description": "Sorties jeux vidéo novembre 2026 : les nouveautés attendues sur PC et consoles    Sortir à Paris",
-        "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPWlBsWmdBZml4b3VoSEtpeWpnTVEySmpNWGtpVWtRRXB0enpLRXBDWUx0VVZLeGZmSjhXYkhacmxtQ0RTSkdWMzNETFJrYUE3RzdrMmQxMnMzX0dVal9Mb3dwTzZwV3hReUdNT3BuWmhRdVJrTFVOck9MbUpnUF95LWhJR2J5eENBMTk2VGJfTldjSlFsSWlMRmZVaGFBZ2Q0eXRDaS1EX1dtVGRGMHZoQzdNbFZzenBiRGJLYmFiRk1mRVM4dnF1TDM0ZWR5WDVlX2c?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "League of Legends : New Dawn, la nouvelle version du jeu phare de Riot Games, arrive en 2027 - JeuxVideo.com",
-        "description": "League of Legends : New Dawn, la nouvelle version du jeu phare de Riot Games, arrive en 2027    JeuxVideo.com",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOMF9iTVhoaFdzT1FPVFF1bkFrNlBHejh1ZXdIWXliUUh6N3otczRjRkdlTU10UHNuNW5DV3lFQ3laZDlTNG9jdlFoazNiaGVQbnhieVNhSWw2b0M5OXc5NVh4SDhIc3ZWYldRRjBLV0pTT2tyWVhfTlozYkJkUms4YkRxZGV3MlA5cWtaWjFmUGp2RFFyWnhjWnl5QUpUX3JWQTh6LXhRVUJIUldoOEMxRHBMZmJfWWlIWDdMeGlUR0FGckNiMHBFVmhBSQ?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "eShop : la 23.5.0 prépare vraiment l'envoi de jeux en cadeau - SpiritGamer",
-        "description": "eShop : la 23.5.0 prépare vraiment l'envoi de jeux en cadeau    SpiritGamer",
-        "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE92eFhVcldybFF3TGpKdmlGVTFYRUxxQUtrSGxURl9yMHZ1cTc1LUdLclVVNXNjMEhWakN2QTZtV3FwODRoRXFUNG5Md2dJYU52b21wQ1RFNHVycG5famZ0SGpXODNEa1JFQWlYX0dWUU9kUDg?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "GTA 6 : toutes les informations : date de sortie, prix, PC et autres spéculations - EGW.News",
-        "description": "GTA 6 : toutes les informations : date de sortie, prix, PC et autres spéculations    EGW.News",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNbEpGU0pfQjZaYlZfaTV3b0RyWnZqRklnb0FrUnhnMElwUDhiQUh3dGRoV0tKZ2FxWmxEMUs5U0NOQ1pCc3VDaXdpeHdYUG5RbWdzcHBNZWZ2OEl0MzBnWV85WmtOR2Rud0dvdHZrWDRJSkhCbm40UWU3RjhjWG80V2NOUGdHNktlT3dsbHJMZzlhZVdqWTV4TmxHbTFNdFk?oc=5",
         "source_type": "source_externe"
       }
     ],
