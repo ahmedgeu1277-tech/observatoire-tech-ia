@@ -50,9 +50,11 @@ def classify_news_source(domain):
 def verifier_dates_incertaines(article_data, selected_sources):
     """Bloque une affirmation d'incertitude sur une date sans source primaire sélectionnée."""
     text = " ".join(str(article_data.get(key, "")) for key in ("title", "summary", "verdict", "tip"))
-    if RELEASE_UNCERTAINTY_RE.search(text) and not any(
-        source.get("source_type") == "source_editeur" for source in selected_sources
-    ):
+    has_editor_source = any(
+        classify_news_source(urlparse(source.get("url", "")).hostname or "") == "source_editeur"
+        for source in selected_sources
+    )
+    if RELEASE_UNCERTAINTY_RE.search(text) and not has_editor_source:
         raise ValueError(
             "Publication bloquée : une date ou disponibilité est qualifiée d'incertaine "
             "sans source directe de l'éditeur. Vérification requise."
