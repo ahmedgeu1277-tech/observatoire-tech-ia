@@ -1,30 +1,30 @@
 # État d'avancement global du projet
 
-Dernière évaluation : 17 novembre 2026, après intégration du générateur Roblox et du validateur statique.
+Dernière évaluation : 18 novembre 2026, après intégration et publication réussie du premier documentaire vidéo MP4.
 
 ## Résultat
 
-**Estimation pondérée : 50,5 / 100.**
+**Estimation pondérée : 52,75 / 100.**
 
 Ce pourcentage est un indicateur d'avancement fonctionnel construit à partir des domaines ci-dessous. Ce n'est ni un pourcentage de lignes de code terminées, ni une garantie de disponibilité, ni une certification de mise en production. Les notes sont des estimations prudentes fondées sur les fonctions présentes et les contrôles exécutés.
 
 | Domaine | Poids | Avancement estimé | Contribution |
 |---|---:|---:|---:|
-| Média, veille et site public | 20 % | 85 % | 17,00 |
+| Média, veille et site public | 20 % | 90 % | 18,00 |
 | Fournisseurs IA et orchestration d'agents | 15 % | 40 % | 6,00 |
 | Missions persistantes et autonomie | 15 % | 35 % | 5,25 |
 | Laboratoire privé et sécurité | 15 % | 45 % | 6,75 |
 | R&D et conception de produits | 10 % | 35 % | 3,50 |
-| Création logicielle et Roblox | 15 % | 30 % | 4,50 |
-| Tests et amélioration continue | 10 % | 75 % | 7,50 |
-| **Total** | **100 %** |  | **50,50 %** |
+| Création logicielle et Roblox | 15 % | 35 % | 5,25 |
+| Tests et amélioration continue | 10 % | 80 % | 8,00 |
+| **Total** | **100 %** |  | **52,75 %** |
 
 Calcul : somme de (poids × note du domaine) / 100.
 
 ## Justification des notes
 
-### Média, veille et site public — 85 %
-Le site public, la récupération de sources, la rédaction assistée, les articles, les fichiers audio et les workflows planifiés existent. Le diagnostic du 17 novembre a relevé 16 thèmes, 20 articles, 72 sources, 18 fichiers audio, 30 administrateurs virtuels et 5 profils IA configurés. Les tests navigateur ont validé les quatre pages HTML et les trois pages principales sur mobile, tablette et ordinateur. Restent notamment un hébergement secondaire réellement actif, une supervision permanente, une vidéo MP4 complète et une validation factuelle plus forte.
+### Média, veille et site public — 90 %
+Le site public, la récupération de sources, la rédaction assistée, les articles, les fichiers audio et les workflows planifiés existent. Un premier documentaire de démonstration a été généré et publié en MP4 H.264/AAC avec narration, diapositives 1280×720 dessinées localement et références aux sources. Le rendu a été vérifié par FFmpeg et le workflow complet a réussi. Cette vidéo reste un documentaire temporaire de test, pas un studio de montage universel. Restent notamment un hébergement secondaire réellement actif, une supervision permanente et une validation factuelle plus forte.
 
 ### Fournisseurs IA et orchestration d'agents — 40 %
 Le projet possède une couche de fournisseurs IA, un basculement, cinq profils spécialisés et un orchestrateur séquentiel avec trois rôles. Les profils ne sont pas des agents indépendants qui travaillent en continu. Le diagnostic récent a signalé l'indisponibilité de Groq pendant un essai ; la stabilité réelle des deux fournisseurs doit encore être mesurée sur plusieurs cycles.
@@ -38,11 +38,11 @@ Le dossier local du laboratoire est ignoré par Git, les contrôles Gitleaks, Co
 ### R&D et conception de produits — 35 %
 L'atelier de sélection de produits note les opportunités selon la douleur client, les preuves de demande, la faisabilité, la différenciation, le coût et l'accès au marché. Des prototypes commencent à exister, mais les entretiens clients, les preuves de marché indépendantes, les tests avec de vrais utilisateurs et la validation économique restent à faire.
 
-### Création logicielle et Roblox — 30 %
-Un générateur crée un squelette de jeu Roblox obby au format Rojo, avec scripts serveur/client et monnaie gérée côté serveur. Un validateur statique contrôle certains fichiers et motifs dangereux sans exécuter le code. Il n'y a pas encore de connexion directe à Roblox Studio, de génération IA complète d'un jeu, de test de gameplay automatisé ni de publication Roblox.
+### Création logicielle et Roblox — 35 %
+Un générateur crée un squelette de jeu Roblox obby au format Rojo, avec scripts serveur/client et monnaie gérée côté serveur. Un validateur statique contrôle certains fichiers et motifs dangereux sans exécuter le code. Le projet sait aussi générer une vidéo éditoriale MP4 narrée à partir de dossiers publiés. Il n'y a toujours pas de connexion directe à Roblox Studio, de génération IA complète d'un jeu, de test de gameplay automatisé ni de publication Roblox.
 
-### Tests et amélioration continue — 75 %
-La suite compte 90 tests Python réussis sur la branche validée. Les workflows exécutent Ruff, Bandit, Gitleaks, CodeQL et des tests Playwright de navigation et d'affichage. La boucle d'auto-évaluation produit un rapport et un backlog ; elle ne réécrit pas le code de production et ne déploie pas de corrections de façon autonome.
+### Tests et amélioration continue — 80 %
+La suite compte 98 tests Python réussis lors du workflow documentaire du 18 novembre. Les workflows exécutent Ruff, Bandit, Gitleaks, CodeQL et des tests Playwright de navigation et d'affichage ; les exécutions de sécurité et de qualité associées au moteur vidéo ont réussi. La boucle d'auto-évaluation produit un rapport et un backlog ; elle ne réécrit pas le code de production et ne déploie pas de corrections de façon autonome.
 
 ## Conditions pour augmenter le score
 
@@ -55,7 +55,7 @@ La suite compte 90 tests Python réussis sur la branche validée. Les workflows 
 
 ## Limites importantes
 
-- 50,5 % signifie que le seuil de la feuille de route est atteint selon cette grille ; cela ne signifie pas que toutes les fonctionnalités sont prêtes à être utilisées.
+- 52,75 % signifie que le seuil de la feuille de route est atteint selon cette grille ; cela ne signifie pas que toutes les fonctionnalités sont prêtes à être utilisées.
 - Aucun travail ne continue en arrière-plan après la fin d'une exécution GitHub Actions, sauf les workflows effectivement planifiés.
 - Aucune vente, dépense, publication externe ou action sur un compte Roblox n'est automatique.
 - Les rapports et prototypes privés ne doivent pas être ajoutés au site public.
