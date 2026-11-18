@@ -1,4 +1,4 @@
-"""Collecte prudente de flux RSS officiels spécialisés."""
+"""Collecte prudente de flux éditeurs, recherche et médias spécialisés."""
 import html
 import re
 from urllib.parse import urlparse
