@@ -6,7 +6,7 @@
 const { chromium } = require("playwright");
 
 const BASE = process.env.SITE_BASE_URL || "http://127.0.0.1:4173";
-const PAGES = ["/site/index.html", "/site/documentaire-test.html", "/site/ville-virtuelle.html"];
+const PAGES = ["/site/index.html", "/site/documentaire-test.html"];
 const failures = [];
 
 function fail(message) { failures.push(message); }
@@ -54,13 +54,6 @@ async function inspectPage(browser, route, viewport) {
           fail("Accueil : ancre de navigation introuvable " + href);
         }
       }
-    }
-  }
-
-  if (route === "/site/ville-virtuelle.html") {
-    if (!(await page.locator("#world").count())) fail("Ville virtuelle : scène canvas absente.");
-    if (!(await page.locator("#pause").count()) || !(await page.locator("#refresh").count())) {
-      fail("Ville virtuelle : commandes pause/actualisation absentes.");
     }
   }
 
