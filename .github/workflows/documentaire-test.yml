@@ -1,4 +1,4 @@
-name: Documentaire test (publication temporaire)
+name: Documentaire test (archives 30 jours)
 
 on:
   push:
@@ -47,62 +47,38 @@ jobs:
           import json
           from pathlib import Path
           articles = json.loads(Path("site/articles.json").read_text(encoding="utf-8"))
-          themes = {
-              article.get("theme")
-              for article in articles
-              if article.get("theme")
-              and article.get("summary")
-              and any(
-                  isinstance(source, dict) and str(source.get("url", "")).startswith("https://")
-                  for source in article.get("sources", [])
-              )
-          }
+          themes = {a.get("theme") for a in articles if isinstance(a, dict) and a.get("theme") and a.get("summary")
+                    and any(isinstance(s, dict) and str(s.get("url", "")).startswith("https://") for s in a.get("sources", []))}
           if len(themes) < 4:
               raise SystemExit("Il faut au moins quatre thèmes publiés avec des sources HTTPS.")
           print(f"{len(themes)} thèmes publiés disponibles.")
           PY
-      - name: Générer le documentaire compilé et sa narration
+      - name: Générer le documentaire et ses médias
         run: python documentaire_test.py
-      - name: Publier sur le site
+      - name: Préparer la publication sans effacer les archives récentes
         run: |
-          mkdir -p "$RUNNER_TEMP/documentaire-test/site/audio"
+          mkdir -p "$RUNNER_TEMP/documentaire-test/site/audio" "$RUNNER_TEMP/documentaire-test/site/video" "$RUNNER_TEMP/documentaire-test/site/archives"
           cp site/documentaire-test.html site/documentaire-test.md site/documentaire-test.json "$RUNNER_TEMP/documentaire-test/site/"
           VIDEO_FILE=$(python -c 'import json; print(json.load(open("site/documentaire-test.json", encoding="utf-8"))["video_file"])')
-          mkdir -p "$RUNNER_TEMP/documentaire-test/site/video"
-          cp "site/video/$VIDEO_FILE" "$RUNNER_TEMP/documentaire-test/site/video/"
           AUDIO_FILE=$(python -c 'import json; print(json.load(open("site/documentaire-test.json", encoding="utf-8"))["audio_file"])')
+          cp "site/video/$VIDEO_FILE" "$RUNNER_TEMP/documentaire-test/site/video/"
           cp "site/audio/$AUDIO_FILE" "$RUNNER_TEMP/documentaire-test/site/audio/"
+          cp site/archives/documentaire-test-*.md "$RUNNER_TEMP/documentaire-test/site/archives/"
           git fetch origin main
           git reset --hard origin/main
-          mkdir -p site/audio site/video
-          find site/audio -maxdepth 1 -type f -name 'documentaire-test-*.mp3' -delete
-          find site/video -maxdepth 1 -type f -name 'documentaire-test-*.mp4' -delete
+          mkdir -p site/audio site/video site/archives
           cp "$RUNNER_TEMP/documentaire-test/site/"*.html "$RUNNER_TEMP/documentaire-test/site/"*.md "$RUNNER_TEMP/documentaire-test/site/"*.json site/
           cp "$RUNNER_TEMP/documentaire-test/site/audio/"* site/audio/
-          mkdir -p site/video
           cp "$RUNNER_TEMP/documentaire-test/site/video/"* site/video/
+          cp "$RUNNER_TEMP/documentaire-test/site/archives/"* site/archives/
           git config user.name "Usine IA Tech & Gaming"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A -- site/documentaire-test.html site/documentaire-test.md site/documentaire-test.json site/audio site/video
-          if git diff --cached --quiet; then
-            echo "::error::Aucun fichier de documentaire généré."
-            exit 1
-          fi
-          git commit -m "Publier le documentaire de test pour 24 heures"
-          # Un autre workflow peut publier entre le fetch et le push.
-          # Rebase et nouvelle tentative pour éviter un échec non déterministe.
+          git add -A -- site/documentaire-test.html site/documentaire-test.md site/documentaire-test.json site/audio site/video site/archives
+          git commit -m "Publier le documentaire et conserver les archives 30 jours"
           for attempt in 1 2 3 4 5; do
             git fetch origin main
-            if ! git rebase origin/main; then
-              git rebase --abort || true
-              echo "::error::Conflit Git pendant le rebase du documentaire."
-              exit 1
-            fi
-            if git push origin HEAD:main; then
-              echo "Documentaire publié (tentative $attempt)."
-              exit 0
-            fi
-            echo "Push refusé (tentative $attempt/5) ; nouvelle tentative dans 3 secondes."
+            if ! git rebase origin/main; then git rebase --abort || true; echo "::error::Conflit Git pendant le rebase."; exit 1; fi
+            if git push origin HEAD:main; then echo "Documentaire publié (tentative $attempt)."; exit 0; fi
             sleep 3
           done
           echo "::error::Publication impossible après cinq tentatives."
