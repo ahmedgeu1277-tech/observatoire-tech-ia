@@ -50,7 +50,7 @@ jobs:
           HF_API_KEY: ${{ secrets.HF_API_KEY }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           GROQ_MODEL: ${{ vars.GROQ_MODEL || 'openai/gpt-oss-20b' }}
-          HF_MODEL: ${{ vars.HF_MODEL || 'Qwen/Qwen2.5-7B-Instruct' }}
+          HF_MODEL: ${{ vars.HF_MODEL || 'Qwen/Qwen2.5-72B-Instruct' }}
         run: python main.py
 
       - name: Enregistrer les publications et archives
