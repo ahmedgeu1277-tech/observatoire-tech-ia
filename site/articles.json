@@ -1,5 +1,54 @@
 [
   {
+    "id": "20261118T223049-c65e19ac",
+    "date": "2026-11-18T22:30+00:00",
+    "theme": "GTA VI — lancement et premiers retours vérifiés",
+    "title": "GTA VI : records de streaming et premiers retours mitigés",
+    "summary": "GTA VI a battu tous les records de streaming avant sa sortie mondiale, comme le rapporte IGN France. Les premiers retours soulignent toutefois un gameplay trop axé sur le « doomscrolling » et un contenu 18 + qui pourrait limiter l’audience. La mise à jour 1.002.000, obligatoire pour jouer, introduit des changements majeurs, mais son impact sur la stabilité reste à confirmer. Les fans attendent de voir si ces ajustements amélioreront l’expérience globale.",
+    "verdict": "Les sources consultées montrent un succès initial en streaming, mais des critiques sur le gameplay et la maturité du contenu subsistent. L’efficacité de la mise à jour 1.002.000 n’est pas encore prouvée.",
+    "tip": "Surveillez les prochains patchs pour vérifier si les problèmes de stabilité et de gameplay sont résolus.",
+    "sources": [
+      {
+        "title": "GTA 6 bat tous les records de streaming avant même sa sortie mondiale",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Wed, 18 Nov 2026 18:54:26 +0000",
+        "description": "Si on ne fait qu'en parler, ça compte ?",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94079/gta-6-bat-tous-les-records-de-streaming-avant-meme-sa-sortie-mondiale",
+        "source_type": "media"
+      },
+      {
+        "title": "GTA 6 : le jeu 18+ ultime ?",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Wed, 18 Nov 2026 16:03:14 +0000",
+        "description": "La question à un million d’euros et à 6 étoiles.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94041/gta-6-le-jeu-18-ultime",
+        "source_type": "media"
+      },
+      {
+        "title": "Dans GTA 6, vous serez obligé de doomscroller si vous voulez voir tout ce que le jeu a à offrir",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Wed, 18 Nov 2026 16:00:35 +0000",
+        "description": "Scroller, encore scroller, toujours scroller...",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94069/dans-gta-6-vous-serez-oblige-de-doomscroller-si-vous-voulez-voir-tout-ce-que-le-jeu-a-a-offrir",
+        "source_type": "media"
+      },
+      {
+        "title": "GTA 6 : la mise à jour 1.002.000 est obligatoire pour jouer, voici ce qu’elle contient",
+        "publisher": "big-n.fr",
+        "domain": "news.google.com",
+        "published": "Fri, 13 Nov 2026 14:20:45 GMT",
+        "description": "GTA 6 : la mise à jour 1.002.000 est obligatoire pour jouer, voici ce qu’elle contient    big-n.fr",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB6SHhSMEVYal9QemZqcC1ERTRGZmVIVGxBTWlENW1LOE9qZUN4cnZrOUdzNFA1VHhSdlBEckNUeWZlTTFsV2hpZ2dzZHJIR1JOTzlnMFJEZnZXYl9GZFh4VjU4R1ZCSEFEQVRMLUZfUDI2S3FEQkV2aEJEWm52dk0?oc=5",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261118T223049-c65e19ac.mp3"
+  },
+  {
     "id": "20261118T222345-0d6370bf",
     "date": "2026-11-18T22:23+00:00",
     "theme": "Gaming et jeux vidéo — veille générale (recherche de secours)",
