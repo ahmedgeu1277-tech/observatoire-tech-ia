@@ -301,6 +301,27 @@ class ArticleValidationTests(unittest.TestCase):
         self.assertIn("reprennent surtout les titres", article["summary"])
 
 
+
+class ArticleArchiveDedupTests(unittest.TestCase):
+    def test_save_articles_removes_duplicate_titles_and_summaries(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            site = root / "site"
+            site.mkdir()
+            archive = site / "articles.json"
+            archive.write_text(json.dumps([
+                {"id": "old-1", "title": "GTA VI : sources", "summary": "Résumé répété"},
+                {"id": "old-2", "title": "GTA VI : sources", "summary": "Autre résumé"},
+                {"id": "old-3", "title": "Autre titre", "summary": "Résumé répété"},
+                {"id": "old-4", "title": "Titre unique", "summary": "Résumé unique"},
+            ]), encoding="utf-8")
+            with patch.object(main, "ARTICLES_FILE", archive), patch.object(main, "SITE_DIR", site):
+                main.save_articles({
+                    "id": "new-1", "title": "GTA VI : sources", "summary": "Nouvelle version"
+                })
+            saved = json.loads(archive.read_text(encoding="utf-8"))
+            self.assertEqual([item["id"] for item in saved], ["new-1", "old-4"])
+
 class ArchiveSafetyTests(unittest.TestCase):
     def test_corrupted_archive_is_not_silently_replaced(self):
         from pathlib import Path
