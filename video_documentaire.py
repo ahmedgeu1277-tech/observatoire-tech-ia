@@ -115,7 +115,7 @@ def generer_video(audio_path: Path, slides: list[tuple[str, str, str]], output_p
         for path in image_paths:
             safe_path = str(path).replace("'", "'\\''")
             lines.extend((f"file '{safe_path}'", f"duration {per_slide:.6f}"))
-        lines.append(f"file '{str(image_paths[-1])}'")
+        lines.append(f"file '{image_paths[-1]}'")
         concat.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
         subprocess.run(
