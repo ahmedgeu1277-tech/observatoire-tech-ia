@@ -576,8 +576,7 @@ def load_previous_articles():
 
 def normaliser_texte_article(value):
     """Normalise titre et résumé pour éviter les doublons exacts de publication."""
-    return re.sub(r"\\s+", " ", re.sub(r"[^\\w\\s]", " ", str(value or "").casefold())).strip()
-
+    return re.sub(r"\s+", " ", re.sub(r"[^\w\s]", " ", str(value or "").casefold())).strip()
 
 def save_articles(article):
     SITE_DIR.mkdir(parents=True, exist_ok=True)
