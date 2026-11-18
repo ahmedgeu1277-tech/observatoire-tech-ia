@@ -1,5 +1,36 @@
 [
   {
+    "id": "20261118T221050-92cc91aa",
+    "date": "2026-11-18T22:10+00:00",
+    "theme": "GTA VI — lancement et premiers retours vérifiés",
+    "title": "GTA VI : records de streaming et mise à jour obligatoire",
+    "summary": "Avant sa sortie mondiale, GTA VI a déjà battu des records de streaming, comme le rapporte IGN France, bien que l’impact sur les ventes reste incertain. Le jeu, classé 18 +, pourrait limiter son audience selon les critiques. Rockstar a annoncé que la mise à jour 1.002.000 est obligatoire pour jouer ; les détails de son contenu et son influence sur l’expérience restent à confirmer. Les sources consultées ne précisent pas d’autres effets majeurs.",
+    "verdict": "Les informations proviennent exclusivement de médias IGN France et big‑n.fr. Les chiffres de streaming et l’obligation de la mise à jour sont confirmés, mais leur impact commercial et technique n’est pas encore vérifié.",
+    "tip": "Surveillez les retours post‑lancement pour confirmer l’effet de la mise à jour et la réception du contenu 18 +.",
+    "sources": [
+      {
+        "title": "GTA 6 bat tous les records de streaming avant même sa sortie mondiale",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Wed, 18 Nov 2026 18:54:26 +0000",
+        "description": "Si on ne fait qu'en parler, ça compte ?",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94079/gta-6-bat-tous-les-records-de-streaming-avant-meme-sa-sortie-mondiale",
+        "source_type": "media"
+      },
+      {
+        "title": "GTA 6 : la mise à jour 1.002.000 est obligatoire pour jouer, voici ce qu’elle contient",
+        "publisher": "big-n.fr",
+        "domain": "news.google.com",
+        "published": "Fri, 13 Nov 2026 14:20:45 GMT",
+        "description": "GTA 6 : la mise à jour 1.002.000 est obligatoire pour jouer, voici ce qu’elle contient    big-n.fr",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB6SHhSMEVYal9QemZqcC1ERTRGZmVIVGxBTWlENW1LOE9qZUN4cnZrOUdzNFA1VHhSdlBEckNUeWZlTTFsV2hpZ2dzZHJIR1JOTzlnMFJEZnZXYl9GZFh4VjU4R1ZCSEFEQVRMLUZfUDI2S3FEQkV2aEJEWm52dk0?oc=5",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261118T221050-92cc91aa.mp3"
+  },
+  {
     "id": "20261118T220352-aa1acc7c",
     "date": "2026-11-18T22:03+00:00",
     "theme": "GTA VI — lancement et premiers retours vérifiés",
