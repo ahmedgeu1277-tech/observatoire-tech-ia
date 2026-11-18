@@ -11,7 +11,18 @@ class SpecializedFeedTests(unittest.TestCase):
         self.assertEqual(len(result), 1)
         self.assertEqual(result[0]["publisher"], "Source test")
         self.assertEqual(result[0]["title"], "Annonce IA")
-        self.assertEqual(result[0]["source_type"], "flux_officiel")
+        self.assertEqual(result[0]["source_type"], "source_externe")
+
+
+    def test_media_publishers_are_not_mislabeled_as_game_publishers(self):
+        xml = b"""<rss><channel><item><title>GTA VI preview</title><link>https://example.org/gta</link></item></channel></rss>"""
+        result = parse_feed(xml, "IGN France", "https://fr.ign.com/feed.xml")
+        self.assertEqual(result[0]["source_type"], "media")
+
+    def test_publisher_feed_is_classified_as_editor_source(self):
+        xml = b"""<rss><channel><item><title>Unity release notes</title><link>https://example.org/unity</link></item></channel></rss>"""
+        result = parse_feed(xml, "Unity", "https://blog.unity.com/feed")
+        self.assertEqual(result[0]["source_type"], "source_editeur")
 
     def test_game_engine_official_feeds_are_configured(self):
         publishers = {publisher for publisher, _ in FEEDS["engines"]}
