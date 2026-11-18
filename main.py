@@ -592,14 +592,18 @@ def save_articles(article):
         summary_key = normaliser_texte_article(item.get("summary"))
         if not key or key in seen_ids:
             continue
-        if (title_key and title_key in seen_titles) or (summary_key and summary_key in seen_summaries):
-            continue
-        unique.append(item)
         seen_ids.add(key)
+        duplicate = (
+            (title_key and title_key in seen_titles)
+            or (summary_key and summary_key in seen_summaries)
+        )
         if title_key:
             seen_titles.add(title_key)
         if summary_key:
             seen_summaries.add(summary_key)
+        if duplicate:
+            continue
+        unique.append(item)
     ARTICLES_FILE.write_text(
         json.dumps(unique[:MAX_ARTICLES], ensure_ascii=False, indent=2),
         encoding="utf-8"
