@@ -1,5 +1,45 @@
 [
   {
+    "id": "20261118T222345-0d6370bf",
+    "date": "2026-11-18T22:23+00:00",
+    "theme": "Gaming et jeux vidéo — veille générale (recherche de secours)",
+    "title": "Firaxis restructure et records de streaming de GTA 6",
+    "summary": "Firaxis a annoncé une restructuration qui inclut le licenciement d’un tiers de son personnel, ce qui soulève des questions sur la rapidité de la sortie de *Civilization VII*. Parallèlement, *GTA 6* a déjà battu tous les records de streaming avant sa sortie mondiale, bien que l’impact sur les ventes reste incertain. Les lecteurs peuvent s’attendre à des mises à jour sur la stabilité du studio et sur la conversion de ce buzz en ventes réelles.",
+    "verdict": "Les informations proviennent de deux articles IGN France publiés le même jour.",
+    "tip": "Surveillez les prochaines communiqués de Firaxis pour clarifier l’état d’avancement de *Civilization VII* et les données de vente de *GTA 6* après sa sortie.",
+    "sources": [
+      {
+        "title": "Civilization 7 Gameplay Screenshots",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Wed, 18 Nov 2026 22:14:07 +0000",
+        "description": "",
+        "url": "https://fr.ign.com/sid-meiers-civilization-vii/94081/civilization-7-gameplay-screenshots",
+        "source_type": "media"
+      },
+      {
+        "title": "« Ces décisions ne sont jamais faciles » — Firaxis, le développeur de Civilization, licencie un tiers de ses effectifs",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Wed, 18 Nov 2026 22:14:07 +0000",
+        "description": "« Firaxis procède à une restructuration et se recentre sur les atouts fondamentaux du studio. »",
+        "url": "https://fr.ign.com/sid-meiers-civilization-vii/94080/ces-decisions-ne-sont-jamais-faciles--firaxis-le-developpeur-de-civilization-licencie-un-tiers-de-se",
+        "source_type": "media"
+      },
+      {
+        "title": "GTA 6 bat tous les records de streaming avant même sa sortie mondiale",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Wed, 18 Nov 2026 18:54:26 +0000",
+        "description": "Si on ne fait qu'en parler, ça compte ?",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94079/gta-6-bat-tous-les-records-de-streaming-avant-meme-sa-sortie-mondiale",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261118T222345-0d6370bf.mp3"
+  },
+  {
     "id": "20261118T221900-536a6b8c",
     "date": "2026-11-18T22:19+00:00",
     "theme": "GTA VI — lancement et premiers retours vérifiés",
