@@ -69,8 +69,8 @@ def generate_text(messages, max_tokens=1200, temperature=0.25, json_mode=False):
                             if secret:
                                 message = message.replace(secret, "[SECRET MASQUÉ]")
                         detail += ":" + message[:180]
-                except Exception:  # noqa: BLE001
-                    pass
+                except (ValueError, TypeError, AttributeError):
+                    detail += ":response_parse_failed"
             failures.append(f"{provider}:{detail}")
             print(f"AVERTISSEMENT : fournisseur IA {provider} indisponible ({detail}).")
 
