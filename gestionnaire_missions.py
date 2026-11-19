@@ -8,7 +8,9 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sqlite3
+import time
 from contextlib import contextmanager
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
@@ -28,7 +30,9 @@ def now() -> str:
 class MissionQueue:
     def __init__(self, database: Path | str = DEFAULT_DB):
         self.database = Path(database)
-        self.database.parent.mkdir(parents=True, exist_ok=True)
+        self.database.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
+        if os.name != "nt":
+            os.chmod(self.database.parent, 0o700)
         with self._session() as db:
             db.execute("""
                 CREATE TABLE IF NOT EXISTS missions (
@@ -47,10 +51,16 @@ class MissionQueue:
             if "cancel_requested_at" not in columns:
                 db.execute("ALTER TABLE missions ADD COLUMN cancel_requested_at TEXT")
             db.execute("CREATE INDEX IF NOT EXISTS idx_missions_status_created ON missions(status, created_at)")
+        self._secure_database_file()
+
+    def _secure_database_file(self):
+        if os.name != "nt" and self.database.exists():
+            os.chmod(self.database, 0o600)
 
     def _connect(self):
         db = sqlite3.connect(self.database, timeout=10)
         db.row_factory = sqlite3.Row
+        self._secure_database_file()
         return db
 
     @contextmanager
@@ -117,8 +127,10 @@ class MissionQueue:
             ).fetchone()
         return row is None or row["status"] != "running" or row["cancel_requested_at"] is not None
 
-    def run_next(self) -> dict | None:
+    def run_next(self, should_stop=None) -> dict | None:
         """Récupère les missions expirées, puis réserve atomiquement la suivante."""
+        if should_stop is not None and should_stop():
+            return None
         self.recover_interrupted()
         with self._session() as db:
             db.execute("BEGIN IMMEDIATE")
@@ -143,7 +155,11 @@ class MissionQueue:
         try:
             payload = json.loads(row["payload"])
             result = orchestrateur.executer_mission(
-                payload, should_cancel=lambda: self._is_cancelled(row["id"])
+                payload,
+                should_cancel=lambda: (
+                    self._is_cancelled(row["id"])
+                    or (should_stop is not None and should_stop())
+                ),
             )
             status = result.get("status")
             if status not in {"completed", "partial", "cancelled"}:
@@ -169,6 +185,42 @@ class MissionQueue:
             if current and current["status"] == "cancelled":
                 return {"id": row["id"], "status": "cancelled"}
             return {"id": row["id"], "status": "failed", "error_type": type(exc).__name__}
+
+    def run_worker(
+        self,
+        max_runtime_seconds: int = 3600,
+        max_missions: int = MAX_PENDING,
+        should_stop=None,
+    ) -> list[dict]:
+        """Traite une file bornée, avec arrêt coopératif à la fin d'un agent."""
+        if (
+            isinstance(max_runtime_seconds, bool)
+            or not isinstance(max_runtime_seconds, int)
+            or not 60 <= max_runtime_seconds <= 172800
+        ):
+            raise ValueError("La durée du worker doit être comprise entre 60 secondes et 48 heures.")
+        if (
+            isinstance(max_missions, bool)
+            or not isinstance(max_missions, int)
+            or not 1 <= max_missions <= MAX_PENDING
+        ):
+            raise ValueError(f"Le worker peut traiter entre 1 et {MAX_PENDING} missions par lancement.")
+        deadline = time.monotonic() + max_runtime_seconds
+        results = []
+        while len(results) < max_missions:
+            def stop_requested():
+                return (
+                    time.monotonic() >= deadline
+                    or (should_stop is not None and should_stop())
+                )
+
+            if stop_requested():
+                break
+            result = self.run_next(should_stop=stop_requested)
+            if result is None:
+                break
+            results.append(result)
+        return results
 
     def recover_interrupted(self, stale_after_seconds: int = 300) -> int:
         """Classe uniquement les missions dont le délai de travail est expiré.
