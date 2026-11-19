@@ -1,6 +1,6 @@
 [
   {
-    "id": "20261119T184810-6f1d56a6",
+    "id": "20261119T184843-b950a559",
     "date": "2026-11-19T18:48+00:00",
     "theme": "Veille générale — résumé documentaire de secours",
     "title": "Veille technologique : sources à consulter",
@@ -8,15 +8,6 @@
     "verdict": "Les liens sont disponibles, mais aucune annonce précise n’est validée par ce résumé.",
     "tip": "Ouvrir les articles d’origine et vérifier chaque information importante dans sa source primaire.",
     "sources": [
-      {
-        "title": "Plusieurs millions de joueurs Xbox ont utilisé \"l'astuce néo-zélandaise\" pour jouer à GTA 6 avant tout le monde",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 18:45:54 +0000",
-        "description": "Bande d'impatients.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94101/plusieurs-millions-de-joueurs-xbox-ont-utilise-lastuce-neo-zelandaise-pour-jouer-a-gta-6-avant-tout",
-        "source_type": "media"
-      },
       {
         "title": "Le codirecteur du studio Rockstar North explique pouquoi vous ne pourrez pas aller à Disney World dans GTA 6",
         "publisher": "IGN France",
@@ -45,6 +36,15 @@
         "source_type": "media"
       },
       {
+        "title": "Clair Obscur : Expedition 33 : deux drapeaux officiels pour décorer votre mur, ce qu’il faut savoir avant de précommander",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 16:44:48 +0000",
+        "description": "Oh hisse ! Paré pour l’Expedition.",
+        "url": "https://fr.ign.com/clair-obscur-expedition-33/94094/clair-obscur-expedition-33-deux-drapeaux-officiels-pour-decorer-votre-mur-ce-quil-faut-savoir-avant",
+        "source_type": "media"
+      },
+      {
         "title": "L'I.A continue ses ravages dans le jeu vidéo : 54 % des développeurs licenciés toujours sans emploi et ça ne va pas s'arranger",
         "publisher": "JeuxVideo.com",
         "domain": "news.google.com",
@@ -55,7 +55,7 @@
       }
     ],
     "ai_notice": "Résumé documentaire de secours assemblé automatiquement à partir des liens collectés ; aucune annonce spécifique n’est confirmée.",
-    "audio_url": "audio/20261119T184810-6f1d56a6.mp3"
+    "audio_url": "audio/20261119T184843-b950a559.mp3"
   },
   {
     "id": "20261119T184429-c597ba1f",
