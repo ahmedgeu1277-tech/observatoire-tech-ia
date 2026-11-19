@@ -1,5 +1,36 @@
 [
   {
+    "id": "20261119T175215-2debaddd",
+    "date": "2026-11-19T17:52+00:00",
+    "theme": "Call of Duty: Modern Warfare 4 — suivi après lancement (23 octobre 2026)",
+    "title": "Modern Warfare 4 : retour du mode compétitif et impact incertain",
+    "summary": "Call of Duty 23 : Modern Warfare 4 a conclu la quadrilogie avec un gameplay solide, mais les critiques le décrivent comme « littéralement un Black Ops 7 très fainéant ». Le retour d’un mode compétitif en saison 2, intégré à Warzone, est confirmé, mais son influence sur la rétention reste à vérifier. Les joueurs attendent de voir si cette évolution ravive l’intérêt, tandis que les détails précis de l’impact restent inconnus.",
+    "verdict": "Les sources indiquent un retour du mode compétitif et un gameplay solide, mais l’effet réel sur la rétention n’est pas encore démontré.",
+    "tip": "Surveillez les mises à jour de Warzone et les statistiques de rétention pour confirmer l’impact du nouveau mode.",
+    "sources": [
+      {
+        "title": "[TEST] Call of Duty 23: Modern Warfare 4 conclut en beauté la nouvelle quadrilogie",
+        "publisher": "nofrag.com",
+        "domain": "nofrag.com",
+        "published": "Tue, 17 Nov 2026 16:00:00 GMT",
+        "description": "Après un Black Ops 7 très fainéant l’année dernière par Treyarch, le nouveau Call of Duty était attendu au tournant. Mais les connaisseurs le savent, quand ...",
+        "url": "https://nofrag.com/test-call-of-duty-23-modern-warfare-4-conclut-en-beaute-la-nouvelle-quadrilogie/",
+        "source_type": "media"
+      },
+      {
+        "title": "Modern Warfare 4 confirme le retour d'un mode tant attendu en saison 2 et Warzone en profitera aussi",
+        "publisher": "msn.com",
+        "domain": "msn.com",
+        "published": "Sat, 14 Nov 2026 00:00:49 GMT",
+        "description": "Privés de parties classées depuis le lancement de Modern Warfare 4, les joueurs tenaient Infinity Ward sous pression. Saison 2, Warzone, règles façon CDL : jusqu’où ira ce virage compétitif ?",
+        "url": "https://www.msn.com/fr-fr/gaming/prochaines-sorties-jeux/modern-warfare-4-confirme-le-retour-d-un-mode-tant-attendu-en-saison-2-et-warzone-en-profitera-aussi/ar-AA2hpEzq",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261119T175215-2debaddd.mp3"
+  },
+  {
     "id": "20261119T174921-765502da",
     "date": "2026-11-19T17:49+00:00",
     "theme": "GTA VI — lancement et premiers retours vérifiés",
@@ -1166,36 +1197,5 @@
     ],
     "ai_notice": "Contenu assisté par IA ou synthèse de secours à partir des titres. Vérifiez toujours les sources originales.",
     "audio_url": "audio/20261116T103227Z.mp3"
-  },
-  {
-    "id": "20261115T202120Z",
-    "date": "2026-11-15T20:21+00:00",
-    "theme": "Roblox et création de jeux",
-    "title": "Roblox : création et succès",
-    "summary": "David Baszucki, cofondateur de Roblox, partage son approche de la plateforme et l’importance de la communauté. Le créateur Chichine révèle les éléments clés de son succès, notamment l’innovation et la collaboration. Le jeu \"Codes Survive your Ideas\" illustre la diversité des expériences proposées sur Roblox.",
-    "verdict": "Roblox continue d’offrir un environnement riche pour les créateurs, mais les résultats varient selon les compétences et l’engagement.",
-    "tip": "Pour maximiser votre visibilité, concentrez-vous sur la qualité du gameplay et l’interaction avec les joueurs.",
-    "sources": [
-      {
-        "title": "David Baszucki s'entretient avec Bloxy News - Roblox",
-        "description": "David Baszucki s'entretient avec Bloxy News    Roblox",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPUTI0YnE1ZUpnODhlZUo4N3VpbGphaExuUzhudmVYRm1kUldESElJWHdsOEJTTDZELVhaUmNjWC1oWnRVeG00SFFwYXQ3eVdfS21sRWRTVjZUTHluSGYtclhhaWFIZHJydDdOR29wUDlQc3hfajlFVUQ2S2J0blcwRC0zbHJNTW1YNllTQmx3?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "Dans les coulisses de Roblox : le créateur Chichine nous dévoile les clés de son succès - gamewave",
-        "description": "Dans les coulisses de Roblox : le créateur Chichine nous dévoile les clés de son succès    gamewave",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOMEVTdl9LT0VvMU4tcXlhQ2twT3hKanp0VUVNU3lWWjBGLXpVU1lCWlpSNXVWbXh1eWxrb3Aydk1KQ09VYzVxOHd5SzZ6SU9leXBBN24yV3JlRTJJSFJlV3hkbEhYUGdzVC1tY1NDaTVPbVV6c3kyMW0xTHZEVmhqaTZjZ0RkcVhiYWh4M2JOMnViZUU1ZXExQTNFY3ZnWkMtS3NjSnIwM0tPblJkd0YxSHM4MA?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "Roblox : Codes Survive your Ideas (Novembre 2026) - gamewave",
-        "description": "Roblox : Codes Survive your Ideas (Novembre 2026)    gamewave",
-        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5DM05aTlNDa0pjemh1SFlsQjhkbVkzbFlxcDNvYzd4YUszQm03VUh1QTlZTDVJc3lvZjl1VWYwNzNMbzgzallsWS1nbjBMeUktTkg1RHZ0dnJMZVotVjVvWlJVRFlhY0FIeGww?oc=5",
-        "source_type": "source_externe"
-      }
-    ],
-    "ai_notice": "Contenu assisté par IA ou synthèse de secours à partir des titres. Vérifiez toujours les sources originales.",
-    "audio_url": "audio/20261115T202120Z.mp3"
   }
 ]
