@@ -1,4 +1,5 @@
 import json
+from concurrent.futures import ThreadPoolExecutor
 import sqlite3
 import tempfile
 import unittest
@@ -173,6 +174,26 @@ class MissionQueueTests(unittest.TestCase):
             self.queue.enqueue(self.payload())
         with self.assertRaisesRegex(ValueError, "File pleine"):
             self.queue.enqueue(self.payload())
+
+    def test_concurrent_enqueue_cannot_exceed_pending_limit(self):
+        for _ in range(45):
+            self.queue.enqueue(self.payload())
+
+        def attempt(_):
+            try:
+                self.queue.enqueue(self.payload())
+                return True
+            except ValueError:
+                return False
+
+        with ThreadPoolExecutor(max_workers=12) as pool:
+            outcomes = list(pool.map(attempt, range(15)))
+
+        self.assertEqual(sum(outcomes), 5)
+        self.assertEqual(
+            sum(item["status"] == "pending" for item in self.queue.list_missions()),
+            50,
+        )
 
     def test_database_session_closes_connection(self):
         connection = self.queue._connect()
