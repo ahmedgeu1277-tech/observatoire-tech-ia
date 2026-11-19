@@ -20,7 +20,7 @@ Les tâches GitHub Actions sont ponctuelles et planifiées : elles ne constituen
 
 ## Langues
 
-Le site et la chaîne éditoriale sont actuellement principalement en français. Une interface multilingue complète et des traductions vérifiées ne sont pas encore disponibles. Ne considérez pas les autres langues comme prises en charge tant qu'elles ne sont pas proposées explicitement sur le site.
+Le sélecteur de la page d'accueil propose sept langues pour les principaux éléments de l'interface : français, anglais, espagnol, allemand, portugais, arabe et chinois. Le choix est mémorisé dans le navigateur et l'arabe active l'affichage de droite à gauche. Cela ne traduit pas automatiquement les articles, les documentaires ni toutes les pages : les contenus éditoriaux conservent leur langue d'origine.
 
 ## Ce qui n'est pas encore disponible
 
