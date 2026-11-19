@@ -106,6 +106,7 @@ def executer_mission(data: object, output_dir: Path | None = None) -> dict:
                 messages,
                 max_tokens=MAX_TOKENS_PER_AGENT,
                 temperature=0.2,
+                timeout=min(60, max(1, remaining)),
             )
             results.append({
                 "agent": agent_id,
