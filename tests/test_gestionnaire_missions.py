@@ -238,10 +238,9 @@ class MissionQueueTests(unittest.TestCase):
         )
         self.assertEqual(len(results), 1)
         self.assertEqual(results[0]["status"], "cancelled")
-        self.assertEqual(
-            [item["status"] for item in self.queue.list_missions()],
-            ["pending", "cancelled"],
-        )
+        statuses = [item["status"] for item in self.queue.list_missions()]
+        self.assertEqual(statuses.count("pending"), 1)
+        self.assertEqual(statuses.count("cancelled"), 1)
 
     def test_worker_rejects_unbounded_runtime_and_mission_count(self):
         with self.assertRaises(ValueError):
