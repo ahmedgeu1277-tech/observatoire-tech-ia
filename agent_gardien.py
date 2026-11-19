@@ -39,3 +39,9 @@ def verifier_conformite_legale(proposition_action, type_action="PUBLICATION"):
         print(f"Publication bloquée : {'; '.join(problemes)}")
         return False
     return True
+
+
+def contient_secret_potentiel(contenu):
+    """Détecte un secret potentiel sans le journaliser ni le renvoyer."""
+    texte = str(contenu or "")
+    return any(pattern.search(texte) for pattern in SECRET_PATTERNS)
