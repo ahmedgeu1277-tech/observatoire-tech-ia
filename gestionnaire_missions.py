@@ -192,6 +192,7 @@ class MissionQueue:
         self,
         max_runtime_seconds: int = 3600,
         max_missions: int = MAX_PENDING,
+        idle_timeout_seconds: int = 300,
         should_stop=None,
     ) -> list[dict]:
         """Traite une file bornée, avec arrêt coopératif à la fin d'un agent."""
@@ -207,7 +208,14 @@ class MissionQueue:
             or not 1 <= max_missions <= MAX_PENDING
         ):
             raise ValueError(f"Le worker peut traiter entre 1 et {MAX_PENDING} missions par lancement.")
+        if (
+            isinstance(idle_timeout_seconds, bool)
+            or not isinstance(idle_timeout_seconds, int)
+            or not 1 <= idle_timeout_seconds <= 3600
+        ):
+            raise ValueError("Le délai d'inactivité doit être compris entre 1 seconde et 1 heure.")
         deadline = time.monotonic() + max_runtime_seconds
+        idle_since = None
         results = []
         while len(results) < max_missions:
             def stop_requested():
@@ -220,7 +228,16 @@ class MissionQueue:
                 break
             result = self.run_next(should_stop=stop_requested)
             if result is None:
-                break
+                if stop_requested():
+                    break
+                if idle_since is None:
+                    idle_since = time.monotonic()
+                idle_remaining = idle_timeout_seconds - (time.monotonic() - idle_since)
+                if idle_remaining <= 0:
+                    break
+                time.sleep(min(5, idle_remaining, max(0, deadline - time.monotonic())))
+                continue
+            idle_since = None
             results.append(result)
         return results
 
@@ -257,6 +274,7 @@ def main() -> int:
     worker = sub.add_parser("worker", help="Traiter une file de missions avec des limites strictes.")
     worker.add_argument("--max-runtime-seconds", type=int, default=3600)
     worker.add_argument("--max-missions", type=int, default=MAX_PENDING)
+    worker.add_argument("--idle-timeout-seconds", type=int, default=300)
     cancel = sub.add_parser("cancel", help="Annuler une mission en attente.")
     cancel.add_argument("mission_id")
     args = parser.parse_args()
@@ -286,6 +304,7 @@ def main() -> int:
             results = queue.run_worker(
                 max_runtime_seconds=args.max_runtime_seconds,
                 max_missions=args.max_missions,
+                idle_timeout_seconds=args.idle_timeout_seconds,
                 should_stop=stop_event.is_set,
             )
         finally:
