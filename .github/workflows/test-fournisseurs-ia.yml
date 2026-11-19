@@ -35,6 +35,8 @@ jobs:
           python scripts/test_ai_provider_live.py
 
   test-huggingface:
+    # Hugging Face peut exiger des crédits prépayés ; activation explicite seulement.
+    if: vars.ENABLE_HUGGINGFACE_LIVE_TEST == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
