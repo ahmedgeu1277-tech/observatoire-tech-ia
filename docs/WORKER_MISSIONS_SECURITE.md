@@ -23,5 +23,5 @@ Le worker est un processus, pas un hébergement. Il ne continue pas lorsque l'or
 - `.laboratoire_prive/` est ignoré par Git. Le contrôle de l'arbre Git du 19 novembre 2026 n'a trouvé aucun fichier suivi dans ce dossier ; l'historique Git public reste toutefois public.
 - Sur les systèmes POSIX, le worker limite les permissions du dossier de file à `0700`, de la base SQLite à `0600`, du dossier des rapports à `0700` et des rapports à `0600`. Windows utilise ses ACL système et n'applique pas ces modes POSIX.
 - Les missions ne peuvent pas exécuter du code généré, effectuer des actions externes ou publier automatiquement. Les résultats nécessitent une revue humaine.
-- Ne placez pas de secrets dans le texte d'une mission ou dans son contexte. Les permissions locales ne remplacent ni le chiffrement du disque ni la protection du compte et de l'appareil.
+- Les missions et contextes contenant un secret potentiel sont refusés avant stockage et envoi au fournisseur IA. Ne placez malgré tout aucun secret dans le texte d'une mission ou dans son contexte. Les permissions locales ne remplacent ni le chiffrement du disque ni la protection du compte et de l'appareil.
 - Si un secret est publié par erreur, révoquez-le et remplacez-le auprès du fournisseur ; supprimer le fichier du dernier commit ne suffit pas à l'effacer de l'historique Git.
