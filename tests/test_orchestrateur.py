@@ -25,6 +25,17 @@ class MissionValidationTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             orchestrateur.valider_mission({"mission": "tester", "agents": [{"role": "chercheur"}]})
 
+    def test_rejects_potential_api_secret_in_mission_or_context(self):
+        with self.assertRaisesRegex(ValueError, "secret potentiel"):
+            orchestrateur.valider_mission({
+                "mission": "Analyser ce jeton gsk_ABCDEFGHIJKLMNOPQRSTUVWXYZ123456",
+            })
+        with self.assertRaisesRegex(ValueError, "secret potentiel"):
+            orchestrateur.valider_mission({
+                "mission": "Analyser un système",
+                "context": "api_key=abcdefghijklmnopqrstuvwx",
+            })
+
     def test_rejects_unbounded_duration(self):
         with self.assertRaises(ValueError):
             orchestrateur.valider_mission({
