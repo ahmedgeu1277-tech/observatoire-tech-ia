@@ -10,7 +10,7 @@ import argparse
 import json
 import sqlite3
 from contextlib import contextmanager
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from uuid import uuid4
 
@@ -140,12 +140,24 @@ class MissionQueue:
                 )
             return {"id": row["id"], "status": "failed", "error_type": type(exc).__name__}
 
-    def recover_interrupted(self) -> int:
-        """À lancer au redémarrage du worker pour classer les missions restées actives après un crash."""
+    def recover_interrupted(self, stale_after_seconds: int = 300) -> int:
+        """Classe uniquement les missions dont le délai de travail est expiré.
+
+        La durée maximale d'une mission étant de 180 secondes, cinq minutes
+        laissent une marge aux ralentissements sans interrompre un worker actif.
+        """
+        if (
+            isinstance(stale_after_seconds, bool)
+            or not isinstance(stale_after_seconds, int)
+            or stale_after_seconds < 180
+        ):
+            raise ValueError("Le délai de récupération doit être d'au moins 180 secondes.")
+        cutoff = (datetime.now(UTC) - timedelta(seconds=stale_after_seconds)).isoformat(timespec="seconds")
         with self._connect() as db:
             result = db.execute(
-                "UPDATE missions SET status='interrupted',finished_at=? WHERE status='running'",
-                (now(),),
+                "UPDATE missions SET status='interrupted',finished_at=? "
+                "WHERE status='running' AND started_at IS NOT NULL AND started_at < ?",
+                (now(), cutoff),
             )
             return result.rowcount
 
