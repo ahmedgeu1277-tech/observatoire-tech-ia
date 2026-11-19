@@ -367,7 +367,7 @@ class ThemeSelectionTests(unittest.TestCase):
 class MainRetryTests(unittest.TestCase):
     @patch("main.archive_memory")
     @patch("main.save_articles")
-    @patch("main.asyncio.run", return_value=None)
+    @patch("main.asyncio.run", side_effect=lambda coroutine: coroutine.close())
     @patch("main.verifier_conformite_legale", return_value=True)
     @patch("main.create_article")
     @patch("main.executer_agents_dynamiques", return_value=[])
@@ -490,7 +490,7 @@ class SafeFallbackArticleTests(unittest.TestCase):
 class MainLastResortTests(unittest.TestCase):
     @patch("main.archive_memory")
     @patch("main.save_articles")
-    @patch("main.asyncio.run", return_value=None)
+    @patch("main.asyncio.run", side_effect=lambda coroutine: coroutine.close())
     @patch("main.verifier_conformite_legale", return_value=True)
     @patch("main.create_article", side_effect=[
         RuntimeError("quota fournisseur IA atteint"),
