@@ -67,7 +67,7 @@ class MissionQueue:
 
     def enqueue(self, payload: object) -> str:
         mission = orchestrateur.valider_mission(payload)
-        with self._connect() as db:
+        with self._session() as db:
             pending = db.execute(
                 "SELECT COUNT(*) FROM missions WHERE status='pending'"
             ).fetchone()[0]
@@ -83,7 +83,7 @@ class MissionQueue:
     def list_missions(self, limit: int = 50) -> list[dict]:
         if isinstance(limit, bool) or not isinstance(limit, int) or not 1 <= limit <= 100:
             raise ValueError("La limite doit être comprise entre 1 et 100.")
-        with self._connect() as db:
+        with self._session() as db:
             rows = db.execute(
                 "SELECT id,status,created_at,started_at,finished_at,error_type "
                 "FROM missions ORDER BY created_at DESC LIMIT ?", (limit,)
@@ -92,7 +92,7 @@ class MissionQueue:
 
     def cancel(self, mission_id: str) -> bool:
         """Annule une mission en attente ou signale l'arrêt coopératif d'une mission active."""
-        with self._connect() as db:
+        with self._session() as db:
             pending = db.execute(
                 "UPDATE missions SET status='cancelled', finished_at=? "
                 "WHERE id=? AND status='pending'",
@@ -108,7 +108,7 @@ class MissionQueue:
             return active.rowcount == 1
 
     def _is_cancelled(self, mission_id: str) -> bool:
-        with self._connect() as db:
+        with self._session() as db:
             row = db.execute(
                 "SELECT status,cancel_requested_at FROM missions WHERE id=?", (mission_id,)
             ).fetchone()
@@ -117,7 +117,7 @@ class MissionQueue:
     def run_next(self) -> dict | None:
         """Récupère les missions expirées, puis réserve atomiquement la suivante."""
         self.recover_interrupted()
-        with self._connect() as db:
+        with self._session() as db:
             db.execute("BEGIN IMMEDIATE")
             active = db.execute(
                 "SELECT id FROM missions WHERE status='running' LIMIT 1"
@@ -145,7 +145,7 @@ class MissionQueue:
             status = result.get("status")
             if status not in {"completed", "partial", "cancelled"}:
                 status = "partial"
-            with self._connect() as db:
+            with self._session() as db:
                 db.execute(
                     "UPDATE missions SET status=CASE WHEN cancel_requested_at IS NOT NULL THEN 'cancelled' ELSE ? END,"
                     "finished_at=?,result=? WHERE id=? AND status='running'",
@@ -156,7 +156,7 @@ class MissionQueue:
                 status = "cancelled"
             return {"id": row["id"], "status": status, "result": result}
         except Exception as exc:  # noqa: BLE001 - journalise uniquement le type, jamais le contenu sensible
-            with self._connect() as db:
+            with self._session() as db:
                 db.execute(
                     "UPDATE missions SET status=CASE WHEN cancel_requested_at IS NOT NULL THEN 'cancelled' ELSE 'failed' END,"
                     "finished_at=?,error_type=? WHERE id=? AND status='running'",
@@ -180,7 +180,7 @@ class MissionQueue:
         ):
             raise ValueError("Le délai de récupération doit être d'au moins 180 secondes.")
         cutoff = (datetime.now(UTC) - timedelta(seconds=stale_after_seconds)).isoformat(timespec="seconds")
-        with self._connect() as db:
+        with self._session() as db:
             result = db.execute(
                 "UPDATE missions SET status='interrupted',finished_at=? "
                 "WHERE status='running' AND started_at IS NOT NULL AND started_at < ?",
