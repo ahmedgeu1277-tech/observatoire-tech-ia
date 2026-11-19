@@ -180,6 +180,31 @@ jobs:
               }
             }
 
+            // Le documentaire propose les mêmes sept langues pour ses libellés d'interface.
+            const documentary = await page.goto('http://127.0.0.1:4173/site/documentaire-test.html', { waitUntil: 'domcontentloaded' });
+            if (!documentary || !documentary.ok()) {
+              failures.push('Documentaire : impossible à charger.');
+            } else {
+              const documentarySelector = page.locator('#language');
+              if (await documentarySelector.count() !== 1) {
+                failures.push('Documentaire : sélecteur de langue absent.');
+              } else {
+                for (const lang of ['en', 'es', 'de', 'pt', 'ar', 'zh', 'fr']) {
+                  await documentarySelector.selectOption(lang);
+                  const actual = await page.locator('html').evaluate(el => ({lang: el.lang, dir: el.dir}));
+                  if (actual.lang !== lang) failures.push('Documentaire : langue non appliquée : ' + lang);
+                  const expectedDir = lang === 'ar' ? 'rtl' : 'ltr';
+                  if (actual.dir !== expectedDir) failures.push('Documentaire : direction incorrecte pour ' + lang);
+                }
+                await documentarySelector.selectOption('ar');
+                await page.reload({waitUntil: 'domcontentloaded'});
+                const saved = await page.locator('html').evaluate(el => ({lang: el.lang, dir: el.dir}));
+                if (saved.lang !== 'ar' || saved.dir !== 'rtl') failures.push('Documentaire : préférence arabe non mémorisée après rechargement.');
+                const headings = await page.locator('.sources-heading').allTextContents();
+                if (headings.length !== 4 || headings.some(text => text !== 'المصادر')) failures.push('Documentaire : tous les libellés des sources ne sont pas traduits.');
+              }
+            }
+
             // La ville est volontairement retirée du site public : elle ne doit pas exposer
             // son état interne tant qu'un backend privé avec authentification n'existe pas.
             const privateCity = await page.request.get('http://127.0.0.1:4173/site/ville-virtuelle.html');
