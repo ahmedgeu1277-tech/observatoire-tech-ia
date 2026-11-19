@@ -61,7 +61,7 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           GROQ_MODEL: ${{ vars.GROQ_MODEL || 'openai/gpt-oss-20b' }}
           HF_MODEL: ${{ vars.HF_MODEL || 'Qwen/Qwen2.5-7B-Instruct' }}
-          AI_PROVIDER_ORDER: ${{ vars.AI_PROVIDER_ORDER || 'groq,huggingface' }}
+          AI_PROVIDER_ORDER: ${{ vars.AI_PROVIDER_ORDER || 'groq' }}
         run: |
           if [ -z "$GROQ_API_KEY" ] && [ -z "$HF_API_KEY" ] && [ -z "$HF_TOKEN" ]; then
             echo "::error::Configure au moins un secret IA : GROQ_API_KEY ou HF_API_KEY/HF_TOKEN."
