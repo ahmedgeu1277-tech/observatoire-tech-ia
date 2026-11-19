@@ -3,11 +3,16 @@
 Les clés sont lues uniquement depuis l'environnement d'exécution.
 Aucune clé n'est écrite dans les fichiers ou les journaux.
 """
+import math
 import os
 
 
 def generate_text(messages, max_tokens=1200, temperature=0.25, json_mode=False, timeout=60):
     """Essaie les fournisseurs configurés, sans rendre un fournisseur unique obligatoire."""
+    if isinstance(timeout, bool) or not isinstance(timeout, (int, float)) or not math.isfinite(timeout) or timeout <= 0:
+        raise ValueError("Le délai timeout doit être un nombre fini strictement positif.")
+    if isinstance(max_tokens, bool) or not isinstance(max_tokens, int) or max_tokens < 1:
+        raise ValueError("max_tokens doit être un entier strictement positif.")
     failures = []
     groq_key = os.getenv("GROQ_API_KEY")
     hf_key = os.getenv("HF_API_KEY") or os.getenv("HF_TOKEN")
