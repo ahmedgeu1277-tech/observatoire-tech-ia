@@ -1,5 +1,36 @@
 [
   {
+    "id": "20261119T185257-97805821",
+    "date": "2026-11-19T18:52+00:00",
+    "theme": "Technologie, IA et jeux vidéo — veille générale de secours",
+    "title": "GTA 6 piraté et licenciements chez Ubisoft",
+    "summary": "Des millions de joueurs Xbox ont exploité une « astuce néo‑zélandaise » pour accéder à GTA 6 avant son lancement officiel, soulevant des questions de sécurité. Parallèlement, Ubisoft a confirmé la suppression de 166 postes dans deux studios majeurs, ce qui pourrait freiner l’innovation à moyen terme, bien que l’impact exact sur ses projets reste incertain.",
+    "verdict": "Les faits sont confirmés par IGN France. Les implications pour l’industrie restent à observer.",
+    "tip": "Surveillez les mises à jour de Rockstar et les annonces d’Ubisoft pour comprendre l’impact des licenciements.",
+    "sources": [
+      {
+        "title": "Plusieurs millions de joueurs Xbox ont utilisé \"l'astuce néo-zélandaise\" pour jouer à GTA 6 avant tout le monde",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 18:45:54 +0000",
+        "description": "Bande d'impatients.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94101/plusieurs-millions-de-joueurs-xbox-ont-utilise-lastuce-neo-zelandaise-pour-jouer-a-gta-6-avant-tout",
+        "source_type": "media"
+      },
+      {
+        "title": "Ubisoft confirme de nouveaux licenciements : 166 emplois sont supprimés au sein de deux studios majeurs",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 17:37:12 +0000",
+        "description": "Perte de personnel dans des bureaux importants à Montréal et au Québec.",
+        "url": "https://fr.ign.com/assassins-creed-codename-red/94097/ubisoft-confirme-de-nouveaux-licenciements-166-emplois-sont-supprimes-au-sein-de-deux-studios-majeur",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261119T185257-97805821.mp3"
+  },
+  {
     "id": "20261119T185142-92ad4b88",
     "date": "2026-11-19T18:51+00:00",
     "theme": "Innovation et IA dans le gaming et au-delà",
@@ -1175,63 +1206,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261118T194550-dd9e6793.mp3"
-  },
-  {
-    "id": "20261118T095053-7b310326",
-    "date": "2026-11-18T09:50+00:00",
-    "theme": "GTA VI — préparation du lancement en Thaïlande",
-    "title": "GTA VI : les sources ne précisent pas la Thaïlande",
-    "summary": "Les sources consultées abordent l'actualité de GTA VI, mais aucune ne mentionne la Thaïlande. Elles ne permettent donc pas de confirmer la disponibilité du jeu ni son heure de lancement dans ce pays. Les informations régionales doivent être vérifiées auprès de l'éditeur et de la boutique officielle de la région concernée.",
-    "verdict": "Disponibilité en Thaïlande non confirmée par les sources consultées.",
-    "tip": "Consulter les annonces de l'éditeur et la boutique officielle de la région avant de conclure.",
-    "sources": [
-      {
-        "title": "Avant la sortie de GTA 6, Sony publie un dernier avertissement contre les hackers de la PlayStation",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 08:42:27 +0000",
-        "description": "Quand est-ce que ce petit jeu du chat et de la souris s'arrêtera ?",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94030/avant-la-sortie-de-gta-6-sony-publie-un-dernier-avertissement-contre-les-hackers-de-la-playstation",
-        "source_type": "media"
-      },
-      {
-        "title": "Le terrain GTA 6 Vice City de la NBA dévoilé par Miami Heat",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 06:50:33 +0000",
-        "description": "Le reste de la ligue doit être bien jaloux.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94025/le-terrain-gta-6-vice-city-de-la-nba-devoile-par-miami-heat",
-        "source_type": "media"
-      },
-      {
-        "title": "Les fans de GTA 6 sont surpris que l'acteur de Jason ne soit pas nommés aux Game Awards",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 06:43:04 +0000",
-        "description": "Snobbé.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94024/les-fans-de-gta-6-sont-surpris-que-lacteur-de-jason-ne-soit-pas-nommes-aux-game-awards",
-        "source_type": "media"
-      },
-      {
-        "title": "Les nominations des Game Awards 2026 dévoilées : GTA 6 en tête",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Tue, 17 Nov 2026 17:51:18 +0000",
-        "description": "Le nommé du turfu",
-        "url": "https://fr.ign.com/project-007/94022/les-nominations-des-game-awards-2026-devoilees-gta-6-en-tete",
-        "source_type": "media"
-      },
-      {
-        "title": "Sortie de GTA VI : à quelle heure les joueurs français pourront-ils commencer leur aventure ce jeudi ?",
-        "publisher": "msn.com",
-        "domain": "msn.com",
-        "published": "Wed, 18 Nov 2026 00:40:50 GMT",
-        "description": "Après deux reports, un des jeux vidéo les plus attendus de la décennie sort ce jeudi sur PS5 et Xbox Series X|S.",
-        "url": "https://www.msn.com/fr-fr/gaming/jeux-rockstar/sortie-de-gta-vi-%C3%A0-quelle-heure-les-joueurs-fran%C3%A7ais-pourront-ils-commencer-leur-aventure-ce-jeudi/ar-AA2hGg4C",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261118T095053-7b310326.mp3"
   }
 ]
