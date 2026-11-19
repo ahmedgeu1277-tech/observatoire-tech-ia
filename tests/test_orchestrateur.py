@@ -98,6 +98,21 @@ class MissionValidationTests(unittest.TestCase):
             self.assertEqual(stat.S_IMODE(Path(report["report_path"]).stat().st_mode), 0o600)
 
     @patch("orchestrateur.generate_text")
+    def test_rejects_generated_output_containing_potential_secret(self, generate):
+        secret = "gsk_ABCDEFGHIJKLMNOPQRSTUVWXYZ123456"
+        generate.return_value = (f"Analyse contenant {secret}", "groq")
+        with tempfile.TemporaryDirectory() as folder:
+            report = orchestrateur.executer_mission(
+                {"mission": "Tester le filtrage des sorties", "agents": ["chercheur"]},
+                Path(folder),
+            )
+            saved_text = Path(report["report_path"]).read_text(encoding="utf-8")
+        self.assertEqual(report["status"], "partial")
+        self.assertEqual(report["results"][0]["status"], "failed")
+        self.assertEqual(report["results"][0]["error_type"], "PotentialSecretDetected")
+        self.assertNotIn(secret, saved_text)
+
+    @patch("orchestrateur.generate_text")
     def test_stops_after_provider_failure(self, generate):
         generate.side_effect = RuntimeError("provider unavailable")
         with tempfile.TemporaryDirectory() as folder:
