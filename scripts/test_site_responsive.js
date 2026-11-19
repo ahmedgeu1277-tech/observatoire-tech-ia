@@ -63,6 +63,23 @@ async function inspectPage(browser, route, viewport) {
     if (await page.locator("#articles > .article").count() < 1) {
       fail("Accueil : aucune carte d'actualité n'est affichée.");
     }
+    const sourceLabels = page.locator('#articles [data-article-label="sources"]');
+    if (await sourceLabels.count() < 1) {
+      fail("Accueil : libellé de source introuvable pour vérifier les traductions.");
+    } else {
+      await page.selectOption("#language", "de");
+      const germanSources = await sourceLabels.first().textContent();
+      if (germanSources !== "Quellen") fail("Accueil : le libellé dynamique des sources n'est pas traduit en allemand.");
+      await page.selectOption("#language", "ar");
+      const arabic = await page.evaluate(() => ({
+        direction: document.documentElement.dir,
+        sources: document.querySelector('#articles [data-article-label="sources"]')?.textContent,
+      }));
+      if (arabic.direction !== "rtl" || arabic.sources !== "المصادر") {
+        fail("Accueil : la traduction arabe dynamique ou le sens RTL est incorrect.");
+      }
+      await page.selectOption("#language", "fr");
+    }
     const audioControls = await page.locator("audio").evaluateAll(nodes =>
       nodes.every(node => node.controls)
     );
