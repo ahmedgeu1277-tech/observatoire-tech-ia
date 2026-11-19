@@ -60,7 +60,7 @@ jobs:
           python -c "import json; json.load(open('themes.json', encoding='utf-8')); json.load(open('site/articles.json', encoding='utf-8')); print('Fichiers JSON valides')"
       - name: Générer les données de la ville virtuelle
         run: python gouvernement.py
-      - name: Générer un article
+      - name: Générer et publier un article sans écraser les changements concurrents
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           HF_API_KEY: ${{ secrets.HF_API_KEY }}
@@ -73,22 +73,30 @@ jobs:
             echo "::error::Configure au moins un secret IA : GROQ_API_KEY ou HF_API_KEY/HF_TOKEN."
             exit 1
           fi
-          python main.py
-          python healthcheck.py
-      - name: Enregistrer le site
-        if: success()
-        run: |
           git config user.name "Usine IA Tech & Gaming"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          mkdir -p site/audio
-          touch journal_conformite_legale.txt
-          for path in site/articles.json site/audio memoire_tech.txt .theme-index journal_conformite_legale.txt; do
-            if [ -e "$path" ]; then git add -A -- "$path"; fi
+          for attempt in 1 2 3; do
+            echo "Publication : tentative $attempt/3"
+            git fetch origin main
+            git reset --hard origin/main
+            git clean -fd site/audio
+            mkdir -p site/audio
+            python main.py
+            python healthcheck.py
+            touch journal_conformite_legale.txt
+            for path in site/articles.json site/audio memoire_tech.txt .theme-index journal_conformite_legale.txt; do
+              if [ -e "$path" ]; then git add -A -- "$path"; fi
+            done
+            if git diff --cached --quiet; then
+              echo "Aucun changement à enregistrer."
+              exit 0
+            fi
+            git commit -m "Publication automatique d'un article IA"
+            if git push origin HEAD:main; then
+              echo "Publication enregistrée."
+              exit 0
+            fi
+            echo "::warning::La branche main a changé pendant la publication ; nouvelle tentative sur la dernière version."
           done
-          if git diff --cached --quiet; then
-            echo "Aucun changement à enregistrer."
-            exit 0
-          fi
-          git commit -m "Publication automatique d'un article IA"
-          git pull --rebase origin main
-          git push
+          echo "::error::Publication impossible après trois tentatives."
+          exit 1
