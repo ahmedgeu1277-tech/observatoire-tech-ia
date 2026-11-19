@@ -1,5 +1,36 @@
 [
   {
+    "id": "20261119T185533-8b7fb8c5",
+    "date": "2026-11-19T18:55+00:00",
+    "theme": "Actualités intelligence artificielle",
+    "title": "OpenAI lance la Performance Factory pour maintenir ChatGPT rapide",
+    "summary": "OpenAI a dévoilé la Performance Factory, un ensemble de flux de travail alimentés par Codex qui détecte et corrige les goulets d’étranglement de performance afin de garder ChatGPT réactif. Le système, détaillé dans un article de l’éditeur, promet une amélioration continue, mais son efficacité réelle dans des environnements variés reste à confirmer. Les rapports internes soulignent que les agents de codage accélèrent la recherche en IA, bien que leurs performances restent inégales, introduisant une incertitude sur la rapidité et la stabilité de l’amélioration récursive.",
+    "verdict": "Les informations proviennent exclusivement des communiqués d’OpenAI.",
+    "tip": "Les lecteurs intéressés par la performance des modèles de langage devraient surveiller les tests d’intégration de la Performance Factory dans des cas d’usage réels.",
+    "sources": [
+      {
+        "title": "How OpenAI’s Performance Factory keeps ChatGPT fast",
+        "publisher": "OpenAI",
+        "domain": "openai.com",
+        "published": "Thu, 19 Nov 2026 08:00:00 GMT",
+        "description": "Learn how OpenAI built the Performance Factory, a system of Codex-powered workflows that finds and fixes performance issues to help keep ChatGPT fast.",
+        "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
+        "source_type": "source_editeur"
+      },
+      {
+        "title": "Research acceleration: The jagged frontier",
+        "publisher": "OpenAI",
+        "domain": "openai.com",
+        "published": "Wed, 18 Nov 2026 08:00:00 GMT",
+        "description": "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement.",
+        "url": "https://openai.com/index/research-acceleration-jagged-frontier",
+        "source_type": "source_editeur"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261119T185533-8b7fb8c5.mp3"
+  },
+  {
     "id": "20261119T185257-97805821",
     "date": "2026-11-19T18:52+00:00",
     "theme": "Technologie, IA et jeux vidéo — veille générale de secours",
@@ -1148,63 +1179,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261118T194922-2ce4acdb.mp3"
-  },
-  {
-    "id": "20261118T194550-dd9e6793",
-    "date": "2026-11-18T19:45+00:00",
-    "theme": "GTA VI — lancement et premiers retours vérifiés",
-    "title": "GTA VI : records de streaming et premières critiques",
-    "summary": "Le lancement de GTA VI a brisé les records de streaming avant même la sortie mondiale, selon IGN France. Les premiers retours soulignent une expérience de jeu très « doomscrolleeuse » et un contenu 18+ qui pourrait limiter l’audience. Le président de Rockstar, Sam Houser, a affirmé que le jeu « dépassera vos attentes », mais la mise à jour 1.002.000, obligatoire pour jouer, soulève des questions de stabilité. Les sources ne précisent pas encore l’impact réel de cette mise à jour.",
-    "verdict": "Les informations proviennent exclusivement d’articles IGN France et d’un communiqué de Rockstar. Les observations sur la jouabilité restent provisoires, sans données de ventes ni enquêtes utilisateurs.",
-    "tip": "Surveillez les retours post‑lancement et les mises à jour pour évaluer la stabilité et l’accessibilité du jeu.",
-    "sources": [
-      {
-        "title": "GTA 6 bat tous les records de streaming avant même sa sortie mondiale",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 18:54:26 +0000",
-        "description": "Si on ne fait qu'en parler, ça compte ?",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94079/gta-6-bat-tous-les-records-de-streaming-avant-meme-sa-sortie-mondiale",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 : le jeu 18+ ultime ?",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 16:03:14 +0000",
-        "description": "La question à un million d’euros et à 6 étoiles.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94041/gta-6-le-jeu-18-ultime",
-        "source_type": "media"
-      },
-      {
-        "title": "Dans GTA 6, vous serez obligé de doomscroller si vous voulez voir tout ce que le jeu a à offrir",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 16:00:35 +0000",
-        "description": "Scroller, encore scroller, toujours scroller...",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94069/dans-gta-6-vous-serez-oblige-de-doomscroller-si-vous-voulez-voir-tout-ce-que-le-jeu-a-a-offrir",
-        "source_type": "media"
-      },
-      {
-        "title": "Le président de Rockstar, Sam Houser, prend la parole pour célébrer le lancement de GTA 6",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 15:31:59 +0000",
-        "description": "\"Nous avons cherché à créer une expérience qui dépassera vos attentes.\"",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94071/le-president-de-rockstar-sam-houser-prend-la-parole-pour-celebrer-le-lancement-de-gta-6",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 : la mise à jour 1.002.000 est obligatoire pour jouer, voici ce qu’elle contient",
-        "publisher": "big-n.fr",
-        "domain": "news.google.com",
-        "published": "Fri, 13 Nov 2026 14:20:45 GMT",
-        "description": "GTA 6 : la mise à jour 1.002.000 est obligatoire pour jouer, voici ce qu’elle contient    big-n.fr",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB6SHhSMEVYal9QemZqcC1ERTRGZmVIVGxBTWlENW1LOE9qZUN4cnZrOUdzNFA1VHhSdlBEckNUeWZlTTFsV2hpZ2dzZHJIR1JOTzlnMFJEZnZXYl9GZFh4VjU4R1ZCSEFEQVRMLUZfUDI2S3FEQkV2aEJEWm52dk0?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261118T194550-dd9e6793.mp3"
   }
 ]
