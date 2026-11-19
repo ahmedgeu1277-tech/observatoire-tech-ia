@@ -1,5 +1,63 @@
 [
   {
+    "id": "20261119T182651-f78b016d",
+    "date": "2026-11-19T18:26+00:00",
+    "theme": "Calendrier des sorties jeux vidéo 2026 et annonces",
+    "title": "Calendrier des sorties jeux vidéo 2026 et annonces : détails chiffrés non confirmés",
+    "summary": "Les sources consultées mentionnent Calendrier des sorties jeux vidéo 2026 et annonces, mais elles ne fournissent pas suffisamment d'éléments pour confirmer les caractéristiques chiffrées avancées. Les performances, la compatibilité et les spécifications techniques doivent être vérifiées dans les fiches officielles.",
+    "verdict": "Les chiffres et caractéristiques détaillés ne sont pas établis par les sources consultées.",
+    "tip": "Consulter les annonces et fiches techniques officielles avant de retenir des chiffres précis.",
+    "sources": [
+      {
+        "title": "Rockstar publie les crédits complets de GTA 6 — c'est cool pour les équipes, mais attention aux spoilers",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 17:54:46 +0000",
+        "description": "La prudence est de mise.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94098/rockstar-publie-les-credits-complets-de-gta-6-cest-cool-pour-les-equipes-mais-attention-aux-spoilers",
+        "source_type": "media"
+      },
+      {
+        "title": "Ubisoft confirme de nouveaux licenciements : 166 emplois sont supprimés au sein de deux studios majeurs",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 17:37:12 +0000",
+        "description": "Perte de personnel dans des bureaux importants à Montréal et au Québec.",
+        "url": "https://fr.ign.com/assassins-creed-codename-red/94097/ubisoft-confirme-de-nouveaux-licenciements-166-emplois-sont-supprimes-au-sein-de-deux-studios-majeur",
+        "source_type": "media"
+      },
+      {
+        "title": "Clair Obscur : Expedition 33 : deux drapeaux officiels pour décorer votre mur, ce qu’il faut savoir avant de précommander",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 16:44:48 +0000",
+        "description": "Oh hisse ! Paré pour l’Expedition.",
+        "url": "https://fr.ign.com/clair-obscur-expedition-33/94094/clair-obscur-expedition-33-deux-drapeaux-officiels-pour-decorer-votre-mur-ce-quil-faut-savoir-avant",
+        "source_type": "media"
+      },
+      {
+        "title": "Les acteurs de Jason et Lucia dans GTA 6 posent ensemble sur une première photo",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 15:14:47 +0000",
+        "description": "\"Et voilà... le secret est enfin dévoilé !\"",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94092/les-acteurs-de-jason-et-lucia-dans-gta-6-posent-ensemble-sur-une-premiere-photo",
+        "source_type": "media"
+      },
+      {
+        "title": "PS5 : tous les jeux à venir en 2026 et 2027",
+        "publisher": "Red Bull",
+        "domain": "news.google.com",
+        "published": "Tue, 17 Nov 2026 13:17:34 GMT",
+        "description": "PS5 : tous les jeux à venir en 2026 et 2027    Red Bull",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1VdHBZdk03TmVGeTBKbHNZN0QxU3lfVXEwR3FCamJvbGlGQ2pyd2pnOW1wUHlYbGx0a2tCdnJNMkJRTEZ3SUdWU2h2THRucUlxdzRCSm9JeDc2dw?oc=5",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261119T182651-f78b016d.mp3"
+  },
+  {
     "id": "20261119T182305-0d81583e",
     "date": "2026-11-19T18:23+00:00",
     "theme": "Veille générale — résumé documentaire de secours",
@@ -1130,54 +1188,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261117T183458-77b97af1.mp3"
-  },
-  {
-    "id": "20261117T095158Z",
-    "date": "2026-11-17T09:51+00:00",
-    "theme": "Roblox et création de jeux",
-    "title": "Roblox met l’IA au cœur du prototypage de jeux",
-    "summary": "Roblox a annoncé que l’intelligence artificielle ne remplace pas les créateurs mais accélère le prototypage, selon l’interview de Chichine. Le développeur explique que partir d’une idée simple permet de bâtir des expériences ambitieuses grâce à l’IA, tout en conservant le contrôle créatif. Les nouveaux jeux du mois, présentés par Roblox, illustrent cette approche. Les utilisateurs peuvent ainsi tester rapidement leurs concepts, mais la plateforme ne précise pas encore les limites techniques de l’IA.",
-    "verdict": "Les déclarations de Chichine confirment l’usage de l’IA comme accélérateur, sans toutefois détailler son impact sur la qualité finale.",
-    "tip": "Les créateurs intéressés devraient expérimenter les outils IA de Roblox tout en surveillant les retours communautaires.",
-    "sources": [
-      {
-        "title": "Les nouveaux jeux incontournables à découvrir sur Roblox ce mois-ci",
-        "publisher": "Roblox",
-        "domain": "news.google.com",
-        "published": "Mon, 16 Nov 2026 17:02:44 GMT",
-        "description": "Les nouveaux jeux incontournables à découvrir sur Roblox ce mois-ci    Roblox",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNWk9vaVh0NXBWTlZCRzFId3ptSjQwZXZ3aG9MUWhod0prdC1yb0ZORVo2M3NkbDI1QXpiSVgzNnRaVkFqcUE3WHhZcGlicndSWFRsZ2Z4bTFVYjNacHRvZHljUWVuaFNRbUlqSFFKVWdQZVhwQjdaamZ3aFR0Q1M5MlRoN1A4Q3o5RmNwNUZ1Tjl2bF9CNnNGd2xrN0duZw?oc=5",
-        "source_type": "media"
-      },
-      {
-        "title": "Dans les coulisses de Roblox : le créateur Chichine nous dévoile les clés de son succès",
-        "publisher": "gamewave",
-        "domain": "news.google.com",
-        "published": "Sat, 14 Nov 2026 10:00:00 GMT",
-        "description": "Dans les coulisses de Roblox : le créateur Chichine nous dévoile les clés de son succès    gamewave",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOMEVTdl9LT0VvMU4tcXlhQ2twT3hKanp0VUVNU3lWWjBGLXpVU1lCWlpSNXVWbXh1eWxrb3Aydk1KQ09VYzVxOHd5SzZ6SU9leXBBN24yV3JlRTJJSFJlV3hkbEhYUGdzVC1tY1NDaTVPbVV6c3kyMW0xTHZEVmhqaTZjZ0RkcVhiYWh4M2JOMnViZUU1ZXExQTNFY3ZnWkMtS3NjSnIwM0tPblJkd0YxSHM4MA?oc=5",
-        "source_type": "media"
-      },
-      {
-        "title": "Roblox : « On peut partir d'une idée simple et créer des expériences ambitieuses », nous confie Chichine",
-        "publisher": "gamewave",
-        "domain": "news.google.com",
-        "published": "Fri, 13 Nov 2026 14:40:00 GMT",
-        "description": "Roblox : « On peut partir d'une idée simple et créer des expériences ambitieuses », nous confie Chichine    gamewave",
-        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOMkVmNFZwV3lmaHNXdm1qY2YwYTFEY09YV0V3cGVuN0szMW94dUcwTkZCLUJNeUtDVGZiQnRuekdzRnRLNTloazJrWGJTMnczT0dLaWR2M1NQOWdRSk1xbVBrUTAzUGhPa2Fvb290Q3dNT29DQXE0R2tYTVF6TjhERXFCb2hadkE3UXNoLU8yTzZ4QVl0eWl5Q0p4Wk8zbFA5ZEhlWFlfN3FVaHpvWlgxdnZHMWp5Z0wxRnE1WkdpZFo4RTA?oc=5",
-        "source_type": "media"
-      },
-      {
-        "title": "Roblox : « L'IA ne remplace pas le travail, mais elle accélère le prototypage », nous confie Chichine",
-        "publisher": "gamewave",
-        "domain": "news.google.com",
-        "published": "Mon, 16 Nov 2026 13:13:00 GMT",
-        "description": "Roblox : « L'IA ne remplace pas le travail, mais elle accélère le prototypage », nous confie Chichine    gamewave",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNTGc3aEE0el9VWkYwc01xcExJRnB6QTNsZmpTTGx3Wl9TMzNiMnNfc3ZLWmxBRGQ3M1BWSjJCNHVEb1ZmelhidzJqd0JRS05oVG9FaXBrNUgwTUtBQVdRUnBSQi02eDBHZm9VS1E0cC1FeW96T2JmTlFfWTJxSk9OS0phVVVOOE13RTZDaDA5eWxXX3kxSldOT2lrMWtneTRFYUpGUjlFMkxBWHRNbHBtU0NMQ2tFT2oxcTlzbmdB?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261117T095158Z.mp3"
   }
 ]
