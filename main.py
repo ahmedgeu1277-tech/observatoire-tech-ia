@@ -786,9 +786,9 @@ def main():
         )
         try:
             article = create_article(fallback_theme, fallback_sources, fallback_reports)
-        except ValueError as fallback_error:
+        except (ValueError, RuntimeError) as fallback_error:
             print(
-                "AVERTISSEMENT : la seconde rédaction IA reste bloquée par les contrôles "
+                "AVERTISSEMENT : la seconde rédaction IA est indisponible ou reste bloquée par les contrôles "
                 f"({type(fallback_error).__name__}). Création d'un résumé documentaire neutre."
             )
             article = build_safe_fallback_article(fallback_theme, fallback_sources)
