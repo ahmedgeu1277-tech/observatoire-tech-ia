@@ -6,6 +6,7 @@ n'est exécuté, aucune publication ni action sur un compte n'est autorisée.
 from __future__ import annotations
 
 import json
+import os
 import sys
 import time
 from collections.abc import Callable
@@ -157,13 +158,17 @@ def executer_mission(
         },
     }
     destination = output_dir or PRIVATE_DIR
-    destination.mkdir(parents=True, exist_ok=True)
+    destination.mkdir(parents=True, exist_ok=True, mode=0o700)
+    if os.name != "nt":
+        os.chmod(destination, 0o700)
     target = destination / f"{report['id']}.json"
     temporary = target.with_suffix(".json.tmp")
     temporary.write_text(
         json.dumps(report, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
+    if os.name != "nt":
+        os.chmod(temporary, 0o600)
     temporary.replace(target)
     report["report_path"] = str(target)
     return report
