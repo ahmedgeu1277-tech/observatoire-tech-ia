@@ -28,14 +28,13 @@ MAX_DYNAMIC_AGENTS = 2
 SOURCE_EDITOR_DOMAINS = {
     "rockstargames.com", "openai.com", "deepmind.google", "huggingface.co",
     "unity.com", "blog.unity.com", "unrealengine.com", "godotengine.org",
-    "gamemaker.io", "roblox.com", "epicgames.com", "microsoft.com",
+    "gamemaker.io", "epicgames.com", "microsoft.com",
     "google.com", "sony.com", "playstation.com", "nintendo.com", "apple.com",
     "samsung.com", "nvidia.com", "amd.com", "intel.com", "meta.com",
     "anthropic.com", "mistral.ai",
 }
 ORGANIZATION_DOMAINS = {
     "Rockstar": {"rockstargames.com"},
-    "Roblox": {"roblox.com"},
     "Epic Games": {"epicgames.com", "unrealengine.com"},
     "Unity": {"unity.com", "blog.unity.com"},
     "Godot": {"godotengine.org"},
