@@ -1,5 +1,54 @@
 [
   {
+    "id": "20261119T184429-c597ba1f",
+    "date": "2026-11-19T18:44+00:00",
+    "theme": "GTA VI — lancement et premiers retours vérifiés",
+    "title": "GTA VI lancé sur Xbox Series S avec FSR 4.1, premiers retours mitigés",
+    "summary": "Le nouveau titre de Rockstar North est disponible sur Xbox Series S, où il utilise la technologie FSR 4.1 pour upscaler le rendu de 720 p à 1080 p, indiquant une optimisation ciblée pour les consoles de génération précédente. Les premiers retours soulignent que l’impact réel sur la performance globale reste à confirmer. Le studio a publié les crédits complets, révélant la taille et la diversité de l’équipe, mais sans détailler les contributions individuelles, ce qui limite la compréhension précise de la répartition des rôles.",
+    "verdict": "Les informations proviennent d’articles IGN France et d’une source Xboxygen. Les performances exactes de FSR 4.1 sur Xbox Series S ne sont pas encore confirmées par des tests indépendants.",
+    "tip": "Pour plus de détails sur les performances, surveillez les tests de benchmarks à venir.",
+    "sources": [
+      {
+        "title": "Le codirecteur du studio Rockstar North explique pouquoi vous ne pourrez pas aller à Disney World dans GTA 6",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 18:26:25 +0000",
+        "description": "Mickey n'a pas eu son visa pour Vice City.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94099/le-codirecteur-du-studio-rockstar-north-explique-pouquoi-vous-ne-pourrez-pas-aller-a-disney-world-da",
+        "source_type": "media"
+      },
+      {
+        "title": "Rockstar publie les crédits complets de GTA 6 — c'est cool pour les équipes, mais attention aux spoilers",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 17:54:46 +0000",
+        "description": "La prudence est de mise.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94098/rockstar-publie-les-credits-complets-de-gta-6-cest-cool-pour-les-equipes-mais-attention-aux-spoilers",
+        "source_type": "media"
+      },
+      {
+        "title": "GTA 6 utilise la technologie FSR 4.1 sur Xbox Series S pour upscaler le jeu de 720p à 1080p",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 14:48:25 +0000",
+        "description": "Redstone, voici GTA.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94091/gta-6-utilise-la-technologie-fsr-41-sur-xbox-series-s-pour-upscaler-le-jeu-de-720p-a-1080p",
+        "source_type": "media"
+      },
+      {
+        "title": "GTA 6 est bien disponible en avance sur Xbox, l’astuce fonctionne et voici comment faire",
+        "publisher": "Xboxygen",
+        "domain": "news.google.com",
+        "published": "Mon, 16 Nov 2026 09:29:03 GMT",
+        "description": "GTA 6 est bien disponible en avance sur Xbox, l’astuce fonctionne et voici comment faire    Xboxygen",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE81U0VpSXNhQlZjV2w5OWtVcmE1eWxkSVFpdG1ZY21sN1prc3VkMXc3Uko2VjBVUW5aMW1kWHpJTDdsNHlWRWVYcVhQa2NlNzV6X1VmeXUyei0ycVpFQ1FOd2NNX3hfdE1NRUJaS0tjY2RwSjYzOVRCclFfay1fQQ?oc=5",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261119T184429-c597ba1f.mp3"
+  },
+  {
     "id": "20261119T184132-02035177",
     "date": "2026-11-19T18:41+00:00",
     "theme": "Veille générale — résumé documentaire de secours",
@@ -1175,27 +1224,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261117T200811-74ceca99.mp3"
-  },
-  {
-    "id": "20261117T184859-bc5208b0",
-    "date": "2026-11-17T18:48+00:00",
-    "theme": "Call of Duty: Modern Warfare 4 — suivi après lancement (23 octobre 2026)",
-    "title": "Call of Duty: Modern Warfare 4 : détails chiffrés non confirmés",
-    "summary": "Les sources consultées mentionnent Call of Duty: Modern Warfare 4, mais elles ne fournissent pas suffisamment d'éléments pour confirmer les dates et caractéristiques chiffrées avancées. Les détails précis de lancement, de performances et de compatibilité doivent être vérifiés dans les annonces et fiches techniques officielles.",
-    "verdict": "Les chiffres et caractéristiques détaillés ne sont pas établis par les sources consultées.",
-    "tip": "Consulter les annonces et fiches techniques officielles avant de retenir des chiffres précis.",
-    "sources": [
-      {
-        "title": "Modern Warfare 4 confirme le retour d'un mode tant attendu en saison 2 et Warzone en profitera aussi",
-        "publisher": "msn.com",
-        "domain": "msn.com",
-        "published": "Sat, 14 Nov 2026 00:00:49 GMT",
-        "description": "Privés de parties classées depuis le lancement de Modern Warfare 4, les joueurs tenaient Infinity Ward sous pression. Saison 2, Warzone, règles façon CDL : jusqu’où ira ce virage compétitif ?",
-        "url": "https://www.msn.com/fr-fr/gaming/prochaines-sorties-jeux/modern-warfare-4-confirme-le-retour-d-un-mode-tant-attendu-en-saison-2-et-warzone-en-profitera-aussi/ar-AA2hpEzq",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261117T184859-bc5208b0.mp3"
   }
 ]
