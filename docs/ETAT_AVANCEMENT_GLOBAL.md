@@ -11,6 +11,15 @@ Dernière évaluation fonctionnelle détaillée : 18 novembre 2026. Audit GitHub
 - Le dernier contrôle réel des fournisseurs a confirmé Groq fonctionnel et Hugging Face bloqué par une demande de crédits prépayés. Le workflow utilise donc Groq par défaut ; Hugging Face reste une option explicite, mais n'est pas garanti gratuit.
 - La configuration des fournisseurs refuse désormais les noms inconnus ou une liste vide. Les appels de chaque agent reçoivent un délai plafonné par le temps restant de la mission. Des tests couvrent ces validations et les limites de paramètres.
 
+
+## Correctifs supplémentaires du 19 novembre 2026
+
+- Le diagnostic de dépôt valide les structures JSON, les champs des articles, les identifiants uniques, les liens HTTPS sans identifiants intégrés, les fichiers audio présents et confinés au dossier public audio, ainsi que l'absence de données de ville dans le site public. Dernière mesure de publication observée : 30 articles, 88 liens de source, 29 fichiers audio et cinq profils d'agents configurés (non exécutés en continu).
+- La file SQLite ferme désormais ses connexions dans un gestionnaire de contexte unique. L'ajout d'une mission verrouille la transaction avant de compter les missions en attente, afin d'éviter de dépasser la limite de 50 en cas d'ajouts simultanés. Les tests vérifient la fermeture des connexions et le plafond.
+- Le mécanisme de publication supporte désormais l'indisponibilité du fournisseur IA ou un quota atteint : après une nouvelle tentative sur un sujet général, le système peut publier un résumé documentaire neutre, limité aux liens HTTPS valides. Il ne confirme aucune annonce, date, prix ou caractéristique et ne contourne jamais les contrôles factuels. Un cycle réel GitHub Actions du 19 novembre a réussi avec ce mode de secours lorsque Groq a renvoyé une limitation de quota.
+- La suite de tests Python atteint 121 tests réussis sur le commit `c9770729`. Ruff, Bandit, Gitleaks, CodeQL Python et JavaScript et les tests navigateur ont également terminé avec succès sur ce commit. Le correctif des avertissements de coroutine dans les tests a ensuite été ajouté ; sa validation est en cours.
+- Ces améliorations renforcent la fiabilité des tâches ponctuelles ; elles ne transforment pas GitHub Actions en serveur permanent et ne réalisent pas encore les missions autonomes de plusieurs heures ou jours.
+
 ## Résultat
 
 **Estimation pondérée recalculée : 55,89 / 100.**
