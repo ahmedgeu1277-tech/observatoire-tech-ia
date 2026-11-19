@@ -56,7 +56,9 @@ def valider_mission(data: object) -> dict:
         raise ValueError("Contexte invalide ou trop long.")
     if not isinstance(agents, list) or not 1 <= len(agents) <= MAX_AGENTS:
         raise ValueError(f"Choisis entre 1 et {MAX_AGENTS} agents.")
-    if len(set(agents)) != len(agents) or any(agent not in AGENTS for agent in agents):
+    if any(not isinstance(agent, str) or agent not in AGENTS for agent in agents):
+        raise ValueError("Un agent demandé est inconnu ou invalide.")
+    if len(set(agents)) != len(agents):
         raise ValueError("Un agent demandé est inconnu ou répété.")
     if isinstance(duration, bool) or not isinstance(duration, int):
         raise ValueError("La durée doit être un nombre entier de secondes.")
