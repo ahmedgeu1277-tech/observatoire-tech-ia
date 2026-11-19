@@ -1,4 +1,5 @@
 import json
+import sqlite3
 import tempfile
 import unittest
 from pathlib import Path
@@ -118,6 +119,48 @@ class MissionQueueTests(unittest.TestCase):
         self.assertEqual(statuses[stale_id], "interrupted")
         self.assertEqual(result["id"], next_id)
         self.assertEqual(statuses[next_id], "completed")
+
+    def test_existing_database_is_migrated_with_cancel_request_column(self):
+        database = Path(self.temp.name) / "old.sqlite3"
+        with sqlite3.connect(database) as db:
+            db.execute("""
+                CREATE TABLE missions (
+                    id TEXT PRIMARY KEY,
+                    payload TEXT NOT NULL,
+                    status TEXT NOT NULL CHECK(status IN
+                        ('pending','running','completed','partial','failed','cancelled','interrupted')),
+                    created_at TEXT NOT NULL,
+                    started_at TEXT,
+                    finished_at TEXT,
+                    result TEXT,
+                    error_type TEXT
+                )
+            """)
+        migrated = MissionQueue(database)
+        with migrated._connect() as db:
+            columns = {row["name"] for row in db.execute("PRAGMA table_info(missions)")}
+        self.assertIn("cancel_requested_at", columns)
+
+    @patch("gestionnaire_missions.orchestrateur.executer_mission")
+    def test_cancel_request_keeps_worker_lock_until_worker_finishes(self, execute):
+        first = self.queue.enqueue({
+            "mission": "Mission active à annuler",
+            "agents": ["chercheur"],
+            "max_duration_seconds": 60,
+        })
+        second = self.queue.enqueue(self.payload())
+        def cancel_and_check_lock(payload, should_cancel):
+            self.assertTrue(self.queue.cancel(first))
+            self.assertTrue(should_cancel())
+            with self.assertRaises(RuntimeError):
+                self.queue.run_next()
+            return {"status": "cancelled", "results": []}
+        execute.side_effect = cancel_and_check_lock
+        result = self.queue.run_next()
+        self.assertEqual(result["status"], "cancelled")
+        statuses = {item["id"]: item["status"] for item in self.queue.list_missions()}
+        self.assertEqual(statuses[first], "cancelled")
+        self.assertEqual(statuses[second], "pending")
 
     def test_no_work_returns_none(self):
         self.assertIsNone(self.queue.run_next())
