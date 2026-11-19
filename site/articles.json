@@ -1,5 +1,36 @@
 [
   {
+    "id": "20261119T191755-8ed57188",
+    "date": "2026-11-19T19:17+00:00",
+    "theme": "Matériel et smartphones",
+    "title": "Matériel et smartphones : détails insuffisants dans les sources",
+    "summary": "Les résultats récupérés signalent une actualité liée à Matériel et smartphones, mais les extraits disponibles reprennent surtout les titres et ne fournissent pas assez d'éléments pour confirmer la portée, les effets ou les modalités de l'annonce. Consultez l'article d'origine et le communiqué de l'organisation concernée avant de retenir des détails.",
+    "verdict": "Les extraits récupérés ne suffisent pas pour confirmer les détails.",
+    "tip": "Lire l'article original et rechercher un communiqué officiel avant de partager l'information.",
+    "sources": [
+      {
+        "title": "Black Friday : PC gaming, écrans et appareil photo, les équipements tech à surveiller chez PcComponentes",
+        "publisher": "JeuxVideo.com",
+        "domain": "news.google.com",
+        "published": "Tue, 17 Nov 2026 09:00:07 GMT",
+        "description": "Black Friday : PC gaming, écrans et appareil photo, les équipements tech à surveiller chez PcComponentes    JeuxVideo.com",
+        "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQSXliYTJ4REFnVUlQbGtxNEE5R2pYY2tXM0FZNzhqNUZhblQ0RE1tVU1UNk1tbHFwTmNaMjBrMlRyMFhCSXNKUzVwMUMyWEcyWTZ0anEtX3V1b2VEWVFoc1JSWktyRWxnNjBpLW9MbkdWclhUNFcwc3l4cV82VHBYc0Nib1NnT1pLeF9FS2FNbUxyQzVHY3dqaUtjNWtXQzRoOWRfU3pxYmoyd0dPbEZJSXltaThiY0x1SEdhOWk0OS1ObkQzbTAwcEF0cXFvT3Vla25meFgxRlUzLWM?oc=5",
+        "source_type": "media"
+      },
+      {
+        "title": "Getac MX60 et MX60W : deux terminaux durcis de 6 pouces avec IA, Wi-Fi 6E et Bluetooth 5.2",
+        "publisher": "Planet Sans Fil",
+        "domain": "news.google.com",
+        "published": "Thu, 19 Nov 2026 07:24:16 GMT",
+        "description": "Getac MX60 et MX60W : deux terminaux durcis de 6 pouces avec IA, Wi-Fi 6E et Bluetooth 5.2    Planet Sans Fil",
+        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQUlpHVk5yLU9ZenFIM0tfTThtRXBXa19JOUNLT2UzYklrcDJBaGZabWtWZEtadTlDZFZKLWtXRDB5d2tJQ0tjUUxTd25mdmpITlhaRVBkd0J1a3ZHQjdqTHpmaEVITnpJemVjY2txMXdSaC1Fc2Q4SFp6emJNazlaUmI4ZkRiUzR3bUM0c3lxSDRMQ2xCZmU3UHFJWDBwemVwalFwMHUxNjZFdUNfR0QwYnNXdTI1RzZjamdrelA1cFNMaG53cGN5eUgxUDE?oc=5",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261119T191755-8ed57188.mp3"
+  },
+  {
     "id": "20261119T191658-97892ea1",
     "date": "2026-11-19T19:16+00:00",
     "theme": "Technologie, IA et jeux vidéo — veille générale de secours",
@@ -602,37 +633,6 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261119T174921-765502da.mp3"
-  },
-  {
-    "id": "20261119T174135-3e50b75f",
-    "date": "2026-11-19T17:41+00:00",
-    "theme": "Matériel et smartphones",
-    "title": "Matériel et smartphones : détails insuffisants dans les sources",
-    "summary": "Les résultats récupérés signalent une actualité liée à Matériel et smartphones, mais les extraits disponibles reprennent surtout les titres et ne fournissent pas assez d'éléments pour confirmer la portée, les effets ou les modalités de l'annonce. Consultez l'article d'origine et le communiqué de l'organisation concernée avant de retenir des détails.",
-    "verdict": "Les extraits récupérés ne suffisent pas pour confirmer les détails.",
-    "tip": "Lire l'article original et rechercher un communiqué officiel avant de partager l'information.",
-    "sources": [
-      {
-        "title": "Galaxy S25 : date de sortie, nouveautés, prix, fiche technique, tout savoir des nouveaux smartphones Samsung",
-        "publisher": "BuzzArena",
-        "domain": "news.google.com",
-        "published": "Thu, 12 Nov 2026 18:17:07 GMT",
-        "description": "Galaxy S25 : date de sortie, nouveautés, prix, fiche technique, tout savoir des nouveaux smartphones Samsung    BuzzArena",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOcW16aF9mNEdkendfMGlzcUZha3VlNHBSd1lYWFJOY0VZSXpWYWpEaUdZWGNrRlRwbXJHS1F3SVZUbEU3YVFBaXZuaFplakZwZVg2TU84Zy1IdzFEWUpVLWFaZEcxVV9CTlhqNzFNX2hlVjk4dTBTTVdndUVnZWxuRDhFaDVUaXJRUUhfd3BfdGZQWXNtZjB1cFAxUkpKUXpFU0F1NGstcw?oc=5",
-        "source_type": "media"
-      },
-      {
-        "title": "Quel PC portable acheter pour la rentrée ?",
-        "publisher": "Frandroid",
-        "domain": "news.google.com",
-        "published": "Fri, 13 Nov 2026 14:44:08 GMT",
-        "description": "Quel PC portable acheter pour la rentrée ?    Frandroid",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNX3kwaEV3cTRtbmNlRmhnV045cWtveDU4ajZseDMtRmoyWWhMN19MTWo1QWM3a2Rvbk5weVRfZS0zcGRUa1I0eGFCcTdPd3UydFU5Y1V4aW5NWHdjekxpX3VMclRydW14TVkzZkFBelpzRlFxd3VuSmx3SU9IS082Y1BTUDhUTUdxSzd1YjMwbHRkU1VNSXdjVDlwQ1JScTdkX2IzUGJSNkQ?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261119T174135-3e50b75f.mp3"
   },
   {
     "id": "20261119T174035-025211f1",
