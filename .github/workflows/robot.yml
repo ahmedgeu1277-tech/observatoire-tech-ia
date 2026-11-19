@@ -18,6 +18,11 @@ on:
       - "tests/test_main.py"
       - "tests/test_sources_specialisees.py"
       - "site/articles.json"
+      - "site/index.html"
+      - "gestionnaire_missions.py"
+      - "orchestrateur.py"
+      - "tests/test_ai_providers.py"
+      - "tests/test_gestionnaire_missions.py"
       - "requirements.txt"
       - ".github/workflows/robot.yml"
   workflow_dispatch:
