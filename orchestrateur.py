@@ -130,6 +130,15 @@ def executer_mission(
                 temperature=0.2,
                 timeout=min(60, max(1, remaining)),
             )
+            # Ne jamais enregistrer une sortie IA qui ressemble à un secret.
+            # Le contenu suspect n'est ni ajouté au rapport ni écrit dans les logs.
+            if contient_secret_potentiel(answer):
+                results.append({
+                    "agent": agent_id,
+                    "status": "failed",
+                    "error_type": "PotentialSecretDetected",
+                })
+                break
             results.append({
                 "agent": agent_id,
                 "status": "completed",
