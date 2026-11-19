@@ -1,5 +1,63 @@
 [
   {
+    "id": "20261119T095310-ac71e4b6",
+    "date": "2026-11-19T09:53+00:00",
+    "theme": "GTA VI — lancement et premiers retours vérifiés",
+    "title": "GTA VI : records de streaming et premiers retours mitigés",
+    "summary": "Avant sa sortie mondiale, GTA VI a déjà battu des records de streaming, selon IGN. Les premiers retours soulignent des changements de gameplay, notamment l’impossibilité de prendre des prostituées en stop, ainsi que des transformations physiques marquantes de personnages comme Lucia. Une astuce permettrait d’accéder à une version pré‑lancement sur Xbox, mais son efficacité et sa légalité restent incertaines. Les implications pour la sécurité des comptes utilisateurs n’ont pas encore été évaluées.",
+    "verdict": "Les sources consultées indiquent des performances de streaming exceptionnelles et des retours partagés sur le gameplay, mais aucune preuve définitive sur la disponibilité légale de l’astuce Xbox ni sur les raisons précises des changements de gameplay.",
+    "tip": "Les lecteurs intéressés par les aspects techniques et les stratégies de lancement devraient suivre les mises à jour officielles de Rockstar et les analyses de sécurité des plateformes.",
+    "sources": [
+      {
+        "title": "43 militaires ont renouvelé leur engagement dans l'armée en échange de congés payés pour jouer à GTA 6",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 08:28:45 +0000",
+        "description": "« C’était juste un moyen d’attirer l’attention des gens et, en quelque sorte, de dire : \"Hé, on est là !\" »",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94083/43-militaires-ont-renouvele-leur-engagement-dans-larmee-en-echange-de-conges-payes-pour-jouer-a-gta",
+        "source_type": "media"
+      },
+      {
+        "title": "Dans GTA 6, vous ne pouvez pas prendre des prostituées en stop, mais il y a une raison logique à ça",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 08:14:44 +0000",
+        "description": "On est loyal ici.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94084/dans-gta-6-vous-ne-pouvez-pas-prendre-des-prostituees-en-stop-mais-il-y-a-une-raison-logique-a-ca",
+        "source_type": "media"
+      },
+      {
+        "title": "Dans GTA VI, la transformation physique de Lucia après avoir enchainé les séances de muscu est impressionnante",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Wed, 18 Nov 2026 23:12:24 +0000",
+        "description": "Le avant/après est stupéfiant.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94072/dans-gta-vi-la-transformation-physique-de-lucia-apres-avoir-enchaine-les-seances-de-muscu-est-impres",
+        "source_type": "media"
+      },
+      {
+        "title": "GTA 6 bat tous les records de streaming avant même sa sortie mondiale",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Wed, 18 Nov 2026 18:54:26 +0000",
+        "description": "Si on ne fait qu'en parler, ça compte ?",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94079/gta-6-bat-tous-les-records-de-streaming-avant-meme-sa-sortie-mondiale",
+        "source_type": "media"
+      },
+      {
+        "title": "GTA 6 est bien disponible en avance sur Xbox, l’astuce fonctionne et voici comment faire",
+        "publisher": "Xboxygen",
+        "domain": "news.google.com",
+        "published": "Mon, 16 Nov 2026 09:29:03 GMT",
+        "description": "GTA 6 est bien disponible en avance sur Xbox, l’astuce fonctionne et voici comment faire    Xboxygen",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE81U0VpSXNhQlZjV2w5OWtVcmE1eWxkSVFpdG1ZY21sN1prc3VkMXc3Uko2VjBVUW5aMW1kWHpJTDdsNHlWRWVYcVhQa2NlNzV6X1VmeXUyei0ycVpFQ1FOd2NNX3hfdE1NRUJaS0tjY2RwSjYzOVRCclFfay1fQQ?oc=5",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261119T095310-ac71e4b6.mp3"
+  },
+  {
     "id": "20261118T223737-400efa45",
     "date": "2026-11-18T22:37+00:00",
     "theme": "Actualités intelligence artificielle",
@@ -47,55 +105,6 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261118T223737-400efa45.mp3"
-  },
-  {
-    "id": "20261118T223049-c65e19ac",
-    "date": "2026-11-18T22:30+00:00",
-    "theme": "GTA VI — lancement et premiers retours vérifiés",
-    "title": "GTA VI : records de streaming et premiers retours mitigés",
-    "summary": "GTA VI a battu tous les records de streaming avant sa sortie mondiale, comme le rapporte IGN France. Les premiers retours soulignent toutefois un gameplay trop axé sur le « doomscrolling » et un contenu 18 + qui pourrait limiter l’audience. La mise à jour 1.002.000, obligatoire pour jouer, introduit des changements majeurs, mais son impact sur la stabilité reste à confirmer. Les fans attendent de voir si ces ajustements amélioreront l’expérience globale.",
-    "verdict": "Les sources consultées montrent un succès initial en streaming, mais des critiques sur le gameplay et la maturité du contenu subsistent. L’efficacité de la mise à jour 1.002.000 n’est pas encore prouvée.",
-    "tip": "Surveillez les prochains patchs pour vérifier si les problèmes de stabilité et de gameplay sont résolus.",
-    "sources": [
-      {
-        "title": "GTA 6 bat tous les records de streaming avant même sa sortie mondiale",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 18:54:26 +0000",
-        "description": "Si on ne fait qu'en parler, ça compte ?",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94079/gta-6-bat-tous-les-records-de-streaming-avant-meme-sa-sortie-mondiale",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 : le jeu 18+ ultime ?",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 16:03:14 +0000",
-        "description": "La question à un million d’euros et à 6 étoiles.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94041/gta-6-le-jeu-18-ultime",
-        "source_type": "media"
-      },
-      {
-        "title": "Dans GTA 6, vous serez obligé de doomscroller si vous voulez voir tout ce que le jeu a à offrir",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 16:00:35 +0000",
-        "description": "Scroller, encore scroller, toujours scroller...",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94069/dans-gta-6-vous-serez-oblige-de-doomscroller-si-vous-voulez-voir-tout-ce-que-le-jeu-a-a-offrir",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 : la mise à jour 1.002.000 est obligatoire pour jouer, voici ce qu’elle contient",
-        "publisher": "big-n.fr",
-        "domain": "news.google.com",
-        "published": "Fri, 13 Nov 2026 14:20:45 GMT",
-        "description": "GTA 6 : la mise à jour 1.002.000 est obligatoire pour jouer, voici ce qu’elle contient    big-n.fr",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB6SHhSMEVYal9QemZqcC1ERTRGZmVIVGxBTWlENW1LOE9qZUN4cnZrOUdzNFA1VHhSdlBEckNUeWZlTTFsV2hpZ2dzZHJIR1JOTzlnMFJEZnZXYl9GZFh4VjU4R1ZCSEFEQVRMLUZfUDI2S3FEQkV2aEJEWm52dk0?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261118T223049-c65e19ac.mp3"
   },
   {
     "id": "20261118T222345-0d6370bf",
