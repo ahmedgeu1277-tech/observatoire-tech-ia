@@ -611,17 +611,32 @@ def save_articles(article):
 
 
 def load_agent_profiles():
+    """Charge au plus cinq profils JSON valides sans faire échouer la publication."""
     folder = ROOT / "agents_dynamiques"
-    if not folder.exists():
+    if not folder.is_dir():
         return []
     profiles = []
-    for path in sorted(folder.glob("*.json"))[:5]:
+    for path in sorted(folder.glob("*.json")):
+        if len(profiles) >= 5:
+            break
         try:
             data = json.loads(path.read_text(encoding="utf-8"))
-            if data.get("mission") and data.get("instructions"):
-                profiles.append(data)
-        except (OSError, json.JSONDecodeError):
-            print(f"Profil d'agent ignoré : {path.name}")
+            if not isinstance(data, dict):
+                raise ValueError("le profil doit être un objet JSON")
+            mission = data.get("mission")
+            instructions = data.get("instructions")
+            if not isinstance(mission, str) or not mission.strip():
+                raise ValueError("mission absente ou invalide")
+            if not isinstance(instructions, str) or not instructions.strip():
+                raise ValueError("instructions absentes ou invalides")
+            profile = dict(data)
+            profile["mission"] = mission.strip()
+            profile["instructions"] = instructions.strip()
+            if not isinstance(profile.get("name"), str) or not profile["name"].strip():
+                profile["name"] = path.stem
+            profiles.append(profile)
+        except (OSError, UnicodeError, json.JSONDecodeError, TypeError, ValueError) as exc:
+            print(f"Profil d'agent ignoré : {path.name} ({type(exc).__name__}).")
     return profiles
 
 def executer_agents_dynamiques(theme, sources, profiles):
