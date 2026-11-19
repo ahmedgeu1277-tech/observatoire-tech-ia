@@ -6,21 +6,21 @@ Aucune clé n'est écrite dans les fichiers ou les journaux.
 import os
 
 
-def generate_text(messages, max_tokens=1200, temperature=0.25, json_mode=False):
+def generate_text(messages, max_tokens=1200, temperature=0.25, json_mode=False, timeout=60):
     """Essaie les fournisseurs configurés, sans rendre un fournisseur unique obligatoire."""
     failures = []
     groq_key = os.getenv("GROQ_API_KEY")
     hf_key = os.getenv("HF_API_KEY") or os.getenv("HF_TOKEN")
     order = (os.getenv("AI_PROVIDER_ORDER") or "groq,huggingface").split(",")
 
-    for provider in [item.strip().lower() for item in order]:
+    providers = [item.strip().lower() for item in order]\n    provider_timeout = max(0.1, timeout / max(1, len(providers)))\n    for provider in providers:
         try:
             if provider == "groq" and groq_key:
                 from groq import Groq
                 kwargs = {}
                 if json_mode:
                     kwargs["response_format"] = {"type": "json_object"}
-                client = Groq(api_key=groq_key, timeout=45, max_retries=1)
+                client = Groq(api_key=groq_key, timeout=provider_timeout, max_retries=0)
                 result = client.chat.completions.create(
                     model=os.getenv("GROQ_MODEL") or "openai/gpt-oss-20b",
                     messages=messages,
@@ -40,7 +40,7 @@ def generate_text(messages, max_tokens=1200, temperature=0.25, json_mode=False):
                 client = InferenceClient(
                     model=os.getenv("HF_MODEL") or "Qwen/Qwen2.5-72B-Instruct",
                     api_key=hf_key,
-                    timeout=60,
+                    timeout=provider_timeout,
                 )
                 result = client.chat.completions.create(
                     messages=messages,
