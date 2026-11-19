@@ -1,5 +1,36 @@
 [
   {
+    "id": "20261119T191554-ffa1a263",
+    "date": "2026-11-19T19:15+00:00",
+    "theme": "Moteurs et logiciels de création de jeux",
+    "title": "Moteurs et logiciels de création de jeux : détails chiffrés non confirmés",
+    "summary": "Les sources consultées mentionnent Moteurs et logiciels de création de jeux, mais elles ne fournissent pas suffisamment d'éléments pour confirmer les caractéristiques chiffrées avancées. Les performances, la compatibilité et les spécifications techniques doivent être vérifiées dans les fiches officielles.",
+    "verdict": "Les chiffres et caractéristiques détaillés ne sont pas établis par les sources consultées.",
+    "tip": "Consulter les annonces et fiches techniques officielles avant de retenir des chiffres précis.",
+    "sources": [
+      {
+        "title": "The Unity CLI 1.0 is here!",
+        "publisher": "Unity",
+        "domain": "unity.com",
+        "published": "Tue, 17 Nov 2026 00:00:00 GMT",
+        "description": "Unity CLI 1.0 is out of beta. Connect Claude Code, Codex, Grok Build or Antigravity to your Unity project, and automate builds and tests from the terminal.",
+        "url": "https://unity.com/the-unity-cli-1.0-is-here",
+        "source_type": "source_editeur"
+      },
+      {
+        "title": "Synty Studios Joins Unity, Bringing Artist-Made Assets to Unity Spark",
+        "publisher": "Unity",
+        "domain": "unity.com",
+        "published": "Mon, 16 Nov 2026 00:00:00 GMT",
+        "description": "Unity has acquired Synty Studios, maker of the POLYGON 3D asset packs. Synty’s library is coming to Unity Spark, and existing packs and licenses stay the same.",
+        "url": "https://unity.com/blog/synty-studios-acquisition",
+        "source_type": "source_editeur"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261119T191554-ffa1a263.mp3"
+  },
+  {
     "id": "20261119T191508-c7e810b6",
     "date": "2026-11-19T19:15+00:00",
     "theme": "Veille générale — résumé documentaire de secours",
@@ -1148,36 +1179,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261118T213728-9fc41933.mp3"
-  },
-  {
-    "id": "20261118T194922-2ce4acdb",
-    "date": "2026-11-18T19:49+00:00",
-    "theme": "Gaming et jeux vidéo — veille générale (recherche de secours)",
-    "title": "GTA 6 bat les records de streaming avant la sortie, Burning Sword Death Sun promet un hack‑and‑slash wuxia",
-    "summary": "Selon IGN France, GTA 6 a déjà franchi tous les records de streaming avant sa sortie mondiale, bien que l'article d'IGN France ne fournisse pas de chiffres indépendamment vérifiables. Le même site annonce que Burning Sword Death Sun, en accès anticipé, promet un hack‑and‑slash wuxia spectaculaire, mais les mécaniques restent à confirmer par les premiers retours joueurs. Les articles consultés ne détaillent pas les chiffres du streaming ; la date de sortie est vérifiée séparément auprès de Rockstar.",
-    "verdict": "IGN France rapporte ces éléments, mais les détails quantitatifs et les mécaniques de jeu restent à valider.",
-    "tip": "Les chiffres de streaming proviennent d’un flux officiel ; il faut attendre des données indépendantes pour confirmer les records.",
-    "sources": [
-      {
-        "title": "GTA 6 bat tous les records de streaming avant même sa sortie mondiale",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 18:54:26 +0000",
-        "description": "Si on ne fait qu'en parler, ça compte ?",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94079/gta-6-bat-tous-les-records-de-streaming-avant-meme-sa-sortie-mondiale",
-        "source_type": "media"
-      },
-      {
-        "title": "Preview Burning Sword Death Sun : des premiers pas prometteurs",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 17:27:34 +0000",
-        "description": "Burning Sword: Death Sun pose les bases d’un hack-and-slash wuxia nerveux et spectaculaire, dont l’accès anticipé doit désormais enrichir le contenu et affiner les mécaniques.",
-        "url": "https://fr.ign.com/burning-sword-death-sun/94075/preview-burning-sword-death-sun-des-premiers-pas-prometteurs",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261118T194922-2ce4acdb.mp3"
   }
 ]
