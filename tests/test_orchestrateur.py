@@ -19,6 +19,10 @@ class MissionValidationTests(unittest.TestCase):
                 "agents": ["chercheur", "critique", "architecte", "chercheur"],
             })
 
+    def test_rejects_non_string_agent_without_type_error(self):
+        with self.assertRaises(ValueError):
+            orchestrateur.valider_mission({"mission": "tester", "agents": [{"role": "chercheur"}]})
+
     def test_rejects_unbounded_duration(self):
         with self.assertRaises(ValueError):
             orchestrateur.valider_mission({
