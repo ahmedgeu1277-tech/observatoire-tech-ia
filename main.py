@@ -682,6 +682,40 @@ async def create_audio(article):
         print(f"Audio non créé ({type(exc).__name__}: {exc}); article texte conservé.")
         return None
 
+
+def build_safe_fallback_article(theme, sources):
+    """Construit un résumé documentaire neutre si l'IA échoue encore aux contrôles."""
+    safe_sources = [
+        source for source in sources
+        if isinstance(source, dict)
+        and isinstance(source.get("url"), str)
+        and urlparse(source["url"]).scheme == "https"
+        and urlparse(source["url"]).hostname
+    ][:5]
+    if not safe_sources:
+        raise RuntimeError("Aucune source HTTPS valide pour le résumé de secours.")
+    return {
+        "id": datetime.now(UTC).strftime("%Y%m%dT%H%M%S") + "-" + uuid4().hex[:8],
+        "date": datetime.now(UTC).isoformat(timespec="minutes"),
+        "theme": "Veille générale — résumé documentaire de secours",
+        "title": "Veille technologique : sources à consulter",
+        "summary": (
+            "Les flux consultés ont fourni des liens vers des publications sur la technologie, "
+            "l’intelligence artificielle et les jeux vidéo. Ce résumé de secours ne confirme "
+            "aucune annonce, date, disponibilité, prix ou caractéristique précise : les éléments "
+            "détaillés doivent être vérifiés directement dans les articles d’origine. Cette "
+            "sélection sert de point d’entrée documentaire et ne remplace pas la lecture des sources."
+        ),
+        "verdict": "Les liens sont disponibles, mais aucune annonce précise n’est validée par ce résumé.",
+        "tip": "Ouvrir les articles d’origine et vérifier chaque information importante dans sa source primaire.",
+        "sources": safe_sources,
+        "ai_notice": (
+            "Résumé documentaire de secours assemblé automatiquement à partir des liens collectés ; "
+            "aucune annonce spécifique n’est confirmée."
+        ),
+    }
+
+
 def main():
     themes = load_themes()
     theme = choose_theme(themes)
@@ -750,7 +784,16 @@ def main():
         fallback_reports = executer_agents_dynamiques(
             fallback_theme, fallback_sources, profiles
         )
-        article = create_article(fallback_theme, fallback_sources, fallback_reports)
+        try:
+            article = create_article(fallback_theme, fallback_sources, fallback_reports)
+        except ValueError as fallback_error:
+            print(
+                "AVERTISSEMENT : la seconde rédaction IA reste bloquée par les contrôles "
+                f"({type(fallback_error).__name__}). Création d'un résumé documentaire neutre."
+            )
+            article = build_safe_fallback_article(fallback_theme, fallback_sources)
+            verifier_dates_incertaines(article, article["sources"])
+            verifier_attributions_officielles(article, article["sources"])
     if not verifier_conformite_legale(json.dumps(article, ensure_ascii=False), "PUBLICATION_WEB"):
         raise RuntimeError("Publication bloquée par le contrôle de sécurité.")
     article["audio_url"] = asyncio.run(create_audio(article))
