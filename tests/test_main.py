@@ -520,3 +520,44 @@ class MainLastResortTests(unittest.TestCase):
         self.assertNotIn("Rockstar", json.dumps(saved, ensure_ascii=False))
 
 
+
+
+class AgentProfileLoadingTests(unittest.TestCase):
+    def test_ignores_non_object_and_incomplete_profiles(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            profiles_dir = root / "agents_dynamiques"
+            profiles_dir.mkdir()
+            (profiles_dir / "01-list.json").write_text('["not", "an", "object"]', encoding="utf-8")
+            (profiles_dir / "02-missing.json").write_text(
+                json.dumps({"mission": "analyse"}), encoding="utf-8"
+            )
+            (profiles_dir / "03-valid.json").write_text(
+                json.dumps({"mission": " analyse ", "instructions": " vérifier "}),
+                encoding="utf-8",
+            )
+            with patch.object(main, "ROOT", root):
+                profiles = main.load_agent_profiles()
+            self.assertEqual(len(profiles), 1)
+            self.assertEqual(profiles[0]["mission"], "analyse")
+            self.assertEqual(profiles[0]["instructions"], "vérifier")
+            self.assertEqual(profiles[0]["name"], "03-valid")
+
+    def test_caps_loaded_profiles_at_five(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            profiles_dir = root / "agents_dynamiques"
+            profiles_dir.mkdir()
+            for index in range(7):
+                (profiles_dir / f"{index}.json").write_text(
+                    json.dumps({"mission": f"mission {index}", "instructions": "test"}),
+                    encoding="utf-8",
+                )
+            with patch.object(main, "ROOT", root):
+                profiles = main.load_agent_profiles()
+            self.assertEqual(len(profiles), 5)
+
+    def test_missing_profiles_directory_returns_empty_list(self):
+        with tempfile.TemporaryDirectory() as folder:
+            with patch.object(main, "ROOT", Path(folder)):
+                self.assertEqual(main.load_agent_profiles(), [])
