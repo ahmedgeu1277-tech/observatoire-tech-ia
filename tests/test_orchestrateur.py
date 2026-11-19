@@ -50,6 +50,9 @@ class MissionValidationTests(unittest.TestCase):
             saved = json.loads(Path(report["report_path"]).read_text(encoding="utf-8"))
         self.assertEqual(report["status"], "completed")
         self.assertEqual(len(saved["results"]), 2)
+        second_prompt = generate.call_args_list[1].args[0][1]["content"]
+        self.assertIn("Analyse initiale", second_prompt)
+        self.assertIn("Agent chercheur", second_prompt)
         self.assertGreater(generate.call_args_list[0].kwargs["timeout"], 0)
         self.assertLessEqual(generate.call_args_list[0].kwargs["timeout"], 60)
         self.assertFalse(saved["safety"]["code_execution"])
