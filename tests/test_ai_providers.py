@@ -12,8 +12,24 @@ class AIProviderTests(unittest.TestCase):
             generate_text([{"role": "user", "content": "test"}])
 
     def test_rejects_non_positive_timeout(self):
-        with self.assertRaises(ValueError):
-            generate_text([], timeout=0)
+        for timeout in (0, -1, float("nan"), float("inf"), True):
+            with self.subTest(timeout=timeout), self.assertRaises(ValueError):
+                generate_text([], timeout=timeout)
+
+    def test_rejects_invalid_max_tokens(self):
+        for value in (0, -1, 1.5, True):
+            with self.subTest(max_tokens=value), self.assertRaises(ValueError):
+                generate_text([], max_tokens=value)
+
+    def test_rejects_unknown_provider_order(self):
+        with patch.dict(os.environ, {"AI_PROVIDER_ORDER": "groq,unknown"}):
+            with self.assertRaisesRegex(ValueError, "AI_PROVIDER_ORDER"):
+                generate_text([])
+
+    def test_rejects_empty_provider_order(self):
+        with patch.dict(os.environ, {"AI_PROVIDER_ORDER": " , "}):
+            with self.assertRaisesRegex(ValueError, "AI_PROVIDER_ORDER"):
+                generate_text([])
 
     def test_order_is_configurable(self):
         with patch.dict(os.environ, {
