@@ -494,14 +494,14 @@ class MainLastResortTests(unittest.TestCase):
     @patch("main.verifier_conformite_legale", return_value=True)
     @patch("main.create_article", side_effect=[
         ValueError("attribution initiale refusée"),
-        ValueError("attribution du secours refusée"),
+        RuntimeError("quota fournisseur IA atteint"),
     ])
     @patch("main.executer_agents_dynamiques", return_value=[])
     @patch("main.fetch_specialized_sources", return_value=[])
     @patch("main.fetch_news")
     @patch("main.choose_theme")
     @patch("main.load_themes")
-    def test_second_fact_check_failure_uses_neutral_documentary_summary(
+    def test_provider_unavailable_after_retry_uses_neutral_documentary_summary(
         self, load_themes, choose_theme, fetch_news, _specialized,
         _agents, create_article, _guard, _audio, save_articles, _memory
     ):
