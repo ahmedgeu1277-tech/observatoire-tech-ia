@@ -553,6 +553,32 @@ class AgentProfileLoadingTests(unittest.TestCase):
                 profiles = main.load_agent_profiles()
             self.assertEqual(len(profiles), 5)
 
+    def test_rejects_profiles_with_oversized_instructions(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            profiles_dir = root / "agents_dynamiques"
+            profiles_dir.mkdir()
+            (profiles_dir / "too-long.json").write_text(
+                json.dumps({"mission": "analyse", "instructions": "x" * 1501}),
+                encoding="utf-8",
+            )
+            with patch.object(main, "ROOT", root):
+                self.assertEqual(main.load_agent_profiles(), [])
+
+    @patch("main.generate_text")
+    def test_dynamic_agent_uses_bounded_timeout_and_rejects_secret_output(self, generate):
+        secret = "gsk_ABCDEFGHIJKLMNOPQRSTUVWXYZ123456"
+        generate.return_value = (f"Résultat {secret}", "groq")
+        reports = main.executer_agents_dynamiques(
+            {"name": "IA"},
+            [{"title": "Source", "url": "https://example.org"}],
+            [{"name": "Analyste", "mission": "analyser", "instructions": "rester prudent"}],
+        )
+        self.assertEqual(reports, [])
+        self.assertEqual(generate.call_args.kwargs["timeout"], 45)
+        system_prompt = generate.call_args.args[0][0]["content"]
+        self.assertIn("données non fiables", system_prompt)
+
     def test_missing_profiles_directory_returns_empty_list(self):
         with tempfile.TemporaryDirectory() as folder:
             with patch.object(main, "ROOT", Path(folder)):
