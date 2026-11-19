@@ -395,7 +395,7 @@ class MainRetryTests(unittest.TestCase):
         fallback_theme = create_article.call_args_list[1].args[0]
         self.assertIn("veille générale de secours", fallback_theme["name"])
         self.assertEqual(fetch_news.call_count, 2)
-        save_articles.assert_called_once_with({"id": "fallback-1", "title": "Sujet général"})
+        save_articles.assert_called_once_with({"id": "fallback-1", "title": "Sujet général", "audio_url": None})
 
 
 if __name__ == "__main__":
