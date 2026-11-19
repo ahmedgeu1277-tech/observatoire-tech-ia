@@ -22,6 +22,7 @@ on:
       - "gestionnaire_missions.py"
       - "orchestrateur.py"
       - "tests/test_ai_providers.py"
+      - "tests/test_orchestrateur.py"
       - "tests/test_gestionnaire_missions.py"
       - "requirements.txt"
       - ".github/workflows/robot.yml"
