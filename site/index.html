@@ -218,7 +218,7 @@ footer{letter-spacing:.12em;line-height:1.8}
   const t=articleUi[language]||articleUi.fr;
   const status=document.getElementById("status");
   const count=document.querySelectorAll("#articles > .article").length;
-  if(status){if(status.textContent==="Erreur de chargement") status.textContent=t.error;else if(status.dataset.articleStatus==="loading") status.textContent=t.loading;else status.textContent=count+" "+t.count;}
+  if(status){if(status.textContent==="Erreur de chargement") status.textContent=t.error;else if(status.textContent==="Chargement…") status.textContent=t.loading;else status.textContent=count+" "+t.count;}
   document.querySelectorAll("[data-article-label]").forEach(node=>{
    const key=node.dataset.articleLabel;
    if(t[key]!==undefined) node.textContent=t[key];
