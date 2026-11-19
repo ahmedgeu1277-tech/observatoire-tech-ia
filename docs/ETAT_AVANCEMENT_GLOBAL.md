@@ -2,22 +2,27 @@
 
 Dernière évaluation fonctionnelle détaillée : 18 novembre 2026. Audit GitHub complémentaire : 19 novembre 2026.
 
-## Audit complémentaire du 19 novembre 2026\n\n- Le dépôt GitHub est toujours **public** : tous les fichiers suivis et leur historique sont consultables. Le dossier ignoré `.laboratoire_prive/` ne protège pas les fichiers déjà commités. Aucun élément confidentiel ne doit y être ajouté.\n- Les workflows « Tests automatiques et contrôle qualité », « Analyse avancée - sécurité, qualité et site » et « pages build and deployment » ont terminé avec succès sur le commit `254772e` le 19 novembre 2026. Cela confirme ces exécutions précises, pas le bon fonctionnement permanent de tous les services.\n- Le site et les publications sont principalement en français. La prise en charge multilingue complète n'est pas implémentée.\n- La description GitHub du dépôt contient encore une ancienne mention de Discord, alors que le README et le code éditorial indiquent qu'aucune intégration Discord n'est utilisée. Cette métadonnée n'a pas pu être modifiée avec les actions disponibles.\n\n## Résultat
+## Audit complémentaire du 19 novembre 2026
 
-**Estimation pondérée : 52,75 / 100.**
+- Le dépôt GitHub est toujours **public** : tous les fichiers suivis et leur historique sont consultables. Le dossier ignoré `.laboratoire_prive/` ne protège pas les fichiers déjà commités. Aucun élément confidentiel ne doit y être ajouté.
+- Les workflows « Tests automatiques et contrôle qualité », « Analyse avancée - sécurité, qualité et site » et « pages build and deployment » ont terminé avec succès sur le commit `254772e` le 19 novembre 2026. Cela confirme ces exécutions précises, pas le bon fonctionnement permanent de tous les services.
+- Le site et les publications sont principalement en français. La prise en charge multilingue complète n'est pas implémentée.
+
+## Résultat
+
+**Estimation pondérée recalculée : 55,89 / 100.**
 
 Ce pourcentage est un indicateur d'avancement fonctionnel construit à partir des domaines ci-dessous. Ce n'est ni un pourcentage de lignes de code terminées, ni une garantie de disponibilité, ni une certification de mise en production. Les notes sont des estimations prudentes fondées sur les fonctions présentes et les contrôles exécutés.
 
 | Domaine | Poids | Avancement estimé | Contribution |
 |---|---:|---:|---:|
-| Média, veille et site public | 20 % | 90 % | 18,00 |
-| Fournisseurs IA et orchestration d'agents | 15 % | 40 % | 6,00 |
-| Missions persistantes et autonomie | 15 % | 35 % | 5,25 |
-| Laboratoire privé et sécurité | 15 % | 45 % | 6,75 |
-| R&D et conception de produits | 10 % | 35 % | 3,50 |
-| Création logicielle et Roblox | 15 % | 35 % | 5,25 |
-| Tests et amélioration continue | 10 % | 80 % | 8,00 |
-| **Total** | **100 %** |  | **52,75 %** |
+| Média, veille et site public | 23,53 % | 90 % | 21,18 |
+| Fournisseurs IA et orchestration d'agents | 17,65 % | 40 % | 7,06 |
+| Missions persistantes et autonomie | 17,65 % | 35 % | 6,18 |
+| Laboratoire privé et sécurité | 17,65 % | 45 % | 7,94 |
+| R&D et conception de produits | 11,76 % | 35 % | 4,12 |
+| Tests et amélioration continue | 11,76 % | 80 % | 9,41 |
+| **Total** | **100 %** |  | **55,89 %** |
 
 Calcul : somme de (poids × note du domaine) / 100.
 
@@ -33,23 +38,24 @@ Le projet possède une couche de fournisseurs IA, un basculement, cinq profils s
 Une file SQLite locale conserve les missions et leurs états ; un worker peut lancer la mission suivante. L'orchestrateur limite actuellement une mission à 180 secondes et trois rôles maximum. L'arrêt d'une mission déjà en cours, les missions de plusieurs heures ou deux jours, les reprises automatiques robustes et le fonctionnement permanent ne sont pas encore réalisés.
 
 ### Laboratoire privé et sécurité — 45 %
-Le dossier local du laboratoire est ignoré par Git, les contrôles Gitleaks, CodeQL, Bandit et Ruff sont présents, et un validateur statique des projets Roblox a été ajouté. Il n'existe pas encore de tableau de bord privé hébergé avec authentification et autorisations côté serveur. GitHub Pages reste public.
+Le dossier local du laboratoire est ignoré par Git, les contrôles Gitleaks, CodeQL, Bandit et Ruff sont présents, et un contrôles statiques complémentaires ont été ajoutés. Il n'existe pas encore de tableau de bord privé hébergé avec authentification et autorisations côté serveur. GitHub Pages reste public.
 
 ### R&D et conception de produits — 35 %
 L'atelier de sélection de produits note les opportunités selon la douleur client, les preuves de demande, la faisabilité, la différenciation, le coût et l'accès au marché. Des prototypes commencent à exister, mais les entretiens clients, les preuves de marché indépendantes, les tests avec de vrais utilisateurs et la validation économique restent à faire.
 
-### Création logicielle et Roblox — 35 %
-Un générateur crée un squelette de jeu Roblox obby au format Rojo, avec scripts serveur/client et monnaie gérée côté serveur. Un validateur statique contrôle certains fichiers et motifs dangereux sans exécuter le code. Le projet sait aussi générer une vidéo éditoriale MP4 narrée à partir de dossiers publiés. Il n'y a toujours pas de connexion directe à Roblox Studio, de génération IA complète d'un jeu, de test de gameplay automatisé ni de publication Roblox.
-
 ### Tests et amélioration continue — 80 %
 La suite compte 109 tests Python réussis lors du dernier contrôle automatisé du 18 novembre. Le dernier workflow avancé a réussi : Ruff, Bandit, Gitleaks, CodeQL Python et JavaScript, ainsi que les tests Playwright des trois pages et les parcours responsive de l'accueil et du documentaire à 390, 768 et 1 440 px. Le diagnostic du dépôt a vérifié 25 articles, 85 sources et 24 fichiers audio, cinq profils d'agents et l'absence de données de ville dans le site public. La boucle d'auto-évaluation produit un rapport et un backlog ; elle ne réécrit pas le code de production et ne déploie pas de corrections de façon autonome.
+
+## Périmètre de développement
+
+Le développement de jeux et les intégrations associées ne font plus partie des objectifs actifs. Les anciens fichiers expérimentaux éventuels ne sont pas considérés comme des fonctionnalités maintenues ni inclus dans le calcul d'avancement.
 
 ## Conditions pour augmenter le score
 
 1. Vérifier plusieurs cycles réels Groq et Hugging Face sans exposer les clés.
 2. Ajouter un tableau de bord local des missions avec arrêt fiable et reprise après interruption.
 3. Construire une interface privée avec authentification réelle sur un backend séparé du site public.
-4. Étendre le générateur Roblox, compiler/analyser Luau et tester un parcours de jeu réel dans Roblox Studio.
+4. Renforcer la génération vidéo éditoriale, la validation factuelle et la fiabilité de publication.
 5. Tester les prototypes avec des utilisateurs et collecter des preuves de demande.
 6. Permettre aux agents de proposer des corrections dans des branches isolées, puis exiger tests, revue et retour arrière avant toute fusion.
 
@@ -57,5 +63,5 @@ La suite compte 109 tests Python réussis lors du dernier contrôle automatisé 
 
 - 52,75 % signifie que le seuil de la feuille de route est atteint selon cette grille ; cela ne signifie pas que toutes les fonctionnalités sont prêtes à être utilisées.
 - Aucun travail ne continue en arrière-plan après la fin d'une exécution GitHub Actions, sauf les workflows effectivement planifiés.
-- Aucune vente, dépense, publication externe ou action sur un compte Roblox n'est automatique.
+- Aucune vente, dépense ou publication externe n'est automatique.
 - Les rapports et prototypes privés ne doivent pas être ajoutés au site public.
