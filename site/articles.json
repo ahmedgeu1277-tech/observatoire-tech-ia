@@ -1,5 +1,27 @@
 [
   {
+    "id": "20261119T181526-b4891861",
+    "date": "2026-11-19T18:15+00:00",
+    "theme": "Path of Exile 2 — lancement complet annoncé le 11 décembre 2026",
+    "title": "Path of Exile 2 : détails insuffisants dans les sources",
+    "summary": "Les résultats récupérés signalent une actualité liée à Path of Exile 2, mais les extraits disponibles reprennent surtout les titres et ne fournissent pas assez d'éléments pour confirmer la portée, les effets ou les modalités de l'annonce. Consultez l'article d'origine et le communiqué de l'organisation concernée avant de retenir des détails.",
+    "verdict": "Les extraits récupérés ne suffisent pas pour confirmer les détails.",
+    "tip": "Lire l'article original et rechercher un communiqué officiel avant de partager l'information.",
+    "sources": [
+      {
+        "title": "Path of Exile 2 : le studio vise le club du million de joueurs Steam à sa sortie",
+        "publisher": "OMGPU",
+        "domain": "news.google.com",
+        "published": "Thu, 19 Nov 2026 16:14:48 GMT",
+        "description": "Path of Exile 2 : le studio vise le club du million de joueurs Steam à sa sortie    OMGPU",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQQTlhdVM4MUh0aG1FTXBhTWl4S0dZdUhlMmFNZjY5NGxQT3B6cFc1SWxfaHg3S1BielNremVmcldYUDdOdklXRDQ4SzFxVDdDV0hzNzlXZFl5ZTY4c0hMb2NUNUZqTDJfYmlWQUhCOWlIYTFpWW5vLWZ0SEphY0w3UXFKWFd0UmRzWDZUM01aSVNVb0d0Y2oxNHQzei1rNVFxMm13?oc=5",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261119T181526-b4891861.mp3"
+  },
+  {
     "id": "20261119T181445-15c2e2a5",
     "date": "2026-11-19T18:14+00:00",
     "theme": "Veille générale — résumé documentaire de secours",
@@ -1157,45 +1179,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261117T095158Z.mp3"
-  },
-  {
-    "id": "20261116T184438Z",
-    "date": "2026-11-16T18:44+00:00",
-    "theme": "Roblox et création de jeux",
-    "title": "Roblox met l’IA au service du prototypage",
-    "summary": "Roblox a annoncé que son créateur Chichine utilise l’intelligence artificielle pour accélérer la phase de prototypage des jeux. Selon l’interview, l’IA ne remplace pas le travail des développeurs mais permet de transformer rapidement une idée simple en expérience plus ambitieuse. Cette approche a déjà donné naissance à des titres comme \"Codes Survive your Ideas\" qui ont été présentés en novembre 2026. Les utilisateurs peuvent ainsi tester et itérer leurs concepts plus rapidement, bien que les détails techniques restent à préciser. Le prochain pas sera de voir comment cette technologie s’intègre dans les outils de création standard de la plateforme.",
-    "verdict": "Factuel",
-    "tip": "Les informations proviennent d’interviews publiées par gamewave et d’une annonce officielle de Roblox.",
-    "sources": [
-      {
-        "title": "Dans les coulisses de Roblox : le créateur Chichine nous dévoile les clés de son succès",
-        "publisher": "gamewave",
-        "domain": "news.google.com",
-        "published": "Sat, 14 Nov 2026 10:00:00 GMT",
-        "description": "Dans les coulisses de Roblox : le créateur Chichine nous dévoile les clés de son succès    gamewave",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOMEVTdl9LT0VvMU4tcXlhQ2twT3hKanp0VUVNU3lWWjBGLXpVU1lCWlpSNXVWbXh1eWxrb3Aydk1KQ09VYzVxOHd5SzZ6SU9leXBBN24yV3JlRTJJSFJlV3hkbEhYUGdzVC1tY1NDaTVPbVV6c3kyMW0xTHZEVmhqaTZjZ0RkcVhiYWh4M2JOMnViZUU1ZXExQTNFY3ZnWkMtS3NjSnIwM0tPblJkd0YxSHM4MA?oc=5",
-        "source_type": "media"
-      },
-      {
-        "title": "Roblox : « On peut partir d'une idée simple et créer des expériences ambitieuses », nous confie Chichine",
-        "publisher": "gamewave",
-        "domain": "news.google.com",
-        "published": "Fri, 13 Nov 2026 14:40:00 GMT",
-        "description": "Roblox : « On peut partir d'une idée simple et créer des expériences ambitieuses », nous confie Chichine    gamewave",
-        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOMkVmNFZwV3lmaHNXdm1qY2YwYTFEY09YV0V3cGVuN0szMW94dUcwTkZCLUJNeUtDVGZiQnRuekdzRnRLNTloazJrWGJTMnczT0dLaWR2M1NQOWdRSk1xbVBrUTAzUGhPa2Fvb290Q3dNT29DQXE0R2tYTVF6TjhERXFCb2hadkE3UXNoLU8yTzZ4QVl0eWl5Q0p4Wk8zbFA5ZEhlWFlfN3FVaHpvWlgxdnZHMWp5Z0wxRnE1WkdpZFo4RTA?oc=5",
-        "source_type": "media"
-      },
-      {
-        "title": "Roblox : « L'IA ne remplace pas le travail, mais elle accélère le prototypage », nous confie Chichine",
-        "publisher": "gamewave",
-        "domain": "news.google.com",
-        "published": "Mon, 16 Nov 2026 13:13:00 GMT",
-        "description": "Roblox : « L'IA ne remplace pas le travail, mais elle accélère le prototypage », nous confie Chichine    gamewave",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNTGc3aEE0el9VWkYwc01xcExJRnB6QTNsZmpTTGx3Wl9TMzNiMnNfc3ZLWmxBRGQ3M1BWSjJCNHVEb1ZmelhidzJqd0JRS05oVG9FaXBrNUgwTUtBQVdRUnBSQi02eDBHZm9VS1E0cC1FeW96T2JmTlFfWTJxSk9OS0phVVVOOE13RTZDaDA5eWxXX3kxSldOT2lrMWtneTRFYUpGUjlFMkxBWHRNbHBtU0NMQ2tFT2oxcTlzbmdB?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261116T184438Z.mp3"
   }
 ]
