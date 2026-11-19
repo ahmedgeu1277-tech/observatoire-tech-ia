@@ -1,5 +1,36 @@
 [
   {
+    "id": "20261119T181252-5b38e409",
+    "date": "2026-11-19T18:12+00:00",
+    "theme": "Warhammer 40,000: Dawn of War IV — sortie annoncée en décembre 2026",
+    "title": "Warhammer 40,000: Dawn of War IV : détails insuffisants dans les sources",
+    "summary": "Les résultats récupérés signalent une actualité liée à Warhammer 40,000: Dawn of War IV, mais les extraits disponibles reprennent surtout les titres et ne fournissent pas assez d'éléments pour confirmer la portée, les effets ou les modalités de l'annonce. Consultez l'article d'origine et le communiqué de l'organisation concernée avant de retenir des détails.",
+    "verdict": "Les extraits récupérés ne suffisent pas pour confirmer les détails.",
+    "tip": "Lire l'article original et rechercher un communiqué officiel avant de partager l'information.",
+    "sources": [
+      {
+        "title": "Dawn of War IV dévoile ses configurations PC : 32 Go de RAM recommandés et 16 Go minimum",
+        "publisher": "Always For Keyboard",
+        "domain": "news.google.com",
+        "published": "Thu, 12 Nov 2026 23:56:59 GMT",
+        "description": "Dawn of War IV dévoile ses configurations PC : 32 Go de RAM recommandés et 16 Go minimum    Always For Keyboard",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQbkFDMFlVMDZWN1BlYnpjZDRudVZjX2VtMVJIMmFzQjdvcmdrTl95c184d09VbTlzY0FwNmItbnpCRGlfanRKT1VWLUFvY01LeUhZazh2UU5tOXA0YXVPRTV4dmZjcDBvVGt0NzhYZTMwNjhTdkdPaGs2WEowOVFYbVBKM2hMWFE5ZE4zdEZReGpfdEpLMGFMcDFB?oc=5",
+        "source_type": "media"
+      },
+      {
+        "title": "Warhammer 40,000: Dawn of War 4 est-il multijoueur et/ou coopératif ?",
+        "publisher": "gamewave",
+        "domain": "news.google.com",
+        "published": "Mon, 16 Nov 2026 14:35:00 GMT",
+        "description": "Warhammer 40,000: Dawn of War 4 est-il multijoueur et/ou coopératif ?    gamewave",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNTlRDTXpDZVlweV81M0QwUXh5WHZacjhpZWVNOGFkaWFhUzZlekFURTFzekd4VFB3U1dvOEZDVXU5NWpDWDhZc1RBU0hGLWt2cUJaNjZfc19CSmJkRERUTkE2UlhocGxLQ290MGtNV3hjaG5VQzNzLVRrbmNmdGxwcWszN0xuMWs0UlVMdFd4M3pqdk1wN29tS0RmX1pSYTJPRTJwRFpUQWkyRnU4c19uc01aeU56NEVpQ2c?oc=5",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261119T181252-5b38e409.mp3"
+  },
+  {
     "id": "20261119T175642-14f9a5e5",
     "date": "2026-11-19T17:56+00:00",
     "theme": "Technologie, IA et jeux vidéo — veille générale de secours",
@@ -877,37 +908,6 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261118T194550-dd9e6793.mp3"
-  },
-  {
-    "id": "20261118T184240-d584b737",
-    "date": "2026-11-18T18:42+00:00",
-    "theme": "Warhammer 40,000: Dawn of War IV — sortie annoncée en décembre 2026",
-    "title": "Warhammer 40,000: Dawn of War IV : détails insuffisants dans les sources",
-    "summary": "Les résultats récupérés signalent une actualité liée à Warhammer 40,000: Dawn of War IV, mais les extraits disponibles reprennent surtout les titres et ne fournissent pas assez d'éléments pour confirmer la portée, les effets ou les modalités de l'annonce. Consultez l'article d'origine et le communiqué de l'organisation concernée avant de retenir des détails.",
-    "verdict": "Les extraits récupérés ne suffisent pas pour confirmer les détails.",
-    "tip": "Lire l'article original et rechercher un communiqué officiel avant de partager l'information.",
-    "sources": [
-      {
-        "title": "Dawn of War IV dévoile ses configurations PC : 32 Go de RAM recommandés et 16 Go minimum",
-        "publisher": "Always For Keyboard",
-        "domain": "news.google.com",
-        "published": "Thu, 12 Nov 2026 23:56:59 GMT",
-        "description": "Dawn of War IV dévoile ses configurations PC : 32 Go de RAM recommandés et 16 Go minimum    Always For Keyboard",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQbkFDMFlVMDZWN1BlYnpjZDRudVZjX2VtMVJIMmFzQjdvcmdrTl95c184d09VbTlzY0FwNmItbnpCRGlfanRKT1VWLUFvY01LeUhZazh2UU5tOXA0YXVPRTV4dmZjcDBvVGt0NzhYZTMwNjhTdkdPaGs2WEowOVFYbVBKM2hMWFE5ZE4zdEZReGpfdEpLMGFMcDFB?oc=5",
-        "source_type": "media"
-      },
-      {
-        "title": "Warhammer 40,000: Dawn of War 4 est-il multijoueur et/ou coopératif ?",
-        "publisher": "gamewave",
-        "domain": "news.google.com",
-        "published": "Mon, 16 Nov 2026 14:35:00 GMT",
-        "description": "Warhammer 40,000: Dawn of War 4 est-il multijoueur et/ou coopératif ?    gamewave",
-        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNTlRDTXpDZVlweV81M0QwUXh5WHZacjhpZWVNOGFkaWFhUzZlekFURTFzekd4VFB3U1dvOEZDVXU5NWpDWDhZc1RBU0hGLWt2cUJaNjZfc19CSmJkRERUTkE2UlhocGxLQ290MGtNV3hjaG5VQzNzLVRrbmNmdGxwcWszN0xuMWs0UlVMdFd4M3pqdk1wN29tS0RmX1pSYTJPRTJwRFpUQWkyRnU4c19uc01aeU56NEVpQ2c?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261118T184240-d584b737.mp3"
   },
   {
     "id": "20261118T095053-7b310326",
