@@ -1,7 +1,7 @@
 import json
 import os
-import stat
 import sqlite3
+import stat
 import tempfile
 import unittest
 from concurrent.futures import ThreadPoolExecutor
