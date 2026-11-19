@@ -14,6 +14,7 @@ Le site présente des articles et des documentaires issus de sources publiques. 
 - Narration audio lorsque le fournisseur vocal est disponible.
 - Génération de documentaires vidéo à partir de contenus éditoriaux.
 - Archivage des publications récentes et nettoyage programmé des anciennes archives.
+- File locale de missions IA avec trois rôles spécialisés maximum, durée limitée et demande d'annulation coopérative entre les appels IA.
 - Tests automatisés et contrôles de qualité/sécurité dans GitHub Actions.
 
 Les tâches GitHub Actions sont ponctuelles et planifiées : elles ne constituent pas un serveur permanent 24 h/24.
