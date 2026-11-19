@@ -11,6 +11,10 @@ class AIProviderTests(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, "Aucun fournisseur IA"):
             generate_text([{"role": "user", "content": "test"}])
 
+    def test_rejects_non_positive_timeout(self):
+        with self.assertRaises(ValueError):
+            generate_text([], timeout=0)
+
     def test_order_is_configurable(self):
         with patch.dict(os.environ, {
             "AI_PROVIDER_ORDER": "huggingface,groq",
