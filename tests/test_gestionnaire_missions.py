@@ -247,6 +247,8 @@ class MissionQueueTests(unittest.TestCase):
             self.queue.run_worker(max_runtime_seconds=172801)
         with self.assertRaises(ValueError):
             self.queue.run_worker(max_missions=MAX_PENDING + 1)
+        with self.assertRaises(ValueError):
+            self.queue.run_worker(idle_timeout_seconds=3601)
 
     @unittest.skipIf(os.name == "nt", "Les permissions POSIX ne sont pas disponibles sous Windows.")
     def test_private_queue_directory_and_database_have_restricted_permissions(self):
