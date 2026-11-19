@@ -1,5 +1,45 @@
 [
   {
+    "id": "20261119T173750-8f653049",
+    "date": "2026-11-19T17:37+00:00",
+    "theme": "Moteurs et logiciels de création de jeux",
+    "title": "Unity lance CLI 1.0 et intègre Synty Studios",
+    "summary": "Unity a publié la version 1.0 de son interface en ligne de commande, permettant d’automatiser builds et tests depuis le terminal. La même annonce révèle l’acquisition de Synty Studios, dont les packs d’actifs POLYGON seront ajoutés à Unity Spark sans modifier les licences existantes. Ces évolutions, présentées lors de la keynote Unite Tokyo 2026, visent à simplifier les flux de travail des développeurs, mais leur adoption réelle reste à mesurer.",
+    "verdict": "Les sources officielles confirment la sortie du CLI 1.0 et l’intégration de Synty Studios, mais aucune donnée d’adoption n’est encore disponible.",
+    "tip": "Les développeurs intéressés par l’automatisation et les nouveaux assets POLYGON devraient tester le CLI et explorer les packs Synty dans Unity Spark.",
+    "sources": [
+      {
+        "title": "The Unity CLI 1.0 is here!",
+        "publisher": "Unity",
+        "domain": "unity.com",
+        "published": "Tue, 17 Nov 2026 00:00:00 GMT",
+        "description": "Unity CLI 1.0 is out of beta. Connect Claude Code, Codex, Grok Build or Antigravity to your Unity project, and automate builds and tests from the terminal.",
+        "url": "https://unity.com/the-unity-cli-1.0-is-here",
+        "source_type": "source_editeur"
+      },
+      {
+        "title": "Unite Tokyo 2026 Keynote recap: Built for the speed of your ideas",
+        "publisher": "Unity",
+        "domain": "unity.com",
+        "published": "Tue, 17 Nov 2026 00:00:00 GMT",
+        "description": "Catch every highlight from the Unite Tokyo 2026 Keynote: Unity 7, ECS for All, Unity CLI, Synty Studios joining Unity, and the new Unity Fellowship.",
+        "url": "https://unity.com/blog/unite-tokyo-2026-keynote-recap",
+        "source_type": "source_editeur"
+      },
+      {
+        "title": "Synty Studios Joins Unity, Bringing Artist-Made Assets to Unity Spark",
+        "publisher": "Unity",
+        "domain": "unity.com",
+        "published": "Mon, 16 Nov 2026 00:00:00 GMT",
+        "description": "Unity has acquired Synty Studios, maker of the POLYGON 3D asset packs. Synty’s library is coming to Unity Spark, and existing packs and licenses stay the same.",
+        "url": "https://unity.com/blog/synty-studios-acquisition",
+        "source_type": "source_editeur"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261119T173750-8f653049.mp3"
+  },
+  {
     "id": "20261119T173507-ec24812f",
     "date": "2026-11-19T17:35+00:00",
     "theme": "GTA VI — lancement et premiers retours vérifiés",
