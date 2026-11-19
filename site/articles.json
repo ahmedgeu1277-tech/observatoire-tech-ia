@@ -1,5 +1,36 @@
 [
   {
+    "id": "20261119T191658-97892ea1",
+    "date": "2026-11-19T19:16+00:00",
+    "theme": "Technologie, IA et jeux vidéo — veille générale de secours",
+    "title": "Précommandes chinoises et piratage de GTA 6 : deux tendances concurrentes",
+    "summary": "Les précommandes de l’OSTA O1 Pro sont déjà ouvertes en Chine, indiquant un intérêt croissant pour les formats larges sur les consoles de nouvelle génération. Parallèlement, plusieurs millions de joueurs Xbox ont exploité une « astuce néo‑zélandaise » pour accéder à GTA 6 avant sa sortie officielle, soulevant des questions de sécurité et de gestion des droits numériques. Les chiffres exacts restent non confirmés, mais ces deux phénomènes montrent l’essor des stratégies de distribution et de contournement dans l’industrie.",
+    "verdict": "Incertain",
+    "tip": "Les données précises sur le nombre de précommandes et d’utilisateurs de l’astuce ne sont pas confirmées par des sources officielles.",
+    "sources": [
+      {
+        "title": "OSTA O1 Pro : format large, trois coloris et précommandes ouvertes en Chine avant la conférence du 20 novembre",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 19:00:30 +0000",
+        "description": "Un format large qui intrigue.",
+        "url": "https://fr.ign.com/osta-o1-pro/94096/osta-o1-pro-format-large-trois-coloris-et-precommandes-ouvertes-en-chine-avant-la-conference-du-20-n",
+        "source_type": "media"
+      },
+      {
+        "title": "Plusieurs millions de joueurs Xbox ont utilisé \"l'astuce néo-zélandaise\" pour jouer à GTA 6 avant tout le monde",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 18:45:54 +0000",
+        "description": "Bande d'impatients.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94101/plusieurs-millions-de-joueurs-xbox-ont-utilise-lastuce-neo-zelandaise-pour-jouer-a-gta-6-avant-tout",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261119T191658-97892ea1.mp3"
+  },
+  {
     "id": "20261119T191554-ffa1a263",
     "date": "2026-11-19T19:15+00:00",
     "theme": "Moteurs et logiciels de création de jeux",
@@ -1148,36 +1179,5 @@
       }
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet."
-  },
-  {
-    "id": "20261118T213728-9fc41933",
-    "date": "2026-11-18T21:37+00:00",
-    "theme": "Dragon Quest Monsters: The Withered World — sortie annoncée le 3 décembre 2026",
-    "title": "Dragon Quest Monsters: The Withered World : détails insuffisants dans les sources",
-    "summary": "Les résultats récupérés signalent une actualité liée à Dragon Quest Monsters: The Withered World, mais les extraits disponibles reprennent surtout les titres et ne fournissent pas assez d'éléments pour confirmer la portée, les effets ou les modalités de l'annonce. Consultez l'article d'origine et le communiqué de l'organisation concernée avant de retenir des détails.",
-    "verdict": "Les extraits récupérés ne suffisent pas pour confirmer les détails.",
-    "tip": "Lire l'article original et rechercher un communiqué officiel avant de partager l'information.",
-    "sources": [
-      {
-        "title": "Dragon Quest Monsters Boisflétri : guide de sortie officiel",
-        "publisher": "SpiritGamer",
-        "domain": "news.google.com",
-        "published": "Fri, 13 Nov 2026 18:55:18 GMT",
-        "description": "Dragon Quest Monsters Boisflétri : guide de sortie officiel    SpiritGamer",
-        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE85ZUZobG91X0ltOVdpYXRKek9lQUlIMHZ0QlQ1TjhDZmxoMkJkd2lyWDlxaGhtVXJDMFFtd0U3X1J4c1lQZ0V5VkVtMGxtNnotQzFBcHFsTEJILVRiNVlwRjdIM1lNcXRxQnNFSUx6MA?oc=5",
-        "source_type": "media"
-      },
-      {
-        "title": "Dragon Quest Monsters: The Withered World dévoile ses premières heures d’aventure",
-        "publisher": "Big N",
-        "domain": "news.google.com",
-        "published": "Thu, 12 Nov 2026 22:11:25 GMT",
-        "description": "Dragon Quest Monsters: The Withered World dévoile ses premières heures d’aventure    Big N",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPZnRCRjFwTWt6SFJTNXVLTzc3eFp5TEczLWRLRHcya1JRNHJMZkF3YTFNNTdHMG9NOHhMd210Uk9CRzJFS3N5Mzdnbkh4QU1UalJrZlIwckd0am5LS0RVQ0FMU0h5QVlUZlRUenVBcjgyNktDSEIxUFc5d2FzMkN1SnJhUHBvcmVlX01rcy1wcE9Hdw?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261118T213728-9fc41933.mp3"
   }
 ]
