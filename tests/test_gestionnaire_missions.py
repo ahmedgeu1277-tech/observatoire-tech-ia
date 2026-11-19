@@ -149,6 +149,11 @@ class MissionQueueTests(unittest.TestCase):
             "max_duration_seconds": 60,
         })
         second = self.queue.enqueue(self.payload())
+        with self.queue._connect() as db:
+            db.execute(
+                "UPDATE missions SET created_at=? WHERE id=?",
+                ("2000-01-01T00:00:00+00:00", first),
+            )
         def cancel_and_check_lock(payload, should_cancel):
             self.assertTrue(self.queue.cancel(first))
             self.assertTrue(should_cancel())
