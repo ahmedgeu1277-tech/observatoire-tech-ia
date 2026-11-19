@@ -77,3 +77,11 @@ Le développement de jeux et les intégrations associées ne font plus partie de
 - Aucun travail ne continue en arrière-plan après la fin d'une exécution GitHub Actions, sauf les workflows effectivement planifiés.
 - Aucune vente, dépense ou publication externe n'est automatique.
 - Les rapports et prototypes privés ne doivent pas être ajoutés au site public.
+
+
+## Trois chantiers poursuivis le 19 novembre 2026
+
+- **Multilingue :** l'accueil traduit désormais aussi les libellés des cartes d'articles (verdict, conseil, sources, contenu IA), les états de chargement/erreur et le lien documentaire en français, anglais, espagnol, allemand, portugais, arabe et chinois. Une note indique explicitement que les articles et leurs sources restent dans leur langue d'origine ; aucune traduction automatique intégrale des articles n'est revendiquée.
+- **Coopération et autonomie bornée :** les agents suivants reçoivent les analyses précédentes, avec un plafond de 3 000 caractères par agent et 8 000 caractères au total. Un worker de file peut surveiller les nouvelles missions, avec durée maximale configurable de 48 heures (défaut : 1 heure), 50 missions maximum, attente après file vide limitée (défaut : 5 minutes), et arrêt coopératif par signal. Chaque mission reste plafonnée à 180 secondes et trois agents. Le processus doit rester actif sur une machine disponible ; ce n'est pas un service permanent hébergé.
+- **Sécurité :** les missions contenant un secret potentiel sont refusées avant stockage et envoi au fournisseur IA. Sur POSIX, le dossier SQLite et les rapports privés reçoivent des permissions restrictives (0700 pour les dossiers, 0600 pour les fichiers). L'arbre Git courant a été contrôlé : aucun fichier n'est suivi sous `.laboratoire_prive/`. Le dépôt et son historique restent publics.
+- Les contrôles automatisés du commit final sont en attente de leur exécution avant validation de ces changements.
