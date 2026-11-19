@@ -64,9 +64,26 @@ class MissionQueueTests(unittest.TestCase):
     def test_recover_interrupted_marks_stale_running_missions(self):
         mission_id = self.queue.enqueue(self.payload())
         with self.queue._connect() as db:
-            db.execute("UPDATE missions SET status='running' WHERE id=?", (mission_id,))
+            db.execute(
+                "UPDATE missions SET status='running',started_at=? WHERE id=?",
+                ("2000-01-01T00:00:00+00:00", mission_id),
+            )
         self.assertEqual(self.queue.recover_interrupted(), 1)
         self.assertEqual(self.queue.list_missions()[0]["status"], "interrupted")
+
+    def test_recovery_does_not_interrupt_recent_running_mission(self):
+        mission_id = self.queue.enqueue(self.payload())
+        with self.queue._connect() as db:
+            db.execute(
+                "UPDATE missions SET status='running',started_at=? WHERE id=?",
+                ("2099-01-01T00:00:00+00:00", mission_id),
+            )
+        self.assertEqual(self.queue.recover_interrupted(), 0)
+        self.assertEqual(self.queue.list_missions()[0]["status"], "running")
+
+    def test_recovery_rejects_too_short_timeout(self):
+        with self.assertRaises(ValueError):
+            self.queue.recover_interrupted(30)
 
     def test_no_work_returns_none(self):
         self.assertIsNone(self.queue.run_next())
