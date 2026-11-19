@@ -43,6 +43,9 @@ class MissionQueue:
                     error_type TEXT
                 )
             """)
+            columns = {row["name"] for row in db.execute("PRAGMA table_info(missions)")}
+            if "cancel_requested_at" not in columns:
+                db.execute("ALTER TABLE missions ADD COLUMN cancel_requested_at TEXT")
             db.execute("CREATE INDEX IF NOT EXISTS idx_missions_status_created ON missions(status, created_at)")
 
     def _connect(self):
@@ -88,19 +91,28 @@ class MissionQueue:
         return [dict(row) for row in rows]
 
     def cancel(self, mission_id: str) -> bool:
-        """Annule une mission en attente ou demande son arrêt coopératif si elle est active."""
+        """Annule une mission en attente ou signale l'arrêt coopératif d'une mission active."""
         with self._connect() as db:
-            result = db.execute(
+            pending = db.execute(
                 "UPDATE missions SET status='cancelled', finished_at=? "
-                "WHERE id=? AND status IN ('pending','running')",
+                "WHERE id=? AND status='pending'",
                 (now(), mission_id),
             )
-            return result.rowcount == 1
+            if pending.rowcount == 1:
+                return True
+            active = db.execute(
+                "UPDATE missions SET cancel_requested_at=? "
+                "WHERE id=? AND status='running' AND cancel_requested_at IS NULL",
+                (now(), mission_id),
+            )
+            return active.rowcount == 1
 
     def _is_cancelled(self, mission_id: str) -> bool:
         with self._connect() as db:
-            row = db.execute("SELECT status FROM missions WHERE id=?", (mission_id,)).fetchone()
-        return row is None or row["status"] != "running"
+            row = db.execute(
+                "SELECT status,cancel_requested_at FROM missions WHERE id=?", (mission_id,)
+            ).fetchone()
+        return row is None or row["status"] != "running" or row["cancel_requested_at"] is not None
 
     def run_next(self) -> dict | None:
         """Récupère les missions expirées, puis réserve atomiquement la suivante."""
@@ -135,7 +147,8 @@ class MissionQueue:
                 status = "partial"
             with self._connect() as db:
                 db.execute(
-                    "UPDATE missions SET status=?,finished_at=?,result=? WHERE id=? AND status='running'",
+                    "UPDATE missions SET status=CASE WHEN cancel_requested_at IS NOT NULL THEN 'cancelled' ELSE ? END,"
+                    "finished_at=?,result=? WHERE id=? AND status='running'",
                     (status, now(), json.dumps(result, ensure_ascii=False), row["id"]),
                 )
                 current = db.execute("SELECT status FROM missions WHERE id=?", (row["id"],)).fetchone()
@@ -145,8 +158,8 @@ class MissionQueue:
         except Exception as exc:  # noqa: BLE001 - journalise uniquement le type, jamais le contenu sensible
             with self._connect() as db:
                 db.execute(
-                    "UPDATE missions SET status='failed',finished_at=?,error_type=? "
-                    "WHERE id=? AND status='running'",
+                    "UPDATE missions SET status=CASE WHEN cancel_requested_at IS NOT NULL THEN 'cancelled' ELSE 'failed' END,"
+                    "finished_at=?,error_type=? WHERE id=? AND status='running'",
                     (now(), type(exc).__name__, row["id"]),
                 )
                 current = db.execute("SELECT status FROM missions WHERE id=?", (row["id"],)).fetchone()
