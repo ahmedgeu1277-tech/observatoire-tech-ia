@@ -1,48 +1,49 @@
-# Usine IA Tech & Gaming 24-7
+# Observatoire Tech & IA
 
-Observatoire automatisé francophone consacré à l'IA, au gaming, à Roblox, au matériel et à la cybersécurité.
+Site éditorial consacré à l'actualité publique de la technologie, de l'intelligence artificielle et du jeu vidéo.
 
-## Site
-GitHub Pages : https://ahmedgeu1277-tech.github.io/observatoire-tech-ia/
+## Site public
 
-Dans Settings → Pages, choisir la branche `main` et le dossier `/ (root)`. Le fichier racine `index.html` charge les articles depuis `site/articles.json`.
+https://ahmedgeu1277-tech.github.io/observatoire-tech-ia/
 
-## Cycle quotidien
-- GitHub Actions planifie deux cycles de veille par jour, à 09 h et 18 h UTC ; GitHub peut retarder les tâches planifiées.
-- Google News RSS récupère des titres, descriptions et liens publics.
-- Le gestionnaire IA essaie les fournisseurs configurés dans l'ordre (Groq puis Hugging Face par défaut) et bascule si le premier échoue.
-- Les profils de `agents_dynamiques/` fournissent des analyses spécialisées ; ce sont des profils pilotés par le programme, pas des agents autonomes indépendants.
-- Un filtre technique recherche les secrets courants.
-- Edge TTS crée une narration quand le service vocal est disponible.
-- Chaque jour, un workflow assemble quatre dossiers, crée des diapositives originales et produit une vidéo MP4 H.264/AAC.
-- Les vidéos, audios et copies Markdown datés sont conservés au moins 30 jours dans `site/video/`, `site/audio/` et `site/archives/`. Le nettoyage automatique ne supprime que les fichiers âgés de plus de 30 jours ; les versions récentes ne sont pas effacées à chaque nouvelle publication.
-- La page de documentaire présente la dernière édition ; les éditions précédentes restent dans les archives du site.
-- Les articles sont publiés dans `site/articles.json` et les résumés dans `memoire_tech.txt`.
+Le site présente des articles et des documentaires issus de sources publiques. Les contenus générés avec l'aide de l'IA peuvent comporter des erreurs : consultez les sources originales avant de prendre une décision.
 
-## Ville virtuelle et séparation des données
+## Fonctionnalités actuellement présentes
 
-La ville virtuelle est retirée du site public. Ses données de fonctionnement ne doivent jamais être enregistrées dans le dépôt public ni dans GitHub Pages. Les workflows peuvent initialiser un état temporaire pendant une exécution, mais GitHub Actions détruit l'environnement à la fin : cela ne constitue pas une base de données persistante. La ville ne sera réactivée qu'après la mise en place d'un backend privé avec authentification et stockage persistant. Le fichier `data/gouvernement.json` et son ancien emplacement public sont ignorés par Git.
+- Collecte planifiée de sources publiques et génération d'articles assistée par IA.
+- Narration audio lorsque le fournisseur vocal est disponible.
+- Génération de documentaires vidéo à partir de contenus éditoriaux.
+- Archivage des publications récentes et nettoyage programmé des anciennes archives.
+- Tests automatisés et contrôles de qualité/sécurité dans GitHub Actions.
 
-## Agents et tâches hebdomadaires
-Le workflow du dimanche propose un thème, crée une fiche d'agent spécialisée et prépare un documentaire écrit et audio. Les profils d'agents sont des configurations JSON : ils ne génèrent ni n'exécutent librement du code Python.
+Les tâches GitHub Actions sont ponctuelles et planifiées : elles ne constituent pas un serveur permanent 24 h/24.
 
-## Orchestrateur de missions IA (prototype contrôlé)
-- `orchestrateur.py` lance une mission JSON avec jusqu'à trois rôles spécialisés : chercheur, critique et architecte.
-- Les rapports sont enregistrés dans `.laboratoire_prive/missions/`, dossier ignoré par Git. Ils ne sont pas publiés sur le site.
-- Les missions sont limitées à 180 secondes maximum ; ce n'est pas encore une équipe d'agents persistants.
+## Langues
 
-## Encyclopédie annuelle
-Le générateur `ecrire_livre.py` est manuel. Il utilise `memoire_tech.txt` et, si présent, `coffre_secret_livre.txt`.
+Le site et la chaîne éditoriale sont actuellement principalement en français. Une interface multilingue complète et des traductions vérifiées ne sont pas encore disponibles. Ne considérez pas les autres langues comme prises en charge tant qu'elles ne sont pas proposées explicitement sur le site.
 
-## Secrets et permissions
-- Settings → Secrets and variables → Actions : vérifier `GROQ_API_KEY`.
-- Ne jamais placer une clé API dans un fichier du dépôt.
-- Aucun composant Discord n'est utilisé.
+## Ce qui n'est pas encore disponible
 
-## Limites et sécurité
-- GitHub Actions exécute des tâches planifiées, pas un serveur permanent 24 h/24 ; les horaires peuvent être retardés.
-- Le filtre automatique est une protection de premier niveau, pas une certification de conformité.
-- Les résumés et audios IA peuvent contenir des erreurs : vérifier les sources originales.
-- Respecter les conditions d'âge et d'utilisation des services ; demander l'aide d'un parent ou tuteur lorsque nécessaire.
+- Un service privé hébergé avec authentification et stockage persistant.
+- Des agents indépendants fonctionnant en continu ou des missions autonomes de plusieurs jours.
+- Une connexion directe à Roblox Studio, des tests de gameplay automatisés ou la publication automatique de jeux.
+- Une plateforme complète de création logicielle/vidéo utilisable depuis mobile et PC.
+- Une supervision permanente garantissant la disponibilité des fournisseurs IA.
 
-Voir `docs/ETAT_AVANCEMENT_GLOBAL.md` pour l'état réel du projet et ses limites.
+Les prototypes et outils du dépôt ne doivent pas être présentés comme des services finalisés.
+
+## Sécurité et confidentialité
+
+**Ce dépôt GitHub est public.** Tout fichier suivi par Git, y compris le code et la documentation, peut être consulté et copié par le public. Ne placez ici aucune clé API, donnée personnelle, découverte confidentielle, note privée ou prototype qui doit rester secret.
+
+Les secrets de fournisseurs doivent être configurés dans les paramètres GitHub Actions, jamais dans le code. Le dossier local `.laboratoire_prive/` est ignoré par Git, mais cette règle ne rend pas confidentiels les fichiers déjà suivis ni leur historique.
+
+Le site GitHub Pages est public et ne convient pas au stockage de données privées. Une suppression dans le dernier commit ne retire pas automatiquement les anciennes versions de l'historique Git.
+
+Aucune intégration Discord n'est utilisée.
+
+## Développement et vérification
+
+Les workflows de contrôle sont définis dans `.github/workflows/`. Les résultats récents sont consultables dans l'onglet Actions du dépôt.
+
+Consultez [l'état d'avancement détaillé](docs/ETAT_AVANCEMENT_GLOBAL.md) pour les limites connues et les tâches restantes. Le pourcentage d'avancement est une estimation, pas une certification de mise en production.
