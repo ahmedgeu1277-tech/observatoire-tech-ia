@@ -1,5 +1,54 @@
 [
   {
+    "id": "20261119T174921-765502da",
+    "date": "2026-11-19T17:49+00:00",
+    "theme": "GTA VI — lancement et premiers retours vérifiés",
+    "title": "GTA VI : pré‑lancement sur Xbox Series S et utilisation de FSR 4.1",
+    "summary": "Les premières images publiées par IGN montrent que GTA VI exploite la technologie FSR 4.1 pour upscaler le rendu de 720 p à 1080 p sur Xbox Series S, offrant déjà un visuel détaillé. Une astuce décrite par Xboxygen permettrait d’accéder au jeu en avance sur la même console, bien que Rockstar n’ait pas encore confirmé officiellement cette disponibilité. Les performances sur d’autres plateformes restent à vérifier après le lancement officiel.",
+    "verdict": "Les sources indiquent un accès pré‑lancement sur Xbox Series S via une astuce, mais aucune confirmation officielle de Rockstar. La qualité visuelle grâce à FSR 4.1 est confirmée, mais les performances globales attendues restent à confirmer.",
+    "tip": "Surveillez les communiqués de Rockstar pour une confirmation officielle et les tests de performance sur PlayStation et PC.",
+    "sources": [
+      {
+        "title": "Les acteurs de Jason et Lucia dans GTA 6 posent ensemble sur une première photo",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 15:14:47 +0000",
+        "description": "\"Et voilà... le secret est enfin dévoilé !\"",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94092/les-acteurs-de-jason-et-lucia-dans-gta-6-posent-ensemble-sur-une-premiere-photo",
+        "source_type": "media"
+      },
+      {
+        "title": "GTA 6 utilise la technologie FSR 4.1 sur Xbox Series S pour upscaler le jeu de 720p à 1080p",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 14:48:25 +0000",
+        "description": "Redstone, voici GTA.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94091/gta-6-utilise-la-technologie-fsr-41-sur-xbox-series-s-pour-upscaler-le-jeu-de-720p-a-1080p",
+        "source_type": "media"
+      },
+      {
+        "title": "GTA 6 –images du jeu sur Xbox Series S",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 14:48:25 +0000",
+        "description": "",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94090/gta-6-xbox-series-s-screenshots",
+        "source_type": "media"
+      },
+      {
+        "title": "GTA 6 est bien disponible en avance sur Xbox, l’astuce fonctionne et voici comment faire",
+        "publisher": "Xboxygen",
+        "domain": "news.google.com",
+        "published": "Mon, 16 Nov 2026 09:29:03 GMT",
+        "description": "GTA 6 est bien disponible en avance sur Xbox, l’astuce fonctionne et voici comment faire    Xboxygen",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE81U0VpSXNhQlZjV2w5OWtVcmE1eWxkSVFpdG1ZY21sN1prc3VkMXc3Uko2VjBVUW5aMW1kWHpJTDdsNHlWRWVYcVhQa2NlNzV6X1VmeXUyei0ycVpFQ1FOd2NNX3hfdE1NRUJaS0tjY2RwSjYzOVRCclFfay1fQQ?oc=5",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261119T174921-765502da.mp3"
+  },
+  {
     "id": "20261119T174135-3e50b75f",
     "date": "2026-11-19T17:41+00:00",
     "theme": "Matériel et smartphones",
@@ -1148,48 +1197,5 @@
     ],
     "ai_notice": "Contenu assisté par IA ou synthèse de secours à partir des titres. Vérifiez toujours les sources originales.",
     "audio_url": "audio/20261115T202120Z.mp3"
-  },
-  {
-    "id": "20261115T201751Z",
-    "date": "2026-11-15T20:17+00:00",
-    "theme": "Gaming et jeux vidéo",
-    "title": "Événements clés du gaming en 2026",
-    "summary": "En novembre 2026, la communauté gaming attend la sortie de League of Legends : New Dawn en 2027, tandis que la mise à jour 23.5.0 de l’eShop permet désormais l’envoi de jeux en cadeau. GTA 6 reste entouré de spéculations sur sa date et son prix, et Logitech a annoncé un jour de congé dédié aux joueurs. Enfin, PlayStation Plus propose une nouvelle liste de jeux pour ses abonnements Extra et Premium.",
-    "verdict": "Ces développements montrent une diversification des offres et des expériences, mais les détails précis restent à confirmer.",
-    "tip": "Profitez de la fonction d’envoi de jeux en cadeau de l’eShop 23.5.0 pour partager vos titres préférés avec des amis.",
-    "sources": [
-      {
-        "title": "Sorties jeux vidéo novembre 2026 : les nouveautés attendues sur PC et consoles - Sortir à Paris",
-        "description": "Sorties jeux vidéo novembre 2026 : les nouveautés attendues sur PC et consoles    Sortir à Paris",
-        "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPWlBsWmdBZml4b3VoSEtpeWpnTVEySmpNWGtpVWtRRXB0enpLRXBDWUx0VVZLeGZmSjhXYkhacmxtQ0RTSkdWMzNETFJrYUE3RzdrMmQxMnMzX0dVal9Mb3dwTzZwV3hReUdNT3BuWmhRdVJrTFVOck9MbUpnUF95LWhJR2J5eENBMTk2VGJfTldjSlFsSWlMRmZVaGFBZ2Q0eXRDaS1EX1dtVGRGMHZoQzdNbFZzenBiRGJLYmFiRk1mRVM4dnF1TDM0ZWR5WDVlX2c?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "League of Legends : New Dawn, la nouvelle version du jeu phare de Riot Games, arrive en 2027 - JeuxVideo.com",
-        "description": "League of Legends : New Dawn, la nouvelle version du jeu phare de Riot Games, arrive en 2027    JeuxVideo.com",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOMF9iTVhoaFdzT1FPVFF1bkFrNlBHejh1ZXdIWXliUUh6N3otczRjRkdlTU10UHNuNW5DV3lFQ3laZDlTNG9jdlFoazNiaGVQbnhieVNhSWw2b0M5OXc5NVh4SDhIc3ZWYldRRjBLV0pTT2tyWVhfTlozYkJkUms4YkRxZGV3MlA5cWtaWjFmUGp2RFFyWnhjWnl5QUpUX3JWQTh6LXhRVUJIUldoOEMxRHBMZmJfWWlIWDdMeGlUR0FGckNiMHBFVmhBSQ?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "eShop : la 23.5.0 prépare vraiment l'envoi de jeux en cadeau - SpiritGamer",
-        "description": "eShop : la 23.5.0 prépare vraiment l'envoi de jeux en cadeau    SpiritGamer",
-        "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE92eFhVcldybFF3TGpKdmlGVTFYRUxxQUtrSGxURl9yMHZ1cTc1LUdLclVVNXNjMEhWakN2QTZtV3FwODRoRXFUNG5Md2dJYU52b21wQ1RFNHVycG5famZ0SGpXODNEa1JFQWlYX0dWUU9kUDg?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "GTA 6 : toutes les informations : date de sortie, prix, PC et autres spéculations - EGW.News",
-        "description": "GTA 6 : toutes les informations : date de sortie, prix, PC et autres spéculations    EGW.News",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNbEpGU0pfQjZaYlZfaTV3b0RyWnZqRklnb0FrUnhnMElwUDhiQUh3dGRoV0tKZ2FxWmxEMUs5U0NOQ1pCc3VDaXdpeHdYUG5RbWdzcHBNZWZ2OEl0MzBnWV85WmtOR2Rud0dvdHZrWDRJSkhCbm40UWU3RjhjWG80V2NOUGdHNktlT3dsbHJMZzlhZVdqWTV4TmxHbTFNdFk?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "Logitech Game Day : un jour de congé pour jouer aux jeux vidéo - games.gg",
-        "description": "Logitech Game Day : un jour de congé pour jouer aux jeux vidéo    games.gg",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNdVc5TDFlREY5RkdPVm5pcmJ6S2ZKTjF5YXBqLUFqMG9GblJldTYySEljaE45ZnllT3IyTnN2bWQ5U2M0YTBLNWhkMVg2NnpuOWFUbDkzdG43cFZCS2RSSW94ZVo4NHhkUGpma3R0UHlwSEhUTFBXN1BmQzNzem5tQTNLV0pRRTB6cHhFMWRNWC1ja0NvM0FPTWJjOTk?oc=5",
-        "source_type": "source_externe"
-      }
-    ],
-    "ai_notice": "Contenu assisté par IA ou synthèse de secours à partir des titres. Vérifiez toujours les sources originales.",
-    "audio_url": "audio/20261115T201751Z.mp3"
   }
 ]
