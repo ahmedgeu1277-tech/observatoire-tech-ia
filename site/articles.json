@@ -1,5 +1,54 @@
 [
   {
+    "id": "20261119T175301-4f7a1d45",
+    "date": "2026-11-19T17:53+00:00",
+    "theme": "Technologie, IA et jeux vidéo — veille générale de secours",
+    "title": "Ubisoft, GTA 6 et la montée de l’IA : un panorama de licenciements et de nouveautés",
+    "summary": "Ubisoft a annoncé la suppression de 166 postes, concentrés à Montréal et Québec, signe d’une contraction dans ses studios. Pendant ce temps, GTA 6 exploite la technologie FSR 4.1 sur Xbox Series S pour upscaler le jeu de 720 p à 1080 p, illustrant une tendance vers des graphismes plus accessibles. Les premiers visuels de GTA 6 et les nouveaux drapeaux de « Clair Obscur Expedition 33 » montrent un effort marketing accru, mais l’impact commercial reste incertain. L’IA continue de peser sur l’emploi des développeurs, avec 54 % toujours sans poste.",
+    "verdict": "Les informations proviennent de sources médiatiques fiables, mais aucune donnée de ventes ou de performance n’est encore disponible.",
+    "tip": "Surveillez les rapports de ventes de GTA 6 et les mises à jour d’Ubisoft pour comprendre l’impact réel des licenciements.",
+    "sources": [
+      {
+        "title": "Ubisoft confirme de nouveaux licenciements : 166 emplois sont supprimés au sein de deux studios majeurs",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 17:37:12 +0000",
+        "description": "Perte de personnel dans des bureaux importants à Montréal et au Québec.",
+        "url": "https://fr.ign.com/assassins-creed-codename-red/94097/ubisoft-confirme-de-nouveaux-licenciements-166-emplois-sont-supprimes-au-sein-de-deux-studios-majeur",
+        "source_type": "media"
+      },
+      {
+        "title": "Clair Obscur : Expedition 33 : deux drapeaux officiels pour décorer votre mur, ce qu’il faut savoir avant de précommander",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 16:44:48 +0000",
+        "description": "Oh hisse ! Paré pour l’Expedition.",
+        "url": "https://fr.ign.com/clair-obscur-expedition-33/94094/clair-obscur-expedition-33-deux-drapeaux-officiels-pour-decorer-votre-mur-ce-quil-faut-savoir-avant",
+        "source_type": "media"
+      },
+      {
+        "title": "Les acteurs de Jason et Lucia dans GTA 6 posent ensemble sur une première photo",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 15:14:47 +0000",
+        "description": "\"Et voilà... le secret est enfin dévoilé !\"",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94092/les-acteurs-de-jason-et-lucia-dans-gta-6-posent-ensemble-sur-une-premiere-photo",
+        "source_type": "media"
+      },
+      {
+        "title": "GTA 6 utilise la technologie FSR 4.1 sur Xbox Series S pour upscaler le jeu de 720p à 1080p",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 14:48:25 +0000",
+        "description": "Redstone, voici GTA.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94091/gta-6-utilise-la-technologie-fsr-41-sur-xbox-series-s-pour-upscaler-le-jeu-de-720p-a-1080p",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261119T175301-4f7a1d45.mp3"
+  },
+  {
     "id": "20261119T175215-2debaddd",
     "date": "2026-11-19T17:52+00:00",
     "theme": "Call of Duty: Modern Warfare 4 — suivi après lancement (23 octobre 2026)",
@@ -1166,36 +1215,5 @@
     ],
     "ai_notice": "Contenu assisté par IA ou synthèse de secours à partir des titres. Vérifiez toujours les sources originales.",
     "audio_url": "audio/20261116T131642Z.mp3"
-  },
-  {
-    "id": "20261116T103227Z",
-    "date": "2026-11-16T10:32+00:00",
-    "theme": "Matériel et smartphones",
-    "title": "Smartphones et offres Black Friday",
-    "summary": "Le Black Friday propose des réductions sur smartphones, ordinateurs et tablettes, mais les bonnes affaires varient selon les modèles. Samsung prépare un abonnement payant Galaxy AI pour ses nouveaux smartphones, tandis que la série Galaxy S25 est attendue avec des nouveautés attendues. Les offres varient et il faut vérifier les spécifications avant d’acheter.",
-    "verdict": "Il est prudent de comparer les promotions et de vérifier les caractéristiques techniques avant de se décider.",
-    "tip": "Profitez des périodes de soldes pour tester les nouveaux modèles Galaxy S25 et vérifiez si l’abonnement Galaxy AI est inclus ou à ajouter séparément.",
-    "sources": [
-      {
-        "title": "Smartphone, ordinateur, tablette : quels achats high-tech valent vraiment le coup pendant le Black Friday ? - Futura, le média qui explore le monde",
-        "description": "Smartphone, ordinateur, tablette : quels achats high-tech valent vraiment le coup pendant le Black Friday ?    Futura, le média qui explore le monde",
-        "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPLWJ4ckVSYmlqNXFSaDNaR1FpMTRHMjVrYzIxZEN2TE4xMDFjaVU0Q1VRTW1lUUtxajFmckEyU3gzd1N4bjZWX2dNemdjZ3NqVkFpWTJmWmxUdVpFLXlKX01VNU5Wc3Z1eGRfZkptM29IbjNfaEh6Y3Q2bEt4TzZfc2xqdEdTME5kM2U2VUxURDZiMGZiY1RvUXN1c1h0U1Eya2lBRzRKRkItR1JFUkNmWXhFRjlqbEVaQkNiTEotMm9DSWI4YkFWeXhXamtyeEFuQlhKYVVHTGQzQ2NFUkZEMHh2Z3JCcUFsUHczSi1FSU0?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "Galaxy S25 : date de sortie, nouveautés, prix, fiche technique, tout savoir des nouveaux smartphones Samsung - BuzzArena",
-        "description": "Galaxy S25 : date de sortie, nouveautés, prix, fiche technique, tout savoir des nouveaux smartphones Samsung    BuzzArena",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOcW16aF9mNEdkendfMGlzcUZha3VlNHBSd1lYWFJOY0VZSXpWYWpEaUdZWGNrRlRwbXJHS1F3SVZUbEU3YVFBaXZuaFplakZwZVg2TU84Zy1IdzFEWUpVLWFaZEcxVV9CTlhqNzFNX2hlVjk4dTBTTVdndUVnZWxuRDhFaDVUaXJRUUhfd3BfdGZQWXNtZjB1cFAxUkpKUXpFU0F1NGstcw?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "Samsung prépare un abonnement payant Galaxy AI sur ses smartphones - Linformatique.org",
-        "description": "Samsung prépare un abonnement payant Galaxy AI sur ses smartphones    Linformatique.org",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9Od2R1NFo0NlhqWEh1VG9LQWNjSTkzQTlQNmlGcERPNlhyc0pXVGVGLVk3eFRHTmhEeDEwNmFzZnN5N2hZYnBpOWpQRnprbDBJRXloOHgyeTctV1lJaldhTXhkdFUydkg1V3NmaW04QkgtdmFLUFdMQy1zalg2UQ?oc=5",
-        "source_type": "source_externe"
-      }
-    ],
-    "ai_notice": "Contenu assisté par IA ou synthèse de secours à partir des titres. Vérifiez toujours les sources originales.",
-    "audio_url": "audio/20261116T103227Z.mp3"
   }
 ]
