@@ -398,10 +398,6 @@ class MainRetryTests(unittest.TestCase):
         save_articles.assert_called_once_with({"id": "fallback-1", "title": "Sujet général", "audio_url": None})
 
 
-if __name__ == "__main__":
-    unittest.main()
-
-
 class NewsFallbackTests(unittest.TestCase):
     @patch("main.requests.get")
     def test_bing_is_used_when_google_news_fails(self, mock_get):
@@ -561,3 +557,7 @@ class AgentProfileLoadingTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             with patch.object(main, "ROOT", Path(folder)):
                 self.assertEqual(main.load_agent_profiles(), [])
+
+
+if __name__ == "__main__":
+    unittest.main()
