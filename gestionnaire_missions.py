@@ -9,7 +9,9 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import signal
 import sqlite3
+import threading
 import time
 from contextlib import contextmanager
 from datetime import UTC, datetime, timedelta
@@ -252,6 +254,9 @@ def main() -> int:
     add.add_argument("json_file")
     sub.add_parser("run-next", help="Exécuter une mission en attente.")
     sub.add_parser("recover", help="Classer les missions restées actives après un arrêt brutal.")
+    worker = sub.add_parser("worker", help="Traiter une file de missions avec des limites strictes.")
+    worker.add_argument("--max-runtime-seconds", type=int, default=3600)
+    worker.add_argument("--max-missions", type=int, default=MAX_PENDING)
     cancel = sub.add_parser("cancel", help="Annuler une mission en attente.")
     cancel.add_argument("mission_id")
     args = parser.parse_args()
@@ -268,6 +273,33 @@ def main() -> int:
         print("annulée" if queue.cancel(args.mission_id) else "introuvable ou déjà démarrée")
     elif args.command == "recover":
         print(f"{queue.recover_interrupted()} mission(s) classée(s) comme interrompue(s).")
+    elif args.command == "worker":
+        stop_event = threading.Event()
+        previous_handlers = {}
+
+        def request_stop(_signum, _frame):
+            stop_event.set()
+
+        for signum in (signal.SIGINT, signal.SIGTERM):
+            previous_handlers[signum] = signal.signal(signum, request_stop)
+        try:
+            results = queue.run_worker(
+                max_runtime_seconds=args.max_runtime_seconds,
+                max_missions=args.max_missions,
+                should_stop=stop_event.is_set,
+            )
+        finally:
+            for signum, handler in previous_handlers.items():
+                signal.signal(signum, handler)
+        summary = {
+            "processed": len(results),
+            "statuses": {
+                status: sum(item.get("status") == status for item in results)
+                for status in ("completed", "partial", "failed", "cancelled")
+            },
+            "mission_ids": [item["id"] for item in results],
+        }
+        print(json.dumps(summary, ensure_ascii=False, indent=2))
     return 0
 
 
