@@ -1,8 +1,8 @@
 # État d'avancement global du projet
 
-Dernière évaluation : 18 novembre 2026, après intégration et publication réussie du premier documentaire vidéo MP4.
+Dernière évaluation fonctionnelle détaillée : 18 novembre 2026. Audit GitHub complémentaire : 19 novembre 2026.
 
-## Résultat
+## Audit complémentaire du 19 novembre 2026\n\n- Le dépôt GitHub est toujours **public** : tous les fichiers suivis et leur historique sont consultables. Le dossier ignoré `.laboratoire_prive/` ne protège pas les fichiers déjà commités. Aucun élément confidentiel ne doit y être ajouté.\n- Les workflows « Tests automatiques et contrôle qualité », « Analyse avancée - sécurité, qualité et site » et « pages build and deployment » ont terminé avec succès sur le commit `254772e` le 19 novembre 2026. Cela confirme ces exécutions précises, pas le bon fonctionnement permanent de tous les services.\n- Le site et les publications sont principalement en français. La prise en charge multilingue complète n'est pas implémentée.\n- La description GitHub du dépôt contient encore une ancienne mention de Discord, alors que le README et le code éditorial indiquent qu'aucune intégration Discord n'est utilisée. Cette métadonnée n'a pas pu être modifiée avec les actions disponibles.\n\n## Résultat
 
 **Estimation pondérée : 52,75 / 100.**
 
