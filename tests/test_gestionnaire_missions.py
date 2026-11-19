@@ -1,4 +1,6 @@
 import json
+import os
+import stat
 import sqlite3
 import tempfile
 import unittest
@@ -6,7 +8,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from unittest.mock import patch
 
-from gestionnaire_missions import MissionQueue
+from gestionnaire_missions import MAX_PENDING, MissionQueue
 
 
 class MissionQueueTests(unittest.TestCase):
@@ -202,6 +204,55 @@ class MissionQueueTests(unittest.TestCase):
                 self.assertIs(db, connection)
         with self.assertRaises(sqlite3.ProgrammingError):
             connection.execute("SELECT 1")
+
+    @patch("gestionnaire_missions.orchestrateur.executer_mission")
+    def test_worker_processes_only_the_configured_number_of_missions(self, execute):
+        execute.return_value = {"status": "completed", "results": []}
+        self.queue.enqueue(self.payload())
+        self.queue.enqueue(self.payload())
+        results = self.queue.run_worker(max_runtime_seconds=60, max_missions=1)
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0]["status"], "completed")
+        self.assertEqual(
+            sum(item["status"] == "pending" for item in self.queue.list_missions()),
+            1,
+        )
+
+    @patch("gestionnaire_missions.orchestrateur.executer_mission")
+    def test_worker_stop_signal_cancels_active_mission_and_leaves_next_pending(self, execute):
+        stop = False
+
+        def cancel_after_start(payload, should_cancel):
+            nonlocal stop
+            stop = True
+            self.assertTrue(should_cancel())
+            return {"status": "cancelled", "results": []}
+
+        execute.side_effect = cancel_after_start
+        self.queue.enqueue(self.payload())
+        self.queue.enqueue(self.payload())
+        results = self.queue.run_worker(
+            max_runtime_seconds=60,
+            max_missions=5,
+            should_stop=lambda: stop,
+        )
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0]["status"], "cancelled")
+        self.assertEqual(
+            [item["status"] for item in self.queue.list_missions()],
+            ["pending", "cancelled"],
+        )
+
+    def test_worker_rejects_unbounded_runtime_and_mission_count(self):
+        with self.assertRaises(ValueError):
+            self.queue.run_worker(max_runtime_seconds=172801)
+        with self.assertRaises(ValueError):
+            self.queue.run_worker(max_missions=MAX_PENDING + 1)
+
+    @unittest.skipIf(os.name == "nt", "Les permissions POSIX ne sont pas disponibles sous Windows.")
+    def test_private_queue_directory_and_database_have_restricted_permissions(self):
+        self.assertEqual(stat.S_IMODE(self.queue.database.parent.stat().st_mode), 0o700)
+        self.assertEqual(stat.S_IMODE(self.queue.database.stat().st_mode), 0o600)
 
     def test_no_work_returns_none(self):
         self.assertIsNone(self.queue.run_next())
