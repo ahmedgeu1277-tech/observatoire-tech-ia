@@ -88,14 +88,19 @@ class MissionQueue:
         return [dict(row) for row in rows]
 
     def cancel(self, mission_id: str) -> bool:
-        """Annule uniquement une mission en attente ; une mission active n'est pas interrompue."""
+        """Annule une mission en attente ou demande son arrêt coopératif si elle est active."""
         with self._connect() as db:
             result = db.execute(
                 "UPDATE missions SET status='cancelled', finished_at=? "
-                "WHERE id=? AND status='pending'",
+                "WHERE id=? AND status IN ('pending','running')",
                 (now(), mission_id),
             )
             return result.rowcount == 1
+
+    def _is_cancelled(self, mission_id: str) -> bool:
+        with self._connect() as db:
+            row = db.execute("SELECT status FROM missions WHERE id=?", (mission_id,)).fetchone()
+        return row is None or row["status"] != "running"
 
     def run_next(self) -> dict | None:
         """Récupère les missions expirées, puis réserve atomiquement la suivante."""
@@ -122,15 +127,20 @@ class MissionQueue:
 
         try:
             payload = json.loads(row["payload"])
-            result = orchestrateur.executer_mission(payload)
+            result = orchestrateur.executer_mission(
+                payload, should_cancel=lambda: self._is_cancelled(row["id"])
+            )
             status = result.get("status")
-            if status not in {"completed", "partial"}:
+            if status not in {"completed", "partial", "cancelled"}:
                 status = "partial"
             with self._connect() as db:
                 db.execute(
                     "UPDATE missions SET status=?,finished_at=?,result=? WHERE id=? AND status='running'",
                     (status, now(), json.dumps(result, ensure_ascii=False), row["id"]),
                 )
+                current = db.execute("SELECT status FROM missions WHERE id=?", (row["id"],)).fetchone()
+            if current and current["status"] == "cancelled":
+                status = "cancelled"
             return {"id": row["id"], "status": status, "result": result}
         except Exception as exc:  # noqa: BLE001 - journalise uniquement le type, jamais le contenu sensible
             with self._connect() as db:
@@ -139,6 +149,9 @@ class MissionQueue:
                     "WHERE id=? AND status='running'",
                     (now(), type(exc).__name__, row["id"]),
                 )
+                current = db.execute("SELECT status FROM missions WHERE id=?", (row["id"],)).fetchone()
+            if current and current["status"] == "cancelled":
+                return {"id": row["id"], "status": "cancelled"}
             return {"id": row["id"], "status": "failed", "error_type": type(exc).__name__}
 
     def recover_interrupted(self, stale_after_seconds: int = 300) -> int:
