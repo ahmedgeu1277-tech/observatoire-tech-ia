@@ -6,7 +6,8 @@ Dernière évaluation fonctionnelle détaillée : 18 novembre 2026. Audit GitHub
 
 - Le dépôt GitHub est toujours **public** : tous les fichiers suivis et leur historique sont consultables. Le dossier ignoré `.laboratoire_prive/` ne protège pas les fichiers déjà commités. Aucun élément confidentiel ne doit y être ajouté.
 - Les workflows « Tests automatiques et contrôle qualité », « Analyse avancée - sécurité, qualité et site » et « pages build and deployment » ont terminé avec succès sur le commit `254772e` le 19 novembre 2026. Cela confirme ces exécutions précises, pas le bon fonctionnement permanent de tous les services.
-- Le site et les publications sont principalement en français. La prise en charge multilingue complète n'est pas implémentée.
+- L'interface de la page d'accueil propose maintenant le français et l'anglais, avec mémorisation du choix dans le navigateur. Les articles et documentaires ne sont pas automatiquement traduits : leur langue d'origine est conservée.
+- Le dernier contrôle réel des fournisseurs a confirmé Groq fonctionnel et Hugging Face bloqué par une demande de crédits prépayés. Le workflow utilise donc Groq par défaut ; Hugging Face reste une option explicite, mais n'est pas garanti gratuit.
 
 ## Résultat
 
@@ -32,7 +33,7 @@ Calcul : somme de (poids × note du domaine) / 100.
 Le site public, la récupération de sources, la rédaction assistée, les articles, les fichiers audio et les workflows planifiés existent. Un premier documentaire de démonstration a été généré et publié en MP4 H.264/AAC avec narration, diapositives 1280×720 dessinées localement et références aux sources. Le rendu a été vérifié par FFmpeg et le workflow complet a réussi. Cette vidéo reste un documentaire temporaire de test, pas un studio de montage universel. Restent notamment un hébergement secondaire réellement actif, une supervision permanente et une validation factuelle plus forte.
 
 ### Fournisseurs IA et orchestration d'agents — 40 %
-Le projet possède une couche de fournisseurs IA, un basculement, cinq profils spécialisés et un orchestrateur séquentiel avec trois rôles. Les profils ne sont pas des agents indépendants qui travaillent en continu. Le diagnostic récent a signalé l'indisponibilité de Groq pendant un essai ; la stabilité réelle des deux fournisseurs doit encore être mesurée sur plusieurs cycles.
+Le projet possède une couche de fournisseurs IA, un basculement, cinq profils spécialisés et un orchestrateur séquentiel avec trois rôles. Les profils ne sont pas des agents indépendants qui travaillent en continu. Un test réel du 19 novembre a réussi avec Groq. Hugging Face a refusé la génération faute de crédits prépayés ; il ne doit donc pas être considéré comme un secours gratuit disponible.
 
 ### Missions persistantes et autonomie — 35 %
 Une file SQLite locale conserve les missions et leurs états ; un worker peut lancer la mission suivante. L'orchestrateur limite actuellement une mission à 180 secondes et trois rôles maximum. L'arrêt d'une mission déjà en cours, les missions de plusieurs heures ou deux jours, les reprises automatiques robustes et le fonctionnement permanent ne sont pas encore réalisés.
@@ -61,7 +62,7 @@ Le développement de jeux et les intégrations associées ne font plus partie de
 
 ## Limites importantes
 
-- 52,75 % signifie que le seuil de la feuille de route est atteint selon cette grille ; cela ne signifie pas que toutes les fonctionnalités sont prêtes à être utilisées.
+- 55,89 % est une estimation pondérée selon cette grille ; cela ne signifie pas que toutes les fonctionnalités sont prêtes à être utilisées.
 - Aucun travail ne continue en arrière-plan après la fin d'une exécution GitHub Actions, sauf les workflows effectivement planifiés.
 - Aucune vente, dépense ou publication externe n'est automatique.
 - Les rapports et prototypes privés ne doivent pas être ajoutés au site public.
