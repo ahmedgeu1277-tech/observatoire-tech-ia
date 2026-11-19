@@ -9,6 +9,7 @@ import json
 import sys
 import time
 from datetime import UTC, datetime
+from collections.abc import Callable
 from pathlib import Path
 from uuid import uuid4
 
@@ -72,12 +73,19 @@ def valider_mission(data: object) -> dict:
     }
 
 
-def executer_mission(data: object, output_dir: Path | None = None) -> dict:
+def executer_mission(
+    data: object,
+    output_dir: Path | None = None,
+    should_cancel: Callable[[], bool] | None = None,
+) -> dict:
     mission = valider_mission(data)
     started = time.monotonic()
     deadline = started + mission["max_duration_seconds"]
     results = []
     for agent_id in mission["agents"]:
+        if should_cancel is not None and should_cancel():
+            results.append({"agent": agent_id, "status": "cancelled"})
+            break
         remaining = deadline - time.monotonic()
         if remaining <= 0:
             results.append({"agent": agent_id, "status": "stopped_deadline"})
@@ -114,6 +122,9 @@ def executer_mission(data: object, output_dir: Path | None = None) -> dict:
                 "provider": provider,
                 "output": answer[:12_000],
             })
+            if should_cancel is not None and should_cancel():
+                results.append({"agent": agent_id, "status": "cancelled"})
+                break
         except Exception as exc:  # noqa: BLE001
             results.append({
                 "agent": agent_id,
@@ -130,7 +141,9 @@ def executer_mission(data: object, output_dir: Path | None = None) -> dict:
         "duration_limit_seconds": mission["max_duration_seconds"],
         "duration_seconds": round(time.monotonic() - started, 2),
         "status": (
-            "completed"
+            "cancelled"
+            if any(item["status"] == "cancelled" for item in results)
+            else "completed"
             if len(results) == len(mission["agents"])
             and all(item["status"] == "completed" for item in results)
             else "partial"
