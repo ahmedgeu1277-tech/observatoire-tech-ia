@@ -8,8 +8,8 @@ from __future__ import annotations
 import json
 import sys
 import time
-from datetime import UTC, datetime
 from collections.abc import Callable
+from datetime import UTC, datetime
 from pathlib import Path
 from uuid import uuid4
 
