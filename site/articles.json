@@ -1,5 +1,45 @@
 [
   {
+    "id": "20261119T173507-ec24812f",
+    "date": "2026-11-19T17:35+00:00",
+    "theme": "GTA VI — lancement et premiers retours vérifiés",
+    "title": "GTA VI : FSR 4.1 sur Xbox S et accès anticipé contesté",
+    "summary": "Les premières images publiées par IGN France montrent que GTA VI exploite la technologie FSR 4.1 pour upscaler le rendu de 720 p à 1080 p sur Xbox Series S, mais la qualité globale reste incertaine car les captures sont limitées. Une astuce revendiquée par Xboxygen prétend permettre un accès anticipé sur la même console, toutefois aucune confirmation officielle de Rockstar ou Microsoft n’a été donnée, laissant planer un risque d’information erronée. Les lecteurs peuvent donc suivre les développements tout en restant prudents face aux rumeurs.",
+    "verdict": "partiellement confirmé",
+    "tip": "Les informations sur l’accessibilité anticipée ne sont pas confirmées par l’éditeur ; les captures d’écran restent limitées, donc la qualité globale du graphisme n’est pas encore vérifiée.",
+    "sources": [
+      {
+        "title": "GTA 6 utilise la technologie FSR 4.1 sur Xbox Series S pour upscaler le jeu de 720p à 1080p",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 14:48:25 +0000",
+        "description": "Redstone, voici GTA.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94091/gta-6-utilise-la-technologie-fsr-41-sur-xbox-series-s-pour-upscaler-le-jeu-de-720p-a-1080p",
+        "source_type": "media"
+      },
+      {
+        "title": "GTA 6 –images du jeu sur Xbox Series S",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 14:48:25 +0000",
+        "description": "",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94090/gta-6-xbox-series-s-screenshots",
+        "source_type": "media"
+      },
+      {
+        "title": "GTA 6 est bien disponible en avance sur Xbox, l’astuce fonctionne et voici comment faire",
+        "publisher": "Xboxygen",
+        "domain": "news.google.com",
+        "published": "Mon, 16 Nov 2026 09:29:03 GMT",
+        "description": "GTA 6 est bien disponible en avance sur Xbox, l’astuce fonctionne et voici comment faire    Xboxygen",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE81U0VpSXNhQlZjV2w5OWtVcmE1eWxkSVFpdG1ZY21sN1prc3VkMXc3Uko2VjBVUW5aMW1kWHpJTDdsNHlWRWVYcVhQa2NlNzV6X1VmeXUyei0ycVpFQ1FOd2NNX3hfdE1NRUJaS0tjY2RwSjYzOVRCclFfay1fQQ?oc=5",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261119T173507-ec24812f.mp3"
+  },
+  {
     "id": "20261119T133905-bc5c68de",
     "date": "2026-11-19T13:39+00:00",
     "theme": "Roblox et création de jeux",
