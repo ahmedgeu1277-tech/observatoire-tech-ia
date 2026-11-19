@@ -468,3 +468,55 @@ class NewsFallbackTests(unittest.TestCase):
         mock_get.side_effect = [Response(empty), Response(fresh)]
         result = main.fetch_news("test actualité", limit=5)
         self.assertEqual([item["title"] for item in result], ["Actualite recente"])
+
+
+class SafeFallbackArticleTests(unittest.TestCase):
+    def test_safe_fallback_is_neutral_and_keeps_valid_https_sources(self):
+        source = {"title": "Source", "url": "https://example.org/article"}
+        article = main.build_safe_fallback_article(
+            {"name": "Gaming"}, [source, {"title": "Bad", "url": "javascript:alert(1)"}]
+        )
+        self.assertEqual(article["sources"], [source])
+        self.assertIn("ne confirme aucune annonce", article["summary"])
+        self.assertNotIn("Rockstar", json.dumps(article, ensure_ascii=False))
+        main.verifier_dates_incertaines(article, article["sources"])
+        main.verifier_attributions_officielles(article, article["sources"])
+
+    def test_safe_fallback_requires_at_least_one_https_source(self):
+        with self.assertRaisesRegex(RuntimeError, "Aucune source HTTPS valide"):
+            main.build_safe_fallback_article({}, [{"url": "http://example.org"}])
+
+
+class MainLastResortTests(unittest.TestCase):
+    @patch("main.archive_memory")
+    @patch("main.save_articles")
+    @patch("main.asyncio.run", return_value=None)
+    @patch("main.verifier_conformite_legale", return_value=True)
+    @patch("main.create_article", side_effect=[
+        ValueError("attribution initiale refusée"),
+        ValueError("attribution du secours refusée"),
+    ])
+    @patch("main.executer_agents_dynamiques", return_value=[])
+    @patch("main.fetch_specialized_sources", return_value=[])
+    @patch("main.fetch_news")
+    @patch("main.choose_theme")
+    @patch("main.load_themes")
+    def test_second_fact_check_failure_uses_neutral_documentary_summary(
+        self, load_themes, choose_theme, fetch_news, _specialized,
+        _agents, create_article, _guard, _audio, save_articles, _memory
+    ):
+        theme = {"name": "GTA VI", "query": "GTA VI"}
+        source = {"title": "Source publique", "url": "https://example.org/news"}
+        load_themes.return_value = [theme]
+        choose_theme.return_value = theme
+        fetch_news.return_value = [source]
+
+        main.main()
+
+        self.assertEqual(create_article.call_count, 2)
+        saved = save_articles.call_args.args[0]
+        self.assertIn("résumé documentaire de secours", saved["theme"])
+        self.assertEqual(saved["sources"], [source])
+        self.assertNotIn("Rockstar", json.dumps(saved, ensure_ascii=False))
+
+
