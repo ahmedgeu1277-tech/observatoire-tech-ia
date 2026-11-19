@@ -1,5 +1,36 @@
 [
   {
+    "id": "20261119T175642-14f9a5e5",
+    "date": "2026-11-19T17:56+00:00",
+    "theme": "Technologie, IA et jeux vidéo — veille générale de secours",
+    "title": "Ubisoft licencie 166 employés et GTA 6 teste FSR 4.1",
+    "summary": "Ubisoft a annoncé la suppression de 166 postes répartis entre ses studios de Montréal et de Québec, ce qui pourrait indiquer une contraction de la production de jeux AAA, bien que les motivations précises restent inconnues. Parallèlement, GTA 6 a intégré la technologie FSR 4.1 sur Xbox Series S pour upscaler le jeu de 720 p à 1080 p, mais l’impact réel sur la performance et l’expérience utilisateur n’a pas encore été confirmé. Les lecteurs intéressés par l’évolution de l’industrie et les innovations graphiques trouveront ces développements pertinents, tandis que les détails sur les raisons des licenciements et l’efficacité de la technologie restent à éclaircir.",
+    "verdict": "Factuel",
+    "tip": "Les informations proviennent d’articles IGN France et ne constituent pas des déclarations officielles d’Ubisoft ou de Rockstar.",
+    "sources": [
+      {
+        "title": "Ubisoft confirme de nouveaux licenciements : 166 emplois sont supprimés au sein de deux studios majeurs",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 17:37:12 +0000",
+        "description": "Perte de personnel dans des bureaux importants à Montréal et au Québec.",
+        "url": "https://fr.ign.com/assassins-creed-codename-red/94097/ubisoft-confirme-de-nouveaux-licenciements-166-emplois-sont-supprimes-au-sein-de-deux-studios-majeur",
+        "source_type": "media"
+      },
+      {
+        "title": "L'I.A continue ses ravages dans le jeu vidéo : 54 % des développeurs licenciés toujours sans emploi et ça ne va pas s'arranger",
+        "publisher": "JeuxVideo.com",
+        "domain": "news.google.com",
+        "published": "Tue, 17 Nov 2026 11:50:08 GMT",
+        "description": "L'I.A continue ses ravages dans le jeu vidéo : 54 % des développeurs licenciés toujours sans emploi et ça ne va pas s'arranger    JeuxVideo.com",
+        "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxON0t4Y1BnZUJYSVMxN3lhV21vYTl0bWlQYlFNMURxcjdiRTFTLV84aHZQVnN4ZGl5bEhVQWxOWHlQQWtVM0pIV092bU81TUNuTWZoYVQzZDJIOGZNUExYTmxJS0RlZ2ZSb0I4SVFYYzFkc0dJRVZhYnBmR2RabjdRMTZwM3NYZmpCcE1rNUR5R3Nhb2NRc1M0bXdPUVM1b2s4Y3ltazZ4VUpHQU82WmdIUFFzeDZ1SDRwV3hkNno3QmVFUGdDc1NEZl9PNkktaElFR3BhQmNYVkROVUlQb1I2YTRFaDk5SUZ2TzlOaTFiY05pSGFPcHlTRA?oc=5",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261119T175642-14f9a5e5.mp3"
+  },
+  {
     "id": "20261119T175614-3f5bce18",
     "date": "2026-11-19T17:56+00:00",
     "theme": "A.O.T. 3 / Attack on Titan — sortie le 10 décembre 2026",
@@ -1151,48 +1182,5 @@
     ],
     "ai_notice": "Contenu assisté par IA ou synthèse de secours à partir des titres. Vérifiez toujours les sources originales.",
     "audio_url": "audio/20261116T133506Z.mp3"
-  },
-  {
-    "id": "20261116T133050Z",
-    "date": "2026-11-16T13:30+00:00",
-    "theme": "Actualités intelligence artificielle",
-    "title": "IA : de la création à la défense, l’empreinte croissante",
-    "summary": "Canva réorganise ses équipes pour intégrer l’IA dans ses outils créatifs, tandis que Roland Berger lance une start‑up dédiée à l’intelligence artificielle. En France, l’IA améliore les prévisions météorologiques des ouragans et 1min.AI propose un abonnement combinant OpenAI et Midjourney. Le groupe LVMH signe un partenariat avec OpenAI, et Rennes accueillera un centre international d’IA de défense en 2027. Apple prévoit de transformer Siri en agent IA dès 2027, et TC Matic déploie un assistant IA pour les transmissions automatiques.",
-    "verdict": "Les avancées montrent que l’IA s’étend rapidement, mais les détails opérationnels restent à confirmer.",
-    "tip": "Pour suivre l’évolution de ces projets, consultez régulièrement les communiqués officiels des entreprises concernées.",
-    "sources": [
-      {
-        "title": "Canva se restructure : l’IA bouscule aussi les fabricants d’outils créatifs - Etapes",
-        "description": "Canva se restructure : l’IA bouscule aussi les fabricants d’outils créatifs    Etapes",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPQ0lDbU1sRzhhcHl1Tlg3b3ZHQVktQkd4U3ByQ0U5N1UtdnlycWs3cWI0RTFZekV0eFVXaDdwMUs4U3ZJLXFLOWxNMDJFczZFdHk4RmFRc3NFcElwV0p1T0NtMWxiWlgzckF1aGIzVEpNY1RZVHFZUHozQkhwN0pkdUU5RS1XTmVpSm40QklJcHFxTVlFZFJwYjJXZnBOX1pNZlF4S09OSDJ6dw?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "Avec sa start-up dédiée, Roland Berger joue gros sur l'intelligence artificielle - Consultor",
-        "description": "Avec sa start-up dédiée, Roland Berger joue gros sur l'intelligence artificielle    Consultor",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPODZLdnlUZndDYU1iTU0zamI2ck5iaVpySU1BNl9Lbzcxelg5VnR3Z1lSM2RSWjBuMVhHLTJSbmhnQ2x0TGU2ek9QNHFhN0R3b1drcks4dTk3ZTUzbHJmLXR6ek5ONmlPbnI0ZGJ2WE9qRVR1NVJ6SWdLWGIwODVZRGFEYmxtZ0tmM0JaN0JEaGprdmNiRE9YWXdRYk84aVdHZDZlZ3pEaU5aOVMzOVM0Wkdn?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "L'IA, un outil précieux pour les prévisions météo des ouragans - France 24",
-        "description": "L'IA, un outil précieux pour les prévisions météo des ouragans    France 24",
-        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNOVU1TFZNY2tBZ3hSX1dkSHpWamxzQkx4MllmX3NBdmp5eUw3dmRzMTlJdXpfOG16YWpDX2xMejhQaFVQZzA5cTBReGFEMXBsQks0VTgxdlJ1T1lkcGpkNldDeWxnOWtUWGhkUlhlN0I3czVpR0lTbGlJSUZZWmR1SUxEaGxrSTNHeTBGczcycVBDYlllZl9GcjFJSkNDQzhtOWhKaE1JTmUzT2ZWYURYd2gyTDRhYlNldDU3NFVhaDFwX1JRVVhpZ0pLdmJ3cm8?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "Abonnement à 80 $ : 1min.AI donne accès à OpenAI et Midjourney - Brief IA",
-        "description": "Abonnement à 80 $ : 1min.AI donne accès à OpenAI et Midjourney    Brief IA",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNeEFRRlUxVHFZb05tekM2VmFZNk5aekVsWXg0M2IyWnh5UDlFdkcwVThremtINHhhSVhsbEZTRnpZcVd2Tl9TYnJhUTEzcmxIdjFOcC1MVjVqT2NXOHUySWpmc2pPR0dBZnZ1Qy1VeHZpcjAtby1MbHVVVkhPTERHSW8xMGRUbTdPNVNvUU05SEJTN00?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "Rennes accueillera un centre international dédié à l’IA de défense en 2027 - Bretagne Économique",
-        "description": "Rennes accueillera un centre international dédié à l’IA de défense en 2027    Bretagne Économique",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNbFhVUUY1TUZBdHVMdW5lUGxsbmdCdE9xb3Y3ektEajJhSWk5dk5fT0F2Uk80VndNVHFJM21OdHhnZVZrcTFJcGctZFNQMHllamlLTEZ4cHBvTlR1bW9rQ1o0Sm5jeG14M0xQa3l0NC1fZXFkcEtIRWhtUVJHWmd1ZXdSNkNKczNaZW14cEU5dE9oT1RzS1dFS0lKT1l3ZWNtTFJ2cTZFUTJ2N1VWWFF2dDgzVlktU0pabTZqZWtB?oc=5",
-        "source_type": "source_externe"
-      }
-    ],
-    "ai_notice": "Contenu assisté par IA ou synthèse de secours à partir des titres. Vérifiez toujours les sources originales.",
-    "audio_url": "audio/20261116T133050Z.mp3"
   }
 ]
