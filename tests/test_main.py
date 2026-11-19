@@ -363,6 +363,41 @@ class ThemeSelectionTests(unittest.TestCase):
             self.assertEqual(main.choose_theme([event, other])["name"], "IA")
 
 
+
+class MainRetryTests(unittest.TestCase):
+    @patch("main.archive_memory")
+    @patch("main.save_articles")
+    @patch("main.asyncio.run", return_value=None)
+    @patch("main.verifier_conformite_legale", return_value=True)
+    @patch("main.create_article")
+    @patch("main.executer_agents_dynamiques", return_value=[])
+    @patch("main.fetch_specialized_sources", return_value=[])
+    @patch("main.fetch_news")
+    @patch("main.choose_theme")
+    @patch("main.load_themes")
+    def test_fact_check_rejection_retries_once_with_general_topic(
+        self, load_themes, choose_theme, fetch_news, _specialized,
+        _agents, create_article, _guard, _audio, save_articles, _memory
+    ):
+        theme = {"name": "GTA VI", "query": "GTA VI"}
+        source = {"title": "Actualité tech", "url": "https://example.org/news"}
+        load_themes.return_value = [theme]
+        choose_theme.return_value = theme
+        fetch_news.return_value = [source]
+        create_article.side_effect = [
+            ValueError("attribution officielle non vérifiée"),
+            {"id": "fallback-1", "title": "Sujet général"},
+        ]
+
+        main.main()
+
+        self.assertEqual(create_article.call_count, 2)
+        fallback_theme = create_article.call_args_list[1].args[0]
+        self.assertIn("veille générale de secours", fallback_theme["name"])
+        self.assertEqual(fetch_news.call_count, 2)
+        save_articles.assert_called_once_with({"id": "fallback-1", "title": "Sujet général"})
+
+
 if __name__ == "__main__":
     unittest.main()
 
