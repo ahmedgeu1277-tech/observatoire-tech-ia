@@ -157,6 +157,7 @@ def main() -> int:
     add = sub.add_parser("add", help="Ajouter une mission depuis un fichier JSON.")
     add.add_argument("json_file")
     sub.add_parser("run-next", help="Exécuter une mission en attente.")
+    sub.add_parser("recover", help="Classer les missions restées actives après un arrêt brutal.")
     cancel = sub.add_parser("cancel", help="Annuler une mission en attente.")
     cancel.add_argument("mission_id")
     args = parser.parse_args()
@@ -171,6 +172,8 @@ def main() -> int:
         print(json.dumps(queue.run_next(), ensure_ascii=False, indent=2))
     elif args.command == "cancel":
         print("annulée" if queue.cancel(args.mission_id) else "introuvable ou déjà démarrée")
+    elif args.command == "recover":
+        print(f"{queue.recover_interrupted()} mission(s) classée(s) comme interrompue(s).")
     return 0
 
 
