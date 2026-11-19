@@ -1,4 +1,6 @@
 import json
+import os
+import stat
 import tempfile
 import unittest
 from pathlib import Path
@@ -68,6 +70,18 @@ class MissionValidationTests(unittest.TestCase):
             )
         self.assertEqual(report["status"], "cancelled")
         self.assertEqual(generate.call_count, 1)
+
+    @unittest.skipIf(os.name == "nt", "Les permissions POSIX ne sont pas disponibles sous Windows.")
+    @patch("orchestrateur.generate_text", return_value=("Analyse privée", "groq"))
+    def test_private_report_uses_restricted_directory_and_file_permissions(self, _generate):
+        with tempfile.TemporaryDirectory() as folder:
+            output = Path(folder) / "private"
+            report = orchestrateur.executer_mission(
+                {"mission": "Tester les permissions", "agents": ["chercheur"]},
+                output,
+            )
+            self.assertEqual(stat.S_IMODE(output.stat().st_mode), 0o700)
+            self.assertEqual(stat.S_IMODE(Path(report["report_path"]).stat().st_mode), 0o600)
 
     @patch("orchestrateur.generate_text")
     def test_stops_after_provider_failure(self, generate):
