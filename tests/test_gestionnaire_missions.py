@@ -49,6 +49,7 @@ class MissionQueueTests(unittest.TestCase):
             self.assertFalse(should_cancel())
             self.assertTrue(self.queue.cancel(mission_id))
             self.assertTrue(should_cancel())
+            self.assertEqual(self.queue.list_missions()[0]["status"], "running")
             return {"status": "cancelled", "results": []}
         execute.side_effect = cancel_during_agent
         result = self.queue.run_next()
