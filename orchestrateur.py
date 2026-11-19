@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parent
 PRIVATE_DIR = ROOT / ".laboratoire_prive" / "missions"
 MAX_MISSION_CHARS = 12_000
 MAX_CONTEXT_CHARS = 8_000
+MAX_AGENT_HANDOFF_CHARS = 3_000
 MAX_AGENTS = 3
 MAX_DURATION_SECONDS = 180
 MAX_TOKENS_PER_AGENT = 900
@@ -106,7 +107,16 @@ def executer_mission(
                 "role": "user",
                 "content": (
                     f"MISSION :\n{mission['mission']}\n\n"
-                    f"CONTEXTE FOURNI :\n{mission['context'] or 'Aucun'}"
+                    f"CONTEXTE FOURNI :\n{mission['context'] or 'Aucun'}\n\n"
+                    f"ANALYSES PRÉCÉDENTES DES AUTRES AGENTS :\n"
+                    + (
+                        "\n\n".join(
+                            f"{AGENTS[item['agent']][0]} : {item['output'][:MAX_AGENT_HANDOFF_CHARS]}"
+                            for item in results
+                            if item["status"] == "completed"
+                        )[-MAX_CONTEXT_CHARS:]
+                        or "Aucune analyse précédente."
+                    )
                 ),
             },
         ]
