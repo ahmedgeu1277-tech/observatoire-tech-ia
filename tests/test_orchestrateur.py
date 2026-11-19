@@ -54,6 +54,22 @@ class MissionValidationTests(unittest.TestCase):
         self.assertFalse(saved["safety"]["automatic_publication"])
 
     @patch("orchestrateur.generate_text")
+    def test_cooperative_cancellation_stops_before_next_agent(self, generate):
+        cancelled = False
+        def finish_first_agent(*args, **kwargs):
+            nonlocal cancelled
+            cancelled = True
+            return "Analyse", "groq"
+        generate.side_effect = finish_first_agent
+        with tempfile.TemporaryDirectory() as folder:
+            report = orchestrateur.executer_mission(
+                {"mission": "Tester l'arrêt coopératif", "agents": ["chercheur", "critique"], "max_duration_seconds": 120},
+                Path(folder), should_cancel=lambda: cancelled,
+            )
+        self.assertEqual(report["status"], "cancelled")
+        self.assertEqual(generate.call_count, 1)
+
+    @patch("orchestrateur.generate_text")
     def test_stops_after_provider_failure(self, generate):
         generate.side_effect = RuntimeError("provider unavailable")
         with tempfile.TemporaryDirectory() as folder:
