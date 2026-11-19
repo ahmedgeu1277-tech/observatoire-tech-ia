@@ -14,6 +14,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from uuid import uuid4
 
+from agent_gardien import contient_secret_potentiel
 from ai_providers import generate_text
 
 ROOT = Path(__file__).resolve().parent
@@ -57,6 +58,8 @@ def valider_mission(data: object) -> dict:
         raise ValueError("Mission trop longue.")
     if not isinstance(context, str) or len(context) > MAX_CONTEXT_CHARS:
         raise ValueError("Contexte invalide ou trop long.")
+    if contient_secret_potentiel(mission) or contient_secret_potentiel(context):
+        raise ValueError("Mission refusée : un secret potentiel a été détecté. Retire-le avant de continuer.")
     if not isinstance(agents, list) or not 1 <= len(agents) <= MAX_AGENTS:
         raise ValueError(f"Choisis entre 1 et {MAX_AGENTS} agents.")
     if any(not isinstance(agent, str) or agent not in AGENTS for agent in agents):
