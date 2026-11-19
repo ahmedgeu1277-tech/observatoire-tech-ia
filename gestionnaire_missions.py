@@ -98,7 +98,8 @@ class MissionQueue:
             return result.rowcount == 1
 
     def run_next(self) -> dict | None:
-        """Réserve atomiquement la prochaine mission puis l'exécute avec les limites de l'orchestrateur."""
+        """Récupère les missions expirées, puis réserve atomiquement la suivante."""
+        self.recover_interrupted()
         with self._connect() as db:
             db.execute("BEGIN IMMEDIATE")
             active = db.execute(
