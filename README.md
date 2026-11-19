@@ -26,7 +26,6 @@ Le site et la chaîne éditoriale sont actuellement principalement en français.
 
 - Un service privé hébergé avec authentification et stockage persistant.
 - Des agents indépendants fonctionnant en continu ou des missions autonomes de plusieurs jours.
-- Une connexion directe à Roblox Studio, des tests de gameplay automatisés ou la publication automatique de jeux.
 - Une plateforme complète de création logicielle/vidéo utilisable depuis mobile et PC.
 - Une supervision permanente garantissant la disponibilité des fournisseurs IA.
 
