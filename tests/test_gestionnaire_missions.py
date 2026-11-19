@@ -39,6 +39,23 @@ class MissionQueueTests(unittest.TestCase):
         self.assertEqual(self.queue.list_missions()[0]["status"], "cancelled")
 
     @patch("gestionnaire_missions.orchestrateur.executer_mission")
+    def test_active_mission_can_be_cancelled_cooperatively(self, execute):
+        mission_id = self.queue.enqueue({
+            "mission": "Évaluer l'arrêt coopératif.",
+            "agents": ["chercheur", "critique"],
+            "max_duration_seconds": 120,
+        })
+        def cancel_during_agent(payload, should_cancel):
+            self.assertFalse(should_cancel())
+            self.assertTrue(self.queue.cancel(mission_id))
+            self.assertTrue(should_cancel())
+            return {"status": "cancelled", "results": []}
+        execute.side_effect = cancel_during_agent
+        result = self.queue.run_next()
+        self.assertEqual(result["status"], "cancelled")
+        self.assertEqual(self.queue.list_missions()[0]["status"], "cancelled")
+
+    @patch("gestionnaire_missions.orchestrateur.executer_mission")
     def test_run_next_persists_result(self, execute):
         execute.return_value = {"status": "completed", "results": [{"agent": "chercheur"}]}
         mission_id = self.queue.enqueue(self.payload())
