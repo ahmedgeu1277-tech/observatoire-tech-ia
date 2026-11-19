@@ -42,13 +42,6 @@ FEEDS = {
         ("Godot", "https://godotengine.org/rss.xml"),
         ("GameMaker", "https://gamemaker.io/en/blog/rss"),
     ],
-    # Roblox n'ayant pas de flux éditorial dédié validé ici, on utilise
-    # des médias gaming et on filtre strictement sur le mot-clé Roblox.
-    "roblox": [
-        ("IGN France", "https://fr.ign.com/feed.xml"),
-        ("IGN", "https://www.ign.com/rss/v2/articles/feed"),
-        ("GameSpot", "https://www.gamespot.com/feeds/news/"),
-    ],
 }
 
 def _clean(value):
@@ -98,10 +91,7 @@ def fetch_specialized_sources(theme_name, limit=5):
     """Récupère uniquement les flux correspondant au thème ; un flux en panne est ignoré."""
     theme = (theme_name or "").lower()
     keywords = ()
-    if "roblox" in theme:
-        feeds = FEEDS["roblox"]
-        keywords = ("roblox",)
-    elif any(word in theme for word in ("moteur", "logiciel de création", "game engine", "unity", "unreal", "godot", "gamemaker")):
+    if any(word in theme for word in ("moteur", "logiciel de création", "game engine", "unity", "unreal", "godot", "gamemaker")):
         feeds = FEEDS["engines"]
         keywords = ("unity", "unreal", "godot", "gamemaker", "engine", "moteur")
     elif any(word in theme for word in ("gta", "grand theft auto", "rockstar")):
