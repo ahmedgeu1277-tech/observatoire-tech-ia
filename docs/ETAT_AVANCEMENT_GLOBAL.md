@@ -8,6 +8,7 @@ Dernière évaluation fonctionnelle détaillée : 18 novembre 2026. Audit GitHub
 - Les workflows « Tests automatiques et contrôle qualité », « Analyse avancée - sécurité, qualité et site » et « pages build and deployment » ont terminé avec succès sur le commit `0017a074` le 19 novembre 2026. Les contrôles avancés ont inclus Ruff, Bandit, Gitleaks, CodeQL Python et JavaScript ainsi que les tests navigateur Playwright. Cela confirme ces exécutions précises, pas le bon fonctionnement permanent de tous les services.
 - L'interface de la page d'accueil propose maintenant sept langues : français, anglais, espagnol, allemand, portugais, arabe et chinois. Le choix est mémorisé dans le navigateur et l'arabe active l'affichage de droite à gauche. Les articles et documentaires ne sont pas automatiquement traduits : leur langue d'origine est conservée.
 - Le dernier contrôle réel des fournisseurs a confirmé Groq fonctionnel et Hugging Face bloqué par une demande de crédits prépayés. Le workflow utilise donc Groq par défaut ; Hugging Face reste une option explicite, mais n'est pas garanti gratuit.
+- La configuration des fournisseurs refuse désormais les noms inconnus ou une liste vide. Les appels de chaque agent reçoivent un délai plafonné par le temps restant de la mission. Des tests couvrent ces validations et les limites de paramètres.
 
 ## Résultat
 
