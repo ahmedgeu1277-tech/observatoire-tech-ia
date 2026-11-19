@@ -167,6 +167,21 @@ class MissionQueueTests(unittest.TestCase):
         self.assertEqual(statuses[first], "cancelled")
         self.assertEqual(statuses[second], "pending")
 
+
+    def test_pending_queue_has_a_hard_limit(self):
+        for _ in range(50):
+            self.queue.enqueue(self.payload())
+        with self.assertRaisesRegex(ValueError, "File pleine"):
+            self.queue.enqueue(self.payload())
+
+    def test_database_session_closes_connection(self):
+        connection = self.queue._connect()
+        with patch.object(self.queue, "_connect", return_value=connection):
+            with self.queue._session() as db:
+                self.assertIs(db, connection)
+        with self.assertRaises(sqlite3.ProgrammingError):
+            connection.execute("SELECT 1")
+
     def test_no_work_returns_none(self):
         self.assertIsNone(self.queue.run_next())
 
