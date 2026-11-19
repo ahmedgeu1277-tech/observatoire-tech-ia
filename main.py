@@ -723,7 +723,34 @@ def main():
     reports = executer_agents_dynamiques(theme, sources, profiles)
     if reports:
         print(f"{len(reports)} agent(s) spécialisé(s) ont rendu une analyse.")
-    article = create_article(theme, sources, reports)
+    try:
+        article = create_article(theme, sources, reports)
+    except ValueError as first_error:
+        # Une réponse IA peut échouer à une vérification factuelle stricte.
+        # Ne jamais affaiblir le contrôle : tenter une seule fois un sujet plus large.
+        fallback_theme = {
+            "name": "Technologie, IA et jeux vidéo — veille générale de secours",
+            "query": "actualité technologie intelligence artificielle jeux vidéo annonces officielles"
+        }
+        if theme["name"] == fallback_theme["name"]:
+            raise
+        print(
+            "AVERTISSEMENT : article refusé par les contrôles factuels "
+            f"({type(first_error).__name__}). Nouvelle tentative sur une veille générale."
+        )
+        fallback_sources, fallback_official_count = collect_sources(fallback_theme)
+        if not fallback_sources:
+            raise RuntimeError(
+                "Le sujet initial a été refusé et aucune source n'est disponible pour le sujet de secours."
+            ) from first_error
+        print(
+            f"{len(fallback_sources)} source(s) récupérée(s) pour le sujet de secours "
+            f"({fallback_official_count} source(s) officielle(s))."
+        )
+        fallback_reports = executer_agents_dynamiques(
+            fallback_theme, fallback_sources, profiles
+        )
+        article = create_article(fallback_theme, fallback_sources, fallback_reports)
     if not verifier_conformite_legale(json.dumps(article, ensure_ascii=False), "PUBLICATION_WEB"):
         raise RuntimeError("Publication bloquée par le contrôle de sécurité.")
     article["audio_url"] = asyncio.run(create_audio(article))
