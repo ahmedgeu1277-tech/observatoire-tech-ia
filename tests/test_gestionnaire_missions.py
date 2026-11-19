@@ -1,8 +1,8 @@
 import json
-from concurrent.futures import ThreadPoolExecutor
 import sqlite3
 import tempfile
 import unittest
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from unittest.mock import patch
 
