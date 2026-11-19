@@ -759,7 +759,7 @@ def main():
         print(f"{len(reports)} agent(s) spécialisé(s) ont rendu une analyse.")
     try:
         article = create_article(theme, sources, reports)
-    except ValueError as first_error:
+    except (ValueError, RuntimeError) as first_error:
         # Une réponse IA peut échouer à une vérification factuelle stricte.
         # Ne jamais affaiblir le contrôle : tenter une seule fois un sujet plus large.
         fallback_theme = {
