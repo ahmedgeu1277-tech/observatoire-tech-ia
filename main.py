@@ -23,7 +23,7 @@ THEMES_FILE = ROOT / "themes.json"
 MAX_ARTICLES = 30
 TIMEOUT = 20
 MAX_SOURCES = 6
-MAX_DYNAMIC_AGENTS = 2
+MAX_DYNAMIC_AGENTS = 1  # Réduit la consommation TPM du quota Groq gratuit.
 
 SOURCE_EDITOR_DOMAINS = {
     "rockstargames.com", "openai.com", "deepmind.google", "huggingface.co",
@@ -627,7 +627,7 @@ def load_agent_profiles():
 def executer_agents_dynamiques(theme, sources, profiles):
     if not profiles:
         return []
-    source_text = json.dumps(sources[:5], ensure_ascii=False)
+    source_text = json.dumps(sources[:4], ensure_ascii=False)
     reports = []
     for profile in profiles[:MAX_DYNAMIC_AGENTS]:
         try:
@@ -641,7 +641,7 @@ Rédige 2 phrases en français. Utilise seulement les sources. Indique les incer
                     {"role": "system", "content": "Tu es un analyste spécialisé prudent."},
                     {"role": "user", "content": prompt}
                 ],
-                max_tokens=350,
+                max_tokens=250,
                 temperature=0.2,
             )
             if report.strip():
