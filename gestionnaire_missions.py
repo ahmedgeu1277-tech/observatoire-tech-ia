@@ -68,6 +68,9 @@ class MissionQueue:
     def enqueue(self, payload: object) -> str:
         mission = orchestrateur.valider_mission(payload)
         with self._session() as db:
+            # Verrouille l'écriture avant le comptage pour éviter que deux
+            # workers ajoutent simultanément au-delà de la limite de la file.
+            db.execute("BEGIN IMMEDIATE")
             pending = db.execute(
                 "SELECT COUNT(*) FROM missions WHERE status='pending'"
             ).fetchone()[0]
