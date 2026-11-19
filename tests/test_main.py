@@ -493,7 +493,7 @@ class MainLastResortTests(unittest.TestCase):
     @patch("main.asyncio.run", return_value=None)
     @patch("main.verifier_conformite_legale", return_value=True)
     @patch("main.create_article", side_effect=[
-        ValueError("attribution initiale refusée"),
+        RuntimeError("quota fournisseur IA atteint"),
         RuntimeError("quota fournisseur IA atteint"),
     ])
     @patch("main.executer_agents_dynamiques", return_value=[])
