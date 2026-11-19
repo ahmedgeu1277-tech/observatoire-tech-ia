@@ -1,5 +1,63 @@
 [
   {
+    "id": "20261119T181445-15c2e2a5",
+    "date": "2026-11-19T18:14+00:00",
+    "theme": "Veille générale — résumé documentaire de secours",
+    "title": "Veille technologique : sources à consulter",
+    "summary": "Les flux consultés ont fourni des liens vers des publications sur la technologie, l’intelligence artificielle et les jeux vidéo. Ce résumé de secours ne confirme aucune annonce, date, disponibilité, prix ou caractéristique précise : les éléments détaillés doivent être vérifiés directement dans les articles d’origine. Cette sélection sert de point d’entrée documentaire et ne remplace pas la lecture des sources.",
+    "verdict": "Les liens sont disponibles, mais aucune annonce précise n’est validée par ce résumé.",
+    "tip": "Ouvrir les articles d’origine et vérifier chaque information importante dans sa source primaire.",
+    "sources": [
+      {
+        "title": "Rockstar publie les crédits complets de GTA 6 — c'est cool pour les équipes, mais attention aux spoilers",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 17:54:46 +0000",
+        "description": "La prudence est de mise.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94098/rockstar-publie-les-credits-complets-de-gta-6-cest-cool-pour-les-equipes-mais-attention-aux-spoilers",
+        "source_type": "media"
+      },
+      {
+        "title": "Ubisoft confirme de nouveaux licenciements : 166 emplois sont supprimés au sein de deux studios majeurs",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 17:37:12 +0000",
+        "description": "Perte de personnel dans des bureaux importants à Montréal et au Québec.",
+        "url": "https://fr.ign.com/assassins-creed-codename-red/94097/ubisoft-confirme-de-nouveaux-licenciements-166-emplois-sont-supprimes-au-sein-de-deux-studios-majeur",
+        "source_type": "media"
+      },
+      {
+        "title": "Clair Obscur : Expedition 33 : deux drapeaux officiels pour décorer votre mur, ce qu’il faut savoir avant de précommander",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 16:44:48 +0000",
+        "description": "Oh hisse ! Paré pour l’Expedition.",
+        "url": "https://fr.ign.com/clair-obscur-expedition-33/94094/clair-obscur-expedition-33-deux-drapeaux-officiels-pour-decorer-votre-mur-ce-quil-faut-savoir-avant",
+        "source_type": "media"
+      },
+      {
+        "title": "Les acteurs de Jason et Lucia dans GTA 6 posent ensemble sur une première photo",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 19 Nov 2026 15:14:47 +0000",
+        "description": "\"Et voilà... le secret est enfin dévoilé !\"",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94092/les-acteurs-de-jason-et-lucia-dans-gta-6-posent-ensemble-sur-une-premiere-photo",
+        "source_type": "media"
+      },
+      {
+        "title": "L'I.A continue ses ravages dans le jeu vidéo : 54 % des développeurs licenciés toujours sans emploi et ça ne va pas s'arranger",
+        "publisher": "JeuxVideo.com",
+        "domain": "news.google.com",
+        "published": "Tue, 17 Nov 2026 11:50:08 GMT",
+        "description": "L'I.A continue ses ravages dans le jeu vidéo : 54 % des développeurs licenciés toujours sans emploi et ça ne va pas s'arranger    JeuxVideo.com",
+        "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxON0t4Y1BnZUJYSVMxN3lhV21vYTl0bWlQYlFNMURxcjdiRTFTLV84aHZQVnN4ZGl5bEhVQWxOWHlQQWtVM0pIV092bU81TUNuTWZoYVQzZDJIOGZNUExYTmxJS0RlZ2ZSb0I4SVFYYzFkc0dJRVZhYnBmR2RabjdRMTZwM3NYZmpCcE1rNUR5R3Nhb2NRc1M0bXdPUVM1b2s4Y3ltazZ4VUpHQU82WmdIUFFzeDZ1SDRwV3hkNno3QmVFUGdDc1NEZl9PNkktaElFR3BhQmNYVkROVUlQb1I2YTRFaDk5SUZ2TzlOaTFiY05pSGFPcHlTRA?oc=5",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Résumé documentaire de secours assemblé automatiquement à partir des liens collectés ; aucune annonce spécifique n’est confirmée.",
+    "audio_url": "audio/20261119T181445-15c2e2a5.mp3"
+  },
+  {
     "id": "20261119T181252-5b38e409",
     "date": "2026-11-19T18:12+00:00",
     "theme": "Warhammer 40,000: Dawn of War IV — sortie annoncée en décembre 2026",
@@ -1139,48 +1197,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261116T184438Z.mp3"
-  },
-  {
-    "id": "20261116T133506Z",
-    "date": "2026-11-16T13:35+00:00",
-    "theme": "Gaming et jeux vidéo",
-    "title": "Événements clés du gaming en novembre 2026",
-    "summary": "Le mois de novembre 2026 s'annonce riche pour les joueurs : de nouvelles sorties PC et consoles sont attendues, tandis que la PlayStation Plus propose une liste complète de jeux. GTA 6 reçoit déjà une mise à jour avant sa sortie officielle, et l’eShop prépare la fonction d’envoi de jeux en cadeau. Logitech annonce un jour de congé dédié aux jeux vidéo.",
-    "verdict": "Ces informations restent à confirmer jusqu’à la publication officielle des détails.",
-    "tip": "Profitez du jour de congé Logitech pour organiser une soirée jeux en famille ou entre amis.",
-    "sources": [
-      {
-        "title": "Sorties jeux vidéo novembre 2026 : les nouveautés attendues sur PC et consoles - Sortir à Paris",
-        "description": "Sorties jeux vidéo novembre 2026 : les nouveautés attendues sur PC et consoles    Sortir à Paris",
-        "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPWlBsWmdBZml4b3VoSEtpeWpnTVEySmpNWGtpVWtRRXB0enpLRXBDWUx0VVZLeGZmSjhXYkhacmxtQ0RTSkdWMzNETFJrYUE3RzdrMmQxMnMzX0dVal9Mb3dwTzZwV3hReUdNT3BuWmhRdVJrTFVOck9MbUpnUF95LWhJR2J5eENBMTk2VGJfTldjSlFsSWlMRmZVaGFBZ2Q0eXRDaS1EX1dtVGRGMHZoQzdNbFZzenBiRGJLYmFiRk1mRVM4dnF1TDM0ZWR5WDVlX2c?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "eShop : la 23.5.0 prépare vraiment l'envoi de jeux en cadeau - SpiritGamer",
-        "description": "eShop : la 23.5.0 prépare vraiment l'envoi de jeux en cadeau    SpiritGamer",
-        "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE92eFhVcldybFF3TGpKdmlGVTFYRUxxQUtrSGxURl9yMHZ1cTc1LUdLclVVNXNjMEhWakN2QTZtV3FwODRoRXFUNG5Md2dJYU52b21wQ1RFNHVycG5famZ0SGpXODNEa1JFQWlYX0dWUU9kUDg?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "Une mise à jour de GTA 6 est déjà à télécharger avant même la sortie du jeu - Xboxygen",
-        "description": "Une mise à jour de GTA 6 est déjà à télécharger avant même la sortie du jeu    Xboxygen",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNOFZlWG1MS1lHbTFQSTA2b2dlUk5ObFNtcGFndXI4WVVUR3I4WkFrLVk3NDk0QUpEUllUSXpBTmNNN3RHTnFteTd3bVpZN3dmU1ZhWmt5eklCNS14YjI3MlFTUmItaEpkUlJiM1FnWExQN1MyTjQtTGxrMWFfRXN1bHc1Wk1LRVJ5dGNFZl9XLXNQekx0YVlnTWxDRDk0bmhPUHQycG1YYTFJcmh2UWJWT193?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "GTA 6 : toutes les informations : date de sortie, prix, PC et autres spéculations - EGW.News",
-        "description": "GTA 6 : toutes les informations : date de sortie, prix, PC et autres spéculations    EGW.News",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNbEpGU0pfQjZaYlZfaTV3b0RyWnZqRklnb0FrUnhnMElwUDhiQUh3dGRoV0tKZ2FxWmxEMUs5U0NOQ1pCc3VDaXdpeHdYUG5RbWdzcHBNZWZ2OEl0MzBnWV85WmtOR2Rud0dvdHZrWDRJSkhCbm40UWU3RjhjWG80V2NOUGdHNktlT3dsbHJMZzlhZVdqWTV4TmxHbTFNdFk?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "Logitech Game Day : un jour de congé pour jouer aux jeux vidéo - games.gg",
-        "description": "Logitech Game Day : un jour de congé pour jouer aux jeux vidéo    games.gg",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNdVc5TDFlREY5RkdPVm5pcmJ6S2ZKTjF5YXBqLUFqMG9GblJldTYySEljaE45ZnllT3IyTnN2bWQ5U2M0YTBLNWhkMVg2NnpuOWFUbDkzdG43cFZCS2RSSW94ZVo4NHhkUGpma3R0UHlwSEhUTFBXN1BmQzNzem5tQTNLV0pRRTB6cHhFMWRNWC1ja0NvM0FPTWJjOTk?oc=5",
-        "source_type": "source_externe"
-      }
-    ],
-    "ai_notice": "Contenu assisté par IA ou synthèse de secours à partir des titres. Vérifiez toujours les sources originales.",
-    "audio_url": "audio/20261116T133506Z.mp3"
   }
 ]
