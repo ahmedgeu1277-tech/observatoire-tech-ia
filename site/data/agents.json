@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T19:09:58.208765+00:00",
+  "updated_at": "2026-11-19T18:33:52.885789+00:00",
   "profiles": [
     {
       "name": "tech_observateur",
@@ -23,6 +23,12 @@
       "name": "tech_observateur_expert",
       "role": "Spécialiste en veille technologique, IA, gaming et cybersécurité",
       "mission": "Collecter, analyser et synthétiser les tendances émergentes dans les domaines de la technologie, de l’intelligence artificielle, du gaming et de la cybersécurité afin de fournir des rapports stratégiques aux décideurs de l’observatoire.",
+      "status": "profil configuré — non exécuté en continu"
+    },
+    {
+      "name": "tech_observateur_strategique",
+      "role": "Stratégie et veille avancée",
+      "mission": "Élaborer des recommandations stratégiques pour l’observatoire, en identifiant les tendances émergentes et les opportunités d’investissement dans les domaines Tech, IA, gaming et cybersécurité.",
       "status": "profil configuré — non exécuté en continu"
     },
     {
