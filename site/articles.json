@@ -1,5 +1,27 @@
 [
   {
+    "id": "20261119T175614-3f5bce18",
+    "date": "2026-11-19T17:56+00:00",
+    "theme": "A.O.T. 3 / Attack on Titan — sortie le 10 décembre 2026",
+    "title": "A.O.T. 3 / Attack on Titan : détails insuffisants dans les sources",
+    "summary": "Les résultats récupérés signalent une actualité liée à A.O.T. 3 / Attack on Titan, mais les extraits disponibles reprennent surtout les titres et ne fournissent pas assez d'éléments pour confirmer la portée, les effets ou les modalités de l'annonce. Consultez l'article d'origine et le communiqué de l'organisation concernée avant de retenir des détails.",
+    "verdict": "Les extraits récupérés ne suffisent pas pour confirmer les détails.",
+    "tip": "Lire l'article original et rechercher un communiqué officiel avant de partager l'information.",
+    "sources": [
+      {
+        "title": "A.O.T. 3 : précommandes officielles ouvertes sur Switch 2",
+        "publisher": "SpiritGamer",
+        "domain": "news.google.com",
+        "published": "Sat, 14 Nov 2026 08:00:00 GMT",
+        "description": "A.O.T. 3 : précommandes officielles ouvertes sur Switch 2    SpiritGamer",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBKOGhmVjdtZkhreWhiRFFhMFRac2J2QV9zdFBNaGpYbk03UzhvLUxRdzVWYWFCd0J5Vm9IRWd2Y01nck4xOExjUkRlUmpPNnpPcUZhQnpIOWtXdERyQXRhSEVqNUNaOWlCN1ZaWnpzT1EwYm5xX1E?oc=5",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261119T175614-3f5bce18.mp3"
+  },
+  {
     "id": "20261119T175301-4f7a1d45",
     "date": "2026-11-19T17:53+00:00",
     "theme": "Technologie, IA et jeux vidéo — veille générale de secours",
@@ -1172,48 +1194,5 @@
     ],
     "ai_notice": "Contenu assisté par IA ou synthèse de secours à partir des titres. Vérifiez toujours les sources originales.",
     "audio_url": "audio/20261116T133050Z.mp3"
-  },
-  {
-    "id": "20261116T131642Z",
-    "date": "2026-11-16T13:16+00:00",
-    "theme": "Sécurité numérique",
-    "title": "Sécurité numérique : mises à jour critiques",
-    "summary": "Scality est désormais autorité de numérotation des vulnérabilités sous l’égide de l’Agence européenne de cybersécurité. Microsoft a corrigé une faille d’Outlook déjà exploitée lors du Patch Tuesday. SAP et PostgreSQL ont publié des correctifs pour plusieurs failles critiques, tandis qu’Apache HTTP/2 a renforcé la sécurité de ses serveurs Web.",
-    "verdict": "Les organisations doivent appliquer rapidement ces mises à jour pour réduire les risques d’exploitation.",
-    "tip": "Planifiez un audit de vos dépendances logicielles et appliquez les correctifs dans les 48 heures suivant leur publication.",
-    "sources": [
-      {
-        "title": "Scality devient autorité de numérotation des vulnérabilités sous l’égide de l’Agence européenne de cybersécurité - it social",
-        "description": "Scality devient autorité de numérotation des vulnérabilités sous l’égide de l’Agence européenne de cybersécurité    it social",
-        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNYW83UDZHd1ZMaVJsdVJMX0ZtQTZzbmp3RC1uVFZzcFlfWk93U2FTempQU0JWRDdkd2pqOFVJT2JXSFBoSlphb2Fta0k4Yl9rbF9lSndGd01yMHZ4VmkteEMyN2YyWGxZeFdzYW1FV2J1bG5WRTNBMF9DWG4zZnEtTmxYR1h2ZFZPNUdsZVllVU1paWh3Q1haQkQyencxdUNGRE02dU9lZ1NkT0lweS0yM011UDdfZGxDVlFqYkpiUGNOT2dlWGdWdDI4OV9Uc2pBUTlzaGRTQkJMSU5ySTFLWFZOTXZZUQ?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "Le Patch Tuesday de Microsoft corrige une faille d'Outlook déjà exploitée. - Malwarebytes",
-        "description": "Le Patch Tuesday de Microsoft corrige une faille d'Outlook déjà exploitée.    Malwarebytes",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPb3NaYy1mbVE2YXplMHp0SXNkdjJWc3ZLOXlQVk8zeXk3S2V5SkU0cmI1SWp0VnFXeVNycG1PbmQ4MHptNFZiYnVpTVhMSjd2eWl4RUJTYkctOEhEc05WNl9OeHFHMGk3b19FN2VpcUdreFJiMEtMUERmNGJTNVNoZ2owVE5pS2FmVndZcE9PX0N1Zl9jZVVvdmhkY2FWdzgxWW9ZT3RfbFU3Q2lqYmJzbHQtVQ?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "SAP corrige quatre failles notées 10 sur 10 au Patch Day de novembre - Pasquale Pillitteri",
-        "description": "SAP corrige quatre failles notées 10 sur 10 au Patch Day de novembre    Pasquale Pillitteri",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQWGVHM3Zxc2hOaFNZUVhFdmtkVGU4VTFMTk84WlMzQmZoYTUtLWpORU5jS0xOT3ZKUHhyZGVYSGlnd0FuY2c4OU9neEF6ZFRIZGZRRXFuN3ZNQTFXdzJPVU1SRVlYQnV4TF80SDJ0RFQ4cjNkMUF2ZUZfTWxwc011RU14MTZ1MWk3OHdmNHBTRUFRY2tUNUF6QUJR?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "PostgreSQL corrige 52 failles de sécurité et abandonne la version 14 - Pasquale Pillitteri",
-        "description": "PostgreSQL corrige 52 failles de sécurité et abandonne la version 14    Pasquale Pillitteri",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQcGZXeFN6aUJBU0p1X043b3FadDZ2cUg3T3daN05UaFpxbjV1LWswVExjUEE0R1dUbUw4QXYxVjRqVTlIMXRnZTRIVURNcWl0RkU2REF4V0N3YW5BR2UwcFdwZXBBdlNEcm5mM3MtZ0lvX2dNOG9SM29BU0VVdkRPRklBQXV6SC1MUFB3ZVlibTA?oc=5",
-        "source_type": "source_externe"
-      },
-      {
-        "title": "Faille critique dans Apache HTTP/2 : comment la mise à jour renforce la sécurité des serveurs Web ? - EmarketerZ",
-        "description": "Faille critique dans Apache HTTP/2 : comment la mise à jour renforce la sécurité des serveurs Web ?    EmarketerZ",
-        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQZW1zeVNXSHhTTTBvX0dpQlJlYVZsSFpVNkNMbnNjd0hNQ0lQTS14clZMWU40X25Mc2VzRWwwXzZ5Z3R6NzJwSWFLc0RfeDJYUWRDTEVxWWpBMWw0ZFFORGdEZVZDNGZNSFNjZGVHTjd4elZTSE5pWnV4b1pQb0FGWl9vdElQNXVZTTJnMnM1dHZ6d3J3bWlEZi10SWtLeC03akJCcThObmpOazNRYzZIQ1A1Q0RrRFJOU0pRMHZ3Zw?oc=5",
-        "source_type": "source_externe"
-      }
-    ],
-    "ai_notice": "Contenu assisté par IA ou synthèse de secours à partir des titres. Vérifiez toujours les sources originales.",
-    "audio_url": "audio/20261116T131642Z.mp3"
   }
 ]
