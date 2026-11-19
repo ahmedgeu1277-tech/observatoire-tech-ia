@@ -17,7 +17,7 @@
     zh: {label:'界面语言',archive:'档案至少保存 30 天',subtitle:'根据已发布的文章汇编的纪录片。',note:'章节和来源保留其原始语言。',intro:'简介',sources:'来源',retention:'计划保留至：'}
   };
   const select = document.getElementById('language');
-  const stored = localStorage.getItem('observatoire-langue');
+  const stored = localStorage.getItem('observatoire-language');
   const supported = Object.hasOwn(translations, stored) ? stored : 'fr';
   select.value = supported;
   function applyLanguage(language) {
@@ -42,7 +42,7 @@
     retention.dataset.date = raw.slice(raw.indexOf(':') + 1).trim();
   }
   select.addEventListener('change', () => {
-    localStorage.setItem('observatoire-langue', select.value);
+    localStorage.setItem('observatoire-language', select.value);
     applyLanguage(select.value);
   });
   applyLanguage(supported);
