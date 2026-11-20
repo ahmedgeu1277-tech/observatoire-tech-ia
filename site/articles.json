@@ -1,5 +1,36 @@
 [
   {
+    "id": "20261120T094953-2c7e863d",
+    "date": "2026-11-20T09:49+00:00",
+    "theme": "GTA VI — lancement et premiers retours vérifiés",
+    "title": "GTA VI : buzz autour d’un PNJ et impact sur les ventes",
+    "summary": "Les premiers retours sur GTA VI soulignent un PNJ controversé qui fait le tour des réseaux, bien que son contenu reste à confirmer. Cette attention médiatique coïncide avec une baisse de 14 % des dépenses en jeux vidéo en octobre, probablement liée à l’attente du titre. Les fans restent incertains sur les détails du personnage et sur l’influence exacte de ce phénomène sur les ventes.",
+    "verdict": "Les sources consultées ne confirment pas la véracité du contenu du PNJ, ni l’impact direct sur les ventes, mais indiquent un lien probable entre l’attente du jeu et la baisse des dépenses.",
+    "tip": "Surveillez les prochaines analyses de la communauté et les données de vente pour clarifier l’effet du buzz sur GTA VI.",
+    "sources": [
+      {
+        "title": "Ce PNJ de GTA 6 fait le buzz sur les réseaux – elle pourrait bien cacher un sombre secret",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Fri, 20 Nov 2026 09:28:14 +0000",
+        "description": "Psychopathe.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94111/ce-pnj-de-gta-6-fait-le-buzz-sur-les-reseaux-elle-pourrait-bien-cacher-un-sombre-secret",
+        "source_type": "media"
+      },
+      {
+        "title": "Les dépenses en jeux vidéo ont chuté de 14 % en octobre, probablement parce que tout le monde se préparait pour GTA 6",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Fri, 20 Nov 2026 09:14:21 +0000",
+        "description": "Difficile de passer après. Enfin, aussi de passer juste avant.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94112/les-depenses-en-jeux-video-ont-chute-de-14-en-octobre-probablement-parce-que-tout-le-monde-se-prepar",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261120T094953-2c7e863d.mp3"
+  },
+  {
     "id": "20261119T191755-8ed57188",
     "date": "2026-11-19T19:17+00:00",
     "theme": "Matériel et smartphones",
@@ -1140,44 +1171,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261118T220352-aa1acc7c.mp3"
-  },
-  {
-    "id": "20261118T220135-7d27652d",
-    "date": "2026-11-18T22:01+00:00",
-    "theme": "Calendrier des sorties jeux vidéo 2026 et annonces",
-    "title": "GTA VI : lancement officiel confirmé pour le 19 novembre 2026",
-    "summary": "Rockstar confirme que Grand Theft Auto VI sortira le jeudi 19 novembre 2026 sur PlayStation 5 et Xbox Series X|S. La page officielle présente également le préchargement et les contenus de lancement. Les sources consultées au sujet de Burning Sword: Death Sun ne permettent pas de confirmer ici une date finale ni sa disponibilité sur PS5 ; ces informations doivent être vérifiées séparément auprès de son éditeur.",
-    "verdict": "La date et les plateformes de GTA VI sont confirmées par Rockstar ; les détails de sortie de Burning Sword: Death Sun restent à vérifier.",
-    "tip": "Vérifier chaque date et chaque plateforme auprès de l’éditeur concerné avant de publier un calendrier de sorties.",
-    "sources": [
-      {
-        "title": "Grand Theft Auto VI — page officielle",
-        "publisher": "Rockstar Games",
-        "domain": "rockstargames.com",
-        "published": "",
-        "description": "Rockstar indique une sortie le 19 novembre 2026 sur PlayStation 5 et Xbox Series X|S.",
-        "url": "https://www.rockstargames.com/VI",
-        "source_type": "source_editeur"
-      },
-      {
-        "title": "GTA 6 bat tous les records de streaming avant même sa sortie mondiale",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 18:54:26 +0000",
-        "description": "Si on ne fait qu'en parler, ça compte ?",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94079/gta-6-bat-tous-les-records-de-streaming-avant-meme-sa-sortie-mondiale",
-        "source_type": "media"
-      },
-      {
-        "title": "Burning Sword : screen éditeur",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 17:27:34 +0000",
-        "description": "",
-        "url": "https://fr.ign.com/burning-sword-death-sun/94077/burning-sword-screen-editeur",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet."
   }
 ]
