@@ -1,5 +1,45 @@
 [
   {
+    "id": "20261120T184915-ac71cb81",
+    "date": "2026-11-20T18:49+00:00",
+    "theme": "Sécurité numérique",
+    "title": "Sécurité numérique : détails insuffisants dans les sources",
+    "summary": "Les résultats récupérés signalent une actualité liée à Sécurité numérique, mais les extraits disponibles reprennent surtout les titres et ne fournissent pas assez d'éléments pour confirmer la portée, les effets ou les modalités de l'annonce. Consultez l'article d'origine et le communiqué de l'organisation concernée avant de retenir des détails.",
+    "verdict": "Les extraits récupérés ne suffisent pas pour confirmer les détails.",
+    "tip": "Lire l'article original et rechercher un communiqué officiel avant de partager l'information.",
+    "sources": [
+      {
+        "title": "Cybersécurité : les inquiétantes vulnérabilités du secteur spatial français",
+        "publisher": "JDN",
+        "domain": "news.google.com",
+        "published": "Wed, 18 Nov 2026 19:30:05 GMT",
+        "description": "Cybersécurité : les inquiétantes vulnérabilités du secteur spatial français    JDN",
+        "url": "https://news.google.com/rss/articles/CBMipAJBVV95cUxQTnZhSVM3UDJocUpTMER6ZmtvdUJOVGNMeDM3SWFoVWpUb3BLWFBPcVRUSTZyOEk1QVZGc09ISjh5U1VSV21sQVZORUNhWE96Wm8tSGZod1NsN0dyQ29idG5ZWk1zbVdaVUJIZTgzVEtSWEVQQWU0OUlvTmppLWlEMlV3RGt0bEV2Qk43SklOWkpEaHV0YllKbjJES05nT2pHM1N2VU1aTmZ5b0R3dk9QZzhldHhsTTZmZzhkaE91NF9qOWZQOHg5bU1yZkFYN2VRSXhGYnZKLVhsenJkS291dFFGS2h6Z1dtMnZQVWNCaF9KRVJPSEE5b1BsdG82VDdKeTA2cThfUkpKRmNXYzRJYThnLWE0Rjg0YmJGcVF2V2lsQVV5?oc=5",
+        "source_type": "media"
+      },
+      {
+        "title": "Java4Shell : une faille critique menace les systèmes des entreprises",
+        "publisher": "Le Revenu",
+        "domain": "news.google.com",
+        "published": "Fri, 20 Nov 2026 09:14:00 GMT",
+        "description": "Java4Shell : une faille critique menace les systèmes des entreprises    Le Revenu",
+        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOaTF6WHRtUkZSSHNmR0pxbHF0VnYxZXdFaXFDeDItVXBrenFOUm5XSjZYOVd1VGhpbnhRdGVueDAyV0RlYzEyNk4zWDBOa1NYWWxQRHRpb2NQTnNMc3lpVVVHNUtweHdKci1SYjRaVVlmd0Y0dTNZYlFneHREQWlZNFhlYm1rN3hRSTBtUnNtZE1jengxcHI1bkR6NDZObWg4ckxTeGVhTnota3FKTVRZbXo2TGdtcGRkczZiSVlkaUtudy02eDYtcDItSDV5SWUxeTk5Uk04TGsydEpMQkE?oc=5",
+        "source_type": "media"
+      },
+      {
+        "title": "OpenAI s'engage avec l'Otan sur la cybersécurité",
+        "publisher": "TradingView",
+        "domain": "news.google.com",
+        "published": "Tue, 17 Nov 2026 17:19:41 GMT",
+        "description": "OpenAI s'engage avec l'Otan sur la cybersécurité    TradingView",
+        "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1HOVl3cjJqWUNuOTd3eXZON19Jb0JpSHpPb0NSZzlDQVYwa0taMzBtcVR1Z1g3RWFET3hJLUw0aFRYN05CeWpRS1NoS2JERWowM3lqcjhyazdtVld1ZGk3Y1hR?oc=5",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261120T184915-ac71cb81.mp3"
+  },
+  {
     "id": "20261120T094953-2c7e863d",
     "date": "2026-11-20T09:49+00:00",
     "theme": "GTA VI — lancement et premiers retours vérifiés",
@@ -1131,45 +1171,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261118T221050-92cc91aa.mp3"
-  },
-  {
-    "id": "20261118T220352-aa1acc7c",
-    "date": "2026-11-18T22:03+00:00",
-    "theme": "GTA VI — lancement et premiers retours vérifiés",
-    "title": "GTA VI : records de streaming et retour mitigé",
-    "summary": "Avant sa sortie, GTA VI a battu tous les records de streaming, comme le note IGN France, ce qui montre l’excitation massive autour du titre. Cependant, les premiers retours soulignent une expérience de jeu trop axée sur le “doomscrolling”, un point d’attention pour les joueurs. La mise à jour 1.002.000, obligatoire pour jouer, introduit des changements majeurs, mais son impact sur la stabilité et la sécurité reste à confirmer. Les sources ne précisent pas encore l’effet à long terme de ces éléments.",
-    "verdict": "Les données indiquent un fort engouement mais un gameplay contesté, avec des aspects techniques encore à surveiller.",
-    "tip": "Surveillez les futures analyses de performance et les retours communautaires pour comprendre l’impact réel de la mise à jour 1.002.000.",
-    "sources": [
-      {
-        "title": "GTA 6 bat tous les records de streaming avant même sa sortie mondiale",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 18:54:26 +0000",
-        "description": "Si on ne fait qu'en parler, ça compte ?",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94079/gta-6-bat-tous-les-records-de-streaming-avant-meme-sa-sortie-mondiale",
-        "source_type": "media"
-      },
-      {
-        "title": "Dans GTA 6, vous serez obligé de doomscroller si vous voulez voir tout ce que le jeu a à offrir",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 16:00:35 +0000",
-        "description": "Scroller, encore scroller, toujours scroller...",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94069/dans-gta-6-vous-serez-oblige-de-doomscroller-si-vous-voulez-voir-tout-ce-que-le-jeu-a-a-offrir",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 : la mise à jour 1.002.000 est obligatoire pour jouer, voici ce qu’elle contient",
-        "publisher": "big-n.fr",
-        "domain": "news.google.com",
-        "published": "Fri, 13 Nov 2026 14:20:45 GMT",
-        "description": "GTA 6 : la mise à jour 1.002.000 est obligatoire pour jouer, voici ce qu’elle contient    big-n.fr",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB6SHhSMEVYal9QemZqcC1ERTRGZmVIVGxBTWlENW1LOE9qZUN4cnZrOUdzNFA1VHhSdlBEckNUeWZlTTFsV2hpZ2dzZHJIR1JOTzlnMFJEZnZXYl9GZFh4VjU4R1ZCSEFEQVRMLUZfUDI2S3FEQkV2aEJEWm52dk0?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261118T220352-aa1acc7c.mp3"
   }
 ]
