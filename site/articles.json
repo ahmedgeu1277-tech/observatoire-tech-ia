@@ -1,5 +1,27 @@
 [
   {
+    "id": "20261121T183148-4826db5c",
+    "date": "2026-11-21T18:31+00:00",
+    "theme": "Call of Duty: Modern Warfare 4 — suivi après lancement (23 octobre 2026)",
+    "title": "Call of Duty: Modern Warfare 4 : détails chiffrés non confirmés",
+    "summary": "Les sources consultées mentionnent Call of Duty: Modern Warfare 4, mais elles ne fournissent pas suffisamment d'éléments pour confirmer les caractéristiques chiffrées avancées. Les performances, la compatibilité et les spécifications techniques doivent être vérifiées dans les fiches officielles.",
+    "verdict": "Les chiffres et caractéristiques détaillés ne sont pas établis par les sources consultées.",
+    "tip": "Consulter les annonces et fiches techniques officielles avant de retenir des chiffres précis.",
+    "sources": [
+      {
+        "title": "[TEST] Call of Duty 23: Modern Warfare 4 conclut en beauté la nouvelle quadrilogie",
+        "publisher": "nofrag.com",
+        "domain": "nofrag.com",
+        "published": "Tue, 17 Nov 2026 17:15:00 GMT",
+        "description": "Après un Black Ops 7 très fainéant l’année dernière par Treyarch, le nouveau Call of Duty était attendu au tournant. Mais les connaisseurs le savent, quand ...",
+        "url": "https://nofrag.com/test-call-of-duty-23-modern-warfare-4-conclut-en-beaute-la-nouvelle-quadrilogie/",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261121T183148-4826db5c.mp3"
+  },
+  {
     "id": "20261121T093949-bf8441b5",
     "date": "2026-11-21T09:39+00:00",
     "theme": "Technologie, IA et jeux vidéo — veille générale de secours",
@@ -1140,45 +1162,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261118T221641-fc077122.mp3"
-  },
-  {
-    "id": "20261118T221413-4d00add9",
-    "date": "2026-11-18T22:14+00:00",
-    "theme": "Technologies d'IA et d'accessibilité dans le gaming moderne",
-    "title": "Streaming record de GTA 6 et promesses d’IA dans Burning Sword",
-    "summary": "Le lancement de GTA 6 a déjà battu tous les records de streaming, témoignant d’une forte anticipation du public. En parallèle, Burning Sword : Death Sun propose des mécaniques de hack‑and‑slash wuxia spectaculaires, avec une version anticipée qui devrait enrichir le contenu. Les deux titres soulignent l’intérêt croissant pour les innovations techniques, mais aucune donnée détaillée sur les options d’IA ou d’accessibilité n’a encore été publiée. Les lecteurs restent donc dans l’attente de précisions sur l’impact réel de ces technologies.",
-    "verdict": "Les sources indiquent un intérêt massif pour GTA 6 et des promesses de gameplay dans Burning Sword, mais l’impact sur l’accessibilité reste incertain.",
-    "tip": "Surveillez les prochaines communiqués des éditeurs pour des informations précises sur les options d’IA et d’accessibilité.",
-    "sources": [
-      {
-        "title": "GTA 6 bat tous les records de streaming avant même sa sortie mondiale",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 18:54:26 +0000",
-        "description": "Si on ne fait qu'en parler, ça compte ?",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94079/gta-6-bat-tous-les-records-de-streaming-avant-meme-sa-sortie-mondiale",
-        "source_type": "media"
-      },
-      {
-        "title": "Burning Sword : screen éditeur",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 17:27:34 +0000",
-        "description": "",
-        "url": "https://fr.ign.com/burning-sword-death-sun/94077/burning-sword-screen-editeur",
-        "source_type": "media"
-      },
-      {
-        "title": "Preview Burning Sword Death Sun : des premiers pas prometteurs",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 17:27:34 +0000",
-        "description": "Burning Sword: Death Sun pose les bases d’un hack-and-slash wuxia nerveux et spectaculaire, dont l’accès anticipé doit désormais enrichir le contenu et affiner les mécaniques.",
-        "url": "https://fr.ign.com/burning-sword-death-sun/94075/preview-burning-sword-death-sun-des-premiers-pas-prometteurs",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261118T221413-4d00add9.mp3"
   }
 ]
