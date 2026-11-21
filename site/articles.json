@@ -1,5 +1,45 @@
 [
   {
+    "id": "20261121T093949-bf8441b5",
+    "date": "2026-11-21T09:39+00:00",
+    "theme": "Technologie, IA et jeux vidéo — veille générale de secours",
+    "title": "GTA 6 : un lancement record mais des chiffres à vérifier",
+    "summary": "Le premier jour de sortie de GTA 6, les ventes ont été estimées à 3,79 milliards de dollars, ce qui placerait le jeu au sommet des lancements de divertissement. Cette valeur provient d’une estimation de l’éditeur, et son exactitude reste incertaine. Le titre propose aussi une perspective FPS, mais les détails techniques de cette fonctionnalité ne sont pas encore clairs. Les lecteurs peuvent donc suivre les confirmations officielles pour valider ces chiffres et comprendre la mise en œuvre du mode FPS.",
+    "verdict": "Les chiffres de vente sont des estimations non confirmées ; la perspective FPS est annoncée mais non détaillée.",
+    "tip": "Vérifiez les communiqués officiels de Rockstar pour les chiffres définitifs et les spécifications techniques du mode FPS.",
+    "sources": [
+      {
+        "title": "GTA 6 est le plus gros lancement de tous les temps dans le secteur du divertissement, avec 3,79 milliards de dollars dès le premier jour",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Fri, 20 Nov 2026 20:09:06 +0000",
+        "description": "Gros braquage.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94151/gta-6-est-le-plus-gros-lancement-de-tous-les-temps-dans-le-secteur-du-divertissement-avec-379-millia",
+        "source_type": "media"
+      },
+      {
+        "title": "Le saviez-vous ? Il est possible de jouer à GTA 6 en vue FPS",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Fri, 20 Nov 2026 17:18:20 +0000",
+        "description": "Une nouvelle perspective.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94140/le-saviez-vous-il-est-possible-de-jouer-a-gta-6-en-vue-fps",
+        "source_type": "media"
+      },
+      {
+        "title": "Le jeu de société Cyberpunk Edgerunners en images",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Fri, 20 Nov 2026 17:13:00 +0000",
+        "description": "",
+        "url": "https://fr.ign.com/cyberpunk-edgerunners/94146/le-jeu-de-societe-cyberpunk-edgerunners-en-images",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261121T093949-bf8441b5.mp3"
+  },
+  {
     "id": "20261120T184915-ac71cb81",
     "date": "2026-11-20T18:49+00:00",
     "theme": "Sécurité numérique",
@@ -1140,36 +1180,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261118T221413-4d00add9.mp3"
-  },
-  {
-    "id": "20261118T221050-92cc91aa",
-    "date": "2026-11-18T22:10+00:00",
-    "theme": "GTA VI — lancement et premiers retours vérifiés",
-    "title": "GTA VI : records de streaming et mise à jour obligatoire",
-    "summary": "Avant sa sortie mondiale, GTA VI a déjà battu des records de streaming, selon IGN France. L’article évoque aussi des retours sur la navigation et le doomscrolling, sans mesurer leur effet sur les ventes. Big N rapporte qu’une mise à jour 1.002.000 serait obligatoire pour jouer ; ce point doit être vérifié directement auprès de Rockstar. Les sources consultées ne permettent pas encore d’évaluer l’effet à long terme de cette mise à jour.",
-    "verdict": "IGN France et Big N rapportent ces éléments ; la mise à jour et ses effets nécessitent une confirmation primaire et des retours de jeu.",
-    "tip": "Consulter les annonces et notes de version de Rockstar avant de considérer la mise à jour comme confirmée.",
-    "sources": [
-      {
-        "title": "GTA 6 bat tous les records de streaming avant même sa sortie mondiale",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 18:54:26 +0000",
-        "description": "Si on ne fait qu'en parler, ça compte ?",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94079/gta-6-bat-tous-les-records-de-streaming-avant-meme-sa-sortie-mondiale",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 : la mise à jour 1.002.000 est obligatoire pour jouer, voici ce qu’elle contient",
-        "publisher": "big-n.fr",
-        "domain": "news.google.com",
-        "published": "Fri, 13 Nov 2026 14:20:45 GMT",
-        "description": "GTA 6 : la mise à jour 1.002.000 est obligatoire pour jouer, voici ce qu’elle contient    big-n.fr",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB6SHhSMEVYal9QemZqcC1ERTRGZmVIVGxBTWlENW1LOE9qZUN4cnZrOUdzNFA1VHhSdlBEckNUeWZlTTFsV2hpZ2dzZHJIR1JOTzlnMFJEZnZXYl9GZFh4VjU4R1ZCSEFEQVRMLUZfUDI2S3FEQkV2aEJEWm52dk0?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261118T221050-92cc91aa.mp3"
   }
 ]
