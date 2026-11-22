@@ -106,6 +106,7 @@ async function inspectPage(browser, route, viewport) {
           summary:"Dies ist eine geprüfte Übersetzungsprobe.",
           verdict:"Die Quellen bestätigen diese Aussage.",
           tip:"Die Originalquelle lesen."
+          ,audio_url:"audio/test-de.mp3"
         }};
         window.observatoireApplyArticleLanguage("de");
       });
@@ -114,6 +115,9 @@ async function inspectPage(browser, route, viewport) {
       }
       if (!(await page.locator("#articles .article").first().textContent()).includes("geprüfte Übersetzungsprobe")) {
         fail("Accueil : le résumé traduit n'est pas affiché.");
+      }
+      if (!(await page.locator("#articles .article audio").first().getAttribute("src")).includes("test-de.mp3")) {
+        fail("Accueil : l'audio traduit ne suit pas la langue sélectionnée.");
       }
       await page.selectOption("#language", "fr");
       if ((await page.locator("#articles .article h3").first().textContent()) !== originalArticleTitle) {
