@@ -1,6 +1,6 @@
 # État d'avancement global du projet
 
-Dernière évaluation fonctionnelle détaillée : 18 novembre 2026. Audit GitHub complémentaire : 19 novembre 2026.
+Dernière évaluation fonctionnelle détaillée : 22 novembre 2026. Audits précédents : 18 et 19 novembre 2026.
 
 ## Audit complémentaire du 19 novembre 2026
 
@@ -22,7 +22,7 @@ Dernière évaluation fonctionnelle détaillée : 18 novembre 2026. Audit GitHub
 
 ## Résultat
 
-**Estimation pondérée recalculée : 55,89 / 100.**
+**Estimation pondérée recalculée : 56,48 / 100.**
 
 Ce pourcentage est un indicateur d'avancement fonctionnel construit à partir des domaines ci-dessous. Ce n'est ni un pourcentage de lignes de code terminées, ni une garantie de disponibilité, ni une certification de mise en production. Les notes sont des estimations prudentes fondées sur les fonctions présentes et les contrôles exécutés.
 
@@ -33,8 +33,8 @@ Ce pourcentage est un indicateur d'avancement fonctionnel construit à partir de
 | Missions persistantes et autonomie | 17,65 % | 35 % | 6,18 |
 | Laboratoire privé et sécurité | 17,65 % | 45 % | 7,94 |
 | R&D et conception de produits | 11,76 % | 35 % | 4,12 |
-| Tests et amélioration continue | 11,76 % | 80 % | 9,41 |
-| **Total** | **100 %** |  | **55,89 %** |
+| Tests et amélioration continue | 11,76 % | 85 % | 10,00 |
+| **Total** | **100 %** |  | **56,48 %** |
 
 Calcul : somme de (poids × note du domaine) / 100.
 
@@ -55,7 +55,7 @@ Le dossier local du laboratoire est ignoré par Git, les contrôles Gitleaks, Co
 ### R&D et conception de produits — 35 %
 L'atelier de sélection de produits note les opportunités selon la douleur client, les preuves de demande, la faisabilité, la différenciation, le coût et l'accès au marché. Des prototypes commencent à exister, mais les entretiens clients, les preuves de marché indépendantes, les tests avec de vrais utilisateurs et la validation économique restent à faire.
 
-### Tests et amélioration continue — 80 %
+### Tests et amélioration continue — 85 %
 La suite compte maintenant 112 tests Python réussis sur le commit `e34f646a` le 19 novembre, après ajout des tests de migration SQLite et d'annulation coopérative des missions. Le dernier workflow avancé a réussi : Ruff, Bandit, Gitleaks, CodeQL Python et JavaScript, ainsi que les tests Playwright des trois pages et les parcours responsive de l'accueil et du documentaire à 390, 768 et 1 440 px. Le diagnostic du dépôt a vérifié 25 articles, 85 sources et 24 fichiers audio, cinq profils d'agents et l'absence de données de ville dans le site public. La boucle d'auto-évaluation produit un rapport et un backlog ; elle ne réécrit pas le code de production et ne déploie pas de corrections de façon autonome.
 
 ## Périmètre de développement
@@ -73,7 +73,7 @@ Le développement de jeux et les intégrations associées ne font plus partie de
 
 ## Limites importantes
 
-- 55,89 % est une estimation pondérée selon cette grille ; cela ne signifie pas que toutes les fonctionnalités sont prêtes à être utilisées.
+- 56,48 % est une estimation pondérée selon cette grille ; cela ne signifie pas que toutes les fonctionnalités sont prêtes à être utilisées.
 - Aucun travail ne continue en arrière-plan après la fin d'une exécution GitHub Actions, sauf les workflows effectivement planifiés.
 - Aucune vente, dépense ou publication externe n'est automatique.
 - Les rapports et prototypes privés ne doivent pas être ajoutés au site public.
@@ -85,3 +85,17 @@ Le développement de jeux et les intégrations associées ne font plus partie de
 - **Coopération et autonomie bornée :** les agents suivants reçoivent les analyses précédentes, avec un plafond de 3 000 caractères par agent et 8 000 caractères au total. Un worker de file peut surveiller les nouvelles missions, avec durée maximale configurable de 48 heures (défaut : 1 heure), 50 missions maximum, attente après file vide limitée (défaut : 5 minutes), et arrêt coopératif par signal. Chaque mission reste plafonnée à 180 secondes et trois agents. Le processus doit rester actif sur une machine disponible ; ce n'est pas un service permanent hébergé.
 - **Sécurité :** les missions contenant un secret potentiel sont refusées avant stockage et envoi au fournisseur IA. Sur POSIX, le dossier SQLite et les rapports privés reçoivent des permissions restrictives (0700 pour les dossiers, 0600 pour les fichiers). L'arbre Git courant a été contrôlé : aucun fichier n'est suivi sous `.laboratoire_prive/`. Le dépôt et son historique restent publics.
 - Vérification du 19 novembre 2026 : **131 tests Python réussis** sur le commit `2fa1266b`. Ruff, Bandit, Gitleaks, CodeQL Python et JavaScript, et les tests Playwright ont tous réussi. Playwright a vérifié les libellés dynamiques allemands et arabes, le RTL arabe, les deux pages et les trois largeurs d'écran. Le workflow de publication a réussi ; le déploiement GitHub Pages a ensuite réussi sur le commit `064b2ac6` (publication automatique suivante).
+
+
+## Audit opérationnel du 22 novembre 2026
+
+- Sur le commit vérifié `79b57aa7`, les **135 tests Python** ont réussi. Le workflow d'analyse avancée a également réussi : Playwright sur toutes les pages HTML, parcours responsive mobile/tablette/ordinateur, Ruff, Bandit, Gitleaks et CodeQL Python/JavaScript.
+- Après le déploiement GitHub Pages, la surveillance de production a effectué **56 contrôles HTTP sans erreur** : page racine, accueil, simulation de ville, page documentaire, catalogue JSON, les 30 fichiers audio d'articles, les médias français du documentaire et les six variantes traduites (anglais, espagnol, allemand, portugais, arabe et chinois), chacune avec audio, vidéo et sous-titres. Les ressources vérifiées ont répondu HTTP 200.
+- Le test réel Groq du 22 novembre a réussi. Le test Hugging Face a été ignoré par configuration ; aucune disponibilité gratuite de Hugging Face n'est donc revendiquée.
+- La page documentaire propose bien des versions traduites du texte, de la narration, de la vidéo et des sous-titres dans six langues supplémentaires lorsque leur génération réussit. Le sélecteur et les tests vérifient le changement de ces médias, la conservation des liens/noms des sources et le retour complet au français.
+- Le site public contient actuellement trois pages fonctionnelles principales : accueil, documentaire et simulation fictive de ville. Le catalogue contient 30 articles, 85 références de source et 30 fichiers audio. La simulation reste une démonstration fictive à indicateurs synthétiques, pas une ville 3D connectée à des données réelles.
+- La surveillance du site public est désormais planifiée toutes les six heures, déclenchée lors des changements de contenu et après les statuts de déploiement. Les erreurs réseau temporaires (429, 5xx et interruptions réseau) sont réessayées avec attente progressive.
+- **Limite multilingue toujours présente :** la langue du navigateur sélectionne automatiquement la langue de l'interface, mais le corps des articles et les sources conservent leur langue de publication. La traduction intégrale automatique de chaque article n'est pas encore implémentée.
+- Ces contrôles valident le commit et le déploiement testés ; ils ne certifient pas une disponibilité permanente ni le fonctionnement sur chaque appareil physique.
+
+L'estimation pondérée est passée à **56,48 / 100** en portant le domaine « Tests et amélioration continue » de 80 % à 85 %. Les autres domaines et leurs limites restent inchangés. Ce score ne signifie pas que le projet complet est terminé.
