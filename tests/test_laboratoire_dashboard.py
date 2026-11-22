@@ -46,6 +46,40 @@ class LocalDashboardTests(unittest.TestCase):
         except HTTPError as error:
             return error.code, error.headers, error.read()
 
+    def test_dashboard_generates_private_godot_project_without_running_code(self):
+        with tempfile.TemporaryDirectory() as folder, patch(
+            "laboratoire_dashboard.PROJECTS_DIR", Path(folder) / "prototypes"
+        ):
+            status, _, body = self.request(
+                "/api/projects",
+                method="POST",
+                payload={"name": "DemoGodot", "template": "godot-3d"},
+            )
+            self.assertEqual(status, 201)
+            result = json.loads(body)
+            project = Path(result["directory"])
+            self.assertEqual(result["template"], "godot-3d")
+            self.assertFalse(result["code_executed"])
+            self.assertFalse(result["published"])
+            self.assertTrue((project / "project.godot").is_file())
+            self.assertTrue((project / "scenes" / "main.tscn").is_file())
+            self.assertTrue((project / "scripts" / "main.gd").is_file())
+
+    def test_dashboard_project_generator_rejects_unknown_template(self):
+        status, _, body = self.request(
+            "/api/projects",
+            method="POST",
+            payload={"name": "DemoBad", "template": "unknown"},
+        )
+        self.assertEqual(status, 400)
+        self.assertIn("Modèle inconnu", json.loads(body)["error"])
+
+    def test_dashboard_exposes_supported_project_templates(self):
+        status, _, body = self.request("/api/templates")
+        self.assertEqual(status, 200)
+        templates = {item["id"] for item in json.loads(body)}
+        self.assertTrue({"site", "webapp", "jeu-web", "godot-2d", "godot-3d", "logiciel-python", "video", "audio"}.issubset(templates))
+
     def test_loopback_only_page_and_security_headers(self):
         self.assertEqual(self.server.server_address[0], "127.0.0.1")
         status, headers, body = self.request("/")
