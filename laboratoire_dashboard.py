@@ -7,15 +7,18 @@ from __future__ import annotations
 import argparse
 import json
 import secrets
+from pathlib import Path
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import unquote
 
+import atelier_creation
 import atelier_produits
 import roadmap_laboratoire
 from gestionnaire_missions import MissionQueue
 
 MAX_BODY_BYTES = 16_384
 MAX_BATCH_MISSIONS = 3
+PROJECTS_DIR = Path(__file__).resolve().parent / ".laboratoire_prive" / "prototypes"
 
 PAGE = """<!doctype html><html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
@@ -42,6 +45,7 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f6f2;padding:10px;
 <div><label>Durée (s)</label><input id="duration" type="number" min="60" max="180" value="180"></div></div>
 <label>Échéance facultative</label><input id="deadline" type="datetime-local"><button>Ajouter la mission</button><span id="form-status" role="status"></span></form></section>
 <section><h2>File des missions</h2><button class="secondary" id="refresh">Actualiser</button><button id="run-next" type="button">Exécuter la prochaine mission</button><button id="run-batch" class="secondary" type="button">Exécuter jusqu’à 3 missions</button><span id="status" role="status"></span><div id="items"></div></section>
+<section><h2>Atelier de création de projets</h2><p>Génère des squelettes de sites, applications, jeux web, logiciels Python, projets Godot 2D/3D, audio et vidéo. Le code est créé dans le dossier privé local ; il n'est jamais exécuté ni publié automatiquement.</p><form id="project-form"><label>Nom du projet</label><input id="project-name" maxlength="50" minlength="2" pattern="[A-Za-z][A-Za-z0-9_-]{1,49}" required><label>Modèle</label><select id="project-template"><option value="site">Site web</option><option value="webapp">Application web</option><option value="jeu-web">Jeu navigateur</option><option value="godot-2d">Godot 2D</option><option value="godot-3d">Godot 3D</option><option value="logiciel-python">Logiciel Python</option><option value="video">Production vidéo</option><option value="audio">Production audio</option></select><button type="submit">Créer le squelette</button><span id="project-status" role="status"></span></form></section>
 <section><h2>Portefeuille R&D</h2>
 <form id="product-form">
 <label>Nom du produit</label><input id="product-name" maxlength="200" required>
@@ -63,6 +67,7 @@ async function refreshProducts(){const box=document.getElementById("products"),s
 
 async function refreshRoadmap(){const box=document.getElementById("roadmap-items"),status=document.getElementById("roadmap-status");status.textContent="Chargement…";try{const rows=await api("/api/roadmap");box.replaceChildren();for(const row of rows){const card=el("article","","mission");card.append(el("b",row.title),el("p",row.description),el("span","Priorité : "+row.priority));const select=document.createElement("select");for(const value of ["backlog","in_progress","blocked","done"]){const option=el("option",value==="backlog"?"À faire":value==="in_progress"?"En cours":value==="blocked"?"Bloqué":"Terminé");option.value=value;option.selected=row.status===value;select.append(option);}const due=document.createElement("input");due.type="datetime-local";due.setAttribute("aria-label","Échéance");if(row.due_at){const date=new Date(row.due_at);due.value=new Date(date.getTime()-date.getTimezoneOffset()*60000).toISOString().slice(0,16);}const save=el("button","Enregistrer","secondary");save.onclick=async()=>{try{await api("/api/roadmap/"+encodeURIComponent(row.id)+"/status",{method:"POST",body:JSON.stringify({status:select.value,due_at:due.value?new Date(due.value).toISOString():""})});await refreshRoadmap();}catch(e){status.textContent=e.message;}};card.append(select,due,save);box.append(card);}status.textContent=rows.filter(x=>x.status==="done").length+"/"+rows.length+" tâches terminées";}catch(e){status.textContent=e.message;}}
 async function refresh(){const status=document.getElementById("status"),items=document.getElementById("items");status.textContent="Chargement…";try{const rows=await api("/api/missions");items.replaceChildren();for(const row of rows){const card=el("article","","mission");card.append(el("b",row.id.slice(0,10)),el("span",row.status+" · "+row.priority+" · tentatives "+row.attempts+"/3"));if(row.due_at)card.append(el("p","Échéance : "+row.due_at));const detail=el("button","Détail","secondary");detail.onclick=async()=>{try{document.getElementById("detail").textContent=JSON.stringify(await api("/api/missions/"+row.id),null,2);}catch(e){document.getElementById("detail").textContent=e.message;}};card.append(detail);if(["pending","running"].includes(row.status)){const cancel=el("button","Annuler","secondary");cancel.onclick=async()=>{try{await api("/api/missions/"+row.id+"/cancel",{method:"POST",body:"{}"});refresh();}catch(e){status.textContent=e.message;}};card.append(cancel);}if(["failed","partial","interrupted"].includes(row.status)&&row.attempts<3){const retry=el("button","Relancer","secondary");retry.onclick=async()=>{try{await api("/api/missions/"+row.id+"/retry",{method:"POST",body:"{}"});refresh();}catch(e){status.textContent=e.message;}};card.append(retry);}items.append(card);}if(!rows.length)items.append(el("p","Aucune mission enregistrée."));status.textContent=rows.length+" mission(s)";}catch(e){status.textContent=e.message;}}
+document.getElementById("project-form").onsubmit=async event=>{event.preventDefault();const status=document.getElementById("project-status");try{const result=await api("/api/projects",{method:"POST",body:JSON.stringify({name:document.getElementById("project-name").value,template:document.getElementById("project-template").value})});status.textContent="Projet créé : "+result.project_name+" · "+result.files.join(", ")+" · "+result.directory;event.target.reset();}catch(e){status.textContent=e.message;}};
 document.getElementById("product-form").onsubmit=async event=>{event.preventDefault();const status=document.getElementById("product-form-status");const value=id=>document.getElementById(id).value;const payload={name:value("product-name"),problem:value("product-problem"),target_customer:value("product-customer"),proposed_solution:value("product-solution"),product_type:value("product-type"),evidence:value("product-evidence").split(String.fromCharCode(10)).map(x=>x.trim()).filter(Boolean),scores:{customer_pain:Number(value("score-pain")),demand_evidence:Number(value("score-demand")),feasibility:Number(value("score-feasibility")),differentiation:Number(value("score-differentiation")),affordability:Number(value("score-affordability")),market_access:Number(value("score-market"))}};try{const result=await api("/api/opportunities",{method:"POST",body:JSON.stringify(payload)});status.textContent="Opportunité enregistrée : "+result.id;event.target.reset();await refreshProducts();}catch(e){status.textContent=e.message;}};
 document.getElementById("refresh").onclick=refresh;document.getElementById("refresh-products").onclick=refreshProducts;document.getElementById("refresh-roadmap").onclick=refreshRoadmap;document.getElementById("run-batch").onclick=async()=>{const status=document.getElementById("status");status.textContent="Lot borné en cours…";try{const result=await api("/api/worker/run-batch",{method:"POST",body:JSON.stringify({max_items:3})});status.textContent=result.processed+" mission(s) traitée(s) · "+result.status;await refresh();}catch(e){status.textContent=e.message;}};document.getElementById("run-next").onclick=async()=>{const status=document.getElementById("status");status.textContent="Exécution bornée en cours…";try{const result=await api("/api/worker/run-next",{method:"POST",body:"{}"});status.textContent=result.status||"Aucune mission en attente";await refresh();}catch(e){status.textContent=e.message;}};
 
@@ -121,6 +126,14 @@ def create_server(port: int = 8765, queue: MissionQueue | None = None, token: st
             if not self.authorized():
                 self.send_json(401, {"error": "Authentification locale requise."})
                 return
+            if self.path == "/api/templates":
+                labels = {
+                    "site": "Site web", "webapp": "Application web", "jeu-web": "Jeu navigateur",
+                    "godot-2d": "Godot 2D", "godot-3d": "Godot 3D",
+                    "logiciel-python": "Logiciel Python", "video": "Production vidéo", "audio": "Production audio",
+                }
+                self.send_json(200, [{"id": key, "label": labels.get(key, key)} for key in atelier_creation.TEMPLATES])
+                return
             if self.path == "/api/missions":
                 self.send_json(200, mission_queue.list_missions())
                 return
@@ -148,6 +161,17 @@ def create_server(port: int = 8765, queue: MissionQueue | None = None, token: st
                 body = self.read_json()
                 if not isinstance(body, dict):
                     raise ValueError("Le corps JSON doit être un objet.")
+                if self.path == "/api/projects":
+                    name = body.get("name")
+                    template = body.get("template")
+                    if not isinstance(name, str) or not isinstance(template, str):
+                        raise ValueError("Nom et modèle de projet obligatoires.")
+                    private_root = PROJECTS_DIR.parent
+                    if private_root.is_symlink() or PROJECTS_DIR.is_symlink():
+                        raise ValueError("Le dossier privé de projets ne peut pas être un lien symbolique.")
+                    result = atelier_creation.generate_project(name, PROJECTS_DIR, template)
+                    self.send_json(201, result)
+                    return
                 if self.path == "/api/missions":
                     mission_id = mission_queue.enqueue(body)
                     self.send_json(201, {"id": mission_id, "status": "pending"})
