@@ -93,8 +93,9 @@ async function inspectPage(browser, route, viewport) {
       await page.selectOption("#language", "de");
       const germanPageTitle = await page.title();
       const germanSimulation = await page.locator('nav a[href="./ville-demo.html"] [data-i18n="simulation"]').textContent();
-      if (germanPageTitle !== "NEXORA — Tech, KI & Gaming" || germanSimulation !== "Stadtsimulation") {
-        fail("Accueil : le titre de page ou le lien de simulation n'est pas traduit en allemand.");
+      const germanChallenges = await page.locator('nav a[href="#challenges"] [data-i18n="challengesNav"]').textContent();
+      if (germanPageTitle !== "NEXORA — Tech, KI & Gaming" || germanSimulation !== "Stadtsimulation" || germanChallenges !== "Herausforderungen") {
+        fail("Accueil : le titre ou les liens de navigation ne sont pas traduits en allemand.");
       }
       const germanSources = await sourceLabels.first().textContent();
       if (germanSources !== "Quellen") fail("Accueil : le libellé dynamique des sources n'est pas traduit en allemand.");
