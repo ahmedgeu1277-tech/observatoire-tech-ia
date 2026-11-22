@@ -22,25 +22,25 @@ Dernière évaluation fonctionnelle détaillée : 22 novembre 2026. Audits préc
 
 ## Résultat
 
-**Estimation pondérée recalculée : 64,29 / 100 (audit du 22 novembre 2026, commit vérifié c35ab864).**
+**Estimation pondérée recalculée : 65,23 / 100 (audit du 22 novembre 2026, commit de code vérifié c4206829).**
 
 Ce pourcentage est un indicateur d'avancement fonctionnel construit à partir des domaines ci-dessous. Ce n'est ni un pourcentage de lignes de code terminées, ni une garantie de disponibilité, ni une certification de mise en production. Les notes sont des estimations prudentes fondées sur les fonctions présentes et les contrôles exécutés. Le précédent score de 56,48 % est conservé dans les bilans historiques plus haut.
 
 | Domaine | Poids | Avancement estimé | Contribution |
 |---|---:|---:|---:|
-| Média, veille et site public | 23,53 % | 94 % | 22,12 |
+| Média, veille et site public | 23,53 % | 95 % | 22,35 |
 | Fournisseurs IA et orchestration d'agents | 17,65 % | 40 % | 7,06 |
 | Missions persistantes et autonomie | 17,65 % | 46 % | 8,12 |
 | Laboratoire privé et sécurité | 17,65 % | 61 % | 10,77 |
-| R&D et conception de produits | 11,76 % | 45 % | 5,29 |
-| Tests et amélioration continue | 11,76 % | 93 % | 10,94 |
-| **Total** | **100 %** |  | **64,29 %** |
+| R&D et conception de produits | 11,76 % | 48 % | 5,64 |
+| Tests et amélioration continue | 11,76 % | 96 % | 11,29 |
+| **Total** | **100 %** |  | **65,23 %** |
 
 Calcul : somme de (poids × note du domaine) / 100.
 
 ## Justification des notes
 
-### Média, veille et site public — 90 %
+### Média, veille et site public — 95 %
 Le site public, la récupération de sources, la rédaction assistée, les articles, les fichiers audio et les workflows planifiés existent. Un premier documentaire de démonstration a été généré et publié en MP4 H.264/AAC avec narration, diapositives 1280×720 dessinées localement et références aux sources. Le rendu a été vérifié par FFmpeg et le workflow complet a réussi. Cette vidéo reste un documentaire temporaire de test, pas un studio de montage universel. Restent notamment un hébergement secondaire réellement actif, une supervision permanente et une validation factuelle plus forte.
 
 ### Fournisseurs IA et orchestration d'agents — 40 %
@@ -52,10 +52,10 @@ Une file SQLite locale conserve les missions et leurs états ; un worker peut la
 ### Laboratoire privé et sécurité — 45 %
 Le dossier local du laboratoire est ignoré par Git, les contrôles Gitleaks, CodeQL, Bandit et Ruff sont présents, et un contrôles statiques complémentaires ont été ajoutés. Il n'existe pas encore de tableau de bord privé hébergé avec authentification et autorisations côté serveur. GitHub Pages reste public.
 
-### R&D et conception de produits — 35 %
+### R&D et conception de produits — 48 %
 L'atelier de sélection de produits note les opportunités selon la douleur client, les preuves de demande, la faisabilité, la différenciation, le coût et l'accès au marché. Des prototypes commencent à exister, mais les entretiens clients, les preuves de marché indépendantes, les tests avec de vrais utilisateurs et la validation économique restent à faire.
 
-### Tests et amélioration continue — 85 %
+### Tests et amélioration continue — 96 %
 La suite compte maintenant 112 tests Python réussis sur le commit `e34f646a` le 19 novembre, après ajout des tests de migration SQLite et d'annulation coopérative des missions. Le dernier workflow avancé a réussi : Ruff, Bandit, Gitleaks, CodeQL Python et JavaScript, ainsi que les tests Playwright des trois pages et les parcours responsive de l'accueil et du documentaire à 390, 768 et 1 440 px. Le diagnostic du dépôt a vérifié 25 articles, 85 sources et 24 fichiers audio, cinq profils d'agents et l'absence de données de ville dans le site public. La boucle d'auto-évaluation produit un rapport et un backlog ; elle ne réécrit pas le code de production et ne déploie pas de corrections de façon autonome.
 
 ## Périmètre de développement
@@ -206,3 +206,32 @@ La file locale conserve les missions, leurs priorités, échéances et tentative
 - R&D et conception de produits : 48 % (portefeuille d'opportunités et modèles de génération de projets web, vidéo, audio, Python et Godot ; validation par des utilisateurs réels encore absente).
 - Tests et amélioration continue : 96 % (192 tests Python, contrôles de sécurité et tests navigateur/responsive réussis, plus 79 vérifications de production ; les tests sur appareils physiques restent nécessaires).
 
+
+
+## Extension PWA, ville WebGL et atelier Godot — 22 novembre 2026, commit c4206829
+
+- **Application installable et consultation hors ligne :** le service worker met en cache les pages publiques essentielles, la page de secours hors ligne et le catalogue `articles.json`. Après une première visite en ligne, les pages essentielles et le texte du catalogue restent consultables hors connexion. Les fichiers audio/vidéo volumineux sont volontairement exclus du cache pour préserver le stockage mobile ; les requêtes HTTP Range des lecteurs multimédias contournent également la Cache API.
+- **Ville expérimentale 3D :** la page propose maintenant une scène WebGL 3D légère, avec rendu limité à environ 30 images/s et préférence GPU basse consommation. La vue isométrique 2D reste disponible si WebGL n'est pas supporté. Les quatre quartiers, bâtiments et déplacements restent fictifs et synthétiques ; il ne s'agit pas d'une ville connectée à des données réelles.
+- **Atelier de création :** ajout de modèles de démarrage Godot 4 en 2D et 3D, en complément des squelettes de sites, applications web, jeux navigateur, logiciels Python, projets audio et vidéo. Le générateur écrit des fichiers dans un dossier choisi, n'exécute pas le code et ne publie rien. Les projets Godot n'ont pas encore été compilés ni testés dans le moteur Godot lui-même.
+- **Contrôle des médias documentaires :** le diagnostic vérifie désormais le manifeste du documentaire et l'existence des fichiers audio, vidéo, sous-titres traduits et archive écrite référencés. Les chemins sont confinés à leurs dossiers publics ; les fichiers absents, vides ou les chemins de traversée font échouer le contrôle.
+- Sur le commit `c4206829`, **192 tests Python ont réussi**. Playwright a validé les pages HTML, les parcours responsive à 390, 768 et 1 440 px, le mode hors ligne PWA, le catalogue mis en cache, ainsi que la vue WebGL 3D et le repli 2D. Ruff, Bandit, Gitleaks et CodeQL Python/JavaScript ont réussi. Le build et le déploiement GitHub Pages ont réussi.
+- Après publication, la surveillance de production a effectué **79 requêtes HTTP sans erreur** (0 erreur), dont les fichiers audio, vidéo et sous-titres des six variantes linguistiques.
+- Score pondéré révisé : **65,23 %**. Ce score demeure loin d'une réalisation complète du projet et n'est pas une certification.
+
+### Révision des domaines
+
+- Média, veille et site public : 95 % (vue WebGL 3D avec repli 2D, application PWA, consultation hors ligne du catalogue, contrôles des médias ; traduction de toutes les archives et contenus toujours incomplète).
+- Fournisseurs IA et orchestration : 40 % (Groq est le fournisseur principal ; Hugging Face n'est pas confirmé comme solution gratuite disponible).
+- Missions persistantes et autonomie : 46 % (missions locales bornées ; aucun service cloud autonome permanent).
+- Laboratoire privé et sécurité : 61 % (dashboard local et données privées locales ; pas de dashboard distant authentifié).
+- R&D et conception de produits : 48 % (squelettes de création multi-format et Godot 2D/3D ; pas encore de validation utilisateur ni de compilation/test Godot).
+- Tests et amélioration continue : 96 % (192 tests Python et contrôles avancés réussis ; les tests sur les appareils physiques et la validation réelle des projets Godot restent nécessaires).
+
+### Limites qui empêchent de déclarer le projet terminé
+
+- Aucun classement mondial : les défis restent enregistrés localement dans le navigateur.
+- Le tableau de bord privé reste local ; GitHub Pages ne fournit pas de backend privé authentifié.
+- Les tâches GitHub Actions sont ponctuelles et planifiées, pas des agents actifs 24 h/24.
+- La ville reste une démonstration fictive, sans données municipales réelles.
+- Les modèles Godot sont des points de départ, pas un éditeur complet ni une compilation validée.
+- Un avancement supérieur à 100 % n'est pas une mesure réelle : « 110 % » peut seulement désigner un objectif symbolique de périmètre complet plus améliorations supplémentaires.
