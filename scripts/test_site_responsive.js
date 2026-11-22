@@ -264,6 +264,26 @@ async function inspectPage(browser, route, viewport) {
   if (route === "/site/ville-demo.html") {
     const districts = page.locator("[data-district]");
     if (await districts.count() !== 4) fail("Ville démo : les quatre quartiers ne sont pas présents.");
+    const cityCanvas = page.locator("#city-view");
+    if (await cityCanvas.count() !== 1) {
+      fail("Ville démo : la vue isométrique interactive est absente.");
+    } else {
+      const canvasState = await cityCanvas.evaluate(canvas => ({
+        width: canvas.width,
+        height: canvas.height,
+        context: Boolean(canvas.getContext("2d")),
+      }));
+      if (canvasState.width !== 900 || canvasState.height !== 420 || !canvasState.context) {
+        fail("Ville démo : le rendu isométrique ne peut pas être initialisé.");
+      }
+      const bounds = await cityCanvas.boundingBox();
+      if (bounds) {
+        await cityCanvas.click({position:{x:bounds.width*0.75,y:bounds.height*0.25}});
+        if (await page.locator('[data-district="energie"]').getAttribute("aria-pressed") !== "true") {
+          fail("Ville démo : la sélection d'un quartier depuis la carte ne fonctionne pas.");
+        }
+      }
+    }
     const initialDetail = await page.locator("#district-detail").textContent();
     await page.locator('[data-district="mobilite"]').click();
     const selected = await page.locator('[data-district="mobilite"]').getAttribute("aria-pressed");
@@ -281,6 +301,9 @@ async function inspectPage(browser, route, viewport) {
       }
     };
     await page.selectOption("#language", "en");
+    if (!(await page.locator("[data-i18n='cityCaption']").textContent()).includes("Interactive isometric view")) {
+      fail("Ville démo : la légende isométrique n'est pas traduite en anglais.");
+    }
     if ((await page.locator("h1").textContent()) !== "Experimental city") {
       fail("Ville démo : le titre anglais n'est pas appliqué.");
     }
