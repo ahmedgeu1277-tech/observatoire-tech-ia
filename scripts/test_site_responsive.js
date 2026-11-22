@@ -143,8 +143,8 @@ async function inspectPage(browser, route, viewport) {
       await page.selectOption("#language", "fr");
     }
     const challengeButtons = page.locator("[data-challenge-index]");
-    if (await challengeButtons.count() !== 3) {
-      fail("Accueil : les trois défis interactifs ne sont pas affichés.");
+    if (await challengeButtons.count() !== 6) {
+      fail("Accueil : les six défis interactifs ne sont pas affichés.");
     } else {
       const localNote = await page.locator("#challenge-local-note").textContent();
       if (!localNote.includes("cet appareil") || !localNote.includes("classement mondial")) {
@@ -165,7 +165,7 @@ async function inspectPage(browser, route, viewport) {
       if ((await page.locator('[data-challenge-index="0"]').textContent()) !== "Challenge completed") {
         fail("Défis : l'état du défi ne suit pas la langue sélectionnée.");
       }
-      await page.locator("#challenge-reset").click();
+      if ((await page.locator("#challenge-rank").textContent()) !== "Curieux") {\n         fail("Défis : le rang local ne progresse pas avec les points.");\n       }\n       await page.locator("#challenge-reset").click();
       if ((await page.locator("#challenge-score").textContent()).trim() !== "0 points") {
         fail("Défis : la réinitialisation du score local échoue.");
       }
