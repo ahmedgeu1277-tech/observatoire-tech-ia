@@ -76,6 +76,26 @@ class LocalDashboardTests(unittest.TestCase):
             self.assertEqual(second_status, 409)
             self.assertIn("Dossier de destination", json.loads(body)["error"])
 
+    def test_dashboard_project_generator_rejects_symlink_private_root(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            outside = root / "outside"
+            outside.mkdir()
+            private = root / ".laboratoire_prive"
+            try:
+                private.symlink_to(outside, target_is_directory=True)
+            except (OSError, NotImplementedError):
+                self.skipTest("Les liens symboliques ne sont pas disponibles.")
+            with patch("laboratoire_dashboard.PROJECTS_DIR", private / "prototypes"):
+                status, _, body = self.request(
+                    "/api/projects",
+                    method="POST",
+                    payload={"name": "SymlinkTest", "template": "site"},
+                )
+            self.assertEqual(status, 400)
+            self.assertIn("lien symbolique", json.loads(body)["error"])
+            self.assertEqual(list(outside.iterdir()), [])
+
     def test_dashboard_project_generator_rejects_unknown_template(self):
         status, _, body = self.request(
             "/api/projects",
