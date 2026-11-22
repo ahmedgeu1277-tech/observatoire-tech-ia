@@ -165,7 +165,9 @@ async function inspectPage(browser, route, viewport) {
       if ((await page.locator('[data-challenge-index="0"]').textContent()) !== "Challenge completed") {
         fail("Défis : l'état du défi ne suit pas la langue sélectionnée.");
       }
-      if ((await page.locator("#challenge-rank").textContent()) !== "Curieux") {\n         fail("Défis : le rang local ne progresse pas avec les points.");\n       }\n       await page.locator("#challenge-reset").click();
+      if ((await page.locator("#challenge-rank").textContent()) !== "Curious") {
+         fail("Défis : le rang local ne progresse pas avec les points.");
+       }\n       await page.locator("#challenge-reset").click();
       if ((await page.locator("#challenge-score").textContent()).trim() !== "0 points") {
         fail("Défis : la réinitialisation du score local échoue.");
       }
