@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f1f0e9">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="description" content="NEXORA — média indépendant : actualités publiques sur la technologie, l'intelligence artificielle et les jeux vidéo, avec articles et documentaires sourcés.">
 <title>NEXORA — Tech, IA & Gaming</title>
 <style>
@@ -311,4 +316,13 @@ const selector=document.getElementById("language");
 })();
 </script>
 
+<script>
+if ("serviceWorker" in navigator && location.protocol === "https:") {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js", {scope: "./"}).catch(() => {
+      // Le site reste utilisable normalement si le navigateur bloque le mode hors ligne.
+    });
+  }, {once:true});
+}
+</script>
 </body></html>
