@@ -114,6 +114,24 @@ class LocalDashboardTests(unittest.TestCase):
                 self.assertEqual(json.loads(updated)["workflow_status"], "research")
                 self.assertEqual(atelier_produits.list_opportunities(directory)[0]["workflow_status"], "research")
 
+    def test_private_dashboard_can_create_product_opportunity(self):
+        with tempfile.TemporaryDirectory() as folder:
+            data = {
+                "name": "Assistant de veille de test",
+                "problem": "Les créateurs ont du mal à suivre les changements.",
+                "target_customer": "Créateurs indépendants",
+                "proposed_solution": "Regrouper des sources vérifiables.",
+                "product_type": "ai_agent",
+                "evidence": ["Entretiens à réaliser"],
+                "scores": {key: 3 for key in DIMENSIONS},
+            }
+            with patch.object(atelier_produits, "DEFAULT_PRODUCTS_DIR", Path(folder)):
+                status, _, body = self.request("/api/opportunities", method="POST", payload=data)
+                self.assertEqual(status, 201)
+                result = json.loads(body)
+                self.assertEqual(result["score_percent"], 60)
+                self.assertEqual(len(atelier_produits.list_opportunities(Path(folder))), 1)
+
     def test_rejects_cross_origin_post(self):
         payload = {"mission": "Test", "agents": ["chercheur"], "max_duration_seconds": 60}
         req = Request(self.base + "/api/missions", data=json.dumps(payload).encode(),
