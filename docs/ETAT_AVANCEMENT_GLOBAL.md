@@ -22,19 +22,19 @@ Dernière évaluation fonctionnelle détaillée : 22 novembre 2026. Audits préc
 
 ## Résultat
 
-**Estimation pondérée recalculée : 56,48 / 100.**
+**Estimation pondérée recalculée : 61,70 / 100 (audit du 22 novembre 2026, commit vérifié 3b9d91e8).**
 
-Ce pourcentage est un indicateur d'avancement fonctionnel construit à partir des domaines ci-dessous. Ce n'est ni un pourcentage de lignes de code terminées, ni une garantie de disponibilité, ni une certification de mise en production. Les notes sont des estimations prudentes fondées sur les fonctions présentes et les contrôles exécutés.
+Ce pourcentage est un indicateur d'avancement fonctionnel construit à partir des domaines ci-dessous. Ce n'est ni un pourcentage de lignes de code terminées, ni une garantie de disponibilité, ni une certification de mise en production. Les notes sont des estimations prudentes fondées sur les fonctions présentes et les contrôles exécutés. Le précédent score de 56,48 % est conservé dans les bilans historiques plus haut.
 
 | Domaine | Poids | Avancement estimé | Contribution |
 |---|---:|---:|---:|
-| Média, veille et site public | 23,53 % | 90 % | 21,18 |
+| Média, veille et site public | 23,53 % | 92 % | 21,65 |
 | Fournisseurs IA et orchestration d'agents | 17,65 % | 40 % | 7,06 |
-| Missions persistantes et autonomie | 17,65 % | 35 % | 6,18 |
-| Laboratoire privé et sécurité | 17,65 % | 45 % | 7,94 |
-| R&D et conception de produits | 11,76 % | 35 % | 4,12 |
-| Tests et amélioration continue | 11,76 % | 85 % | 10,00 |
-| **Total** | **100 %** |  | **56,48 %** |
+| Missions persistantes et autonomie | 17,65 % | 42 % | 7,41 |
+| Laboratoire privé et sécurité | 17,65 % | 55 % | 9,71 |
+| R&D et conception de produits | 11,76 % | 45 % | 5,29 |
+| Tests et amélioration continue | 11,76 % | 90 % | 10,58 |
+| **Total** | **100 %** |  | **61,70 %** |
 
 Calcul : somme de (poids × note du domaine) / 100.
 
@@ -122,3 +122,23 @@ L'estimation pondérée est passée à **56,48 / 100** en portant le domaine « 
 - Lorsqu'une traduction textuelle d'article est validée, le système tente aussi de générer une narration Edge TTS dans la langue correspondante (anglais, espagnol, allemand, portugais, arabe et chinois). Chaque fichier est référencé dans la variante de traduction ; le lecteur de la page d'accueil suit la langue sélectionnée si l'audio existe.
 - Si une voix ou un service TTS échoue, l'article et sa traduction textuelle restent publiables ; le lecteur revient à l'audio français. Les fichiers traduits sont inclus dans le rattrapage progressif des archives et la politique de conservation des audios.
 - La génération de voix est best-effort : elle n'est pas garantie pour chaque langue ni chaque article. Les tests navigateur vérifient le changement de source audio lorsqu'un fichier traduit est disponible.
+
+
+## Audit complémentaire — 22 novembre 2026, commit 3b9d91e8
+
+- Le tableau de bord privé local permet maintenant de créer des fiches d'opportunité R&D, de les classer, puis de suivre leur statut (candidate, research, prototype, validated ou rejected). Les fiches sont conservées dans le dossier local privé et ne sont pas publiées sur GitHub Pages. Les notes de faisabilité restent des estimations ; les preuves de demande doivent être vérifiées.
+- La file de missions affiche le nombre de tentatives et permet de relancer manuellement une mission échouée, partielle ou interrompue. Le plafond est de trois tentatives au total. Aucune relance n'est automatique et aucune commande ou code généré n'est exécuté.
+- La simulation urbaine publique comporte maintenant une vue isométrique 2D dessinée localement, quatre quartiers sélectionnables depuis la carte, des bâtiments et une circulation synthétiques. La légende est traduite dans les sept langues. Cela reste une simulation fictive dans le navigateur, pas une ville 3D connectée à des données réelles.
+- Le rattrapage des traductions d'archives est planifié deux fois par jour, avec un maximum de trois articles par exécution (jusqu'à six articles par jour si le fournisseur gratuit et ses quotas le permettent). Le texte source, les noms et les liens des sources ne sont pas modifiés. Les traductions/audio peuvent rester incomplètes en cas de quota ou d'indisponibilité.
+- Sur le commit 3b9d91e8, **168 tests Python ont réussi**. Le workflow avancé a réussi les tests navigateur, les parcours responsive, CodeQL Python et JavaScript, Ruff, Bandit et Gitleaks. Les tests navigateur couvrent aussi la carte isométrique et la sélection de quartier.
+- Après publication, la surveillance de production a effectué **62 contrôles HTTP sans erreur**. Les ressources testées incluent les pages publiques, les articles, les audios et les médias du documentaire en plusieurs langues.
+- Score pondéré recalculé : **61,70 %**. Le seuil de 70 % n'est pas atteint.
+
+### Justification de la révision des notes
+
+- Média, veille et site public : 92 % (vue isométrique, traduction progressive planifiée, surveillance de production renforcée ; les articles historiques ne sont pas tous traduits).
+- Fournisseurs IA et orchestration : 40 % (pas de nouveau fournisseur gratuit réellement validé ; Hugging Face reste indisponible sans crédits).
+- Missions persistantes et autonomie : 42 % (relance manuelle plafonnée et traçabilité des tentatives ; aucun worker hébergé en permanence).
+- Laboratoire privé et sécurité : 55 % (tableau de bord local pour missions et R&D, contrôles d'accès et limites ; aucun tableau de bord distant hébergé).
+- R&D et conception de produits : 45 % (création et suivi de fiches, mais pas encore de validation par des utilisateurs ni de preuves commerciales indépendantes).
+- Tests et amélioration continue : 90 % (168 tests et contrôles avancés verts ; les tests ne remplacent pas une validation sur tous les appareils réels).
