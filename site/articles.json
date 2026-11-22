@@ -1,5 +1,36 @@
 [
   {
+    "id": "20261122T133939-202ab2c3",
+    "date": "2026-11-22T13:39+00:00",
+    "theme": "Innovation et IA dans le gaming et au-delà",
+    "title": "Plantages et PNJ violents dans GTA 6 sur PS5",
+    "summary": "Des joueurs de GTA 6 ont signalé des plantages sur PS5 accompagnés de l’erreur CE‑108255‑1, sans explication officielle. Certains rapportent également que les PNJ réagissent de façon trop violente, mais aucune preuve confirmée n’existe. Ces incidents soulèvent des questions de stabilité logicielle et de sécurité, mais l’impact à court, moyen ou long terme sur l’expérience de jeu reste incertain.",
+    "verdict": "Incidents signalés sans confirmation officielle",
+    "tip": "Surveillez les mises à jour de Rockstar et les retours de la communauté pour plus de clarté.",
+    "sources": [
+      {
+        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
+        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
+        "source_type": "media"
+      },
+      {
+        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
+        "description": "Allons en paix.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261122T133939-202ab2c3.mp3"
+  },
+  {
     "id": "20261122T132407-c4ac04cf",
     "date": "2026-11-22T13:24+00:00",
     "theme": "GTA VI — lancement et premiers retours vérifiés",
@@ -1135,54 +1166,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261119T175614-3f5bce18.mp3"
-  },
-  {
-    "id": "20261119T175301-4f7a1d45",
-    "date": "2026-11-19T17:53+00:00",
-    "theme": "Technologie, IA et jeux vidéo — veille générale de secours",
-    "title": "Ubisoft, GTA 6 et la montée de l’IA : un panorama de licenciements et de nouveautés",
-    "summary": "Ubisoft a annoncé la suppression de 166 postes, concentrés à Montréal et Québec, signe d’une contraction dans ses studios. Pendant ce temps, GTA 6 exploite la technologie FSR 4.1 sur Xbox Series S pour upscaler le jeu de 720 p à 1080 p, illustrant une tendance vers des graphismes plus accessibles. Les premiers visuels de GTA 6 et les nouveaux drapeaux de « Clair Obscur Expedition 33 » montrent un effort marketing accru, mais l’impact commercial reste incertain. L’IA continue de peser sur l’emploi des développeurs, avec 54 % toujours sans poste.",
-    "verdict": "Les informations proviennent de sources médiatiques fiables, mais aucune donnée de ventes ou de performance n’est encore disponible.",
-    "tip": "Surveillez les rapports de ventes de GTA 6 et les mises à jour d’Ubisoft pour comprendre l’impact réel des licenciements.",
-    "sources": [
-      {
-        "title": "Ubisoft confirme de nouveaux licenciements : 166 emplois sont supprimés au sein de deux studios majeurs",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 17:37:12 +0000",
-        "description": "Perte de personnel dans des bureaux importants à Montréal et au Québec.",
-        "url": "https://fr.ign.com/assassins-creed-codename-red/94097/ubisoft-confirme-de-nouveaux-licenciements-166-emplois-sont-supprimes-au-sein-de-deux-studios-majeur",
-        "source_type": "media"
-      },
-      {
-        "title": "Clair Obscur : Expedition 33 : deux drapeaux officiels pour décorer votre mur, ce qu’il faut savoir avant de précommander",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 16:44:48 +0000",
-        "description": "Oh hisse ! Paré pour l’Expedition.",
-        "url": "https://fr.ign.com/clair-obscur-expedition-33/94094/clair-obscur-expedition-33-deux-drapeaux-officiels-pour-decorer-votre-mur-ce-quil-faut-savoir-avant",
-        "source_type": "media"
-      },
-      {
-        "title": "Les acteurs de Jason et Lucia dans GTA 6 posent ensemble sur une première photo",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 15:14:47 +0000",
-        "description": "\"Et voilà... le secret est enfin dévoilé !\"",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94092/les-acteurs-de-jason-et-lucia-dans-gta-6-posent-ensemble-sur-une-premiere-photo",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 utilise la technologie FSR 4.1 sur Xbox Series S pour upscaler le jeu de 720p à 1080p",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 14:48:25 +0000",
-        "description": "Redstone, voici GTA.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94091/gta-6-utilise-la-technologie-fsr-41-sur-xbox-series-s-pour-upscaler-le-jeu-de-720p-a-1080p",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261119T175301-4f7a1d45.mp3"
   }
 ]
