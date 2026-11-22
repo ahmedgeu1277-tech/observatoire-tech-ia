@@ -25,7 +25,10 @@ async function inspectPage(browser, route, viewport) {
   });
   page.on("pageerror", error => pageErrors.push(error.stack || error.message));
   page.on("console", message => {
-    if (message.type() === "error") pageErrors.push("console: " + message.text());
+    if (message.type() === "error") {
+      const location = message.location()?.url || "URL inconnue";
+      pageErrors.push("console: " + message.text() + " [" + location + "]");
+    }
   });
   const response = await page.goto(BASE + route, { waitUntil: "domcontentloaded" });
   if (!response || !response.ok()) {
@@ -107,7 +110,7 @@ async function inspectPage(browser, route, viewport) {
           summary:"Dies ist eine geprüfte Übersetzungsprobe.",
           verdict:"Die Quellen bestätigen diese Aussage.",
           tip:"Die Originalquelle lesen.",
-          audio_url:"audio/test-de.mp3"
+          audio_url:window.nexoraArticles[1].audio_url
         }};
         window.observatoireApplyArticleLanguage("de");
       });
@@ -117,7 +120,8 @@ async function inspectPage(browser, route, viewport) {
       if (!(await page.locator("#articles .article").first().textContent()).includes("geprüfte Übersetzungsprobe")) {
         fail("Accueil : le résumé traduit n'est pas affiché.");
       }
-      if (!(await page.locator("#articles .article audio").first().getAttribute("src")).includes("test-de.mp3")) {
+      const translatedAudioExpected = await page.evaluate(() => "./" + window.nexoraArticles[1].audio_url.replace(/^\\.\\//, "").replace(/^site\\//, ""));
+      if ((await page.locator("#articles .article audio").first().getAttribute("src")) !== translatedAudioExpected) {
         fail("Accueil : l'audio traduit ne suit pas la langue sélectionnée.");
       }
       await page.selectOption("#language", "fr");
