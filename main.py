@@ -560,6 +560,71 @@ Sources :
         "ai_notice": f"Article rédigé avec l’aide de {ai_provider} à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet."
     }
 
+
+ARTICLE_TRANSLATION_LANGUAGES = {
+    "en": "anglais", "es": "espagnol", "de": "allemand",
+    "pt": "portugais", "ar": "arabe", "zh": "chinois simplifié",
+}
+ARTICLE_TRANSLATION_FIELDS = ("title", "summary", "verdict", "tip")
+
+
+def traduire_article(article):
+    """Traduit les champs éditoriaux ; les sources restent inchangées."""
+    if not isinstance(article, dict):
+        return {}
+    original = {field: str(article.get(field, "")).strip() for field in ARTICLE_TRANSLATION_FIELDS}
+    if any(not value for value in original.values()):
+        return {}
+    languages = ", ".join(f'"{code}": {name}' for code, name in ARTICLE_TRANSLATION_LANGUAGES.items())
+    messages = [
+        {"role": "system", "content": (
+            "Tu es un traducteur éditorial professionnel. Traduis fidèlement sans ajouter de faits, "
+            "chiffres, dates, opinions ni explications. Conserve les noms propres, produits, marques "
+            "et termes techniques. N'invente aucune source. Réponds uniquement en JSON valide."
+        )},
+        {"role": "user", "content": (
+            "Traduis les quatre champs dans toutes les langues indiquées. Garde le sens, les incertitudes, "
+            "les réserves et le ton journalistique. Ne traduis pas les noms propres. Chaque langue doit "
+            "contenir exactement les quatre champs.\nLangues : " + languages +
+            "\nTexte français :\n" + json.dumps(original, ensure_ascii=False)
+        )},
+    ]
+    try:
+        raw, provider = generate_text(
+            messages, max_tokens=2600, temperature=0.1, json_mode=True, timeout=45
+        )
+        raw = re.sub(r"^\\s*\\x60{3}(?:json)?\\s*", "", raw, flags=re.IGNORECASE)
+        raw = re.sub(r"\\s*\\x60{3}\\s*$", "", raw)
+        if not raw.startswith("{"):
+            start, end = raw.find("{"), raw.rfind("}")
+            if start >= 0 and end > start:
+                raw = raw[start:end + 1]
+        payload = json.loads(raw)
+        if not isinstance(payload, dict):
+            raise ValueError("Réponse de traduction invalide.")
+        translations = {}
+        for language in ARTICLE_TRANSLATION_LANGUAGES:
+            candidate = payload.get(language)
+            if not isinstance(candidate, dict):
+                continue
+            clean = {}
+            for field in ARTICLE_TRANSLATION_FIELDS:
+                value = candidate.get(field)
+                if not isinstance(value, str) or not value.strip():
+                    break
+                clean[field] = value.strip()[:1200 if field == "summary" else 500]
+            if len(clean) == len(ARTICLE_TRANSLATION_FIELDS):
+                translations[language] = clean
+        if translations:
+            print("INFO : traductions d'article validées pour " + ", ".join(sorted(translations)) + f" via {provider}.")
+        else:
+            print("AVERTISSEMENT : aucune traduction complète n'a été validée.")
+        return translations
+    except Exception as exc:  # noqa: BLE001 - traduction facultative, publication préservée.
+        print(f"AVERTISSEMENT : traduction facultative indisponible ({type(exc).__name__}).")
+        return {}
+
+
 def load_previous_articles():
     if not ARTICLES_FILE.exists():
         return []
@@ -822,6 +887,9 @@ def main():
             verifier_attributions_officielles(article, article["sources"])
     if not verifier_conformite_legale(json.dumps(article, ensure_ascii=False), "PUBLICATION_WEB"):
         raise RuntimeError("Publication bloquée par le contrôle de sécurité.")
+    translations = traduire_article(article)
+    if translations:
+        article["translations"] = translations
     article["audio_url"] = asyncio.run(create_audio(article))
     save_articles(article)
     archive_memory(article)
