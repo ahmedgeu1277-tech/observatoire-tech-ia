@@ -1,5 +1,74 @@
 [
   {
+    "id": "20261122T125109-d0073e4b",
+    "date": "2026-11-22T12:51+00:00",
+    "theme": "Technologies d'IA et d'accessibilité dans le gaming moderne",
+    "title": "GTA 6 : plantages PS5 et PNJ violents sans explication",
+    "summary": "Des joueurs de GTA 6 ont signalé des plantages sur PS5 accompagnés de l’erreur CE‑108255‑1, sans que les développeurs n’aient encore publié de mise à jour. Parallèlement, les PNJ du jeu semblent réagir de façon extrêmement violente, soulevant des questions sur la modération du contenu. Les raisons de ces problèmes restent inconnues et aucune confirmation officielle n’a été donnée.",
+    "verdict": "Inconnu",
+    "tip": "Vérifier les mises à jour officielles et les communiqués de Rockstar pour plus de détails.",
+    "sources": [
+      {
+        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
+        "description": "Allons en paix.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
+        "source_type": "media"
+      },
+      {
+        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
+        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "translations": {
+      "en": {
+        "title": "GTA 6: PS5 crashes and violent NPCs without explanation",
+        "summary": "GTA 6 players have reported crashes on PS5 accompanied by the CE‑108255‑1 error, with developers yet to release an update. Meanwhile, the game's NPCs appear to react extremely violently, raising questions about content moderation. The reasons for these issues remain unknown and no official confirmation has been given.",
+        "verdict": "Unknown",
+        "tip": "Check official updates and Rockstar statements for more details."
+      },
+      "es": {
+        "title": "GTA 6: caídas en PS5 y NPCs violentos sin explicación",
+        "summary": "Los jugadores de GTA 6 han reportado caídas en PS5 acompañadas del error CE‑108255‑1, sin que los desarrolladores hayan publicado una actualización. Paralelamente, los NPC del juego parecen reaccionar de forma extremadamente violenta, planteando dudas sobre la moderación de contenido. Las causas de estos problemas siguen siendo desconocidas y no se ha dado ninguna confirmación oficial.",
+        "verdict": "Desconocido",
+        "tip": "Verifica las actualizaciones oficiales y los comunicados de Rockstar para más detalles."
+      },
+      "de": {
+        "title": "GTA 6: PS5-Abstürze und gewalttätige NPCs ohne Erklärung",
+        "summary": "GTA 6-Spieler haben Abstürze auf PS5 gemeldet, begleitet von dem Fehler CE‑108255‑1, ohne dass die Entwickler noch ein Update veröffentlicht haben. Gleichzeitig reagieren die NPCs im Spiel extrem gewalttätig, was Fragen zur Inhaltsmoderation aufwirft. Die Gründe für diese Probleme sind unbekannt und es wurde keine offizielle Bestätigung gegeben.",
+        "verdict": "Unbekannt",
+        "tip": "Überprüfen Sie offizielle Updates und Rockstar-Kommuniqués für weitere Details."
+      },
+      "pt": {
+        "title": "GTA 6: falhas no PS5 e NPCs violentos sem explicação",
+        "summary": "Jogadores de GTA 6 relataram falhas no PS5 acompanhadas do erro CE‑108255‑1, sem que os desenvolvedores tenham publicado uma atualização ainda. Paralelamente, os NPCs do jogo parecem reagir de forma extremamente violenta, levantando questões sobre a moderação de conteúdo. As razões desses problemas permanecem desconhecidas e nenhuma confirmação oficial foi dada.",
+        "verdict": "Desconhecido",
+        "tip": "Verifique as atualizações oficiais e os comunicados da Rockstar para mais detalhes."
+      },
+      "ar": {
+        "title": "GTA 6: تعطل PS5 وشخصيات غير لاعب عنيفة بدون شرح",
+        "summary": "أبلغ لاعبو GTA 6 عن تعطل على PS5 مصحوب بخطأ CE‑108255‑1، دون أن ينشر المطورون تحديثًا بعد. في الوقت نفسه، يبدو أن شخصيات غير اللاعب في اللعبة تتفاعل بشكل عنيف للغاية، مما يثير تساؤلات حول رقابة المحتوى. أسباب هذه المشكلات لا تزال غير معروفة ولم يتم تأكيدها رسميًا.",
+        "verdict": "مجهول",
+        "tip": "تحقق من التحديثات الرسمية والبيانات الصحفية لشركة Rockstar لمزيد من التفاصيل."
+      },
+      "zh": {
+        "title": "GTA 6：PS5 崩溃与暴力 NPC 无解释",
+        "summary": "GTA 6 玩家报告 PS5 崩溃并伴随 CE‑108255‑1 错误，开发者尚未发布更新。与此同时，游戏中的 NPC 似乎表现出极端暴力行为，引发对内容审核的质疑。这些问题的原因仍不明，官方尚未确认。",
+        "verdict": "未知",
+        "tip": "请查看官方更新和 Rockstar 的公告以获取更多细节。"
+      }
+    },
+    "audio_url": "audio/20261122T125109-d0073e4b.mp3"
+  },
+  {
     "id": "20261122T125000-bab5acef",
     "date": "2026-11-22T12:50+00:00",
     "theme": "GTA VI — lancement et premiers retours vérifiés",
@@ -1142,45 +1211,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261119T174035-025211f1.mp3"
-  },
-  {
-    "id": "20261119T173750-8f653049",
-    "date": "2026-11-19T17:37+00:00",
-    "theme": "Moteurs et logiciels de création de jeux",
-    "title": "Unity lance CLI 1.0 et intègre Synty Studios",
-    "summary": "Unity a publié la version 1.0 de son interface en ligne de commande, permettant d’automatiser builds et tests depuis le terminal. La même annonce révèle l’acquisition de Synty Studios, dont les packs d’actifs POLYGON seront ajoutés à Unity Spark sans modifier les licences existantes. Ces évolutions, présentées lors de la keynote Unite Tokyo 2026, visent à simplifier les flux de travail des développeurs, mais leur adoption réelle reste à mesurer.",
-    "verdict": "Les sources officielles confirment la sortie du CLI 1.0 et l’intégration de Synty Studios, mais aucune donnée d’adoption n’est encore disponible.",
-    "tip": "Les développeurs intéressés par l’automatisation et les nouveaux assets POLYGON devraient tester le CLI et explorer les packs Synty dans Unity Spark.",
-    "sources": [
-      {
-        "title": "The Unity CLI 1.0 is here!",
-        "publisher": "Unity",
-        "domain": "unity.com",
-        "published": "Tue, 17 Nov 2026 00:00:00 GMT",
-        "description": "Unity CLI 1.0 is out of beta. Connect Claude Code, Codex, Grok Build or Antigravity to your Unity project, and automate builds and tests from the terminal.",
-        "url": "https://unity.com/the-unity-cli-1.0-is-here",
-        "source_type": "source_editeur"
-      },
-      {
-        "title": "Unite Tokyo 2026 Keynote recap: Built for the speed of your ideas",
-        "publisher": "Unity",
-        "domain": "unity.com",
-        "published": "Tue, 17 Nov 2026 00:00:00 GMT",
-        "description": "Catch every highlight from the Unite Tokyo 2026 Keynote: Unity 7, ECS for All, Unity CLI, Synty Studios joining Unity, and the new Unity Fellowship.",
-        "url": "https://unity.com/blog/unite-tokyo-2026-keynote-recap",
-        "source_type": "source_editeur"
-      },
-      {
-        "title": "Synty Studios Joins Unity, Bringing Artist-Made Assets to Unity Spark",
-        "publisher": "Unity",
-        "domain": "unity.com",
-        "published": "Mon, 16 Nov 2026 00:00:00 GMT",
-        "description": "Unity has acquired Synty Studios, maker of the POLYGON 3D asset packs. Synty’s library is coming to Unity Spark, and existing packs and licenses stay the same.",
-        "url": "https://unity.com/blog/synty-studios-acquisition",
-        "source_type": "source_editeur"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261119T173750-8f653049.mp3"
   }
 ]
