@@ -290,6 +290,20 @@ class MissionQueueTests(unittest.TestCase):
         self.assertEqual(stat.S_IMODE(self.queue.database.parent.stat().st_mode), 0o700)
         self.assertEqual(stat.S_IMODE(self.queue.database.stat().st_mode), 0o600)
 
+    @patch("gestionnaire_missions.orchestrateur.executer_mission", side_effect=RuntimeError("provider failure"))
+    def test_failed_mission_can_be_retried_only_three_times(self, _execute):
+        mission_id = self.queue.enqueue(self.payload())
+        for attempt in range(1, 4):
+            result = self.queue.run_next()
+            self.assertEqual(result["status"], "failed")
+            item = self.queue.get_mission(mission_id)
+            self.assertEqual(item["attempts"], attempt)
+            if attempt < 3:
+                self.assertTrue(self.queue.retry(mission_id))
+                self.assertEqual(self.queue.get_mission(mission_id)["status"], "pending")
+        self.assertFalse(self.queue.retry(mission_id))
+        self.assertEqual(self.queue.get_mission(mission_id)["status"], "failed")
+
     def test_no_work_returns_none(self):
         self.assertIsNone(self.queue.run_next())
 
