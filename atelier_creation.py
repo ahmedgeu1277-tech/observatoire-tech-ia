@@ -64,6 +64,107 @@ frame();
 """,
         "README.md": "# __NAME__\n\nPrototype de jeu 2D navigateur minimal. Ce n'est pas un moteur complet ; ajouter collisions, sons, niveaux et tests de gameplay.\n",
     },
+    "godot-2d": {
+        "project.godot": """config_version=5
+
+[application]
+config/name="__NAME__"
+run/main_scene="res://scenes/main.tscn"
+
+[display]
+window/size/viewport_width=960
+window/size/viewport_height=540
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+""",
+        "scenes/main.tscn": """[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1")
+""",
+        "scripts/main.gd": """extends Node2D
+
+var player_position := Vector2(480, 270)
+const SPEED := 260.0
+
+func _process(delta: float) -> void:
+    player_position += Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") * SPEED * delta
+    player_position.x = clampf(player_position.x, 20.0, 940.0)
+    player_position.y = clampf(player_position.y, 20.0, 520.0)
+    queue_redraw()
+
+func _draw() -> void:
+    draw_circle(player_position, 18.0, Color("#52a77b"))
+    draw_string(ThemeDB.fallback_font, Vector2(24, 36), "Move with arrow keys", HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color("#25352b"))
+""",
+        "README.md": """# __NAME__ — Godot 2D
+
+Prototype minimal pour Godot 4. Ouvre ce dossier dans Godot Engine, puis lance scenes/main.tscn.
+Le carré se déplace avec les flèches. Le modèle ne télécharge pas le moteur, n'exécute aucun code ici et ne publie rien.
+Godot est un moteur libre ; la compilation et les tests de jeu doivent être effectués dans Godot.
+"""
+    },
+    "godot-3d": {
+        "project.godot": """config_version=5
+
+[application]
+config/name="__NAME__"
+run/main_scene="res://scenes/main.tscn"
+
+[display]
+window/size/viewport_width=960
+window/size/viewport_height=540
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+""",
+        "scenes/main.tscn": """[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1"]
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1")
+""",
+        "scripts/main.gd": """extends Node3D
+
+var cube: MeshInstance3D
+
+func _ready() -> void:
+    cube = MeshInstance3D.new()
+    var mesh := BoxMesh.new()
+    mesh.size = Vector3.ONE
+    var material := StandardMaterial3D.new()
+    material.albedo_color = Color("#52a77b")
+    mesh.material = material
+    cube.mesh = mesh
+    add_child(cube)
+
+    var camera := Camera3D.new()
+    camera.position = Vector3(3.2, 2.6, 4.2)
+    camera.look_at(Vector3.ZERO)
+    add_child(camera)
+    camera.current = true
+
+    var light := DirectionalLight3D.new()
+    light.rotation_degrees = Vector3(-45, -30, 0)
+    add_child(light)
+
+func _process(delta: float) -> void:
+    if is_instance_valid(cube):
+        cube.rotate_y(delta * 0.7)
+""",
+        "README.md": """# __NAME__ — Godot 3D
+
+Prototype 3D minimal pour Godot 4. Ouvre ce dossier dans Godot Engine, puis lance scenes/main.tscn.
+Une boîte 3D tourne devant une caméra et une lumière directionnelle. Le modèle ne télécharge pas le moteur, n'exécute aucun code ici et ne publie rien.
+Godot est un moteur libre ; la compilation et les tests de jeu doivent être effectués dans Godot.
+"""
+    },
     "video": {
         "README.md": "# __NAME__ — dossier de production vidéo\n\nCe modèle prépare le travail éditorial ; il ne rend pas de fichier vidéo.\n",
         "concept.md": "# Concept\n\n- Public cible :\n- Sujet :\n- Durée visée :\n- Format et résolution :\n- Sources et droits :\n",
