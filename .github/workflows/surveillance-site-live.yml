@@ -17,6 +17,7 @@ on:
   workflow_run:
     workflows: ["pages build and deployment"]
     types: [completed]
+  deployment_status:
 
 permissions:
   contents: read
@@ -27,6 +28,7 @@ concurrency:
 
 jobs:
   production-smoke-test:
+    if: github.event_name != 'deployment_status' || github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
