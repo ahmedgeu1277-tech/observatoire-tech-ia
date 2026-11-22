@@ -1,0 +1,15 @@
+{
+  "id": "./",
+  "name": "NEXORA — Tech, IA & Gaming",
+  "short_name": "NEXORA",
+  "description": "Média indépendant sur la technologie, l'intelligence artificielle et les jeux vidéo.",
+  "lang": "fr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#080b18",
+  "theme_color": "#f1f0e9",
+  "icons": [
+    {"src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}
+  ]
+}
