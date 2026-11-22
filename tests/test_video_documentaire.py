@@ -29,7 +29,7 @@ class VideoDocumentaireTests(unittest.TestCase):
         self.assertIn("<video controls", template)
 
     def test_generated_documentary_template_supports_seven_ui_languages(self):
-        source = Path(__file__).resolve().parents[1] / "documentaire_test.py"
+        source = Path(__file__).resolve().parents[1] / "templates" / "documentaire.html.tpl"
         template = source.read_text(encoding="utf-8")
         for language in ("fr", "en", "es", "de", "pt", "ar", "zh"):
             self.assertIn(language + ":", template)
