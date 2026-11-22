@@ -41,9 +41,12 @@ class RepositoryHealthTests(unittest.TestCase):
         (root / "site" / "audio" / "documentary.mp3").write_bytes(b"audio")
         (root / "site" / "video" / "documentary.mp4").write_bytes(b"video")
         (root / "site" / "video" / "documentary-en.vtt").write_text("WEBVTT\\n", encoding="utf-8")
+        (root / "site" / "archives").mkdir(parents=True, exist_ok=True)
+        (root / "site" / "archives" / "documentary.md").write_text("# Archive", encoding="utf-8")
         manifest = {
             "audio_file": "documentary.mp3",
             "video_file": "documentary.mp4",
+            "archive_file": "documentary.md",
             "translations": {
                 "en": {
                     "audio": "documentary.mp3",
@@ -62,7 +65,7 @@ class RepositoryHealthTests(unittest.TestCase):
             self._fixture(root)
             self._documentary_fixture(root)
             result = check_repository(root)
-            self.assertEqual(result["documentary_media_files"], 5)
+            self.assertEqual(result["documentary_media_files"], 6)
 
     def test_missing_documentary_video_is_rejected(self):
         with tempfile.TemporaryDirectory() as folder:
