@@ -3,7 +3,6 @@ from __future__ import annotations
 
 import asyncio
 import json
-import re
 import subprocess
 from pathlib import Path
 
@@ -90,11 +89,11 @@ def generer_variantes_multilingues(title: str, intro: str, dossiers: list[dict],
             vtt_name = f"documentaire-{code}-{stamp}.vtt"
             audio_path, video_path = audio_dir / audio_name, video_dir / video_name
 
-            async def speak():
+            async def speak(parts=spoken_parts, voice=config["voice"], target=audio_path):
                 import edge_tts
-                text = " ".join(spoken_parts)
+                text = " ".join(parts)
                 await asyncio.wait_for(
-                    edge_tts.Communicate(text[:24000], config["voice"], rate="-5%").save(str(audio_path)),
+                    edge_tts.Communicate(text[:24000], voice, rate="-5%").save(str(target)),
                     timeout=240,
                 )
 
@@ -126,7 +125,7 @@ def generer_variantes_multilingues(title: str, intro: str, dossiers: list[dict],
                 "subtitles": vtt_name, "text": translated,
             }
             print(f"INFO : variante {code} générée.")
-        except Exception as exc:
+        except Exception as exc:  # noqa: BLE001 - une langue en échec ne bloque pas les autres
             # Une langue indisponible ne doit pas empêcher le documentaire français.
             print(f"AVERTISSEMENT : variante {code} non générée ({type(exc).__name__}).")
     return results
