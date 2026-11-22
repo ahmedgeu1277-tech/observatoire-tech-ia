@@ -212,6 +212,33 @@ jobs:
             const privateState = await page.request.get('http://127.0.0.1:4173/site/data/gouvernement.json');
             if (privateState.status() !== 404) failures.push('Sécurité : les données de la ville ne doivent pas être publiées.');
 
+            // Vérifie réellement le mode hors ligne de l'application (service worker).
+            const pwaContext = await browser.newContext({serviceWorkers: 'allow'});
+            const pwaPage = await pwaContext.newPage();
+            const pwaHome = await pwaPage.goto('http://127.0.0.1:4173/site/index.html', {waitUntil: 'networkidle'});
+            if (!pwaHome || !pwaHome.ok()) {
+              failures.push('PWA : accueil impossible à charger.');
+            } else {
+              await pwaPage.evaluate(async () => {
+                await navigator.serviceWorker.ready;
+              });
+              await pwaPage.reload({waitUntil: 'networkidle'});
+              const controlled = await pwaPage.evaluate(() => Boolean(navigator.serviceWorker.controller));
+              if (!controlled) {
+                failures.push('PWA : le service worker ne contrôle pas la page.');
+              } else {
+                await pwaContext.setOffline(true);
+                const cachedPage = await pwaPage.goto('http://127.0.0.1:4173/site/methode.html', {waitUntil: 'domcontentloaded'});
+                if (!cachedPage || !cachedPage.ok()) failures.push('PWA : page de méthode inaccessible hors ligne.');
+                const offlineFallback = await pwaPage.goto('http://127.0.0.1:4173/site/page-non-cachee-test.html', {waitUntil: 'domcontentloaded'});
+                if (!offlineFallback || !offlineFallback.ok() || !(await pwaPage.locator('body').innerText()).includes('Connexion indisponible')) {
+                  failures.push('PWA : page de secours hors ligne non affichée.');
+                }
+                await pwaContext.setOffline(false);
+              }
+            }
+            await pwaContext.close();
+
             await browser.close();
             console.log('Pages HTML testées : ' + files.length);
             if (failures.length) {
