@@ -36,6 +36,21 @@ class MissionQueueTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.queue.enqueue({"mission": "", "agents": ["inconnu"]})
 
+    def test_get_mission_returns_payload_and_result(self):
+        mission_id = self.queue.enqueue(self.payload())
+        item = self.queue.get_mission(mission_id)
+        self.assertEqual(item["id"], mission_id)
+        self.assertEqual(item["status"], "pending")
+        self.assertEqual(item["payload"]["mission"], self.payload()["mission"])
+        self.assertIsNone(item["result"])
+        self.assertIsNone(self.queue.get_mission("f" * 32))
+
+    def test_get_mission_rejects_invalid_identifier(self):
+        for invalid in ("", "x" * 65, None):
+            with self.subTest(invalid=invalid):
+                with self.assertRaises(ValueError):
+                    self.queue.get_mission(invalid)
+
     def test_cancel_only_pending(self):
         mission_id = self.queue.enqueue(self.payload())
         self.assertTrue(self.queue.cancel(mission_id))
