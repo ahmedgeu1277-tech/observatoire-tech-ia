@@ -46,19 +46,21 @@ small{color:#9eafd0}
 <script>
 (() => {
   const labels = {
-    fr: {back:"← Retour au média",language:"Langue",archive:"ARCHIVE CONSERVÉE 30 JOURS MINIMUM",description:"Documentaire compilé à partir des articles publiés.",intro:"Introduction",chapter:"Chapitre",sources:"Sources",retention:"Conservation prévue jusqu'au"},
-    en: {back:"← Back to the media site",language:"Language",archive:"ARCHIVE KEPT FOR AT LEAST 30 DAYS",description:"Documentary compiled from published articles.",intro:"Introduction",chapter:"Chapter",sources:"Sources",retention:"Retention planned until"},
-    es: {back:"← Volver al medio",language:"Idioma",archive:"ARCHIVO CONSERVADO AL MENOS 30 DÍAS",description:"Documental recopilado a partir de artículos publicados.",intro:"Introducción",chapter:"Capítulo",sources:"Fuentes",retention:"Conservación prevista hasta"},
-    de: {back:"← Zurück zum Medium",language:"Sprache",archive:"ARCHIV MINDESTENS 30 TAGE AUFBEWAHRT",description:"Dokumentation aus veröffentlichten Artikeln.",intro:"Einleitung",chapter:"Kapitel",sources:"Quellen",retention:"Aufbewahrung bis"},
-    pt: {back:"← Voltar ao portal",language:"Idioma",archive:"ARQUIVO CONSERVADO POR PELO MENOS 30 DIAS",description:"Documentário compilado a partir de artigos publicados.",intro:"Introdução",chapter:"Capítulo",sources:"Fontes",retention:"Conservação prevista até"},
-    ar: {back:"العودة إلى الموقع ←",language:"اللغة",archive:"أرشيف محفوظ لمدة 30 يوماً على الأقل",description:"فيلم وثائقي جُمِع من المقالات المنشورة.",intro:"مقدمة",chapter:"الفصل",sources:"المصادر",retention:"الحفظ متوقع حتى"},
-    zh: {back:"← 返回媒体主页",language:"语言",archive:"档案至少保留 30 天",description:"根据已发布文章汇编的纪录片。",intro:"简介",chapter:"章节",sources:"来源",retention:"预计保留至"}
+    fr: {pageTitle:"Documentaire — Observatoire",back:"← Retour au média",language:"Langue",archive:"ARCHIVE CONSERVÉE 30 JOURS MINIMUM",description:"Documentaire compilé à partir des articles publiés.",intro:"Introduction",chapter:"Chapitre",sources:"Sources",retention:"Conservation prévue jusqu'au"},
+    en: {pageTitle:"Documentary — Observatory",back:"← Back to the media site",language:"Language",archive:"ARCHIVE KEPT FOR AT LEAST 30 DAYS",description:"Documentary compiled from published articles.",intro:"Introduction",chapter:"Chapter",sources:"Sources",retention:"Retention planned until"},
+    es: {pageTitle:"Documental — Observatorio",back:"← Volver al medio",language:"Idioma",archive:"ARCHIVO CONSERVADO AL MENOS 30 DÍAS",description:"Documental recopilado a partir de artículos publicados.",intro:"Introducción",chapter:"Capítulo",sources:"Fuentes",retention:"Conservación prevista hasta"},
+    de: {pageTitle:"Dokumentation — Observatorium",back:"← Zurück zum Medium",language:"Sprache",archive:"ARCHIV MINDESTENS 30 TAGE AUFBEWAHRT",description:"Dokumentation aus veröffentlichten Artikeln.",intro:"Einleitung",chapter:"Kapitel",sources:"Quellen",retention:"Aufbewahrung bis"},
+    pt: {pageTitle:"Documentário — Observatório",back:"← Voltar ao portal",language:"Idioma",archive:"ARQUIVO CONSERVADO POR PELO MENOS 30 DIAS",description:"Documentário compilado a partir de artigos publicados.",intro:"Introdução",chapter:"Capítulo",sources:"Fontes",retention:"Conservação prevista até"},
+    ar: {pageTitle:"فيلم وثائقي — المرصد",back:"العودة إلى الموقع ←",language:"اللغة",archive:"أرشيف محفوظ لمدة 30 يوماً على الأقل",description:"فيلم وثائقي جُمِع من المقالات المنشورة.",intro:"مقدمة",chapter:"الفصل",sources:"المصادر",retention:"الحفظ متوقع حتى"},
+    zh: {pageTitle:"纪录片 — 观察站",back:"← 返回媒体主页",language:"语言",archive:"档案至少保留 30 天",description:"根据已发布文章汇编的纪录片。",intro:"简介",chapter:"章节",sources:"来源",retention:"预计保留至"}
   };
   const selector = document.getElementById("language");
   function applyLanguage(language) {
     const lang = labels[language] ? language : "fr";
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+    document.title = labels[lang].pageTitle;
+    selector.setAttribute("aria-label", labels[lang].language);
     document.querySelectorAll("[data-i18n]").forEach(node => {
       const key = node.dataset.i18n;
       if (labels[lang][key]) node.textContent = labels[lang][key];
