@@ -11,7 +11,7 @@ from pathlib import Path
 
 import main
 
-MAX_PER_RUN = 3
+MAX_PER_RUN = 5
 
 
 def backfill_translations(max_items: int = MAX_PER_RUN) -> dict:
