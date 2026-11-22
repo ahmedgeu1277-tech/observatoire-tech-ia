@@ -28,6 +28,16 @@ class VideoDocumentaireTests(unittest.TestCase):
         self.assertIn("overflow-x:hidden", template)
         self.assertIn("<video controls", template)
 
+    def test_generated_documentary_template_supports_seven_ui_languages(self):
+        source = Path(__file__).resolve().parents[1] / "documentaire_test.py"
+        template = source.read_text(encoding="utf-8")
+        for language in ("fr", "en", "es", "de", "pt", "ar", "zh"):
+            self.assertIn(language + ":", template)
+        self.assertIn('id="language"', template)
+        self.assertIn('class="sources-heading"', template)
+        self.assertIn('localStorage.setItem("observatoire-doc-language"', template)
+        self.assertIn('lang === "ar" ? "rtl" : "ltr"', template)
+
     def test_rejects_missing_audio(self):
         with tempfile.TemporaryDirectory() as folder:
             with self.assertRaises(ValueError):
