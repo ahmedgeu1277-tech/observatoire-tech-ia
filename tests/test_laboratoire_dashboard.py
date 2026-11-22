@@ -8,6 +8,7 @@ from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
 import atelier_produits
+import roadmap_laboratoire
 from atelier_produits import DIMENSIONS, evaluate_opportunity, save_opportunity
 from gestionnaire_missions import MissionQueue
 from laboratoire_dashboard import create_server
@@ -113,6 +114,23 @@ class LocalDashboardTests(unittest.TestCase):
                 self.assertEqual(status, 200)
                 self.assertEqual(json.loads(updated)["workflow_status"], "research")
                 self.assertEqual(atelier_produits.list_opportunities(directory)[0]["workflow_status"], "research")
+
+    def test_dashboard_lists_and_updates_private_roadmap(self):
+        path = Path(self.temp.name) / ".laboratoire_prive" / "roadmap.json"
+        with patch.object(roadmap_laboratoire, "DEFAULT_ROADMAP_PATH", path):
+            status, _, body = self.request("/api/roadmap")
+            self.assertEqual(status, 200)
+            rows = json.loads(body)
+            self.assertEqual(len(rows), 7)
+            self.assertEqual(rows[0]["status"], "backlog")
+            status, _, body = self.request(
+                "/api/roadmap/translate_archive/status",
+                method="POST",
+                payload={"status": "in_progress"},
+            )
+            self.assertEqual(status, 200)
+            self.assertEqual(json.loads(body)["status"], "in_progress")
+            self.assertEqual(roadmap_laboratoire.list_tasks(path)[0]["status"], "in_progress")
 
     def test_dashboard_can_manually_retry_failed_mission(self):
         mission_id = self.queue.enqueue({
