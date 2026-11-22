@@ -11,6 +11,12 @@ on:
       - ".github/workflows/surveillance-site-live.yml"
       - "site/articles.json"
       - "site/documentaire-test.json"
+      - "site/index.html"
+      - "site/ville-demo.html"
+      - "site/documentaire-test.html"
+  workflow_run:
+    workflows: ["pages build and deployment"]
+    types: [completed]
 
 permissions:
   contents: read
