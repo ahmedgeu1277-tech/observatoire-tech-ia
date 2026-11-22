@@ -29,6 +29,7 @@ small{color:#9eafd0}
 <span data-i18n="archive">ARCHIVE CONSERVÉE 30 JOURS MINIMUM</span>
 <h1>Les actualités Tech &amp; Gaming : quatre dossiers à vérifier</h1>
 <p data-i18n="description">Documentaire compilé à partir des articles publiés.</p>
+<p data-i18n="contentNote">Le texte du documentaire et sa narration audio restent dans la langue d’origine des articles.</p>
 <video controls preload="metadata" playsinline style="width:100%;border-radius:12px;background:#101820" src="video/documentaire-test-20261122T100838Z.mp4"></video>
 <audio controls preload="none" src="audio/documentaire-test-20261122T100838Z.mp3"></audio>
 <small><span data-i18n="retention">Conservation prévue jusqu'au</span> : 2026-12-22T10:08:38.190603+00:00</small>
@@ -37,13 +38,13 @@ small{color:#9eafd0}
 <script>
 (() => {
   const labels = {
-    fr: {pageTitle:"Documentaire — Observatoire",back:"← Retour au média",language:"Langue",archive:"ARCHIVE CONSERVÉE 30 JOURS MINIMUM",description:"Documentaire compilé à partir des articles publiés.",intro:"Introduction",chapter:"Chapitre",sources:"Sources",retention:"Conservation prévue jusqu'au"},
-    en: {pageTitle:"Documentary — Observatory",back:"← Back to the media site",language:"Language",archive:"ARCHIVE KEPT FOR AT LEAST 30 DAYS",description:"Documentary compiled from published articles.",intro:"Introduction",chapter:"Chapter",sources:"Sources",retention:"Retention planned until"},
-    es: {pageTitle:"Documental — Observatorio",back:"← Volver al medio",language:"Idioma",archive:"ARCHIVO CONSERVADO AL MENOS 30 DÍAS",description:"Documental recopilado a partir de artículos publicados.",intro:"Introducción",chapter:"Capítulo",sources:"Fuentes",retention:"Conservación prevista hasta"},
-    de: {pageTitle:"Dokumentation — Observatorium",back:"← Zurück zum Medium",language:"Sprache",archive:"ARCHIV MINDESTENS 30 TAGE AUFBEWAHRT",description:"Dokumentation aus veröffentlichten Artikeln.",intro:"Einleitung",chapter:"Kapitel",sources:"Quellen",retention:"Aufbewahrung bis"},
-    pt: {pageTitle:"Documentário — Observatório",back:"← Voltar ao portal",language:"Idioma",archive:"ARQUIVO CONSERVADO POR PELO MENOS 30 DIAS",description:"Documentário compilado a partir de artigos publicados.",intro:"Introdução",chapter:"Capítulo",sources:"Fontes",retention:"Conservação prevista até"},
-    ar: {pageTitle:"فيلم وثائقي — المرصد",back:"العودة إلى الموقع ←",language:"اللغة",archive:"أرشيف محفوظ لمدة 30 يوماً على الأقل",description:"فيلم وثائقي جُمِع من المقالات المنشورة.",intro:"مقدمة",chapter:"الفصل",sources:"المصادر",retention:"الحفظ متوقع حتى"},
-    zh: {pageTitle:"纪录片 — 观察站",back:"← 返回媒体主页",language:"语言",archive:"档案至少保留 30 天",description:"根据已发布文章汇编的纪录片。",intro:"简介",chapter:"章节",sources:"来源",retention:"预计保留至"}
+    fr: {pageTitle:"Documentaire — Observatoire",back:"← Retour au média",language:"Langue",archive:"ARCHIVE CONSERVÉE 30 JOURS MINIMUM",description:"Documentaire compilé à partir des articles publiés.",contentNote:"Le texte du documentaire et sa narration audio restent dans la langue d’origine des articles.",intro:"Introduction",chapter:"Chapitre",sources:"Sources",retention:"Conservation prévue jusqu'au"},
+    en: {pageTitle:"Documentary — Observatory",back:"← Back to the media site",language:"Language",archive:"ARCHIVE KEPT FOR AT LEAST 30 DAYS",description:"Documentary compiled from published articles.",contentNote:"The documentary text and audio narration remain in the articles' original language.",intro:"Introduction",chapter:"Chapter",sources:"Sources",retention:"Retention planned until"},
+    es: {pageTitle:"Documental — Observatorio",back:"← Volver al medio",language:"Idioma",archive:"ARCHIVO CONSERVADO AL MENOS 30 DÍAS",description:"Documental recopilado a partir de artículos publicados.",contentNote:"El texto del documental y la narración de audio permanecen en el idioma original de los artículos.",intro:"Introducción",chapter:"Capítulo",sources:"Fuentes",retention:"Conservación prevista hasta"},
+    de: {pageTitle:"Dokumentation — Observatorium",back:"← Zurück zum Medium",language:"Sprache",archive:"ARCHIV MINDESTENS 30 TAGE AUFBEWAHRT",description:"Dokumentation aus veröffentlichten Artikeln.",contentNote:"Der Dokumentationstext und die Audiowiedergabe bleiben in der Originalsprache der Artikel.",intro:"Einleitung",chapter:"Kapitel",sources:"Quellen",retention:"Aufbewahrung bis"},
+    pt: {pageTitle:"Documentário — Observatório",back:"← Voltar ao portal",language:"Idioma",archive:"ARQUIVO CONSERVADO POR PELO MENOS 30 DIAS",description:"Documentário compilado a partir de artigos publicados.",contentNote:"O texto do documentário e a narração áudio permanecem no idioma original dos artigos.",intro:"Introdução",chapter:"Capítulo",sources:"Fontes",retention:"Conservação prevista até"},
+    ar: {pageTitle:"فيلم وثائقي — المرصد",back:"العودة إلى الموقع ←",language:"اللغة",archive:"أرشيف محفوظ لمدة 30 يوماً على الأقل",description:"فيلم وثائقي جُمِع من المقالات المنشورة.",contentNote:"يبقى نص الفيلم الوثائقي والتعليق الصوتي بلغة المقالات الأصلية.",intro:"مقدمة",chapter:"الفصل",sources:"المصادر",retention:"الحفظ متوقع حتى"},
+    zh: {pageTitle:"纪录片 — 观察站",back:"← 返回媒体主页",language:"语言",archive:"档案至少保留 30 天",description:"根据已发布文章汇编的纪录片。",contentNote:"纪录片文本和音频旁白保留文章的原始语言。",intro:"简介",chapter:"章节",sources:"来源",retention:"预计保留至"}
   };
   const selector = document.getElementById("language");
   function applyLanguage(language) {
