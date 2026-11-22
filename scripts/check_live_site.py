@@ -139,6 +139,7 @@ def main() -> int:
     for path, label, mime in (
         ("", "page racine", "text/html"),
         ("site/index.html", "accueil NEXORA", "text/html"),
+        ("site/atelier.html", "atelier de création", "text/html"),
         ("site/ville-demo.html", "simulation de ville", "text/html"),
         ("site/documentaire-test.html", "page documentaire", "text/html"),
     ):
