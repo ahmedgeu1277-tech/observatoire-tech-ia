@@ -7,8 +7,8 @@ from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 from agent_gardien import verifier_conformite_legale
-from video_documentaire import generer_video
 from traduire_documentaire import generer_variantes_multilingues
+from video_documentaire import generer_video
 
 ROOT = Path(__file__).resolve().parent
 SITE = ROOT / "site"
