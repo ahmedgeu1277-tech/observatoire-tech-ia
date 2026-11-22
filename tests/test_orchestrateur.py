@@ -50,6 +50,8 @@ class MissionValidationTests(unittest.TestCase):
             orchestrateur.valider_mission({"mission": "test", "priority": "urgent"})
         with self.assertRaisesRegex(ValueError, "fuseau horaire"):
             orchestrateur.valider_mission({"mission": "test", "due_at": "2026-12-01T18:30:00"})
+        with self.assertRaisesRegex(ValueError, "priorité"):
+            orchestrateur.valider_mission({"mission": "test", "priority": []})
 
     def test_rejects_unbounded_duration(self):
         with self.assertRaises(ValueError):
