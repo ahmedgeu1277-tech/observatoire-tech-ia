@@ -19,6 +19,18 @@ class AtelierCreationTests(unittest.TestCase):
                     self.assertFalse(result["code_executed"])
                     self.assertFalse(result["published"])
 
+    def test_godot_templates_include_scene_and_game_script(self):
+        with tempfile.TemporaryDirectory() as folder:
+            for kind, node_type in (("godot-2d", "Node2D"), ("godot-3d", "Node3D")):
+                with self.subTest(kind=kind):
+                    result = generate_project(f"Projet-{kind}", folder, kind)
+                    root = Path(result["directory"])
+                    self.assertTrue((root / "project.godot").is_file())
+                    self.assertTrue((root / "scenes" / "main.tscn").is_file())
+                    script = (root / "scripts" / "main.gd").read_text(encoding="utf-8")
+                    self.assertIn(f"extends {node_type}", script)
+                    self.assertFalse(result["code_executed"])
+
     def test_rejects_traversal_and_bad_names(self):
         for name in ("../escape", "1invalid", "", "x" * 51, "a" + chr(92) + "b"):
             with self.subTest(name=name), self.assertRaises(ValueError):
