@@ -1,5 +1,54 @@
 [
   {
+    "id": "20261122T101552-c59ad2a2",
+    "date": "2026-11-22T10:15+00:00",
+    "theme": "GTA VI — lancement et premiers retours vérifiés",
+    "title": "GTA VI : plantages, PNJ violents et boutiques fermées signalés",
+    "summary": "Les premiers retours sur GTA VI montrent des plantages sur PS5 avec l’erreur CE‑108255‑1 et des PNJ qui réagissent de façon extrêmement violente, indiquant des problèmes de stabilité et d’IA. Certains acheteurs de l’édition non‑Ultimate ont également rencontré des boutiques exclusives fermant leurs portes, tandis que l’actrice de Mandy exprime son enthousiasme après la viralité de son personnage. Les incidents restent sporadiques et aucune confirmation officielle n’a encore été publiée.",
+    "verdict": "Les sources consultées indiquent des dysfonctionnements techniques et des problèmes d’expérience utilisateur, mais aucune preuve officielle n’a confirmé ces problèmes.",
+    "tip": "Les joueurs doivent rester vigilants et signaler les plantages via les canaux officiels.",
+    "sources": [
+      {
+        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
+        "description": "Allons en paix.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
+        "source_type": "media"
+      },
+      {
+        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
+        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
+        "source_type": "media"
+      },
+      {
+        "title": "Les joueurs de GTA 6 réagissent après que des boutiques exclusives ont accueilli les acheteurs de l’édition non Ultimate avec des portes fermées",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 21:27:24 +0000",
+        "description": "Trop select.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94167/les-joueurs-de-gta-6-reagissent-apres-que-des-boutiques-exclusives-ont-accueilli-les-acheteurs-de-le",
+        "source_type": "media"
+      },
+      {
+        "title": "L’actrice qui incarne Mandy dans GTA 6 s’exprime avec enthousiasme après que son personnage est devenu viral",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 09:27:07 +0000",
+        "description": "« Vous savez bien que nous avons tous mangé une pomme. »",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94152/lactrice-qui-incarne-mandy-dans-gta-6-sexprime-avec-enthousiasme-apres-que-son-personnage-est-devenu",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261122T101552-c59ad2a2.mp3"
+  },
+  {
     "id": "20261122T101432-aa6ea4ad",
     "date": "2026-11-22T10:14+00:00",
     "theme": "Warhammer 40,000: Dawn of War IV — sortie annoncée en décembre 2026",
@@ -1104,54 +1153,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261119T095310-ac71e4b6.mp3"
-  },
-  {
-    "id": "20261118T223737-400efa45",
-    "date": "2026-11-18T22:37+00:00",
-    "theme": "Actualités intelligence artificielle",
-    "title": "OpenAI renforce le contrôle des IA et s’associe au Figaro",
-    "summary": "OpenAI a publié « The Silent Consensus », soulignant que les IA futures pourraient transformer les institutions tout en nécessitant des mécanismes de contrôle solides, sans préciser ces mécanismes. Le même jour, le groupe Figaro a annoncé un partenariat pour diffuser ses articles via ChatGPT, mais l’impact sur la qualité et la neutralité reste incertain. Par ailleurs, OpenAI a détaillé son approche de sandboxing pour Codex, limitant l’accès aux fichiers et au réseau, tout en mentionnant que la portée exacte de ces mesures demeure partiellement opaque.",
-    "verdict": "Les informations proviennent directement des communiqués d’OpenAI ; les effets pratiques des partenariats et des mécanismes de contrôle ne sont pas encore confirmés.",
-    "tip": "Surveillez les mises à jour d’OpenAI et du Figaro pour clarifier l’efficacité des contrôles et l’impact éditorial.",
-    "sources": [
-      {
-        "title": "The Silent Consensus",
-        "publisher": "OpenAI",
-        "domain": "openai.com",
-        "published": "Wed, 18 Nov 2026 10:00:00 GMT",
-        "description": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
-        "url": "https://openai.com/index/the-silent-consensus",
-        "source_type": "source_editeur"
-      },
-      {
-        "title": "Inside the Codex sandbox",
-        "publisher": "OpenAI",
-        "domain": "openai.com",
-        "published": "Wed, 18 Nov 2026 08:00:00 GMT",
-        "description": "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
-        "url": "https://openai.com/index/inside-the-codex-sandbox",
-        "source_type": "source_editeur"
-      },
-      {
-        "title": "Managing frontier AI risk: From training to deployment",
-        "publisher": "OpenAI",
-        "domain": "openai.com",
-        "published": "Wed, 18 Nov 2026 06:00:00 GMT",
-        "description": "OpenAI explains how it manages frontier AI risk from training through deployment with model alignment, sandboxing, blocking safeguards, and monitoring.",
-        "url": "https://openai.com/index/managing-frontier-ai-risk",
-        "source_type": "source_editeur"
-      },
-      {
-        "title": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT",
-        "publisher": "OpenAI",
-        "domain": "openai.com",
-        "published": "Wed, 18 Nov 2026 00:00:00 GMT",
-        "description": "Le Groupe Figaro and OpenAI partner to bring Le Figaro’s journalism to ChatGPT through summaries and excerpts, with links to original stories.",
-        "url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership",
-        "source_type": "source_editeur"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261118T223737-400efa45.mp3"
   }
 ]
