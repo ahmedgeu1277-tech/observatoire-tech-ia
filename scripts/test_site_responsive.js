@@ -89,6 +89,19 @@ async function inspectPage(browser, route, viewport) {
       fail("Accueil : aucune carte d'actualité n'est affichée (statut=" +
         statusText + ", réponse articles.json=" + articlesResponseStatus + ").");
     }
+    const initialFilterCount = await page.locator("#article-filter-count").textContent();
+    await page.selectOption("#article-category", "gaming");
+    await page.waitForFunction(() => {
+      const count = document.querySelector("#article-filter-count")?.textContent || "";
+      return count !== "";
+    });
+    const gamingCount = await page.locator("#articles > .article:not([hidden])").count();
+    if (gamingCount < 1) fail("Accueil : le filtre jeux vidéo ne renvoie aucun article.");
+    await page.selectOption("#article-category", "all");
+    await page.locator("#article-search").fill("GTA");
+    const searchCount = await page.locator("#articles > .article:not([hidden])").count();
+    if (searchCount < 1) fail("Accueil : la recherche textuelle ne trouve pas un article GTA.");
+    await page.locator("#article-search").fill("");
     const sourceLabels = page.locator('#articles [data-article-label="sources"]');
     if (await sourceLabels.count() < 1) {
       fail("Accueil : libellé de source introuvable pour vérifier les traductions.");
