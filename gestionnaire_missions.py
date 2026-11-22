@@ -23,6 +23,7 @@ import orchestrateur
 ROOT = Path(__file__).resolve().parent
 DEFAULT_DB = ROOT / ".laboratoire_prive" / "queue" / "missions.sqlite3"
 MAX_PENDING = 50
+MAX_ATTEMPTS = 3
 
 
 def now() -> str:
@@ -58,6 +59,8 @@ class MissionQueue:
                 db.execute("ALTER TABLE missions ADD COLUMN priority TEXT NOT NULL DEFAULT 'normal'")
             if "due_at" not in columns:
                 db.execute("ALTER TABLE missions ADD COLUMN due_at TEXT")
+            if "attempts" not in columns:
+                db.execute("ALTER TABLE missions ADD COLUMN attempts INTEGER NOT NULL DEFAULT 0")
             db.execute("CREATE INDEX IF NOT EXISTS idx_missions_status_created ON missions(status, created_at)")
         self._secure_database_file()
 
@@ -107,7 +110,7 @@ class MissionQueue:
             raise ValueError("La limite doit être comprise entre 1 et 100.")
         with self._session() as db:
             rows = db.execute(
-                "SELECT id,status,created_at,started_at,finished_at,error_type,priority,due_at "
+                "SELECT id,status,created_at,started_at,finished_at,error_type,priority,due_at,attempts "
                 "FROM missions ORDER BY created_at DESC LIMIT ?", (limit,)
             ).fetchall()
         return [dict(row) for row in rows]
@@ -118,7 +121,7 @@ class MissionQueue:
             raise ValueError("Identifiant de mission invalide.")
         with self._session() as db:
             row = db.execute(
-                "SELECT id,payload,status,created_at,started_at,finished_at,result,error_type,priority,due_at "
+                "SELECT id,payload,status,created_at,started_at,finished_at,result,error_type,priority,due_at,attempts "
                 "FROM missions WHERE id=?",
                 (mission_id,),
             ).fetchone()
@@ -133,6 +136,22 @@ class MissionQueue:
             item["result"] = None
             item["error_type"] = "StoredDataError"
         return item
+
+    def retry(self, mission_id: str) -> bool:
+        """Remet explicitement en file une mission échouée, partielle ou interrompue.
+
+        Trois tentatives au total sont autorisées ; aucune relance n'est automatique.
+        """
+        if not isinstance(mission_id, str) or not mission_id or len(mission_id) > 64:
+            raise ValueError("Identifiant de mission invalide.")
+        with self._session() as db:
+            result = db.execute(
+                "UPDATE missions SET status='pending',started_at=NULL,finished_at=NULL,"
+                "result=NULL,error_type=NULL,cancel_requested_at=NULL "
+                "WHERE id=? AND status IN ('failed','partial','interrupted') AND attempts < ?",
+                (mission_id, MAX_ATTEMPTS),
+            )
+            return result.rowcount == 1
 
     def cancel(self, mission_id: str) -> bool:
         """Annule une mission en attente ou signale l'arrêt coopératif d'une mission active."""
@@ -180,7 +199,7 @@ class MissionQueue:
                 db.commit()
                 return None
             db.execute(
-                "UPDATE missions SET status='running',started_at=? WHERE id=? AND status='pending'",
+                "UPDATE missions SET status='running',started_at=?,attempts=attempts+1 WHERE id=? AND status='pending'",
                 (now(), row["id"]),
             )
             db.commit()
