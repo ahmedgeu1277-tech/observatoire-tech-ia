@@ -212,6 +212,22 @@ jobs:
             const privateState = await page.request.get('http://127.0.0.1:4173/site/data/gouvernement.json');
             if (privateState.status() !== 404) failures.push('Sécurité : les données de la ville ne doivent pas être publiées.');
 
+            // La ville publique doit proposer une vue 3D légère ou conserver son repli 2D.
+            const cityDemo = await page.goto('http://127.0.0.1:4173/site/ville-demo.html', {waitUntil: 'domcontentloaded'});
+            if (!cityDemo || !cityDemo.ok()) {
+              failures.push('Ville : démonstration publique inaccessible.');
+            } else {
+              const view3dButton = page.locator('#view-3d');
+              await view3dButton.click();
+              const webglUnavailable = await view3dButton.isDisabled();
+              const view3dVisible = await page.locator('#city-view-3d').isVisible();
+              const view2dVisible = await page.locator('#city-view').isVisible();
+              if (!webglUnavailable && !view3dVisible) failures.push('Ville : le mode WebGL 3D ne s’affiche pas.');
+              if (webglUnavailable && !view2dVisible) failures.push('Ville : le repli 2D a disparu sans WebGL.');
+              await page.locator('#view-2d').click();
+              if (!(await page.locator('#city-view').isVisible())) failures.push('Ville : retour à la vue 2D impossible.');
+            }
+
             // Vérifie réellement le mode hors ligne de l'application (service worker).
             const pwaContext = await browser.newContext({serviceWorkers: 'allow'});
             const pwaPage = await pwaContext.newPage();
