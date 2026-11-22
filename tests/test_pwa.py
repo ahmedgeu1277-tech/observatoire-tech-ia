@@ -28,6 +28,7 @@ class ProgressiveWebAppTests(unittest.TestCase):
         self.assertIn('request.mode === "navigate"', worker)
         self.assertIn('caches.match("./offline.html")', worker)
         self.assertIn('nexora-public-v1', worker)
+        self.assertIn('"./articles.json"', worker)
 
     def test_offline_page_exists_and_does_not_claim_live_data(self):
         page = (SITE / "offline.html").read_text(encoding="utf-8")
