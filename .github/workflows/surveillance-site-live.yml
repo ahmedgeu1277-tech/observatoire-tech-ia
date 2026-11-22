@@ -1,0 +1,36 @@
+name: Surveillance du site public en production
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 */6 * * *'
+  push:
+    branches: [main]
+    paths:
+      - "scripts/check_live_site.py"
+      - ".github/workflows/surveillance-site-live.yml"
+      - "site/articles.json"
+      - "site/documentaire-test.json"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: surveillance-site-public
+  cancel-in-progress: true
+
+jobs:
+  production-smoke-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v6
+      - name: Installer Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+      - name: Vérifier le site publié et les médias
+        env:
+          SITE_BASE_URL: https://ahmedgeu1277-tech.github.io/observatoire-tech-ia/
+        run: python scripts/check_live_site.py
