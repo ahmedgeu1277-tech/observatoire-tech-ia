@@ -167,7 +167,8 @@ async function inspectPage(browser, route, viewport) {
       }
       if ((await page.locator("#challenge-rank").textContent()) !== "Curious") {
          fail("Défis : le rang local ne progresse pas avec les points.");
-       }\n       await page.locator("#challenge-reset").click();
+       }
+       await page.locator("#challenge-reset").click();
       if ((await page.locator("#challenge-score").textContent()).trim() !== "0 points") {
         fail("Défis : la réinitialisation du score local échoue.");
       }
