@@ -228,6 +228,42 @@ jobs:
               if (!(await page.locator('#city-view').isVisible())) failures.push('Ville : retour à la vue 2D impossible.');
             }
 
+            // Vérifie l'atelier public : génération locale d'un ZIP Godot, sans téléversement.
+            const workshop = await page.goto('http://127.0.0.1:4173/site/atelier.html', {waitUntil: 'domcontentloaded'});
+            if (!workshop || !workshop.ok()) {
+              failures.push('Atelier : page de création inaccessible.');
+            } else {
+              await page.locator('#project-name').fill('BrowserDemo3D');
+              await page.locator('#template').selectOption('godot-3d');
+              await page.locator('#generate').click();
+              const generated = await page.evaluate(() => ({
+                signature: window.__nexoraLastZipBytes,
+                files: window.__nexoraLastFiles,
+                status: document.querySelector('#status')?.textContent || ''
+              }));
+              if (JSON.stringify(generated.signature) !== JSON.stringify([80, 75, 3, 4])) {
+                failures.push('Atelier : signature ZIP invalide.');
+              }
+              if (!generated.files?.includes('BrowserDemo3D/project.godot') ||
+                  !generated.files?.includes('BrowserDemo3D/scripts/main.gd')) {
+                failures.push('Atelier : fichiers Godot 3D manquants dans le ZIP.');
+              }
+              if (!generated.status.includes('ZIP')) failures.push('Atelier : confirmation de génération absente.');
+              await page.selectOption('#language', 'ar');
+              const workshopLanguage = await page.evaluate(() => ({
+                lang: document.documentElement.lang,
+                dir: document.documentElement.dir
+              }));
+              if (workshopLanguage.lang !== 'ar' || workshopLanguage.dir !== 'rtl') {
+                failures.push('Atelier : traduction arabe ou direction RTL incorrecte.');
+              }
+              await page.locator('#project-name').fill('../invalid');
+              await page.locator('#generate').click();
+              if (!(await page.locator('#status').innerText()).includes('غير صالح')) {
+                failures.push('Atelier : nom de projet dangereux non rejeté.');
+              }
+            }
+
             // Vérifie réellement le mode hors ligne de l'application (service worker).
             const pwaContext = await browser.newContext({serviceWorkers: 'allow'});
             const pwaPage = await pwaContext.newPage();
