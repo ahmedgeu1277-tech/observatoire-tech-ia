@@ -1,5 +1,45 @@
 [
   {
+    "id": "20261122T132407-c4ac04cf",
+    "date": "2026-11-22T13:24+00:00",
+    "theme": "GTA VI — lancement et premiers retours vérifiés",
+    "title": "GTA VI : plantages PS5 et PNJ violents signalés",
+    "summary": "Depuis son lancement, GTA VI fait face à des plantages sur PS5 signalés par des joueurs, accompagnés de l’erreur CE‑108255‑1, et à des PNJ qui réagissent de façon extrêmement violente, selon des articles IGN France. Ces incidents ont poussé certains joueurs à éviter certaines zones du jeu. Les boutiques exclusives ont également refusé l’accès aux acheteurs de l’édition non Ultimate, créant une perception de sélectivité. Les vérifications indépendantes de ces problèmes restent limitées, et aucune source officielle n’a confirmé l’étendue des dysfonctionnements.",
+    "verdict": "Les retours initiaux indiquent des problèmes techniques et de gameplay, mais leur ampleur n’est pas encore confirmée par des sources indépendantes ou officielles.",
+    "tip": "Surveillez les mises à jour de Rockstar et les communiqués officiels pour savoir si des correctifs sont publiés.",
+    "sources": [
+      {
+        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
+        "description": "Allons en paix.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
+        "source_type": "media"
+      },
+      {
+        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
+        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
+        "source_type": "media"
+      },
+      {
+        "title": "Les joueurs de GTA 6 réagissent après que des boutiques exclusives ont accueilli les acheteurs de l’édition non Ultimate avec des portes fermées",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 21:27:24 +0000",
+        "description": "Trop select.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94167/les-joueurs-de-gta-6-reagissent-apres-que-des-boutiques-exclusives-ont-accueilli-les-acheteurs-de-le",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261122T132407-c4ac04cf.mp3"
+  },
+  {
     "id": "20261122T130527-9db21728",
     "date": "2026-11-22T13:05+00:00",
     "theme": "Gaming et jeux vidéo — veille générale (recherche de secours)",
@@ -305,55 +345,6 @@
     ],
     "ai_notice": "Résumé documentaire de secours assemblé automatiquement à partir des liens collectés ; aucune annonce spécifique n’est confirmée.",
     "audio_url": "audio/20261122T124825-69f7eeac.mp3"
-  },
-  {
-    "id": "20261122T110358-71bb2ee0",
-    "date": "2026-11-22T11:03+00:00",
-    "theme": "GTA VI — lancement et premiers retours vérifiés",
-    "title": "GTA VI : plantages PS5 et PNJ violents signalés",
-    "summary": "Depuis son lancement, GTA VI fait face à des plantages sur PS5 marqués par l’erreur CE‑108255‑1, ainsi qu’à des réactions violentes de PNJ, selon plusieurs joueurs. Ces incidents restent sporadiques et aucune confirmation officielle n’a été publiée. L’édition non‑Ultimate a également été critiquée pour l’accès limité aux boutiques exclusives, tandis que l’actrice de Mandy a exprimé son enthousiasme face à la viralité de son personnage. Les retours restent donc incertains quant à l’impact global sur l’expérience de jeu.",
-    "verdict": "Les sources consultées indiquent des problèmes techniques et de comportement de l’IA, mais aucune confirmation officielle n’est disponible. Les retours sur l’édition non‑Ultimate et la popularité d’un personnage restent anecdotiques.",
-    "tip": "Surveillez les mises à jour officielles de Rockstar pour confirmer la résolution des plantages et des comportements de PNJ.",
-    "sources": [
-      {
-        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
-        "description": "Allons en paix.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
-        "source_type": "media"
-      },
-      {
-        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
-        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
-        "source_type": "media"
-      },
-      {
-        "title": "Les joueurs de GTA 6 réagissent après que des boutiques exclusives ont accueilli les acheteurs de l’édition non Ultimate avec des portes fermées",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Sat, 21 Nov 2026 21:27:24 +0000",
-        "description": "Trop select.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94167/les-joueurs-de-gta-6-reagissent-apres-que-des-boutiques-exclusives-ont-accueilli-les-acheteurs-de-le",
-        "source_type": "media"
-      },
-      {
-        "title": "L’actrice qui incarne Mandy dans GTA 6 s’exprime avec enthousiasme après que son personnage est devenu viral",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Sat, 21 Nov 2026 09:27:07 +0000",
-        "description": "« Vous savez bien que nous avons tous mangé une pomme. »",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94152/lactrice-qui-incarne-mandy-dans-gta-6-sexprime-avec-enthousiasme-apres-que-son-personnage-est-devenu",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261122T110358-71bb2ee0.mp3"
   },
   {
     "id": "20261122T103544-742b732c",
