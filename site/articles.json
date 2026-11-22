@@ -1,5 +1,45 @@
 [
   {
+    "id": "20261122T102230-615a8b15",
+    "date": "2026-11-22T10:22+00:00",
+    "theme": "GTA VI — lancement et premiers retours vérifiés",
+    "title": "GTA VI : plantages PS5 et PNJ violents signalés",
+    "summary": "Les premiers retours sur GTA VI montrent des plantages sur PS5 accompagnés de l’erreur CE‑108255‑1 et des PNJ réagissant de façon extrêmement violente, selon des joueurs recensés par IGN France. Ces incidents restent sporadiques et aucune confirmation officielle de Rockstar n’a été publiée. Par ailleurs, des boutiques exclusives ont refusé l’accès aux acheteurs de l’édition non Ultimate, créant une frustration communautaire sans détails précis sur l’étendue de la restriction.",
+    "verdict": "Les sources consultées indiquent des problèmes de stabilité et de comportement d’IA, mais aucune preuve officielle n’est disponible. La situation reste incertaine et les développeurs n’ont pas encore réagi.",
+    "tip": "Surveillez les mises à jour officielles de Rockstar pour confirmer ou corriger ces rapports.",
+    "sources": [
+      {
+        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
+        "description": "Allons en paix.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
+        "source_type": "media"
+      },
+      {
+        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
+        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
+        "source_type": "media"
+      },
+      {
+        "title": "Les joueurs de GTA 6 réagissent après que des boutiques exclusives ont accueilli les acheteurs de l’édition non Ultimate avec des portes fermées",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 21:27:24 +0000",
+        "description": "Trop select.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94167/les-joueurs-de-gta-6-reagissent-apres-que-des-boutiques-exclusives-ont-accueilli-les-acheteurs-de-le",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261122T102230-615a8b15.mp3"
+  },
+  {
     "id": "20261122T102204-632c7b13",
     "date": "2026-11-22T10:22+00:00",
     "theme": "Path of Exile 2 — lancement complet annoncé le 11 décembre 2026",
@@ -1104,63 +1144,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261119T133905-bc5c68de.mp3"
-  },
-  {
-    "id": "20261119T095310-ac71e4b6",
-    "date": "2026-11-19T09:53+00:00",
-    "theme": "GTA VI — lancement et premiers retours vérifiés",
-    "title": "GTA VI : records de streaming et premiers retours mitigés",
-    "summary": "Avant sa sortie mondiale, GTA VI a déjà battu des records de streaming, selon IGN. Les premiers retours soulignent des changements de gameplay, notamment l’impossibilité de prendre des prostituées en stop, ainsi que des transformations physiques marquantes de personnages comme Lucia. Une astuce permettrait d’accéder à une version pré‑lancement sur Xbox, mais son efficacité et sa légalité restent incertaines. Les implications pour la sécurité des comptes utilisateurs n’ont pas encore été évaluées.",
-    "verdict": "Les sources consultées indiquent des performances de streaming exceptionnelles et des retours partagés sur le gameplay, mais aucune preuve définitive sur la disponibilité légale de l’astuce Xbox ni sur les raisons précises des changements de gameplay.",
-    "tip": "Les lecteurs intéressés par les aspects techniques et les stratégies de lancement devraient suivre les mises à jour officielles de Rockstar et les analyses de sécurité des plateformes.",
-    "sources": [
-      {
-        "title": "43 militaires ont renouvelé leur engagement dans l'armée en échange de congés payés pour jouer à GTA 6",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 08:28:45 +0000",
-        "description": "« C’était juste un moyen d’attirer l’attention des gens et, en quelque sorte, de dire : \"Hé, on est là !\" »",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94083/43-militaires-ont-renouvele-leur-engagement-dans-larmee-en-echange-de-conges-payes-pour-jouer-a-gta",
-        "source_type": "media"
-      },
-      {
-        "title": "Dans GTA 6, vous ne pouvez pas prendre des prostituées en stop, mais il y a une raison logique à ça",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 08:14:44 +0000",
-        "description": "On est loyal ici.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94084/dans-gta-6-vous-ne-pouvez-pas-prendre-des-prostituees-en-stop-mais-il-y-a-une-raison-logique-a-ca",
-        "source_type": "media"
-      },
-      {
-        "title": "Dans GTA VI, la transformation physique de Lucia après avoir enchainé les séances de muscu est impressionnante",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 23:12:24 +0000",
-        "description": "Le avant/après est stupéfiant.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94072/dans-gta-vi-la-transformation-physique-de-lucia-apres-avoir-enchaine-les-seances-de-muscu-est-impres",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 bat tous les records de streaming avant même sa sortie mondiale",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 18:54:26 +0000",
-        "description": "Si on ne fait qu'en parler, ça compte ?",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94079/gta-6-bat-tous-les-records-de-streaming-avant-meme-sa-sortie-mondiale",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 est bien disponible en avance sur Xbox, l’astuce fonctionne et voici comment faire",
-        "publisher": "Xboxygen",
-        "domain": "news.google.com",
-        "published": "Mon, 16 Nov 2026 09:29:03 GMT",
-        "description": "GTA 6 est bien disponible en avance sur Xbox, l’astuce fonctionne et voici comment faire    Xboxygen",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE81U0VpSXNhQlZjV2w5OWtVcmE1eWxkSVFpdG1ZY21sN1prc3VkMXc3Uko2VjBVUW5aMW1kWHpJTDdsNHlWRWVYcVhQa2NlNzV6X1VmeXUyei0ycVpFQ1FOd2NNX3hfdE1NRUJaS0tjY2RwSjYzOVRCclFfay1fQQ?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261119T095310-ac71e4b6.mp3"
   }
 ]
