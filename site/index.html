@@ -82,7 +82,7 @@ footer{letter-spacing:.12em;line-height:1.8}
 @media(max-width:600px){.hero{padding:23px 19px}.hero:after{right:-35px;top:5%;opacity:.55}.hero h1{font-size:37px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 
-</style>
+.challenge-section{margin:34px 0 10px}.challenge-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.challenge-card{background:#fff;border:1px solid #e4e0d7;border-radius:12px;padding:16px;display:flex;flex-direction:column;min-height:205px}.challenge-number{font-size:10px;letter-spacing:.12em;color:#55745f;font-weight:800}.challenge-card h3{font:500 18px Georgia,serif;margin:12px 0 7px}.challenge-card p{font-size:12px;line-height:1.65;color:#62695f;flex:1}.challenge-card button,.challenge-footer button{border:1px solid #55745f;background:#f0f4ee;color:#304a36;border-radius:8px;padding:9px 11px;font:inherit;font-size:11px;font-weight:700;cursor:pointer}.challenge-card button[aria-pressed="true"]{background:#dcebdd}.challenge-score{font-size:13px;color:#55745f;white-space:nowrap}.challenge-footer{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:11px;color:#62695f}.challenge-footer span:first-child{font-weight:800;color:#405e46}.challenge-footer span:nth-child(2){flex:1}.challenge-footer button{padding:6px 9px}@media(max-width:700px){.challenge-grid{grid-template-columns:1fr}.challenge-card{min-height:0}}</style>
 </head>
 <body>
 <div class="shell">
@@ -112,6 +112,13 @@ footer{letter-spacing:.12em;line-height:1.8}
 <div class="sectionhead"><div><h2 data-i18n="documentaries">Documentaires</h2><p data-i18n="availableEditions">Éditions audio et vidéo disponibles.</p></div></div>
 <article class="feature" style="min-height:0"><div class="eyebrow" data-i18n="latestEdition">DERNIÈRE ÉDITION</div><h3 id="video-title">Chargement du documentaire…</h3><video id="latest-video" controls playsinline preload="metadata" style="display:block;width:100%;max-height:520px;background:#17202b;border-radius:12px;margin:14px 0"></video><p id="video-expiry">La vidéo est conservée dans les archives pendant la durée indiquée.</p><audio id="latest-audio" controls preload="none" style="width:100%"></audio><p><a class="btn" href="./documentaire-test.html" data-i18n="openDocumentary">Ouvrir la page documentaire →</a></p></article>
 </section>
+<section id="challenges" class="challenge-section">
+<div class="sectionhead"><div><h2 id="challenge-title">Défis NEXORA</h2><p id="challenge-description">Des missions courtes pour apprendre à vérifier et comprendre l'actualité.</p></div><strong id="challenge-score" class="challenge-score">0 points</strong></div>
+<div class="challenge-grid">
+<article class="challenge-card"><div class="challenge-number">01 · 20 PTS</div><h3 id="challenge-task-0">Vérifier une source</h3><p id="challenge-desc-0">Ouvre une source originale d'un article et vérifie qu'elle soutient bien l'information.</p><button type="button" data-challenge-index="0" aria-pressed="false">Valider le défi</button></article>
+<article class="challenge-card"><div class="challenge-number">02 · 15 PTS</div><h3 id="challenge-task-1">Écouter un article</h3><p id="challenge-desc-1">Écoute un extrait audio et compare-le avec le résumé écrit.</p><button type="button" data-challenge-index="1" aria-pressed="false">Valider le défi</button></article>
+<article class="challenge-card"><div class="challenge-number">03 · 15 PTS</div><h3 id="challenge-task-2">Repérer une incertitude</h3><p id="challenge-desc-2">Trouve une information qui reste à confirmer et identifie ce qui manque.</p><button type="button" data-challenge-index="2" aria-pressed="false">Valider le défi</button></article>
+</div><div class="challenge-footer"><span id="challenge-progress">0/3 réalisés</span><span id="challenge-local-note">Progression enregistrée uniquement sur cet appareil : ce n'est pas un classement mondial.</span><button type="button" id="challenge-reset">Réinitialiser</button></div></section>
 <div class="notice" data-i18n="notice">⚠️ Certains textes et narrations sont préparés avec l’aide de l’intelligence artificielle. Ils peuvent contenir des erreurs : les sources originales restent la référence. Les fonctions non publiées ne sont pas présentées ici comme des services disponibles.</div>
 <footer data-i18n="footer">NEXORA · MÉDIA INDÉPENDANT SUR LA TECH, L’IA ET LE JEU VIDÉO</footer>
 </main></div>
@@ -234,7 +241,23 @@ window.nexoraArticles=items;for(let itemIndex=0;itemIndex<items.length;itemIndex
   document.querySelectorAll("[data-i18n='openDocumentary']").forEach(node=>node.textContent=t.open);
   document.querySelectorAll("[data-i18n='contentLanguageNote']").forEach(node=>node.textContent=t.contentNote);
  };
- const selector=document.getElementById("language");
+ 
+const challengeUi={
+fr:{title:"Défis NEXORA",description:"Des missions courtes pour apprendre à vérifier et comprendre l'actualité.",points:"points",completed:"réalisés",mark:"Valider le défi",done:"Défi validé",reset:"Réinitialiser",local:"Progression enregistrée uniquement sur cet appareil : ce n'est pas un classement mondial.",tasks:[["Vérifier une source","Ouvre une source originale d'un article et vérifie qu'elle soutient bien l'information."],["Écouter un article","Écoute un extrait audio et compare-le avec le résumé écrit."],["Repérer une incertitude","Trouve une information qui reste à confirmer et identifie ce qui manque."]]},
+en:{title:"NEXORA challenges",description:"Short missions to learn how to check and understand the news.",points:"points",completed:"completed",mark:"Complete challenge",done:"Challenge completed",reset:"Reset",local:"Progress is saved only on this device; this is not a global leaderboard.",tasks:[["Check a source","Open an article's original source and check that it supports the claim."],["Listen to an article","Listen to an audio excerpt and compare it with the written summary."],["Spot uncertainty","Find a claim that still needs confirmation and identify what is missing."]]},
+es:{title:"Retos NEXORA",description:"Misiones breves para aprender a verificar y comprender las noticias.",points:"puntos",completed:"completados",mark:"Completar reto",done:"Reto completado",reset:"Reiniciar",local:"El progreso se guarda solo en este dispositivo; no es una clasificación mundial.",tasks:[["Verificar una fuente","Abre la fuente original de un artículo y comprueba que respalda la información."],["Escuchar un artículo","Escucha un fragmento de audio y compáralo con el resumen escrito."],["Detectar incertidumbre","Encuentra una afirmación pendiente de confirmación e identifica qué falta."]]},
+de:{title:"NEXORA-Herausforderungen",description:"Kurze Aufgaben, um Nachrichten zu prüfen und besser zu verstehen.",points:"Punkte",completed:"abgeschlossen",mark:"Aufgabe abschließen",done:"Abgeschlossen",reset:"Zurücksetzen",local:"Der Fortschritt wird nur auf diesem Gerät gespeichert; dies ist keine globale Rangliste.",tasks:[["Quelle prüfen","Öffne die Originalquelle eines Artikels und prüfe, ob sie die Aussage stützt."],["Artikel anhören","Höre einen Audioausschnitt und vergleiche ihn mit der schriftlichen Zusammenfassung."],["Unsicherheit erkennen","Finde eine noch unbestätigte Aussage und erkenne, welche Belege fehlen."]]},
+pt:{title:"Desafios NEXORA",description:"Missões curtas para aprender a verificar e compreender as notícias.",points:"pontos",completed:"concluídos",mark:"Concluir desafio",done:"Desafio concluído",reset:"Reiniciar",local:"O progresso é guardado apenas neste dispositivo; não é uma classificação mundial.",tasks:[["Verificar uma fonte","Abre a fonte original de um artigo e confirma se sustenta a informação."],["Ouvir um artigo","Ouve um excerto de áudio e compara-o com o resumo escrito."],["Identificar incerteza","Encontra uma afirmação por confirmar e identifica o que está em falta."]]},
+ar:{title:"تحديات NEXORA",description:"مهام قصيرة لتعلّم التحقق من الأخبار وفهمها.",points:"نقاط",completed:"مكتملة",mark:"إكمال التحدي",done:"اكتمل التحدي",reset:"إعادة ضبط",local:"يُحفظ التقدم على هذا الجهاز فقط؛ هذه ليست قائمة ترتيب عالمية.",tasks:[["تحقق من مصدر","افتح المصدر الأصلي لمقال وتأكد من أنه يدعم المعلومة."],["استمع إلى مقال","استمع إلى مقطع صوتي وقارنه بالملخص المكتوب."],["اكتشف عدم اليقين","اعثر على معلومة تحتاج إلى تأكيد وحدد ما ينقصها."]]},
+zh:{title:"NEXORA 挑战",description:"通过简短任务学习核实和理解新闻。",points:"积分",completed:"已完成",mark:"完成挑战",done:"挑战已完成",reset:"重置",local:"进度仅保存在此设备上；这不是全球排行榜。",tasks:[["核实来源","打开文章的原始来源，确认它是否支持相关说法。"],["收听文章","收听一段音频，并与文字摘要进行比较。"],["识别不确定性","找出仍需确认的信息，并判断缺少哪些证据。"]]}
+};
+const challengePoints=[20,15,15];let challengeState=[false,false,false];
+try{const saved=JSON.parse(localStorage.getItem("nexora-challenges-v1")||"null");if(Array.isArray(saved)&&saved.length===3&&saved.every(v=>typeof v==="boolean"))challengeState=saved;}catch(_){}
+function applyChallengeLanguage(language){const t=challengeUi[language]||challengeUi.fr;document.getElementById("challenge-title").textContent=t.title;document.getElementById("challenge-description").textContent=t.description;document.getElementById("challenge-local-note").textContent=t.local;document.getElementById("challenge-reset").textContent=t.reset;t.tasks.forEach((task,i)=>{document.getElementById("challenge-task-"+i).textContent=task[0];document.getElementById("challenge-desc-"+i).textContent=task[1];});document.querySelectorAll("[data-challenge-index]").forEach(button=>{const done=challengeState[Number(button.dataset.challengeIndex)];button.textContent=done?t.done:t.mark;button.setAttribute("aria-pressed",String(done));});const score=challengeState.reduce((sum,done,i)=>sum+(done?challengePoints[i]:0),0);document.getElementById("challenge-score").textContent=score+" "+t.points;document.getElementById("challenge-progress").textContent=challengeState.filter(Boolean).length+"/3 "+t.completed;}
+function saveChallengeState(){try{localStorage.setItem("nexora-challenges-v1",JSON.stringify(challengeState));}catch(_){}applyChallengeLanguage(document.documentElement.lang);}
+document.querySelectorAll("[data-challenge-index]").forEach(button=>button.addEventListener("click",()=>{const i=Number(button.dataset.challengeIndex);if(i>=0&&i<3){challengeState[i]=!challengeState[i];saveChallengeState();}}));
+document.getElementById("challenge-reset").addEventListener("click",()=>{challengeState=[false,false,false];saveChallengeState();});
+const selector=document.getElementById("language");
  function setLanguage(language){
   const lang=translations[language]?language:"fr";
   document.documentElement.lang=lang;
@@ -248,6 +271,7 @@ window.nexoraArticles=items;for(let itemIndex=0;itemIndex<items.length;itemIndex
   try{localStorage.setItem("observatoire-language",lang);}catch(_){}
   selector.value=lang;
   window.observatoireApplyArticleLanguage?.(lang);
+   applyChallengeLanguage(lang);
  }
  function detectBrowserLanguage(){
   const candidates=[...(navigator.languages||[]),navigator.language||"fr"];
