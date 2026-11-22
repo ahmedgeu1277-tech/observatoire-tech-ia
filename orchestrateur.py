@@ -42,6 +42,21 @@ AGENTS = {
         "Transforme les pistes en plan technique progressif, avec étapes, critères "
         "de réussite, tests, limites de sécurité et dépendances."
     ),
+    "redacteur": (
+        "Agent rédacteur",
+        "Rédige une documentation claire, des interfaces textuelles et des explications "
+        "adaptées au public visé. Distingue les faits des formulations promotionnelles."
+    ),
+    "auditeur": (
+        "Agent auditeur",
+        "Examine la sécurité, la confidentialité, l'accessibilité, les risques juridiques "
+        "et les critères de qualité. Signale les points non vérifiés."
+    ),
+    "planificateur": (
+        "Agent planificateur",
+        "Découpe le travail en étapes réalistes, priorités, échéances, dépendances "
+        "et coûts monétaires. Ne suppose aucun budget disponible sans preuve."
+    ),
 }
 
 
