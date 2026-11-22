@@ -105,6 +105,28 @@ class MissionQueue:
             ).fetchall()
         return [dict(row) for row in rows]
 
+    def get_mission(self, mission_id: str) -> dict | None:
+        """Retourne le détail d'une mission locale, sans exposer d'autres missions."""
+        if not isinstance(mission_id, str) or not mission_id or len(mission_id) > 64:
+            raise ValueError("Identifiant de mission invalide.")
+        with self._session() as db:
+            row = db.execute(
+                "SELECT id,payload,status,created_at,started_at,finished_at,result,error_type "
+                "FROM missions WHERE id=?",
+                (mission_id,),
+            ).fetchone()
+        if row is None:
+            return None
+        item = dict(row)
+        try:
+            item["payload"] = json.loads(item["payload"])
+            item["result"] = json.loads(item["result"]) if item["result"] else None
+        except (TypeError, json.JSONDecodeError):
+            item["payload"] = None
+            item["result"] = None
+            item["error_type"] = "StoredDataError"
+        return item
+
     def cancel(self, mission_id: str) -> bool:
         """Annule une mission en attente ou signale l'arrêt coopératif d'une mission active."""
         with self._session() as db:
@@ -267,6 +289,8 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="File locale de missions IA bornées.")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("list", help="Lister les missions.")
+    show = sub.add_parser("show", help="Afficher le détail d'une mission.")
+    show.add_argument("mission_id")
     add = sub.add_parser("add", help="Ajouter une mission depuis un fichier JSON.")
     add.add_argument("json_file")
     sub.add_parser("run-next", help="Exécuter une mission en attente.")
@@ -282,6 +306,12 @@ def main() -> int:
 
     if args.command == "list":
         print(json.dumps(queue.list_missions(), ensure_ascii=False, indent=2))
+    elif args.command == "show":
+        item = queue.get_mission(args.mission_id)
+        if item is None:
+            print("Mission introuvable.")
+            return 1
+        print(json.dumps(item, ensure_ascii=False, indent=2))
     elif args.command == "add":
         payload = json.loads(Path(args.json_file).read_text(encoding="utf-8"))
         print(queue.enqueue(payload))
