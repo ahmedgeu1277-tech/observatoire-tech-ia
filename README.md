@@ -14,6 +14,8 @@ Le site présente des articles et des documentaires issus de sources publiques. 
 - Narration audio lorsque le fournisseur vocal est disponible.
 - Génération de documentaires vidéo à partir de contenus éditoriaux.
 - Démonstration publique interactive d'une ville fictive : quatre quartiers et indicateurs synthétiques, sans exposition des données internes.
+- Recherche textuelle et filtres par thème sur les articles ; six défis éducatifs avec progression et rang personnel enregistrés localement (sans classement mondial).
+- Tableau de bord privé local avec file de missions, portefeuille R&D et feuille de route persistante de sept chantiers, conservée hors du dépôt public.
 - Archivage des publications récentes et nettoyage programmé des anciennes archives.
 - File locale de missions IA avec trois rôles spécialisés maximum, durée limitée et demande d'annulation coopérative entre les appels IA.
 - Tests automatisés, contrôles de qualité/sécurité et surveillance du site réellement publié dans GitHub Actions.
