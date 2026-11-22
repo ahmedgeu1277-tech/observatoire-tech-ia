@@ -8,7 +8,7 @@ https://ahmedgeu1277-tech.github.io/observatoire-tech-ia/
 
 Le site présente des articles et des documentaires issus de sources publiques. Les contenus générés avec l'aide de l'IA peuvent comporter des erreurs : consultez les sources originales avant de prendre une décision.
 
-## Fonctionnalités actuellement présentes
+## Centre de pilotage public\n\nLa page [Centre de pilotage](https://ahmedgeu1277-tech.github.io/observatoire-tech-ia/espace.html) regroupe les accès aux outils publics et propose un contrôle depuis le navigateur des pages, articles, audios et médias documentaires réellement publiés. Ce contrôle est ponctuel : il ne remplace pas la surveillance GitHub Actions.\n\n## Fonctionnalités actuellement présentes
 
 - Collecte planifiée de sources publiques et génération d'articles assistée par IA.
 - Narration audio lorsque le fournisseur vocal est disponible.

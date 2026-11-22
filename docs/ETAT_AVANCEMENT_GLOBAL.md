@@ -339,3 +339,12 @@ Contrôle effectué après la correction du rattrapage des traductions :
 - Le dépôt est public : les archives et notes privées doivent rester hors de Git et hors de GitHub Pages.
 
 Ce contrôle valide la qualité du commit et son déploiement. Il ne signifie pas que toutes les fonctionnalités futures du projet sont terminées.
+
+
+## Centre de pilotage public regroupé — 22 novembre 2026
+
+- Une page unique `site/espace.html` regroupe les accès au média, aux documentaires, à la simulation 2D/3D, aux défis, à l'atelier et à la méthode.
+- Le centre de pilotage ajoute un contrôle manuel depuis le navigateur : il lit le catalogue et le manifeste documentaires, puis vérifie les pages publiques et chaque fichier audio/vidéo/sous-titre référencé dans les articles et le documentaire. Le résultat indique les réponses HTTP et les ressources en échec ; il ne certifie pas la qualité éditoriale ni la disponibilité future.
+- La page est disponible en sept langues, mémorise le choix de langue et utilise le RTL en arabe. Elle est ajoutée au cache PWA des pages essentielles.
+- Le centre explique explicitement les limites qui restent réelles : défis et rang local uniquement, laboratoire privé sur ordinateur local, pas d'agents cloud permanents, ville fictive. Il donne accès au guide Linux du laboratoire sans exposer son API locale.
+- Cette modification améliore l'accès et l'auto-diagnostic en un seul ensemble ; elle ne crée pas un hébergement privé, un classement mondial ou un serveur 24 h/24.
