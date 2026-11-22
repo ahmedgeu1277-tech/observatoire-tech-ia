@@ -1,5 +1,92 @@
 [
   {
+    "id": "20261122T134028-f6494c0f",
+    "date": "2026-11-22T13:40+00:00",
+    "theme": "GTA VI — lancement et premiers retours vérifiés",
+    "title": "GTA VI : plantages et PNJ violents signalés sur PS5",
+    "summary": "Les premiers retours de GTA VI montrent des plantages sur PS5 accompagnés de l’erreur CE‑108255‑1, ainsi que des PNJ réagissant de façon extrêmement violente, selon deux articles IGN France. Ces incidents soulèvent des questions sur la stabilité du jeu et le comportement de son IA, mais aucune source indépendante n’a confirmé ces problèmes. Les joueurs restent incertains quant à l’ampleur réelle des dysfonctionnements.",
+    "verdict": "Les rapports indiquent des problèmes techniques, mais leur portée reste à confirmer.",
+    "tip": "Surveillez les mises à jour officielles de Rockstar pour résoudre ces bugs.",
+    "sources": [
+      {
+        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
+        "description": "Allons en paix.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
+        "source_type": "media"
+      },
+      {
+        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
+        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "translations": {
+      "en": {
+        "theme": "GTA VI — launch and verified early feedback",
+        "title": "GTA VI: crashes and violent NPCs reported on PS5",
+        "summary": "Early feedback on GTA VI shows crashes on PS5 accompanied by the CE‑108255‑1 error, as well as NPCs reacting extremely violently, according to two IGN France articles. These incidents raise questions about the game's stability and its AI behavior, but no independent source has confirmed these problems. Players remain uncertain about the real extent of the malfunctions.",
+        "verdict": "Reports indicate technical problems, but their scope remains to be confirmed.",
+        "tip": "Monitor Rockstar's official updates to resolve these bugs.",
+        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links to find the full context.",
+        "audio_url": "audio/20261122T134028-f6494c0f-en.mp3"
+      },
+      "es": {
+        "theme": "GTA VI — lanzamiento y primeros comentarios verificados",
+        "title": "GTA VI: caídas y NPCs violentos reportados en PS5",
+        "summary": "Los primeros comentarios sobre GTA VI muestran caídas en PS5 acompañadas del error CE‑108255‑1, así como NPCs reaccionando de manera extremadamente violenta, según dos artículos de IGN France. Estos incidentes plantean preguntas sobre la estabilidad del juego y el comportamiento de su IA, pero ninguna fuente independiente ha confirmado estos problemas. Los jugadores siguen inciertos sobre la magnitud real de los fallos.",
+        "verdict": "Los informes indican problemas técnicos, pero su alcance sigue por confirmar.",
+        "tip": "Supervisa las actualizaciones oficiales de Rockstar para resolver estos errores.",
+        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulta los enlaces para encontrar el contexto completo.",
+        "audio_url": "audio/20261122T134028-f6494c0f-es.mp3"
+      },
+      "de": {
+        "theme": "GTA VI — Start und verifizierte erste Rückmeldungen",
+        "title": "GTA VI: Abstürze und gewalttätige NPCs auf PS5 gemeldet",
+        "summary": "Die ersten Rückmeldungen zu GTA VI zeigen Abstürze auf PS5 begleitet von dem CE‑108255‑1-Fehler sowie NPCs, die extrem gewalttätig reagieren, laut zwei IGN France-Artikeln. Diese Vorfälle werfen Fragen zur Stabilität des Spiels und zum Verhalten seiner KI auf, jedoch hat keine unabhängige Quelle diese Probleme bestätigt. Spieler bleiben unsicher über das tatsächliche Ausmaß der Fehlfunktionen.",
+        "verdict": "Berichte deuten auf technische Probleme hin, deren Umfang jedoch noch bestätigt werden muss.",
+        "tip": "Behalte die offiziellen Rockstar-Updates im Auge, um diese Fehler zu beheben.",
+        "ai_notice": "Artikel mit Hilfe von groq aus den angegebenen Quellen verfasst. Prüfe die Links, um den vollständigen Kontext zu finden.",
+        "audio_url": "audio/20261122T134028-f6494c0f-de.mp3"
+      },
+      "pt": {
+        "theme": "GTA VI — lançamento e primeiros retornos verificados",
+        "title": "GTA VI: falhas e NPCs violentos relatados no PS5",
+        "summary": "Os primeiros retornos de GTA VI mostram falhas no PS5 acompanhadas pelo erro CE‑108255‑1, bem como NPCs reagindo de forma extremamente violenta, segundo dois artigos da IGN France. Esses incidentes levantam questões sobre a estabilidade do jogo e o comportamento de sua IA, mas nenhuma fonte independente confirmou esses problemas. Os jogadores permanecem incertos quanto à real extensão das falhas.",
+        "verdict": "Os relatos indicam problemas técnicos, mas seu alcance ainda precisa ser confirmado.",
+        "tip": "Acompanhe as atualizações oficiais da Rockstar para resolver esses bugs.",
+        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Consulte os links para encontrar o contexto completo.",
+        "audio_url": "audio/20261122T134028-f6494c0f-pt.mp3"
+      },
+      "ar": {
+        "theme": "جيتا VI — الإطلاق وردود الفعل الأولية المُتحققة",
+        "title": "جيتا VI: تعطل وأعداء غير بشريين عنيفون مُبلغون على PS5",
+        "summary": "تُظهر ردود الفعل الأولية لجيتا VI تعطلًا على PS5 مصحوبًا بخطأ CE‑108255‑1، بالإضافة إلى أعداء غير بشريين يتصرفون بعنف شديد، وفقًا لمقالين من IGN France. تثير هذه الحوادث تساؤلات حول استقرار اللعبة وسلوك الذكاء الاصطناعي، لكن لم تؤكد أي مصدر مستقل هذه المشكلات. يظل اللاعبون غير متأكدين من مدى انتشار العيوب الحقيقية.",
+        "verdict": "تشير التقارير إلى مشاكل تقنية، لكن نطاقها لا يزال بحاجة إلى تأكيد.",
+        "tip": "راقب التحديثات الرسمية من Rockstar لحل هذه الأخطاء.",
+        "ai_notice": "تم كتابة المقال بمساعدة groq من المصادر المذكورة. راجع الروابط للعثور على السياق الكامل.",
+        "audio_url": "audio/20261122T134028-f6494c0f-ar.mp3"
+      },
+      "zh": {
+        "theme": "GTA VI — 上线与已验证的早期反馈",
+        "title": "GTA VI：PS5 上的崩溃和暴力 NPC 报告",
+        "summary": "GTA VI 的早期反馈显示 PS5 上出现崩溃，并伴随 CE‑108255‑1 错误，以及 NPC 以极端暴力方式反应，依据两篇 IGN France 文章。这些事件引发了关于游戏稳定性和 AI 行为的疑问，但没有独立来源确认这些问题。玩家仍不确定故障的真实程度。",
+        "verdict": "报告显示存在技术问题，但其范围仍待确认。",
+        "tip": "请关注 Rockstar 官方更新以解决这些错误。",
+        "ai_notice": "文章使用 groq 根据所示来源撰写。请查看链接以获取完整背景。",
+        "audio_url": "audio/20261122T134028-f6494c0f-zh.mp3"
+      }
+    },
+    "audio_url": "audio/20261122T134028-f6494c0f.mp3"
+  },
+  {
     "id": "20261122T133939-202ab2c3",
     "date": "2026-11-22T13:39+00:00",
     "theme": "Innovation et IA dans le gaming et au-delà",
@@ -527,37 +614,6 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261122T101432-aa6ea4ad.mp3"
-  },
-  {
-    "id": "20261122T101037-959411d5",
-    "date": "2026-11-22T10:10+00:00",
-    "theme": "GTA VI — lancement et premiers retours vérifiés",
-    "title": "GTA VI : plantages et PNJ violents signalés sur PS5",
-    "summary": "Depuis son lancement, GTA VI fait l’objet de rapports de plantages sur PS5, accompagnés de l’erreur CE‑108255‑1, et de comportements violents de certains PNJ. Ces incidents, rapportés par des joueurs via IGN France, restent sporadiques et non confirmés par Rockstar. Les joueurs restent donc incertains quant à la gravité et à la portée de ces problèmes, tandis qu’aucune mise à jour officielle n’a encore été annoncée.",
-    "verdict": "Les retours initiaux indiquent des problèmes de stabilité et de comportement d’IA, mais leur ampleur demeure inconnue sans confirmation de l’éditeur.",
-    "tip": "Surveillez les mises à jour de Rockstar et les communiqués officiels pour savoir si ces plantages et comportements violents seront corrigés.",
-    "sources": [
-      {
-        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
-        "description": "Allons en paix.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
-        "source_type": "media"
-      },
-      {
-        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
-        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261122T101037-959411d5.mp3"
   },
   {
     "id": "20261122T100159-ed580cd5",
