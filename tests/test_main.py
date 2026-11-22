@@ -535,7 +535,7 @@ class ArticleTranslationTests(unittest.TestCase):
             "verdict": "Sources confirm this announcement.",
             "tip": "Read the release notes.",
         }}
-        generate.return_value = (json.dumps(expected), "groq")
+        generate.return_value = ("```json\n" + json.dumps(expected) + "\n```", "groq")
         result = main.traduire_article(source)
         self.assertEqual(result, expected)
         self.assertEqual(source["sources"][0]["title"], "Source originale")
