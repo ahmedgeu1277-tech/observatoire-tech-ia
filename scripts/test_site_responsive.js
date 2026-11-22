@@ -23,7 +23,7 @@ async function inspectPage(browser, route, viewport) {
       articlesResponseStatus = "échec réseau : " + (request.failure()?.errorText || "inconnu");
     }
   });
-  page.on("pageerror", error => pageErrors.push(error.message));
+  page.on("pageerror", error => pageErrors.push(error.stack || error.message));
   page.on("console", message => {
     if (message.type() === "error") pageErrors.push("console: " + message.text());
   });
