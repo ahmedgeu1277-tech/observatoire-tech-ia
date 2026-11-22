@@ -215,7 +215,7 @@ jobs:
             // Vérifie réellement le mode hors ligne de l'application (service worker).
             const pwaContext = await browser.newContext({serviceWorkers: 'allow'});
             const pwaPage = await pwaContext.newPage();
-            const pwaHome = await pwaPage.goto('http://127.0.0.1:4173/site/index.html', {waitUntil: 'networkidle', timeout: 15000});
+            const pwaHome = await pwaPage.goto('http://127.0.0.1:4173/site/index.html', {waitUntil: 'load', timeout: 15000});
             if (!pwaHome || !pwaHome.ok()) {
               failures.push('PWA : accueil impossible à charger.');
             } else {
@@ -225,7 +225,7 @@ jobs:
                   new Promise((_, reject) => setTimeout(() => reject(new Error('Service worker ready timeout')), 10000))
                 ]);
               });
-              await pwaPage.reload({waitUntil: 'networkidle', timeout: 15000});
+              await pwaPage.reload({waitUntil: 'load', timeout: 15000});
               const controlled = await pwaPage.evaluate(() => Boolean(navigator.serviceWorker.controller));
               if (!controlled) {
                 failures.push('PWA : le service worker ne contrôle pas la page.');
