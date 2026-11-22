@@ -23,7 +23,7 @@ TASKS = [
 
 def _read(path: Path) -> list[dict]:
     if not path.exists():
-        return [dict(task, status="backlog", updated_at=None) for task in TASKS]
+        return [dict(task, status="backlog", due_at=None, updated_at=None) for task in TASKS]
     try:
         value = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
@@ -31,33 +31,51 @@ def _read(path: Path) -> list[dict]:
     if not isinstance(value, list) or len(value) != len(TASKS):
         raise ValueError("La feuille de route locale a un format invalide.")
     allowed = {task["id"] for task in TASKS}
-    if any(not isinstance(row, dict) or row.get("id") not in allowed or row.get("status") not in STATUSES for row in value):
-        raise ValueError("La feuille de route locale contient une tâche ou un statut invalide.")
+    ids = [row.get("id") for row in value if isinstance(row, dict)]
+    if len(ids) != len(value) or set(ids) != allowed or len(set(ids)) != len(ids):
+        raise ValueError("La feuille de route locale contient des tâches manquantes ou dupliquées.")
+    if any(row.get("status") not in STATUSES or row.get("priority") not in {"high", "normal"} for row in value):
+        raise ValueError("La feuille de route locale contient une priorité ou un statut invalide.")
     return value
 
 def list_tasks(path: Path = DEFAULT_ROADMAP_PATH) -> list[dict]:
     """Retourne la feuille de route sans créer ni exposer de fichier public."""
     return _read(Path(path))
 
-def update_status(path: Path, task_id: str, status: str) -> dict:
+def update_status(path: Path, task_id: str, status: str, due_at: str | None = None) -> dict:
     """Met à jour un statut validé et écrit atomiquement dans le dossier privé."""
     if not isinstance(task_id, str) or task_id not in {task["id"] for task in TASKS}:
         raise ValueError("Identifiant de tâche inconnu.")
     if status not in STATUSES:
         raise ValueError("Statut de tâche invalide.")
+    if due_at is not None:
+        if not isinstance(due_at, str) or len(due_at) > 40:
+            raise ValueError("Échéance invalide.")
+        try:
+            from datetime import datetime
+            parsed_due = datetime.fromisoformat(due_at.replace("Z", "+00:00"))
+        except ValueError as exc:
+            raise ValueError("Échéance invalide.") from exc
+        if parsed_due.tzinfo is None:
+            raise ValueError("L'échéance doit inclure un fuseau horaire.")
     target = Path(path)
     rows = _read(target)
     from datetime import UTC, datetime
     for row in rows:
         if row["id"] == task_id:
             row["status"] = status
+            if due_at is not None:
+                row["due_at"] = due_at or None
             row["updated_at"] = datetime.now(UTC).isoformat(timespec="seconds")
             target.parent.mkdir(parents=True, exist_ok=True)
-            temporary = target.with_suffix(".json.tmp")
-            temporary.write_text(json.dumps(rows, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-            os.replace(temporary, target)
             if os.name == "posix":
                 target.parent.chmod(0o700)
+            temporary = target.with_name(f".{target.name}.{os.getpid()}.tmp")
+            temporary.write_text(json.dumps(rows, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            if os.name == "posix":
+                temporary.chmod(0o600)
+            os.replace(temporary, target)
+            if os.name == "posix":
                 target.chmod(0o600)
             return row
     raise ValueError("Tâche introuvable.")
