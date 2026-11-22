@@ -127,20 +127,75 @@ async function inspectPage(browser, route, viewport) {
     const selector = page.locator("#language");
     if (!(await selector.count())) fail("Documentaire : sélecteur de langue absent.");
     else {
+      const frenchBaseline = await page.evaluate(() => ({
+        title: document.querySelector("header h1").textContent,
+        sections: [...document.querySelectorAll("main > section")].map(section => ({
+          heading: section.querySelector("h2")?.textContent || "",
+          paragraph: section.querySelector("p")?.textContent || ""
+        })),
+        sourceLinks: [...document.querySelectorAll("main a[href^='https://']")].map(link => link.textContent)
+      }));
+      const mediaManifest = await page.evaluate(() =>
+        JSON.parse(document.getElementById("translation-data").textContent || "{}")
+      );
       for (const [language, expected] of [
         ["en", "Sources"], ["es", "Fuentes"], ["de", "Quellen"],
         ["pt", "Fontes"], ["ar", "المصادر"], ["zh", "来源"],
       ]) {
         await page.selectOption("#language", language);
+        const state = await page.evaluate(() => ({
+          title: document.querySelector("header h1").textContent,
+          intro: document.querySelector("main > section p")?.textContent || "",
+          chapterTitle: document.querySelectorAll("main > section h2")[1]?.textContent || "",
+          audio: document.getElementById("documentary-audio").getAttribute("src"),
+          video: document.getElementById("documentary-video").getAttribute("src"),
+          subtitles: document.getElementById("subtitle-track").getAttribute("src"),
+          sourceLinks: [...document.querySelectorAll("main a[href^='https://']")].map(link => link.textContent)
+        }));
+        const item = mediaManifest[language];
         const source = await page.locator(".sources-heading").first().textContent();
         const note = await page.locator('[data-i18n="contentNote"]').textContent();
         if (source !== expected) fail("Documentaire : libellé des sources incorrect pour " + language + ".");
         if (!note || note.length < 20) fail("Documentaire : note sur la langue du contenu absente pour " + language + ".");
+        if (!item) {
+          fail("Documentaire : variante traduite absente pour " + language + ".");
+        } else {
+          if (state.title !== item.text.title) fail("Documentaire : titre non traduit pour " + language + ".");
+          if (state.intro !== item.text.intro) fail("Documentaire : introduction non traduite pour " + language + ".");
+          if (state.chapterTitle !== item.text.chapters[0]?.title) fail("Documentaire : chapitre non traduit pour " + language + ".");
+          if (state.audio !== "audio/" + item.audio) fail("Documentaire : audio incorrect pour " + language + ".");
+          if (state.video !== "video/" + item.video) fail("Documentaire : vidéo incorrecte pour " + language + ".");
+          if (state.subtitles !== "video/" + item.subtitles) fail("Documentaire : sous-titres incorrects pour " + language + ".");
+        }
+        if (JSON.stringify(state.sourceLinks) !== JSON.stringify(frenchBaseline.sourceLinks)) {
+          fail("Documentaire : les liens ou noms des sources ont été modifiés pour " + language + ".");
+        }
       }
       await page.selectOption("#language", "ar");
       const direction = await page.evaluate(() => document.documentElement.dir);
       if (direction !== "rtl") fail("Documentaire : le sens RTL arabe n'est pas appliqué.");
       await page.selectOption("#language", "fr");
+      const restored = await page.evaluate(() => ({
+        title: document.querySelector("header h1").textContent,
+        sections: [...document.querySelectorAll("main > section")].map(section => ({
+          heading: section.querySelector("h2")?.textContent || "",
+          paragraph: section.querySelector("p")?.textContent || ""
+        })),
+        audio: document.getElementById("documentary-audio").getAttribute("src"),
+        video: document.getElementById("documentary-video").getAttribute("src"),
+        subtitles: document.getElementById("subtitle-track").getAttribute("src")
+      }));
+      if (restored.title !== frenchBaseline.title) fail("Documentaire : le titre français n'est pas restauré.");
+      if (JSON.stringify(restored.sections) !== JSON.stringify(frenchBaseline.sections)) {
+        fail("Documentaire : le texte français n'est pas restauré après changement de langue.");
+      }
+      if (restored.audio !== "audio/" + document.querySelector("#documentary-audio").getAttribute("src").split("/").pop()) {
+        fail("Documentaire : le lecteur audio français n'est pas restauré.");
+      }
+      if (!restored.video || restored.video.includes("documentaire-en-")) {
+        fail("Documentaire : la vidéo française n'est pas restaurée.");
+      }
+      if (restored.subtitles !== null) fail("Documentaire : les sous-titres traduits restent actifs en français.");
     }
   }
 

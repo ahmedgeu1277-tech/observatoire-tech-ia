@@ -76,6 +76,12 @@ small{color:#9eafd0}
   const translatedMedia = JSON.parse(document.getElementById("translation-data").textContent || "{}");
   const baseVideo = video.getAttribute("src");
   const baseAudio = audio.getAttribute("src");
+  const baseTitle = document.querySelector("header h1").textContent;
+  const sections = [...document.querySelectorAll("main > section")];
+  const baseSections = sections.map(section => ({
+    heading: section.querySelector("h2")?.textContent || "",
+    paragraph: section.querySelector("p")?.textContent || ""
+  }));
   function applyContentLanguage(language) {
     const item = translatedMedia[language];
     if (!item) {
@@ -83,6 +89,15 @@ small{color:#9eafd0}
       audio.src = baseAudio;
       track.removeAttribute("src");
       track.default = false;
+      document.querySelector("header h1").textContent = baseTitle;
+      sections.forEach((section, index) => {
+        const original = baseSections[index];
+        if (!original) return;
+        const heading = section.querySelector("h2");
+        const paragraph = section.querySelector("p");
+        if (heading) heading.textContent = original.heading;
+        if (paragraph) paragraph.textContent = original.paragraph;
+      });
       return;
     }
     video.src = "video/" + item.video;
@@ -93,7 +108,6 @@ small{color:#9eafd0}
     track.default = true;
     const data = item.text;
     document.querySelector("header h1").textContent = data.title;
-    const sections = [...document.querySelectorAll("main > section")];
     if (sections[0]) sections[0].querySelector("p").textContent = data.intro;
     sections.slice(1).forEach((section, index) => {
       const chapter = data.chapters[index];
