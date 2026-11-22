@@ -114,6 +114,24 @@ class LocalDashboardTests(unittest.TestCase):
                 self.assertEqual(json.loads(updated)["workflow_status"], "research")
                 self.assertEqual(atelier_produits.list_opportunities(directory)[0]["workflow_status"], "research")
 
+    def test_dashboard_can_manually_retry_failed_mission(self):
+        mission_id = self.queue.enqueue({
+            "mission": "Mission locale à relancer.",
+            "agents": ["chercheur"],
+            "max_duration_seconds": 60,
+        })
+        with patch("gestionnaire_missions.orchestrateur.executer_mission", side_effect=RuntimeError("provider failure")):
+            self.queue.run_next()
+        status, _, body = self.request(
+            "/api/missions/" + mission_id + "/retry",
+            method="POST",
+            payload={},
+        )
+        self.assertEqual(status, 200)
+        self.assertTrue(json.loads(body)["requeued"])
+        self.assertEqual(self.queue.get_mission(mission_id)["status"], "pending")
+        self.assertEqual(self.queue.get_mission(mission_id)["attempts"], 1)
+
     def test_private_dashboard_can_create_product_opportunity(self):
         with tempfile.TemporaryDirectory() as folder:
             data = {
