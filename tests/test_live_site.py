@@ -62,16 +62,16 @@ class PublicChallengeRegressionTests(unittest.TestCase):
     def test_all_seven_languages_define_six_challenge_tasks(self):
         import re
 
-        match = re.search(r"const challengeUi=\\{(.*?)\\n\\};", self.html, re.S)
+        match = re.search(r"const challengeUi=\\{(.*?)\\n\\};", self.html, re.DOTALL)
         self.assertIsNotNone(match, "Les traductions des défis sont absentes.")
         block = match.group(1)
-        languages = re.findall(r"^([a-z]{2}):\\{", block, re.M)
+        languages = re.findall(r"^([a-z]{2}):\\{", block, re.MULTILINE)
         self.assertEqual(set(languages), {"fr", "en", "es", "de", "pt", "ar", "zh"})
         for language in languages:
             section = re.search(
                 rf"^{language}:\\{{(.*?)(?=^  [a-z]{{2}}:\\{{|\\Z)",
                 block,
-                re.M | re.S,
+                re.MULTILINE | re.DOTALL,
             )
             self.assertIsNotNone(section)
             self.assertIn("tasks:", section.group(1))
