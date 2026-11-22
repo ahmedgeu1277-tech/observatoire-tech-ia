@@ -265,6 +265,9 @@ jobs:
               if (workshopLanguage.lang !== 'ar' || workshopLanguage.dir !== 'rtl') {
                 failures.push('Atelier : traduction arabe ou direction RTL incorrecte.');
               }
+              if (await page.locator('#template').inputValue() !== 'godot-3d') {
+                failures.push('Atelier : le modèle choisi change lors du changement de langue.');
+              }
               await page.locator('#project-name').fill('../invalid');
               await page.locator('#generate').click();
               if (!(await page.locator('#status').innerText()).includes('غير صالح')) {
