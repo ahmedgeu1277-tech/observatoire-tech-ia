@@ -565,7 +565,7 @@ ARTICLE_TRANSLATION_LANGUAGES = {
     "en": "anglais", "es": "espagnol", "de": "allemand",
     "pt": "portugais", "ar": "arabe", "zh": "chinois simplifié",
 }
-ARTICLE_TRANSLATION_FIELDS = ("title", "summary", "verdict", "tip")
+ARTICLE_TRANSLATION_FIELDS = ("theme", "title", "summary", "verdict", "tip", "ai_notice")
 
 
 def traduire_article(article):
