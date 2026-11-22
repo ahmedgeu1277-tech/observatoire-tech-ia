@@ -93,6 +93,9 @@ async function inspectPage(browser, route, viewport) {
     if (await sourceLabels.count() < 1) {
       fail("Accueil : libellé de source introuvable pour vérifier les traductions.");
     } else {
+      await page.selectOption("#language", "fr");
+      const originalArticleTitle = await page.locator("#articles .article h3").first().textContent();
+      const originalArticleAudio = await page.locator("#articles .article audio").first().getAttribute("src");
       await page.selectOption("#language", "de");
       const germanPageTitle = await page.title();
       const germanSimulation = await page.locator('nav a[href="./ville-demo.html"] [data-i18n="simulation"]').textContent();
@@ -102,8 +105,6 @@ async function inspectPage(browser, route, viewport) {
       }
       const germanSources = await sourceLabels.first().textContent();
       if (germanSources !== "Quellen") fail("Accueil : le libellé dynamique des sources n'est pas traduit en allemand.");
-      const originalArticleTitle = await page.locator("#articles .article h3").first().textContent();
-      const originalArticleAudio = await page.locator("#articles .article audio").first().getAttribute("src");
       await page.evaluate(() => {
         window.nexoraArticles[0].translations = {de:{
           title:"Übersetzter Testtitel",
