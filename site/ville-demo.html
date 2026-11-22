@@ -10,7 +10,7 @@ header{display:flex;justify-content:space-between;align-items:center;gap:14px;fl
 .toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.toolbar select{border:1px solid #dedbd2;border-radius:9px;padding:9px;background:#fff;font:inherit;font-size:12px}
 h1{font-size:clamp(30px,5vw,48px);letter-spacing:-.05em;margin:10px 0}.intro{color:#62695f;line-height:1.7;max-width:760px;font-size:14px}
 .badge{display:inline-flex;gap:8px;align-items:center;background:#e8eee5;color:#42654a;border-radius:30px;padding:7px 11px;font-size:11px;font-weight:800}.pulse{width:7px;height:7px;border-radius:50%;background:#5c9868}
-.city-panel{margin:20px 0;background:#e7eee4;border:1px solid #d5dfd1;border-radius:16px;padding:12px;overflow:hidden}.city-panel canvas{display:block;width:100%;height:auto;aspect-ratio:900/420;border-radius:11px;background:#dce8dc;touch-action:pan-y}.city-caption{font-size:11px;color:#617362;padding:8px 4px 2px}.grid{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin-top:24px}.panel{background:#fff;border:1px solid #e4e0d7;border-radius:16px;padding:18px;box-shadow:0 2px 10px #292b2010}
+.city-panel{margin:20px 0;background:#e7eee4;border:1px solid #d5dfd1;border-radius:16px;padding:12px;overflow:hidden}.city-panel canvas{display:block;width:100%;height:auto;aspect-ratio:900/420;border-radius:11px;background:#dce8dc;touch-action:pan-y}.city-panel canvas[hidden]{display:none!important}.view-switch{display:flex;justify-content:flex-end;gap:7px;margin:0 0 9px}.view-switch button{border:1px solid #cbd8c9;border-radius:8px;background:#fff;padding:7px 12px;font:inherit;font-size:11px;font-weight:800;color:#405e46;cursor:pointer}.view-switch button[aria-pressed="true"]{background:#294b38;color:#fff;border-color:#294b38}.view-switch button:disabled{opacity:.45;cursor:not-allowed}.city-caption{font-size:11px;color:#617362;padding:8px 4px 2px}.grid{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin-top:24px}.panel{background:#fff;border:1px solid #e4e0d7;border-radius:16px;padding:18px;box-shadow:0 2px 10px #292b2010}
 .panel h2{font-size:16px;margin:0 0 7px}.sub{font-size:11px;color:#777d72;line-height:1.5;margin:0 0 15px}
 .map{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .district{min-height:126px;border:1px solid #e0e5dc;border-radius:13px;padding:14px;text-align:left;background:linear-gradient(145deg,#f7f8f4,#edf2e9);cursor:pointer;color:#29382c;transition:transform .15s,border-color .15s}
@@ -33,7 +33,7 @@ footer{font-size:10px;color:#8a8e84;text-align:center;margin-top:28px}
 <main><div class="badge"><span class="pulse"></span><span data-i18n="badge">SIMULATION ACTIVE DANS CE NAVIGATEUR</span></div>
 <h1 data-i18n="title">Ville expérimentale</h1>
 <p class="intro" data-i18n="intro">Explore une ville entièrement fictive et ses quatre quartiers. Les indicateurs évoluent localement pour montrer comment pourrait fonctionner un tableau de bord de simulation urbaine : énergie, mobilité, environnement et recherche.</p>
-<section class="city-panel" aria-label="Vue isométrique de la ville"><canvas id="city-view" width="900" height="420" role="img" aria-label="Vue isométrique d'une ville fictive avec quatre quartiers"></canvas><div class="city-caption" data-i18n="cityCaption">Vue isométrique interactive · circulation et bâtiments synthétiques · sélectionne aussi les quartiers avec les boutons ci-dessous.</div></section>
+<section class="city-panel" aria-label="Vue interactive de la ville"><div class="view-switch" role="group" aria-label="Mode de visualisation"><button type="button" id="view-2d" aria-pressed="true">2D</button><button type="button" id="view-3d" aria-pressed="false">3D</button></div><canvas id="city-view" width="900" height="420" role="img" aria-label="Vue isométrique 2D d’une ville fictive avec quatre quartiers"></canvas><canvas id="city-view-3d" width="900" height="420" role="img" aria-label="Vue 3D WebGL d’une ville fictive, rotation lente ; sélectionne un quartier avec les boutons ci-dessous" hidden></canvas><div class="city-caption" data-i18n="cityCaption">Vue isométrique interactive · circulation et bâtiments synthétiques · sélectionne aussi les quartiers avec les boutons ci-dessous.</div></section>
 <div class="grid">
 <section class="panel" aria-labelledby="map-title"><h2 id="map-title" data-i18n="mapTitle">Carte des quartiers</h2><p class="sub" data-i18n="mapSub">Sélectionne un quartier pour afficher ses informations simulées.</p>
 <div class="map" id="districts">
@@ -71,8 +71,9 @@ const selector=document.getElementById("language");
 function apply(value){lang=L[value]?value:"fr";const t=L[lang];document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";document.title=t.title+" — "+t.brand.split(" · ")[0];selector.setAttribute("aria-label",t.language);
 document.querySelectorAll("[data-i18n]").forEach(n=>{const k=n.dataset.i18n;if(t[k]!==undefined)n.textContent=t[k]});
 selector.value=lang;try{localStorage.setItem("observatoire-language",lang)}catch(_){};updateDetail(activeDistrict)}
-function updateDetail(id){activeDistrict=names[id]?id:"centre";const t=L[lang];document.getElementById("district-detail").textContent=t.details[activeDistrict];document.getElementById("simulation-status").textContent=t.selected+t[names[activeDistrict]]+".";drawCity()}
-function drawCity(){const canvas=document.getElementById("city-view");if(!canvas)return;const ctx=canvas.getContext("2d");const w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);const t=L[lang];ctx.fillStyle="#dce8dc";ctx.fillRect(0,0,w,h);ctx.fillStyle="#c9d9c7";for(let y=0;y<h;y+=42){ctx.fillRect(0,y,w,1)}for(let x=0;x<w;x+=42){ctx.fillRect(x,0,1,h)}
+function updateDetail(id){activeDistrict=names[id]?id:"centre";const t=L[lang];document.getElementById("district-detail").textContent=t.details[activeDistrict];document.getElementById("simulation-status").textContent=t.selected+t[names[activeDistrict]]+".";drawCity();if(cityViewMode==="3d")updateCity3dGeometry()}
+let cityViewMode="2d",city3dState=null,city3dFrame=0,lastCity3dFrame=0;
+function drawCity(){const canvas=document.getElementById("city-view");if(!canvas||cityViewMode!=="2d")return;const ctx=canvas.getContext("2d");const w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);const t=L[lang];ctx.fillStyle="#dce8dc";ctx.fillRect(0,0,w,h);ctx.fillStyle="#c9d9c7";for(let y=0;y<h;y+=42){ctx.fillRect(0,y,w,1)}for(let x=0;x<w;x+=42){ctx.fillRect(x,0,1,h)}
 ctx.fillStyle="#a9bba9";ctx.beginPath();ctx.moveTo(0,195);ctx.lineTo(900,125);ctx.lineTo(900,235);ctx.lineTo(0,305);ctx.closePath();ctx.fill();ctx.beginPath();ctx.moveTo(420,0);ctx.lineTo(525,0);ctx.lineTo(485,420);ctx.lineTo(380,420);ctx.closePath();ctx.fill();
 ctx.strokeStyle="#f8f5e9";ctx.lineWidth=4;ctx.setLineDash([18,15]);ctx.beginPath();ctx.moveTo(0,250);ctx.lineTo(900,180);ctx.moveTo(450,0);ctx.lineTo(430,420);ctx.stroke();ctx.setLineDash([]);
 const zones=[{id:"centre",x:235,y:105,color:"#829d83",name:t.centre},{id:"energie",x:665,y:105,color:"#b7aa73",name:t.energyDistrict},{id:"mobilite",x:235,y:320,color:"#819ca6",name:t.mobilityDistrict},{id:"recherche",x:665,y:320,color:"#a18ba8",name:t.researchDistrict}];
@@ -81,6 +82,83 @@ for(let i=0;i<5;i++){const bx=z.x-70+(i%3)*54,by=z.y-12+Math.floor(i/3)*24,bh=24
 ctx.fillStyle="#243d31";ctx.font="bold 15px system-ui";ctx.textAlign="center";ctx.fillText(z.name.slice(0,24),z.x,z.y+82)}
 const time=Date.now()/1000;for(let i=0;i<4;i++){const x=((time*36+i*225)%900);ctx.fillStyle=i%2?"#f5f4e9":"#385c48";ctx.fillRect(x,236-Math.round(x*.078)+i%2*5,17,9);ctx.fillStyle="#fff";ctx.fillRect(x+3,238-Math.round(x*.078)+i%2*5,4,2)}
 ctx.textAlign="left";ctx.fillStyle="#35523d";ctx.font="bold 12px system-ui";ctx.fillText("NEXORA · SIMULATION",18,26)}
+
+const city3dCanvas=document.getElementById("city-view-3d");
+function compileCityShader(gl,type,source){
+ const shader=gl.createShader(type);gl.shaderSource(shader,source);gl.compileShader(shader);
+ if(!gl.getShaderParameter(shader,gl.COMPILE_STATUS)){const message=gl.getShaderInfoLog(shader)||"shader error";gl.deleteShader(shader);throw new Error(message)}
+ return shader;
+}
+function initCity3d(){
+ if(city3dState)return true;
+ const gl=city3dCanvas.getContext("webgl",{antialias:false,alpha:false,powerPreference:"low-power"});
+ if(!gl)return false;
+ const vertexSource="attribute vec3 aPosition;attribute vec3 aColor;uniform float uAngle;varying vec3 vColor;void main(){float c=cos(uAngle),s=sin(uAngle);float x=aPosition.x*c-aPosition.z*s;float z=aPosition.x*s+aPosition.z*c;float depth=8.0-z*0.28+aPosition.y*0.12;float y=aPosition.y-z*0.32;gl_Position=vec4(x*1.55/depth,y*1.55/depth,(depth-8.0)*0.10,1.0);vColor=aColor;}";
+ const fragmentSource="precision mediump float;varying vec3 vColor;void main(){gl_FragColor=vec4(vColor,1.0);}";
+ let program;
+ try{
+  const vertex=compileCityShader(gl,gl.VERTEX_SHADER,vertexSource),fragment=compileCityShader(gl,gl.FRAGMENT_SHADER,fragmentSource);
+  program=gl.createProgram();gl.attachShader(program,vertex);gl.attachShader(program,fragment);gl.linkProgram(program);
+  if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw new Error(gl.getProgramInfoLog(program)||"program link error");
+ }catch(error){gl.getExtension("WEBGL_lose_context")?.loseContext();return false}
+ city3dState={gl,program,buffer:gl.createBuffer(),position:gl.getAttribLocation(program,"aPosition"),color:gl.getAttribLocation(program,"aColor"),angle:gl.getUniformLocation(program,"uAngle"),count:0};
+ gl.enable(gl.DEPTH_TEST);gl.disable(gl.CULL_FACE);gl.clearColor(.86,.91,.86,1);
+ updateCity3dGeometry();return true;
+}
+function updateCity3dGeometry(){
+ if(!city3dState)return;
+ const vertices=[];
+ function box(cx,cy,cz,sx,sy,sz,color){
+  const x0=cx-sx/2,x1=cx+sx/2,y0=cy-sy/2,y1=cy+sy/2,z0=cz-sz/2,z1=cz+sz/2;
+  const p=[[x0,y0,z0],[x1,y0,z0],[x1,y1,z0],[x0,y1,z0],[x0,y0,z1],[x1,y0,z1],[x1,y1,z1],[x0,y1,z1]];
+  const faces=[[0,1,2,3],[5,4,7,6],[4,0,3,7],[1,5,6,2],[3,2,6,7],[4,5,1,0]],shade=[.72,.82,.68,.78,1.12,.62];
+  faces.forEach((face,n)=>[face[0],face[1],face[2],face[0],face[2],face[3]].forEach(index=>{
+   vertices.push(...p[index],...color.map(value=>Math.min(1,value*shade[n])));
+  }));
+ }
+ box(0,-.08,0,6.4,.16,6.4,[.68,.77,.67]);
+ box(0,.015,0,6.2,.025,.34,[.25,.29,.27]);box(0,.016,0,.34,.025,6.2,[.25,.29,.27]);
+ const zones=[
+  {id:"centre",x:-1.65,z:-1.65,color:[.48,.61,.49]},
+  {id:"energie",x:1.65,z:-1.65,color:[.68,.61,.38]},
+  {id:"mobilite",x:-1.65,z:1.65,color:[.43,.59,.66]},
+  {id:"recherche",x:1.65,z:1.65,color:[.62,.49,.66]}
+ ];
+ const offsets=[[-.55,-.42],[0,-.58],[.55,-.34],[-.36,.36],[.36,.44]],heights=[.55,.92,.72,1.18,.63];
+ for(const zone of zones){
+  const selected=zone.id===activeDistrict;
+  box(zone.x,.02,zone.z,2.15,.08,2.15,selected?[.31,.52,.36]:zone.color);
+  for(let i=0;i<offsets.length;i++){
+   const [ox,oz]=offsets[i],height=heights[i],bx=zone.x+ox,bz=zone.z+oz;
+   box(bx,height/2+.08,bz,.34,height,.34,[.82,.85,.78]);
+   box(bx,height+.09,bz,.38,.08,.38,selected?[.35,.61,.43]:[.57,.68,.57]);
+   box(bx,.20,bz+.19,.10,.12,.025,[.38,.55,.76]);
+  }
+ }
+ const gl=city3dState.gl;gl.bindBuffer(gl.ARRAY_BUFFER,city3dState.buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(vertices),gl.STATIC_DRAW);city3dState.count=vertices.length/6;
+}
+function renderCity3d(time){
+ if(cityViewMode!=="3d"||document.hidden||!city3dState){city3dFrame=0;return}
+ if(time-lastCity3dFrame>=33){
+  const {gl,program,buffer,position,color,angle,count}=city3dState;
+  gl.viewport(0,0,city3dCanvas.width,city3dCanvas.height);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.useProgram(program);
+  gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.enableVertexAttribArray(position);gl.vertexAttribPointer(position,3,gl.FLOAT,false,24,0);
+  gl.enableVertexAttribArray(color);gl.vertexAttribPointer(color,3,gl.FLOAT,false,24,12);
+  gl.uniform1f(angle,time*.00012);gl.drawArrays(gl.TRIANGLES,0,count);lastCity3dFrame=time;
+ }
+ city3dFrame=requestAnimationFrame(renderCity3d);
+}
+function setCityView(mode){
+ if(mode==="3d"&&!initCity3d()){const button=document.getElementById("view-3d");button.disabled=true;button.title="WebGL indisponible sur ce navigateur ; la vue 2D reste disponible.";return}
+ cityViewMode=mode;document.getElementById("city-view").hidden=mode!=="2d";city3dCanvas.hidden=mode!=="3d";
+ document.getElementById("view-2d").setAttribute("aria-pressed",String(mode==="2d"));document.getElementById("view-3d").setAttribute("aria-pressed",String(mode==="3d"));
+ if(mode==="3d"){updateCity3dGeometry();if(!city3dFrame)city3dFrame=requestAnimationFrame(renderCity3d)}
+ else{if(city3dFrame)cancelAnimationFrame(city3dFrame);city3dFrame=0;drawCity()}
+}
+document.getElementById("view-2d").addEventListener("click",()=>setCityView("2d"));
+document.getElementById("view-3d").addEventListener("click",()=>setCityView("3d"));
+document.addEventListener("visibilitychange",()=>{if(!document.hidden&&cityViewMode==="3d"&&!city3dFrame)city3dFrame=requestAnimationFrame(renderCity3d)});
+
 const city=document.getElementById("city-view");city.addEventListener("click",event=>{const rect=city.getBoundingClientRect();const x=(event.clientX-rect.left)/rect.width*900,y=(event.clientY-rect.top)/rect.height*420;const id=x<450?(y<210?"centre":"mobilite"):(y<210?"energie":"recherche");document.querySelectorAll("[data-district]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.district===id)));updateDetail(id)});
 window.setInterval(drawCity,1000);
 document.querySelectorAll("[data-district]").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll("[data-district]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));updateDetail(b.dataset.district)}));
