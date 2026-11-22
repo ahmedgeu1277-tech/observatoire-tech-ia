@@ -127,5 +127,11 @@ def generer_variantes_multilingues(title: str, intro: str, dossiers: list[dict],
             print(f"INFO : variante {code} générée.")
         except Exception as exc:  # noqa: BLE001 - une langue en échec ne bloque pas les autres
             # Une langue indisponible ne doit pas empêcher le documentaire français.
-            print(f"AVERTISSEMENT : variante {code} non générée ({type(exc).__name__}).")
+            detail = str(exc)[:240].replace("\\n", " ")
+            import os
+            for secret_name in ("GROQ_API_KEY", "HF_API_KEY", "HF_TOKEN"):
+                secret = os.getenv(secret_name)
+                if secret:
+                    detail = detail.replace(secret, "[SECRET MASQUÉ]")
+            print(f"AVERTISSEMENT : variante {code} non générée ({type(exc).__name__}: {detail}).")
     return results
