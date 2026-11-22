@@ -131,7 +131,9 @@ def check_repository(root: Path = ROOT) -> dict:
                 raise ValueError(f"Fichier audio absent ou vide : {audio_url}.")
             audio_count += 1
 
-    documentary_media = _check_documentary_media(root)\n\n    profiles_count = 0
+    documentary_media = _check_documentary_media(root)
+
+    profiles_count = 0
     profiles_path = root / "site" / "data" / "agents.json"
     if profiles_path.exists():
         profile_index = _read_json(profiles_path)
