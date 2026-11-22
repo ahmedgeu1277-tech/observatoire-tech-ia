@@ -40,7 +40,7 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f6f2;padding:10px;
 <div class="grid"><div><label>Agents</label><div class="agents">
 <label><input type="checkbox" name="agent" value="chercheur" checked>Chercheur</label>
 <label><input type="checkbox" name="agent" value="critique" checked>Critique</label>
-<label><input type="checkbox" name="agent" value="architecte" checked>Architecte</label></div></div>
+<label><input type="checkbox" name="agent" value="architecte" checked>Architecte</label><label><input type="checkbox" name="agent" value="redacteur">Rédacteur</label><label><input type="checkbox" name="agent" value="auditeur">Auditeur</label><label><input type="checkbox" name="agent" value="planificateur">Planificateur</label></div></div>
 <div><label>Priorité</label><select id="priority"><option>low</option><option selected>normal</option><option>high</option><option>critical</option></select></div>
 <div><label>Durée (s)</label><input id="duration" type="number" min="60" max="180" value="180"></div></div>
 <label>Échéance facultative</label><input id="deadline" type="datetime-local"><button>Ajouter la mission</button><span id="form-status" role="status"></span></form></section>
