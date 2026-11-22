@@ -100,13 +100,14 @@ async function inspectPage(browser, route, viewport) {
       const germanSources = await sourceLabels.first().textContent();
       if (germanSources !== "Quellen") fail("Accueil : le libellé dynamique des sources n'est pas traduit en allemand.");
       const originalArticleTitle = await page.locator("#articles .article h3").first().textContent();
+      const originalArticleAudio = await page.locator("#articles .article audio").first().getAttribute("src");
       await page.evaluate(() => {
         window.nexoraArticles[0].translations = {de:{
           title:"Übersetzter Testtitel",
           summary:"Dies ist eine geprüfte Übersetzungsprobe.",
           verdict:"Die Quellen bestätigen diese Aussage.",
-          tip:"Die Originalquelle lesen."
-          ,audio_url:"audio/test-de.mp3"
+          tip:"Die Originalquelle lesen.",
+          audio_url:"audio/test-de.mp3"
         }};
         window.observatoireApplyArticleLanguage("de");
       });
@@ -122,6 +123,9 @@ async function inspectPage(browser, route, viewport) {
       await page.selectOption("#language", "fr");
       if ((await page.locator("#articles .article h3").first().textContent()) !== originalArticleTitle) {
         fail("Accueil : le texte original n'est pas restauré après changement de langue.");
+      }
+      if ((await page.locator("#articles .article audio").first().getAttribute("src")) !== originalArticleAudio) {
+        fail("Accueil : l'audio français n'est pas restauré après changement de langue.");
       }
       await page.selectOption("#language", "ar");
       const arabic = await page.evaluate(() => ({
