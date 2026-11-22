@@ -215,22 +215,25 @@ jobs:
             // Vérifie réellement le mode hors ligne de l'application (service worker).
             const pwaContext = await browser.newContext({serviceWorkers: 'allow'});
             const pwaPage = await pwaContext.newPage();
-            const pwaHome = await pwaPage.goto('http://127.0.0.1:4173/site/index.html', {waitUntil: 'networkidle'});
+            const pwaHome = await pwaPage.goto('http://127.0.0.1:4173/site/index.html', {waitUntil: 'networkidle', timeout: 15000});
             if (!pwaHome || !pwaHome.ok()) {
               failures.push('PWA : accueil impossible à charger.');
             } else {
               await pwaPage.evaluate(async () => {
-                await navigator.serviceWorker.ready;
+                await Promise.race([
+                  navigator.serviceWorker.ready,
+                  new Promise((_, reject) => setTimeout(() => reject(new Error('Service worker ready timeout')), 10000))
+                ]);
               });
-              await pwaPage.reload({waitUntil: 'networkidle'});
+              await pwaPage.reload({waitUntil: 'networkidle', timeout: 15000});
               const controlled = await pwaPage.evaluate(() => Boolean(navigator.serviceWorker.controller));
               if (!controlled) {
                 failures.push('PWA : le service worker ne contrôle pas la page.');
               } else {
                 await pwaContext.setOffline(true);
-                const cachedPage = await pwaPage.goto('http://127.0.0.1:4173/site/methode.html', {waitUntil: 'domcontentloaded'});
+                const cachedPage = await pwaPage.goto('http://127.0.0.1:4173/site/methode.html', {waitUntil: 'domcontentloaded', timeout: 10000});
                 if (!cachedPage || !cachedPage.ok()) failures.push('PWA : page de méthode inaccessible hors ligne.');
-                const offlineFallback = await pwaPage.goto('http://127.0.0.1:4173/site/page-non-cachee-test.html', {waitUntil: 'domcontentloaded'});
+                const offlineFallback = await pwaPage.goto('http://127.0.0.1:4173/site/page-non-cachee-test.html', {waitUntil: 'domcontentloaded', timeout: 10000});
                 if (!offlineFallback || !offlineFallback.ok() || !(await pwaPage.locator('body').innerText()).includes('Connexion indisponible')) {
                   failures.push('PWA : page de secours hors ligne non affichée.');
                 }
