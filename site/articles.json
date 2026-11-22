@@ -1,5 +1,101 @@
 [
   {
+    "id": "20261122T124332-cc4c7f0c",
+    "date": "2026-11-22T12:43+00:00",
+    "theme": "Veille générale — résumé documentaire de secours",
+    "title": "Veille technologique : sources à consulter",
+    "summary": "Les flux consultés ont fourni des liens vers des publications sur la technologie, l’intelligence artificielle et les jeux vidéo. Ce résumé de secours ne confirme aucune annonce, date, disponibilité, prix ou caractéristique précise : les éléments détaillés doivent être vérifiés directement dans les articles d’origine. Cette sélection sert de point d’entrée documentaire et ne remplace pas la lecture des sources.",
+    "verdict": "Les liens sont disponibles, mais aucune annonce précise n’est validée par ce résumé.",
+    "tip": "Ouvrir les articles d’origine et vérifier chaque information importante dans sa source primaire.",
+    "sources": [
+      {
+        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
+        "description": "Allons en paix.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
+        "source_type": "media"
+      },
+      {
+        "title": "La figurine Hot Toys Avengers: Doomsday - Lord Doom en images",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sun, 22 Nov 2026 08:27:19 +0000",
+        "description": "",
+        "url": "https://fr.ign.com/gallery/94170/hot-toys-avengers-doomsday-lord-doom-figure-image-gallery",
+        "source_type": "media"
+      },
+      {
+        "title": "La star d'Avengers: Doomsday Hayley Atwell tease un nouveau trailer pour lundi",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sun, 22 Nov 2026 08:27:19 +0000",
+        "description": "La sortie se rapproche.",
+        "url": "https://fr.ign.com/avengers-doomsday/94169/la-star-davengers-doomsday-hayley-atwell-tease-un-nouveau-trailer-pour-lundi",
+        "source_type": "media"
+      },
+      {
+        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
+        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
+        "source_type": "media"
+      },
+      {
+        "title": "\"C'est la révolution technologique qui va structurer les prochaines années\": face aux États-Unis et à la Chine, \"l'Europe peut être dans la course\", mais elle doit accélérer, estime Emmanuel Macron",
+        "publisher": "BFM",
+        "domain": "news.google.com",
+        "published": "Tue, 17 Nov 2026 16:05:13 GMT",
+        "description": "\"C'est la révolution technologique qui va structurer les prochaines années\": face aux États-Unis et à la Chine, \"l'Europe peut être dans la course\", mais elle doit accélérer, estime Emmanuel Macron    BFM",
+        "url": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxQRUpQdnVYeXc3aEFOcWl2ejB6U3F5Z2xDS2t4ZnIwc0h2NzMyOTBwMy15U25BMlFGbVN4dTdrdkxyOU4zVU9CcWwwNV9KY0M0cTl1Z0NtazRRYUpmckx0cjZPaXlsTlRSWV94NE9ReW9ZVE54R1JJUjNLeUhrUGJLV1F1aHZWa1hhZ2JFUk9QMk1ZWjh1bXMteUlfRkJGSV9LOGR2TGs0VmlfdThuZFBra2dDWVdTRTJFMVJ0bFo3cmhwOTh3MDNVWnJRY05kRVdUV2tJQVdMN1llT2RmR1NBNU9TY056WV9pSDJINUZkdDNDUHVac0pDbTB2dGZIYlJscnk5ZzU3NXJKbzF1UzVnSVkta2I0Y3NzcHEzSkNGYzc3QWh2WUVrdVZMMVgwV09Hc3dCMVRTTWg1UWttLWg2Vl9qWThLajRHazBkUWZOV3BrMW90NURGaUg2X2N0Z3R2ZERoVUF4eDdTd0F6Wm1mQ3NSS0F3SXl5clB3?oc=5",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Résumé documentaire de secours assemblé automatiquement à partir des liens collectés ; aucune annonce spécifique n’est confirmée.",
+    "translations": {
+      "en": {
+        "title": "Technology Watch: Sources to Consult",
+        "summary": "The consulted feeds provided links to publications on technology, artificial intelligence, and video games. This backup summary does not confirm any announcement, date, availability, price, or specific feature: the detailed items must be verified directly in the original articles. This selection serves as a documentary entry point and does not replace reading the sources.",
+        "verdict": "The links are available, but no specific announcement is validated by this summary.",
+        "tip": "Open the original articles and verify each important piece of information in its primary source."
+      },
+      "es": {
+        "title": "Vigilancia tecnológica: fuentes a consultar",
+        "summary": "Los flujos consultados proporcionaron enlaces a publicaciones sobre tecnología, inteligencia artificial y videojuegos. Este resumen de respaldo no confirma ningún anuncio, fecha, disponibilidad, precio o característica específica: los elementos detallados deben verificarse directamente en los artículos originales. Esta selección sirve como punto de entrada documental y no reemplaza la lectura de las fuentes.",
+        "verdict": "Los enlaces están disponibles, pero no se valida ningún anuncio específico con este resumen.",
+        "tip": "Abra los artículos originales y verifique cada información importante en su fuente primaria."
+      },
+      "de": {
+        "title": "Technologieüberwachung: zu konsultierende Quellen",
+        "summary": "Die konsultierten Feeds lieferten Links zu Publikationen über Technologie, künstliche Intelligenz und Videospiele. Diese Backup-Zusammenfassung bestätigt keine Ankündigung, kein Datum, keine Verfügbarkeit, keinen Preis oder spezifische Eigenschaft: die detaillierten Angaben müssen direkt in den Originalartikeln überprüft werden. Diese Auswahl dient als dokumentarischer Einstiegspunkt und ersetzt nicht das Lesen der Quellen.",
+        "verdict": "Die Links sind verfügbar, aber keine spezifische Ankündigung wird durch diese Zusammenfassung bestätigt.",
+        "tip": "Öffnen Sie die Originalartikel und überprüfen Sie jede wichtige Information in ihrer Primärquelle."
+      },
+      "pt": {
+        "title": "Monitoramento tecnológico: fontes a consultar",
+        "summary": "Os fluxos consultados forneceram links para publicações sobre tecnologia, inteligência artificial e videogames. Este resumo de backup não confirma nenhuma anúncio, data, disponibilidade, preço ou característica específica: os itens detalhados devem ser verificados diretamente nos artigos originais. Esta seleção serve como ponto de entrada documental e não substitui a leitura das fontes.",
+        "verdict": "Os links estão disponíveis, mas nenhuma anúncio específico é validado por este resumo.",
+        "tip": "Abra os artigos originais e verifique cada informação importante em sua fonte primária."
+      },
+      "ar": {
+        "title": "المراقبة التقنية: المصادر التي يجب الاطلاع عليها",
+        "summary": "قدمت التدفقات التي تم استشارتها روابط إلى منشورات حول التكنولوجيا والذكاء الاصطناعي وألعاب الفيديو. لا يؤكد هذا الملخص الاحتياطي أي إعلان، تاريخ، توافر، سعر أو ميزة محددة: يجب التحقق من العناصر المفصلة مباشرةً في المقالات الأصلية. تُعد هذه الاختيار نقطة دخول وثائقية ولا تحل محل قراءة المصادر.",
+        "verdict": "الروابط متاحة، لكن لا يتم تأكيد أي إعلان محدد من خلال هذا الملخص.",
+        "tip": "افتح المقالات الأصلية وتحقق من كل معلومة مهمة في المصدر الأساسي."
+      },
+      "zh": {
+        "title": "技术监测：待查阅来源",
+        "summary": "所查询的流提供了关于技术、人工智能和视频游戏的出版物链接。本备份摘要未确认任何公告、日期、可用性、价格或具体特征：详细项目必须直接在原始文章中核实。此选择作为文档入口点，并不替代阅读来源。",
+        "verdict": "链接可用，但此摘要未验证任何具体公告。",
+        "tip": "打开原始文章并在其原始来源中核实每条重要信息。"
+      }
+    },
+    "audio_url": "audio/20261122T124332-cc4c7f0c.mp3"
+  },
+  {
     "id": "20261122T110358-71bb2ee0",
     "date": "2026-11-22T11:03+00:00",
     "theme": "GTA VI — lancement et premiers retours vérifiés",
@@ -535,64 +631,6 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261119T191554-ffa1a263.mp3"
-  },
-  {
-    "id": "20261119T191508-c7e810b6",
-    "date": "2026-11-19T19:15+00:00",
-    "theme": "Veille générale — résumé documentaire de secours",
-    "title": "Veille technologique : sources à consulter",
-    "summary": "Les flux consultés ont fourni des liens vers des publications sur la technologie, l’intelligence artificielle et les jeux vidéo. Ce résumé de secours ne confirme aucune annonce, date, disponibilité, prix ou caractéristique précise : les éléments détaillés doivent être vérifiés directement dans les articles d’origine. Cette sélection sert de point d’entrée documentaire et ne remplace pas la lecture des sources.",
-    "verdict": "Les liens sont disponibles, mais aucune annonce précise n’est validée par ce résumé.",
-    "tip": "Ouvrir les articles d’origine et vérifier chaque information importante dans sa source primaire.",
-    "sources": [
-      {
-        "title": "OSTA O1 Pro : format large, trois coloris et précommandes ouvertes en Chine avant la conférence du 20 novembre",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 19:00:30 +0000",
-        "description": "Un format large qui intrigue.",
-        "url": "https://fr.ign.com/osta-o1-pro/94096/osta-o1-pro-format-large-trois-coloris-et-precommandes-ouvertes-en-chine-avant-la-conference-du-20-n",
-        "source_type": "media"
-      },
-      {
-        "title": "Plusieurs millions de joueurs Xbox ont utilisé \"l'astuce néo-zélandaise\" pour jouer à GTA 6 avant tout le monde",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 18:45:54 +0000",
-        "description": "Bande d'impatients.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94101/plusieurs-millions-de-joueurs-xbox-ont-utilise-lastuce-neo-zelandaise-pour-jouer-a-gta-6-avant-tout",
-        "source_type": "media"
-      },
-      {
-        "title": "Le codirecteur du studio Rockstar North explique pouquoi vous ne pourrez pas aller à Disney World dans GTA 6",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 18:26:25 +0000",
-        "description": "Mickey n'a pas eu son visa pour Vice City.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94099/le-codirecteur-du-studio-rockstar-north-explique-pouquoi-vous-ne-pourrez-pas-aller-a-disney-world-da",
-        "source_type": "media"
-      },
-      {
-        "title": "Rockstar publie les crédits complets de GTA 6 — c'est cool pour les équipes, mais attention aux spoilers",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 17:54:46 +0000",
-        "description": "La prudence est de mise.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94098/rockstar-publie-les-credits-complets-de-gta-6-cest-cool-pour-les-equipes-mais-attention-aux-spoilers",
-        "source_type": "media"
-      },
-      {
-        "title": "L'I.A continue ses ravages dans le jeu vidéo : 54 % des développeurs licenciés toujours sans emploi et ça ne va pas s'arranger",
-        "publisher": "JeuxVideo.com",
-        "domain": "news.google.com",
-        "published": "Tue, 17 Nov 2026 11:50:08 GMT",
-        "description": "L'I.A continue ses ravages dans le jeu vidéo : 54 % des développeurs licenciés toujours sans emploi et ça ne va pas s'arranger    JeuxVideo.com",
-        "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxON0t4Y1BnZUJYSVMxN3lhV21vYTl0bWlQYlFNMURxcjdiRTFTLV84aHZQVnN4ZGl5bEhVQWxOWHlQQWtVM0pIV092bU81TUNuTWZoYVQzZDJIOGZNUExYTmxJS0RlZ2ZSb0I4SVFYYzFkc0dJRVZhYnBmR2RabjdRMTZwM3NYZmpCcE1rNUR5R3Nhb2NRc1M0bXdPUVM1b2s4Y3ltazZ4VUpHQU82WmdIUFFzeDZ1SDRwV3hkNno3QmVFUGdDc1NEZl9PNkktaElFR3BhQmNYVkROVUlQb1I2YTRFaDk5SUZ2TzlOaTFiY05pSGFPcHlTRA?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Résumé documentaire de secours assemblé automatiquement à partir des liens collectés ; aucune annonce spécifique n’est confirmée.",
-    "audio_url": "audio/20261119T191508-c7e810b6.mp3"
   },
   {
     "id": "20261119T185533-8b7fb8c5",
