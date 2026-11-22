@@ -1,5 +1,74 @@
 [
   {
+    "id": "20261122T125000-bab5acef",
+    "date": "2026-11-22T12:50+00:00",
+    "theme": "GTA VI — lancement et premiers retours vérifiés",
+    "title": "GTA VI : premiers plantages et comportements violents signalés sur PS5",
+    "summary": "Depuis son lancement, GTA VI fait l’objet de retours mitigés : certains joueurs sur PS5 rencontrent l’erreur CE‑108255‑1 et des plantages, tandis que d’autres décrivent des PNJ réagissant de façon extrêmement violente. Ces incidents, rapportés par IGN France, restent à confirmer par des tests indépendants, et l’ampleur exacte des dysfonctionnements demeure incertaine. Les joueurs attendent donc des mises à jour de Rockstar pour stabiliser le titre.",
+    "verdict": "Les premières impressions sont mitigées, avec des problèmes techniques signalés mais sans preuve définitive de leur portée.",
+    "tip": "Surveillez les futures mises à jour de Rockstar et les retours de la communauté pour confirmer l’étendue des problèmes.",
+    "sources": [
+      {
+        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
+        "description": "Allons en paix.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
+        "source_type": "media"
+      },
+      {
+        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
+        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "translations": {
+      "en": {
+        "title": "GTA VI: Initial crashes and violent behavior reported on PS5",
+        "summary": "Since its launch, GTA VI has received mixed feedback: some PS5 players encounter the CE‑108255‑1 error and crashes, while others describe NPCs reacting with extreme violence. These incidents, reported by IGN France, remain to be confirmed by independent testing, and the exact extent of the malfunctions is uncertain. Players are therefore awaiting Rockstar updates to stabilize the title.",
+        "verdict": "First impressions are mixed, with technical issues reported but no definitive evidence of their scope.",
+        "tip": "Keep an eye on future Rockstar updates and community feedback to confirm the extent of the problems."
+      },
+      "es": {
+        "title": "GTA VI: Se reportan primeros fallos y comportamientos violentos en PS5",
+        "summary": "Desde su lanzamiento, GTA VI ha recibido comentarios mixtos: algunos jugadores de PS5 encuentran el error CE‑108255‑1 y fallos, mientras que otros describen a los NPC reaccionando con violencia extrema. Estos incidentes, reportados por IGN France, aún deben confirmarse mediante pruebas independientes, y la magnitud exacta de los fallos sigue siendo incierta. Los jugadores esperan por lo tanto actualizaciones de Rockstar para estabilizar el título.",
+        "verdict": "Las primeras impresiones son mixtas, con problemas técnicos reportados pero sin evidencia definitiva de su alcance.",
+        "tip": "Mantente atento a las futuras actualizaciones de Rockstar y a los comentarios de la comunidad para confirmar la magnitud de los problemas."
+      },
+      "de": {
+        "title": "GTA VI: Erste Abstürze und gewalttätiges Verhalten auf PS5 gemeldet",
+        "summary": "Seit seiner Veröffentlichung erhält GTA VI gemischte Rückmeldungen: Einige PS5-Spieler stoßen auf den Fehler CE‑108255‑1 und Abstürze, während andere von NPCs berichten, die extrem gewalttätig reagieren. Diese Vorfälle, gemeldet von IGN France, müssen noch durch unabhängige Tests bestätigt werden, und das genaue Ausmaß der Fehlfunktionen bleibt ungewiss. Die Spieler erwarten daher Updates von Rockstar, um das Spiel zu stabilisieren.",
+        "verdict": "Der erste Eindruck ist gemischt, mit gemeldeten technischen Problemen, jedoch ohne endgültigen Beweis für deren Umfang.",
+        "tip": "Behalte zukünftige Rockstar-Updates und das Feedback der Community im Auge, um das Ausmaß der Probleme zu bestätigen."
+      },
+      "pt": {
+        "title": "GTA VI: Primeiros travamentos e comportamentos violentos relatados no PS5",
+        "summary": "Desde o seu lançamento, o GTA VI tem recebido feedback misto: alguns jogadores de PS5 encontram o erro CE‑108255‑1 e travamentos, enquanto outros descrevem NPCs reagindo com violência extrema. Esses incidentes, relatados pela IGN France, ainda precisam ser confirmados por testes independentes, e a extensão exata das falhas permanece incerta. Os jogadores, portanto, aguardam atualizações da Rockstar para estabilizar o título.",
+        "verdict": "As primeiras impressões são mistas, com problemas técnicos relatados, mas sem prova definitiva de sua abrangência.",
+        "tip": "Fique atento às futuras atualizações da Rockstar e ao feedback da comunidade para confirmar a extensão dos problemas."
+      },
+      "ar": {
+        "title": "GTA VI: تقارير عن تعطل أولي وسلوك عنيف على PS5",
+        "summary": "منذ إطلاقه، تلقت GTA VI تعليقات مختلطة: يواجه بعض لاعبي PS5 خطأ CE‑108255‑1 وتعطل، بينما يصف آخرون NPC يتصرفون بعنف شديد. هذه الحوادث، التي أبلغت عنها IGN France، لا تزال بحاجة إلى تأكيد من خلال اختبارات مستقلة، ويظل مدى الخطأ غير مؤكد. ينتظر اللاعبون تحديثات من Rockstar لتثبيت اللعبة.",
+        "verdict": "الانطباعات الأولى مختلطة، مع وجود مشاكل تقنية مُبلغ عنها ولكن دون دليل نهائي على نطاقها.",
+        "tip": "تابع تحديثات Rockstar المستقبلية وتعليقات المجتمع لتأكيد مدى المشاكل."
+      },
+      "zh": {
+        "title": "GTA VI：PS5 上首次崩溃和暴力行为报告",
+        "summary": "自发布以来，GTA VI 收到褒贬不一的反馈：一些 PS5 玩家遇到 CE‑108255‑1 错误和崩溃，而另一些玩家则描述 NPC 以极端暴力方式反应。IGN France 报道的这些事件仍需通过独立测试确认，故障的确切程度仍不确定。玩家们因此期待 Rockstar 的更新以稳定游戏。",
+        "verdict": "初步印象褒贬不一，已报告技术问题，但尚无确凿证据证明其范围。",
+        "tip": "关注 Rockstar 的未来更新和社区反馈，以确认问题的范围。"
+      }
+    },
+    "audio_url": "audio/20261122T125000-bab5acef.mp3"
+  },
+  {
     "id": "20261122T124825-69f7eeac",
     "date": "2026-11-22T12:48+00:00",
     "theme": "Veille générale — résumé documentaire de secours",
@@ -1113,45 +1182,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261119T173750-8f653049.mp3"
-  },
-  {
-    "id": "20261119T173507-ec24812f",
-    "date": "2026-11-19T17:35+00:00",
-    "theme": "GTA VI — lancement et premiers retours vérifiés",
-    "title": "GTA VI : FSR 4.1 sur Xbox S et accès anticipé contesté",
-    "summary": "Les premières images publiées par IGN France montrent que GTA VI exploite la technologie FSR 4.1 pour upscaler le rendu de 720 p à 1080 p sur Xbox Series S, mais la qualité globale reste incertaine car les captures sont limitées. Une astuce revendiquée par Xboxygen prétend permettre un accès anticipé sur la même console, toutefois aucune confirmation officielle de Rockstar ou Microsoft n’a été donnée, laissant planer un risque d’information erronée. Les lecteurs peuvent donc suivre les développements tout en restant prudents face aux rumeurs.",
-    "verdict": "partiellement confirmé",
-    "tip": "Les informations sur l’accessibilité anticipée ne sont pas confirmées par l’éditeur ; les captures d’écran restent limitées, donc la qualité globale du graphisme n’est pas encore vérifiée.",
-    "sources": [
-      {
-        "title": "GTA 6 utilise la technologie FSR 4.1 sur Xbox Series S pour upscaler le jeu de 720p à 1080p",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 14:48:25 +0000",
-        "description": "Redstone, voici GTA.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94091/gta-6-utilise-la-technologie-fsr-41-sur-xbox-series-s-pour-upscaler-le-jeu-de-720p-a-1080p",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 –images du jeu sur Xbox Series S",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 14:48:25 +0000",
-        "description": "",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94090/gta-6-xbox-series-s-screenshots",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 est bien disponible en avance sur Xbox, l’astuce fonctionne et voici comment faire",
-        "publisher": "Xboxygen",
-        "domain": "news.google.com",
-        "published": "Mon, 16 Nov 2026 09:29:03 GMT",
-        "description": "GTA 6 est bien disponible en avance sur Xbox, l’astuce fonctionne et voici comment faire    Xboxygen",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE81U0VpSXNhQlZjV2w5OWtVcmE1eWxkSVFpdG1ZY21sN1prc3VkMXc3Uko2VjBVUW5aMW1kWHpJTDdsNHlWRWVYcVhQa2NlNzV6X1VmeXUyei0ycVpFQ1FOd2NNX3hfdE1NRUJaS0tjY2RwSjYzOVRCclFfay1fQQ?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261119T173507-ec24812f.mp3"
   }
 ]
