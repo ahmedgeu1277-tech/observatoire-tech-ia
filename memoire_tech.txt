@@ -366,3 +366,7 @@ Sources : https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombe
 [2026-11-22T12:51+00:00] Technologies d'IA et d'accessibilité dans le gaming moderne — GTA 6 : plantages PS5 et PNJ violents sans explication
 Des joueurs de GTA 6 ont signalé des plantages sur PS5 accompagnés de l’erreur CE‑108255‑1, sans que les développeurs n’aient encore publié de mise à jour. Parallèlement, les PNJ du jeu semblent réagir de façon extrêmement violente, soulevant des questions sur la modération du contenu. Les raisons de ces problèmes restent inconnues et aucune confirmation officielle n’a été donnée.
 Sources : https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les ; https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1
+
+[2026-11-22T12:56+00:00] GTA VI — lancement et premiers retours vérifiés — GTA VI : détails chiffrés non confirmés
+Les sources consultées mentionnent GTA VI, mais elles ne fournissent pas suffisamment d'éléments pour confirmer les caractéristiques chiffrées avancées. Les performances, la compatibilité et les spécifications techniques doivent être vérifiées dans les fiches officielles.
+Sources : https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les ; https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1

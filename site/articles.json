@@ -1,5 +1,86 @@
 [
   {
+    "id": "20261122T125641-1414a43a",
+    "date": "2026-11-22T12:56+00:00",
+    "theme": "GTA VI — lancement et premiers retours vérifiés",
+    "title": "GTA VI : détails chiffrés non confirmés",
+    "summary": "Les sources consultées mentionnent GTA VI, mais elles ne fournissent pas suffisamment d'éléments pour confirmer les caractéristiques chiffrées avancées. Les performances, la compatibilité et les spécifications techniques doivent être vérifiées dans les fiches officielles.",
+    "verdict": "Les chiffres et caractéristiques détaillés ne sont pas établis par les sources consultées.",
+    "tip": "Consulter les annonces et fiches techniques officielles avant de retenir des chiffres précis.",
+    "sources": [
+      {
+        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
+        "description": "Allons en paix.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
+        "source_type": "media"
+      },
+      {
+        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
+        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "translations": {
+      "en": {
+        "theme": "GTA VI — launch and initial verified feedback",
+        "title": "GTA VI: Unconfirmed numerical details",
+        "summary": "Sources consulted mention GTA VI, but they do not provide enough information to confirm the advanced numerical characteristics. Performance, compatibility, and technical specifications must be verified in official documents.",
+        "verdict": "The detailed figures and characteristics are not established by the consulted sources.",
+        "tip": "Consult official announcements and technical sheets before adopting precise figures.",
+        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links to find the full context."
+      },
+      "es": {
+        "theme": "GTA VI — lanzamiento y primeros comentarios verificados",
+        "title": "GTA VI: Detalles numéricos no confirmados",
+        "summary": "Las fuentes consultadas mencionan GTA VI, pero no proporcionan suficientes elementos para confirmar las características numéricas avanzadas. El rendimiento, la compatibilidad y las especificaciones técnicas deben verificarse en los documentos oficiales.",
+        "verdict": "Los números y características detallados no están establecidos por las fuentes consultadas.",
+        "tip": "Consulta los anuncios y fichas técnicas oficiales antes de adoptar cifras precisas.",
+        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulta los enlaces para encontrar el contexto completo."
+      },
+      "de": {
+        "theme": "GTA VI — Start und erste verifizierte Rückmeldungen",
+        "title": "GTA VI: Nicht bestätigte Zahlenangaben",
+        "summary": "Die konsultierten Quellen erwähnen GTA VI, liefern jedoch nicht genügend Informationen, um die fortgeschrittenen numerischen Merkmale zu bestätigen. Leistung, Kompatibilität und technische Spezifikationen müssen in offiziellen Dokumenten überprüft werden.",
+        "verdict": "Die detaillierten Zahlen und Merkmale sind von den konsultierten Quellen nicht festgelegt.",
+        "tip": "Konsultiere offizielle Ankündigungen und technische Datenblätter, bevor du präzise Zahlen annimmst.",
+        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Prüfe die Links, um den vollständigen Kontext zu finden."
+      },
+      "pt": {
+        "theme": "GTA VI — lançamento e primeiros retornos verificados",
+        "title": "GTA VI: Detalhes numéricos não confirmados",
+        "summary": "As fontes consultadas mencionam GTA VI, mas não fornecem elementos suficientes para confirmar as características numéricas avançadas. O desempenho, a compatibilidade e as especificações técnicas devem ser verificados nos documentos oficiais.",
+        "verdict": "Os números e características detalhadas não são estabelecidos pelas fontes consultadas.",
+        "tip": "Consulte anúncios e fichas técnicas oficiais antes de adotar números precisos.",
+        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Consulte os links para encontrar o contexto completo."
+      },
+      "ar": {
+        "theme": "GTA VI — الإطلاق وردود الفعل الأولية المُتحققة",
+        "title": "GTA VI: تفاصيل رقمية غير مؤكدة",
+        "summary": "المصادر التي تم استشارتها تشير إلى GTA VI، لكنها لا توفر ما يكفي من المعلومات لتأكيد الخصائص الرقمية المتقدمة. يجب التحقق من الأداء والتوافق والمواصفات التقنية في الوثائق الرسمية.",
+        "verdict": "الأرقام والخصائص المفصلة غير معتمدة من قبل المصادر التي تم استشارتها.",
+        "tip": "راجع الإعلانات والملفات التقنية الرسمية قبل اعتماد أرقام دقيقة.",
+        "ai_notice": "مقالة مكتوبة بمساعدة groq من المصادر المذكورة. راجع الروابط للعثور على السياق الكامل."
+      },
+      "zh": {
+        "theme": "GTA VI — 发布与初步核实反馈",
+        "title": "GTA VI：未确认的数值细节",
+        "summary": "已咨询的来源提及 GTA VI，但未提供足够信息以确认高级数值特征。性能、兼容性和技术规格需在官方文件中核实。",
+        "verdict": "详细数字和特征未被已咨询来源确立。",
+        "tip": "在采用精确数字前，请查阅官方公告和技术说明书。",
+        "ai_notice": "文章使用 groq 根据所示来源撰写。请查看链接以获取完整背景。"
+      }
+    },
+    "audio_url": "audio/20261122T125641-1414a43a.mp3"
+  },
+  {
     "id": "20261122T125109-d0073e4b",
     "date": "2026-11-22T12:51+00:00",
     "theme": "Technologies d'IA et d'accessibilité dans le gaming moderne",
@@ -1162,54 +1243,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261119T174921-765502da.mp3"
-  },
-  {
-    "id": "20261119T174035-025211f1",
-    "date": "2026-11-19T17:40+00:00",
-    "theme": "GTA VI — lancement et premiers retours vérifiés",
-    "title": "GTA VI disponible en pré‑lancement sur Xbox Series S, mais méthode douteuse",
-    "summary": "Les articles IGN France montrent que GTA VI est déjà jouable sur Xbox Series S grâce à une astuce non officielle. La console exploite la technologie FSR 4.1 pour upscaler le rendu de 720 p à 1080 p, comme illustré par les captures d’écran publiées. La fiabilité de cette méthode reste incertaine, et aucune confirmation officielle de Microsoft n’a été publiée. Les performances sur d’autres plateformes n’ont pas encore été vérifiées.",
-    "verdict": "Les sources indiquent la disponibilité du jeu via une méthode non approuvée, mais aucune annonce officielle n’est confirmée.",
-    "tip": "Les lecteurs intéressés par le pré‑lancement devraient rester vigilants quant à la légitimité de l’astuce et surveiller les mises à jour officielles de Microsoft.",
-    "sources": [
-      {
-        "title": "Les acteurs de Jason et Lucia dans GTA 6 posent ensemble sur une première photo",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 15:14:47 +0000",
-        "description": "\"Et voilà... le secret est enfin dévoilé !\"",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94092/les-acteurs-de-jason-et-lucia-dans-gta-6-posent-ensemble-sur-une-premiere-photo",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 utilise la technologie FSR 4.1 sur Xbox Series S pour upscaler le jeu de 720p à 1080p",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 14:48:25 +0000",
-        "description": "Redstone, voici GTA.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94091/gta-6-utilise-la-technologie-fsr-41-sur-xbox-series-s-pour-upscaler-le-jeu-de-720p-a-1080p",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 –images du jeu sur Xbox Series S",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 14:48:25 +0000",
-        "description": "",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94090/gta-6-xbox-series-s-screenshots",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 est bien disponible en avance sur Xbox, l’astuce fonctionne et voici comment faire",
-        "publisher": "Xboxygen",
-        "domain": "news.google.com",
-        "published": "Mon, 16 Nov 2026 09:29:03 GMT",
-        "description": "GTA 6 est bien disponible en avance sur Xbox, l’astuce fonctionne et voici comment faire    Xboxygen",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE81U0VpSXNhQlZjV2w5OWtVcmE1eWxkSVFpdG1ZY21sN1prc3VkMXc3Uko2VjBVUW5aMW1kWHpJTDdsNHlWRWVYcVhQa2NlNzV6X1VmeXUyei0ycVpFQ1FOd2NNX3hfdE1NRUJaS0tjY2RwSjYzOVRCclFfay1fQQ?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261119T174035-025211f1.mp3"
   }
 ]
