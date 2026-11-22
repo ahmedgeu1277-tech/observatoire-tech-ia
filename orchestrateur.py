@@ -78,7 +78,7 @@ def valider_mission(data: object) -> dict:
         if not isinstance(due_at, str) or len(due_at) > 40:
             raise ValueError("L'échéance doit être une date ISO 8601 avec fuseau horaire.")
         try:
-            parsed_due = datetime.fromisoformat(due_at.replace("Z", "+00:00"))
+            parsed_due = datetime.fromisoformat(due_at)
         except ValueError as exc:
             raise ValueError("L'échéance doit être une date ISO 8601 avec fuseau horaire.") from exc
         if parsed_due.tzinfo is None:
