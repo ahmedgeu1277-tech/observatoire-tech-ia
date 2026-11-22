@@ -10,7 +10,8 @@ import secrets
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import unquote
 
-import atelier_produits\nfrom gestionnaire_missions import MissionQueue
+import atelier_produits
+from gestionnaire_missions import MissionQueue
 
 MAX_BODY_BYTES = 16_384
 
