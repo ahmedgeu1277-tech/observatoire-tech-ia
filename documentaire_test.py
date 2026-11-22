@@ -118,8 +118,8 @@ def generer_documentaire():
             f'{html.escape(heading)}</h2><p>{html.escape(body)}</p>'
             f'<h3 class="sources-heading" data-i18n="sources">Sources</h3><ul>{links}</ul></section>'
         )
-    # nosec B608 - modèle HTML/CSS statique, aucune requête SQL construite.
-    page = """<!doctype html>
+    page = (  # nosec B608 - modèle HTML/CSS statique, aucune requête SQL construite.
+        """<!doctype html>
 <html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Documentaire Tech & Gaming compilé à partir des articles publiés.">
 <title>Documentaire — Observatoire</title>
@@ -184,7 +184,7 @@ small{color:#9eafd0}
   applyLanguage(saved);
 })();
 </script></body></html>
-"""
+        """)
     PAGE.write_text(page, encoding="utf-8")
     print(f"Documentaire généré ; médias et copie écrite conservés jusqu'au {expires.isoformat()}.")
     return str(PAGE)
