@@ -57,7 +57,7 @@ class PublicChallengeRegressionTests(unittest.TestCase):
 
     def test_all_seven_languages_define_six_challenge_tasks(self):
         start = self.html.index("const challengeUi={") + len("const challengeUi={")
-        end = self.html.index("\\n};", start)
+        end = self.html.index("};", start)
         block = self.html[start:end]
         for language in ("fr", "en", "es", "de", "pt", "ar", "zh"):
             self.assertIn(f"{language}:{{", block)
