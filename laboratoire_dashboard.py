@@ -11,6 +11,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import unquote
 
 import atelier_produits
+import roadmap_laboratoire
 from gestionnaire_missions import MissionQueue
 
 MAX_BODY_BYTES = 16_384
@@ -52,19 +53,20 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f6f2;padding:10px;
 <div class="grid"><label>Douleur<input type="number" min="1" max="5" value="3" id="score-pain"></label><label>Demande<input type="number" min="1" max="5" value="3" id="score-demand"></label><label>Faisabilité<input type="number" min="1" max="5" value="3" id="score-feasibility"></label><label>Différenciation<input type="number" min="1" max="5" value="3" id="score-differentiation"></label><label>Coût<input type="number" min="1" max="5" value="3" id="score-affordability"></label><label>Marché<input type="number" min="1" max="5" value="3" id="score-market"></label></div>
 <button type="submit">Enregistrer l'opportunité</button><span id="product-form-status" role="status"></span></form>
 <hr><button class="secondary" id="refresh-products" type="button">Actualiser</button><span id="products-status" role="status"></span><div id="products"></div></section>
-<section><h2>Détail de la mission</h2><pre id="detail">Choisis une mission.</pre></section></main>
+<section><h2>Feuille de route du projet</h2><p>Priorités conservées localement dans .laboratoire_prive, hors du dépôt et du site publics.</p><button class="secondary" id="refresh-roadmap" type="button">Actualiser</button><span id="roadmap-status" role="status"></span><div id="roadmap-items"></div></section><section><h2>Détail de la mission</h2><pre id="detail">Choisis une mission.</pre></section></main>
 <script>
 const TOKEN=__TOKEN__;
 async function api(path,options={}){const headers={Authorization:"Bearer "+TOKEN,...(options.headers||{})};if(options.body)headers["Content-Type"]="application/json";const r=await fetch(path,{...options,headers,cache:"no-store"});const data=await r.json().catch(()=>({error:"Réponse invalide"}));if(!r.ok)throw Error(data.error||"HTTP "+r.status);return data;}
 function el(tag,text,cls){const n=document.createElement(tag);n.textContent=text;if(cls)n.className=cls;return n;}
 async function refreshProducts(){const box=document.getElementById("products"),status=document.getElementById("products-status");status.textContent="Chargement…";try{const rows=await api("/api/opportunities");box.replaceChildren();for(const item of rows){const card=el("article","","mission");card.append(el("b",item.name),el("span",item.score_percent+"/100 · "+item.decision));card.append(el("p",item.problem));const select=document.createElement("select");for(const value of ["candidate","research","prototype","validated","rejected"]){const option=el("option",value);option.value=value;option.selected=(item.workflow_status||"candidate")===value;select.append(option);}const save=el("button","Mettre à jour","secondary");save.onclick=async()=>{try{await api("/api/opportunities/"+encodeURIComponent(item.id)+"/status",{method:"POST",body:JSON.stringify({status:select.value})});await refreshProducts();}catch(e){status.textContent=e.message;}};card.append(select,save);box.append(card);}if(!rows.length)box.append(el("p","Aucune opportunité enregistrée dans le laboratoire."));status.textContent=rows.length+" opportunité(s)";}catch(e){status.textContent=e.message;}}
 
+async function refreshRoadmap(){const box=document.getElementById("roadmap-items"),status=document.getElementById("roadmap-status");status.textContent="Chargement…";try{const rows=await api("/api/roadmap");box.replaceChildren();for(const row of rows){const card=el("article","","mission");card.append(el("b",row.title),el("p",row.description),el("span","Priorité : "+row.priority));const select=document.createElement("select");for(const value of ["backlog","in_progress","blocked","done"]){const option=el("option",value==="backlog"?"À faire":value==="in_progress"?"En cours":value==="blocked"?"Bloqué":"Terminé");option.value=value;option.selected=row.status===value;select.append(option);}const save=el("button","Enregistrer","secondary");save.onclick=async()=>{try{await api("/api/roadmap/"+encodeURIComponent(row.id)+"/status",{method:"POST",body:JSON.stringify({status:select.value})});await refreshRoadmap();}catch(e){status.textContent=e.message;}};card.append(select,save);box.append(card);}status.textContent=rows.filter(x=>x.status==="done").length+"/"+rows.length+" tâches terminées";}catch(e){status.textContent=e.message;}}
 async function refresh(){const status=document.getElementById("status"),items=document.getElementById("items");status.textContent="Chargement…";try{const rows=await api("/api/missions");items.replaceChildren();for(const row of rows){const card=el("article","","mission");card.append(el("b",row.id.slice(0,10)),el("span",row.status+" · "+row.priority+" · tentatives "+row.attempts+"/3"));if(row.due_at)card.append(el("p","Échéance : "+row.due_at));const detail=el("button","Détail","secondary");detail.onclick=async()=>{try{document.getElementById("detail").textContent=JSON.stringify(await api("/api/missions/"+row.id),null,2);}catch(e){document.getElementById("detail").textContent=e.message;}};card.append(detail);if(["pending","running"].includes(row.status)){const cancel=el("button","Annuler","secondary");cancel.onclick=async()=>{try{await api("/api/missions/"+row.id+"/cancel",{method:"POST",body:"{}"});refresh();}catch(e){status.textContent=e.message;}};card.append(cancel);}if(["failed","partial","interrupted"].includes(row.status)&&row.attempts<3){const retry=el("button","Relancer","secondary");retry.onclick=async()=>{try{await api("/api/missions/"+row.id+"/retry",{method:"POST",body:"{}"});refresh();}catch(e){status.textContent=e.message;}};card.append(retry);}items.append(card);}if(!rows.length)items.append(el("p","Aucune mission enregistrée."));status.textContent=rows.length+" mission(s)";}catch(e){status.textContent=e.message;}}
 document.getElementById("product-form").onsubmit=async event=>{event.preventDefault();const status=document.getElementById("product-form-status");const value=id=>document.getElementById(id).value;const payload={name:value("product-name"),problem:value("product-problem"),target_customer:value("product-customer"),proposed_solution:value("product-solution"),product_type:value("product-type"),evidence:value("product-evidence").split(String.fromCharCode(10)).map(x=>x.trim()).filter(Boolean),scores:{customer_pain:Number(value("score-pain")),demand_evidence:Number(value("score-demand")),feasibility:Number(value("score-feasibility")),differentiation:Number(value("score-differentiation")),affordability:Number(value("score-affordability")),market_access:Number(value("score-market"))}};try{const result=await api("/api/opportunities",{method:"POST",body:JSON.stringify(payload)});status.textContent="Opportunité enregistrée : "+result.id;event.target.reset();await refreshProducts();}catch(e){status.textContent=e.message;}};
-document.getElementById("refresh").onclick=refresh;document.getElementById("refresh-products").onclick=refreshProducts;document.getElementById("run-next").onclick=async()=>{const status=document.getElementById("status");status.textContent="Exécution bornée en cours…";try{const result=await api("/api/worker/run-next",{method:"POST",body:"{}"});status.textContent=result.status||"Aucune mission en attente";await refresh();}catch(e){status.textContent=e.message;}};
+document.getElementById("refresh").onclick=refresh;document.getElementById("refresh-products").onclick=refreshProducts;document.getElementById("refresh-roadmap").onclick=refreshRoadmap;document.getElementById("run-next").onclick=async()=>{const status=document.getElementById("status");status.textContent="Exécution bornée en cours…";try{const result=await api("/api/worker/run-next",{method:"POST",body:"{}"});status.textContent=result.status||"Aucune mission en attente";await refresh();}catch(e){status.textContent=e.message;}};
 
 document.getElementById("form").onsubmit=async event=>{event.preventDefault();const out=document.getElementById("form-status");const deadline=document.getElementById("deadline").value;const payload={mission:document.getElementById("mission").value,context:document.getElementById("context").value,agents:[...document.querySelectorAll('input[name="agent"]:checked')].map(x=>x.value),priority:document.getElementById("priority").value,max_duration_seconds:Number(document.getElementById("duration").value),due_at:deadline?new Date(deadline).toISOString():null};try{const result=await api("/api/missions",{method:"POST",body:JSON.stringify(payload)});out.textContent="Mission ajoutée : "+result.id.slice(0,10);event.target.reset();document.getElementById("duration").value="180";document.querySelectorAll('input[name="agent"]').forEach(x=>x.checked=true);refresh();}catch(e){out.textContent=e.message;}};
-refresh();refreshProducts();setInterval(()=>{refresh();refreshProducts();},15000);
+refresh();refreshProducts();refreshRoadmap();setInterval(()=>{refresh();refreshProducts();refreshRoadmap();},15000);
 </script></body></html>"""
 
 
@@ -124,6 +126,9 @@ def create_server(port: int = 8765, queue: MissionQueue | None = None, token: st
             if self.path == "/api/opportunities":
                 self.send_json(200, atelier_produits.list_opportunities(atelier_produits.DEFAULT_PRODUCTS_DIR))
                 return
+            if self.path == "/api/roadmap":
+                self.send_json(200, roadmap_laboratoire.list_tasks())
+                return
             if self.path.startswith("/api/missions/"):
                 mission_id = unquote(self.path.removeprefix("/api/missions/"))
                 item = mission_queue.get_mission(mission_id) if "/" not in mission_id else None
@@ -150,6 +155,18 @@ def create_server(port: int = 8765, queue: MissionQueue | None = None, token: st
                     report = atelier_produits.evaluate_opportunity(body)
                     atelier_produits.save_opportunity(report, atelier_produits.DEFAULT_PRODUCTS_DIR)
                     self.send_json(201, {"id": report["id"], "score_percent": report["score_percent"], "decision": report["decision"]})
+                    return
+                if self.path.startswith("/api/roadmap/") and self.path.endswith("/status"):
+                    task_id = unquote(self.path[len("/api/roadmap/"):-len("/status")].strip("/"))
+                    if "/" in task_id:
+                        self.send_json(404, {"error": "Tâche introuvable."})
+                        return
+                    task = roadmap_laboratoire.update_status(
+                        roadmap_laboratoire.DEFAULT_ROADMAP_PATH,
+                        task_id,
+                        body.get("status"),
+                    )
+                    self.send_json(200, task)
                     return
                 if self.path.startswith("/api/opportunities/") and self.path.endswith("/status"):
                     opportunity_id = unquote(self.path[len("/api/opportunities/"):-len("/status")].strip("/"))
