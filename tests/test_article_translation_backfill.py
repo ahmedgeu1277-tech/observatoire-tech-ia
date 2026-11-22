@@ -23,7 +23,15 @@ class ArticleTranslationBackfillTests(unittest.TestCase):
 
     @patch("traduire_archives.main.traduire_article")
     def test_translates_oldest_first_and_preserves_sources(self, translate):
-        translate.return_value = {"en": {"title": "Translated"}}
+        translate.return_value = {
+            language: {
+                "title": "Translated",
+                "summary": "Translated summary",
+                "verdict": "Translated verdict",
+                "tip": "Translated tip",
+            }
+            for language in ("en", "es", "de", "pt", "ar", "zh")
+        }
         with patch.object(main, "ARTICLES_FILE", self.path):
             result = backfill_translations(1)
         saved = json.loads(self.path.read_text(encoding="utf-8"))
