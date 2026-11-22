@@ -68,3 +68,20 @@ class PublicChallengeRegressionTests(unittest.TestCase):
         self.assertIn('localStorage.setItem("nexora-challenges-v1"', self.html)
         self.assertIn("challengeState=Array(6).fill(false)", self.html)
         self.assertIn("ce n'est pas un classement mondial", self.html)
+
+    def test_challenge_backup_is_versioned_and_validated(self):
+        self.assertIn('version:1,completed:[...challengeState]', self.html)
+        self.assertIn("data.version!==1", self.html)
+        self.assertIn("data.completed.length!==6", self.html)
+        self.assertIn('typeof value==="boolean"', self.html)
+        self.assertIn('file.size>8192', self.html)
+
+    def test_challenge_backup_controls_are_translated_in_seven_languages(self):
+        self.assertIn('id="challenge-export"', self.html)
+        self.assertIn('id="challenge-import-file"', self.html)
+        start = self.html.index("const challengeUi={")
+        end = self.html.index("const challengePoints", start)
+        block = self.html[start:end]
+        self.assertEqual(block.count('export:"'), 7)
+        self.assertEqual(block.count('import:"'), 7)
+
