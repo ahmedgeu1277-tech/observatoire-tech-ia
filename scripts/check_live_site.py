@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import os
 import sys
+import time
 from urllib.error import HTTPError, URLError
 from urllib.parse import quote, urljoin, urlparse
 from urllib.request import Request, urlopen
@@ -37,12 +38,30 @@ def _open_url(req: Request):
     return response
 
 
+def _request_with_retry(req: Request):
+    """Réessaie les erreurs temporaires de GitHub Pages avec une attente progressive."""
+    delays = (0, 2, 5)
+    for attempt, delay in enumerate(delays):
+        if delay:
+            time.sleep(delay)
+        try:
+            return _open_url(req)
+        except HTTPError as exc:
+            if exc.code not in (429, 500, 502, 503, 504) or attempt == len(delays) - 1:
+                raise
+            exc.close()
+        except (URLError, TimeoutError):
+            if attempt == len(delays) - 1:
+                raise
+    raise RuntimeError("Échec réseau après plusieurs tentatives.")
+
+
 def request(url: str, method: str = "HEAD"):
     global checks
     checks += 1
     req = Request(url, method=method, headers={"User-Agent": "NEXORA-Live-Healthcheck/1.0"})
     try:
-        return _open_url(req)
+        return _request_with_retry(req)
     except HTTPError as exc:
         if method == "HEAD" and exc.code in (403, 405, 501):
             return request(url, "GET")
@@ -77,7 +96,7 @@ def read_json(path: str, label: str):
     checks += 1
     try:
         req = Request(url, headers={"User-Agent": "NEXORA-Live-Healthcheck/1.0"})
-        with _open_url(req) as response:
+        with _request_with_retry(req) as response:
             if response.status != 200:
                 raise RuntimeError(f"HTTP {response.status}")
             data = json.loads(response.read().decode("utf-8"))
