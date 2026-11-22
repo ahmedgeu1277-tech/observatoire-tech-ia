@@ -70,6 +70,20 @@ class LocalDashboardTests(unittest.TestCase):
         self.assertEqual(item["priority"], "high")
         self.assertEqual(item["payload"]["mission"], payload["mission"])
 
+    def test_runs_one_bounded_mission_from_the_dashboard(self):
+        mission_id = self.queue.enqueue({
+            "mission": "Tester une mission locale.",
+            "agents": ["chercheur"],
+            "max_duration_seconds": 60,
+        })
+        from unittest.mock import patch
+        with patch("gestionnaire_missions.orchestrateur.executer_mission",
+                   return_value={"status": "completed", "results": []}):
+            status, _, body = self.request("/api/worker/run-next", method="POST", payload={})
+        self.assertEqual(status, 200)
+        self.assertEqual(json.loads(body)["status"], "completed")
+        self.assertEqual(self.queue.get_mission(mission_id)["status"], "completed")
+
     def test_rejects_cross_origin_post(self):
         payload = {"mission": "Test", "agents": ["chercheur"], "max_duration_seconds": 60}
         req = Request(self.base + "/api/missions", data=json.dumps(payload).encode(),
