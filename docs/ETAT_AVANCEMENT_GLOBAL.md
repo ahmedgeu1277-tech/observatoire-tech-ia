@@ -316,3 +316,26 @@ Contrôle effectué après les derniers commits automatiques de publication :
 - Les modèles Godot sont des squelettes de départ et leur compilation dans Godot n'est pas validée.
 - Le dépôt GitHub est public : aucun secret, document privé ou donnée personnelle ne doit y être ajouté.
 - L'objectif « 110 % » reste symbolique : le taux de complétude mesurable est plafonné à 100 %, les améliorations supplémentaires devant être décrites séparément.
+
+## Vérification groupée — 22 novembre 2026, commit 756e29d8
+
+Contrôle effectué après la correction du rattrapage des traductions :
+
+- **Commit vérifié :** `756e29d8626576e5cc267459b0e3b2861bf2fa50`.
+- **Tests automatiques :** workflow `45073316873` réussi. La suite affiche **209 tests Python réussis** en 9,706 secondes ; `healthcheck.py`, la compilation Python, les fichiers JSON et les fichiers indispensables ont également passé.
+- **Qualité et sécurité :** workflow `45073316814` réussi. Ruff, Bandit, Gitleaks, CodeQL Python et JavaScript/TypeScript, ainsi que les tests navigateur, sont verts.
+- **Parcours navigateur :** les pages d'accueil, documentaire, ville, méthode et atelier ont été ouvertes avec Playwright à 390, 768 et 1 440 pixels ; les neuf contrôles responsive listés dans les journaux ont réussi.
+- **Publication :** workflow Pages `45073316464` réussi ; l'artefact du site a été construit et téléversé. Ce contrôle confirme la construction et le déploiement GitHub Pages, pas une vérification HTTP indépendante de chaque média après publication.
+- **Correctif de traduction :** le rattrapage distingue maintenant la complétude du texte et celle des audios. Si les textes existent déjà, le traitement peut compléter uniquement les audios manquants, sans retraduire tout l'article. Le traitement reste plafonné à cinq articles par exécution.
+
+### État fonctionnel inchangé à ne pas surestimer
+
+- Le dernier score pondéré détaillé reste **65,70 %**, calculé lors de l'audit précédent sur le commit `386e5373`. Les contrôles verts de ce commit ne suffisent pas à recalculer le score fonctionnel global.
+- Le bilan précédent recensait seulement 5 articles sur 30 avec toutes les traductions textuelles et audio attendues dans les six langues secondaires ; le correctif améliore le rattrapage mais ne prouve pas que toutes les archives sont désormais traduites.
+- Le classement des défis reste local/personnel, sans classement mondial.
+- Le laboratoire privé reste local à la machine qui lance Python ; aucun backend privé distant avec authentification n'est hébergé par GitHub Pages.
+- GitHub Actions exécute des tâches ponctuelles ; ce n'est pas un serveur permanent 24 h/24.
+- La ville reste une simulation fictive à données synthétiques, pas un jumeau numérique réel.
+- Le dépôt est public : les archives et notes privées doivent rester hors de Git et hors de GitHub Pages.
+
+Ce contrôle valide la qualité du commit et son déploiement. Il ne signifie pas que toutes les fonctionnalités futures du projet sont terminées.
