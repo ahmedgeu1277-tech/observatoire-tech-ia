@@ -127,6 +127,8 @@ def create_server(port: int = 8765, queue: MissionQueue | None = None, token: st
                 return
             try:
                 body = self.read_json()
+                if not isinstance(body, dict):
+                    raise ValueError("Le corps JSON doit être un objet.")
                 if self.path == "/api/missions":
                     mission_id = mission_queue.enqueue(body)
                     self.send_json(201, {"id": mission_id, "status": "pending"})
