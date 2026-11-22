@@ -1,5 +1,54 @@
 [
   {
+    "id": "20261122T174844-d41dc65c",
+    "date": "2026-11-22T17:48+00:00",
+    "theme": "GTA VI — lancement et premiers retours vérifiés",
+    "title": "GTA VI : plantages et PNJ violents sur PS5, boutiques exclusives contestées",
+    "summary": "Depuis le lancement de GTA VI, plusieurs joueurs ont signalé des plantages fréquents sur PS5, notamment l’erreur CE‑108255‑1, ainsi que des PNJ qui réagissent de façon violente. Ces incidents sont rapportés par IGN France, mais aucune confirmation officielle de Rockstar n’a encore été publiée. Par ailleurs, des boutiques exclusives ont refusé l’accès aux acheteurs de l’édition non‑Ultimate, créant une perception d’injustice parmi la communauté. Les causes exactes et les mesures correctives restent inconnues.",
+    "verdict": "Les informations proviennent uniquement de rapports IGN France ; aucune source officielle n’a confirmé les problèmes ni la politique des boutiques.",
+    "tip": "Surveillez les mises à jour de Rockstar et les communiqués officiels pour connaître les corrections prévues et les éventuelles modifications de la politique de distribution.",
+    "sources": [
+      {
+        "title": "On a fait le test du jeu dans le jeu : Time Jackers Rewind, un peu cher mais ça offre un accès à GTA 6",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sun, 22 Nov 2026 16:20:29 +0000",
+        "description": "A 80€ ça fait cher la pépite indé. À 80 euros pour une heure de jeu, ça fait quand même un peu cher pour une petite pépite indépendante. Heureusement, le jeu offre également un accès à GTA VI. Comme quoi, il y a encore des développeurs qui savent faire des cadeaux.",
+        "url": "https://fr.ign.com/time-jackers-rewind/94172/on-a-fait-le-test-du-jeu-dans-le-jeu-time-jackers-rewind-un-peu-cher-mais-ca-offre-un-acces-a-gta-6",
+        "source_type": "media"
+      },
+      {
+        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
+        "description": "Allons en paix.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
+        "source_type": "media"
+      },
+      {
+        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
+        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
+        "source_type": "media"
+      },
+      {
+        "title": "Les joueurs de GTA 6 réagissent après que des boutiques exclusives ont accueilli les acheteurs de l’édition non Ultimate avec des portes fermées",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 21:27:24 +0000",
+        "description": "Trop select.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94167/les-joueurs-de-gta-6-reagissent-apres-que-des-boutiques-exclusives-ont-accueilli-les-acheteurs-de-le",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261122T174844-d41dc65c.mp3"
+  },
+  {
     "id": "20261122T174616-c5cd18c2",
     "date": "2026-11-22T17:46+00:00",
     "theme": "Sécurité numérique",
@@ -1406,45 +1455,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261119T185257-97805821.mp3"
-  },
-  {
-    "id": "20261119T185142-92ad4b88",
-    "date": "2026-11-19T18:51+00:00",
-    "theme": "Innovation et IA dans le gaming et au-delà",
-    "title": "GTA 6, licences limitées et licenciements Ubisoft",
-    "summary": "Sur Xbox, des millions de joueurs ont tenté une « astuce néo‑zélandaise » pour accéder à GTA 6 avant sa sortie, mais son efficacité reste incertaine. Le codirecteur de Rockstar North a précisé que les personnages ne pourront pas visiter Disney World, soulignant les contraintes de licences tierces. Parallèlement, Ubisoft a annoncé la suppression de 166 postes dans deux studios majeurs, ce qui pourrait freiner l’innovation future, bien que l’impact exact sur ses projets reste à confirmer.",
-    "verdict": "Les informations proviennent de rapports IGN France. La fiabilité de l’astuce Xbox n’est pas confirmée, et l’impact des licenciements Ubisoft sur ses projets reste à observer.",
-    "tip": "Surveillez les mises à jour officielles de Rockstar et Ubisoft pour clarifier l’efficacité de l’astuce et les conséquences des licenciements.",
-    "sources": [
-      {
-        "title": "Plusieurs millions de joueurs Xbox ont utilisé \"l'astuce néo-zélandaise\" pour jouer à GTA 6 avant tout le monde",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 18:45:54 +0000",
-        "description": "Bande d'impatients.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94101/plusieurs-millions-de-joueurs-xbox-ont-utilise-lastuce-neo-zelandaise-pour-jouer-a-gta-6-avant-tout",
-        "source_type": "media"
-      },
-      {
-        "title": "Le codirecteur du studio Rockstar North explique pouquoi vous ne pourrez pas aller à Disney World dans GTA 6",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 18:26:25 +0000",
-        "description": "Mickey n'a pas eu son visa pour Vice City.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94099/le-codirecteur-du-studio-rockstar-north-explique-pouquoi-vous-ne-pourrez-pas-aller-a-disney-world-da",
-        "source_type": "media"
-      },
-      {
-        "title": "Ubisoft confirme de nouveaux licenciements : 166 emplois sont supprimés au sein de deux studios majeurs",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 17:37:12 +0000",
-        "description": "Perte de personnel dans des bureaux importants à Montréal et au Québec.",
-        "url": "https://fr.ign.com/assassins-creed-codename-red/94097/ubisoft-confirme-de-nouveaux-licenciements-166-emplois-sont-supprimes-au-sein-de-deux-studios-majeur",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261119T185142-92ad4b88.mp3"
   }
 ]
