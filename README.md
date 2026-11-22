@@ -17,7 +17,7 @@ Le site présente des articles et des documentaires issus de sources publiques. 
 - Recherche textuelle et filtres par thème sur les articles ; six défis éducatifs avec progression et rang personnel enregistrés localement (sans classement mondial).
 - Tableau de bord privé local avec file de missions, portefeuille R&D et feuille de route persistante de sept chantiers avec priorités, statuts et échéances modifiables, conservée hors du dépôt public.
 - Archivage des publications récentes et nettoyage programmé des anciennes archives.
-- File locale de missions IA avec trois rôles spécialisés maximum, durée limitée et demande d'annulation coopérative entre les appels IA.
+- File locale de missions IA avec trois rôles spécialisés maximum, durée limitée, annulation coopérative, relance manuelle plafonnée à trois tentatives et exécution manuelle de lots de trois missions maximum.
 - Tests automatisés, contrôles de qualité/sécurité et surveillance du site réellement publié dans GitHub Actions.
 
 Les tâches GitHub Actions sont ponctuelles et planifiées : elles ne constituent pas un serveur permanent 24 h/24.
