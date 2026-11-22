@@ -45,7 +45,7 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f6f2;padding:10px;
 <div><label>Durée (s)</label><input id="duration" type="number" min="60" max="180" value="180"></div></div>
 <label>Échéance facultative</label><input id="deadline" type="datetime-local"><button>Ajouter la mission</button><span id="form-status" role="status"></span></form></section>
 <section><h2>File des missions</h2><button class="secondary" id="refresh">Actualiser</button><button id="run-next" type="button">Exécuter la prochaine mission</button><button id="run-batch" class="secondary" type="button">Exécuter jusqu’à 3 missions</button><span id="status" role="status"></span><div id="items"></div></section>
-<section><h2>Atelier de création de projets</h2><p>Génère des squelettes de sites, applications, jeux web, logiciels Python, projets Godot 2D/3D, audio et vidéo. Le code est créé dans le dossier privé local ; il n'est jamais exécuté ni publié automatiquement.</p><form id="project-form"><label>Nom du projet</label><input id="project-name" maxlength="50" minlength="2" pattern="[A-Za-z][A-Za-z0-9_-]{1,49}" required><label>Modèle</label><select id="project-template"><option value="site">Site web</option><option value="webapp">Application web</option><option value="jeu-web">Jeu navigateur</option><option value="godot-2d">Godot 2D</option><option value="godot-3d">Godot 3D</option><option value="logiciel-python">Logiciel Python</option><option value="video">Production vidéo</option><option value="audio">Production audio</option></select><button type="submit">Créer le squelette</button><span id="project-status" role="status"></span></form></section>
+<section><h2>Atelier de création de projets</h2><p>Génère des squelettes de sites, applications, jeux web, logiciels Python, projets Godot 2D/3D, audio et vidéo. Le code est créé dans le dossier privé local ; il n'est jamais exécuté ni publié automatiquement.</p><form id="project-form"><label>Nom du projet</label><input id="project-name" maxlength="50" minlength="2" pattern="[A-Za-z][A-Za-z0-9_-]{1,49}" required><label>Modèle</label><select id="project-template"><option value="site">Site web</option><option value="webapp">Application web</option><option value="jeu-web">Jeu navigateur</option><option value="godot-2d">Godot 2D</option><option value="godot-3d">Godot 3D</option><option value="unity-3d">Unity 3D</option><option value="logiciel-python">Logiciel Python</option><option value="video">Production vidéo</option><option value="audio">Production audio</option></select><button type="submit">Créer le squelette</button><span id="project-status" role="status"></span></form></section>
 <section><h2>Portefeuille R&D</h2>
 <form id="product-form">
 <label>Nom du produit</label><input id="product-name" maxlength="200" required>
@@ -129,7 +129,7 @@ def create_server(port: int = 8765, queue: MissionQueue | None = None, token: st
             if self.path == "/api/templates":
                 labels = {
                     "site": "Site web", "webapp": "Application web", "jeu-web": "Jeu navigateur",
-                    "godot-2d": "Godot 2D", "godot-3d": "Godot 3D",
+                    "godot-2d": "Godot 2D", "godot-3d": "Godot 3D", "unity-3d": "Unity 3D",
                     "logiciel-python": "Logiciel Python", "video": "Production vidéo", "audio": "Production audio",
                 }
                 self.send_json(200, [{"id": key, "label": labels.get(key, key)} for key in atelier_creation.TEMPLATES])
