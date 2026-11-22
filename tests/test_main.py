@@ -523,17 +523,21 @@ class ArticleTranslationTests(unittest.TestCase):
     @patch("main.generate_text")
     def test_translates_editorial_fields_into_supported_languages(self, generate):
         source = {
+            "theme": "Technologie et jeux vidéo",
             "title": "Un nouveau moteur de jeu",
             "summary": " ".join(["Une information vérifiée"] * 12),
             "verdict": "Les sources confirment cette annonce.",
             "tip": "Lire les notes de version.",
+            "ai_notice": "Article assisté par IA à partir des sources indiquées.",
             "sources": [{"title": "Source originale", "url": "https://example.org"}],
         }
         expected = {"en": {
+            "theme": "Technology and gaming",
             "title": "A new game engine",
             "summary": "A verified report about a new game engine.",
             "verdict": "Sources confirm this announcement.",
             "tip": "Read the release notes.",
+            "ai_notice": "AI-assisted article based on the listed sources.",
         }}
         generate.return_value = ("```json\n" + json.dumps(expected) + "\n```", "groq")
         result = main.traduire_article(source)
@@ -544,7 +548,7 @@ class ArticleTranslationTests(unittest.TestCase):
 
     @patch("main.generate_text", return_value=("not valid JSON", "groq"))
     def test_invalid_translation_is_optional_and_returns_empty(self, _generate):
-        article = {"title": "Titre", "summary": "Résumé", "verdict": "Verdict", "tip": "Conseil"}
+        article = {"theme": "Thème", "title": "Titre", "summary": "Résumé", "verdict": "Verdict", "tip": "Conseil", "ai_notice": "Note IA"}
         self.assertEqual(main.traduire_article(article), {})
 
     def test_incomplete_article_is_not_sent_for_translation(self):
