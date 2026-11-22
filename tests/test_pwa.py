@@ -66,6 +66,12 @@ class ProgressiveWebAppTests(unittest.TestCase):
         self.assertIn(r"^[A-Za-z][A-Za-z0-9_-]{1,49}$", page)
         self.assertIn('lang==="ar"?"rtl":"ltr"', page)
 
+    def test_browser_workshop_embedded_templates_do_not_close_outer_script(self):
+        page = (SITE / "atelier.html").read_text(encoding="utf-8")
+        self.assertIn('<\\/script>', page)
+        self.assertNotIn('src="app.js"></script>', page)
+        self.assertNotIn('src="game.js" defer></script>', page)
+
     def test_offline_page_exists_and_does_not_claim_live_data(self):
         page = (SITE / "offline.html").read_text(encoding="utf-8")
         self.assertIn("MODE HORS LIGNE", page)
