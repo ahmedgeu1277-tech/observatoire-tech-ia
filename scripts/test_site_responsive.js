@@ -120,7 +120,7 @@ async function inspectPage(browser, route, viewport) {
       if (!(await page.locator("#articles .article").first().textContent()).includes("geprüfte Übersetzungsprobe")) {
         fail("Accueil : le résumé traduit n'est pas affiché.");
       }
-      const translatedAudioExpected = await page.evaluate(() => "./" + window.nexoraArticles[1].audio_url.replace(/^\\.\\//, "").replace(/^site\\//, ""));
+      const translatedAudioExpected = await page.evaluate(() => "./" + window.nexoraArticles[1].audio_url.replace(/^\.\//, "").replace(/^site\//, ""));
       if ((await page.locator("#articles .article audio").first().getAttribute("src")) !== translatedAudioExpected) {
         fail("Accueil : l'audio traduit ne suit pas la langue sélectionnée.");
       }
