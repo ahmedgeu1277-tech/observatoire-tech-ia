@@ -518,6 +518,42 @@ class MainLastResortTests(unittest.TestCase):
 
 
 
+
+class ArticleTranslationTests(unittest.TestCase):
+    @patch("main.generate_text")
+    def test_translates_editorial_fields_into_supported_languages(self, generate):
+        source = {
+            "title": "Un nouveau moteur de jeu",
+            "summary": " ".join(["Une information vérifiée"] * 12),
+            "verdict": "Les sources confirment cette annonce.",
+            "tip": "Lire les notes de version.",
+            "sources": [{"title": "Source originale", "url": "https://example.org"}],
+        }
+        expected = {"en": {
+            "title": "A new game engine",
+            "summary": "A verified report about a new game engine.",
+            "verdict": "Sources confirm this announcement.",
+            "tip": "Read the release notes.",
+        }}
+        generate.return_value = (json.dumps(expected), "groq")
+        result = main.traduire_article(source)
+        self.assertEqual(result, expected)
+        self.assertEqual(source["sources"][0]["title"], "Source originale")
+        self.assertEqual(generate.call_args.kwargs["max_tokens"], 2600)
+        self.assertTrue(generate.call_args.kwargs["json_mode"])
+
+    @patch("main.generate_text", return_value=("not valid JSON", "groq"))
+    def test_invalid_translation_is_optional_and_returns_empty(self, _generate):
+        article = {"title": "Titre", "summary": "Résumé", "verdict": "Verdict", "tip": "Conseil"}
+        self.assertEqual(main.traduire_article(article), {})
+
+    def test_incomplete_article_is_not_sent_for_translation(self):
+        with patch("main.generate_text") as generate:
+            self.assertEqual(main.traduire_article({"title": "Titre"}), {})
+        generate.assert_not_called()
+
+
+
 class AgentProfileLoadingTests(unittest.TestCase):
     def test_ignores_non_object_and_incomplete_profiles(self):
         with tempfile.TemporaryDirectory() as folder:
