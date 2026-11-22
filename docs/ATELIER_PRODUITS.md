@@ -45,3 +45,20 @@ Une note de demande doit être appuyée par des références. Sans preuve, le ra
 
 ## État actuel
 Le module est un outil local de notation et de préparation de fiches. Il ne fait pas encore de veille concurrentielle autonome, d'entretiens clients, de prototypage automatique ni de vente. Ces capacités seront ajoutées séparément, après tests et avec des permissions minimales.
+
+
+## Classement du portefeuille d'opportunités
+
+Les fiches sauvegardées dans `.laboratoire_prive/produits/` peuvent être classées par score puis date avec :
+
+```bash
+python atelier_produits.py list
+```
+
+Une nouvelle fiche peut être évaluée et enregistrée avec :
+
+```bash
+python atelier_produits.py evaluate opportunite.json
+```
+
+Le classement ne prouve ni la demande du marché ni la nouveauté. Les références doivent être vérifiées et les décisions commerciales restent soumises à une revue humaine.
