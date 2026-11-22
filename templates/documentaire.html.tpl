@@ -38,7 +38,7 @@ small{color:#9eafd0}
 <h1>{{TITLE}}</h1>
 <p data-i18n="description">Documentaire compilé à partir des articles publiés.</p>
 <p data-i18n="contentNote">Le texte du documentaire et sa narration audio restent dans la langue d’origine des articles.</p>
-<video id="documentary-video" controls preload="metadata" playsinline style="width:100%;border-radius:12px;background:#101820" src="video/{{VIDEO}}"><track id="subtitle-track" kind="subtitles" srclang="fr" label="Français" default></video>
+<video controls id="documentary-video" preload="metadata" playsinline style="width:100%;border-radius:12px;background:#101820" src="video/{{VIDEO}}"><track id="subtitle-track" kind="subtitles" srclang="fr" label="Français" default></video>
 <audio id="documentary-audio" controls preload="none" src="audio/{{AUDIO}}"></audio>
 <small><span data-i18n="retention">Conservation prévue jusqu'au</span> : {{EXPIRY}}</small>
 </header>
