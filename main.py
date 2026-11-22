@@ -593,8 +593,8 @@ def traduire_article(article):
         raw, provider = generate_text(
             messages, max_tokens=2600, temperature=0.1, json_mode=True, timeout=45
         )
-        raw = re.sub(r"^\\s*\\x60{3}(?:json)?\\s*", "", raw, flags=re.IGNORECASE)
-        raw = re.sub(r"\\s*\\x60{3}\\s*$", "", raw)
+        raw = re.sub(r"^\s*\x60{3}(?:json)?\s*", "", raw, flags=re.IGNORECASE)
+        raw = re.sub(r"\s*\x60{3}\s*$", "", raw)
         if not raw.startswith("{"):
             start, end = raw.find("{"), raw.rfind("}")
             if start >= 0 and end > start:
