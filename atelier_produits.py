@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from datetime import UTC, datetime
 from pathlib import Path
 from uuid import uuid4
@@ -20,6 +21,7 @@ DIMENSIONS = {
     "market_access": 10,
 }
 MAX_TEXT = 2000
+WORKFLOW_STATUSES = {"candidate", "research", "prototype", "validated", "rejected"}
 ROOT = Path(__file__).resolve().parent
 DEFAULT_PRODUCTS_DIR = ROOT / ".laboratoire_prive" / "produits"
 PRODUCT_TYPES = {
@@ -79,6 +81,12 @@ def evaluate_opportunity(data: object) -> dict:
         "evidence_status": "references_fournies_a_verifier" if clean_evidence else "aucune_preuve_fournie",
         "novelty_status": "non_verifiee",
         "commercial_status": "aucune_vente_autorisee",
+        "workflow_status": "candidate",
+        "status_history": [{
+            "status": "candidate",
+            "at": datetime.now(UTC).isoformat(timespec="seconds"),
+            "note": "Fiche créée ; preuves et hypothèses à vérifier.",
+        }],
         "created_at": datetime.now(UTC).isoformat(timespec="seconds"),
         "next_steps": [
             "Interroger des utilisateurs potentiels et conserver leurs retours.",
@@ -113,6 +121,47 @@ def save_opportunity(report: dict, directory: Path) -> Path:
     return target
 
 
+
+
+def update_opportunity_status(directory: Path, opportunity_id: str, status: str, note: str | None = None) -> dict:
+    """Fait évoluer explicitement le statut d'une opportunité locale, sans vente ni publication."""
+    if not isinstance(opportunity_id, str) or not re.fullmatch(r"[a-f0-9]{12}", opportunity_id):
+        raise ValueError("Identifiant d'opportunité invalide.")
+    if not isinstance(status, str) or status not in WORKFLOW_STATUSES:
+        raise ValueError("Statut inconnu.")
+    if note is not None:
+        if not isinstance(note, str) or len(note) > 1000:
+            raise ValueError("La note doit être un texte de 1 000 caractères maximum.")
+        from agent_gardien import contient_secret_potentiel
+        if contient_secret_potentiel(note):
+            raise ValueError("La note contient un secret potentiel ; elle n'a pas été enregistrée.")
+        note = note.strip()
+    root = Path(directory)
+    path = root / f"{opportunity_id}.json"
+    if not path.is_file() or path.resolve().parent != root.resolve():
+        raise ValueError("Opportunité introuvable.")
+    try:
+        report = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise ValueError("Fiche d'opportunité illisible.") from exc
+    if not isinstance(report, dict) or report.get("id") != opportunity_id:
+        raise ValueError("Fiche d'opportunité invalide.")
+    history = report.get("status_history")
+    if not isinstance(history, list):
+        history = []
+    history.append({
+        "status": status,
+        "at": datetime.now(UTC).isoformat(timespec="seconds"),
+        "note": note or "",
+    })
+    report["status_history"] = history[-50:]
+    report["workflow_status"] = status
+    report["updated_at"] = datetime.now(UTC).isoformat(timespec="seconds")
+    temporary = path.with_suffix(".json.tmp")
+    temporary.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    temporary.replace(path)
+    return report
+
 def list_opportunities(directory: Path) -> list[dict]:
     """Charge les fiches valides et les classe par score puis date, sans exécuter leur contenu."""
     root = Path(directory)
@@ -135,6 +184,8 @@ def list_opportunities(directory: Path) -> list[dict]:
                 "priorite_prototype", "etude_complementaire", "a_retravailler", "ne_pas_prioriser"
             }:
                 continue
+            if item.get("workflow_status") not in WORKFLOW_STATUSES:
+                item["workflow_status"] = "candidate"
             reports.append(item)
         except (OSError, UnicodeDecodeError, json.JSONDecodeError):
             continue
@@ -153,11 +204,19 @@ def main() -> int:
     evaluate.add_argument("--directory", type=Path, default=DEFAULT_PRODUCTS_DIR)
     listing = commands.add_parser("list", help="Classer les opportunités enregistrées.")
     listing.add_argument("--directory", type=Path, default=DEFAULT_PRODUCTS_DIR)
+    update = commands.add_parser("status", help="Mettre à jour le statut d'une opportunité.")
+    update.add_argument("opportunity_id")
+    update.add_argument("status", choices=sorted(WORKFLOW_STATUSES))
+    update.add_argument("--note", default=None)
+    update.add_argument("--directory", type=Path, default=DEFAULT_PRODUCTS_DIR)
     args = parser.parse_args()
     if args.command == "evaluate":
         data = json.loads(Path(args.json_file).read_text(encoding="utf-8"))
         report = evaluate_opportunity(data)
         print(save_opportunity(report, args.directory))
+    elif args.command == "status":
+        report = update_opportunity_status(args.directory, args.opportunity_id, args.status, args.note)
+        print(json.dumps({"id": report["id"], "workflow_status": report["workflow_status"]}, ensure_ascii=False))
     else:
         print(json.dumps(list_opportunities(args.directory), ensure_ascii=False, indent=2))
     return 0
