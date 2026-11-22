@@ -157,13 +157,32 @@ function setCityView(mode){
 }
 document.getElementById("view-2d").addEventListener("click",()=>setCityView("2d"));
 document.getElementById("view-3d").addEventListener("click",()=>setCityView("3d"));
-document.addEventListener("visibilitychange",()=>{if(!document.hidden&&cityViewMode==="3d"&&!city3dFrame)city3dFrame=requestAnimationFrame(renderCity3d)});
+let cityDrawTimer=0,metricsTimer=0;
+function syncCityTimers(){
+ if(document.hidden){
+  if(cityDrawTimer)clearInterval(cityDrawTimer);
+  if(metricsTimer)clearInterval(metricsTimer);
+  cityDrawTimer=0;metricsTimer=0;
+  return;
+ }
+ if(!cityDrawTimer)cityDrawTimer=window.setInterval(()=>{if(cityViewMode==="2d")drawCity()},1000);
+ if(!metricsTimer)metricsTimer=window.setInterval(()=>{
+  document.getElementById("energy").textContent=vary(82,4,70,95)+"%";
+  document.getElementById("mobility").textContent=vary(91,6,65,99)+"%";
+  document.getElementById("air").textContent=vary(88,4,70,99)+"/100";
+  document.getElementById("projects").textContent=vary(12,2,8,16);
+  document.getElementById("simulation-status").textContent=L[lang].updated+new Date().toLocaleTimeString(lang);
+ },6000);
+}
+document.addEventListener("visibilitychange",()=>{
+ if(!document.hidden&&cityViewMode==="3d"&&!city3dFrame)city3dFrame=requestAnimationFrame(renderCity3d);
+ syncCityTimers();
+});
 
 const city=document.getElementById("city-view");city.addEventListener("click",event=>{const rect=city.getBoundingClientRect();const x=(event.clientX-rect.left)/rect.width*900,y=(event.clientY-rect.top)/rect.height*420;const id=x<450?(y<210?"centre":"mobilite"):(y<210?"energie":"recherche");document.querySelectorAll("[data-district]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.district===id)));updateDetail(id)});
-window.setInterval(drawCity,1000);
 document.querySelectorAll("[data-district]").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll("[data-district]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));updateDetail(b.dataset.district)}));
 selector.addEventListener("change",()=>apply(selector.value));apply(lang);
 const vary=(base,spread,min,max)=>Math.max(min,Math.min(max,base+Math.round((Math.random()-.5)*spread)));
-window.setInterval(()=>{document.getElementById("energy").textContent=vary(82,4,70,95)+"%";document.getElementById("mobility").textContent=vary(91,6,65,99)+"%";document.getElementById("air").textContent=vary(88,4,70,99)+"/100";document.getElementById("projects").textContent=vary(12,2,8,16);document.getElementById("simulation-status").textContent=L[lang].updated+new Date().toLocaleTimeString(lang);},6000);
+syncCityTimers();
 })();
 </script></body></html>
