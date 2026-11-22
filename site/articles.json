@@ -1,5 +1,110 @@
 [
   {
+    "id": "20261122T164902-69bcb1d3",
+    "date": "2026-11-22T16:49+00:00",
+    "theme": "GTA VI — lancement et premiers retours vérifiés",
+    "title": "GTA VI : plantages, PNJ violents et accès restreint à l’édition non‑Ultimate",
+    "summary": "Depuis son lancement, GTA VI fait face à des plantages sur PS5 signalés par des joueurs, accompagnés de l’erreur CE‑108255‑1, et à des PNJ qui réagissent de façon trop violente, comme le rapportent deux articles IGN. Parallèlement, des boutiques exclusives ont refusé l’accès aux acheteurs de l’édition non‑Ultimate, suscitant un sentiment d’injustice parmi la communauté. Les causes exactes de ces problèmes restent à confirmer, et l’impact commercial de la décision d’accès restreint n’est pas encore mesuré.",
+    "verdict": "Les incidents signalés indiquent des problèmes de stabilité et de comportement IA dans GTA VI, mais la gravité et la fréquence restent à confirmer. L’accès restreint aux boutiques exclusives soulève des questions sur la politique de distribution, sans preuve de son impact commercial.",
+    "tip": "Surveillez les mises à jour officielles de Rockstar pour corriger les plantages et ajuster le comportement des PNJ, et consultez les forums pour voir si d’autres joueurs rencontrent les mêmes restrictions d’accès aux boutiques.",
+    "sources": [
+      {
+        "title": "On a fait le test du jeu dans le jeu : Time Jackers Rewind, un peu cher mais ça offre un accès à GTA 6",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sun, 22 Nov 2026 16:20:29 +0000",
+        "description": "A 80€ ça fait cher la pépite indé. À 80 euros pour une heure de jeu, ça fait quand même un peu cher pour une petite pépite indépendante. Heureusement, le jeu offre également un accès à GTA VI. Comme quoi, il y a encore des développeurs qui savent faire des cadeaux.",
+        "url": "https://fr.ign.com/time-jackers-rewind/94172/on-a-fait-le-test-du-jeu-dans-le-jeu-time-jackers-rewind-un-peu-cher-mais-ca-offre-un-acces-a-gta-6",
+        "source_type": "media"
+      },
+      {
+        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
+        "description": "Allons en paix.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
+        "source_type": "media"
+      },
+      {
+        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
+        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
+        "source_type": "media"
+      },
+      {
+        "title": "Les joueurs de GTA 6 réagissent après que des boutiques exclusives ont accueilli les acheteurs de l’édition non Ultimate avec des portes fermées",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 21:27:24 +0000",
+        "description": "Trop select.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94167/les-joueurs-de-gta-6-reagissent-apres-que-des-boutiques-exclusives-ont-accueilli-les-acheteurs-de-le",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "translations": {
+      "en": {
+        "theme": "GTA VI — launch and verified early feedback",
+        "title": "GTA VI: crashes, violent NPCs and restricted access to the non-Ultimate edition",
+        "summary": "Since its launch, GTA VI has been experiencing crashes on PS5 reported by players, accompanied by the CE‑108255‑1 error, and NPCs reacting too violently, as reported by two IGN articles. Meanwhile, exclusive stores have denied access to buyers of the non-Ultimate edition, sparking a sense of injustice within the community. The exact causes of these problems remain to be confirmed, and the commercial impact of the restricted access decision has not yet been measured.",
+        "verdict": "The reported incidents indicate stability and AI behavior issues in GTA VI, but the severity and frequency remain to be confirmed. The restricted access to exclusive stores raises questions about distribution policy, with no evidence of its commercial impact.",
+        "tip": "Monitor Rockstar’s official updates to fix crashes and adjust NPC behavior, and check forums to see if other players are experiencing the same store access restrictions.",
+        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links for the full context.",
+        "audio_url": "audio/20261122T164902-69bcb1d3-en.mp3"
+      },
+      "es": {
+        "theme": "GTA VI — lanzamiento y primeros comentarios verificados",
+        "title": "GTA VI: fallos, NPCs violentos y acceso restringido a la edición no Ultimate",
+        "summary": "Desde su lanzamiento, GTA VI ha sufrido fallos en PS5 reportados por jugadores, acompañados del error CE‑108255‑1, y NPCs que reaccionan de forma demasiado violenta, según informan dos artículos de IGN. Paralelamente, tiendas exclusivas han negado el acceso a compradores de la edición no Ultimate, generando un sentimiento de injusticia entre la comunidad. Las causas exactas de estos problemas aún no se han confirmado y el impacto comercial de la decisión de acceso restringido aún no se ha medido.",
+        "verdict": "Los incidentes reportados indican problemas de estabilidad y comportamiento de IA en GTA VI, pero la gravedad y frecuencia aún no se han confirmado. El acceso restringido a las tiendas exclusivas plantea preguntas sobre la política de distribución, sin evidencia de su impacto comercial.",
+        "tip": "Supervisa las actualizaciones oficiales de Rockstar para corregir los fallos y ajustar el comportamiento de los NPC, y consulta los foros para ver si otros jugadores experimentan las mismas restricciones de acceso a las tiendas.",
+        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulta los enlaces para obtener el contexto completo.",
+        "audio_url": "audio/20261122T164902-69bcb1d3-es.mp3"
+      },
+      "de": {
+        "theme": "GTA VI — Start und verifizierte erste Rückmeldungen",
+        "title": "GTA VI: Abstürze, gewalttätige NPCs und eingeschränkter Zugang zur Nicht-Ultimate-Ausgabe",
+        "summary": "Seit seinem Start erlebt GTA VI Abstürze auf PS5, die von Spielern gemeldet wurden, begleitet von dem Fehler CE‑108255‑1, sowie NPCs, die zu gewalttätig reagieren, wie zwei IGN-Artikel berichten. Gleichzeitig haben exklusive Geschäfte den Zugang für Käufer der Nicht-Ultimate-Ausgabe verweigert, was ein Gefühl von Ungerechtigkeit in der Community hervorruft. Die genauen Ursachen dieser Probleme sind noch zu bestätigen, und die kommerzielle Auswirkung der Entscheidung über eingeschränkten Zugang wurde noch nicht gemessen.",
+        "verdict": "Die gemeldeten Vorfälle deuten auf Stabilitäts- und KI-Verhaltensprobleme in GTA VI hin, aber die Schwere und Häufigkeit sind noch zu bestätigen. Der eingeschränkte Zugang zu exklusiven Geschäften wirft Fragen zur Vertriebs­politik auf, ohne Beweise für seine kommerzielle Auswirkung.",
+        "tip": "Behalte Rockstar’s offizielle Updates im Auge, um Abstürze zu beheben und das NPC-Verhalten anzupassen, und prüfe Foren, um zu sehen, ob andere Spieler die gleichen Zugangsbeschränkungen zu Geschäften erleben.",
+        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Prüfe die Links für den vollständigen Kontext.",
+        "audio_url": "audio/20261122T164902-69bcb1d3-de.mp3"
+      },
+      "pt": {
+        "theme": "GTA VI — lançamento e primeiros retornos verificados",
+        "title": "GTA VI: falhas, NPCs violentos e acesso restrito à edição não Ultimate",
+        "summary": "Desde o seu lançamento, GTA VI enfrenta falhas no PS5 relatadas por jogadores, acompanhadas pelo erro CE‑108255‑1, e NPCs que reagem de forma excessivamente violenta, conforme relatado por dois artigos da IGN. Paralelamente, lojas exclusivas negaram acesso aos compradores da edição não Ultimate, gerando um sentimento de injustiça na comunidade. As causas exatas desses problemas ainda precisam ser confirmadas, e o impacto comercial da decisão de acesso restrito ainda não foi medido.",
+        "verdict": "Os incidentes relatados indicam problemas de estabilidade e comportamento de IA em GTA VI, mas a gravidade e frequência ainda precisam ser confirmadas. O acesso restrito às lojas exclusivas levanta questões sobre a política de distribuição, sem evidências de seu impacto comercial.",
+        "tip": "Monitore as atualizações oficiais da Rockstar para corrigir falhas e ajustar o comportamento dos NPCs, e consulte os fóruns para ver se outros jogadores estão enfrentando as mesmas restrições de acesso às lojas.",
+        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Consulte os links para obter o contexto completo.",
+        "audio_url": "audio/20261122T164902-69bcb1d3-pt.mp3"
+      },
+      "ar": {
+        "theme": "GTA VI — الإطلاق والتعليقات المبكرة المُتحققة",
+        "title": "GTA VI: الأعطال، NPC العدوانية والوصول المقيد للنسخة غير Ultimate",
+        "summary": "منذ إطلاقه، يواجه GTA VI أعطالاً على PS5 أبلغ عنها اللاعبون، مصحوبة بخطأ CE‑108255‑1، بالإضافة إلى NPC تتصرف بشكل عنيف للغاية، كما ورد في مقالتين من IGN. في الوقت نفسه، رفضت المتاجر الحصرية وصول المشترين للنسخة غير Ultimate، ما أثار شعوراً بالظلم داخل المجتمع. لا تزال الأسباب الدقيقة لهذه المشكلات بحاجة إلى تأكيد، ولم يُقاس بعد تأثير القرار على الوصول المقيد من الناحية التجارية.",
+        "verdict": "الوقائع المبلغ عنها تشير إلى مشاكل في الاستقرار وسلوك الذكاء الاصطناعي في GTA VI، لكن شدة وتواترها لا تزال بحاجة إلى تأكيد. يثير الوصول المقيد للمتاجر الحصرية تساؤلات حول سياسة التوزيع، دون دليل على تأثيره التجاري.",
+        "tip": "راقب تحديثات Rockstar الرسمية لإصلاح الأعطال وضبط سلوك NPC، وتحقق من المنتديات لمعرفة ما إذا كان لاعبين آخرين يواجهون نفس قيود الوصول للمتاجر.",
+        "ai_notice": "مقالة مكتوبة بمساعدة groq من المصادر المذكورة. راجع الروابط للحصول على السياق الكامل.",
+        "audio_url": "audio/20261122T164902-69bcb1d3-ar.mp3"
+      },
+      "zh": {
+        "theme": "GTA VI — 上线与已验证的早期反馈",
+        "title": "GTA VI：崩溃、暴力 NPC 与非 Ultimate 版受限访问",
+        "summary": "自上线以来，GTA VI 在 PS5 上出现玩家报告的崩溃，伴随 CE‑108255‑1 错误，并出现 NPC 过度暴力的情况，正如两篇 IGN 文章所述。同时，独家商店拒绝非 Ultimate 版购买者的访问，引发社区的不公平感。问题的确切原因尚待确认，限制访问决策的商业影响尚未测量。",
+        "verdict": "报告的事件表明 GTA VI 存在稳定性和 AI 行为问题，但严重性和频率仍待确认。对独家商店的受限访问引发了关于分销政策的疑问，尚无其商业影响的证据。",
+        "tip": "关注 Rockstar 官方更新以修复崩溃并调整 NPC 行为，并查看论坛以了解其他玩家是否遇到相同的商店访问限制。",
+        "ai_notice": "文章使用 groq 根据所示来源撰写。请查看链接获取完整背景。",
+        "audio_url": "audio/20261122T164902-69bcb1d3-zh.mp3"
+      }
+    },
+    "audio_url": null
+  },
+  {
     "id": "20261122T153511-9541fbc3",
     "date": "2026-11-22T15:35+00:00",
     "theme": "Moteurs et logiciels de création de jeux",
@@ -1238,45 +1343,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261119T184429-c597ba1f.mp3"
-  },
-  {
-    "id": "20261119T183455-880c2fb0",
-    "date": "2026-11-19T18:34+00:00",
-    "theme": "Jeux vidéo annoncés pour 2027 et dates à confirmer",
-    "title": "GTA 6 et Assassin Creed Codename Red : des projets 2027 en suspens",
-    "summary": "Rockstar North et Ubisoft ont annoncé de nouvelles productions majeures, GTA 6 et Assassin Creed Codename Red, mais les deux studios font face à des licenciements internes. Les équipes concernées par ces suppressions de postes pourraient retarder les calendriers de développement. Les dates de sortie restent non confirmées, et aucune source officielle ne précise de calendrier précis pour 2027.",
-    "verdict": "Les informations proviennent de rapports médiatiques IGN France ; aucune confirmation officielle de date n’est disponible.",
-    "tip": "Surveillez les communiqués officiels des studios pour les mises à jour de dates de sortie.",
-    "sources": [
-      {
-        "title": "Le codirecteur du studio Rockstar North explique pouquoi vous ne pourrez pas aller à Disney World dans GTA 6",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 18:26:25 +0000",
-        "description": "Mickey n'a pas eu son visa pour Vice City.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94099/le-codirecteur-du-studio-rockstar-north-explique-pouquoi-vous-ne-pourrez-pas-aller-a-disney-world-da",
-        "source_type": "media"
-      },
-      {
-        "title": "Rockstar publie les crédits complets de GTA 6 — c'est cool pour les équipes, mais attention aux spoilers",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 17:54:46 +0000",
-        "description": "La prudence est de mise.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94098/rockstar-publie-les-credits-complets-de-gta-6-cest-cool-pour-les-equipes-mais-attention-aux-spoilers",
-        "source_type": "media"
-      },
-      {
-        "title": "Ubisoft confirme de nouveaux licenciements : 166 emplois sont supprimés au sein de deux studios majeurs",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 17:37:12 +0000",
-        "description": "Perte de personnel dans des bureaux importants à Montréal et au Québec.",
-        "url": "https://fr.ign.com/assassins-creed-codename-red/94097/ubisoft-confirme-de-nouveaux-licenciements-166-emplois-sont-supprimes-au-sein-de-deux-studios-majeur",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261119T183455-880c2fb0.mp3"
   }
 ]
