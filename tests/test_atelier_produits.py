@@ -2,7 +2,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from atelier_produits import DIMENSIONS, evaluate_opportunity, save_opportunity
+from atelier_produits import DIMENSIONS, evaluate_opportunity, list_opportunities, save_opportunity
 
 
 def sample():
