@@ -44,6 +44,11 @@ class MissionValidationTests(unittest.TestCase):
         })
         self.assertEqual(mission["priority"], "critical")
         self.assertEqual(mission["due_at"], "2026-12-01T17:30:00+00:00")
+        utc_mission = orchestrateur.valider_mission({
+            "mission": "Échéance UTC",
+            "due_at": "2026-12-01T17:30:00Z",
+        })
+        self.assertEqual(utc_mission["due_at"], "2026-12-01T17:30:00+00:00")
 
     def test_rejects_invalid_priority_or_timezone_free_deadline(self):
         with self.assertRaisesRegex(ValueError, "priorité"):
