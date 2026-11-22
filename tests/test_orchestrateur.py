@@ -36,6 +36,21 @@ class MissionValidationTests(unittest.TestCase):
                 "context": "api_key=abcdefghijklmnopqrstuvwx",
             })
 
+    def test_mission_priority_and_deadline_are_validated(self):
+        mission = orchestrateur.valider_mission({
+            "mission": "Prioriser une mission",
+            "priority": "critical",
+            "due_at": "2026-12-01T18:30:00+01:00",
+        })
+        self.assertEqual(mission["priority"], "critical")
+        self.assertEqual(mission["due_at"], "2026-12-01T17:30:00+00:00")
+
+    def test_rejects_invalid_priority_or_timezone_free_deadline(self):
+        with self.assertRaisesRegex(ValueError, "priorité"):
+            orchestrateur.valider_mission({"mission": "test", "priority": "urgent"})
+        with self.assertRaisesRegex(ValueError, "fuseau horaire"):
+            orchestrateur.valider_mission({"mission": "test", "due_at": "2026-12-01T18:30:00"})
+
     def test_rejects_unbounded_duration(self):
         with self.assertRaises(ValueError):
             orchestrateur.valider_mission({
