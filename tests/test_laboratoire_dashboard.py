@@ -74,6 +74,39 @@ class LocalDashboardTests(unittest.TestCase):
         self.assertEqual(item["priority"], "high")
         self.assertEqual(item["payload"]["mission"], payload["mission"])
 
+    def test_runs_a_bounded_batch_of_three_missions(self):
+        ids = [
+            self.queue.enqueue({
+                "mission": "Mission locale " + str(index),
+                "agents": ["chercheur"],
+                "max_duration_seconds": 60,
+            })
+            for index in range(3)
+        ]
+        with patch(
+            "gestionnaire_missions.orchestrateur.executer_mission",
+            return_value={"status": "completed", "results": []},
+        ):
+            status, _, body = self.request(
+                "/api/worker/run-batch",
+                method="POST",
+                payload={"max_items": 3},
+            )
+        self.assertEqual(status, 200)
+        result = json.loads(body)
+        self.assertEqual(result["processed"], 3)
+        self.assertEqual(result["status"], "completed")
+        self.assertTrue(all(self.queue.get_mission(item)["status"] == "completed" for item in ids))
+
+    def test_batch_worker_rejects_more_than_three_missions(self):
+        status, _, body = self.request(
+            "/api/worker/run-batch",
+            method="POST",
+            payload={"max_items": 4},
+        )
+        self.assertEqual(status, 400)
+        self.assertIn("entre 1 et 3", json.loads(body)["error"])
+
     def test_runs_one_bounded_mission_from_the_dashboard(self):
         mission_id = self.queue.enqueue({
             "mission": "Tester une mission locale.",
