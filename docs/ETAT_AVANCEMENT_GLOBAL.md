@@ -185,3 +185,24 @@ L'estimation pondérée est passée à **56,48 / 100** en portant le domaine « 
 ### Révision des missions et de l'autonomie — 46 %
 
 La file locale conserve les missions, leurs priorités, échéances et tentatives. Le tableau de bord permet l'annulation coopérative, la relance manuelle plafonnée à trois tentatives et l'exécution manuelle de lots de trois missions maximum. Les missions restent limitées dans le temps et dépendent de l'appareil qui exécute le laboratoire ; elles ne constituent pas un service cloud autonome permanent.
+
+## Extension PWA, ville 3D et atelier Godot — 22 novembre 2026, commit c4206829
+
+- Le site public dispose d'un manifeste d'application installable, d'une icône et d'un service worker. Les pages essentielles, la page méthode, la ville de démonstration et le catalogue des articles sont mis en cache ; une page de secours s'affiche hors ligne.
+- Pour préserver le stockage des téléphones et tablettes, les fichiers audio et vidéo volumineux ne sont pas mis en cache. Les requêtes HTTP Range sont transmises directement au serveur pour ne pas casser la lecture multimédia.
+- La démonstration urbaine conserve sa vue isométrique 2D et propose maintenant une vue WebGL 3D légère, avec rotation lente, géométrie simple et repli 2D si WebGL n'est pas disponible. Les quartiers et indicateurs restent fictifs : aucune infrastructure réelle n'est connectée.
+- L'atelier de création peut générer des squelettes Godot 4 en 2D et 3D, en plus des modèles de site web, application web, jeu web, vidéo, audio et logiciel Python. Les fichiers produits ne sont ni exécutés ni publiés automatiquement ; le moteur Godot doit être installé séparément.
+- **192 tests Python ont réussi** sur ce commit. Tous les contrôles avancés ont réussi : Playwright, parcours responsive, CodeQL Python/JavaScript, Ruff, Bandit et Gitleaks. Le build et le déploiement GitHub Pages ont réussi.
+- La surveillance de production a effectué **79 requêtes de contrôle sans erreur** après publication.
+- Le catalogue contient 30 articles ; 6 disposent actuellement de traductions dans les six langues cibles (anglais, espagnol, allemand, portugais, arabe et chinois). Les 24 autres restent à traiter progressivement.
+- Score pondéré révisé : **65,70 %**. Le seuil de 70 % n'est pas atteint.
+
+### Révision des domaines
+
+- Média, veille et site public : 97 % (site installable et utilisable hors ligne pour les pages essentielles, catalogue d'articles en cache, vue 3D locale et repli 2D ; les traductions historiques restent incomplètes).
+- Fournisseurs IA et orchestration : 40 % (Groq validé ; Hugging Face reste bloqué sans crédits et aucun second fournisseur gratuit n'est confirmé).
+- Missions persistantes et autonomie : 46 % (file locale persistante et exécution bornée ; aucun worker cloud permanent).
+- Laboratoire privé et sécurité : 61 % (tableau de bord local, portefeuille R&D et feuille de route privée ; pas d'hébergement distant authentifié).
+- R&D et conception de produits : 48 % (portefeuille d'opportunités et modèles de génération de projets web, vidéo, audio, Python et Godot ; validation par des utilisateurs réels encore absente).
+- Tests et amélioration continue : 96 % (192 tests Python, contrôles de sécurité et tests navigateur/responsive réussis, plus 79 vérifications de production ; les tests sur appareils physiques restent nécessaires).
+
