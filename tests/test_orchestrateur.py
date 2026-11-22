@@ -10,6 +10,17 @@ import orchestrateur
 
 
 class MissionValidationTests(unittest.TestCase):
+    def test_accepts_new_specialist_roles_with_three_agent_limit(self):
+        mission = orchestrateur.valider_mission({
+            "mission": "Rédiger, auditer et planifier un prototype.",
+            "agents": ["redacteur", "auditeur", "planificateur"],
+            "max_duration_seconds": 180,
+        })
+        self.assertEqual(
+            mission["agents"],
+            ["redacteur", "auditeur", "planificateur"],
+        )
+
     def test_rejects_unknown_agent(self):
         with self.assertRaises(ValueError):
             orchestrateur.valider_mission({"mission": "tester", "agents": ["pirate"]})
