@@ -110,7 +110,9 @@ async function inspectPage(browser, route, viewport) {
       ]) {
         await page.selectOption("#language", language);
         const source = await page.locator(".sources-heading").first().textContent();
+        const note = await page.locator('[data-i18n="contentNote"]').textContent();
         if (source !== expected) fail("Documentaire : libellé des sources incorrect pour " + language + ".");
+        if (!note || note.length < 20) fail("Documentaire : note sur la langue du contenu absente pour " + language + ".");
       }
       await page.selectOption("#language", "ar");
       const direction = await page.evaluate(() => document.documentElement.dir);
