@@ -65,6 +65,17 @@ class LocalDashboardTests(unittest.TestCase):
             self.assertTrue((project / "scenes" / "main.tscn").is_file())
             self.assertTrue((project / "scripts" / "main.gd").is_file())
 
+    def test_dashboard_project_generator_refuses_overwrite_with_conflict(self):
+        with tempfile.TemporaryDirectory() as folder, patch(
+            "laboratoire_dashboard.PROJECTS_DIR", Path(folder) / "prototypes"
+        ):
+            payload = {"name": "UniqueProject", "template": "site"}
+            first_status, _, _ = self.request("/api/projects", method="POST", payload=payload)
+            second_status, _, body = self.request("/api/projects", method="POST", payload=payload)
+            self.assertEqual(first_status, 201)
+            self.assertEqual(second_status, 409)
+            self.assertIn("Dossier de destination", json.loads(body)["error"])
+
     def test_dashboard_project_generator_rejects_unknown_template(self):
         status, _, body = self.request(
             "/api/projects",
