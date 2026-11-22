@@ -22,7 +22,7 @@ Dernière évaluation fonctionnelle détaillée : 22 novembre 2026. Audits préc
 
 ## Résultat
 
-**Estimation pondérée recalculée : 65,12 / 100 (audit du 22 novembre 2026, commit de code vérifié fe807070).**
+**Estimation pondérée recalculée : 65,12 / 100 (audit du 22 novembre 2026, code vérifié jusqu'au commit 0880cb31).**
 
 Ce pourcentage est un indicateur d'avancement fonctionnel construit à partir des domaines ci-dessous. Ce n'est ni un pourcentage de lignes de code terminées, ni une garantie de disponibilité, ni une certification de mise en production. Les notes sont des estimations prudentes fondées sur les fonctions présentes et les contrôles exécutés. Le précédent score de 56,48 % est conservé dans les bilans historiques plus haut.
 
@@ -220,7 +220,7 @@ La file locale conserve les missions, leurs priorités, échéances et tentative
 
 ### Révision des domaines
 
-- Média, veille et site public : 95 % (vue WebGL 3D avec repli 2D, application PWA, consultation hors ligne du catalogue, contrôles des médias ; traduction de toutes les archives et contenus toujours incomplète).
+- Média, veille et site public : 90 % (vue WebGL 3D avec repli 2D, application PWA, atelier navigateur et contrôles des médias ; la traduction intégrale des 30 articles est encore en rattrapage).
 - Fournisseurs IA et orchestration : 40 % (Groq est le fournisseur principal ; Hugging Face n'est pas confirmé comme solution gratuite disponible).
 - Missions persistantes et autonomie : 46 % (missions locales bornées ; aucun service cloud autonome permanent).
 - Laboratoire privé et sécurité : 61 % (dashboard local et données privées locales ; pas de dashboard distant authentifié).
@@ -244,7 +244,7 @@ La file locale conserve les missions, leurs priorités, échéances et tentative
 - **Équipe d'agents étendue :** six rôles sont disponibles (chercheur, critique, architecte, rédacteur, auditeur, planificateur). Le tableau de bord permet de sélectionner les rôles ; la limite serveur reste de trois agents par mission et la durée maximale demeure bornée.
 - **200 tests Python réussis** sur le commit `fe807070`, dont les nouveaux tests de génération depuis le dashboard, de conflit de nom, de rejet de liens symboliques et de permissions privées. Playwright, Ruff, Bandit, CodeQL Python/JavaScript et Gitleaks ont réussi. Le build et le déploiement Pages ont réussi.
 - La surveillance de production a terminé **85 requêtes HTTP avec zéro erreur**, y compris le manifeste, les médias documentaires et les six variantes audio/vidéo/sous-titres.
-- Score pondéré révisé : **66,29 %**. Le projet reste incomplet ; ce chiffre est une estimation de périmètre, pas une certification.
+- Score pondéré révisé après audit de traduction : **65,12 %**. Le projet reste incomplet ; ce chiffre est une estimation de périmètre, pas une certification.
 
 ### Révision des domaines
 
