@@ -22,7 +22,7 @@ Dernière évaluation fonctionnelle détaillée : 22 novembre 2026. Audits préc
 
 ## Résultat
 
-**Estimation pondérée recalculée : 63,29 / 100 (audit du 22 novembre 2026, commit vérifié 9ccabcf4).**
+**Estimation pondérée recalculée : 63,59 / 100 (audit du 22 novembre 2026, commit vérifié acf03b51).**
 
 Ce pourcentage est un indicateur d'avancement fonctionnel construit à partir des domaines ci-dessous. Ce n'est ni un pourcentage de lignes de code terminées, ni une garantie de disponibilité, ni une certification de mise en production. Les notes sont des estimations prudentes fondées sur les fonctions présentes et les contrôles exécutés. Le précédent score de 56,48 % est conservé dans les bilans historiques plus haut.
 
@@ -31,10 +31,10 @@ Ce pourcentage est un indicateur d'avancement fonctionnel construit à partir de
 | Média, veille et site public | 23,53 % | 94 % | 22,12 |
 | Fournisseurs IA et orchestration d'agents | 17,65 % | 40 % | 7,06 |
 | Missions persistantes et autonomie | 17,65 % | 42 % | 7,41 |
-| Laboratoire privé et sécurité | 17,65 % | 60 % | 10,59 |
+| Laboratoire privé et sécurité | 17,65 % | 61 % | 10,77 |
 | R&D et conception de produits | 11,76 % | 45 % | 5,29 |
-| Tests et amélioration continue | 11,76 % | 92 % | 10,82 |
-| **Total** | **100 %** |  | **63,29 %** |
+| Tests et amélioration continue | 11,76 % | 93 % | 10,94 |
+| **Total** | **100 %** |  | **63,59 %** |
 
 Calcul : somme de (poids × note du domaine) / 100.
 
@@ -159,3 +159,17 @@ L'estimation pondérée est passée à **56,48 / 100** en portant le domaine « 
 - Média, veille et site public : 94 % (recherche, filtres, six défis et rangs personnels ; il reste la traduction intégrale des archives et davantage de pages publiques).
 - Laboratoire privé et sécurité : 60 % (tableau de bord local, file de missions, portefeuille R&D, feuille de route persistante, jeton d'accès, vérification d'origine et stockage local privé ; pas encore d'hébergement distant authentifié).
 - Tests et amélioration continue : 92 % (173 tests et tous les contrôles avancés verts, plus 74 vérifications HTTP ; la validation sur tous les appareils physiques reste nécessaire).
+
+
+## Extension du laboratoire local — 22 novembre 2026, commit acf03b51
+
+- La feuille de route locale permet désormais de modifier les échéances en plus des statuts. Les dates doivent être valides et inclure un fuseau horaire ; une échéance peut être effacée. Le stockage reste dans le dossier privé ignoré par Git, avec écriture atomique et permissions POSIX restrictives.
+- L'intégrité de la feuille de route vérifie maintenant l'ensemble des identifiants attendus, l'absence de doublons et la validité des priorités et statuts. Un fichier corrompu n'est jamais remplacé silencieusement.
+- **174 tests Python ont réussi** sur le commit `acf03b51`. Playwright, CodeQL Python/JavaScript, Ruff, Bandit et Gitleaks ont tous réussi. GitHub Pages a été construit et déployé.
+- La surveillance de production a effectué **74 contrôles HTTP sans erreur** après le déploiement.
+- Score pondéré révisé : **63,59 %**. Le seuil de 70 % n'est pas encore atteint.
+
+### Révision des domaines
+
+- Laboratoire privé et sécurité : 61 % (feuille de route privée avec échéances, statuts et validation stricte ; aucun hébergement distant sécurisé n'est encore disponible).
+- Tests et amélioration continue : 93 % (174 tests automatisés et tous les contrôles avancés verts ; les tests sur matériel réel restent à effectuer).
