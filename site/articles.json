@@ -1,5 +1,101 @@
 [
   {
+    "id": "20261122T173056-8fc87db7",
+    "date": "2026-11-22T17:30+00:00",
+    "theme": "GTA VI — lancement et premiers retours vérifiés",
+    "title": "GTA VI : plantages et PNJ violents sur PS5, accès via un jeu indie",
+    "summary": "Les joueurs de GTA VI sur PS5 rapportent des plantages fréquents accompagnés de l’erreur CE‑108255‑1 et des PNJ qui réagissent de façon extrêmement violente, ce qui incite certains à éviter ces interactions. Un jeu indépendant, *Time Jackers Rewind*, propose un accès à GTA VI pour 80 €, mais son prix et son statut d’« indie » soulèvent des doutes sur la légitimité de l’offre. Les retours proviennent uniquement de forums IGN, sans vérification indépendante, et la fiabilité de ces rapports reste incertaine.",
+    "verdict": "Les incidents signalés sur PS5 sont documentés, mais leur gravité et leur fréquence restent à confirmer par des sources indépendantes. L’accès via *Time Jackers Rewind* est proposé, mais son authenticité n’est pas vérifiée.",
+    "tip": "Les lecteurs intéressés par GTA VI devraient rester vigilants face aux plantages et aux PNJ violents, et vérifier la légitimité des offres tierces avant d’acheter.",
+    "sources": [
+      {
+        "title": "On a fait le test du jeu dans le jeu : Time Jackers Rewind, un peu cher mais ça offre un accès à GTA 6",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sun, 22 Nov 2026 16:20:29 +0000",
+        "description": "A 80€ ça fait cher la pépite indé. À 80 euros pour une heure de jeu, ça fait quand même un peu cher pour une petite pépite indépendante. Heureusement, le jeu offre également un accès à GTA VI. Comme quoi, il y a encore des développeurs qui savent faire des cadeaux.",
+        "url": "https://fr.ign.com/time-jackers-rewind/94172/on-a-fait-le-test-du-jeu-dans-le-jeu-time-jackers-rewind-un-peu-cher-mais-ca-offre-un-acces-a-gta-6",
+        "source_type": "media"
+      },
+      {
+        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
+        "description": "Allons en paix.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
+        "source_type": "media"
+      },
+      {
+        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
+        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "translations": {
+      "en": {
+        "theme": "GTA VI — launch and verified early feedback",
+        "title": "GTA VI: crashes and violent NPCs on PS5, access via an indie game",
+        "summary": "Players of GTA VI on PS5 report frequent crashes accompanied by the CE‑108255‑1 error and NPCs reacting extremely violently, prompting some to avoid these interactions. An indie title, Time Jackers Rewind, offers access to GTA VI for €80, but its price and indie status raise doubts about the legitimacy of the offer. The feedback comes solely from IGN forums, with no independent verification, and the reliability of these reports remains uncertain.",
+        "verdict": "The incidents reported on PS5 are documented, but their severity and frequency remain to be confirmed by independent sources. Access via Time Jackers Rewind is offered, but its authenticity is not verified.",
+        "tip": "Readers interested in GTA VI should remain vigilant about crashes and violent NPCs, and verify the legitimacy of third‑party offers before purchasing.",
+        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links to find the full context.",
+        "audio_url": "audio/20261122T173056-8fc87db7-en.mp3"
+      },
+      "es": {
+        "theme": "GTA VI — lanzamiento y primeros comentarios verificados",
+        "title": "GTA VI: fallos y NPCs violentos en PS5, acceso a través de un juego indie",
+        "summary": "Los jugadores de GTA VI en PS5 informan de fallos frecuentes acompañados del error CE‑108255‑1 y de NPCs que reaccionan de forma extremadamente violenta, lo que lleva a algunos a evitar estas interacciones. Un juego independiente, Time Jackers Rewind, ofrece acceso a GTA VI por 80 €, pero su precio y su estatus de «indie» generan dudas sobre la legitimidad de la oferta. Los comentarios provienen únicamente de los foros de IGN, sin verificación independiente, y la fiabilidad de estos informes sigue siendo incierta.",
+        "verdict": "Los incidentes reportados en PS5 están documentados, pero su gravedad y frecuencia aún deben confirmarse por fuentes independientes. El acceso a través de Time Jackers Rewind se ofrece, pero su autenticidad no está verificada.",
+        "tip": "Los lectores interesados en GTA VI deben mantenerse vigilantes ante los fallos y los NPCs violentos, y verificar la legitimidad de las ofertas de terceros antes de comprar.",
+        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulte los enlaces para encontrar el contexto completo.",
+        "audio_url": "audio/20261122T173056-8fc87db7-es.mp3"
+      },
+      "de": {
+        "theme": "GTA VI — Start und verifizierte erste Rückmeldungen",
+        "title": "GTA VI: Abstürze und gewalttätige NPCs auf PS5, Zugang über ein Indie-Spiel",
+        "summary": "Spieler von GTA VI auf PS5 berichten von häufigen Abstürzen begleitet von dem CE‑108255‑1-Fehler und von NPCs, die extrem gewalttätig reagieren, was einige dazu veranlasst, diese Interaktionen zu vermeiden. Ein Indie-Titel, Time Jackers Rewind, bietet Zugang zu GTA VI für 80 €, aber sein Preis und sein Indie-Status werfen Zweifel an der Legitimität des Angebots auf. Die Rückmeldungen stammen ausschließlich von IGN-Foren, ohne unabhängige Verifizierung, und die Zuverlässigkeit dieser Berichte bleibt ungewiss.",
+        "verdict": "Die auf PS5 gemeldeten Vorfälle sind dokumentiert, aber ihre Schwere und Häufigkeit müssen noch von unabhängigen Quellen bestätigt werden. Der Zugang über Time Jackers Rewind wird angeboten, aber seine Authentizität ist nicht verifiziert.",
+        "tip": "Leser, die an GTA VI interessiert sind, sollten bei Abstürzen und gewalttätigen NPCs wachsam bleiben und die Legitimität von Drittanbieterangeboten vor dem Kauf prüfen.",
+        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Prüfen Sie die Links, um den vollständigen Kontext zu finden.",
+        "audio_url": "audio/20261122T173056-8fc87db7-de.mp3"
+      },
+      "pt": {
+        "theme": "GTA VI — lançamento e primeiros retornos verificados",
+        "title": "GTA VI: falhas e NPCs violentos no PS5, acesso via um jogo indie",
+        "summary": "Jogadores de GTA VI no PS5 relatam falhas frequentes acompanhadas do erro CE‑108255‑1 e de NPCs que reagem de forma extremamente violenta, o que leva alguns a evitar essas interações. Um jogo independente, Time Jackers Rewind, oferece acesso a GTA VI por 80 €, mas seu preço e status de \"indie\" levantam dúvidas sobre a legitimidade da oferta. Os retornos vêm apenas de fóruns IGN, sem verificação independente, e a confiabilidade desses relatos permanece incerta.",
+        "verdict": "Os incidentes relatados no PS5 estão documentados, mas sua gravidade e frequência ainda precisam ser confirmados por fontes independentes. O acesso via Time Jackers Rewind é oferecido, mas sua autenticidade não é verificada.",
+        "tip": "Os leitores interessados em GTA VI devem permanecer vigilantes diante de falhas e NPCs violentos, e verificar a legitimidade das ofertas de terceiros antes de comprar.",
+        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Consulte os links para encontrar o contexto completo.",
+        "audio_url": "audio/20261122T173056-8fc87db7-pt.mp3"
+      },
+      "ar": {
+        "theme": "GTA VI — الإطلاق وردود الفعل المبكرة المُتحققة",
+        "title": "GTA VI: أعطال وشخصيات غير لاعب عدوانية على PS5، وصول عبر لعبة مستقلة",
+        "summary": "يبلغ لاعبو GTA VI على PS5 عن أعطال متكررة مصحوبة بخطأ CE‑108255‑1 وشخصيات غير لاعب تتفاعل بشكل عنيف للغاية، مما يدفع البعض إلى تجنب هذه التفاعلات. لعبة مستقلة، Time Jackers Rewind، توفر وصولاً إلى GTA VI مقابل 80 €، لكن سعرها وحالتها كـ \"استقلالية\" يثيران شكوكًا حول شرعية العرض. تأتي الملاحظات فقط من منتديات IGN، دون تحقق مستقل، ويظل موثوقية هذه التقارير غير مؤكدة.",
+        "verdict": "الوقائع المبلغ عنها على PS5 موثقة، لكن خطورتها وتكرارها لا تزال بحاجة إلى تأكيد من مصادر مستقلة. الوصول عبر Time Jackers Rewind مقدم، لكن أصالته غير مُتحققة.",
+        "tip": "يجب على القراء المهتمين بـ GTA VI أن يظلوا يقظين حيال الأعطال والشخصيات غير اللاعب العدوانية، وأن يتحققوا من شرعية العروض الخارجية قبل الشراء.",
+        "ai_notice": "مقالة مكتوبة بمساعدة groq من المصادر المذكورة. راجع الروابط للعثور على السياق الكامل.",
+        "audio_url": "audio/20261122T173056-8fc87db7-ar.mp3"
+      },
+      "zh": {
+        "theme": "GTA VI — 上线与已核实的早期反馈",
+        "title": "GTA VI：PS5 上的崩溃与暴力 NPC，借助独立游戏获取",
+        "summary": "GTA VI 的 PS5 玩家报告频繁崩溃，伴随 CE‑108255‑1 错误，以及 NPC 以极端暴力方式反应，促使部分玩家避免这些互动。独立游戏 Time Jackers Rewind 以 80 € 提供 GTA VI 访问，但其价格和独立身份引发对该优惠合法性的疑问。反馈仅来自 IGN 论坛，未进行独立验证，报告的可靠性仍不确定。",
+        "verdict": "PS5 上报告的事件已被记录，但其严重性和频率仍需由独立来源确认。通过 Time Jackers Rewind 的访问已提供，但其真实性未得到验证。",
+        "tip": "对 GTA VI 感兴趣的读者应对崩溃和暴力 NPC 保持警惕，并在购买前核实第三方优惠的合法性。",
+        "ai_notice": "本文使用 groq 根据所列来源撰写。请查看链接以获取完整背景。",
+        "audio_url": "audio/20261122T173056-8fc87db7-zh.mp3"
+      }
+    },
+    "audio_url": "audio/20261122T173056-8fc87db7.mp3"
+  },
+  {
     "id": "20261122T172321-48a6ffeb",
     "date": "2026-11-22T17:23+00:00",
     "theme": "Matériel et smartphones",
@@ -1294,54 +1390,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261119T185142-92ad4b88.mp3"
-  },
-  {
-    "id": "20261119T184429-c597ba1f",
-    "date": "2026-11-19T18:44+00:00",
-    "theme": "GTA VI — lancement et premiers retours vérifiés",
-    "title": "GTA VI lancé sur Xbox Series S avec FSR 4.1, premiers retours mitigés",
-    "summary": "Le nouveau titre de Rockstar North est disponible sur Xbox Series S, où il utilise la technologie FSR 4.1 pour upscaler le rendu de 720 p à 1080 p, indiquant une optimisation ciblée pour les consoles de génération précédente. Les premiers retours soulignent que l’impact réel sur la performance globale reste à confirmer. Le studio a publié les crédits complets, révélant la taille et la diversité de l’équipe, mais sans détailler les contributions individuelles, ce qui limite la compréhension précise de la répartition des rôles.",
-    "verdict": "Les informations proviennent d’articles IGN France et d’une source Xboxygen. Les performances exactes de FSR 4.1 sur Xbox Series S ne sont pas encore confirmées par des tests indépendants.",
-    "tip": "Pour plus de détails sur les performances, surveillez les tests de benchmarks à venir.",
-    "sources": [
-      {
-        "title": "Le codirecteur du studio Rockstar North explique pouquoi vous ne pourrez pas aller à Disney World dans GTA 6",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 18:26:25 +0000",
-        "description": "Mickey n'a pas eu son visa pour Vice City.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94099/le-codirecteur-du-studio-rockstar-north-explique-pouquoi-vous-ne-pourrez-pas-aller-a-disney-world-da",
-        "source_type": "media"
-      },
-      {
-        "title": "Rockstar publie les crédits complets de GTA 6 — c'est cool pour les équipes, mais attention aux spoilers",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 17:54:46 +0000",
-        "description": "La prudence est de mise.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94098/rockstar-publie-les-credits-complets-de-gta-6-cest-cool-pour-les-equipes-mais-attention-aux-spoilers",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 utilise la technologie FSR 4.1 sur Xbox Series S pour upscaler le jeu de 720p à 1080p",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 14:48:25 +0000",
-        "description": "Redstone, voici GTA.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94091/gta-6-utilise-la-technologie-fsr-41-sur-xbox-series-s-pour-upscaler-le-jeu-de-720p-a-1080p",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 est bien disponible en avance sur Xbox, l’astuce fonctionne et voici comment faire",
-        "publisher": "Xboxygen",
-        "domain": "news.google.com",
-        "published": "Mon, 16 Nov 2026 09:29:03 GMT",
-        "description": "GTA 6 est bien disponible en avance sur Xbox, l’astuce fonctionne et voici comment faire    Xboxygen",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE81U0VpSXNhQlZjV2w5OWtVcmE1eWxkSVFpdG1ZY21sN1prc3VkMXc3Uko2VjBVUW5aMW1kWHpJTDdsNHlWRWVYcVhQa2NlNzV6X1VmeXUyei0ycVpFQ1FOd2NNX3hfdE1NRUJaS0tjY2RwSjYzOVRCclFfay1fQQ?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261119T184429-c597ba1f.mp3"
   }
 ]
