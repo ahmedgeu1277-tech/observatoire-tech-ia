@@ -6,7 +6,7 @@
 const { chromium } = require("playwright");
 
 const BASE = process.env.SITE_BASE_URL || "http://127.0.0.1:4173";
-const PAGES = ["/site/index.html", "/site/documentaire-test.html", "/site/ville-demo.html"];
+const PAGES = ["/site/index.html", "/site/documentaire-test.html", "/site/ville-demo.html", "/site/methode.html"];
 const failures = [];
 
 function fail(message) { failures.push(message); }
@@ -63,9 +63,33 @@ async function inspectPage(browser, route, viewport) {
   }
   if (!layout.title.trim()) fail(route + " : titre de page absent.");
 
+  if (route === "/site/methode.html") {
+    const selector = page.locator("#language");
+    if (await selector.count() !== 1) fail("Méthode : sélecteur de langue absent.");
+    else {
+      await page.selectOption("#language", "en");
+      if (await page.locator("h1").textContent() !== "Our method") {
+        fail("Méthode : traduction anglaise incomplète.");
+      }
+      await page.selectOption("#language", "ar");
+      const direction = await page.locator("html").getAttribute("dir");
+      if (direction !== "rtl") fail("Méthode : le sens RTL arabe n'est pas activé.");
+      await page.selectOption("#language", "fr");
+      if (await page.locator("h1").textContent() !== "Notre méthode") {
+        fail("Méthode : retour au français incorrect.");
+      }
+    }
+    if (await page.locator('a[href="./index.html"]').count() !== 2) {
+      fail("Méthode : les liens de retour à l'accueil sont absents.");
+    }
+  }
+
   if (route === "/site/index.html") {
     const navLinks = page.locator("nav a[href]");
     if (await navLinks.count() < 3) fail("Accueil : navigation principale incomplète.");
+    if (await page.locator('nav a[href="./methode.html"]').count() !== 1) {
+      fail("Accueil : lien vers la méthode éditoriale absent.");
+    }
     const articles = page.locator("#articles");
     if (!(await articles.count())) fail("Accueil : zone des actualités absente.");
     // Attendre la fin réelle du rendu, pas seulement le changement anticipé du compteur.
