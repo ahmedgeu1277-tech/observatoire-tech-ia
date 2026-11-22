@@ -16,13 +16,13 @@ Le site présente des articles et des documentaires issus de sources publiques. 
 - Démonstration publique interactive d'une ville fictive : quatre quartiers et indicateurs synthétiques, sans exposition des données internes.
 - Archivage des publications récentes et nettoyage programmé des anciennes archives.
 - File locale de missions IA avec trois rôles spécialisés maximum, durée limitée et demande d'annulation coopérative entre les appels IA.
-- Tests automatisés et contrôles de qualité/sécurité dans GitHub Actions.
+- Tests automatisés, contrôles de qualité/sécurité et surveillance du site réellement publié dans GitHub Actions.
 
 Les tâches GitHub Actions sont ponctuelles et planifiées : elles ne constituent pas un serveur permanent 24 h/24.
 
 ## Langues
 
-Le sélecteur de la page d'accueil propose sept langues pour les principaux éléments de l'interface : français, anglais, espagnol, allemand, portugais, arabe et chinois. Le choix est mémorisé dans le navigateur et l'arabe active l'affichage de droite à gauche. Cela ne traduit pas automatiquement les articles, les documentaires ni toutes les pages : les contenus éditoriaux conservent leur langue d'origine.
+Le sélecteur de la page d'accueil propose sept langues pour l'interface : français, anglais, espagnol, allemand, portugais, arabe et chinois. La langue du navigateur est détectée au premier accès, puis le choix est mémorisé ; l'arabe active l'affichage de droite à gauche. Les articles conservent leur langue de publication. La page documentaire propose des variantes traduites (texte, narration, vidéo et sous-titres) en six langues supplémentaires lorsque leur génération a réussi. Les noms et liens des sources restent dans leur langue d'origine. Cette fonction ne traduit pas automatiquement chaque article ni toutes les pages.
 
 ## Ce qui n'est pas encore disponible
 
