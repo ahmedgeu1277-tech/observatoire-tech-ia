@@ -25,10 +25,12 @@ class ArticleTranslationBackfillTests(unittest.TestCase):
     def test_translates_oldest_first_and_preserves_sources(self, translate):
         translate.return_value = {
             language: {
+                "theme": "Translated theme",
                 "title": "Translated",
                 "summary": "Translated summary",
                 "verdict": "Translated verdict",
                 "tip": "Translated tip",
+                "ai_notice": "Translated AI note",
             }
             for language in ("en", "es", "de", "pt", "ar", "zh")
         }
