@@ -1,6 +1,6 @@
 "use strict";
 const CACHE_NAME = "nexora-public-v1";
-const CORE_URLS = ["./", "./index.html", "./methode.html", "./ville-demo.html", "./offline.html", "./manifest.webmanifest", "./icon.svg", "./articles.json"];
+const CORE_URLS = ["./", "./index.html", "./methode.html", "./ville-demo.html", "./offline.html", "./manifest.webmanifest", "./icon.svg", "./articles.json", "./atelier.html"];
 
 self.addEventListener("install", event => {
   event.waitUntil((async () => {
