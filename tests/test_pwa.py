@@ -31,6 +31,12 @@ class ProgressiveWebAppTests(unittest.TestCase):
         self.assertIn('nexora-public-v1', worker)
         self.assertIn('"./articles.json"', worker)
 
+    def test_media_range_requests_bypass_cache_api(self):
+        worker = (SITE / "sw.js").read_text(encoding="utf-8")
+        self.assertIn('request.headers.has("range")', worker)
+        self.assertIn('event.respondWith(fetch(request))', worker)
+        self.assertIn("Cache API ne peut pas les stocker", worker)
+
     def test_offline_page_exists_and_does_not_claim_live_data(self):
         page = (SITE / "offline.html").read_text(encoding="utf-8")
         self.assertIn("MODE HORS LIGNE", page)
