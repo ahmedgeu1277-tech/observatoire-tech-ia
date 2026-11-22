@@ -28,7 +28,7 @@ Les tâches GitHub Actions sont ponctuelles et planifiées : elles ne constituen
 
 ## Langues
 
-Le sélecteur de la page d'accueil propose sept langues pour l'interface : français, anglais, espagnol, allemand, portugais, arabe et chinois. La langue du navigateur est détectée au premier accès, puis le choix est mémorisé ; l'arabe active l'affichage de droite à gauche. Les articles conservent leur langue de publication. La page documentaire propose des variantes traduites (texte, narration, vidéo et sous-titres) en six langues supplémentaires lorsque leur génération a réussi. Les noms et liens des sources restent dans leur langue d'origine. Cette fonction ne traduit pas automatiquement chaque article ni toutes les pages.
+Le sélecteur de la page d'accueil propose sept langues pour l'interface : français, anglais, espagnol, allemand, portugais, arabe et chinois. La langue du navigateur est détectée au premier accès, puis le choix est mémorisé ; l'arabe active l'affichage de droite à gauche. Les articles conservent leur langue de publication. La page documentaire propose des variantes traduites (texte, narration, vidéo et sous-titres) en six langues supplémentaires lorsque leur génération a réussi. Les noms et liens des sources restent dans leur langue d'origine. Cette fonction ne traduit pas automatiquement chaque article ni toutes les pages. Lors du dernier audit du catalogue (22 novembre 2026), 5 articles sur 30 disposaient de toutes les traductions textuelles et audio attendues dans les six langues secondaires ; les autres traductions restent en rattrapage progressif.
 
 ## Ce qui n'est pas encore disponible
 
