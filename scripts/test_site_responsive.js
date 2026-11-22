@@ -147,8 +147,7 @@ async function inspectPage(browser, route, viewport) {
           title:"Übersetzter Testtitel",
           summary:"Dies ist eine geprüfte Übersetzungsprobe.",
           verdict:"Die Quellen bestätigen diese Aussage.",
-          tip:"Die Originalquelle lesen.",
-          audio_url:window.nexoraArticles[1].audio_url
+          tip:"Die Originalquelle lesen."
         }};
         window.observatoireApplyArticleLanguage("de");
       });
@@ -158,9 +157,33 @@ async function inspectPage(browser, route, viewport) {
       if (!(await page.locator("#articles .article").first().textContent()).includes("geprüfte Übersetzungsprobe")) {
         fail("Accueil : le résumé traduit n'est pas affiché.");
       }
-      const translatedAudioExpected = await page.evaluate(() => "./" + window.nexoraArticles[1].audio_url.replace(/^\.\//, "").replace(/^site\//, ""));
-      if ((await page.locator("#articles .article audio").first().getAttribute("src")) !== translatedAudioExpected) {
-        fail("Accueil : l'audio traduit ne suit pas la langue sélectionnée.");
+      const audioIndexes = await page.evaluate(() => ({
+        target: window.nexoraArticles.findIndex(item => typeof item.audio_url === "string" && item.audio_url.trim()),
+        alternate: window.nexoraArticles.findIndex((item, index) => index !== 0 && typeof item.audio_url === "string" && item.audio_url.trim())
+      }));
+      if (audioIndexes.target < 0) {
+        fail("Accueil : aucun article avec audio disponible pour tester la traduction.");
+      } else {
+        const alternateIndex = audioIndexes.alternate >= 0 ? audioIndexes.alternate : audioIndexes.target;
+        await page.evaluate(({target, alternate}) => {
+          const item = window.nexoraArticles[target];
+          item.translations = {
+            ...(item.translations || {}),
+            de: {
+              ...(item.translations?.de || {}),
+              audio_url: window.nexoraArticles[alternate].audio_url
+            }
+          };
+          window.observatoireApplyArticleLanguage("de");
+        }, {target: audioIndexes.target, alternate: alternateIndex});
+        const translatedAudioExpected = await page.evaluate(index =>
+          "./" + window.nexoraArticles[index].audio_url.replace(/^\\.\\//, "").replace(/^site\\//, ""),
+        alternateIndex);
+        const translatedAudioActual = await page.locator("#articles .article").nth(audioIndexes.target)
+          .locator("audio").getAttribute("src");
+        if (translatedAudioActual !== translatedAudioExpected) {
+          fail("Accueil : l'audio traduit ne suit pas la langue sélectionnée.");
+        }
       }
       await page.selectOption("#language", "fr");
       if ((await page.locator("#articles .article h3").first().textContent()) !== originalArticleTitle) {
