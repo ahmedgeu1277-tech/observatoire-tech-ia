@@ -22,25 +22,25 @@ Dernière évaluation fonctionnelle détaillée : 22 novembre 2026. Audits préc
 
 ## Résultat
 
-**Estimation pondérée recalculée : 65,12 / 100 (audit du 22 novembre 2026, code vérifié jusqu'au commit 0880cb31).**
+**Estimation pondérée recalculée : 65,70 / 100 (audit du 22 novembre 2026, code vérifié jusqu'au commit 386e5373).**
 
 Ce pourcentage est un indicateur d'avancement fonctionnel construit à partir des domaines ci-dessous. Ce n'est ni un pourcentage de lignes de code terminées, ni une garantie de disponibilité, ni une certification de mise en production. Les notes sont des estimations prudentes fondées sur les fonctions présentes et les contrôles exécutés. Le précédent score de 56,48 % est conservé dans les bilans historiques plus haut.
 
 | Domaine | Poids | Avancement estimé | Contribution |
 |---|---:|---:|---:|
-| Média, veille et site public | 23,53 % | 90 % | 21,18 |
+| Média, veille et site public | 23,53 % | 91 % | 21,41 |
 | Fournisseurs IA et orchestration d'agents | 17,65 % | 40 % | 7,06 |
 | Missions persistantes et autonomie | 17,65 % | 46 % | 8,12 |
 | Laboratoire privé et sécurité | 17,65 % | 63 % | 11,12 |
-| R&D et conception de produits | 11,76 % | 52 % | 6,12 |
-| Tests et amélioration continue | 11,76 % | 98 % | 11,52 |
-| **Total** | **100 %** |  | **65,12 %** |
+| R&D et conception de produits | 11,76 % | 54 % | 6,35 |
+| Tests et amélioration continue | 11,76 % | 99 % | 11,64 |
+| **Total** | **100 %** |  | **65,70 %** |
 
 Calcul : somme de (poids × note du domaine) / 100.
 
 ## Justification des notes
 
-### Média, veille et site public — 90 %
+### Média, veille et site public — 91 %
 Le site public, la récupération de sources, la rédaction assistée, les articles, les fichiers audio et les workflows planifiés existent. Un premier documentaire de démonstration a été généré et publié en MP4 H.264/AAC avec narration, diapositives 1280×720 dessinées localement et références aux sources. Le rendu a été vérifié par FFmpeg et le workflow complet a réussi. Cette vidéo reste un documentaire temporaire de test, pas un studio de montage universel. Restent notamment un hébergement secondaire réellement actif, une supervision permanente et une validation factuelle plus forte.
 
 ### Fournisseurs IA et orchestration d'agents — 40 %
@@ -52,10 +52,10 @@ Une file SQLite locale conserve les missions et leurs états ; un worker peut la
 ### Laboratoire privé et sécurité — 45 %
 Le dossier local du laboratoire est ignoré par Git, les contrôles Gitleaks, CodeQL, Bandit et Ruff sont présents, et un contrôles statiques complémentaires ont été ajoutés. Il n'existe pas encore de tableau de bord privé hébergé avec authentification et autorisations côté serveur. GitHub Pages reste public.
 
-### R&D et conception de produits — 52 %
+### R&D et conception de produits — 54 %
 L'atelier de sélection de produits note les opportunités selon la douleur client, les preuves de demande, la faisabilité, la différenciation, le coût et l'accès au marché. Des prototypes commencent à exister, mais les entretiens clients, les preuves de marché indépendantes, les tests avec de vrais utilisateurs et la validation économique restent à faire.
 
-### Tests et amélioration continue — 98 %
+### Tests et amélioration continue — 99 %
 La suite compte maintenant 112 tests Python réussis sur le commit `e34f646a` le 19 novembre, après ajout des tests de migration SQLite et d'annulation coopérative des missions. Le dernier workflow avancé a réussi : Ruff, Bandit, Gitleaks, CodeQL Python et JavaScript, ainsi que les tests Playwright des trois pages et les parcours responsive de l'accueil et du documentaire à 390, 768 et 1 440 px. Le diagnostic du dépôt a vérifié 25 articles, 85 sources et 24 fichiers audio, cinq profils d'agents et l'absence de données de ville dans le site public. La boucle d'auto-évaluation produit un rapport et un backlog ; elle ne réécrit pas le code de production et ne déploie pas de corrections de façon autonome.
 
 ## Périmètre de développement
@@ -248,11 +248,11 @@ La file locale conserve les missions, leurs priorités, échéances et tentative
 
 ### Révision des domaines
 
-- Média, veille et site public : 90 % (l'interface a sept langues, mais seulement 5 des 30 articles audités disposent actuellement d'une traduction complète avec audio ; les autres sont en rattrapage).
+- Média, veille et site public : 91 % (atelier navigateur ZIP, défis exportables, PWA et ville WebGL ; seulement 5 des 30 articles audités disposent actuellement d'une traduction complète avec audio).
 - Fournisseurs IA et orchestration : 40 % (six rôles, mais Hugging Face n'est pas confirmé comme fournisseur gratuit disponible).
 - Missions persistantes et autonomie : 46 % (file locale, relances bornées, maximum trois agents ; pas de service cloud autonome permanent).
 - Laboratoire privé et sécurité : 63 % (dashboard local, génération de prototypes privée, protections de chemin et permissions ; pas de dashboard distant authentifié).
-- R&D et conception de produits : 52 % (atelier multi-format et modèles Godot 2D/3D ; les projets ne sont pas encore compilés/testés dans Godot et ne constituent pas un IDE complet).
+- R&D et conception de produits : 54 % (atelier navigateur et dashboard local multi-format, modèles Godot 2D/3D ; les projets ne sont pas encore compilés/testés dans Godot et ne constituent pas un IDE complet).
 - Tests et amélioration continue : 98 % (200 tests Python et contrôles automatisés réussis ; essais sur appareils physiques et validation réelle des jeux restent à faire).
 
 ### Limites toujours ouvertes
@@ -272,3 +272,23 @@ La file locale conserve les missions, leurs priorités, échéances et tentative
 - Le rattrapage n'est pas instantané : les articles historiques non traduits ne deviennent pas disponibles dans les six langues tant que leurs traductions et fichiers audio n'ont pas été produits. Ne pas annoncer une traduction intégrale avant un nouveau contrôle du catalogue.
 - Le site public comprend maintenant un atelier de création téléchargeant localement un ZIP des squelettes de huit types de projets, en sept langues. Il fonctionne dans le navigateur sans envoyer de fichiers vers un serveur.
 - La surveillance de production a validé l'atelier public : HTTP 200. Sur le contrôle associé, **86 requêtes ont réussi, 0 erreur**. Les tests Python ont atteint **205 tests réussis**.
+
+
+## Atelier navigateur et sauvegarde des défis — 22 novembre 2026, commit 386e5373
+
+- **Atelier public multilingue :** la navigation NEXORA propose un atelier qui crée un ZIP directement dans le navigateur. Huit modèles sont disponibles : site, application web, jeu navigateur, Godot 2D, Godot 3D, Python, audio et vidéo. L'interface est traduite en sept langues ; le fichier n'est pas téléversé, aucun code n'est exécuté et le téléchargement est lancé localement.
+- **Contrôle du ZIP :** l'archive est construite sans bibliothèque distante, avec en-têtes locaux, CRC32, répertoire central et fin ZIP. Le test Playwright vérifie la signature ZIP, le répertoire central, les fichiers Godot 3D, la validation des noms et la conservation du modèle choisi lors du changement de langue. Le test navigateur vérifie aussi l'interface arabe RTL.
+- **Sauvegarde des défis :** les six cases de progression peuvent être exportées dans un JSON versionné (v1) puis importées sur un autre navigateur. L'import est limité à 8 Ko et exige exactement six valeurs booléennes ; le score et le rang sont recalculés depuis les cases, jamais acceptés depuis le fichier. Les sauvegardes invalides sont rejetées sans modifier la progression.
+- **208 tests Python réussis** sur le commit `386e5373`. Playwright a réussi les parcours de toutes les pages, les tests responsive mobile/tablette/ordinateur, l'atelier ZIP, les défis export/import, la ville WebGL 3D avec repli 2D et le mode hors ligne PWA. Ruff, Bandit, CodeQL Python/JavaScript et Gitleaks ont réussi. Le build et le déploiement Pages ont réussi.
+- Le dernier contrôle de production complet précédent avait validé **86 requêtes HTTP sans erreur** sur le commit `0880cb31`, incluant l'atelier public. Le déploiement du commit `386e5373` a ensuite réussi ; le contrôle Playwright local a validé les nouveaux parcours de défis.
+- Score pondéré révisé : **65,70 %**. Les traductions complètes restent le principal manque visible : 5 articles sur 30 seulement ont toutes les traductions textuelles et audio attendues pour les six langues secondaires. Le rattrapage est limité à cinq articles par exécution, deux fois par jour, selon les quotas disponibles.
+
+### Limites toujours ouvertes
+
+- Aucun classement mondial des défis : la sauvegarde export/import transfère seulement une progression personnelle.
+- Aucun backend privé hébergé ; le tableau de bord privé reste local.
+- Les workflows planifiés ne sont pas des agents permanents 24 h/24.
+- Les traductions historiques ne sont pas intégralement terminées.
+- La ville WebGL est fictive et synthétique, pas un jumeau numérique.
+- Les projets Godot restent des squelettes ; aucune compilation dans le moteur Godot n'a été validée.
+- 110 % n'est pas un pourcentage de complétude mesurable ; le maximum réel reste 100 % plus des améliorations supplémentaires décrites séparément.
