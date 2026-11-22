@@ -40,6 +40,12 @@ class ProgressiveWebAppTests(unittest.TestCase):
         self.assertIn('event.respondWith(fetch(request))', worker)
         self.assertIn("Cache API ne peut pas les stocker", worker)
 
+    def test_homepage_links_to_the_translated_project_workshop(self):
+        home = (SITE / "index.html").read_text(encoding="utf-8")
+        self.assertIn('href="./atelier.html"', home)
+        for label in ("Atelier", "Workshop", "Taller", "Werkstatt", "Oficina", "ورشة الإنشاء", "创作工坊"):
+            self.assertIn(label, home)
+
     def test_browser_project_workshop_exists_and_builds_zip_locally(self):
         page = (SITE / "atelier.html").read_text(encoding="utf-8")
         self.assertIn("function makeZip(files)", page)
