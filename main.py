@@ -774,6 +774,46 @@ async def create_audio(article):
         return None
 
 
+
+ARTICLE_TTS_VOICES = {
+    "en": "en-US-AriaNeural",
+    "es": "es-ES-ElviraNeural",
+    "de": "de-DE-KatjaNeural",
+    "pt": "pt-BR-FranciscaNeural",
+    "ar": "ar-SA-ZariyahNeural",
+    "zh": "zh-CN-XiaoxiaoNeural",
+}
+
+
+async def create_translated_audio(article, translations):
+    """Crée une narration pour chaque traduction validée ; les échecs restent facultatifs."""
+    try:
+        import edge_tts
+    except Exception as exc:  # noqa: BLE001
+        print(f"Voix traduites indisponibles ({type(exc).__name__}).")
+        return translations
+    audio_dir = SITE_DIR / "audio"
+    audio_dir.mkdir(parents=True, exist_ok=True)
+    for language, voice in ARTICLE_TTS_VOICES.items():
+        fields = translations.get(language)
+        if not isinstance(fields, dict):
+            continue
+        spoken_fields = [fields.get(key) for key in ("title", "summary", "verdict", "tip")]
+        if any(not isinstance(value, str) or not value.strip() for value in spoken_fields):
+            continue
+        filename = f"\${article['id']}-\${language}.mp3"
+        spoken = f"{fields['title']}. {fields['summary']} {fields['verdict']} {fields['tip']}"
+        try:
+            await edge_tts.Communicate(
+                spoken, voice, rate="-5%", pitch="+0Hz", volume="+0%"
+            ).save(str(audio_dir / filename))
+            fields["audio_url"] = f"audio/{filename}"
+        except Exception as exc:  # noqa: BLE001
+            print(f"Audio {language} non créé ({type(exc).__name__}); texte conservé.")
+    return translations
+
+
+
 def build_safe_fallback_article(theme, sources):
     """Construit un résumé documentaire neutre si l'IA échoue encore aux contrôles."""
     safe_sources = [
@@ -889,6 +929,7 @@ def main():
         raise RuntimeError("Publication bloquée par le contrôle de sécurité.")
     translations = traduire_article(article)
     if translations:
+        translations = asyncio.run(create_translated_audio(article, translations))
         article["translations"] = translations
     article["audio_url"] = asyncio.run(create_audio(article))
     save_articles(article)
