@@ -1,5 +1,36 @@
 [
   {
+    "id": "20261122T151104-0c96991e",
+    "date": "2026-11-22T15:11+00:00",
+    "theme": "Actualités intelligence artificielle",
+    "title": "OpenAI renforce la sécurité des modèles et teste GPT‑6 Astra",
+    "summary": "OpenAI a dévoilé une approche en couches pour contrer la distillation adversaire, mêlant entraînement, garde‑fous, détection et sanctions, mais son efficacité reste à tester en conditions réelles. Parallèlement, la version pré‑lancement de GPT‑6 Astra a montré, selon des évaluations internes, des gains en couverture de sources, pertinence des citations et qualité de présentation pour la recherche financière chez Hebbia, nécessitant des tests indépendants. Ces développements soulignent l’attention portée à la robustesse et à la fiabilité des modèles.",
+    "verdict": "Les informations proviennent directement des communiqués d’OpenAI ; aucune preuve indépendante n’est encore disponible.",
+    "tip": "Les résultats de GPT‑6 Astra sont issus d’évaluations internes ; les performances générales restent à confirmer par des tests externes.",
+    "sources": [
+      {
+        "title": "Combatting adversarial distillation",
+        "publisher": "OpenAI",
+        "domain": "openai.com",
+        "published": "Fri, 20 Nov 2026 10:00:00 GMT",
+        "description": "OpenAI’s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction.",
+        "url": "https://openai.com/index/combatting-adversarial-distillation",
+        "source_type": "source_editeur"
+      },
+      {
+        "title": "Hebbia sees improvements in financial research with GPT-6 Astra",
+        "publisher": "OpenAI",
+        "domain": "openai.com",
+        "published": "Fri, 20 Nov 2026 00:00:00 GMT",
+        "description": "Hebbia tested GPT-6 Astra for financial research. Its prerelease evaluations found gains in source coverage, citation relevance, and presentation quality.",
+        "url": "https://openai.com/business/customer-stories/hebbia",
+        "source_type": "source_editeur"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261122T151104-0c96991e.mp3"
+  },
+  {
     "id": "20261122T134028-f6494c0f",
     "date": "2026-11-22T13:40+00:00",
     "theme": "GTA VI — lancement et premiers retours vérifiés",
@@ -1200,27 +1231,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261119T175642-14f9a5e5.mp3"
-  },
-  {
-    "id": "20261119T175614-3f5bce18",
-    "date": "2026-11-19T17:56+00:00",
-    "theme": "A.O.T. 3 / Attack on Titan — sortie le 10 décembre 2026",
-    "title": "A.O.T. 3 / Attack on Titan : détails insuffisants dans les sources",
-    "summary": "Les résultats récupérés signalent une actualité liée à A.O.T. 3 / Attack on Titan, mais les extraits disponibles reprennent surtout les titres et ne fournissent pas assez d'éléments pour confirmer la portée, les effets ou les modalités de l'annonce. Consultez l'article d'origine et le communiqué de l'organisation concernée avant de retenir des détails.",
-    "verdict": "Les extraits récupérés ne suffisent pas pour confirmer les détails.",
-    "tip": "Lire l'article original et rechercher un communiqué officiel avant de partager l'information.",
-    "sources": [
-      {
-        "title": "A.O.T. 3 : précommandes officielles ouvertes sur Switch 2",
-        "publisher": "SpiritGamer",
-        "domain": "news.google.com",
-        "published": "Sat, 14 Nov 2026 08:00:00 GMT",
-        "description": "A.O.T. 3 : précommandes officielles ouvertes sur Switch 2    SpiritGamer",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBKOGhmVjdtZkhreWhiRFFhMFRac2J2QV9zdFBNaGpYbk03UzhvLUxRdzVWYWFCd0J5Vm9IRWd2Y01nck4xOExjUkRlUmpPNnpPcUZhQnpIOWtXdERyQXRhSEVqNUNaOWlCN1ZaWnpzT1EwYm5xX1E?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261119T175614-3f5bce18.mp3"
   }
 ]
