@@ -61,7 +61,7 @@ class PublicChallengeRegressionTests(unittest.TestCase):
         block = self.html[start:end]
         for language in ("fr", "en", "es", "de", "pt", "ar", "zh"):
             self.assertIn(f"{language}:{{", block)
-        self.assertEqual(block.count("tasks:["), 7)
+        self.assertEqual(block.count(",tasks:["), 7)
         self.assertEqual(block.count("extraTasks:["), 7)
 
     def test_progress_is_local_and_reset_clears_all_six(self):
