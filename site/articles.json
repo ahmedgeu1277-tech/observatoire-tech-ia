@@ -1,5 +1,36 @@
 [
   {
+    "id": "20261122T125837-e7ee0192",
+    "date": "2026-11-22T12:58+00:00",
+    "theme": "Technologies d’IA et innovations disruptives dans le gaming",
+    "title": "GTA 6 sur PS5 : plantages et PNJ violents signalés",
+    "summary": "Des joueurs de GTA 6 ont rapporté des plantages sur PS5 accompagnés de l’erreur CE‑108255‑1, tandis que d’autres affirment que les PNJ réagissent de façon extrêmement violente. Ces incidents n’ont pas encore été confirmés par Rockstar ou par des sources indépendantes, laissant les utilisateurs dans l’incertitude quant à la stabilité du jeu et à la réalité de ces comportements.",
+    "verdict": "Les informations proviennent uniquement de rapports d’IGN France ; aucune confirmation officielle n’a été publiée à ce jour.",
+    "tip": "Surveillez les mises à jour officielles de Rockstar et les retours de la communauté pour savoir si ces problèmes sont résolus.",
+    "sources": [
+      {
+        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
+        "description": "Allons en paix.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
+        "source_type": "media"
+      },
+      {
+        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
+        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261122T125837-e7ee0192.mp3"
+  },
+  {
     "id": "20261122T125641-1414a43a",
     "date": "2026-11-22T12:56+00:00",
     "theme": "GTA VI — lancement et premiers retours vérifiés",
@@ -1194,54 +1225,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261119T175215-2debaddd.mp3"
-  },
-  {
-    "id": "20261119T174921-765502da",
-    "date": "2026-11-19T17:49+00:00",
-    "theme": "GTA VI — lancement et premiers retours vérifiés",
-    "title": "GTA VI : pré‑lancement sur Xbox Series S et utilisation de FSR 4.1",
-    "summary": "Les premières images publiées par IGN montrent que GTA VI exploite la technologie FSR 4.1 pour upscaler le rendu de 720 p à 1080 p sur Xbox Series S, offrant déjà un visuel détaillé. Une astuce décrite par Xboxygen permettrait d’accéder au jeu en avance sur la même console, bien que Rockstar n’ait pas encore confirmé officiellement cette disponibilité. Les performances sur d’autres plateformes restent à vérifier après le lancement officiel.",
-    "verdict": "Les sources indiquent un accès pré‑lancement sur Xbox Series S via une astuce, mais aucune confirmation officielle de Rockstar. La qualité visuelle grâce à FSR 4.1 est confirmée, mais les performances globales attendues restent à confirmer.",
-    "tip": "Surveillez les communiqués de Rockstar pour une confirmation officielle et les tests de performance sur PlayStation et PC.",
-    "sources": [
-      {
-        "title": "Les acteurs de Jason et Lucia dans GTA 6 posent ensemble sur une première photo",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 15:14:47 +0000",
-        "description": "\"Et voilà... le secret est enfin dévoilé !\"",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94092/les-acteurs-de-jason-et-lucia-dans-gta-6-posent-ensemble-sur-une-premiere-photo",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 utilise la technologie FSR 4.1 sur Xbox Series S pour upscaler le jeu de 720p à 1080p",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 14:48:25 +0000",
-        "description": "Redstone, voici GTA.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94091/gta-6-utilise-la-technologie-fsr-41-sur-xbox-series-s-pour-upscaler-le-jeu-de-720p-a-1080p",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 –images du jeu sur Xbox Series S",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 14:48:25 +0000",
-        "description": "",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94090/gta-6-xbox-series-s-screenshots",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 est bien disponible en avance sur Xbox, l’astuce fonctionne et voici comment faire",
-        "publisher": "Xboxygen",
-        "domain": "news.google.com",
-        "published": "Mon, 16 Nov 2026 09:29:03 GMT",
-        "description": "GTA 6 est bien disponible en avance sur Xbox, l’astuce fonctionne et voici comment faire    Xboxygen",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE81U0VpSXNhQlZjV2w5OWtVcmE1eWxkSVFpdG1ZY21sN1prc3VkMXc3Uko2VjBVUW5aMW1kWHpJTDdsNHlWRWVYcVhQa2NlNzV6X1VmeXUyei0ycVpFQ1FOd2NNX3hfdE1NRUJaS0tjY2RwSjYzOVRCclFfay1fQQ?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261119T174921-765502da.mp3"
   }
 ]
