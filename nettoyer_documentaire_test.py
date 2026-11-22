@@ -9,6 +9,7 @@ SITE = ROOT / "site"
 MANIFEST = SITE / "documentaire-test.json"
 PAGE = SITE / "documentaire-test.html"
 SCRIPT = SITE / "documentaire-test.md"
+ARTICLES_FILE = SITE / "articles.json"
 AUDIO_DIR = SITE / "audio"
 VIDEO_DIR = SITE / "video"
 ARCHIVE_DIR = SITE / "archives"
@@ -20,17 +21,61 @@ def main():
     now = datetime.now(UTC)
     cutoff = now - RETENTION
     removed = 0
+    removed_audio_names = set()
+    articles = None
+    if ARTICLES_FILE.exists():
+        try:
+            articles = json.loads(ARTICLES_FILE.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            raise RuntimeError("Catalogue d'articles illisible ; nettoyage annulé.") from exc
+        if not isinstance(articles, list) or any(not isinstance(item, dict) for item in articles):
+            raise RuntimeError("Catalogue d'articles invalide ; nettoyage annulé.")
+
     for directory in (AUDIO_DIR, VIDEO_DIR, ARCHIVE_DIR):
         if not directory.exists():
             continue
         for path in directory.iterdir():
-            match = STAMP_RE.match(path.name)
-            if not match or not path.is_file():
+            if not path.is_file():
                 continue
-            created = datetime.strptime(match.group(1), "%Y%m%dT%H%M%SZ").replace(tzinfo=UTC)
-            if created < cutoff:
+            stamp = None
+            match = STAMP_RE.match(path.name)
+            if match:
+                stamp = datetime.strptime(match.group(1), "%Y%m%dT%H%M%SZ").replace(tzinfo=UTC)
+            translated = TRANSLATED_DOCUMENTARY_RE.match(path.name)
+            if translated:
+                stamp = datetime.strptime(translated.group("stamp"), "%Y%m%dT%H%M%SZ").replace(tzinfo=UTC)
+            article_audio = ARTICLE_AUDIO_RE.match(path.name) if directory == AUDIO_DIR else None
+            if article_audio:
+                stamp = datetime.strptime(article_audio.group("stamp"), "%Y%m%dT%H%M%S").replace(tzinfo=UTC)
+            chapter = WEEKLY_CHAPTER_RE.match(path.name) if directory == AUDIO_DIR else None
+            if chapter:
+                stamp = datetime.strptime(chapter.group("stamp"), "%Y%m%d").replace(tzinfo=UTC)
+            if stamp and stamp < cutoff:
                 path.unlink()
                 removed += 1
+                if directory == AUDIO_DIR:
+                    removed_audio_names.add(path.name)
+
+    if articles is not None and removed_audio_names:
+        changed = False
+        for article in articles:
+            audio_url = article.get("audio_url")
+            if isinstance(audio_url, str) and Path(audio_url).name in removed_audio_names:
+                article["audio_url"] = None
+                changed = True
+            translations = article.get("translations")
+            if isinstance(translations, dict):
+                for translated in translations.values():
+                    if not isinstance(translated, dict):
+                        continue
+                    audio_url = translated.get("audio_url")
+                    if isinstance(audio_url, str) and Path(audio_url).name in removed_audio_names:
+                        translated["audio_url"] = None
+                        changed = True
+        if changed:
+            temporary = ARTICLES_FILE.with_suffix(".json.tmp")
+            temporary.write_text(json.dumps(articles, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+            temporary.replace(ARTICLES_FILE)
 
     if not MANIFEST.exists():
         print(f"{removed} archive(s) de plus de 30 jours supprimée(s).")
