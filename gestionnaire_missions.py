@@ -46,12 +46,18 @@ class MissionQueue:
                     started_at TEXT,
                     finished_at TEXT,
                     result TEXT,
-                    error_type TEXT
+                    error_type TEXT,
+                    priority TEXT NOT NULL DEFAULT 'normal' CHECK(priority IN ('low','normal','high','critical')),
+                    due_at TEXT
                 )
             """)
             columns = {row["name"] for row in db.execute("PRAGMA table_info(missions)")}
             if "cancel_requested_at" not in columns:
                 db.execute("ALTER TABLE missions ADD COLUMN cancel_requested_at TEXT")
+            if "priority" not in columns:
+                db.execute("ALTER TABLE missions ADD COLUMN priority TEXT NOT NULL DEFAULT 'normal'")
+            if "due_at" not in columns:
+                db.execute("ALTER TABLE missions ADD COLUMN due_at TEXT")
             db.execute("CREATE INDEX IF NOT EXISTS idx_missions_status_created ON missions(status, created_at)")
         self._secure_database_file()
 
@@ -90,8 +96,9 @@ class MissionQueue:
                 raise ValueError("File pleine : 50 missions en attente maximum.")
             mission_id = uuid4().hex
             db.execute(
-                "INSERT INTO missions(id,payload,status,created_at) VALUES(?,?,?,?)",
-                (mission_id, json.dumps(mission, ensure_ascii=False), "pending", now()),
+                "INSERT INTO missions(id,payload,status,created_at,priority,due_at) VALUES(?,?,?,?,?,?)",
+                (mission_id, json.dumps(mission, ensure_ascii=False), "pending", now(),
+                 mission["priority"], mission["due_at"]),
             )
         return mission_id
 
@@ -100,7 +107,7 @@ class MissionQueue:
             raise ValueError("La limite doit être comprise entre 1 et 100.")
         with self._session() as db:
             rows = db.execute(
-                "SELECT id,status,created_at,started_at,finished_at,error_type "
+                "SELECT id,status,created_at,started_at,finished_at,error_type,priority,due_at "
                 "FROM missions ORDER BY created_at DESC LIMIT ?", (limit,)
             ).fetchall()
         return [dict(row) for row in rows]
@@ -111,7 +118,7 @@ class MissionQueue:
             raise ValueError("Identifiant de mission invalide.")
         with self._session() as db:
             row = db.execute(
-                "SELECT id,payload,status,created_at,started_at,finished_at,result,error_type "
+                "SELECT id,payload,status,created_at,started_at,finished_at,result,error_type,priority,due_at "
                 "FROM missions WHERE id=?",
                 (mission_id,),
             ).fetchone()
@@ -165,7 +172,9 @@ class MissionQueue:
                 raise RuntimeError("Une mission est déjà marquée en cours ; un seul worker est autorisé.")
             row = db.execute(
                 "SELECT id,payload FROM missions WHERE status='pending' "
-                "ORDER BY created_at,id LIMIT 1"
+                "ORDER BY CASE priority WHEN 'critical' THEN 0 WHEN 'high' THEN 1 "
+                "WHEN 'normal' THEN 2 ELSE 3 END, "
+                "CASE WHEN due_at IS NULL THEN 1 ELSE 0 END, due_at, created_at, id LIMIT 1"
             ).fetchone()
             if row is None:
                 db.commit()
