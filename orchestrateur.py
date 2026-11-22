@@ -52,6 +52,8 @@ def valider_mission(data: object) -> dict:
     context = data.get("context", "")
     agents = data.get("agents", ["chercheur", "critique", "architecte"])
     duration = data.get("max_duration_seconds", 180)
+    priority = data.get("priority", "normal")
+    due_at = data.get("due_at")
     if not isinstance(mission, str) or not mission.strip():
         raise ValueError("Le champ mission est obligatoire.")
     if len(mission) > MAX_MISSION_CHARS:
@@ -70,11 +72,25 @@ def valider_mission(data: object) -> dict:
         raise ValueError("La durée doit être un nombre entier de secondes.")
     if not 60 * len(agents) <= duration <= MAX_DURATION_SECONDS:
         raise ValueError(f"La durée doit couvrir au moins 60 secondes par agent et ne pas dépasser {MAX_DURATION_SECONDS} secondes.")
+    if priority not in {"low", "normal", "high", "critical"}:
+        raise ValueError("La priorité doit être low, normal, high ou critical.")
+    if due_at is not None:
+        if not isinstance(due_at, str) or len(due_at) > 40:
+            raise ValueError("L'échéance doit être une date ISO 8601 avec fuseau horaire.")
+        try:
+            parsed_due = datetime.fromisoformat(due_at.replace("Z", "+00:00"))
+        except ValueError as exc:
+            raise ValueError("L'échéance doit être une date ISO 8601 avec fuseau horaire.") from exc
+        if parsed_due.tzinfo is None:
+            raise ValueError("L'échéance doit inclure un fuseau horaire.")
+        due_at = parsed_due.astimezone(UTC).isoformat(timespec="seconds")
     return {
         "mission": mission.strip(),
         "context": context.strip(),
         "agents": agents,
         "max_duration_seconds": duration,
+        "priority": priority,
+        "due_at": due_at,
     }
 
 
