@@ -1,5 +1,36 @@
 [
   {
+    "id": "20261122T172321-48a6ffeb",
+    "date": "2026-11-22T17:23+00:00",
+    "theme": "Matériel et smartphones",
+    "title": "Matériel et smartphones : détails insuffisants dans les sources",
+    "summary": "Les résultats récupérés signalent une actualité liée à Matériel et smartphones, mais les extraits disponibles reprennent surtout les titres et ne fournissent pas assez d'éléments pour confirmer la portée, les effets ou les modalités de l'annonce. Consultez l'article d'origine et le communiqué de l'organisation concernée avant de retenir des détails.",
+    "verdict": "Les extraits récupérés ne suffisent pas pour confirmer les détails.",
+    "tip": "Lire l'article original et rechercher un communiqué officiel avant de partager l'information.",
+    "sources": [
+      {
+        "title": "Les TOPS du NPU décryptés : pourquoi cette mesure IA est trompeuse",
+        "publisher": "Android MT",
+        "domain": "news.google.com",
+        "published": "Tue, 17 Nov 2026 18:36:53 GMT",
+        "description": "Les TOPS du NPU décryptés : pourquoi cette mesure IA est trompeuse    Android MT",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNZC16b2lGRzYxSkR0TmVTSkhNZFpJSUVfZkJOTTJVVjRjdlhTLWxTLTFXM0tJNm5ZcXZSSW5VRDkyZnpjbGxoa0lVQmJ2MllmcDVzNWRzZjhIZENaNUhsRlpXQnNtZW9JaEhMZ2EyZXI5clhKOXNaZDVxM0F1UkF6VldPUXhUV2w4RDVqOU50UTEzRFB6MUpNZWk0cWdfSHJLek5XcldVZ3VkS2c2VHpNWVlYWUJqWVVpNF9DUQ?oc=5",
+        "source_type": "media"
+      },
+      {
+        "title": "Depuis la sortie de l’iPhone 18 Pro, cet iPhone 17 a atteint un prix record sur ce site",
+        "publisher": "Le Parisien",
+        "domain": "news.google.com",
+        "published": "Fri, 20 Nov 2026 06:00:00 GMT",
+        "description": "Depuis la sortie de l’iPhone 18 Pro, cet iPhone 17 a atteint un prix record sur ce site    Le Parisien",
+        "url": "https://news.google.com/rss/articles/CBMimgJBVV95cUxPZ042R3UzeGhxdWZoM0NQeHg4NXlrUDR3SXRPNk5WSF9mOXB2WVpGOTBpZVJ6UWR2QnFra1h0TE14N1YwR09nSWFWOVJydENJYjc2RDdiZmJfdHJTcE4wNElGVnBVNXZaLWFCeExKaC1icVhhcHF0WTgyVHFERVVteUxVZE5qckJfQ0k5b1BlT0pPVU1ocThRcDdlUEhWOG1qTzRrYXl0aUNjQ3d2N1pReEVHeWIzRmpyMTVWM3BpUFMta1haSm5pZ2dvLV9sWFN3Qzg4Ri1BTC13VUcxWTgxYm5mSzFDaGV0enNoYnBmWDNjZThuQ1dUbHB5SU9iay1RQWJ3VnlyNDZwaV81Rjc3QjJINjF5aTh4UFE?oc=5",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261122T172321-48a6ffeb.mp3"
+  },
+  {
     "id": "20261122T164902-69bcb1d3",
     "date": "2026-11-22T16:49+00:00",
     "theme": "GTA VI — lancement et premiers retours vérifiés",
@@ -1099,37 +1130,6 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261120T094953-2c7e863d.mp3"
-  },
-  {
-    "id": "20261119T191755-8ed57188",
-    "date": "2026-11-19T19:17+00:00",
-    "theme": "Matériel et smartphones",
-    "title": "Matériel et smartphones : détails insuffisants dans les sources",
-    "summary": "Les résultats récupérés signalent une actualité liée à Matériel et smartphones, mais les extraits disponibles reprennent surtout les titres et ne fournissent pas assez d'éléments pour confirmer la portée, les effets ou les modalités de l'annonce. Consultez l'article d'origine et le communiqué de l'organisation concernée avant de retenir des détails.",
-    "verdict": "Les extraits récupérés ne suffisent pas pour confirmer les détails.",
-    "tip": "Lire l'article original et rechercher un communiqué officiel avant de partager l'information.",
-    "sources": [
-      {
-        "title": "Black Friday : PC gaming, écrans et appareil photo, les équipements tech à surveiller chez PcComponentes",
-        "publisher": "JeuxVideo.com",
-        "domain": "news.google.com",
-        "published": "Tue, 17 Nov 2026 09:00:07 GMT",
-        "description": "Black Friday : PC gaming, écrans et appareil photo, les équipements tech à surveiller chez PcComponentes    JeuxVideo.com",
-        "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQSXliYTJ4REFnVUlQbGtxNEE5R2pYY2tXM0FZNzhqNUZhblQ0RE1tVU1UNk1tbHFwTmNaMjBrMlRyMFhCSXNKUzVwMUMyWEcyWTZ0anEtX3V1b2VEWVFoc1JSWktyRWxnNjBpLW9MbkdWclhUNFcwc3l4cV82VHBYc0Nib1NnT1pLeF9FS2FNbUxyQzVHY3dqaUtjNWtXQzRoOWRfU3pxYmoyd0dPbEZJSXltaThiY0x1SEdhOWk0OS1ObkQzbTAwcEF0cXFvT3Vla25meFgxRlUzLWM?oc=5",
-        "source_type": "media"
-      },
-      {
-        "title": "Getac MX60 et MX60W : deux terminaux durcis de 6 pouces avec IA, Wi-Fi 6E et Bluetooth 5.2",
-        "publisher": "Planet Sans Fil",
-        "domain": "news.google.com",
-        "published": "Thu, 19 Nov 2026 07:24:16 GMT",
-        "description": "Getac MX60 et MX60W : deux terminaux durcis de 6 pouces avec IA, Wi-Fi 6E et Bluetooth 5.2    Planet Sans Fil",
-        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQUlpHVk5yLU9ZenFIM0tfTThtRXBXa19JOUNLT2UzYklrcDJBaGZabWtWZEtadTlDZFZKLWtXRDB5d2tJQ0tjUUxTd25mdmpITlhaRVBkd0J1a3ZHQjdqTHpmaEVITnpJemVjY2txMXdSaC1Fc2Q4SFp6emJNazlaUmI4ZkRiUzR3bUM0c3lxSDRMQ2xCZmU3UHFJWDBwemVwalFwMHUxNjZFdUNfR0QwYnNXdTI1RzZjamdrelA1cFNMaG53cGN5eUgxUDE?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261119T191755-8ed57188.mp3"
   },
   {
     "id": "20261119T191658-97892ea1",
