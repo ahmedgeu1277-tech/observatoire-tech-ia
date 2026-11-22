@@ -70,7 +70,7 @@ async function inspectPage(browser, route, viewport) {
       await page.selectOption("#language", "de");
       const germanPageTitle = await page.title();
       const germanSimulation = await page.locator('nav a[href="./ville-demo.html"] [data-i18n="simulation"]').textContent();
-      if (germanPageTitle !== "Observatorium — Technik, KI und Gaming" || germanSimulation !== "Stadtsimulation") {
+      if (germanPageTitle !== "NEXORA — Tech, KI & Gaming" || germanSimulation !== "Stadtsimulation") {
         fail("Accueil : le titre de page ou le lien de simulation n'est pas traduit en allemand.");
       }
       const germanSources = await sourceLabels.first().textContent();
