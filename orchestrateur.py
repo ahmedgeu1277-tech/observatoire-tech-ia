@@ -72,7 +72,7 @@ def valider_mission(data: object) -> dict:
         raise ValueError("La durée doit être un nombre entier de secondes.")
     if not 60 * len(agents) <= duration <= MAX_DURATION_SECONDS:
         raise ValueError(f"La durée doit couvrir au moins 60 secondes par agent et ne pas dépasser {MAX_DURATION_SECONDS} secondes.")
-    if priority not in {"low", "normal", "high", "critical"}:
+    if not isinstance(priority, str) or priority not in {"low", "normal", "high", "critical"}:
         raise ValueError("La priorité doit être low, normal, high ou critical.")
     if due_at is not None:
         if not isinstance(due_at, str) or len(due_at) > 40:
