@@ -68,6 +68,11 @@ async function inspectPage(browser, route, viewport) {
       fail("Accueil : libellé de source introuvable pour vérifier les traductions.");
     } else {
       await page.selectOption("#language", "de");
+      const germanPageTitle = await page.title();
+      const germanSimulation = await page.locator('nav a[href="./ville-demo.html"] [data-i18n="simulation"]').textContent();
+      if (germanPageTitle !== "Observatorium — Technik, KI und Gaming" || germanSimulation !== "Stadtsimulation") {
+        fail("Accueil : le titre de page ou le lien de simulation n'est pas traduit en allemand.");
+      }
       const germanSources = await sourceLabels.first().textContent();
       if (germanSources !== "Quellen") fail("Accueil : le libellé dynamique des sources n'est pas traduit en allemand.");
       await page.selectOption("#language", "ar");
