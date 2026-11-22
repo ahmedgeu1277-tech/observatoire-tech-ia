@@ -59,6 +59,27 @@ class ProductWorkshopTests(unittest.TestCase):
             self.assertEqual([item["score_percent"] for item in ranked], [80, 40])
             self.assertEqual(ranked[0]["id"], first["id"])
 
+    def test_opportunity_status_history_can_be_advanced(self):
+        from atelier_produits import update_opportunity_status
+        with tempfile.TemporaryDirectory() as folder:
+            report = evaluate_opportunity(sample())
+            save_opportunity(report, Path(folder))
+            updated = update_opportunity_status(Path(folder), report["id"], "research", "Comparer trois concurrents.")
+            self.assertEqual(updated["workflow_status"], "research")
+            self.assertEqual(len(updated["status_history"]), 2)
+            self.assertEqual(list_opportunities(Path(folder))[0]["workflow_status"], "research")
+
+    def test_status_update_rejects_secret_notes(self):
+        from atelier_produits import update_opportunity_status
+        with tempfile.TemporaryDirectory() as folder:
+            report = evaluate_opportunity(sample())
+            save_opportunity(report, Path(folder))
+            with self.assertRaisesRegex(ValueError, "secret potentiel"):
+                update_opportunity_status(
+                    Path(folder), report["id"], "research",
+                    "gsk_ABCDEFGHIJKLMNOPQRSTUVWXYZ123456",
+                )
+
     def test_list_opportunities_rejects_non_directory(self):
         with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / "file.json"
