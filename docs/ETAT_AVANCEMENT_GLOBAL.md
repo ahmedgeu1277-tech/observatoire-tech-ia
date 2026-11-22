@@ -22,19 +22,19 @@ Dernière évaluation fonctionnelle détaillée : 22 novembre 2026. Audits préc
 
 ## Résultat
 
-**Estimation pondérée recalculée : 61,70 / 100 (audit du 22 novembre 2026, commit vérifié 3b9d91e8).**
+**Estimation pondérée recalculée : 63,29 / 100 (audit du 22 novembre 2026, commit vérifié 9ccabcf4).**
 
 Ce pourcentage est un indicateur d'avancement fonctionnel construit à partir des domaines ci-dessous. Ce n'est ni un pourcentage de lignes de code terminées, ni une garantie de disponibilité, ni une certification de mise en production. Les notes sont des estimations prudentes fondées sur les fonctions présentes et les contrôles exécutés. Le précédent score de 56,48 % est conservé dans les bilans historiques plus haut.
 
 | Domaine | Poids | Avancement estimé | Contribution |
 |---|---:|---:|---:|
-| Média, veille et site public | 23,53 % | 92 % | 21,65 |
+| Média, veille et site public | 23,53 % | 94 % | 22,12 |
 | Fournisseurs IA et orchestration d'agents | 17,65 % | 40 % | 7,06 |
 | Missions persistantes et autonomie | 17,65 % | 42 % | 7,41 |
-| Laboratoire privé et sécurité | 17,65 % | 55 % | 9,71 |
+| Laboratoire privé et sécurité | 17,65 % | 60 % | 10,59 |
 | R&D et conception de produits | 11,76 % | 45 % | 5,29 |
-| Tests et amélioration continue | 11,76 % | 90 % | 10,58 |
-| **Total** | **100 %** |  | **61,70 %** |
+| Tests et amélioration continue | 11,76 % | 92 % | 10,82 |
+| **Total** | **100 %** |  | **63,29 %** |
 
 Calcul : somme de (poids × note du domaine) / 100.
 
@@ -142,3 +142,20 @@ L'estimation pondérée est passée à **56,48 / 100** en portant le domaine « 
 - Laboratoire privé et sécurité : 55 % (tableau de bord local pour missions et R&D, contrôles d'accès et limites ; aucun tableau de bord distant hébergé).
 - R&D et conception de produits : 45 % (création et suivi de fiches, mais pas encore de validation par des utilisateurs ni de preuves commerciales indépendantes).
 - Tests et amélioration continue : 90 % (168 tests et contrôles avancés verts ; les tests ne remplacent pas une validation sur tous les appareils réels).
+
+
+## Audit d'extension — 22 novembre 2026, commit 9ccabcf4
+
+- L'accueil NEXORA propose maintenant une recherche textuelle et des filtres thématiques (technologie, IA, jeux vidéo, cybersécurité). Les libellés et les états vides sont traduits dans les sept langues. Les tests navigateur vérifient le filtre gaming et une recherche GTA.
+- Le système de défis a été étendu à six missions, pour un maximum de 100 points et six rangs personnels. Les progrès sont conservés dans le stockage local du navigateur. Le site précise qu'il ne s'agit pas d'un classement mondial ; aucun compte ni donnée personnelle n'est envoyé à un serveur.
+- Le laboratoire local dispose maintenant d'une feuille de route persistante de sept chantiers, avec priorités et statuts (à faire, en cours, bloqué, terminé). Les statuts sont écrits dans `.laboratoire_prive/roadmap.json`, hors du dépôt public, avec permissions restrictives sur POSIX. Les API sont protégées par le jeton local et l'origine locale.
+- La feuille de route inclut explicitement les travaux encore manquants : traductions historiques, classement communautaire sécurisé, ville 3D, hébergement privé, agents isolés avec revue, atelier créatif et validation utilisateur.
+- Sur le commit `9ccabcf4`, **173 tests Python ont réussi**. Les tests avancés ont tous réussi : Playwright, tests responsive, CodeQL Python/JavaScript, Ruff, Bandit et Gitleaks. Le build et le déploiement GitHub Pages ont réussi.
+- La surveillance de production a effectué **74 contrôles HTTP sans erreur** après publication.
+- Score pondéré recalculé : **63,29 %**. Le seuil de 70 % reste à atteindre.
+
+### Justification des notes révisées
+
+- Média, veille et site public : 94 % (recherche, filtres, six défis et rangs personnels ; il reste la traduction intégrale des archives et davantage de pages publiques).
+- Laboratoire privé et sécurité : 60 % (tableau de bord local, file de missions, portefeuille R&D, feuille de route persistante, jeton d'accès, vérification d'origine et stockage local privé ; pas encore d'hébergement distant authentifié).
+- Tests et amélioration continue : 92 % (173 tests et tous les contrôles avancés verts, plus 74 vérifications HTTP ; la validation sur tous les appareils physiques reste nécessaire).
