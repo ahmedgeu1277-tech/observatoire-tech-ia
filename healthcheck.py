@@ -38,7 +38,8 @@ def _check_documentary_media(root: Path) -> int:
 
     check_file("audio", manifest.get("audio_file"), ".mp3")
     check_file("video", manifest.get("video_file"), ".mp4")
-    media_count = 2
+    check_file("archives", manifest.get("archive_file"), ".md")
+    media_count = 3
     translations = manifest.get("translations", {})
     if not isinstance(translations, dict):
         raise ValueError("Les traductions du documentaire doivent être un objet.")
