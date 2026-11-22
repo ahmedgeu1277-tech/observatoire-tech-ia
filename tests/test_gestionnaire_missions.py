@@ -36,6 +36,26 @@ class MissionQueueTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.queue.enqueue({"mission": "", "agents": ["inconnu"]})
 
+    def test_queue_runs_critical_missions_before_normal_and_low(self):
+        normal = self.queue.enqueue({**self.payload(), "priority": "normal"})
+        low = self.queue.enqueue({**self.payload(), "priority": "low"})
+        critical = self.queue.enqueue({**self.payload(), "priority": "critical"})
+        with patch("gestionnaire_missions.orchestrateur.executer_mission", return_value={"status": "completed"}):
+            first = self.queue.run_next()
+        self.assertEqual(first["id"], critical)
+        self.assertEqual(self.queue.get_mission(normal)["priority"], "normal")
+        self.assertEqual(self.queue.get_mission(low)["priority"], "low")
+
+    def test_deadline_and_priority_are_visible_in_mission_detail(self):
+        mission_id = self.queue.enqueue({
+            **self.payload(),
+            "priority": "high",
+            "due_at": "2026-12-01T18:30:00+01:00",
+        })
+        item = self.queue.get_mission(mission_id)
+        self.assertEqual(item["priority"], "high")
+        self.assertEqual(item["due_at"], "2026-12-01T17:30:00+00:00")
+
     def test_get_mission_returns_payload_and_result(self):
         mission_id = self.queue.enqueue(self.payload())
         item = self.queue.get_mission(mission_id)
