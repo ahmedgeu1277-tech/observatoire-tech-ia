@@ -88,6 +88,9 @@ class LocalDashboardTests(unittest.TestCase):
         self.assertIn("frame-ancestors 'none'", headers["Content-Security-Policy"])
         page = body.decode()
         self.assertIn("NEXORA · Laboratoire local", page)
+        self.assertIn("Atelier de création de projets", page)
+        for role in ("chercheur", "critique", "architecte", "redacteur", "auditeur", "planificateur"):
+            self.assertIn('value="' + role + '"', page)
         self.assertNotIn("https://", page)
 
     def test_api_requires_bearer_token(self):
