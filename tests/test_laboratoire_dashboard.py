@@ -6,6 +6,8 @@ from pathlib import Path
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
+import atelier_produits
+from atelier_produits import DIMENSIONS, evaluate_opportunity, save_opportunity
 from gestionnaire_missions import MissionQueue
 from laboratoire_dashboard import create_server
 
@@ -83,6 +85,33 @@ class LocalDashboardTests(unittest.TestCase):
         self.assertEqual(status, 200)
         self.assertEqual(json.loads(body)["status"], "completed")
         self.assertEqual(self.queue.get_mission(mission_id)["status"], "completed")
+
+    def test_private_dashboard_lists_and_updates_product_opportunities(self):
+        with tempfile.TemporaryDirectory() as folder:
+            directory = Path(folder)
+            data = {
+                "name": "Outil de test local",
+                "problem": "Les créateurs manquent de temps pour tester.",
+                "target_customer": "Créateurs indépendants",
+                "proposed_solution": "Préparer des scénarios de test.",
+                "product_type": "developer_tool",
+                "evidence": [],
+                "scores": {key: 3 for key in DIMENSIONS},
+            }
+            report = evaluate_opportunity(data)
+            save_opportunity(report, directory)
+            with patch.object(atelier_produits, "DEFAULT_PRODUCTS_DIR", directory):
+                status, _, body = self.request("/api/opportunities")
+                self.assertEqual(status, 200)
+                self.assertEqual(json.loads(body)[0]["workflow_status"], "candidate")
+                status, _, updated = self.request(
+                    "/api/opportunities/" + report["id"] + "/status",
+                    method="POST",
+                    payload={"status": "research", "note": "Comparer deux solutions."},
+                )
+                self.assertEqual(status, 200)
+                self.assertEqual(json.loads(updated)["workflow_status"], "research")
+                self.assertEqual(atelier_produits.list_opportunities(directory)[0]["workflow_status"], "research")
 
     def test_rejects_cross_origin_post(self):
         payload = {"mission": "Test", "agents": ["chercheur"], "max_duration_seconds": 60}
