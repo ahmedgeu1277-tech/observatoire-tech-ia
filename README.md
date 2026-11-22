@@ -54,3 +54,25 @@ Aucune intégration Discord n'est utilisée.
 Les workflows de contrôle sont définis dans `.github/workflows/`. Les résultats récents sont consultables dans l'onglet Actions du dépôt.
 
 Consultez [l'état d'avancement détaillé](docs/ETAT_AVANCEMENT_GLOBAL.md) pour les limites connues et les tâches restantes. Le pourcentage d'avancement est une estimation, pas une certification de mise en production.
+
+
+## Lancer le laboratoire privé sur Linux
+
+Le tableau de bord privé fonctionne sur l'ordinateur qui exécute Python ; il n'est pas hébergé par GitHub Pages et ne doit pas être exposé sur Internet.
+
+1. Installez Python 3 et Git, puis ouvrez un terminal.
+2. Clonez le dépôt et entrez dans son dossier :
+   `git clone https://github.com/ahmedgeu1277-tech/observatoire-tech-ia.git`
+   puis `cd observatoire-tech-ia`.
+3. Créez un environnement Python isolé :
+   `python3 -m venv .venv`
+   puis activez-le avec `source .venv/bin/activate`.
+4. Installez les dépendances :
+   `python -m pip install --upgrade pip`
+   puis `pip install -r requirements.txt`.
+5. Démarrez le tableau de bord :
+   `python laboratoire_dashboard.py`.
+6. Ouvrez uniquement sur cet ordinateur l'adresse affichée, normalement `http://127.0.0.1:8765/`.
+7. Pour arrêter le serveur, revenez au terminal et faites `Ctrl+C`.
+
+Le serveur écoute exclusivement sur `127.0.0.1`. Ne changez pas cette adresse en `0.0.0.0` et ne transférez pas le port de votre routeur. Les données de missions, la feuille de route et les prototypes sont conservés localement dans `.laboratoire_prive/`, dossier ignoré par Git. Le tableau de bord n'est pas un service cloud : il fonctionne seulement lorsque l'ordinateur est allumé et que le processus Python tourne. Les missions IA nécessitent également une clé fournisseur configurée dans l'environnement local ; ne collez jamais cette clé dans un fichier public ou dans une conversation.
