@@ -95,6 +95,25 @@ async function inspectPage(browser, route, viewport) {
     }
   }
 
+  if (route === "/site/documentaire-test.html") {
+    const selector = page.locator("#language");
+    if (!(await selector.count())) fail("Documentaire : sélecteur de langue absent.");
+    else {
+      for (const [language, expected] of [
+        ["en", "Sources"], ["es", "Fuentes"], ["de", "Quellen"],
+        ["pt", "Fontes"], ["ar", "المصادر"], ["zh", "来源"],
+      ]) {
+        await page.selectOption("#language", language);
+        const source = await page.locator(".sources-heading").first().textContent();
+        if (source !== expected) fail("Documentaire : libellé des sources incorrect pour " + language + ".");
+      }
+      await page.selectOption("#language", "ar");
+      const direction = await page.evaluate(() => document.documentElement.dir);
+      if (direction !== "rtl") fail("Documentaire : le sens RTL arabe n'est pas appliqué.");
+      await page.selectOption("#language", "fr");
+    }
+  }
+
   if (route === "/site/ville-demo.html") {
     const districts = page.locator("[data-district]");
     if (await districts.count() !== 4) fail("Ville démo : les quatre quartiers ne sont pas présents.");
