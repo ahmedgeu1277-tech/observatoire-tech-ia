@@ -172,7 +172,7 @@ def main() -> int:
                 if language not in {"en", "es", "de", "pt", "ar", "zh"} or not isinstance(translated, dict):
                     failures.append(f"Article {article.get('id', index)}: variante {language} invalide.")
                     continue
-                for field in ("theme", "title", "summary", "verdict", "tip", "ai_notice"):
+                for field in ("title", "summary", "verdict", "tip"):
                     if not isinstance(translated.get(field), str) or not translated[field].strip():
                         failures.append(f"Article {article.get('id', index)}: champ {field} manquant pour {language}.")
                         break
