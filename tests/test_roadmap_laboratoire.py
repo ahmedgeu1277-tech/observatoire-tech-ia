@@ -35,7 +35,7 @@ class RoadmapTests(unittest.TestCase):
     def test_corrupted_local_file_is_not_silently_overwritten(self):
         with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / "roadmap.json"
-            path.parent.mkdir(parents=True)
+            path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text("{broken", encoding="utf-8")
             with self.assertRaises(ValueError):
                 roadmap_laboratoire.list_tasks(path)
