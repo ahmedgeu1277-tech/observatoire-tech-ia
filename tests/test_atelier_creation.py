@@ -13,13 +13,24 @@ class AtelierCreationTests(unittest.TestCase):
             for kind, expected in {
                 "site": "index.html", "webapp": "app.js", "jeu-web": "game.js",
                 "video": "storyboard.md", "audio": "script.md", "logiciel-python": "main.py",
-                "godot-2d": "project.godot", "godot-3d": "project.godot",
+                "godot-2d": "project.godot", "godot-3d": "project.godot",\n                "unity-3d": "ProjectSettings/ProjectVersion.txt",
             }.items():
                 with self.subTest(kind=kind):
                     result = generate_project(f"Projet-{kind}", folder, kind)
                     self.assertTrue((Path(result["directory"]) / expected).is_file())
                     self.assertFalse(result["code_executed"])
                     self.assertFalse(result["published"])
+
+    def test_unity_template_has_manifest_and_controller(self):
+        with tempfile.TemporaryDirectory() as folder:
+            result = generate_project("ProjetUnity", folder, "unity-3d")
+            root = Path(result["directory"])
+            self.assertTrue((root / "Packages" / "manifest.json").is_file())
+            self.assertTrue((root / "ProjectSettings" / "ProjectVersion.txt").is_file())
+            script = (root / "Assets" / "Scripts" / "PlayerController.cs").read_text(encoding="utf-8")
+            self.assertIn("CharacterController", script)
+            self.assertFalse(result["code_executed"])
+            self.assertFalse(result["published"])
 
     def test_godot_templates_include_scene_and_game_script(self):
         with tempfile.TemporaryDirectory() as folder:
