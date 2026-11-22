@@ -6,10 +6,11 @@ Le module `gestionnaire_missions.py` ajoute une file persistante SQLite à l'orc
 
 - Ajouter une mission : `python gestionnaire_missions.py add mission.json`
 - Lister : `python gestionnaire_missions.py list`
+- Consulter le détail d'une mission : `python gestionnaire_missions.py show ID` (charge utile, état, dates, résultat ou type d'erreur).
 - Exécuter la prochaine : `python gestionnaire_missions.py run-next`
 - Annuler une mission encore en attente : `python gestionnaire_missions.py cancel ID`
 
-Le fichier SQLite et les rapports restent dans `.laboratoire_prive/`, ignoré par Git. Le contenu de mission est validé par `orchestrateur.valider_mission` : trois rôles maximum, durée totale plafonnée à 180 secondes, texte limité et aucun programme ou commande arbitraire.
+Le fichier SQLite et les rapports restent dans `.laboratoire_prive/`, ignoré par Git. La commande `show` ne renvoie que la mission demandée et ne rend pas la file accessible depuis le site public. Le contenu de mission est validé par `orchestrateur.valider_mission` : trois rôles maximum, durée totale plafonnée à 180 secondes, texte limité et aucun programme ou commande arbitraire.
 
 ## Limites
 
