@@ -13,7 +13,8 @@ class AtelierCreationTests(unittest.TestCase):
             for kind, expected in {
                 "site": "index.html", "webapp": "app.js", "jeu-web": "game.js",
                 "video": "storyboard.md", "audio": "script.md", "logiciel-python": "main.py",
-                "godot-2d": "project.godot", "godot-3d": "project.godot",\n                "unity-3d": "ProjectSettings/ProjectVersion.txt",
+                "godot-2d": "project.godot", "godot-3d": "project.godot",
+                "unity-3d": "ProjectSettings/ProjectVersion.txt",
             }.items():
                 with self.subTest(kind=kind):
                     result = generate_project(f"Projet-{kind}", folder, kind)
