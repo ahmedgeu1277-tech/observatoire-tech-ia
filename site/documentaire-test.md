@@ -2,22 +2,22 @@
 
 Ce documentaire compile quatre dossiers récents déjà publiés par l'Observatoire. Les résumés, verdicts et conseils sont repris sans ajouter de nouveaux faits. Les liens permettent de consulter les sources originales et les incertitudes restent signalées.
 
-## Chapitre 1 — GTA 6 : plantages PS5 et PNJ violents signalés
+## Chapitre 1 — GTA VI : plantages PS5 et PNJ violents signalés
+
+Résumé éditorial : Depuis son lancement, GTA VI fait face à des plantages sur PS5 marqués par l’erreur CE‑108255‑1, ainsi qu’à des réactions violentes de PNJ, selon plusieurs joueurs. Ces incidents restent sporadiques et aucune confirmation officielle n’a été publiée. L’édition non‑Ultimate a également été critiquée pour l’accès limité aux boutiques exclusives, tandis que l’actrice de Mandy a exprimé son enthousiasme face à la viralité de son personnage. Les retours restent donc incertains quant à l’impact global sur l’expérience de jeu. Évaluation : Les sources consultées indiquent des problèmes techniques et de comportement de l’IA, mais aucune confirmation officielle n’est disponible. Les retours sur l’édition non‑Ultimate et la popularité d’un personnage restent anecdotiques. Conseil : Surveillez les mises à jour officielles de Rockstar pour confirmer la résolution des plantages et des comportements de PNJ. Les références associées sont : IGN France, IGN France, IGN France. Les éléments incertains ne doivent pas être considérés comme confirmés. Pour approfondir, ouvrir les sources originales et vérifier leur date et leur contexte.
+
+Sources :
+- IGN France : https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les
+- IGN France : https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1
+- IGN France : https://fr.ign.com/grand-theft-auto-6/94167/les-joueurs-de-gta-6-reagissent-apres-que-des-boutiques-exclusives-ont-accueilli-les-acheteurs-de-le
+
+## Chapitre 2 — GTA 6 : plantages PS5 et PNJ violents signalés
 
 Résumé éditorial : Des joueurs de GTA 6 ont rapporté des plantages sur PS5 accompagnés de l’erreur CE‑108255‑1, sans mise à jour officielle de Rockstar. Parallèlement, les PNJ du jeu semblent réagir de façon extrêmement violente, poussant certains joueurs à les éviter. Ces incidents n’ont pas encore été confirmés par les développeurs, et l’origine du bug reste inconnue. Les lecteurs intéressés par le lancement récent de GTA 6 doivent surveiller les futures communiqués de Rockstar. Évaluation : Incidents signalés sans confirmation officielle Conseil : Vérifier les mises à jour de Rockstar et les forums officiels pour des éclaircissements. Les références associées sont : IGN France, IGN France. Les éléments incertains ne doivent pas être considérés comme confirmés. Pour approfondir, ouvrir les sources originales et vérifier leur date et leur contexte.
 
 Sources :
 - IGN France : https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les
 - IGN France : https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1
-
-## Chapitre 2 — GTA VI : plantages PS5 et PNJ violents signalés
-
-Résumé éditorial : Les premiers retours sur GTA VI montrent des plantages sur PS5 accompagnés de l’erreur CE‑108255‑1 et des PNJ réagissant de façon extrêmement violente, selon des joueurs recensés par IGN France. Ces incidents restent sporadiques et aucune confirmation officielle de Rockstar n’a été publiée. Par ailleurs, des boutiques exclusives ont refusé l’accès aux acheteurs de l’édition non Ultimate, créant une frustration communautaire sans détails précis sur l’étendue de la restriction. Évaluation : Les sources consultées indiquent des problèmes de stabilité et de comportement d’IA, mais aucune preuve officielle n’est disponible. La situation reste incertaine et les développeurs n’ont pas encore réagi. Conseil : Surveillez les mises à jour officielles de Rockstar pour confirmer ou corriger ces rapports. Les références associées sont : IGN France, IGN France, IGN France. Les éléments incertains ne doivent pas être considérés comme confirmés. Pour approfondir, ouvrir les sources originales et vérifier leur date et leur contexte.
-
-Sources :
-- IGN France : https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les
-- IGN France : https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1
-- IGN France : https://fr.ign.com/grand-theft-auto-6/94167/les-joueurs-de-gta-6-reagissent-apres-que-des-boutiques-exclusives-ont-accueilli-les-acheteurs-de-le
 
 ## Chapitre 3 — Path of Exile 2 : détails insuffisants dans les sources
 
