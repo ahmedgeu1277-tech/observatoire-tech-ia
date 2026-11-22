@@ -39,13 +39,15 @@ class CleanupTests(unittest.TestCase):
         audio = self.audio / f"documentaire-test-{stamp}.mp3"
         video = self.video / f"documentaire-test-{stamp}.mp4"
         archive = self.archive / f"documentaire-test-{stamp}.md"
-        for path in (audio, video, archive):
+        subtitles = self.video / f"documentaire-test-{stamp}.vtt"
+        for path in (audio, video, archive, subtitles):
             path.write_text("recent", encoding="utf-8")
         with self.patches:
             cleanup.main()
         self.assertTrue(audio.exists())
         self.assertTrue(video.exists())
         self.assertTrue(archive.exists())
+        self.assertTrue(subtitles.exists())
         self.assertTrue(self.page.exists())
 
     def test_only_archives_older_than_30_days_are_removed(self):
