@@ -275,6 +275,35 @@ jobs:
               }
             }
 
+            // Vérifie l'export/import local des défis et le rejet d'une sauvegarde invalide.
+            const challengeHome = await page.goto('http://127.0.0.1:4173/site/index.html', {waitUntil: 'domcontentloaded'});
+            if (!challengeHome || !challengeHome.ok()) {
+              failures.push('Défis : accueil impossible à charger pour tester les sauvegardes.');
+            } else {
+              await page.locator('#challenge-import-file').setInputFiles({
+                name: 'nexora-backup.json',
+                mimeType: 'application/json',
+                buffer: Buffer.from(JSON.stringify({version: 1, completed: [true, false, false, false, false, false]}))
+              });
+              await page.waitForFunction(() => (document.querySelector('#challenge-transfer-status')?.textContent || '').length > 0);
+              const importedScore = await page.locator('#challenge-score').innerText();
+              if (!importedScore.includes('20')) failures.push('Défis : la progression valide ne calcule pas les points attendus.');
+              await page.locator('#challenge-export').click();
+              const exported = await page.evaluate(() => window.__nexoraChallengeExport);
+              if (!exported || exported.version !== 1 || exported.completed?.length !== 6 || exported.completed[0] !== true) {
+                failures.push('Défis : export JSON local invalide.');
+              }
+              await page.evaluate(() => { document.querySelector('#challenge-transfer-status').textContent = ''; });
+              await page.locator('#challenge-import-file').setInputFiles({
+                name: 'invalid-backup.json',
+                mimeType: 'application/json',
+                buffer: Buffer.from(JSON.stringify({version: 1, completed: [true, 1, false, false, false, false]}))
+              });
+              await page.waitForFunction(() => (document.querySelector('#challenge-transfer-status')?.textContent || '').length > 0);
+              const preservedScore = await page.locator('#challenge-score').innerText();
+              if (!preservedScore.includes('20')) failures.push('Défis : une sauvegarde invalide a modifié la progression.');
+            }
+
             // Vérifie réellement le mode hors ligne de l'application (service worker).
             const pwaContext = await browser.newContext({serviceWorkers: 'allow'});
             const pwaPage = await pwaContext.newPage();
