@@ -4,7 +4,7 @@ Le module `gestionnaire_missions.py` ajoute une file persistante SQLite à l'orc
 
 ## Utilisation
 
-- Ajouter une mission : `python gestionnaire_missions.py add mission.json`
+- Ajouter une mission : `python gestionnaire_missions.py add mission.json` (champs facultatifs `priority`: `low`, `normal`, `high`, `critical` ; `due_at`: date ISO 8601 avec fuseau horaire).
 - Lister : `python gestionnaire_missions.py list`
 - Consulter le détail d'une mission : `python gestionnaire_missions.py show ID` (charge utile, état, dates, résultat ou type d'erreur).
 - Exécuter la prochaine : `python gestionnaire_missions.py run-next`
