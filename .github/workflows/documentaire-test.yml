@@ -67,10 +67,10 @@ jobs:
           cp "site/video/$VIDEO_FILE" "$RUNNER_TEMP/documentaire-test/site/video/"
           cp "site/audio/$AUDIO_FILE" "$RUNNER_TEMP/documentaire-test/site/audio/"
           python - <<'PY'
-          import json, shutil
+          import json, shutil, os
           from pathlib import Path
           manifest = json.loads(Path("site/documentaire-test.json").read_text(encoding="utf-8"))
-          target = Path("$RUNNER_TEMP") / "documentaire-test" / "site"
+          target = Path(os.environ["RUNNER_TEMP"]) / "documentaire-test" / "site"
           for item in manifest.get("translations", {}).values():
               for key, folder in (("audio", "audio"), ("video", "video"), ("subtitles", "video")):
                   name = item.get(key)
