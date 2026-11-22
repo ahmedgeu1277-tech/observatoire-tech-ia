@@ -801,7 +801,7 @@ async def create_translated_audio(article, translations):
         spoken_fields = [fields.get(key) for key in ("title", "summary", "verdict", "tip")]
         if any(not isinstance(value, str) or not value.strip() for value in spoken_fields):
             continue
-        filename = f"\${article['id']}-\${language}.mp3"
+        filename = f"{article['id']}-{language}.mp3"
         spoken = f"{fields['title']}. {fields['summary']} {fields['verdict']} {fields['tip']}"
         try:
             await edge_tts.Communicate(
