@@ -15,9 +15,10 @@ Le site présente des articles et des documentaires issus de sources publiques. 
 - Génération de documentaires vidéo à partir de contenus éditoriaux.
 - Démonstration publique d'une ville fictive : quatre quartiers, vue WebGL 3D légère avec repli isométrique 2D, et indicateurs synthétiques sans exposition des données internes.
 - Application web installable (PWA) : pages essentielles et catalogue d'articles mis en cache pour consultation hors ligne après une première visite. Les gros fichiers audio/vidéo ne sont volontairement pas mis en cache afin de préserver le stockage des téléphones et tablettes.
-- Recherche textuelle et filtres par thème sur les articles ; six défis éducatifs avec progression et rang personnel enregistrés localement (sans classement mondial).
+- Recherche textuelle et filtres par thème sur les articles ; six défis éducatifs avec progression et rang personnel enregistrés localement. La progression peut être exportée/importée en JSON versionné pour la sauvegarder ou la transférer ; il n'existe pas encore de classement mondial.
 - Tableau de bord privé local avec file de missions, portefeuille R&D et feuille de route persistante de sept chantiers avec priorités, statuts et échéances modifiables, conservée hors du dépôt public.
-- Atelier de création intégré au tableau de bord privé local : squelettes de sites, applications web, jeux navigateur, logiciels Python, projets Godot 2D/3D, audio et vidéo. Les fichiers sont écrits dans un espace privé avec permissions restreintes ; aucun code n'est exécuté et aucun projet n'est publié automatiquement.
+- Atelier public dans le navigateur : génère et télécharge localement un ZIP de huit types de projets (site, application, jeu web, Godot 2D/3D, Python, audio, vidéo) en sept langues, sans téléversement ni exécution de code.
+- Atelier complémentaire dans le tableau de bord privé local : mêmes familles de squelettes, écrites dans un espace privé avec permissions restreintes ; aucun code n'est exécuté et aucun projet n'est publié automatiquement.
 - Équipe de six rôles d'agents (chercheur, critique, architecte, rédacteur, auditeur, planificateur) ; une mission peut en mobiliser au maximum trois, avec durée et tentatives bornées.
 - Archivage des publications récentes et nettoyage programmé des anciennes archives.
 - File locale de missions IA avec trois rôles spécialisés maximum, durée limitée, annulation coopérative, relance manuelle plafonnée à trois tentatives et exécution manuelle de lots de trois missions maximum.
