@@ -126,10 +126,11 @@ class LocalDashboardTests(unittest.TestCase):
             status, _, body = self.request(
                 "/api/roadmap/translate_archive/status",
                 method="POST",
-                payload={"status": "in_progress"},
+                payload={"status": "in_progress", "due_at": "2026-12-01T12:00:00+00:00"},
             )
             self.assertEqual(status, 200)
             self.assertEqual(json.loads(body)["status"], "in_progress")
+            self.assertEqual(json.loads(body)["due_at"], "2026-12-01T12:00:00+00:00")
             self.assertEqual(roadmap_laboratoire.list_tasks(path)[0]["status"], "in_progress")
 
     def test_dashboard_can_manually_retry_failed_mission(self):
