@@ -288,6 +288,20 @@ jobs:
               await page.waitForFunction(() => (document.querySelector('#challenge-transfer-status')?.textContent || '').length > 0);
               const importedScore = await page.locator('#challenge-score').innerText();
               if (!importedScore.includes('20')) failures.push('Défis : la progression valide ne calcule pas les points attendus.');
+              await page.waitForFunction(() => Boolean(window.nexoraArticles?.length && document.querySelector('#translation-coverage')?.dataset.total));
+              const coverage = await page.evaluate(() => {
+                const languages = ['en', 'es', 'de', 'pt', 'ar', 'zh'];
+                const full = window.nexoraArticles.filter(item => languages.every(language => {
+                  const translated = item.translations?.[language];
+                  return translated && ['title', 'summary', 'verdict', 'tip', 'audio_url'].every(field =>
+                    typeof translated[field] === 'string' && translated[field].trim()
+                  );
+                })).length;
+                return {full, total: window.nexoraArticles.length, label: document.querySelector('#translation-coverage').textContent};
+              });
+              if (!coverage.label.includes(coverage.full + '/' + coverage.total)) {
+                failures.push('Traductions : indicateur de couverture incohérent avec le catalogue.');
+              }
               await page.locator('#challenge-export').click();
               const exported = await page.evaluate(() => window.__nexoraChallengeExport);
               if (!exported || exported.version !== 1 || exported.completed?.length !== 6 || exported.completed[0] !== true) {
