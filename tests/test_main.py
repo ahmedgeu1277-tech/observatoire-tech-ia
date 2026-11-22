@@ -558,6 +558,56 @@ class ArticleTranslationTests(unittest.TestCase):
 
 
 
+
+class ArticleTranslatedAudioTests(unittest.TestCase):
+    def test_creates_audio_files_for_available_translations(self):
+        import asyncio
+        import sys
+        from types import SimpleNamespace
+
+        class FakeCommunicate:
+            def __init__(self, text, voice, **kwargs):
+                self.voice = voice
+
+            async def save(self, path):
+                Path(path).write_bytes(b"fake-mp3")
+
+        fake_module = SimpleNamespace(Communicate=FakeCommunicate)
+        translations = {
+            language: {
+                "title": "Title",
+                "summary": "Summary",
+                "verdict": "Verdict",
+                "tip": "Tip",
+            }
+            for language in main.ARTICLE_TTS_VOICES
+        }
+        with tempfile.TemporaryDirectory() as folder:
+            with patch.object(main, "SITE_DIR", Path(folder)), patch.dict(sys.modules, {"edge_tts": fake_module}):
+                result = asyncio.run(main.create_translated_audio({"id": "sample"}, translations))
+            self.assertEqual(set(result), set(main.ARTICLE_TTS_VOICES))
+            for language, fields in result.items():
+                self.assertEqual(fields["audio_url"], f"audio/sample-{language}.mp3")
+                self.assertTrue((Path(folder) / fields["audio_url"]).is_file())
+
+    def test_missing_translation_fields_do_not_create_audio(self):
+        import asyncio
+        import sys
+        from types import SimpleNamespace
+
+        class FakeCommunicate:
+            def __init__(self, *_args, **_kwargs):
+                raise AssertionError("Aucune voix ne doit être appelée.")
+
+        fake_module = SimpleNamespace(Communicate=FakeCommunicate)
+        with patch.dict(sys.modules, {"edge_tts": fake_module}):
+            result = asyncio.run(main.create_translated_audio(
+                {"id": "sample"}, {"en": {"title": "Titre incomplet"}}
+            ))
+        self.assertEqual(result, {"en": {"title": "Titre incomplet"}})
+
+
+
 class AgentProfileLoadingTests(unittest.TestCase):
     def test_ignores_non_object_and_incomplete_profiles(self):
         with tempfile.TemporaryDirectory() as folder:
