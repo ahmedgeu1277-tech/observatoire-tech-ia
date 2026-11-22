@@ -54,7 +54,7 @@ def update_status(path: Path, task_id: str, status: str, due_at: str | None = No
         if due_at:
             try:
                 from datetime import datetime
-                parsed_due = datetime.fromisoformat(due_at.replace("Z", "+00:00"))
+                parsed_due = datetime.fromisoformat(due_at)
             except ValueError as exc:
                 raise ValueError("Échéance invalide.") from exc
             if parsed_due.tzinfo is None:
