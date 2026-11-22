@@ -22,25 +22,25 @@ Dernière évaluation fonctionnelle détaillée : 22 novembre 2026. Audits préc
 
 ## Résultat
 
-**Estimation pondérée recalculée : 66,29 / 100 (audit du 22 novembre 2026, commit de code vérifié fe807070).**
+**Estimation pondérée recalculée : 65,12 / 100 (audit du 22 novembre 2026, commit de code vérifié fe807070).**
 
 Ce pourcentage est un indicateur d'avancement fonctionnel construit à partir des domaines ci-dessous. Ce n'est ni un pourcentage de lignes de code terminées, ni une garantie de disponibilité, ni une certification de mise en production. Les notes sont des estimations prudentes fondées sur les fonctions présentes et les contrôles exécutés. Le précédent score de 56,48 % est conservé dans les bilans historiques plus haut.
 
 | Domaine | Poids | Avancement estimé | Contribution |
 |---|---:|---:|---:|
-| Média, veille et site public | 23,53 % | 95 % | 22,35 |
+| Média, veille et site public | 23,53 % | 90 % | 21,18 |
 | Fournisseurs IA et orchestration d'agents | 17,65 % | 40 % | 7,06 |
 | Missions persistantes et autonomie | 17,65 % | 46 % | 8,12 |
 | Laboratoire privé et sécurité | 17,65 % | 63 % | 11,12 |
 | R&D et conception de produits | 11,76 % | 52 % | 6,12 |
 | Tests et amélioration continue | 11,76 % | 98 % | 11,52 |
-| **Total** | **100 %** |  | **66,29 %** |
+| **Total** | **100 %** |  | **65,12 %** |
 
 Calcul : somme de (poids × note du domaine) / 100.
 
 ## Justification des notes
 
-### Média, veille et site public — 95 %
+### Média, veille et site public — 90 %
 Le site public, la récupération de sources, la rédaction assistée, les articles, les fichiers audio et les workflows planifiés existent. Un premier documentaire de démonstration a été généré et publié en MP4 H.264/AAC avec narration, diapositives 1280×720 dessinées localement et références aux sources. Le rendu a été vérifié par FFmpeg et le workflow complet a réussi. Cette vidéo reste un documentaire temporaire de test, pas un studio de montage universel. Restent notamment un hébergement secondaire réellement actif, une supervision permanente et une validation factuelle plus forte.
 
 ### Fournisseurs IA et orchestration d'agents — 40 %
@@ -248,7 +248,7 @@ La file locale conserve les missions, leurs priorités, échéances et tentative
 
 ### Révision des domaines
 
-- Média, veille et site public : 95 %.
+- Média, veille et site public : 90 % (l'interface a sept langues, mais seulement 5 des 30 articles audités disposent actuellement d'une traduction complète avec audio ; les autres sont en rattrapage).
 - Fournisseurs IA et orchestration : 40 % (six rôles, mais Hugging Face n'est pas confirmé comme fournisseur gratuit disponible).
 - Missions persistantes et autonomie : 46 % (file locale, relances bornées, maximum trois agents ; pas de service cloud autonome permanent).
 - Laboratoire privé et sécurité : 63 % (dashboard local, génération de prototypes privée, protections de chemin et permissions ; pas de dashboard distant authentifié).
@@ -263,3 +263,12 @@ La file locale conserve les missions, leurs priorités, échéances et tentative
 - La ville 3D est une simulation fictive, pas un jumeau numérique connecté.
 - Les modèles Godot créent des squelettes, pas des jeux finalisés ; aucun test de compilation Godot n'a été effectué.
 - « 110 % » ne peut pas être un pourcentage réel de complétude : le maximum mesurable reste 100 %, les améliorations supplémentaires se décrivent séparément.
+
+
+## Contrôle de couverture des traductions — 22 novembre 2026
+
+- Audit du catalogue public : 30 articles. Sept articles contiennent au moins une entrée de traduction, mais seulement **5/30** ont toutes les traductions textuelles et audio attendues pour les six langues secondaires. Les autres conservent leur version originale ; les sources et leurs liens ne sont jamais traduits.
+- Le rattrapage progressif a été accéléré de 3 à **5 articles maximum par exécution**, avec une limite stricte de 5 dans le code et un délai maximal de 20 minutes pour le workflow. Il s'exécute deux fois par jour, reste dépendant du quota Groq gratuit et s'arrête proprement si le fournisseur échoue.
+- Le rattrapage n'est pas instantané : les articles historiques non traduits ne deviennent pas disponibles dans les six langues tant que leurs traductions et fichiers audio n'ont pas été produits. Ne pas annoncer une traduction intégrale avant un nouveau contrôle du catalogue.
+- Le site public comprend maintenant un atelier de création téléchargeant localement un ZIP des squelettes de huit types de projets, en sept langues. Il fonctionne dans le navigateur sans envoyer de fichiers vers un serveur.
+- La surveillance de production a validé l'atelier public : HTTP 200. Sur le contrôle associé, **86 requêtes ont réussi, 0 erreur**. Les tests Python ont atteint **205 tests réussis**.
