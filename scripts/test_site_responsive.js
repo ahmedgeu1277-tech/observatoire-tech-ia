@@ -108,6 +108,35 @@ async function inspectPage(browser, route, viewport) {
       }
       await page.selectOption("#language", "fr");
     }
+    const challengeButtons = page.locator("[data-challenge-index]");
+    if (await challengeButtons.count() !== 3) {
+      fail("Accueil : les trois défis interactifs ne sont pas affichés.");
+    } else {
+      const localNote = await page.locator("#challenge-local-note").textContent();
+      if (!localNote.includes("cet appareil") || !localNote.includes("classement mondial")) {
+        fail("Défis : la progression locale n'est pas clairement distinguée d'un classement mondial.");
+      }
+      await page.locator('[data-challenge-index="0"]').click();
+      if ((await page.locator("#challenge-score").textContent()).trim() !== "20 points") {
+        fail("Défis : le score ne progresse pas après validation.");
+      }
+      await page.reload({ waitUntil: "domcontentloaded" });
+      if ((await page.locator("#challenge-score").textContent()).trim() !== "20 points") {
+        fail("Défis : la progression locale n'est pas conservée après rechargement.");
+      }
+      await page.selectOption("#language", "en");
+      if ((await page.locator("#challenge-title").textContent()) !== "NEXORA challenges") {
+        fail("Défis : le tableau n'est pas traduit en anglais.");
+      }
+      if ((await page.locator('[data-challenge-index="0"]').textContent()) !== "Challenge completed") {
+        fail("Défis : l'état du défi ne suit pas la langue sélectionnée.");
+      }
+      await page.locator("#challenge-reset").click();
+      if ((await page.locator("#challenge-score").textContent()).trim() !== "0 points") {
+        fail("Défis : la réinitialisation du score local échoue.");
+      }
+      await page.selectOption("#language", "fr");
+    }
     const audioControls = await page.locator("audio").evaluateAll(nodes =>
       nodes.every(node => node.controls)
     );
