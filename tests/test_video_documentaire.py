@@ -34,7 +34,8 @@ class VideoDocumentaireTests(unittest.TestCase):
         for language in ("fr", "en", "es", "de", "pt", "ar", "zh"):
             self.assertIn(language + ":", template)
         self.assertIn('id="language"', template)
-        self.assertIn('class="sources-heading"', template)
+        generator = (Path(__file__).resolve().parents[1] / "documentaire_test.py").read_text(encoding="utf-8")
+        self.assertIn('class="sources-heading"', generator)
         self.assertIn('localStorage.setItem("observatoire-doc-language"', template)
         self.assertIn('lang === "ar" ? "rtl" : "ltr"', template)
 
