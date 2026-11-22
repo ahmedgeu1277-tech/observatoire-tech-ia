@@ -1304,6 +1304,62 @@
       }
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261119T182651-f78b016d.mp3"
+    "audio_url": "audio/20261119T182651-f78b016d.mp3",
+    "translations": {
+      "en": {
+        "theme": "Video game release calendar 2026 and announcements",
+        "title": "Video game release calendar 2026 and announcements: unconfirmed figures",
+        "summary": "Sources consulted mention the video game release calendar 2026 and announcements, but they do not provide enough information to confirm the advanced numerical details. Performance, compatibility and technical specifications must be verified in official documents.",
+        "verdict": "The detailed figures and characteristics are not established by the consulted sources.",
+        "tip": "Consult official announcements and technical sheets before relying on precise numbers.",
+        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links for the full context.",
+        "audio_url": "audio/20261119T182651-f78b016d-en.mp3"
+      },
+      "es": {
+        "theme": "Calendario de lanzamientos de videojuegos 2026 y anuncios",
+        "title": "Calendario de lanzamientos de videojuegos 2026 y anuncios: cifras no confirmadas",
+        "summary": "Las fuentes consultadas mencionan el calendario de lanzamientos de videojuegos 2026 y anuncios, pero no proporcionan suficientes datos para confirmar las cifras avanzadas. El rendimiento, la compatibilidad y las especificaciones técnicas deben verificarse en los documentos oficiales.",
+        "verdict": "Las cifras y características detalladas no están establecidas por las fuentes consultadas.",
+        "tip": "Consulta los anuncios y fichas técnicas oficiales antes de confiar en cifras precisas.",
+        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulta los enlaces para obtener el contexto completo.",
+        "audio_url": "audio/20261119T182651-f78b016d-es.mp3"
+      },
+      "de": {
+        "theme": "Veröffentlichungsplan für Videospiele 2026 und Ankündigungen",
+        "title": "Veröffentlichungsplan für Videospiele 2026 und Ankündigungen: nicht bestätigte Zahlen",
+        "summary": "Die konsultierten Quellen erwähnen den Veröffentlichungsplan für Videospiele 2026 und Ankündigungen, liefern jedoch nicht genügend Informationen, um die fortgeschrittenen numerischen Details zu bestätigen. Leistung, Kompatibilität und technische Spezifikationen müssen in offiziellen Dokumenten überprüft werden.",
+        "verdict": "Die detaillierten Zahlen und Merkmale sind von den konsultierten Quellen nicht festgelegt.",
+        "tip": "Konsultiere offizielle Ankündigungen und technische Unterlagen, bevor du dich auf genaue Zahlen verlässt.",
+        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Prüfe die Links für den vollständigen Kontext.",
+        "audio_url": "audio/20261119T182651-f78b016d-de.mp3"
+      },
+      "pt": {
+        "theme": "Calendário de lançamentos de videogames 2026 e anúncios",
+        "title": "Calendário de lançamentos de videogames 2026 e anúncios: números não confirmados",
+        "summary": "As fontes consultadas mencionam o calendário de lançamentos de videogames 2026 e anúncios, mas não fornecem informações suficientes para confirmar os detalhes numéricos avançados. O desempenho, a compatibilidade e as especificações técnicas devem ser verificados nos documentos oficiais.",
+        "verdict": "Os números e características detalhados não são estabelecidos pelas fontes consultadas.",
+        "tip": "Consulte os anúncios e fichas técnicas oficiais antes de confiar em números precisos.",
+        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Consulte os links para obter o contexto completo.",
+        "audio_url": "audio/20261119T182651-f78b016d-pt.mp3"
+      },
+      "ar": {
+        "theme": "تقويم إصدارات ألعاب الفيديو 2026 والإعلانات",
+        "title": "تقويم إصدارات ألعاب الفيديو 2026 والإعلانات: أرقام غير مؤكدة",
+        "summary": "تشير المصادر التي تم استشارتها إلى تقويم إصدارات ألعاب الفيديو 2026 والإعلانات، لكنها لا توفر معلومات كافية لتأكيد التفاصيل الرقمية المتقدمة. يجب التحقق من الأداء والتوافق والمواصفات التقنية في الوثائق الرسمية.",
+        "verdict": "الأرقام والخصائص المفصلة غير معتمدة من قبل المصادر التي تم استشارتها.",
+        "tip": "استشر الإعلانات والملفات التقنية الرسمية قبل الاعتماد على أرقام دقيقة.",
+        "ai_notice": "تم كتابة المقال بمساعدة groq استنادًا إلى المصادر المذكورة. راجع الروابط للحصول على السياق الكامل.",
+        "audio_url": "audio/20261119T182651-f78b016d-ar.mp3"
+      },
+      "zh": {
+        "theme": "2026年视频游戏发行日历与公告",
+        "title": "2026年视频游戏发行日历与公告：未确认的数字",
+        "summary": "所参考的来源提及2026年视频游戏发行日历与公告，但未提供足够信息来确认所述的详细数字。性能、兼容性和技术规格需在官方文件中核实。",
+        "verdict": "所述详细数字和特性未被所参考来源确认。",
+        "tip": "在依赖精确数字前，请查阅官方公告和技术说明。",
+        "ai_notice": "本文使用groq根据所列来源撰写。请查看链接获取完整背景。",
+        "audio_url": "audio/20261119T182651-f78b016d-zh.mp3"
+      }
+    }
   }
 ]
