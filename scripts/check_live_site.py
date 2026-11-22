@@ -81,7 +81,6 @@ def safe_media_path(folder: str, filename: object) -> str | None:
 
 
 def main() -> int:
-    global checks
     print(f"Surveillance de production : {BASE_URL}")
     for path, label, mime in (
         ("", "page racine", "text/html"),
