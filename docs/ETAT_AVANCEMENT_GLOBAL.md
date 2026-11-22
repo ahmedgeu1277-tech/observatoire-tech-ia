@@ -292,3 +292,27 @@ La file locale conserve les missions, leurs priorités, échéances et tentative
 - La ville WebGL est fictive et synthétique, pas un jumeau numérique.
 - Les projets Godot restent des squelettes ; aucune compilation dans le moteur Godot n'a été validée.
 - 110 % n'est pas un pourcentage de complétude mesurable ; le maximum réel reste 100 % plus des améliorations supplémentaires décrites séparément.
+
+
+## Vérification de reprise — 22 novembre 2026, HEAD a2b7399a
+
+Contrôle effectué après les derniers commits automatiques de publication :
+
+- **Déploiement GitHub Pages :** le workflow `pages build and deployment` (run 45055835724) a terminé avec succès sur le commit `a2b7399a` ; les étapes build, deploy et report-build-status sont toutes vertes.
+- **Qualité et sécurité :** les workflows de tests (run 45055597695) et d'analyse avancée (run 45055597668) ont terminé avec succès sur `cd757011`. Les jobs visibles sont verts : tests, Ruff/Bandit, Gitleaks, CodeQL Python, CodeQL JavaScript/TypeScript et tests navigateur de toutes les pages HTML.
+- **Production :** la surveillance (run 45059557226), exécutée après le déploiement de `a2b7399a`, a confirmé **86 requêtes HTTP réussies et 0 erreur**. Les contrôles incluent les pages, les audios d'articles, le manifeste documentaire et les variantes audio, vidéo et sous-titres du documentaire dans les six langues secondaires.
+- **Archivage :** les exécutions de nettoyage des archives (runs 45062022825 et 45066379533) ont terminé avec succès.
+- **Catalogue au moment de l'audit :** 30 articles, 7 avec au moins une traduction, mais seulement **5/30** avec les champs textuels et audio complets dans chacune des six langues secondaires (en, es, de, pt, ar, zh). Ce comptage a été recalculé directement depuis `site/articles.json` ; il ne faut donc pas annoncer que tous les articles sont traduits.
+- Le dernier commit de tête est une publication automatique d'article. Le dernier ensemble complet de tests de code cité ci-dessus porte sur `cd757011`, antérieur à cette publication automatique ; la surveillance de production porte bien sur le déploiement `a2b7399a`.
+- **Avancement :** la dernière estimation pondérée détaillée demeure **65,70 %**, calculée sur le commit `386e5373`. Aucun nouveau score global n'est attribué dans ce contrôle limité, car les changements automatiques ultérieurs ne constituent pas un nouvel audit fonctionnel complet.
+
+### Points qui empêchent toujours de déclarer le projet complet
+
+- Le classement des défis reste personnel et local au navigateur ; pas de classement mondial.
+- Le laboratoire privé reste hébergé localement sur la machine qui lance Python ; pas de backend privé distant avec authentification.
+- GitHub Actions exécute des tâches ponctuelles planifiées ; ce n'est pas un serveur d'agents actif en permanence.
+- La ville WebGL reste une simulation fictive avec données synthétiques.
+- La majorité des archives n'a pas encore les six traductions complètes avec audio.
+- Les modèles Godot sont des squelettes de départ et leur compilation dans Godot n'est pas validée.
+- Le dépôt GitHub est public : aucun secret, document privé ou donnée personnelle ne doit y être ajouté.
+- L'objectif « 110 % » reste symbolique : le taux de complétude mesurable est plafonné à 100 %, les améliorations supplémentaires devant être décrites séparément.
