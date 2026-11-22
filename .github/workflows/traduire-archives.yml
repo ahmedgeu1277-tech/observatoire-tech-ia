@@ -3,7 +3,7 @@ name: Traduction progressive des archives publiques
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 2 * * *"
+    - cron: "30 2,14 * * *"
 
 permissions:
   contents: write
