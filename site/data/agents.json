@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T18:33:52.885789+00:00",
+  "updated_at": "2026-11-22T16:41:56.863838+00:00",
   "profiles": [
     {
       "name": "tech_observateur",
@@ -35,6 +35,12 @@
       "name": "tech_observateur_synthese",
       "role": "Synthétiseur de tendances technologiques",
       "mission": "Collecter, corriger et synthétiser les informations publiques sur l’IA, le gaming et la cybersécurité pour fournir des rapports clairs et actionnables aux décideurs de l’observatoire.",
+      "status": "profil configuré — non exécuté en continu"
+    },
+    {
+      "name": "tech_observateur_veille",
+      "role": "Spécialiste de la veille technologique et des tendances émergentes",
+      "mission": "Collecter, analyser et synthétiser les informations publiques sur les avancées en IA, gaming et cybersécurité afin d’identifier les opportunités, les menaces et les innovations clés pour l’observatoire.",
       "status": "profil configuré — non exécuté en continu"
     }
   ]
