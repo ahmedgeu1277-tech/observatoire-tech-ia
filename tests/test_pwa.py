@@ -30,7 +30,7 @@ class ProgressiveWebAppTests(unittest.TestCase):
         self.assertIn('caches.match("./offline.html")', worker)
         self.assertIn('nexora-public-v1', worker)
         self.assertIn('"./articles.json"', worker)
-        self.assertIn("mp3|mp4|webm|m4a|ogg|wav", worker)
+        self.assertIn('".mp3", ".mp4", ".webm", ".m4a", ".ogg", ".wav"', worker)
         self.assertIn("Ne pas mettre en cache les médias lourds", worker)
 
     def test_media_range_requests_bypass_cache_api(self):
