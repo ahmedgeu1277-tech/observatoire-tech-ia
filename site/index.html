@@ -113,7 +113,8 @@ footer{letter-spacing:.12em;line-height:1.8}
 <article class="feature"><div class="eyebrow" data-i18n="audioVideo">AUDIO ET VIDÉO</div><h3 data-i18n="formatsTitle">Des formats pour approfondir</h3><p data-i18n="formatsDescription">Certains dossiers sont proposés en narration audio et en documentaire vidéo. Les fichiers publiés sont conservés pendant leur période d’archivage indiquée.</p></article>
 </section>
 <section id="publications">
-<div class="sectionhead"><div><h2 data-i18n="latestNews">Dernières actualités</h2><p data-i18n="publishedArticles">Articles publiés par NEXORA.</p><p class="language-note" data-i18n="contentLanguageNote">Les articles et leurs sources restent dans leur langue d’origine.</p></div><span id="status" data-article-status="loading">Chargement…</span></div>
+<div class="sectionhead"><div><h2 data-i18n="latestNews">Dernières actualités</h2><p data-i18n="publishedArticles">Articles publiés par NEXORA.</p><p class="language-note" data-i18n="contentLanguageNote">Les articles et leurs sources restent dans leur langue d’origine.</p>
+<p class="translation-coverage" id="translation-coverage" aria-live="polite">Articles entièrement traduits (texte + audio) : calcul en cours…</p></div><span id="status" data-article-status="loading">Chargement…</span></div>
 <div class="article-tools"><label for="article-search" data-i18n="searchLabel">Rechercher</label><input id="article-search" type="search" autocomplete="off" aria-label="Rechercher dans les articles"><label for="article-category" data-i18n="filterLabel">Catégorie</label><select id="article-category"><option value="all" data-i18n="filterAll">Toutes</option><option value="tech" data-i18n="filterTech">Technologie</option><option value="ai" data-i18n="filterAi">Intelligence artificielle</option><option value="gaming" data-i18n="filterGaming">Jeux vidéo</option><option value="security" data-i18n="filterSecurity">Cybersécurité</option></select><span id="article-filter-count" aria-live="polite"></span></div><div id="articles" class="articlegrid"><div class="empty" data-article-label="loading">Récupération des publications…</div></div><div id="article-no-results" class="empty" hidden data-i18n="noResults">Aucun article ne correspond à cette recherche.</div>
 </section>
 <section id="documentaires">
@@ -137,7 +138,221 @@ footer{letter-spacing:.12em;line-height:1.8}
 (async()=>{try{const r=await fetch("./documentaire-test.json",{cache:"no-store"});if(!r.ok)throw new Error("manifest");const m=await r.json();const v=document.getElementById("latest-video");v.src="./video/"+encodeURIComponent(m.video_file);const a=document.getElementById("latest-audio");if(a&&m.audio_file)a.src="./audio/"+encodeURIComponent(m.audio_file);document.getElementById("video-title").textContent=m.title||"Documentaire récent";document.getElementById("video-expiry").textContent="Conservation prévue jusqu’au "+new Date(m.expires_at).toLocaleDateString("fr-FR")+". Les anciennes éditions restent dans les archives lorsqu’elles sont encore dans leur période de conservation.";}catch(e){document.getElementById("video-title").textContent="Aucune vidéo publiée pour le moment.";document.getElementById("video-expiry").textContent="Réessaie plus tard ou consulte la page documentaire.";}})();
 </script>
 <script>
-(async()=>{const status=document.getElementById("status"),box=document.getElementById("articles");try{const res=await fetch("./articles.json",{cache:"no-store"});if(!res.ok)throw new Error("HTTP "+res.status);const items=await res.json();const count=document.getElementById("count");if(count)count.textContent=items.length;status.textContent=items.length+" publication(s)";box.replaceChildren();if(!items.length){box.innerHTML='<div class="empty" data-article-label="empty">Aucune publication pour le moment. Reviens bientôt !</div>';window.observatoireApplyArticleLanguage?.(document.documentElement.lang);return;}window.nexoraArticles=items;for(let itemIndex=0;itemIndex<items.length;itemIndex++){const item=items[itemIndex];const card=document.createElement("article");card.className="article";card.dataset.articleIndex=String(itemIndex);const meta=document.createElement("div");meta.className="meta";const theme=document.createElement("span");theme.dataset.articleField="theme";theme.textContent=item.theme||"Actualité";const date=document.createElement("span");date.textContent=" · "+(item.date||"");meta.append(theme,date);const title=document.createElement("h3");title.dataset.articleField="title";title.textContent=item.title||"Publication";const summary=document.createElement("p");summary.dataset.articleField="summary";summary.textContent=item.summary||"";card.append(meta,title,summary);for(const [label,key] of [["verdict","verdict"],["tip","tip"]])if(item[key]){const p=document.createElement("p"),b=document.createElement("span"),value=document.createElement("span");b.className="label";b.dataset.articleLabel=label;value.dataset.articleField=key;value.textContent=item[key];p.append(b,value);card.append(p);}if(item.audio_url){const audio=document.createElement("audio");audio.controls=true;audio.preload="none";let audioPath=String(item.audio_url).replace(/^\.\//,'');audio.src = './'+(audioPath.startsWith('site/')?audioPath.slice(5):audioPath);audio.dataset.articleAudio='true';card.append(audio);}if(Array.isArray(item.sources)&&item.sources.length){const h=document.createElement("p");h.className="label";h.dataset.articleLabel="sources";const ul=document.createElement("ul");for(const s of item.sources){if(!s.url||!(s.url.startsWith('https://')||s.url.startsWith('http://')))continue;const li=document.createElement("li"),a=document.createElement("a");a.href=s.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=s.title||"Consulter la source";a.classList.add("notranslate");a.setAttribute("translate","no");li.append(a);ul.append(li);}card.append(h,ul);}const note=document.createElement("p");note.className="meta";if(item.ai_notice){note.dataset.articleField="ai_notice";note.textContent=item.ai_notice;}else{note.dataset.articleLabel="ai";}card.append(note);box.append(card);}window.nexoraApplyArticleFilters?.();window.observatoireApplyArticleLanguage?.(document.documentElement.lang);}catch(e){status.textContent="Erreur de chargement";box.innerHTML='<div class="empty" data-article-label="error">Impossible de charger les articles. Réessaie plus tard.</div>';window.observatoireApplyArticleLanguage?.(document.documentElement.lang);console.error(e);}})();
+(async()=>{const status=document.getElementById("status"),box=document.getElementById("articles");try{const res=await fetch("./articles.json",{cache:"no-store"});if(!res.ok)throw new Error("HTTP "+res.status);const items=await res.json();const count=document.getElementById("count");if(count)count.textContent=items.length;status.textContent=items.length+" publication(s)";box.replaceChildren();if(!items.length){box.innerHTML='<div class="empty" data-article-label="empty">Aucune publication pour le moment. Reviens bientôt !</div>';window.observatoireApplyArticleLanguage?.(document.documentElement.lang);return;}window.nexoraArticles=items;const translationLanguages=["en","es","de","pt","ar","zh"];const fullyTranslated=items.filter(item=>translationLanguages.every(lang=>{const translated=item.translations?.[lang];return translated&&["title","summary","verdict","tip","audio_url"].every(field=>typeof translated[field]==="string"&&translated[field].trim());})).length;const coverage=document.getElementById("translation-coverage");if(coverage){coverage.dataset.full=String(fullyTranslated);coverage.dataset.total=String(items.length);}for(let itemIndex=0;itemIndex<items.length;itemIndex++){const item=items[itemIndex];const card=document.createElement("article");card.className="article";card.dataset.articleIndex=String(itemIndex);const meta=document.createElement("div");meta.className="meta";const theme=document.createElement("span");theme.dataset.articleField="theme";theme.textContent=item.theme||"Actualité";const date=document.createElement("span");date.textContent=" · "+(item.date||"");meta.append(theme,date);const title=document.createElement("h3");title.dataset.articleField="title";title.textContent=item.title||"Publication";const summary=document.createElement("p");summary.dataset.articleField="summary";summary.textContent=item.summary||"";card.append(meta,title,summary);for(const [label,key] of [["verdict","verdict"],["tip","tip"]])if(item[key]){const p=document.createElement("p"),b=document.createElement("span"),value=document.createElement("span");b.className="label";b.dataset.articleLabel=label;value.dataset.articleField=key;value.textContent=item[key];p.append(b,value);card.append(p);}if(item.audio_url){const audio=document.createElement("audio");audio.controls=true;audio.preload="none";let audioPath=String(item.audio_url).replace(/^\.\//,'');audio.src = './'+(audioPath.startsWith('site/')?audioPath.slice(5):audioPath);audio.dataset.articleAudio='true';card.append(audio);}if(Array.isArray(item.sources)&&item.sources.length){const h=document.createElement("p");h.className="label";h.dataset.articleLabel="sources";const ul=document.createElement("ul");for(const s of item.sources){if(!s.url||!(s.url.startsWith('https://')||s.url.startsWith('http://')))continue;const li=document.createElement("li"),a=document.createElement("a");a.href=s.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=s.title||"Consulter la source";a.classList.add("notranslate");a.setAttribute("translate","no");li.append(a);ul.append(li);}card.append(h,ul);}const note=document.createElement("p");note.className="meta";if(item.ai_notice){note.dataset.articleField="ai_notice";note.textContent=item.ai_notice;}else{note.dataset.articleLabel="ai";}card.append(note);box.append(card);}window.nexoraApplyArticleFilters?.();window.observatoireApplyArticleLanguage?.(document.documentElement.lang);}catch(e){status.textContent="Erreur de chargement";box.innerHTML='<div class="empty" data-article-label="error">Impossible de charger les articles. Réessaie plus tard.</div>';window.observatoireApplyArticleLanguage?.(document.documentElement.lang);console.error(e);}})();
+</script>
+
+<script>
+(()=>{const input=document.getElementById("article-search"),select=document.getElementById("article-category"),box=document.getElementById("articles"),count=document.getElementById("article-filter-count"),empty=document.getElementById("article-no-results");if(!input||!select||!box)return;
+const normalize=value=>String(value||"").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase();
+const classify=card=>{const value=normalize(card.querySelector("[data-article-field='theme']")?.textContent+" "+card.querySelector("h3")?.textContent);if(/cyber|securite|hacking|vulnerabilite|malware/.test(value))return "security";if(/gta|gaming|game|jeu video|playstation|xbox|nintendo|roblox|call of duty/.test(value))return "gaming";if(/intelligence artificielle|\bia\b|\bai\b|llm|modele de langage|robotique/.test(value))return "ai";return "tech";};
+window.nexoraApplyArticleFilters=()=>{const query=normalize(input.value),category=select.value;let visible=0;const cards=box.querySelectorAll(".article");cards.forEach(card=>{const matchesText=!query||normalize(card.textContent).includes(query);const matchesCategory=category==="all"||classify(card)===category;const show=matchesText&&matchesCategory;card.hidden=!show;if(show)visible++;});count.textContent=visible+" / "+cards.length;empty.hidden=visible!==0||cards.length===0;};
+input.addEventListener("input",window.nexoraApplyArticleFilters);select.addEventListener("change",window.nexoraApplyArticleFilters);
+})();
+</script>
+<script>
+(()=> {
+ const translations = {
+  fr: {
+   pageTitle:"NEXORA — Tech, IA & Gaming",pageDescription:"Actualités publiques sur la technologie, l’intelligence artificielle et les jeux vidéo, avec articles et documentaires sourcés.",crumb:"NEXORA / MÉDIA PUBLIC", languageLabel:"Langue", live:"PUBLICATIONS AUTOMATISÉES",
+   navLabel:"LE MÉDIA",home:"Accueil",news:"Actualités",docs:"Documentaires",simulation:"Simulation",challengesNav:"Défis",methodology:"Méthode",atelierNav:"Atelier",independent:"Média indépendant",
+   sideDescription:"Des publications consacrées à la technologie, à l’intelligence artificielle et au jeu vidéo.",
+   eyebrow:"TECHNOLOGIE · IA · JEUX VIDÉO",heroTitle:"Comprendre ce qui change.<br>Distinguer l’essentiel.",
+   heroDescription:"Un média indépendant qui suit l’actualité technologique, l’intelligence artificielle, le gaming, le matériel et la cybersécurité. Les publications présentent leurs sources afin de permettre aux lecteurs de vérifier les informations.",
+   readNews:"Lire les actualités →",watchDocs:"Voir les documentaires",sourceTitle:"Des informations accompagnées de leurs sources",
+   sourceDescription:"Les articles sont préparés à partir de sources publiques. Les éléments incertains doivent être considérés avec prudence et vérifiés auprès des publications originales.",
+   audioVideo:"AUDIO ET VIDÉO",formatsTitle:"Des formats pour approfondir",
+   formatsDescription:"Certains dossiers sont proposés en narration audio et en documentaire vidéo. Les fichiers publiés sont conservés pendant leur période d’archivage indiquée.",
+   latestNews:"Dernières actualités",publishedArticles:"Articles publiés par NEXORA.",searchLabel:"Rechercher",filterLabel:"Catégorie",filterAll:"Toutes",filterTech:"Technologie",filterAi:"Intelligence artificielle",filterGaming:"Jeux vidéo",filterSecurity:"Cybersécurité",noResults:"Aucun article ne correspond à cette recherche.",documentaries:"Documentaires",
+   availableEditions:"Éditions audio et vidéo disponibles.",latestEdition:"DERNIÈRE ÉDITION",
+   notice:"⚠️ Certains textes et narrations sont préparés avec l’aide de l’intelligence artificielle. Ils peuvent contenir des erreurs : les sources originales restent la référence. Les fonctions non publiées ne sont pas présentées ici comme des services disponibles.",
+   footer:"NEXORA · MÉDIA INDÉPENDANT SUR LA TECH, L’IA ET LE JEU VIDÉO"
+  },
+  en: {
+   pageTitle:"NEXORA — Tech, AI & Gaming",pageDescription:"Public technology, artificial intelligence and gaming news, with sourced articles and documentaries.",crumb:"NEXORA / PUBLIC MEDIA", languageLabel:"Language", live:"AUTOMATED PUBLICATIONS",
+   navLabel:"THE MEDIA",home:"Home",news:"News",docs:"Documentaries",simulation:"City simulation",challengesNav:"Challenges",methodology:"Our method",atelierNav:"Workshop",independent:"Independent media",
+   sideDescription:"Publications covering technology, artificial intelligence and video games.",
+   eyebrow:"TECHNOLOGY · AI · GAMING",heroTitle:"Understand what is changing.<br>Focus on what matters.",
+   heroDescription:"An independent publication covering technology, artificial intelligence, gaming, hardware and cybersecurity. Articles include sources so readers can verify the information.",
+   readNews:"Read the news →",watchDocs:"Watch documentaries",sourceTitle:"Information supported by its sources",
+   sourceDescription:"Articles are prepared from public sources. Uncertain claims should be treated cautiously and checked against the original publications.",
+   audioVideo:"AUDIO AND VIDEO",formatsTitle:"More ways to explore a topic",
+   formatsDescription:"Some reports are available as audio narration and video documentaries. Published files are retained for the stated archive period.",
+   latestNews:"Latest news",publishedArticles:"Articles published by NEXORA.",searchLabel:"Search",filterLabel:"Category",filterAll:"All",filterTech:"Technology",filterAi:"Artificial intelligence",filterGaming:"Gaming",filterSecurity:"Cybersecurity",noResults:"No articles match this search.",documentaries:"Documentaries",
+   availableEditions:"Available audio and video editions.",latestEdition:"LATEST EDITION",
+   notice:"⚠️ Some texts and narration are prepared with the help of AI and may contain errors. Original sources remain the reference. Unpublished features are not presented as available services.",
+   footer:"NEXORA · INDEPENDENT TECH, AI AND GAMING MEDIA"
+  },
+  es: {
+   pageTitle:"NEXORA — Tecnología, IA & Gaming",pageDescription:"Noticias públicas sobre tecnología, inteligencia artificial y videojuegos, con artículos y documentales con fuentes.",crumb:"NEXORA / MEDIO PÚBLICO",languageLabel:"Idioma",live:"PUBLICACIONES AUTOMÁTICAS",navLabel:"EL MEDIO",home:"Inicio",news:"Noticias",docs:"Documentales",simulation:"Simulación urbana",challengesNav:"Retos",methodology:"Método",atelierNav:"Taller",independent:"Medio independiente",
+   sideDescription:"Publicaciones sobre tecnología, inteligencia artificial y videojuegos.",eyebrow:"TECNOLOGÍA · IA · VIDEOJUEGOS",
+   heroTitle:"Comprender lo que cambia.<br>Distinguir lo esencial.",heroDescription:"Un medio independiente sobre tecnología, inteligencia artificial, videojuegos, hardware y ciberseguridad. Los artículos incluyen fuentes para que los lectores puedan verificar la información.",
+   readNews:"Leer las noticias →",watchDocs:"Ver documentales",sourceTitle:"Información acompañada de sus fuentes",sourceDescription:"Los artículos se preparan a partir de fuentes públicas. Las afirmaciones inciertas deben comprobarse en las publicaciones originales.",
+   audioVideo:"AUDIO Y VÍDEO",formatsTitle:"Formatos para profundizar",formatsDescription:"Algunos informes están disponibles como narración de audio y documentales en vídeo.",
+   latestNews:"Últimas noticias",publishedArticles:"Artículos publicados por NEXORA.",searchLabel:"Buscar",filterLabel:"Categoría",filterAll:"Todas",filterTech:"Tecnología",filterAi:"Inteligencia artificial",filterGaming:"Videojuegos",filterSecurity:"Ciberseguridad",noResults:"Ningún artículo coincide con esta búsqueda.",documentaries:"Documentales",availableEditions:"Ediciones de audio y vídeo disponibles.",latestEdition:"ÚLTIMA EDICIÓN",
+   notice:"⚠️ Algunos textos y narraciones se preparan con ayuda de IA y pueden contener errores. Las fuentes originales siguen siendo la referencia.",
+   footer:"NEXORA · MEDIO INDEPENDIENTE DE TECNOLOGÍA, IA Y VIDEOJUEGOS"
+  },
+  de: {
+   pageTitle:"NEXORA — Tech, KI & Gaming",pageDescription:"Öffentliche Nachrichten über Technik, künstliche Intelligenz und Gaming mit belegten Artikeln und Dokumentationen.",crumb:"NEXORA / ÖFFENTLICHES MEDIUM",languageLabel:"Sprache",live:"AUTOMATISCHE VERÖFFENTLICHUNGEN",navLabel:"DAS MEDIUM",home:"Startseite",news:"Nachrichten",docs:"Dokumentationen",simulation:"Stadtsimulation",challengesNav:"Herausforderungen",methodology:"Methode",atelierNav:"Werkstatt",independent:"Unabhängiges Medium",
+   sideDescription:"Beiträge über Technologie, künstliche Intelligenz und Videospiele.",eyebrow:"TECHNOLOGIE · KI · GAMING",
+   heroTitle:"Verstehen, was sich verändert.<br>Das Wesentliche erkennen.",heroDescription:"Ein unabhängiges Medium zu Technologie, künstlicher Intelligenz, Gaming, Hardware und Cybersicherheit. Beiträge enthalten Quellen, damit Leser die Informationen überprüfen können.",
+   readNews:"Nachrichten lesen →",watchDocs:"Dokumentationen ansehen",sourceTitle:"Informationen mit Quellen",sourceDescription:"Artikel werden anhand öffentlicher Quellen erstellt. Unsichere Aussagen sollten anhand der Originalveröffentlichungen überprüft werden.",
+   audioVideo:"AUDIO UND VIDEO",formatsTitle:"Formate für vertiefende Einblicke",formatsDescription:"Einige Beiträge sind als Audiobeitrag und Videodokumentation verfügbar.",
+   latestNews:"Neueste Nachrichten",publishedArticles:"Von NEXORA veröffentlichte Artikel.",searchLabel:"Suchen",filterLabel:"Kategorie",filterAll:"Alle",filterTech:"Technologie",filterAi:"Künstliche Intelligenz",filterGaming:"Gaming",filterSecurity:"Cybersicherheit",noResults:"Keine Artikel entsprechen dieser Suche.",documentaries:"Dokumentationen",availableEditions:"Verfügbare Audio- und Videoausgaben.",latestEdition:"NEUESTE AUSGABE",
+   notice:"⚠️ Einige Texte und Erzählungen werden mit KI erstellt und können Fehler enthalten. Maßgeblich bleiben die Originalquellen.",
+   footer:"NEXORA · UNABHÄNGIGES MEDIUM FÜR TECH, KI UND GAMING"
+  },
+  pt: {
+   pageTitle:"NEXORA — Tech, IA & Gaming",pageDescription:"Notícias públicas sobre tecnologia, inteligência artificial e jogos, com artigos e documentários com fontes.",crumb:"NEXORA / MÍDIA PÚBLICA",languageLabel:"Idioma",live:"PUBLICAÇÕES AUTOMÁTICAS",navLabel:"A MÍDIA",home:"Início",news:"Notícias",docs:"Documentários",simulation:"Simulação urbana",challengesNav:"Desafios",methodology:"Método",atelierNav:"Oficina",independent:"Mídia independente",
+   sideDescription:"Publicações sobre tecnologia, inteligência artificial e jogos.",eyebrow:"TECNOLOGIA · IA · JOGOS",
+   heroTitle:"Entenda o que está mudando.<br>Veja o que realmente importa.",heroDescription:"Uma publicação independente sobre tecnologia, inteligência artificial, jogos, hardware e cibersegurança. Os artigos apresentam fontes para que os leitores possam verificar as informações.",
+   readNews:"Ler notícias →",watchDocs:"Ver documentários",sourceTitle:"Informações acompanhadas de fontes",sourceDescription:"Os artigos são preparados a partir de fontes públicas. Afirmações incertas devem ser verificadas nas publicações originais.",
+   audioVideo:"ÁUDIO E VÍDEO",formatsTitle:"Formatos para aprofundar",formatsDescription:"Alguns relatórios estão disponíveis em narração de áudio e documentários em vídeo.",
+   latestNews:"Últimas notícias",publishedArticles:"Artigos publicados pela NEXORA.",searchLabel:"Pesquisar",filterLabel:"Categoria",filterAll:"Todas",filterTech:"Tecnologia",filterAi:"Inteligência artificial",filterGaming:"Jogos",filterSecurity:"Cibersegurança",noResults:"Nenhum artigo corresponde a esta pesquisa.",documentaries:"Documentários",availableEditions:"Edições de áudio e vídeo disponíveis.",latestEdition:"EDIÇÃO MAIS RECENTE",
+   notice:"⚠️ Alguns textos e narrações são preparados com ajuda de IA e podem conter erros. As fontes originais continuam sendo a referência.",
+   footer:"NEXORA · MÍDIA INDEPENDENTE DE TECNOLOGIA, IA E JOGOS"
+  },
+  ar: {
+   pageTitle:"NEXORA — التقنية والذكاء الاصطناعي والألعاب",pageDescription:"أخبار عامة عن التكنولوجيا والذكاء الاصطناعي وألعاب الفيديو مع مقالات وأفلام وثائقية موثقة.",crumb:"NEXORA / الإعلام العام",languageLabel:"اللغة",live:"منشورات آلية",navLabel:"الإعلام",home:"الرئيسية",news:"الأخبار",docs:"أفلام وثائقية",simulation:"محاكاة المدينة",challengesNav:"التحديات",methodology:"المنهجية",atelierNav:"ورشة الإنشاء",independent:"إعلام مستقل",
+   sideDescription:"منشورات حول التكنولوجيا والذكاء الاصطناعي وألعاب الفيديو.",eyebrow:"التكنولوجيا · الذكاء الاصطناعي · الألعاب",
+   heroTitle:"افهم ما يتغير.<br>وركّز على الأهم.",heroDescription:"منصة إعلامية مستقلة تتابع التكنولوجيا والذكاء الاصطناعي والألعاب والأجهزة والأمن السيبراني. تتضمن المقالات مصادر للتحقق من المعلومات.",
+   readNews:"اقرأ الأخبار ←",watchDocs:"شاهد الأفلام الوثائقية",sourceTitle:"معلومات مدعومة بمصادرها",sourceDescription:"تُعد المقالات بالاعتماد على مصادر عامة. ينبغي التحقق من الادعاءات غير المؤكدة بالرجوع إلى المنشورات الأصلية.",
+   audioVideo:"الصوت والفيديو",formatsTitle:"طرق متعددة للتعمق",formatsDescription:"تتوفر بعض التقارير بصيغة تعليق صوتي وأفلام وثائقية مصورة.",
+   latestNews:"آخر الأخبار",publishedArticles:"مقالات NEXORA المنشورة.",searchLabel:"بحث",filterLabel:"الفئة",filterAll:"الكل",filterTech:"التكنولوجيا",filterAi:"الذكاء الاصطناعي",filterGaming:"الألعاب",filterSecurity:"الأمن السيبراني",noResults:"لا توجد مقالات تطابق هذا البحث.",documentaries:"أفلام وثائقية",availableEditions:"إصدارات صوتية ومرئية متاحة.",latestEdition:"أحدث إصدار",
+   notice:"⚠️ تُعد بعض النصوص والتعليقات الصوتية بمساعدة الذكاء الاصطناعي وقد تتضمن أخطاء. تظل المصادر الأصلية هي المرجع.",
+   footer:"NEXORA · إعلام مستقل للتكنولوجيا والذكاء الاصطناعي والألعاب"
+  },
+  zh: {
+   pageTitle:"NEXORA — 科技、人工智能与游戏",pageDescription:"提供科技、人工智能和电子游戏公共新闻，以及附有来源的文章和纪录片。",crumb:"NEXORA / 公共媒体",languageLabel:"语言",live:"自动发布",navLabel:"媒体",home:"首页",news:"新闻",docs:"纪录片",simulation:"城市模拟",challengesNav:"挑战",methodology:"编辑方法",atelierNav:"创作工坊",independent:"独立媒体",
+   sideDescription:"关注科技、人工智能和电子游戏的出版内容。",eyebrow:"科技 · 人工智能 · 游戏",
+   heroTitle:"理解正在发生的变化。<br>关注真正重要的内容。",heroDescription:"独立关注科技、人工智能、游戏、硬件和网络安全的媒体。文章提供来源，方便读者核实信息。",
+   readNews:"阅读新闻 →",watchDocs:"观看纪录片",sourceTitle:"提供来源的信息",sourceDescription:"文章依据公开来源编写。不确定的信息应谨慎看待，并通过原始出版物核实。",
+   audioVideo:"音频与视频",formatsTitle:"深入了解的更多形式",formatsDescription:"部分专题提供音频讲述和视频纪录片。",
+   latestNews:"最新新闻",publishedArticles:"NEXORA 发布的文章。",searchLabel:"搜索",filterLabel:"类别",filterAll:"全部",filterTech:"科技",filterAi:"人工智能",filterGaming:"游戏",filterSecurity:"网络安全",noResults:"没有符合此搜索的文章。",documentaries:"纪录片",availableEditions:"可观看的音频和视频版本。",latestEdition:"最新版本",
+   notice:"⚠️ 部分文本和旁白由人工智能辅助制作，可能存在错误。原始来源仍是核实依据。",
+   footer:"NEXORA · 独立科技、人工智能与游戏媒体"
+  }
+ };
+ const articleUi = {
+  fr:{loading:"Chargement…",count:"publication(s)",verdict:"Verdict du labo : ",tip:"À retenir : ",sources:"Sources",ai:"Contenu assisté par IA",empty:"Aucune publication pour le moment. Reviens bientôt !",error:"Impossible de charger les articles. Réessaie plus tard.",open:"Ouvrir la page documentaire →",contentNote:"L’interface, les champs des articles et leur narration audio suivent la langue choisie lorsque les fichiers traduits sont disponibles. Sinon, le texte original et l’audio français sont conservés. Les sources restent dans leur langue d’origine."},
+  en:{loading:"Loading…",count:"publication(s)",verdict:"Lab verdict: ",tip:"Key takeaway: ",sources:"Sources",ai:"AI-assisted content",empty:"No publications yet. Please come back soon.",error:"Unable to load articles. Please try again later.",open:"Open the documentary page →",contentNote:"The interface, article fields and narration follow the selected language when translated files are available. Otherwise, the original text and French audio are kept. Sources remain in their original language."},
+  es:{loading:"Cargando…",count:"publicación(es)",verdict:"Veredicto del laboratorio: ",tip:"A tener en cuenta: ",sources:"Fuentes",ai:"Contenido asistido por IA",empty:"Todavía no hay publicaciones. Vuelve pronto.",error:"No se pueden cargar los artículos. Inténtalo de nuevo más tarde.",open:"Abrir la página documental →",contentNote:"La interfaz, los campos de los artículos y la narración siguen el idioma elegido cuando existen archivos traducidos. De lo contrario, se conservan el texto original y el audio en francés. Las fuentes mantienen su idioma original."},
+  de:{loading:"Wird geladen…",count:"Veröffentlichung(en)",verdict:"Laborurteil: ",tip:"Wichtig: ",sources:"Quellen",ai:"KI-unterstützter Inhalt",empty:"Derzeit gibt es keine Veröffentlichungen. Schau bald wieder vorbei.",error:"Artikel können nicht geladen werden. Bitte später erneut versuchen.",open:"Dokumentationsseite öffnen →",contentNote:"Oberfläche, Artikelfelder und Audio folgen der gewählten Sprache, sofern übersetzte Dateien verfügbar sind. Andernfalls bleiben Originaltext und französisches Audio erhalten. Quellen bleiben in ihrer Originalsprache."},
+  pt:{loading:"A carregar…",count:"publicação(ões)",verdict:"Veredito do laboratório: ",tip:"Ponto principal: ",sources:"Fontes",ai:"Conteúdo assistido por IA",empty:"Ainda não há publicações. Volte em breve.",error:"Não foi possível carregar os artigos. Tente novamente mais tarde.",open:"Abrir a página do documentário →",contentNote:"A interface, os campos dos artigos e a narração seguem o idioma escolhido quando existem ficheiros traduzidos. Caso contrário, o texto original e o áudio em francês são mantidos. As fontes permanecem no idioma original."},
+  ar:{loading:"جارٍ التحميل…",count:"منشور",verdict:"تقييم المختبر: ",tip:"الخلاصة: ",sources:"المصادر",ai:"محتوى بمساعدة الذكاء الاصطناعي",empty:"لا توجد منشورات حاليًا. عُد قريبًا.",error:"تعذّر تحميل المقالات. حاول مرة أخرى لاحقًا.",open:"افتح صفحة الفيلم الوثائقي ←",contentNote:"تتبع الواجهة وحقول المقالات والتعليق الصوتي اللغة المختارة عند توفر الملفات المترجمة. وإلا فيُحتفظ بالنص الأصلي والصوت الفرنسي. وتظل المصادر بلغتها الأصلية."},
+  zh:{loading:"正在加载…",count:"篇文章",verdict:"实验室结论：",tip:"要点：",sources:"来源",ai:"人工智能辅助内容",empty:"目前还没有发布内容，请稍后再来。",error:"无法加载文章，请稍后重试。",open:"打开纪录片页面 →",contentNote:"界面、文章字段和音频旁白会在有译制文件时使用所选语言；否则保留原文和法语音频。来源始终保留原始语言。"}
+ };
+ window.observatoireApplyArticleLanguage = function(language){
+  const t=articleUi[language]||articleUi.fr;
+  const status=document.getElementById("status");
+  const count=document.querySelectorAll("#articles > .article").length;
+  if(status){if(status.textContent==="Erreur de chargement") status.textContent=t.error;else if(status.textContent==="Chargement…") status.textContent=t.loading;else status.textContent=count+" "+t.count;}
+  document.querySelectorAll("[data-article-label]").forEach(node=>{
+   const key=node.dataset.articleLabel;
+   if(t[key]!==undefined) node.textContent=t[key];
+  });
+  const coverage=document.getElementById("translation-coverage");
+  if(coverage){
+   const full=coverage.dataset.full||"0",total=coverage.dataset.total||"0";
+   coverage.textContent=(t.coverageLabel||"Fully translated articles: {full}/{total}.").replace("{full}",full).replace("{total}",total);
+  }
+  document.querySelectorAll("#articles [data-article-field]").forEach(node=>{
+   const card=node.closest(".article");
+   const item=window.nexoraArticles?.[Number(card?.dataset.articleIndex)];
+   const field=node.dataset.articleField;
+   const translated=item?.translations?.[language]?.[field];
+   node.textContent=typeof translated==="string"&&translated.trim()?translated:(item?.[field]||"");
+  });
+  document.querySelectorAll("#articles audio[data-article-audio]").forEach(audio=>{
+   const card=audio.closest(".article");
+   const item=window.nexoraArticles?.[Number(card?.dataset.articleIndex)];
+   const audioUrl=item?.translations?.[language]?.audio_url||item?.audio_url;
+   if(typeof audioUrl==="string"&&audioUrl){
+    const path=audioUrl.replace(/^\.\//,"").replace(/^site\//,"");
+    const next="./"+path;
+    if(audio.getAttribute("src")!==next){audio.src=next;audio.load();}
+   }
+  });
+  document.querySelectorAll("[data-i18n='openDocumentary']").forEach(node=>node.textContent=t.open);
+  document.querySelectorAll("[data-i18n='contentLanguageNote']").forEach(node=>node.textContent=t.contentNote);
+ };
+ 
+const challengeUi={
+fr:{title:"Défis NEXORA",description:"Six missions pour apprendre à vérifier les informations et comprendre l'actualité.",points:"points",completed:"réalisés",mark:"Valider le défi",done:"Défi validé",reset:"Réinitialiser",export:"Exporter ma progression",import:"Importer une sauvegarde",importSuccess:"Progression importée.",importError:"Fichier de sauvegarde invalide.",local:"Progression enregistrée uniquement sur cet appareil : ce n'est pas un classement mondial.",tasks:[["Vérifier une source","Ouvre une source originale d'un article et vérifie qu'elle soutient bien l'information."],["Écouter un article","Écoute un extrait audio et compare-le avec le résumé écrit."],["Repérer une incertitude","Trouve une information qui reste à confirmer et identifie ce qui manque."]],extraTasks:[["Comparer deux sources","Trouve une deuxième source indépendante et compare les faits rapportés."],["Vérifier une date","Compare la date de publication avec la date de l'événement décrit."],["Distinguer fait et opinion","Repère une affirmation factuelle et une appréciation personnelle dans un article."]]},
+en:{title:"NEXORA challenges",description:"Six missions to learn how to verify information and understand the news.",points:"points",completed:"completed",mark:"Complete challenge",done:"Challenge completed",reset:"Reset",export:"Export progress",import:"Import backup",importSuccess:"Progress imported.",importError:"Invalid backup file.",local:"Progress is saved only on this device; this is not a global leaderboard.",tasks:[["Check a source","Open an article's original source and check that it supports the claim."],["Listen to an article","Listen to an audio excerpt and compare it with the written summary."],["Spot uncertainty","Find a claim that still needs confirmation and identify what is missing."]],extraTasks:[["Compare two sources","Find a second independent source and compare the reported facts."],["Check a date","Compare the publication date with the date of the event described."],["Separate fact from opinion","Identify a factual claim and a personal judgement in an article."]]},
+es:{title:"Retos NEXORA",description:"Seis misiones para aprender a verificar la información y comprender las noticias.",points:"puntos",completed:"completados",mark:"Completar reto",done:"Reto completado",reset:"Reiniciar",export:"Exportar progreso",import:"Importar copia",importSuccess:"Progreso importado.",importError:"Archivo de copia no válido.",local:"El progreso se guarda solo en este dispositivo; no es una clasificación mundial.",tasks:[["Verificar una fuente","Abre la fuente original de un artículo y comprueba que respalda la información."],["Escuchar un artículo","Escucha un fragmento de audio y compáralo con el resumen escrito."],["Detectar incertidumbre","Encuentra una afirmación pendiente de confirmación e identifica qué falta."]],extraTasks:[["Comparar dos fuentes","Busca una segunda fuente independiente y compara los hechos."],["Verificar una fecha","Compara la fecha de publicación con la fecha del acontecimiento descrito."],["Distinguir hecho y opinión","Identifica una afirmación factual y una valoración personal en un artículo."]]},
+de:{title:"NEXORA-Herausforderungen",description:"Sechs Aufgaben, um Informationen zu prüfen und Nachrichten besser zu verstehen.",points:"Punkte",completed:"abgeschlossen",mark:"Aufgabe abschließen",done:"Abgeschlossen",reset:"Zurücksetzen",export:"Fortschritt exportieren",import:"Sicherung importieren",importSuccess:"Fortschritt importiert.",importError:"Ungültige Sicherungsdatei.",local:"Der Fortschritt wird nur auf diesem Gerät gespeichert; dies ist keine globale Rangliste.",tasks:[["Quelle prüfen","Öffne die Originalquelle eines Artikels und prüfe, ob sie die Aussage stützt."],["Artikel anhören","Höre einen Audioausschnitt und vergleiche ihn mit der schriftlichen Zusammenfassung."],["Unsicherheit erkennen","Finde eine noch unbestätigte Aussage und erkenne, welche Belege fehlen."]],extraTasks:[["Zwei Quellen vergleichen","Finde eine zweite unabhängige Quelle und vergleiche die berichteten Fakten."],["Datum prüfen","Vergleiche das Veröffentlichungsdatum mit dem Datum des beschriebenen Ereignisses."],["Fakt und Meinung trennen","Erkenne eine Tatsachenbehauptung und eine persönliche Bewertung in einem Artikel."]]},
+pt:{title:"Desafios NEXORA",description:"Seis missões para aprender a verificar informações e compreender as notícias.",points:"pontos",completed:"concluídos",mark:"Concluir desafio",done:"Desafio concluído",reset:"Reiniciar",export:"Exportar progresso",import:"Importar cópia",importSuccess:"Progresso importado.",importError:"Ficheiro de cópia inválido.",local:"O progresso é guardado apenas neste dispositivo; não é uma classificação mundial.",tasks:[["Verificar uma fonte","Abre a fonte original de um artigo e confirma se sustenta a informação."],["Ouvir um artigo","Ouve um excerto de áudio e compara-o com o resumo escrito."],["Identificar incerteza","Encontra uma afirmação por confirmar e identifica o que está em falta."]],extraTasks:[["Comparar duas fontes","Encontra uma segunda fonte independente e compara os factos relatados."],["Verificar uma data","Compara a data de publicação com a data do acontecimento descrito."],["Distinguir facto e opinião","Identifica uma afirmação factual e uma avaliação pessoal num artigo."]]},
+ar:{title:"تحديات NEXORA",description:"ست مهام لتعلّم التحقق من المعلومات وفهم الأخبار.",points:"نقاط",completed:"مكتملة",mark:"إكمال التحدي",done:"اكتمل التحدي",reset:"إعادة ضبط",export:"تصدير التقدم",import:"استيراد نسخة",importSuccess:"تم استيراد التقدم.",importError:"ملف النسخة غير صالح.",local:"يُحفظ التقدم على هذا الجهاز فقط؛ هذه ليست قائمة ترتيب عالمية.",tasks:[["تحقق من مصدر","افتح المصدر الأصلي لمقال وتأكد من أنه يدعم المعلومة."],["استمع إلى مقال","استمع إلى مقطع صوتي وقارنه بالملخص المكتوب."],["اكتشف عدم اليقين","اعثر على معلومة تحتاج إلى تأكيد وحدد ما ينقصها."]],extraTasks:[["قارن مصدرين","اعثر على مصدر مستقل ثانٍ وقارن الحقائق المذكورة."],["تحقق من التاريخ","قارن تاريخ النشر بتاريخ الحدث الموصوف."],["ميز الحقيقة عن الرأي","حدد ادعاءً واقعياً وتقييماً شخصياً في مقال."]]},
+zh:{title:"NEXORA 挑战",description:"通过六项任务学习核实信息并理解新闻。",points:"积分",completed:"已完成",mark:"完成挑战",done:"挑战已完成",reset:"重置",export:"导出进度",import:"导入备份",importSuccess:"进度已导入。",importError:"备份文件无效。",local:"进度仅保存在此设备上；这不是全球排行榜。",tasks:[["核实来源","打开文章的原始来源，确认它是否支持相关说法。"],["收听文章","收听一段音频，并与文字摘要进行比较。"],["识别不确定性","找出仍需确认的信息，并判断缺少哪些证据。"]],extraTasks:[["比较两个来源","寻找第二个独立来源并比较报道的事实。"],["核对日期","比较发布日期与所描述事件发生的日期。"],["区分事实与观点","在文章中找出事实陈述和个人评价。"]]}
+};
+const challengePoints=[20,15,15,20,15,15];let challengeState=[false,false,false,false,false,false];
+try{const saved=JSON.parse(localStorage.getItem("nexora-challenges-v1")||"null");if(Array.isArray(saved)&&saved.length>=3&&saved.length<=6&&saved.every(v=>typeof v==="boolean"))challengeState=[...saved,...Array(6-saved.length).fill(false)];}catch(_){}
+function applyChallengeLanguage(language){const t=challengeUi[language]||challengeUi.fr;const tasks=t.tasks.concat(t.extraTasks||[]);document.getElementById("challenge-title").textContent=t.title;document.getElementById("challenge-description").textContent=t.description;document.getElementById("challenge-local-note").textContent=t.local;document.getElementById("challenge-reset").textContent=t.reset;document.getElementById("challenge-export").textContent=t.export;document.getElementById("challenge-import-label").textContent=t.import;document.getElementById("challenge-rank-label").textContent=language==="fr"?"Rang local":language==="en"?"Local rank":language==="es"?"Rango local":language==="de"?"Lokaler Rang":language==="pt"?"Classificação local":language==="ar"?"الرتبة المحلية":"本地等级";tasks.forEach((task,i)=>{document.getElementById("challenge-task-"+i).textContent=task[0];document.getElementById("challenge-desc-"+i).textContent=task[1];});document.querySelectorAll("[data-challenge-index]").forEach(button=>{const done=challengeState[Number(button.dataset.challengeIndex)];button.textContent=done?t.done:t.mark;button.setAttribute("aria-pressed",String(done));});const score=challengeState.reduce((sum,done,i)=>sum+(done?challengePoints[i]:0),0);document.getElementById("challenge-score").textContent=score+" "+t.points;document.getElementById("challenge-progress").textContent=challengeState.filter(Boolean).length+"/6 "+t.completed;const thresholds=[0,20,40,60,80,100],ranks={fr:["Observateur","Curieux","Vérificateur","Analyste","Expert","Éclaireur"],en:["Observer","Curious","Verifier","Analyst","Expert","Pioneer"],es:["Observador","Curioso","Verificador","Analista","Experto","Pionero"],de:["Beobachter","Neugieriger","Prüfer","Analyst","Experte","Pionier"],pt:["Observador","Curioso","Verificador","Analista","Especialista","Pioneiro"],ar:["مراقب","فضولي","مدقق","محلل","خبير","رائد"],zh:["观察者","好奇者","核查者","分析者","专家","先锋"]};let rank=0;thresholds.forEach((n,i)=>{if(score>=n)rank=i;});const names=ranks[language]||ranks.fr;document.getElementById("challenge-rank").textContent=names[rank];document.getElementById("challenge-next-rank").textContent=rank===5?(language==="fr"?"Rang maximal atteint":language==="en"?"Maximum rank reached":language==="es"?"Rango máximo alcanzado":language==="de"?"Höchster Rang erreicht":language==="pt"?"Classificação máxima atingida":language==="ar"?"تم بلوغ أعلى رتبة":"已达到最高等级"):(language==="fr"?"Prochain rang":language==="en"?"Next rank":language==="es"?"Siguiente rango":language==="de"?"Nächster Rang":language==="pt"?"Próxima classificação":language==="ar"?"الرتبة التالية":"下一级")+" : "+names[rank+1]+" · "+thresholds[rank+1]+" "+t.points;}
+function saveChallengeState(){try{localStorage.setItem("nexora-challenges-v1",JSON.stringify(challengeState));}catch(_){}applyChallengeLanguage(document.documentElement.lang);}
+document.querySelectorAll("[data-challenge-index]").forEach(button=>button.addEventListener("click",()=>{const i=Number(button.dataset.challengeIndex);if(Number.isInteger(i)&&i>=0&&i<challengeState.length){challengeState[i]=!challengeState[i];saveChallengeState();}}));
+document.getElementById("challenge-reset").addEventListener("click",()=>{challengeState=Array(6).fill(false);saveChallengeState();});
+document.getElementById("challenge-export").addEventListener("click",()=>{
+ const payload={version:1,completed:[...challengeState],exportedAt:new Date().toISOString()};
+ window.__nexoraChallengeExport=payload;
+ const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
+ const url=URL.createObjectURL(blob),link=document.createElement("a");
+ link.href=url;link.download="nexora-defis.json";document.body.append(link);link.click();link.remove();
+ setTimeout(()=>URL.revokeObjectURL(url),10000);
+});
+document.getElementById("challenge-import-file").addEventListener("change",async event=>{
+ const input=event.currentTarget,file=input.files?.[0],status=document.getElementById("challenge-transfer-status");
+ if(!file)return;
+ const t=challengeUi[document.documentElement.lang]||challengeUi.fr;
+ try{
+  if(file.size>8192)throw new Error("size");
+  const data=JSON.parse(await file.text());
+  if(!data||data.version!==1||!Array.isArray(data.completed)||data.completed.length!==6||!data.completed.every(value=>typeof value==="boolean"))throw new Error("shape");
+  challengeState=[...data.completed];saveChallengeState();status.textContent=t.importSuccess;
+ }catch(_){status.textContent=t.importError;}
+ input.value="";
+});
+const selector=document.getElementById("language");
+ function setLanguage(language){
+  const lang=translations[language]?language:"fr";
+  document.documentElement.lang=lang;
+  document.title=translations[lang].pageTitle;
+  document.querySelector('meta[name="description"]')?.setAttribute("content",translations[lang].pageDescription);
+  document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+   const value=translations[lang][el.dataset.i18n];
+   if(value!==undefined) el.innerHTML=value;
+  });
+  try{localStorage.setItem("observatoire-language",lang);}catch(_){}
+  selector.value=lang;
+  window.observatoireApplyArticleLanguage?.(lang);
+   applyChallengeLanguage(lang);
+ }
+ function detectBrowserLanguage(){
+  const candidates=[...(navigator.languages||[]),navigator.language||"fr"];
+  for(const candidate of candidates){
+   const base=String(candidate).toLowerCase().split("-")[0];
+   if(translations[base]) return base;
+  }
+  return "fr";
+ }
+ let saved=null;try{saved=localStorage.getItem("observatoire-language");}catch(_){}
+ selector.addEventListener("change",()=>setLanguage(selector.value));
+ // Respect an explicit previous choice; otherwise use the visitor's browser language.
+ setLanguage(saved&&translations[saved]?saved:detectBrowserLanguage());
+})();
+</script>
+
+<script>
+if ("serviceWorker" in navigator && (location.protocol === "https:" || ["localhost", "127.0.0.1", "::1"].includes(location.hostname))) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js", {scope: "./"}).catch(() => {
+      // Le site reste utilisable normalement si le navigateur bloque le mode hors ligne.
+    });
+  }, {once:true});
+}
+</script>
+</body></htmlwindow.observatoireApplyArticleLanguage?.(document.documentElement.lang);return;}window.nexoraArticles=items;for(let itemIndex=0;itemIndex<items.length;itemIndex++){const item=items[itemIndex];const card=document.createElement("article");card.className="article";card.dataset.articleIndex=String(itemIndex);const meta=document.createElement("div");meta.className="meta";const theme=document.createElement("span");theme.dataset.articleField="theme";theme.textContent=item.theme||"Actualité";const date=document.createElement("span");date.textContent=" · "+(item.date||"");meta.append(theme,date);const title=document.createElement("h3");title.dataset.articleField="title";title.textContent=item.title||"Publication";const summary=document.createElement("p");summary.dataset.articleField="summary";summary.textContent=item.summary||"";card.append(meta,title,summary);for(const [label,key] of [["verdict","verdict"],["tip","tip"]])if(item[key]){const p=document.createElement("p"),b=document.createElement("span"),value=document.createElement("span");b.className="label";b.dataset.articleLabel=label;value.dataset.articleField=key;value.textContent=item[key];p.append(b,value);card.append(p);}if(item.audio_url){const audio=document.createElement("audio");audio.controls=true;audio.preload="none";let audioPath=String(item.audio_url).replace(/^\.\//,'');audio.src = './'+(audioPath.startsWith('site/')?audioPath.slice(5):audioPath);audio.dataset.articleAudio='true';card.append(audio);}if(Array.isArray(item.sources)&&item.sources.length){const h=document.createElement("p");h.className="label";h.dataset.articleLabel="sources";const ul=document.createElement("ul");for(const s of item.sources){if(!s.url||!(s.url.startsWith('https://')||s.url.startsWith('http://')))continue;const li=document.createElement("li"),a=document.createElement("a");a.href=s.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=s.title||"Consulter la source";a.classList.add("notranslate");a.setAttribute("translate","no");li.append(a);ul.append(li);}card.append(h,ul);}const note=document.createElement("p");note.className="meta";if(item.ai_notice){note.dataset.articleField="ai_notice";note.textContent=item.ai_notice;}else{note.dataset.articleLabel="ai";}card.append(note);box.append(card);}window.nexoraApplyArticleFilters?.();window.observatoireApplyArticleLanguage?.(document.documentElement.lang);}catch(e){status.textContent="Erreur de chargement";box.innerHTML='<div class="empty" data-article-label="error">Impossible de charger les articles. Réessaie plus tard.</div>';window.observatoireApplyArticleLanguage?.(document.documentElement.lang);console.error(e);}})();
 </script>
 
 <script>
