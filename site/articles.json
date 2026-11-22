@@ -1,5 +1,101 @@
 [
   {
+    "id": "20261122T174616-c5cd18c2",
+    "date": "2026-11-22T17:46+00:00",
+    "theme": "Sécurité numérique",
+    "title": "Sécurité numérique : détails insuffisants dans les sources",
+    "summary": "Les résultats récupérés signalent une actualité liée à Sécurité numérique, mais les extraits disponibles reprennent surtout les titres et ne fournissent pas assez d'éléments pour confirmer la portée, les effets ou les modalités de l'annonce. Consultez l'article d'origine et le communiqué de l'organisation concernée avant de retenir des détails.",
+    "verdict": "Les extraits récupérés ne suffisent pas pour confirmer les détails.",
+    "tip": "Lire l'article original et rechercher un communiqué officiel avant de partager l'information.",
+    "sources": [
+      {
+        "title": "Cybersécurité : les inquiétantes vulnérabilités du secteur spatial français",
+        "publisher": "JDN",
+        "domain": "news.google.com",
+        "published": "Wed, 18 Nov 2026 19:30:05 GMT",
+        "description": "Cybersécurité : les inquiétantes vulnérabilités du secteur spatial français    JDN",
+        "url": "https://news.google.com/rss/articles/CBMipAJBVV95cUxQTnZhSVM3UDJocUpTMER6ZmtvdUJOVGNMeDM3SWFoVWpUb3BLWFBPcVRUSTZyOEk1QVZGc09ISjh5U1VSV21sQVZORUNhWE96Wm8tSGZod1NsN0dyQ29idG5ZWk1zbVdaVUJIZTgzVEtSWEVQQWU0OUlvTmppLWlEMlV3RGt0bEV2Qk43SklOWkpEaHV0YllKbjJES05nT2pHM1N2VU1aTmZ5b0R3dk9QZzhldHhsTTZmZzhkaE91NF9qOWZQOHg5bU1yZkFYN2VRSXhGYnZKLVhsenJkS291dFFGS2h6Z1dtMnZQVWNCaF9KRVJPSEE5b1BsdG82VDdKeTA2cThfUkpKRmNXYzRJYThnLWE0Rjg0YmJGcVF2V2lsQVV5?oc=5",
+        "source_type": "media"
+      },
+      {
+        "title": "PHP : une nouvelle faille critique, un mois après PHP2Shell",
+        "publisher": "Solutions-Numeriques",
+        "domain": "news.google.com",
+        "published": "Thu, 19 Nov 2026 18:26:21 GMT",
+        "description": "PHP : une nouvelle faille critique, un mois après PHP2Shell    Solutions-Numeriques",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNdmJORkFUbGh0UUtheFIxMHJUeV9jMUNYQkhjRnNVYlBFR3NuZDNucURTNVBLZTh6eEEtRmFSTDF0dS1xbV9sckxGbWJUT3hiNFlieTFVcVprSWxQV2lReFZUdS1GLS0wcGFDcVdKSm9QQllWRi1NaENJQUw0SWpRMVlpWVNCY24wdlpmY003UFl0YUMyOE1JQzVn?oc=5",
+        "source_type": "media"
+      },
+      {
+        "title": "47 failles dans PHP 8.5.13 ? Impact sur l'hébergement mutualisé",
+        "publisher": "Pasquale Pillitteri",
+        "domain": "news.google.com",
+        "published": "Sun, 22 Nov 2026 08:38:14 GMT",
+        "description": "47 failles dans PHP 8.5.13 ? Impact sur l'hébergement mutualisé    Pasquale Pillitteri",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTDRPblR6UEpycHg3UFJSNmtSbmxSbVBfN2prSDRwVF96T1E4Tk5KMllnQmo1NmRpcm1MaU9lcFNWY0tlRjlWdFNpWHA0aHFsRDRWUTV3eUl6OFNiODlNSTM5S0dyNk9qVEdkd3E5U3Z4amlWMkNtb3E0QTJVZUxtRDRya2xwT0Nv?oc=5",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "translations": {
+      "en": {
+        "theme": "Digital security",
+        "title": "Digital security: insufficient details in sources",
+        "summary": "The retrieved results indicate a news item related to Digital security, but the available excerpts mainly reproduce the headlines and do not provide enough information to confirm the scope, effects or modalities of the announcement. Refer to the original article and the organization’s press release before accepting details.",
+        "verdict": "The retrieved excerpts are insufficient to confirm the details.",
+        "tip": "Read the original article and look for an official statement before sharing the information.",
+        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links to find the full context.",
+        "audio_url": "audio/20261122T174616-c5cd18c2-en.mp3"
+      },
+      "es": {
+        "theme": "Seguridad digital",
+        "title": "Seguridad digital: detalles insuficientes en las fuentes",
+        "summary": "Los resultados recuperados indican una noticia relacionada con Seguridad digital, pero los fragmentos disponibles reproducen principalmente los titulares y no proporcionan suficientes elementos para confirmar el alcance, los efectos o las modalidades del anuncio. Consulte el artículo original y el comunicado de la organización antes de aceptar detalles.",
+        "verdict": "Los fragmentos recuperados no son suficientes para confirmar los detalles.",
+        "tip": "Lea el artículo original y busque un comunicado oficial antes de compartir la información.",
+        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulte los enlaces para encontrar el contexto completo.",
+        "audio_url": "audio/20261122T174616-c5cd18c2-es.mp3"
+      },
+      "de": {
+        "theme": "Digitale Sicherheit",
+        "title": "Digitale Sicherheit: unzureichende Details in den Quellen",
+        "summary": "Die abgerufenen Ergebnisse deuten auf eine Nachricht im Zusammenhang mit Digitale Sicherheit hin, aber die verfügbaren Auszüge wiedergeben hauptsächlich die Überschriften und liefern nicht genügend Informationen, um den Umfang, die Auswirkungen oder die Modalitäten der Ankündigung zu bestätigen. Konsultieren Sie den Originalartikel und die Pressemitteilung der Organisation, bevor Sie Details akzeptieren.",
+        "verdict": "Die abgerufenen Auszüge reichen nicht aus, um die Details zu bestätigen.",
+        "tip": "Lesen Sie den Originalartikel und suchen Sie nach einer offiziellen Stellungnahme, bevor Sie die Information teilen.",
+        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Prüfen Sie die Links, um den vollständigen Kontext zu finden.",
+        "audio_url": "audio/20261122T174616-c5cd18c2-de.mp3"
+      },
+      "pt": {
+        "theme": "Segurança digital",
+        "title": "Segurança digital: detalhes insuficientes nas fontes",
+        "summary": "Os resultados recuperados indicam uma notícia relacionada à Segurança digital, mas os trechos disponíveis reproduzem principalmente os títulos e não fornecem elementos suficientes para confirmar o escopo, os efeitos ou as modalidades do anúncio. Consulte o artigo original e o comunicado da organização antes de aceitar detalhes.",
+        "verdict": "Os trechos recuperados não são suficientes para confirmar os detalhes.",
+        "tip": "Leia o artigo original e procure um comunicado oficial antes de compartilhar a informação.",
+        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Verifique os links para encontrar o contexto completo.",
+        "audio_url": "audio/20261122T174616-c5cd18c2-pt.mp3"
+      },
+      "ar": {
+        "theme": "الأمان الرقمي",
+        "title": "الأمان الرقمي: تفاصيل غير كافية في المصادر",
+        "summary": "تشير النتائج المسترجعة إلى خبر متعلق بالأمان الرقمي، لكن المقتطفات المتاحة تعيد في الغالب العناوين ولا توفر ما يكفي من العناصر لتأكيد نطاق أو تأثير أو طُرُق الإعلان. راجع المقال الأصلي والبيان الصحفي للمنظمة قبل اعتماد التفاصيل.",
+        "verdict": "المقتطفات المسترجعة لا تكفي لتأكيد التفاصيل.",
+        "tip": "اقرأ المقال الأصلي وابحث عن بيان رسمي قبل مشاركة المعلومات.",
+        "ai_notice": "مقال مكتوب بمساعدة groq من المصادر المذكورة. راجع الروابط للعثور على السياق الكامل.",
+        "audio_url": "audio/20261122T174616-c5cd18c2-ar.mp3"
+      },
+      "zh": {
+        "theme": "数字安全",
+        "title": "数字安全：来源细节不足",
+        "summary": "检索结果显示与数字安全相关的新闻，但可用摘录主要复制标题，未提供足够信息来确认公告的范围、影响或方式。在接受细节前请参阅原始文章和相关组织的新闻稿。",
+        "verdict": "检索摘录不足以确认细节。",
+        "tip": "阅读原始文章并寻找官方声明后再分享信息。",
+        "ai_notice": "文章使用 groq 根据所示来源撰写。请查看链接以获取完整背景。",
+        "audio_url": "audio/20261122T174616-c5cd18c2-zh.mp3"
+      }
+    },
+    "audio_url": "audio/20261122T174616-c5cd18c2.mp3"
+  },
+  {
     "id": "20261122T173056-8fc87db7",
     "date": "2026-11-22T17:30+00:00",
     "theme": "GTA VI — lancement et premiers retours vérifiés",
@@ -1155,46 +1251,6 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261121T093949-bf8441b5.mp3"
-  },
-  {
-    "id": "20261120T184915-ac71cb81",
-    "date": "2026-11-20T18:49+00:00",
-    "theme": "Sécurité numérique",
-    "title": "Sécurité numérique : détails insuffisants dans les sources",
-    "summary": "Les résultats récupérés signalent une actualité liée à Sécurité numérique, mais les extraits disponibles reprennent surtout les titres et ne fournissent pas assez d'éléments pour confirmer la portée, les effets ou les modalités de l'annonce. Consultez l'article d'origine et le communiqué de l'organisation concernée avant de retenir des détails.",
-    "verdict": "Les extraits récupérés ne suffisent pas pour confirmer les détails.",
-    "tip": "Lire l'article original et rechercher un communiqué officiel avant de partager l'information.",
-    "sources": [
-      {
-        "title": "Cybersécurité : les inquiétantes vulnérabilités du secteur spatial français",
-        "publisher": "JDN",
-        "domain": "news.google.com",
-        "published": "Wed, 18 Nov 2026 19:30:05 GMT",
-        "description": "Cybersécurité : les inquiétantes vulnérabilités du secteur spatial français    JDN",
-        "url": "https://news.google.com/rss/articles/CBMipAJBVV95cUxQTnZhSVM3UDJocUpTMER6ZmtvdUJOVGNMeDM3SWFoVWpUb3BLWFBPcVRUSTZyOEk1QVZGc09ISjh5U1VSV21sQVZORUNhWE96Wm8tSGZod1NsN0dyQ29idG5ZWk1zbVdaVUJIZTgzVEtSWEVQQWU0OUlvTmppLWlEMlV3RGt0bEV2Qk43SklOWkpEaHV0YllKbjJES05nT2pHM1N2VU1aTmZ5b0R3dk9QZzhldHhsTTZmZzhkaE91NF9qOWZQOHg5bU1yZkFYN2VRSXhGYnZKLVhsenJkS291dFFGS2h6Z1dtMnZQVWNCaF9KRVJPSEE5b1BsdG82VDdKeTA2cThfUkpKRmNXYzRJYThnLWE0Rjg0YmJGcVF2V2lsQVV5?oc=5",
-        "source_type": "media"
-      },
-      {
-        "title": "Java4Shell : une faille critique menace les systèmes des entreprises",
-        "publisher": "Le Revenu",
-        "domain": "news.google.com",
-        "published": "Fri, 20 Nov 2026 09:14:00 GMT",
-        "description": "Java4Shell : une faille critique menace les systèmes des entreprises    Le Revenu",
-        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOaTF6WHRtUkZSSHNmR0pxbHF0VnYxZXdFaXFDeDItVXBrenFOUm5XSjZYOVd1VGhpbnhRdGVueDAyV0RlYzEyNk4zWDBOa1NYWWxQRHRpb2NQTnNMc3lpVVVHNUtweHdKci1SYjRaVVlmd0Y0dTNZYlFneHREQWlZNFhlYm1rN3hRSTBtUnNtZE1jengxcHI1bkR6NDZObWg4ckxTeGVhTnota3FKTVRZbXo2TGdtcGRkczZiSVlkaUtudy02eDYtcDItSDV5SWUxeTk5Uk04TGsydEpMQkE?oc=5",
-        "source_type": "media"
-      },
-      {
-        "title": "OpenAI s'engage avec l'Otan sur la cybersécurité",
-        "publisher": "TradingView",
-        "domain": "news.google.com",
-        "published": "Tue, 17 Nov 2026 17:19:41 GMT",
-        "description": "OpenAI s'engage avec l'Otan sur la cybersécurité    TradingView",
-        "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1HOVl3cjJqWUNuOTd3eXZON19Jb0JpSHpPb0NSZzlDQVYwa0taMzBtcVR1Z1g3RWFET3hJLUw0aFRYN05CeWpRS1NoS2JERWowM3lqcjhyazdtVld1ZGk3Y1hR?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261120T184915-ac71cb81.mp3"
   },
   {
     "id": "20261120T094953-2c7e863d",
