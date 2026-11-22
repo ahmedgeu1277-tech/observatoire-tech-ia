@@ -22,7 +22,7 @@ Dernière évaluation fonctionnelle détaillée : 22 novembre 2026. Audits préc
 
 ## Résultat
 
-**Estimation pondérée recalculée : 63,59 / 100 (audit du 22 novembre 2026, commit vérifié acf03b51).**
+**Estimation pondérée recalculée : 64,29 / 100 (audit du 22 novembre 2026, commit vérifié c35ab864).**
 
 Ce pourcentage est un indicateur d'avancement fonctionnel construit à partir des domaines ci-dessous. Ce n'est ni un pourcentage de lignes de code terminées, ni une garantie de disponibilité, ni une certification de mise en production. Les notes sont des estimations prudentes fondées sur les fonctions présentes et les contrôles exécutés. Le précédent score de 56,48 % est conservé dans les bilans historiques plus haut.
 
@@ -30,11 +30,11 @@ Ce pourcentage est un indicateur d'avancement fonctionnel construit à partir de
 |---|---:|---:|---:|
 | Média, veille et site public | 23,53 % | 94 % | 22,12 |
 | Fournisseurs IA et orchestration d'agents | 17,65 % | 40 % | 7,06 |
-| Missions persistantes et autonomie | 17,65 % | 42 % | 7,41 |
+| Missions persistantes et autonomie | 17,65 % | 46 % | 8,12 |
 | Laboratoire privé et sécurité | 17,65 % | 61 % | 10,77 |
 | R&D et conception de produits | 11,76 % | 45 % | 5,29 |
 | Tests et amélioration continue | 11,76 % | 93 % | 10,94 |
-| **Total** | **100 %** |  | **63,59 %** |
+| **Total** | **100 %** |  | **64,29 %** |
 
 Calcul : somme de (poids × note du domaine) / 100.
 
@@ -173,3 +173,15 @@ L'estimation pondérée est passée à **56,48 / 100** en portant le domaine « 
 
 - Laboratoire privé et sécurité : 61 % (feuille de route privée avec échéances, statuts et validation stricte ; aucun hébergement distant sécurisé n'est encore disponible).
 - Tests et amélioration continue : 93 % (174 tests automatisés et tous les contrôles avancés verts ; les tests sur matériel réel restent à effectuer).
+
+
+## Exécution par lots bornés — 22 novembre 2026, commit c35ab864
+
+- Le tableau de bord local peut maintenant lancer jusqu'à trois missions en un seul lot manuel. Le plafond est validé côté serveur ; un lot s'arrête dès qu'une mission échoue ou n'aboutit pas à l'état terminé. Il n'y a ni boucle infinie ni exécution automatique permanente.
+- Deux nouveaux tests vérifient le traitement de trois missions terminées et le refus d'une demande supérieure au plafond.
+- **176 tests Python ont réussi**. Playwright, CodeQL Python/JavaScript, Ruff, Bandit et Gitleaks ont tous réussi. Le build et le déploiement Pages ont réussi.
+- Score pondéré révisé : **64,29 %**. Le seuil de 70 % reste à atteindre.
+
+### Révision des missions et de l'autonomie — 46 %
+
+La file locale conserve les missions, leurs priorités, échéances et tentatives. Le tableau de bord permet l'annulation coopérative, la relance manuelle plafonnée à trois tentatives et l'exécution manuelle de lots de trois missions maximum. Les missions restent limitées dans le temps et dépendent de l'appareil qui exécute le laboratoire ; elles ne constituent pas un service cloud autonome permanent.
