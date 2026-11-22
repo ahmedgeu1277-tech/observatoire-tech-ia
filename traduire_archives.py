@@ -5,6 +5,7 @@ Les sources, liens, dates et fichiers audio ne sont jamais modifiés.
 """
 from __future__ import annotations
 
+import asyncio
 import json
 from pathlib import Path
 
@@ -33,6 +34,8 @@ def backfill_translations(max_items: int = MAX_PER_RUN) -> dict:
                 and translations[language][field].strip()
                 for field in main.ARTICLE_TRANSLATION_FIELDS
             )
+            and isinstance(translations[language].get("audio_url"), str)
+            and translations[language]["audio_url"].startswith("audio/")
             for language in main.ARTICLE_TRANSLATION_LANGUAGES
         )
 
@@ -51,6 +54,7 @@ def backfill_translations(max_items: int = MAX_PER_RUN) -> dict:
         existing = article.get("translations")
         merged = dict(existing) if isinstance(existing, dict) else {}
         merged.update(result)
+        merged = asyncio.run(main.create_translated_audio(article, merged))
         article["translations"] = merged
         temporary = path.with_suffix(path.suffix + ".tmp")
         temporary.write_text(json.dumps(articles, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
