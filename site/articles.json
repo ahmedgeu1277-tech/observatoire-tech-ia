@@ -1,5 +1,36 @@
 [
   {
+    "id": "20261122T103544-742b732c",
+    "date": "2026-11-22T10:35+00:00",
+    "theme": "Gaming et jeux vidéo — veille générale (recherche de secours)",
+    "title": "GTA 6 : plantages PS5 et PNJ violents signalés",
+    "summary": "Des joueurs de GTA 6 ont rapporté des plantages sur PS5 accompagnés de l’erreur CE‑108255‑1, sans mise à jour officielle de Rockstar. Parallèlement, les PNJ du jeu semblent réagir de façon extrêmement violente, poussant certains joueurs à les éviter. Ces incidents n’ont pas encore été confirmés par les développeurs, et l’origine du bug reste inconnue. Les lecteurs intéressés par le lancement récent de GTA 6 doivent surveiller les futures communiqués de Rockstar.",
+    "verdict": "Incidents signalés sans confirmation officielle",
+    "tip": "Vérifier les mises à jour de Rockstar et les forums officiels pour des éclaircissements.",
+    "sources": [
+      {
+        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
+        "description": "Allons en paix.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
+        "source_type": "media"
+      },
+      {
+        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
+        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261122T103544-742b732c.mp3"
+  },
+  {
     "id": "20261122T102230-615a8b15",
     "date": "2026-11-22T10:22+00:00",
     "theme": "GTA VI — lancement et premiers retours vérifiés",
@@ -1113,36 +1144,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261119T173507-ec24812f.mp3"
-  },
-  {
-    "id": "20261119T133905-bc5c68de",
-    "date": "2026-11-19T13:39+00:00",
-    "theme": "Roblox et création de jeux",
-    "title": "Roblox et création de jeux : détails insuffisants dans les sources",
-    "summary": "Les résultats récupérés signalent une actualité liée à Roblox et création de jeux, mais les extraits disponibles reprennent surtout les titres et ne fournissent pas assez d'éléments pour confirmer la portée, les effets ou les modalités de l'annonce. Consultez l'article d'origine et le communiqué de l'organisation concernée avant de retenir des détails.",
-    "verdict": "Les extraits récupérés ne suffisent pas pour confirmer les détails.",
-    "tip": "Lire l'article original et rechercher un communiqué officiel avant de partager l'information.",
-    "sources": [
-      {
-        "title": "Dans les coulisses de Roblox : le créateur Chichine nous dévoile les clés de son succès",
-        "publisher": "gamewave",
-        "domain": "news.google.com",
-        "published": "Sat, 14 Nov 2026 10:00:00 GMT",
-        "description": "Dans les coulisses de Roblox : le créateur Chichine nous dévoile les clés de son succès    gamewave",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOMEVTdl9LT0VvMU4tcXlhQ2twT3hKanp0VUVNU3lWWjBGLXpVU1lCWlpSNXVWbXh1eWxrb3Aydk1KQ09VYzVxOHd5SzZ6SU9leXBBN24yV3JlRTJJSFJlV3hkbEhYUGdzVC1tY1NDaTVPbVV6c3kyMW0xTHZEVmhqaTZjZ0RkcVhiYWh4M2JOMnViZUU1ZXExQTNFY3ZnWkMtS3NjSnIwM0tPblJkd0YxSHM4MA?oc=5",
-        "source_type": "media"
-      },
-      {
-        "title": "Interview Roblox avec Chichine : les secrets du créateur français aux 6,7 milliards de visites",
-        "publisher": "gamewave",
-        "domain": "news.google.com",
-        "published": "Wed, 18 Nov 2026 16:11:00 GMT",
-        "description": "Interview Roblox avec Chichine : les secrets du créateur français aux 6,7 milliards de visites    gamewave",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOc3VKM19wYzFucjNEeWYtVXBWYXJ2UktYWG1NVXF6NGJKcU9WUEpRTkRKaWg1Nkx2dl9ReHA1M1JHcDVHckR5M3RiOFRodTZGZXI0VUhfZ2lnNk1VSUtjNWVlMGRaSWc0Rjd6YVhXSWxJZE5jbXFYbzBuUnlCWkFzbVVVZWlJZ3FmYnBjOU1wTXlWTThFdzRYRFBlN3A1Z0NfYktDYi05a3pZU0lPbVlLZXdRR0F4V3ZadTVoeQ?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261119T133905-bc5c68de.mp3"
   }
 ]
