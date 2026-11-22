@@ -14,6 +14,15 @@ function fail(message) { failures.push(message); }
 async function inspectPage(browser, route, viewport) {
   const page = await browser.newPage({ viewport });
   const pageErrors = [];
+  let articlesResponseStatus = "non reçue";
+  page.on("response", response => {
+    if (response.url().endsWith("/articles.json")) articlesResponseStatus = String(response.status());
+  });
+  page.on("requestfailed", request => {
+    if (request.url().endsWith("/articles.json")) {
+      articlesResponseStatus = "échec réseau : " + (request.failure()?.errorText || "inconnu");
+    }
+  });
   page.on("pageerror", error => pageErrors.push(error.message));
   page.on("console", message => {
     if (message.type() === "error") pageErrors.push("console: " + message.text());
@@ -56,12 +65,26 @@ async function inspectPage(browser, route, viewport) {
     if (await navLinks.count() < 3) fail("Accueil : navigation principale incomplète.");
     const articles = page.locator("#articles");
     if (!(await articles.count())) fail("Accueil : zone des actualités absente.");
+    // Attendre la fin réelle du rendu, pas seulement le changement anticipé du compteur.
     await page.waitForFunction(() => {
+      const box = document.querySelector("#articles");
       const status = document.querySelector("#status");
-      return status && status.textContent !== "Chargement…";
-    }, { timeout: 10000 }).catch(() => fail("Accueil : les actualités ne terminent pas leur chargement."));
-    if (await page.locator("#articles > .article").count() < 1) {
-      fail("Accueil : aucune carte d'actualité n'est affichée.");
+      const terminalState = box && (
+        box.querySelector(":scope > .article") ||
+        box.querySelector(':scope > .empty[data-article-label="empty"]') ||
+        box.querySelector(':scope > .empty[data-article-label="error"]')
+      );
+      return Boolean(status && status.textContent !== "Chargement…" && terminalState);
+    }, { timeout: 15000 }).catch(() => {
+      const statusText = document.querySelector("#status")?.textContent || "absent";
+      fail("Accueil : rendu des actualités non terminé (statut=" + statusText +
+        ", réponse articles.json=" + articlesResponseStatus + ").");
+    });
+    const displayedArticles = await page.locator("#articles > .article").count();
+    if (displayedArticles < 1) {
+      const statusText = await page.locator("#status").textContent().catch(() => "absent");
+      fail("Accueil : aucune carte d'actualité n'est affichée (statut=" +
+        statusText + ", réponse articles.json=" + articlesResponseStatus + ").");
     }
     const sourceLabels = page.locator('#articles [data-article-label="sources"]');
     if (await sourceLabels.count() < 1) {
