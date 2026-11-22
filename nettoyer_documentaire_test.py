@@ -15,6 +15,15 @@ VIDEO_DIR = SITE / "video"
 ARCHIVE_DIR = SITE / "archives"
 RETENTION = timedelta(days=30)
 STAMP_RE = re.compile(r"^documentaire-test-(\d{8}T\d{6}Z)\.(mp3|mp4|md)$")
+TRANSLATED_DOCUMENTARY_RE = re.compile(
+    r"^documentaire-(?:en|es|de|pt|ar|zh)-(?P<stamp>\\d{8}T\\d{6}Z)\\.(?:mp3|mp4|vtt)$"
+)
+ARTICLE_AUDIO_RE = re.compile(
+    r"^(?P<stamp>\\d{8}T\\d{6})(?:-[a-f0-9]{8})?(?:-(?:en|es|de|pt|ar|zh))?Z?\\.mp3$"
+)
+WEEKLY_CHAPTER_RE = re.compile(
+    r"^documentaire_tech_(?P<stamp>\\d{8})_chapitre_\\d+\\.mp3$"
+)
 
 
 def main():
