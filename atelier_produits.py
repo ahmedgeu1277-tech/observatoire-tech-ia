@@ -5,6 +5,7 @@ Aucune vente, publication ou exécution de code n'est déclenchée par ce module
 """
 from __future__ import annotations
 
+import argparse
 import json
 from datetime import UTC, datetime
 from pathlib import Path
@@ -19,6 +20,8 @@ DIMENSIONS = {
     "market_access": 10,
 }
 MAX_TEXT = 2000
+ROOT = Path(__file__).resolve().parent
+DEFAULT_PRODUCTS_DIR = ROOT / ".laboratoire_prive" / "produits"
 PRODUCT_TYPES = {
     "software", "developer_tool", "ai_agent", "game_tool",
     "security_tool", "hardware_research", "digital_service",
@@ -108,3 +111,57 @@ def save_opportunity(report: dict, directory: Path) -> Path:
     temporary.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     temporary.replace(target)
     return target
+
+
+def list_opportunities(directory: Path) -> list[dict]:
+    """Charge les fiches valides et les classe par score puis date, sans exécuter leur contenu."""
+    root = Path(directory)
+    if not root.exists():
+        return []
+    if not root.is_dir():
+        raise ValueError("Le dossier des opportunités doit être un répertoire.")
+    reports = []
+    for path in root.glob("*.json"):
+        try:
+            if path.resolve().parent != root.resolve() or not path.is_file():
+                continue
+            item = json.loads(path.read_text(encoding="utf-8"))
+            if not isinstance(item, dict) or item.get("id") != path.stem:
+                continue
+            score = item.get("score_percent")
+            if isinstance(score, bool) or not isinstance(score, int) or not 0 <= score <= 100:
+                continue
+            if item.get("decision") not in {
+                "priorite_prototype", "etude_complementaire", "a_retravailler", "ne_pas_prioriser"
+            }:
+                continue
+            reports.append(item)
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+            continue
+    return sorted(
+        reports,
+        key=lambda item: (item["score_percent"], str(item.get("created_at", ""))),
+        reverse=True,
+    )
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Atelier local de sélection et de classement des produits.")
+    commands = parser.add_subparsers(dest="command", required=True)
+    evaluate = commands.add_parser("evaluate", help="Évaluer une opportunité depuis un fichier JSON.")
+    evaluate.add_argument("json_file")
+    evaluate.add_argument("--directory", type=Path, default=DEFAULT_PRODUCTS_DIR)
+    listing = commands.add_parser("list", help="Classer les opportunités enregistrées.")
+    listing.add_argument("--directory", type=Path, default=DEFAULT_PRODUCTS_DIR)
+    args = parser.parse_args()
+    if args.command == "evaluate":
+        data = json.loads(Path(args.json_file).read_text(encoding="utf-8"))
+        report = evaluate_opportunity(data)
+        print(save_opportunity(report, args.directory))
+    else:
+        print(json.dumps(list_opportunities(args.directory), ensure_ascii=False, indent=2))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
