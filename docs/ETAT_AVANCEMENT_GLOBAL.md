@@ -99,3 +99,11 @@ Le développement de jeux et les intégrations associées ne font plus partie de
 - Ces contrôles valident le commit et le déploiement testés ; ils ne certifient pas une disponibilité permanente ni le fonctionnement sur chaque appareil physique.
 
 L'estimation pondérée est passée à **56,48 / 100** en portant le domaine « Tests et amélioration continue » de 80 % à 85 %. Les autres domaines et leurs limites restent inchangés. Ce score ne signifie pas que le projet complet est terminé.
+
+
+## Traduction progressive des articles — 22 novembre 2026
+
+- La génération d'un nouvel article tente désormais une traduction IA des champs titre, résumé, verdict et conseil en anglais, espagnol, allemand, portugais, arabe et chinois simplifié. Une traduction absente ou invalide n'empêche jamais la publication ; le site garde alors le texte original.
+- Les liens, titres de sources, dates et fichiers audio ne sont pas traduits ni modifiés par ce traitement. Le navigateur affiche les champs traduits uniquement lorsqu'une traduction complète pour la langue choisie existe.
+- Le workflow `.github/workflows/traduire-archives.yml` traite progressivement trois anciens articles par jour, dans l'ordre du plus ancien au plus récent. Il utilise uniquement le fournisseur Groq configuré dans les secrets GitHub, sans recours à Hugging Face ni à un service payant. Si le quota est indisponible, le lot s'arrête sans corrompre le catalogue.
+- Le traitement est limité à cinq articles maximum par exécution et conserve les traductions partielles pour les compléter lors d'une exécution ultérieure. Le résultat doit être contrôlé dans les journaux GitHub Actions ; la planification quotidienne n'est pas une garantie d'exécution à heure fixe.
