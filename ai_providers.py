@@ -16,7 +16,7 @@ def generate_text(messages, max_tokens=1200, temperature=0.25, json_mode=False, 
     failures = []
     groq_key = os.getenv("GROQ_API_KEY")
     hf_key = os.getenv("HF_API_KEY") or os.getenv("HF_TOKEN")
-    order = (os.getenv("AI_PROVIDER_ORDER") or "groq").split(",")
+    order = (os.getenv("AI_PROVIDER_ORDER") or "groq,huggingface").split(",")
 
     providers = list(dict.fromkeys(item.strip().lower() for item in order if item.strip()))
     allowed_providers = {"groq", "huggingface", "hf"}
