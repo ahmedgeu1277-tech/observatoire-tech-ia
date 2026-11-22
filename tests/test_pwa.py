@@ -20,6 +20,7 @@ class ProgressiveWebAppTests(unittest.TestCase):
         self.assertIn('rel="manifest" href="./manifest.webmanifest"', html)
         self.assertIn('navigator.serviceWorker.register("./sw.js"', html)
         self.assertIn('location.protocol === "https:"', html)
+        self.assertIn('"127.0.0.1"', html)
 
     def test_service_worker_only_caches_same_origin_get_requests(self):
         worker = (SITE / "sw.js").read_text(encoding="utf-8")
