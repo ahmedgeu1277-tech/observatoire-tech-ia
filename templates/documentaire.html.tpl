@@ -38,11 +38,12 @@ small{color:#9eafd0}
 <h1>{{TITLE}}</h1>
 <p data-i18n="description">Documentaire compilé à partir des articles publiés.</p>
 <p data-i18n="contentNote">Le texte du documentaire et sa narration audio restent dans la langue d’origine des articles.</p>
-<video controls preload="metadata" playsinline style="width:100%;border-radius:12px;background:#101820" src="video/{{VIDEO}}"></video>
-<audio controls preload="none" src="audio/{{AUDIO}}"></audio>
+<video id="documentary-video" controls preload="metadata" playsinline style="width:100%;border-radius:12px;background:#101820" src="video/{{VIDEO}}"><track id="subtitle-track" kind="subtitles" srclang="fr" label="Français" default></video>
+<audio id="documentary-audio" controls preload="none" src="audio/{{AUDIO}}"></audio>
 <small><span data-i18n="retention">Conservation prévue jusqu'au</span> : {{EXPIRY}}</small>
 </header>
 {{SECTIONS}}
+<script id="translation-data" type="application/json">{{TRANSLATIONS_JSON}}</script>
 </main>
 <script>
 (() => {
@@ -69,10 +70,47 @@ small{color:#9eafd0}
     selector.value = lang;
     try { localStorage.setItem("observatoire-doc-language", lang); } catch (_) {}
   }
-  selector.addEventListener("change", () => applyLanguage(selector.value));
+  const video = document.getElementById("documentary-video");
+  const audio = document.getElementById("documentary-audio");
+  const track = document.getElementById("subtitle-track");
+  const translatedMedia = JSON.parse(document.getElementById("translation-data").textContent || "{}");
+  const baseVideo = video.getAttribute("src");
+  const baseAudio = audio.getAttribute("src");
+  function applyContentLanguage(language) {
+    const item = translatedMedia[language];
+    if (!item) {
+      video.src = baseVideo;
+      audio.src = baseAudio;
+      track.removeAttribute("src");
+      track.default = false;
+      return;
+    }
+    video.src = "video/" + item.video;
+    audio.src = "audio/" + item.audio;
+    track.src = "video/" + item.subtitles;
+    track.srclang = language;
+    track.label = item.name;
+    track.default = true;
+    const data = item.text;
+    document.querySelector("header h1").textContent = data.title;
+    const sections = [...document.querySelectorAll("main > section")];
+    if (sections[0]) sections[0].querySelector("p").textContent = data.intro;
+    sections.slice(1).forEach((section, index) => {
+      const chapter = data.chapters[index];
+      if (!chapter) return;
+      section.querySelector("h2").textContent = chapter.title;
+      section.querySelector("p").textContent =
+        chapter.summary + " " + chapter.verdict + " " + chapter.tip;
+    });
+  }
+  selector.addEventListener("change", () => {
+    applyLanguage(selector.value);
+    applyContentLanguage(selector.value);
+  });
   let saved = "fr";
   try { saved = localStorage.getItem("observatoire-doc-language") || "fr"; } catch (_) {}
   applyLanguage(saved);
+  applyContentLanguage(saved);
 })();
 </script>
 </body>
