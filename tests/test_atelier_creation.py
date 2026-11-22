@@ -1,3 +1,5 @@
+import os
+import stat
 import tempfile
 import unittest
 from pathlib import Path
@@ -30,6 +32,34 @@ class AtelierCreationTests(unittest.TestCase):
                     script = (root / "scripts" / "main.gd").read_text(encoding="utf-8")
                     self.assertIn(f"extends {node_type}", script)
                     self.assertFalse(result["code_executed"])
+
+    @unittest.skipIf(os.name == "nt", "Les permissions POSIX ne sont pas disponibles sous Windows.")
+    def test_generated_project_directories_and_files_are_private(self):
+        with tempfile.TemporaryDirectory() as folder:
+            output = Path(folder) / "prototypes"
+            result = generate_project("ProjetSecurise", output, "godot-3d")
+            project = Path(result["directory"])
+            self.assertEqual(stat.S_IMODE(output.stat().st_mode), 0o700)
+            self.assertEqual(stat.S_IMODE(project.stat().st_mode), 0o700)
+            self.assertEqual(stat.S_IMODE((project / "project.godot").stat().st_mode), 0o600)
+            self.assertEqual(
+                stat.S_IMODE((project / "scripts").stat().st_mode),
+                0o700,
+            )
+
+    def test_generator_rejects_symlinked_output_root(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            outside = root / "outside"
+            outside.mkdir()
+            output = root / "linked"
+            try:
+                output.symlink_to(outside, target_is_directory=True)
+            except (OSError, NotImplementedError):
+                self.skipTest("Les liens symboliques ne sont pas disponibles.")
+            with self.assertRaisesRegex(ValueError, "lien symbolique"):
+                generate_project("ProjetLien", output, "site")
+            self.assertEqual(list(outside.iterdir()), [])
 
     def test_rejects_traversal_and_bad_names(self):
         for name in ("../escape", "1invalid", "", "x" * 51, "a" + chr(92) + "b"):
