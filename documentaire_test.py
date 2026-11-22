@@ -118,7 +118,7 @@ def generer_documentaire():
             f'{html.escape(heading)}</h2><p>{html.escape(body)}</p>'
             f'<h3 class="sources-heading" data-i18n="sources">Sources</h3><ul>{links}</ul></section>'
         )
-    page = """<!doctype html>  # nosec B608 - modèle HTML/CSS, aucune requête SQL
+    # nosec B608 - modèle HTML/CSS statique, aucune requête SQL construite.\n    page = """<!doctype html>
 <html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Documentaire Tech & Gaming compilé à partir des articles publiés.">
 <title>Documentaire — Observatoire</title>
