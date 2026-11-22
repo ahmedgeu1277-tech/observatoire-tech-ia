@@ -122,7 +122,7 @@ def generer_documentaire():
     for number, (heading, body, sources) in enumerate(chapters, 1):
         links = "".join(
             f'<li><a href="{html.escape(str(source["url"]), quote=True)}" '
-            f'rel="noopener noreferrer">{html.escape(str(source.get("publisher") or source.get("domain") or "Source"))}</a></li>'
+            f'class="notranslate" translate="no" rel="noopener noreferrer">{html.escape(str(source.get("publisher") or source.get("domain") or "Source"))}</a></li>'
             for source in sources
         )
         sections.append(
