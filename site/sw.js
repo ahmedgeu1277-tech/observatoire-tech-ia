@@ -25,6 +25,11 @@ self.addEventListener("activate", event => {
 self.addEventListener("fetch", event => {
   const request = event.request;
   if (request.method !== "GET" || new URL(request.url).origin !== self.location.origin) return;
+  // Les requêtes Range (lecture audio/vidéo) renvoient souvent HTTP 206 ; Cache API ne peut pas les stocker.
+  if (request.headers.has("range")) {
+    event.respondWith(fetch(request));
+    return;
+  }
   const url = new URL(request.url);
   if (url.pathname.includes("/.laboratoire_prive/")) return;
 
