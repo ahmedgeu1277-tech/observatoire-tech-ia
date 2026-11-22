@@ -40,6 +40,26 @@ class ProgressiveWebAppTests(unittest.TestCase):
         self.assertIn('event.respondWith(fetch(request))', worker)
         self.assertIn("Cache API ne peut pas les stocker", worker)
 
+    def test_browser_project_workshop_exists_and_builds_zip_locally(self):
+        page = (SITE / "atelier.html").read_text(encoding="utf-8")
+        self.assertIn("function makeZip(files)", page)
+        self.assertIn("new Blob([bytes]", page)
+        self.assertIn("window.__nexoraLastZipBytes", page)
+        self.assertNotIn("fetch(", page)
+        self.assertNotIn("XMLHttpRequest", page)
+
+    def test_browser_workshop_offers_all_eight_project_templates(self):
+        page = (SITE / "atelier.html").read_text(encoding="utf-8")
+        for template in ("site", "webapp", "jeu-web", "godot-2d", "godot-3d", "logiciel-python", "video", "audio"):
+            self.assertIn(f'["{template}"', page)
+
+    def test_browser_workshop_supports_seven_languages_and_rejects_bad_names(self):
+        page = (SITE / "atelier.html").read_text(encoding="utf-8")
+        for language in ("fr", "en", "es", "de", "pt", "ar", "zh"):
+            self.assertIn(f"{language}:{{", page)
+        self.assertIn(r"^[A-Za-z][A-Za-z0-9_-]{1,49}$", page)
+        self.assertIn('lang==="ar"?"rtl":"ltr"', page)
+
     def test_offline_page_exists_and_does_not_claim_live_data(self):
         page = (SITE / "offline.html").read_text(encoding="utf-8")
         self.assertIn("MODE HORS LIGNE", page)
