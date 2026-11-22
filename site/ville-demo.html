@@ -80,7 +80,7 @@ const zones=[{id:"centre",x:235,y:105,color:"#829d83",name:t.centre},{id:"energi
 for(const z of zones){ctx.fillStyle=z.color;ctx.beginPath();ctx.moveTo(z.x,z.y-58);ctx.lineTo(z.x+118,z.y);ctx.lineTo(z.x,z.y+58);ctx.lineTo(z.x-118,z.y);ctx.closePath();ctx.fill();ctx.strokeStyle=activeDistrict===z.id?"#294b38":"#ffffff";ctx.lineWidth=activeDistrict===z.id?5:2;ctx.stroke();
 for(let i=0;i<5;i++){const bx=z.x-70+(i%3)*54,by=z.y-12+Math.floor(i/3)*24,bh=24+(i*13)%42;ctx.fillStyle=["#e8e4d5","#d5dfd0","#e3d7c6"][i%3];ctx.fillRect(bx,by-bh,26,bh);ctx.fillStyle="#7e9b84";ctx.fillRect(bx+6,by-bh+7,5,6);ctx.fillRect(bx+16,by-bh+7,5,6);ctx.fillStyle="#667d68";ctx.fillRect(bx+10,by-7,7,7)}
 ctx.fillStyle="#243d31";ctx.font="bold 15px system-ui";ctx.textAlign="center";ctx.fillText(z.name.slice(0,24),z.x,z.y+82)}
-const time=Date.now()/1000;for(let i=0;i<4;i++){const x=((time*36+i*225)%900);ctx.fillStyle=i%2?"#f5f4e9":"#385c48";ctx.fillRect(x,236-Math.round(x*.078)+i%2*5,17,9);ctx.fillStyle="#fff";ctx.fillRect(x+3,238-Math.round(x*.078)+i%2*5,4,2)}
+const reduceMotion=window.matchMedia?.("(prefers-reduced-motion: reduce)").matches||false;const time=reduceMotion?0:Date.now()/1000;for(let i=0;i<4;i++){const x=((time*36+i*225)%900);ctx.fillStyle=i%2?"#f5f4e9":"#385c48";ctx.fillRect(x,236-Math.round(x*.078)+i%2*5,17,9);ctx.fillStyle="#fff";ctx.fillRect(x+3,238-Math.round(x*.078)+i%2*5,4,2)}
 ctx.textAlign="left";ctx.fillStyle="#35523d";ctx.font="bold 12px system-ui";ctx.fillText("NEXORA · SIMULATION",18,26)}
 
 const city3dCanvas=document.getElementById("city-view-3d");
@@ -144,9 +144,10 @@ function renderCity3d(time){
   gl.viewport(0,0,city3dCanvas.width,city3dCanvas.height);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.useProgram(program);
   gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.enableVertexAttribArray(position);gl.vertexAttribPointer(position,3,gl.FLOAT,false,24,0);
   gl.enableVertexAttribArray(color);gl.vertexAttribPointer(color,3,gl.FLOAT,false,24,12);
-  gl.uniform1f(angle,time*.00012);gl.drawArrays(gl.TRIANGLES,0,count);lastCity3dFrame=time;
+  const reduceMotion=window.matchMedia?.("(prefers-reduced-motion: reduce)").matches||false;gl.uniform1f(angle,reduceMotion?0:time*.00012);gl.drawArrays(gl.TRIANGLES,0,count);lastCity3dFrame=time;
  }
- city3dFrame=requestAnimationFrame(renderCity3d);
+ const reduceMotion=window.matchMedia?.("(prefers-reduced-motion: reduce)").matches||false;
+ city3dFrame=reduceMotion?0:requestAnimationFrame(renderCity3d);
 }
 function setCityView(mode){
  if(mode==="3d"&&!initCity3d()){const button=document.getElementById("view-3d");button.disabled=true;button.title="WebGL indisponible sur ce navigateur ; la vue 2D reste disponible.";return}
