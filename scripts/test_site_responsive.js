@@ -6,7 +6,7 @@
 const { chromium } = require("playwright");
 
 const BASE = process.env.SITE_BASE_URL || "http://127.0.0.1:4173";
-const PAGES = ["/site/index.html", "/site/documentaire-test.html"];
+const PAGES = ["/site/index.html", "/site/documentaire-test.html", "/site/ville-demo.html"];
 const failures = [];
 
 function fail(message) { failures.push(message); }
@@ -92,6 +92,23 @@ async function inspectPage(browser, route, viewport) {
           fail("Accueil : ancre de navigation introuvable " + href);
         }
       }
+    }
+  }
+
+  if (route === "/site/ville-demo.html") {
+    const districts = page.locator("[data-district]");
+    if (await districts.count() !== 4) fail("Ville démo : les quatre quartiers ne sont pas présents.");
+    await page.locator('[data-district="mobilite"]').click();
+    const selected = await page.locator('[data-district="mobilite"]').getAttribute("aria-pressed");
+    if (selected !== "true") fail("Ville démo : la sélection d'un quartier ne fonctionne pas.");
+    const detail = await page.locator("#district-detail").textContent();
+    if (!detail.includes("Mobilité")) fail("Ville démo : le panneau de détail ne suit pas le quartier sélectionné.");
+    for (const id of ["energy", "mobility", "air", "projects"]) {
+      if (!(await page.locator("#" + id).count())) fail("Ville démo : indicateur absent " + id + ".");
+    }
+    const disclaimer = await page.locator(".warning").textContent();
+    if (!disclaimer.includes("fictive") || !disclaimer.includes("aucune donnée interne")) {
+      fail("Ville démo : avertissement de simulation fictive ou de confidentialité absent.");
     }
   }
 
