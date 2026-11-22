@@ -238,6 +238,7 @@ jobs:
               await page.locator('#generate').click();
               const generated = await page.evaluate(() => ({
                 signature: window.__nexoraLastZipBytes,
+                zipData: window.__nexoraLastZipData,
                 files: window.__nexoraLastFiles,
                 status: document.querySelector('#status')?.textContent || ''
               }));
@@ -249,6 +250,13 @@ jobs:
                 failures.push('Atelier : fichiers Godot 3D manquants dans le ZIP.');
               }
               if (!generated.status.includes('ZIP')) failures.push('Atelier : confirmation de génération absente.');
+              const zipBuffer = Buffer.from(generated.zipData || []);
+              if (zipBuffer.length < 22 || zipBuffer.readUInt32LE(zipBuffer.length - 22) !== 0x06054b50) {
+                failures.push('Atelier : fin du répertoire ZIP invalide.');
+              }
+              if (!zipBuffer.includes(Buffer.from('BrowserDemo3D/scripts/main.gd'))) {
+                failures.push('Atelier : script GDScript absent du ZIP téléchargé.');
+              }
               await page.selectOption('#language', 'ar');
               const workshopLanguage = await page.evaluate(() => ({
                 lang: document.documentElement.lang,
