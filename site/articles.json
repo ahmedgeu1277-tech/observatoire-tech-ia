@@ -1,5 +1,36 @@
 [
   {
+    "id": "20261122T102204-632c7b13",
+    "date": "2026-11-22T10:22+00:00",
+    "theme": "Path of Exile 2 — lancement complet annoncé le 11 décembre 2026",
+    "title": "Path of Exile 2 : détails insuffisants dans les sources",
+    "summary": "Les résultats récupérés signalent une actualité liée à Path of Exile 2, mais les extraits disponibles reprennent surtout les titres et ne fournissent pas assez d'éléments pour confirmer la portée, les effets ou les modalités de l'annonce. Consultez l'article d'origine et le communiqué de l'organisation concernée avant de retenir des détails.",
+    "verdict": "Les extraits récupérés ne suffisent pas pour confirmer les détails.",
+    "tip": "Lire l'article original et rechercher un communiqué officiel avant de partager l'information.",
+    "sources": [
+      {
+        "title": "Path of Exile 2 : le million de joueurs Steam visé pour la 1.0",
+        "publisher": "games.gg",
+        "domain": "news.google.com",
+        "published": "Fri, 20 Nov 2026 16:24:17 GMT",
+        "description": "Path of Exile 2 : le million de joueurs Steam visé pour la 1.0    games.gg",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPOThlZ3BXZlZOcjNMaEd1S0l6R2hMRXNyOUtMMWJPN0lFWjBYblktTllQZUZjdWdjVm5Pa3d5U2V1eHFPdWZkU2Jsd2pxTnktbmVFbkUwY2hsUTdBaG54cUJUM1FHLUlVeGRadVRMVmlGTWZacnVicEtaR0dnanZqYW5GY0hXWVhNVTNTam5RZXE5Q2NQTXlXUVJzdw?oc=5",
+        "source_type": "media"
+      },
+      {
+        "title": "Path of Exile 2 : le studio vise le club du million de joueurs Steam à sa sortie",
+        "publisher": "OMGPU",
+        "domain": "news.google.com",
+        "published": "Thu, 19 Nov 2026 16:14:48 GMT",
+        "description": "Path of Exile 2 : le studio vise le club du million de joueurs Steam à sa sortie    OMGPU",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQQTlhdVM4MUh0aG1FTXBhTWl4S0dZdUhlMmFNZjY5NGxQT3B6cFc1SWxfaHg3S1BielNremVmcldYUDdOdklXRDQ4SzFxVDdDV0hzNzlXZFl5ZTY4c0hMb2NUNUZqTDJfYmlWQUhCOWlIYTFpWW5vLWZ0SEphY0w3UXFKWFd0UmRzWDZUM01aSVNVb0d0Y2oxNHQzei1rNVFxMm13?oc=5",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261122T102204-632c7b13.mp3"
+  },
+  {
     "id": "20261122T101552-c59ad2a2",
     "date": "2026-11-22T10:15+00:00",
     "theme": "GTA VI — lancement et premiers retours vérifiés",
@@ -731,28 +762,6 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261119T182651-f78b016d.mp3"
-  },
-  {
-    "id": "20261119T181526-b4891861",
-    "date": "2026-11-19T18:15+00:00",
-    "theme": "Path of Exile 2 — lancement complet annoncé le 11 décembre 2026",
-    "title": "Path of Exile 2 : détails insuffisants dans les sources",
-    "summary": "Les résultats récupérés signalent une actualité liée à Path of Exile 2, mais les extraits disponibles reprennent surtout les titres et ne fournissent pas assez d'éléments pour confirmer la portée, les effets ou les modalités de l'annonce. Consultez l'article d'origine et le communiqué de l'organisation concernée avant de retenir des détails.",
-    "verdict": "Les extraits récupérés ne suffisent pas pour confirmer les détails.",
-    "tip": "Lire l'article original et rechercher un communiqué officiel avant de partager l'information.",
-    "sources": [
-      {
-        "title": "Path of Exile 2 : le studio vise le club du million de joueurs Steam à sa sortie",
-        "publisher": "OMGPU",
-        "domain": "news.google.com",
-        "published": "Thu, 19 Nov 2026 16:14:48 GMT",
-        "description": "Path of Exile 2 : le studio vise le club du million de joueurs Steam à sa sortie    OMGPU",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQQTlhdVM4MUh0aG1FTXBhTWl4S0dZdUhlMmFNZjY5NGxQT3B6cFc1SWxfaHg3S1BielNremVmcldYUDdOdklXRDQ4SzFxVDdDV0hzNzlXZFl5ZTY4c0hMb2NUNUZqTDJfYmlWQUhCOWlIYTFpWW5vLWZ0SEphY0w3UXFKWFd0UmRzWDZUM01aSVNVb0d0Y2oxNHQzei1rNVFxMm13?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261119T181526-b4891861.mp3"
   },
   {
     "id": "20261119T175642-14f9a5e5",
