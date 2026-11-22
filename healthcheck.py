@@ -9,6 +9,54 @@ ROOT = Path(__file__).resolve().parent
 REQUIRED_ARTICLE_FIELDS = ("id", "date", "theme", "title", "summary", "verdict", "tip", "sources")
 
 
+def _check_documentary_media(root: Path) -> int:
+    """Vérifie que les médias référencés par le documentaire public existent."""
+    manifest_path = root / "site" / "documentaire-test.json"
+    if not manifest_path.exists():
+        return 0
+    manifest = _read_json(manifest_path)
+    if not isinstance(manifest, dict):
+        raise ValueError("Le manifeste du documentaire doit être un objet JSON.")
+
+    def check_file(folder: str, name: object, extension: str) -> None:
+        if (
+            not isinstance(name, str)
+            or not name
+            or Path(name).name != name
+            or "\\\\" in name
+            or not name.lower().endswith(extension)
+        ):
+            raise ValueError(f"Référence média invalide : {folder}/{name}.")
+        base = (root / "site" / folder).resolve()
+        target = (base / name).resolve()
+        try:
+            target.relative_to(base)
+        except ValueError as exc:
+            raise ValueError(f"Média hors du dossier public autorisé : {folder}/{name}.") from exc
+        if not target.is_file() or target.stat().st_size == 0:
+            raise ValueError(f"Média du documentaire absent ou vide : {folder}/{name}.")
+
+    check_file("audio", manifest.get("audio_file"), ".mp3")
+    check_file("video", manifest.get("video_file"), ".mp4")
+    media_count = 2
+    translations = manifest.get("translations", {})
+    if not isinstance(translations, dict):
+        raise ValueError("Les traductions du documentaire doivent être un objet.")
+    for language, variant in translations.items():
+        if not isinstance(language, str) or not isinstance(variant, dict):
+            raise ValueError("Variante de traduction documentaire invalide.")
+        for field, folder, extension in (
+            ("audio", "audio", ".mp3"),
+            ("video", "video", ".mp4"),
+            ("subtitles", "video", ".vtt"),
+        ):
+            name = variant.get(field)
+            if name is not None:
+                check_file(folder, name, extension)
+                media_count += 1
+    return media_count
+
+
 def _read_json(path: Path):
     try:
         return json.loads(path.read_text(encoding="utf-8"))
@@ -82,7 +130,7 @@ def check_repository(root: Path = ROOT) -> dict:
                 raise ValueError(f"Fichier audio absent ou vide : {audio_url}.")
             audio_count += 1
 
-    profiles_count = 0
+    documentary_media = _check_documentary_media(root)\n\n    profiles_count = 0
     profiles_path = root / "site" / "data" / "agents.json"
     if profiles_path.exists():
         profile_index = _read_json(profiles_path)
@@ -107,7 +155,7 @@ def check_repository(root: Path = ROOT) -> dict:
         "themes": len(themes["themes"]),
         "articles": len(articles),
         "sources": source_count,
-        "audio_files": audio_count,
+        "audio_files": audio_count,\n        "documentary_media_files": documentary_media,
         "city_state_public": False,
         "agent_profiles": profiles_count,
     }
