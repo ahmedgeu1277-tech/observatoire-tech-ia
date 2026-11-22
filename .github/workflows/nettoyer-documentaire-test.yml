@@ -27,7 +27,7 @@ jobs:
         run: |
           git config user.name "Usine IA Tech & Gaming"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for path in site/documentaire-test.html site/documentaire-test.md site/documentaire-test.json site/audio site/video site/archives; do
+          for path in site/documentaire-test.html site/documentaire-test.md site/documentaire-test.json site/articles.json site/audio site/video site/archives; do
             if [ -e "$path" ] || git ls-files --error-unmatch "$path" >/dev/null 2>&1; then
               git add -A -- "$path"
             fi
