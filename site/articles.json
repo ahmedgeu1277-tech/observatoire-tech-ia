@@ -1,5 +1,36 @@
 [
   {
+    "id": "20261122T101037-959411d5",
+    "date": "2026-11-22T10:10+00:00",
+    "theme": "GTA VI — lancement et premiers retours vérifiés",
+    "title": "GTA VI : plantages et PNJ violents signalés sur PS5",
+    "summary": "Depuis son lancement, GTA VI fait l’objet de rapports de plantages sur PS5, accompagnés de l’erreur CE‑108255‑1, et de comportements violents de certains PNJ. Ces incidents, rapportés par des joueurs via IGN France, restent sporadiques et non confirmés par Rockstar. Les joueurs restent donc incertains quant à la gravité et à la portée de ces problèmes, tandis qu’aucune mise à jour officielle n’a encore été annoncée.",
+    "verdict": "Les retours initiaux indiquent des problèmes de stabilité et de comportement d’IA, mais leur ampleur demeure inconnue sans confirmation de l’éditeur.",
+    "tip": "Surveillez les mises à jour de Rockstar et les communiqués officiels pour savoir si ces plantages et comportements violents seront corrigés.",
+    "sources": [
+      {
+        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
+        "description": "Allons en paix.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
+        "source_type": "media"
+      },
+      {
+        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
+        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261122T101037-959411d5.mp3"
+  },
+  {
     "id": "20261122T100159-ed580cd5",
     "date": "2026-11-22T10:01+00:00",
     "theme": "Gaming et jeux vidéo — veille générale (recherche de secours)",
@@ -1113,45 +1144,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261118T223737-400efa45.mp3"
-  },
-  {
-    "id": "20261118T222345-0d6370bf",
-    "date": "2026-11-18T22:23+00:00",
-    "theme": "Gaming et jeux vidéo — veille générale (recherche de secours)",
-    "title": "Firaxis restructure et records de streaming de GTA 6",
-    "summary": "Firaxis a annoncé une restructuration qui inclut le licenciement d’un tiers de son personnel, ce qui soulève des questions sur la rapidité de la sortie de *Civilization VII*. Parallèlement, *GTA 6* a déjà battu tous les records de streaming avant sa sortie mondiale, bien que l’impact sur les ventes reste incertain. Les lecteurs peuvent s’attendre à des mises à jour sur la stabilité du studio et sur la conversion de ce buzz en ventes réelles.",
-    "verdict": "Les informations proviennent de deux articles IGN France publiés le même jour.",
-    "tip": "Surveillez les prochaines communiqués de Firaxis pour clarifier l’état d’avancement de *Civilization VII* et les données de vente de *GTA 6* après sa sortie.",
-    "sources": [
-      {
-        "title": "Civilization 7 Gameplay Screenshots",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 22:14:07 +0000",
-        "description": "",
-        "url": "https://fr.ign.com/sid-meiers-civilization-vii/94081/civilization-7-gameplay-screenshots",
-        "source_type": "media"
-      },
-      {
-        "title": "« Ces décisions ne sont jamais faciles » — Firaxis, le développeur de Civilization, licencie un tiers de ses effectifs",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 22:14:07 +0000",
-        "description": "« Firaxis procède à une restructuration et se recentre sur les atouts fondamentaux du studio. »",
-        "url": "https://fr.ign.com/sid-meiers-civilization-vii/94080/ces-decisions-ne-sont-jamais-faciles--firaxis-le-developpeur-de-civilization-licencie-un-tiers-de-se",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 bat tous les records de streaming avant même sa sortie mondiale",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 18:54:26 +0000",
-        "description": "Si on ne fait qu'en parler, ça compte ?",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94079/gta-6-bat-tous-les-records-de-streaming-avant-meme-sa-sortie-mondiale",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261118T222345-0d6370bf.mp3"
   }
 ]
