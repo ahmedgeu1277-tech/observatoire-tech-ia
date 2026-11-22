@@ -17,7 +17,8 @@ Le site présente des articles et des documentaires issus de sources publiques. 
 - Application web installable (PWA) : pages essentielles et catalogue d'articles mis en cache pour consultation hors ligne après une première visite. Les gros fichiers audio/vidéo ne sont volontairement pas mis en cache afin de préserver le stockage des téléphones et tablettes.
 - Recherche textuelle et filtres par thème sur les articles ; six défis éducatifs avec progression et rang personnel enregistrés localement (sans classement mondial).
 - Tableau de bord privé local avec file de missions, portefeuille R&D et feuille de route persistante de sept chantiers avec priorités, statuts et échéances modifiables, conservée hors du dépôt public.
-- Générateur local de squelettes de projets : site, application web, jeu navigateur, vidéo, audio, logiciel Python et projets Godot 2D/3D. Il crée des fichiers de départ sans exécuter le code ni publier les projets.
+- Atelier de création intégré au tableau de bord privé local : squelettes de sites, applications web, jeux navigateur, logiciels Python, projets Godot 2D/3D, audio et vidéo. Les fichiers sont écrits dans un espace privé avec permissions restreintes ; aucun code n'est exécuté et aucun projet n'est publié automatiquement.
+- Équipe de six rôles d'agents (chercheur, critique, architecte, rédacteur, auditeur, planificateur) ; une mission peut en mobiliser au maximum trois, avec durée et tentatives bornées.
 - Archivage des publications récentes et nettoyage programmé des anciennes archives.
 - File locale de missions IA avec trois rôles spécialisés maximum, durée limitée, annulation coopérative, relance manuelle plafonnée à trois tentatives et exécution manuelle de lots de trois missions maximum.
 - Tests automatisés, contrôles de qualité/sécurité et surveillance du site réellement publié dans GitHub Actions.
