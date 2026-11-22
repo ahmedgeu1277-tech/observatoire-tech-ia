@@ -257,6 +257,25 @@ jobs:
               if (!zipBuffer.includes(Buffer.from('BrowserDemo3D/scripts/main.gd'))) {
                 failures.push('Atelier : script GDScript absent du ZIP téléchargé.');
               }
+
+              // Le modèle Unity doit aussi produire un projet local avec son contrôleur C#.
+              await page.selectOption('#template', 'unity-3d');
+              await page.locator('#generate').click();
+              const unityGenerated = await page.evaluate(() => ({
+                signature: window.__nexoraLastZipBytes,
+                zipData: window.__nexoraLastZipData,
+                files: window.__nexoraLastFiles,
+                status: document.querySelector('#status')?.textContent || ''
+              }));
+              if (JSON.stringify(unityGenerated.signature) !== JSON.stringify([80, 75, 3, 4]) ||
+                  !unityGenerated.files?.includes('BrowserDemo3D/Packages/manifest.json') ||
+                  !unityGenerated.files?.includes('BrowserDemo3D/Assets/Scripts/PlayerController.cs') ||
+                  !Buffer.from(unityGenerated.zipData || []).includes(Buffer.from('CharacterController'))) {
+                failures.push('Atelier : le squelette Unity 3D ou son contrôleur C# est incomplet.');
+              }
+              if (!unityGenerated.status.includes('ZIP')) {
+                failures.push('Atelier : confirmation de génération Unity absente.');
+              }
               await page.selectOption('#language', 'ar');
               const workshopLanguage = await page.evaluate(() => ({
                 lang: document.documentElement.lang,
