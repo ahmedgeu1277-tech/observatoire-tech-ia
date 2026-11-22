@@ -98,6 +98,26 @@ async function inspectPage(browser, route, viewport) {
       }
       const germanSources = await sourceLabels.first().textContent();
       if (germanSources !== "Quellen") fail("Accueil : le libellé dynamique des sources n'est pas traduit en allemand.");
+      const originalArticleTitle = await page.locator("#articles .article h3").first().textContent();
+      await page.evaluate(() => {
+        window.nexoraArticles[0].translations = {de:{
+          title:"Übersetzter Testtitel",
+          summary:"Dies ist eine geprüfte Übersetzungsprobe.",
+          verdict:"Die Quellen bestätigen diese Aussage.",
+          tip:"Die Originalquelle lesen."
+        }};
+        window.observatoireApplyArticleLanguage("de");
+      });
+      if ((await page.locator("#articles .article h3").first().textContent()) !== "Übersetzter Testtitel") {
+        fail("Accueil : le titre d'article traduit n'est pas affiché.");
+      }
+      if (!(await page.locator("#articles .article").first().textContent()).includes("geprüfte Übersetzungsprobe")) {
+        fail("Accueil : le résumé traduit n'est pas affiché.");
+      }
+      await page.selectOption("#language", "fr");
+      if ((await page.locator("#articles .article h3").first().textContent()) !== originalArticleTitle) {
+        fail("Accueil : le texte original n'est pas restauré après changement de langue.");
+      }
       await page.selectOption("#language", "ar");
       const arabic = await page.evaluate(() => ({
         direction: document.documentElement.dir,
