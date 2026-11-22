@@ -44,6 +44,28 @@ class ProductWorkshopTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             evaluate_opportunity(data)
 
+    def test_list_opportunities_sorts_by_score_and_skips_invalid_files(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            first = evaluate_opportunity(sample())
+            second_data = sample()
+            second_data["name"] = "Assistant de documentation"
+            second_data["scores"] = {key: 2 for key in DIMENSIONS}
+            second = evaluate_opportunity(second_data)
+            save_opportunity(first, root)
+            save_opportunity(second, root)
+            (root / "broken.json").write_text("{invalid", encoding="utf-8")
+            ranked = __import__("atelier_produits").list_opportunities(root)
+            self.assertEqual([item["score_percent"] for item in ranked], [80, 40])
+            self.assertEqual(ranked[0]["id"], first["id"])
+
+    def test_list_opportunities_rejects_non_directory(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "file.json"
+            path.write_text("{}", encoding="utf-8")
+            with self.assertRaises(ValueError):
+                __import__("atelier_produits").list_opportunities(path)
+
     def test_saves_report(self):
         report = evaluate_opportunity(sample())
         with tempfile.TemporaryDirectory() as folder:
