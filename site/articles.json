@@ -1,5 +1,36 @@
 [
   {
+    "id": "20261122T130527-9db21728",
+    "date": "2026-11-22T13:05+00:00",
+    "theme": "Gaming et jeux vidéo — veille générale (recherche de secours)",
+    "title": "Gaming et jeux vidéo : détails chiffrés non confirmés",
+    "summary": "Les sources consultées mentionnent Gaming et jeux vidéo, mais elles ne fournissent pas suffisamment d'éléments pour confirmer les caractéristiques chiffrées avancées. Les performances, la compatibilité et les spécifications techniques doivent être vérifiées dans les fiches officielles.",
+    "verdict": "Les chiffres et caractéristiques détaillés ne sont pas établis par les sources consultées.",
+    "tip": "Consulter les annonces et fiches techniques officielles avant de retenir des chiffres précis.",
+    "sources": [
+      {
+        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
+        "description": "Allons en paix.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
+        "source_type": "media"
+      },
+      {
+        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
+        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261122T130527-9db21728.mp3"
+  },
+  {
     "id": "20261122T130303-673c24a5",
     "date": "2026-11-22T13:03+00:00",
     "theme": "GTA VI — lancement et premiers retours vérifiés",
@@ -1162,36 +1193,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261119T175301-4f7a1d45.mp3"
-  },
-  {
-    "id": "20261119T175215-2debaddd",
-    "date": "2026-11-19T17:52+00:00",
-    "theme": "Call of Duty: Modern Warfare 4 — suivi après lancement (23 octobre 2026)",
-    "title": "Modern Warfare 4 : retour du mode compétitif et impact incertain",
-    "summary": "Call of Duty 23 : Modern Warfare 4 a conclu la quadrilogie avec un gameplay solide, mais les critiques le décrivent comme « littéralement un Black Ops 7 très fainéant ». Le retour d’un mode compétitif en saison 2, intégré à Warzone, est confirmé, mais son influence sur la rétention reste à vérifier. Les joueurs attendent de voir si cette évolution ravive l’intérêt, tandis que les détails précis de l’impact restent inconnus.",
-    "verdict": "Les sources indiquent un retour du mode compétitif et un gameplay solide, mais l’effet réel sur la rétention n’est pas encore démontré.",
-    "tip": "Surveillez les mises à jour de Warzone et les statistiques de rétention pour confirmer l’impact du nouveau mode.",
-    "sources": [
-      {
-        "title": "[TEST] Call of Duty 23: Modern Warfare 4 conclut en beauté la nouvelle quadrilogie",
-        "publisher": "nofrag.com",
-        "domain": "nofrag.com",
-        "published": "Tue, 17 Nov 2026 16:00:00 GMT",
-        "description": "Après un Black Ops 7 très fainéant l’année dernière par Treyarch, le nouveau Call of Duty était attendu au tournant. Mais les connaisseurs le savent, quand ...",
-        "url": "https://nofrag.com/test-call-of-duty-23-modern-warfare-4-conclut-en-beaute-la-nouvelle-quadrilogie/",
-        "source_type": "media"
-      },
-      {
-        "title": "Modern Warfare 4 confirme le retour d'un mode tant attendu en saison 2 et Warzone en profitera aussi",
-        "publisher": "msn.com",
-        "domain": "msn.com",
-        "published": "Sat, 14 Nov 2026 00:00:49 GMT",
-        "description": "Privés de parties classées depuis le lancement de Modern Warfare 4, les joueurs tenaient Infinity Ward sous pression. Saison 2, Warzone, règles façon CDL : jusqu’où ira ce virage compétitif ?",
-        "url": "https://www.msn.com/fr-fr/gaming/prochaines-sorties-jeux/modern-warfare-4-confirme-le-retour-d-un-mode-tant-attendu-en-saison-2-et-warzone-en-profitera-aussi/ar-AA2hpEzq",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261119T175215-2debaddd.mp3"
   }
 ]
