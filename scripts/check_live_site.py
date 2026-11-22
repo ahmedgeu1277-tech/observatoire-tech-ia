@@ -17,12 +17,32 @@ failures: list[str] = []
 checks = 0
 
 
+def _open_url(req: Request):
+    """N'ouvre que des URL HTTPS du même hôte que le site configuré."""
+    target = urlparse(req.full_url)
+    origin = urlparse(BASE_URL)
+    if (
+        target.scheme.lower() != "https"
+        or target.hostname != origin.hostname
+        or target.port not in (None, 443)
+        or target.username is not None
+        or target.password is not None
+    ):
+        raise RuntimeError("URL de contrôle hors origine HTTPS autorisée.")
+    response = urlopen(req, timeout=TIMEOUT)  # nosec B310: schéma HTTPS et hôte contrôlés ci-dessus.
+    final = urlparse(response.geturl())
+    if final.scheme.lower() != "https" or final.hostname != origin.hostname:
+        response.close()
+        raise RuntimeError("Redirection vers une origine non autorisée.")
+    return response
+
+
 def request(url: str, method: str = "HEAD"):
     global checks
     checks += 1
     req = Request(url, method=method, headers={"User-Agent": "NEXORA-Live-Healthcheck/1.0"})
     try:
-        return urlopen(req, timeout=TIMEOUT)
+        return _open_url(req)
     except HTTPError as exc:
         if method == "HEAD" and exc.code in (403, 405, 501):
             return request(url, "GET")
@@ -57,7 +77,7 @@ def read_json(path: str, label: str):
     checks += 1
     try:
         req = Request(url, headers={"User-Agent": "NEXORA-Live-Healthcheck/1.0"})
-        with urlopen(req, timeout=TIMEOUT) as response:
+        with _open_url(req) as response:
             if response.status != 200:
                 raise RuntimeError(f"HTTP {response.status}")
             data = json.loads(response.read().decode("utf-8"))
