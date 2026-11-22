@@ -10,7 +10,7 @@ import secrets
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import unquote
 
-from gestionnaire_missions import MissionQueue
+import atelier_produits\nfrom gestionnaire_missions import MissionQueue
 
 MAX_BODY_BYTES = 16_384
 
@@ -39,16 +39,19 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f6f2;padding:10px;
 <div><label>Durée (s)</label><input id="duration" type="number" min="60" max="180" value="180"></div></div>
 <label>Échéance facultative</label><input id="deadline" type="datetime-local"><button>Ajouter la mission</button><span id="form-status" role="status"></span></form></section>
 <section><h2>File des missions</h2><button class="secondary" id="refresh">Actualiser</button><button id="run-next" type="button">Exécuter la prochaine mission</button><span id="status" role="status"></span><div id="items"></div></section>
+<section><h2>Portefeuille R&D</h2><button class="secondary" id="refresh-products" type="button">Actualiser</button><span id="products-status" role="status"></span><div id="products"></div></section>
 <section><h2>Détail de la mission</h2><pre id="detail">Choisis une mission.</pre></section></main>
 <script>
 const TOKEN=__TOKEN__;
 async function api(path,options={}){const headers={Authorization:"Bearer "+TOKEN,...(options.headers||{})};if(options.body)headers["Content-Type"]="application/json";const r=await fetch(path,{...options,headers,cache:"no-store"});const data=await r.json().catch(()=>({error:"Réponse invalide"}));if(!r.ok)throw Error(data.error||"HTTP "+r.status);return data;}
 function el(tag,text,cls){const n=document.createElement(tag);n.textContent=text;if(cls)n.className=cls;return n;}
+async function refreshProducts(){const box=document.getElementById("products"),status=document.getElementById("products-status");status.textContent="Chargement…";try{const rows=await api("/api/opportunities");box.replaceChildren();for(const item of rows){const card=el("article","","mission");card.append(el("b",item.name),el("span",item.score_percent+"/100 · "+item.decision));card.append(el("p",item.problem));const select=document.createElement("select");for(const value of ["candidate","research","prototype","validated","rejected"]){const option=el("option",value);option.value=value;option.selected=(item.workflow_status||"candidate")===value;select.append(option);}const save=el("button","Mettre à jour","secondary");save.onclick=async()=>{try{await api("/api/opportunities/"+encodeURIComponent(item.id)+"/status",{method:"POST",body:JSON.stringify({status:select.value})});await refreshProducts();}catch(e){status.textContent=e.message;}};card.append(select,save);box.append(card);}if(!rows.length)box.append(el("p","Aucune opportunité enregistrée dans le laboratoire."));status.textContent=rows.length+" opportunité(s)";}catch(e){status.textContent=e.message;}}
+
 async function refresh(){const status=document.getElementById("status"),items=document.getElementById("items");status.textContent="Chargement…";try{const rows=await api("/api/missions");items.replaceChildren();for(const row of rows){const card=el("article","","mission");card.append(el("b",row.id.slice(0,10)),el("span",row.status+" · "+row.priority));if(row.due_at)card.append(el("p","Échéance : "+row.due_at));const detail=el("button","Détail","secondary");detail.onclick=async()=>{try{document.getElementById("detail").textContent=JSON.stringify(await api("/api/missions/"+row.id),null,2);}catch(e){document.getElementById("detail").textContent=e.message;}};card.append(detail);if(["pending","running"].includes(row.status)){const cancel=el("button","Annuler","secondary");cancel.onclick=async()=>{try{await api("/api/missions/"+row.id+"/cancel",{method:"POST",body:"{}"});refresh();}catch(e){status.textContent=e.message;}};card.append(cancel);}items.append(card);}if(!rows.length)items.append(el("p","Aucune mission enregistrée."));status.textContent=rows.length+" mission(s)";}catch(e){status.textContent=e.message;}}
-document.getElementById("refresh").onclick=refresh;document.getElementById("run-next").onclick=async()=>{const status=document.getElementById("status");status.textContent="Exécution bornée en cours…";try{const result=await api("/api/worker/run-next",{method:"POST",body:"{}"});status.textContent=result.status||"Aucune mission en attente";await refresh();}catch(e){status.textContent=e.message;}};
+document.getElementById("refresh").onclick=refresh;document.getElementById("refresh-products").onclick=refreshProducts;document.getElementById("run-next").onclick=async()=>{const status=document.getElementById("status");status.textContent="Exécution bornée en cours…";try{const result=await api("/api/worker/run-next",{method:"POST",body:"{}"});status.textContent=result.status||"Aucune mission en attente";await refresh();}catch(e){status.textContent=e.message;}};
 
 document.getElementById("form").onsubmit=async event=>{event.preventDefault();const out=document.getElementById("form-status");const deadline=document.getElementById("deadline").value;const payload={mission:document.getElementById("mission").value,context:document.getElementById("context").value,agents:[...document.querySelectorAll('input[name="agent"]:checked')].map(x=>x.value),priority:document.getElementById("priority").value,max_duration_seconds:Number(document.getElementById("duration").value),due_at:deadline?new Date(deadline).toISOString():null};try{const result=await api("/api/missions",{method:"POST",body:JSON.stringify(payload)});out.textContent="Mission ajoutée : "+result.id.slice(0,10);event.target.reset();document.getElementById("duration").value="180";document.querySelectorAll('input[name="agent"]').forEach(x=>x.checked=true);refresh();}catch(e){out.textContent=e.message;}};
-refresh();setInterval(refresh,15000);
+refresh();refreshProducts();setInterval(()=>{refresh();refreshProducts();},15000);
 </script></body></html>"""
 
 
@@ -104,6 +107,9 @@ def create_server(port: int = 8765, queue: MissionQueue | None = None, token: st
                 return
             if self.path == "/api/missions":
                 self.send_json(200, mission_queue.list_missions())
+            if self.path == "/api/opportunities":
+                self.send_json(200, atelier_produits.list_opportunities(atelier_produits.DEFAULT_PRODUCTS_DIR))
+                return
                 return
             if self.path.startswith("/api/missions/"):
                 mission_id = unquote(self.path.removeprefix("/api/missions/"))
@@ -124,6 +130,19 @@ def create_server(port: int = 8765, queue: MissionQueue | None = None, token: st
                 if self.path == "/api/missions":
                     mission_id = mission_queue.enqueue(body)
                     self.send_json(201, {"id": mission_id, "status": "pending"})
+                    return
+                if self.path.startswith("/api/opportunities/") and self.path.endswith("/status"):
+                    opportunity_id = unquote(self.path[len("/api/opportunities/"):-len("/status")].strip("/"))
+                    if "/" in opportunity_id:
+                        self.send_json(404, {"error": "Opportunité introuvable."})
+                        return
+                    report = atelier_produits.update_opportunity_status(
+                        atelier_produits.DEFAULT_PRODUCTS_DIR,
+                        opportunity_id,
+                        body.get("status"),
+                        body.get("note"),
+                    )
+                    self.send_json(200, {"id": report["id"], "workflow_status": report["workflow_status"]})
                     return
                 if self.path == "/api/worker/run-next":
                     result = mission_queue.run_next()
