@@ -31,6 +31,8 @@ self.addEventListener("fetch", event => {
     return;
   }
   const url = new URL(request.url);
+  // Ne pas mettre en cache les médias lourds : préserver le stockage des téléphones et tablettes.
+  if (/\\.(?:mp3|mp4|webm|m4a|ogg|wav)$/i.test(url.pathname)) return;
   if (url.pathname.includes("/.laboratoire_prive/")) return;
 
   if (request.mode === "navigate") {
