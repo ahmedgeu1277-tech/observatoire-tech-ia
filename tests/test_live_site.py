@@ -85,3 +85,10 @@ class PublicChallengeRegressionTests(unittest.TestCase):
         self.assertEqual(block.count('export:"'), 7)
         self.assertEqual(block.count('import:"'), 7)
 
+
+    def test_live_translation_coverage_counts_text_and_audio_for_six_languages(self):
+        self.assertIn('id="translation-coverage"', self.html)
+        self.assertIn('const translationLanguages=["en","es","de","pt","ar","zh"]', self.html)
+        self.assertIn('["title","summary","verdict","tip","audio_url"]', self.html)
+        self.assertIn('coverageLabel:', self.html)
+
