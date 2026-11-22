@@ -62,3 +62,12 @@ python atelier_produits.py evaluate opportunite.json
 ```
 
 Le classement ne prouve ni la demande du marché ni la nouveauté. Les références doivent être vérifiées et les décisions commerciales restent soumises à une revue humaine.
+
+
+Le cycle de travail local est suivi par les statuts `candidate`, `research`, `prototype`, `validated` et `rejected`. Exemple :
+
+```bash
+python atelier_produits.py status IDENTIFIANT research --note "Comparer les solutions concurrentes."
+```
+
+L'historique conserve les changements de statut et les notes sont filtrées contre les secrets potentiels. Un statut `validated` signifie uniquement que l'équipe a marqué l'étape comme terminée ; il ne certifie pas le marché ni la sécurité du produit.
