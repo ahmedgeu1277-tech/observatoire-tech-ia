@@ -1,5 +1,110 @@
 [
   {
+    "id": "20261122T151410-8b482428",
+    "date": "2026-11-22T15:14+00:00",
+    "theme": "GTA VI — lancement et premiers retours vérifiés",
+    "title": "GTA VI : plantages et PNJ violents sur PS5, boutiques exclusives et viralité du personnage Mandy",
+    "summary": "Les premiers retours de GTA VI montrent des plantages fréquents sur PS5, signalés par l’erreur CE‑108255‑1, et des PNJ qui réagissent de façon extrêmement violente, selon IGN France. Parallèlement, des boutiques exclusives ont refusé d’accueillir les acheteurs de l’édition non Ultimate, tandis que le personnage de l’actrice Mandy est devenu viral, créant une tension entre distribution et communauté. Ces incidents restent isolés, aucune autre source indépendante ne les confirme encore.",
+    "verdict": "Les incidents rapportés proviennent d’un seul média (IGN France) et ne sont pas corroborés par d’autres sources indépendantes.",
+    "tip": "Surveillez les mises à jour officielles de Rockstar pour confirmer la stabilité du jeu et la politique de distribution des éditions.",
+    "sources": [
+      {
+        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
+        "description": "Allons en paix.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
+        "source_type": "media"
+      },
+      {
+        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
+        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
+        "source_type": "media"
+      },
+      {
+        "title": "Les joueurs de GTA 6 réagissent après que des boutiques exclusives ont accueilli les acheteurs de l’édition non Ultimate avec des portes fermées",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 21:27:24 +0000",
+        "description": "Trop select.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94167/les-joueurs-de-gta-6-reagissent-apres-que-des-boutiques-exclusives-ont-accueilli-les-acheteurs-de-le",
+        "source_type": "media"
+      },
+      {
+        "title": "L’actrice qui incarne Mandy dans GTA 6 s’exprime avec enthousiasme après que son personnage est devenu viral",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 09:27:07 +0000",
+        "description": "« Vous savez bien que nous avons tous mangé une pomme. »",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94152/lactrice-qui-incarne-mandy-dans-gta-6-sexprime-avec-enthousiasme-apres-que-son-personnage-est-devenu",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "translations": {
+      "en": {
+        "theme": "GTA VI — launch and initial verified feedback",
+        "title": "GTA VI: crashes and violent NPCs on PS5, exclusive stores and the viral character Mandy",
+        "summary": "Initial feedback on GTA VI shows frequent crashes on PS5, reported as error CE‑108255‑1, and NPCs reacting extremely violently, according to IGN France. Meanwhile, exclusive stores refused to serve buyers of the non‑Ultimate edition, while the character played by actress Mandy went viral, creating tension between distribution and the community. These incidents remain isolated, with no other independent source confirming them yet.",
+        "verdict": "The reported incidents come from a single media outlet (IGN France) and are not corroborated by other independent sources.",
+        "tip": "Monitor Rockstar’s official updates to confirm game stability and edition distribution policy.",
+        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links for full context.",
+        "audio_url": "audio/20261122T151410-8b482428-en.mp3"
+      },
+      "es": {
+        "theme": "GTA VI — lanzamiento y primeros comentarios verificados",
+        "title": "GTA VI: fallos y NPCs violentos en PS5, tiendas exclusivas y la viralidad del personaje Mandy",
+        "summary": "Los primeros comentarios sobre GTA VI muestran fallos frecuentes en PS5, reportados con el error CE‑108255‑1, y NPCs que reaccionan de forma extremadamente violenta, según IGN France. Paralelamente, tiendas exclusivas se negaron a atender a compradores de la edición no Ultimate, mientras que el personaje interpretado por la actriz Mandy se volvió viral, creando tensión entre la distribución y la comunidad. Estos incidentes siguen siendo aislados, sin que otra fuente independiente los confirme todavía.",
+        "verdict": "Los incidentes reportados provienen de un solo medio (IGN France) y no están corroborados por otras fuentes independientes.",
+        "tip": "Supervisa las actualizaciones oficiales de Rockstar para confirmar la estabilidad del juego y la política de distribución de las ediciones.",
+        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulta los enlaces para obtener el contexto completo.",
+        "audio_url": "audio/20261122T151410-8b482428-es.mp3"
+      },
+      "de": {
+        "theme": "GTA VI — Start und erste verifizierte Rückmeldungen",
+        "title": "GTA VI: Abstürze und gewalttätige NPCs auf PS5, exklusive Geschäfte und die virale Figur Mandy",
+        "summary": "Die ersten Rückmeldungen zu GTA VI zeigen häufige Abstürze auf PS5, gemeldet als Fehler CE‑108255‑1, und NPCs, die extrem gewalttätig reagieren, laut IGN France. Gleichzeitig weigerten sich exklusive Geschäfte, Käufer der Nicht-Ultimate-Ausgabe aufzunehmen, während die Figur der Schauspielerin Mandy viral wurde und Spannungen zwischen Vertrieb und Community erzeugte. Diese Vorfälle bleiben isoliert, keine andere unabhängige Quelle bestätigt sie noch.",
+        "verdict": "Die gemeldeten Vorfälle stammen von einem einzigen Medium (IGN France) und werden von anderen unabhängigen Quellen nicht bestätigt.",
+        "tip": "Behalte Rockstar’s offizielle Updates im Auge, um die Stabilität des Spiels und die Distributionspolitik der Ausgaben zu bestätigen.",
+        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Prüfe die Links für den vollständigen Kontext.",
+        "audio_url": "audio/20261122T151410-8b482428-de.mp3"
+      },
+      "pt": {
+        "theme": "GTA VI — lançamento e primeiros retornos verificados",
+        "title": "GTA VI: falhas e NPCs violentos no PS5, lojas exclusivas e a viralidade da personagem Mandy",
+        "summary": "Os primeiros retornos sobre GTA VI mostram falhas frequentes no PS5, relatadas como erro CE‑108255‑1, e NPCs que reagem de forma extremamente violenta, segundo IGN France. Paralelamente, lojas exclusivas recusaram atender compradores da edição não Ultimate, enquanto a personagem interpretada pela atriz Mandy tornou-se viral, criando tensão entre distribuição e comunidade. Esses incidentes permanecem isolados, sem confirmação de outras fontes independentes ainda.",
+        "verdict": "Os incidentes relatados vêm de um único meio (IGN France) e não são corroborados por outras fontes independentes.",
+        "tip": "Monitore as atualizações oficiais da Rockstar para confirmar a estabilidade do jogo e a política de distribuição das edições.",
+        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Consulte os links para obter o contexto completo.",
+        "audio_url": "audio/20261122T151410-8b482428-pt.mp3"
+      },
+      "ar": {
+        "theme": "GTA VI — الإطلاق وردود الفعل الأولية المُتحققة",
+        "title": "GTA VI: الأعطال والـ NPC المتفجرين على PS5، المتاجر الحصرية وانتشار شخصية ماندي",
+        "summary": "تُظهر ردود الفعل الأولية على GTA VI أعطالاً متكررة على PS5، مُبلغاً عنها كخطأ CE‑108255‑1، وNPC يتفاعلون بشكل عنيف للغاية، وفقاً لـ IGN France. في الوقت نفسه، رفضت المتاجر الحصرية استقبال مشتركي النسخة غير Ultimate، بينما أصبحت شخصية الممثلة ماندي فيروسية، مما يخلق توتراً بين التوزيع والمجتمع. لا تزال هذه الحوادث معزولة، ولا تؤكد أي مصدر مستقل آخر حتى الآن.",
+        "verdict": "الحوادث المبلغ عنها تأتي من وسيلة إعلام واحدة (IGN France) ولا يتم تأكيدها من قبل مصادر مستقلة أخرى.",
+        "tip": "راقب التحديثات الرسمية من Rockstar لتأكيد استقرار اللعبة وسياسة توزيع الإصدارات.",
+        "ai_notice": "تم كتابة المقال بمساعدة groq من المصادر المذكورة. راجع الروابط للحصول على السياق الكامل.",
+        "audio_url": "audio/20261122T151410-8b482428-ar.mp3"
+      },
+      "zh": {
+        "theme": "GTA VI — 上线与初步核实反馈",
+        "title": "GTA VI：PS5 上的崩溃与暴力 NPC，专属商店与 Mandy 角色的病毒式传播",
+        "summary": "GTA VI 的初步反馈显示 PS5 上频繁崩溃，错误码为 CE‑108255‑1，并且 NPC 以极端暴力方式反应，IGN France 报道。与此同时，专属商店拒绝接待非 Ultimate 版购买者，而演员 Mandy 扮演的角色走红，导致发行与社区之间产生紧张。此类事件仍属孤立，尚未有其他独立来源确认。",
+        "verdict": "所报告的事件仅来自单一媒体（IGN France），未得到其他独立来源的证实。",
+        "tip": "请关注 Rockstar 官方更新，以确认游戏稳定性和发行版分销政策。",
+        "ai_notice": "文章使用 groq 根据所列来源撰写。请查看链接获取完整背景。",
+        "audio_url": "audio/20261122T151410-8b482428-zh.mp3"
+      }
+    },
+    "audio_url": "audio/20261122T151410-8b482428.mp3"
+  },
+  {
     "id": "20261122T151104-0c96991e",
     "date": "2026-11-22T15:11+00:00",
     "theme": "Actualités intelligence artificielle",
@@ -1200,36 +1305,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261119T182651-f78b016d.mp3"
-  },
-  {
-    "id": "20261119T175642-14f9a5e5",
-    "date": "2026-11-19T17:56+00:00",
-    "theme": "Technologie, IA et jeux vidéo — veille générale de secours",
-    "title": "Ubisoft licencie 166 employés et GTA 6 teste FSR 4.1",
-    "summary": "Ubisoft a annoncé la suppression de 166 postes répartis entre ses studios de Montréal et de Québec, ce qui pourrait indiquer une contraction de la production de jeux AAA, bien que les motivations précises restent inconnues. Parallèlement, GTA 6 a intégré la technologie FSR 4.1 sur Xbox Series S pour upscaler le jeu de 720 p à 1080 p, mais l’impact réel sur la performance et l’expérience utilisateur n’a pas encore été confirmé. Les lecteurs intéressés par l’évolution de l’industrie et les innovations graphiques trouveront ces développements pertinents, tandis que les détails sur les raisons des licenciements et l’efficacité de la technologie restent à éclaircir.",
-    "verdict": "Factuel",
-    "tip": "Les informations proviennent d’articles IGN France et ne constituent pas des déclarations officielles d’Ubisoft ou de Rockstar.",
-    "sources": [
-      {
-        "title": "Ubisoft confirme de nouveaux licenciements : 166 emplois sont supprimés au sein de deux studios majeurs",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 17:37:12 +0000",
-        "description": "Perte de personnel dans des bureaux importants à Montréal et au Québec.",
-        "url": "https://fr.ign.com/assassins-creed-codename-red/94097/ubisoft-confirme-de-nouveaux-licenciements-166-emplois-sont-supprimes-au-sein-de-deux-studios-majeur",
-        "source_type": "media"
-      },
-      {
-        "title": "L'I.A continue ses ravages dans le jeu vidéo : 54 % des développeurs licenciés toujours sans emploi et ça ne va pas s'arranger",
-        "publisher": "JeuxVideo.com",
-        "domain": "news.google.com",
-        "published": "Tue, 17 Nov 2026 11:50:08 GMT",
-        "description": "L'I.A continue ses ravages dans le jeu vidéo : 54 % des développeurs licenciés toujours sans emploi et ça ne va pas s'arranger    JeuxVideo.com",
-        "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxON0t4Y1BnZUJYSVMxN3lhV21vYTl0bWlQYlFNMURxcjdiRTFTLV84aHZQVnN4ZGl5bEhVQWxOWHlQQWtVM0pIV092bU81TUNuTWZoYVQzZDJIOGZNUExYTmxJS0RlZ2ZSb0I4SVFYYzFkc0dJRVZhYnBmR2RabjdRMTZwM3NYZmpCcE1rNUR5R3Nhb2NRc1M0bXdPUVM1b2s4Y3ltazZ4VUpHQU82WmdIUFFzeDZ1SDRwV3hkNno3QmVFUGdDc1NEZl9PNkktaElFR3BhQmNYVkROVUlQb1I2YTRFaDk5SUZ2TzlOaTFiY05pSGFPcHlTRA?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261119T175642-14f9a5e5.mp3"
   }
 ]
