@@ -107,3 +107,11 @@ L'estimation pondérée est passée à **56,48 / 100** en portant le domaine « 
 - Les liens, titres de sources, dates et fichiers audio ne sont pas traduits ni modifiés par ce traitement. Le navigateur affiche les champs traduits uniquement lorsqu'une traduction complète pour la langue choisie existe.
 - Le workflow `.github/workflows/traduire-archives.yml` traite progressivement trois anciens articles par jour, dans l'ordre du plus ancien au plus récent. Il utilise uniquement le fournisseur Groq configuré dans les secrets GitHub, sans recours à Hugging Face ni à un service payant. Si le quota est indisponible, le lot s'arrête sans corrompre le catalogue.
 - Le traitement est limité à cinq articles maximum par exécution et conserve les traductions partielles pour les compléter lors d'une exécution ultérieure. Le résultat doit être contrôlé dans les journaux GitHub Actions ; la planification quotidienne n'est pas une garantie d'exécution à heure fixe.
+
+
+## Tableau de bord privé local — 22 novembre 2026
+
+- Le module `laboratoire_dashboard.py` ajoute une interface locale pour créer des missions, consulter leur détail et leur état, voir leur priorité et leur échéance, et demander une annulation coopérative.
+- Le serveur écoute exclusivement sur `127.0.0.1`, utilise un jeton aléatoire en mémoire, refuse les requêtes inter-origines, limite les corps JSON à 16 Ko et applique des en-têtes CSP, no-store, no-referrer et anti-iframe.
+- L'interface n'est pas intégrée à GitHub Pages et n'est pas un tableau de bord distant. Elle nécessite de lancer manuellement `python laboratoire_dashboard.py` sur une machine qui exécute le projet ; elle s'arrête avec Ctrl+C.
+- Les missions sont triées par priorité puis échéance, avec migration SQLite pour les bases existantes. L'exécution reste bornée à trois agents et 180 secondes par mission ; aucun code généré n'est exécuté.
