@@ -1,5 +1,92 @@
 [
   {
+    "id": "20261122T214906-6d7186d0",
+    "date": "2026-11-22T21:49+00:00",
+    "theme": "GTA VI — lancement et premiers retours vérifiés",
+    "title": "GTA VI : plantages PS5 et PNJ violents signalés",
+    "summary": "Depuis son lancement, GTA VI fait l’objet de retours mitigés. Des joueurs sur PS5 rapportent des plantages accompagnés de l’erreur CE‑108255‑1, tandis que d’autres constatent que certains PNJ réagissent de façon extrêmement violente, incitant à les éviter. Ces incidents soulignent un problème technique non résolu et un déséquilibre potentiel du gameplay. Les développeurs n’ont pas encore publié de mise à jour officielle, laissant les joueurs dans l’incertitude quant à la résolution de ces bugs.",
+    "verdict": "Les retours indiquent des problèmes techniques et de gameplay, mais aucune confirmation officielle n’a été donnée pour une correction imminente.",
+    "tip": "Surveillez les mises à jour de Rockstar et les communiqués officiels pour connaître les correctifs à venir.",
+    "sources": [
+      {
+        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
+        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
+        "source_type": "media"
+      },
+      {
+        "title": "Les joueurs de GTA 6 réagissent après que des boutiques exclusives ont accueilli les acheteurs de l’édition non Ultimate avec des portes fermées",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 21:27:24 +0000",
+        "description": "Trop select.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94167/les-joueurs-de-gta-6-reagissent-apres-que-des-boutiques-exclusives-ont-accueilli-les-acheteurs-de-le",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "translations": {
+      "en": {
+        "theme": "GTA VI — launch and verified early feedback",
+        "title": "GTA VI: PS5 crashes and violent NPCs reported",
+        "summary": "Since its launch, GTA VI has received mixed feedback. PS5 players report crashes accompanied by the CE‑108255‑1 error, while others note that some NPCs react extremely violently, prompting avoidance. These incidents highlight an unresolved technical issue and a potential gameplay imbalance. Developers have not yet released an official update, leaving players uncertain about bug resolution.",
+        "verdict": "The feedback indicates technical and gameplay problems, but no official confirmation has been given for an imminent fix.",
+        "tip": "Watch for Rockstar updates and official statements to learn about upcoming fixes.",
+        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links for full context.",
+        "audio_url": "audio/20261122T214906-6d7186d0-en.mp3"
+      },
+      "es": {
+        "theme": "GTA VI — lanzamiento y primeros comentarios verificados",
+        "title": "GTA VI: caídas en PS5 y NPCs violentos reportados",
+        "summary": "Desde su lanzamiento, GTA VI ha recibido comentarios mixtos. Los jugadores de PS5 informan caídas acompañadas del error CE‑108255‑1, mientras que otros notan que algunos NPCs reaccionan de manera extremadamente violenta, lo que sugiere evitarlos. Estos incidentes resaltan un problema técnico no resuelto y un posible desequilibrio en el juego. Los desarrolladores aún no han publicado una actualización oficial, dejando a los jugadores en incertidumbre sobre la resolución de los errores.",
+        "verdict": "Los comentarios indican problemas técnicos y de juego, pero no se ha dado confirmación oficial de una corrección inminente.",
+        "tip": "Mantente atento a las actualizaciones de Rockstar y a los comunicados oficiales para conocer las correcciones próximas.",
+        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulta los enlaces para obtener el contexto completo.",
+        "audio_url": "audio/20261122T214906-6d7186d0-es.mp3"
+      },
+      "de": {
+        "theme": "GTA VI — Start und verifizierte erste Rückmeldungen",
+        "title": "GTA VI: PS5-Abstürze und gewalttätige NPCs gemeldet",
+        "summary": "Seit seinem Start erhält GTA VI gemischte Rückmeldungen. PS5-Spieler berichten von Abstürzen begleitet von dem Fehler CE‑108255‑1, während andere feststellen, dass einige NPCs extrem gewalttätig reagieren, was zu einer Vermeidung führt. Diese Vorfälle weisen auf ein ungelöstes technisches Problem und ein potenzielles Ungleichgewicht im Gameplay hin. Die Entwickler haben noch keine offizielle Aktualisierung veröffentlicht, sodass die Spieler unsicher sind, ob die Fehler behoben werden.",
+        "verdict": "Die Rückmeldungen deuten auf technische und spielerische Probleme hin, jedoch wurde noch keine offizielle Bestätigung für eine baldige Korrektur gegeben.",
+        "tip": "Behalte Rockstar-Updates und offizielle Mitteilungen im Auge, um kommende Korrekturen zu erfahren.",
+        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Prüfe die Links für den vollständigen Kontext.",
+        "audio_url": "audio/20261122T214906-6d7186d0-de.mp3"
+      },
+      "pt": {
+        "theme": "GTA VI — lançamento e primeiros retornos verificados",
+        "title": "GTA VI: falhas no PS5 e NPCs violentos relatados",
+        "summary": "Desde o seu lançamento, GTA VI tem recebido feedback misto. Jogadores no PS5 relatam falhas acompanhadas do erro CE‑108255‑1, enquanto outros observam que alguns NPCs reagem de forma extremamente violenta, sugerindo evitá-los. Esses incidentes destacam um problema técnico não resolvido e um possível desequilíbrio no gameplay. Os desenvolvedores ainda não lançaram uma atualização oficial, deixando os jogadores na incerteza quanto à resolução desses bugs.",
+        "verdict": "Os retornos indicam problemas técnicos e de gameplay, mas nenhuma confirmação oficial foi dada para uma correção iminente.",
+        "tip": "Acompanhe as atualizações da Rockstar e os comunicados oficiais para saber sobre correções futuras.",
+        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Consulte os links para obter o contexto completo.",
+        "audio_url": "audio/20261122T214906-6d7186d0-pt.mp3"
+      },
+      "ar": {
+        "theme": "GTA VI — الإطلاق وردود الفعل الأولية المُتحققة",
+        "title": "GTA VI: تعطل PS5 وشخصيات غير لاعب عنيفة مُبلغ عنها",
+        "summary": "منذ إطلاقه، تلقت GTA VI تعليقات مختلطة. يشتكي لاعبو PS5 من تعطل مع خطأ CE‑108255‑1، بينما يلاحظ آخرون أن بعض الشخصيات غير اللاعب تتصرف بعنف شديد، مما يدفعهم لتجنبها. تُبرز هذه الحوادث مشكلة تقنية غير محلولة وتوازنًا محتملًا غير متوازن في طريقة اللعب. لم يُنشر مطورو اللعبة بعد تحديثًا رسميًا، مما يترك اللاعبين في حالة عدم يقين بشأن حل هذه الأخطاء.",
+        "verdict": "تشير الردود إلى مشاكل تقنية ولعب، لكن لم يتم تأكيد أي إصلاح رسمي على الأرجح قريبًا.",
+        "tip": "تابع تحديثات Rockstar والبيانات الرسمية لمعرفة التصحيحات القادمة.",
+        "ai_notice": "تم كتابة المقال بمساعدة groq من المصادر المذكورة. راجع الروابط للحصول على السياق الكامل.",
+        "audio_url": "audio/20261122T214906-6d7186d0-ar.mp3"
+      },
+      "zh": {
+        "theme": "GTA VI — 上线与已验证的早期反馈",
+        "title": "GTA VI：PS5 崩溃与暴力 NPC 报告",
+        "summary": "自上线以来，GTA VI 收到混合反馈。PS5 玩家报告伴随 CE‑108255‑1 错误的崩溃，而其他玩家则注意到某些 NPC 行为极度暴力，建议避免。 这些事件凸显了未解决的技术问题和潜在的游戏平衡失衡。开发者尚未发布官方更新，玩家对错误修复仍不确定。",
+        "verdict": "反馈表明存在技术和游戏玩法问题，但尚未得到官方确认即将修复。",
+        "tip": "关注 Rockstar 的更新和官方公告，以了解即将到来的修复。",
+        "ai_notice": "文章使用 groq 根据所列来源撰写。请查看链接获取完整背景。",
+        "audio_url": "audio/20261122T214906-6d7186d0-zh.mp3"
+      }
+    },
+    "audio_url": "audio/20261122T214906-6d7186d0.mp3"
+  },
+  {
     "id": "20261122T183413-a8778944",
     "date": "2026-11-22T18:34+00:00",
     "theme": "Veille générale — résumé documentaire de secours",
@@ -740,46 +827,6 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261122T133939-202ab2c3.mp3"
-  },
-  {
-    "id": "20261122T132407-c4ac04cf",
-    "date": "2026-11-22T13:24+00:00",
-    "theme": "GTA VI — lancement et premiers retours vérifiés",
-    "title": "GTA VI : plantages PS5 et PNJ violents signalés",
-    "summary": "Depuis son lancement, GTA VI fait face à des plantages sur PS5 signalés par des joueurs, accompagnés de l’erreur CE‑108255‑1, et à des PNJ qui réagissent de façon extrêmement violente, selon des articles IGN France. Ces incidents ont poussé certains joueurs à éviter certaines zones du jeu. Les boutiques exclusives ont également refusé l’accès aux acheteurs de l’édition non Ultimate, créant une perception de sélectivité. Les vérifications indépendantes de ces problèmes restent limitées, et aucune source officielle n’a confirmé l’étendue des dysfonctionnements.",
-    "verdict": "Les retours initiaux indiquent des problèmes techniques et de gameplay, mais leur ampleur n’est pas encore confirmée par des sources indépendantes ou officielles.",
-    "tip": "Surveillez les mises à jour de Rockstar et les communiqués officiels pour savoir si des correctifs sont publiés.",
-    "sources": [
-      {
-        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
-        "description": "Allons en paix.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
-        "source_type": "media"
-      },
-      {
-        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
-        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
-        "source_type": "media"
-      },
-      {
-        "title": "Les joueurs de GTA 6 réagissent après que des boutiques exclusives ont accueilli les acheteurs de l’édition non Ultimate avec des portes fermées",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Sat, 21 Nov 2026 21:27:24 +0000",
-        "description": "Trop select.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94167/les-joueurs-de-gta-6-reagissent-apres-que-des-boutiques-exclusives-ont-accueilli-les-acheteurs-de-le",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261122T132407-c4ac04cf.mp3"
   },
   {
     "id": "20261122T130527-9db21728",
