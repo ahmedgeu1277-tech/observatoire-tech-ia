@@ -22,7 +22,7 @@ class VideoDocumentaireTests(unittest.TestCase):
 
 
     def test_documentary_page_template_has_mobile_overflow_guards(self):
-        source = Path(__file__).resolve().parents[1] / "documentaire_test.py"
+        source = Path(__file__).resolve().parents[1] / "templates" / "documentaire.html.tpl"
         template = source.read_text(encoding="utf-8")
         self.assertIn("*{box-sizing:border-box;min-width:0}", template)
         self.assertIn("overflow-x:hidden", template)
