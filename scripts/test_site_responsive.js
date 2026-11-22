@@ -106,6 +106,35 @@ async function inspectPage(browser, route, viewport) {
     for (const id of ["energy", "mobility", "air", "projects"]) {
       if (!(await page.locator("#" + id).count())) fail("Ville démo : indicateur absent " + id + ".");
     }
+    await page.selectOption("#language", "en");
+    if ((await page.locator("h1").textContent()) !== "Experimental city") {
+      fail("Ville démo : le titre anglais n'est pas appliqué.");
+    }
+    await page.selectOption("#language", "es");
+    if ((await page.locator("#map-title").textContent()) !== "Mapa de distritos") {
+      fail("Ville démo : le titre espagnol de la carte n'est pas appliqué.");
+    }
+    await page.selectOption("#language", "de");
+    if ((await page.locator("#metrics-title").textContent()) !== "Demo-Kennzahlen") {
+      fail("Ville démo : le titre allemand des indicateurs n'est pas appliqué.");
+    }
+    await page.selectOption("#language", "pt");
+    if ((await page.locator("#map-title").textContent()) !== "Mapa dos bairros") {
+      fail("Ville démo : le titre portugais de la carte n'est pas appliqué.");
+    }
+    await page.selectOption("#language", "ar");
+    const arabicCity = await page.evaluate(() => ({
+      direction: document.documentElement.dir,
+      title: document.querySelector("h1")?.textContent,
+    }));
+    if (arabicCity.direction !== "rtl" || arabicCity.title !== "مدينة تجريبية") {
+      fail("Ville démo : traduction arabe ou direction RTL incorrecte.");
+    }
+    await page.selectOption("#language", "zh");
+    if ((await page.locator("h1").textContent()) !== "实验城市") {
+      fail("Ville démo : le titre chinois n'est pas appliqué.");
+    }
+    await page.selectOption("#language", "fr");
     const disclaimer = await page.locator(".warning").textContent();
     if (!disclaimer.includes("fictive") || !disclaimer.includes("aucune donnée interne")) {
       fail("Ville démo : avertissement de simulation fictive ou de confidentialité absent.");
