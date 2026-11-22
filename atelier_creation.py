@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 from pathlib import Path
 
@@ -200,21 +201,25 @@ def generate_project(name: str, output_dir: str | Path, template: str) -> dict:
     if template not in TEMPLATES:
         raise ValueError("Modèle inconnu. Modèles : " + ", ".join(sorted(TEMPLATES)))
     raw_root = Path(output_dir).expanduser()
-    if raw_root.exists() and raw_root.is_symlink():
-        raise ValueError("Le dossier racine ne peut pas être un lien symbolique.")
+    if any(ancestor.is_symlink() for ancestor in (raw_root, *raw_root.parents)):
+        raise ValueError("Le dossier racine ne peut pas traverser un lien symbolique.")
     root = raw_root.resolve()
-    root.mkdir(parents=True, exist_ok=True)
+    root.mkdir(parents=True, exist_ok=True, mode=0o700)
+    os.chmod(root, 0o700)
     destination = root / slug
     if destination.is_symlink() or (destination.exists() and (not destination.is_dir() or any(destination.iterdir()))):
         raise FileExistsError("Dossier de destination non vide, lien symbolique ou fichier.")
-    destination.mkdir(parents=True, exist_ok=True)
+    destination.mkdir(parents=True, exist_ok=True, mode=0o700)
+    os.chmod(destination, 0o700)
     created = []
     for relative, template_text in TEMPLATES[template].items():
         target = destination / relative
-        target.parent.mkdir(parents=True, exist_ok=True)
+        target.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
+        os.chmod(target.parent, 0o700)
         if target.exists() or target.is_symlink():
             raise FileExistsError("Un fichier cible existe déjà : " + relative)
         target.write_text(template_text.replace("__NAME__", slug), encoding="utf-8")
+        os.chmod(target, 0o600)
         created.append(relative)
     return {"project_name": slug, "template": template, "directory": str(destination),
             "files": created, "code_executed": False, "published": False}
