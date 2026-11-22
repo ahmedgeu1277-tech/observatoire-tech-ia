@@ -158,7 +158,8 @@ def check_repository(root: Path = ROOT) -> dict:
         "themes": len(themes["themes"]),
         "articles": len(articles),
         "sources": source_count,
-        "audio_files": audio_count,\n        "documentary_media_files": documentary_media,
+        "audio_files": audio_count,
+        "documentary_media_files": documentary_media,
         "city_state_public": False,
         "agent_profiles": profiles_count,
     }
