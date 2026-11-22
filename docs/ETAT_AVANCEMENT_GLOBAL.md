@@ -22,7 +22,7 @@ Dernière évaluation fonctionnelle détaillée : 22 novembre 2026. Audits préc
 
 ## Résultat
 
-**Estimation pondérée recalculée : 65,23 / 100 (audit du 22 novembre 2026, commit de code vérifié c4206829).**
+**Estimation pondérée recalculée : 66,29 / 100 (audit du 22 novembre 2026, commit de code vérifié fe807070).**
 
 Ce pourcentage est un indicateur d'avancement fonctionnel construit à partir des domaines ci-dessous. Ce n'est ni un pourcentage de lignes de code terminées, ni une garantie de disponibilité, ni une certification de mise en production. Les notes sont des estimations prudentes fondées sur les fonctions présentes et les contrôles exécutés. Le précédent score de 56,48 % est conservé dans les bilans historiques plus haut.
 
@@ -31,10 +31,10 @@ Ce pourcentage est un indicateur d'avancement fonctionnel construit à partir de
 | Média, veille et site public | 23,53 % | 95 % | 22,35 |
 | Fournisseurs IA et orchestration d'agents | 17,65 % | 40 % | 7,06 |
 | Missions persistantes et autonomie | 17,65 % | 46 % | 8,12 |
-| Laboratoire privé et sécurité | 17,65 % | 61 % | 10,77 |
-| R&D et conception de produits | 11,76 % | 48 % | 5,64 |
-| Tests et amélioration continue | 11,76 % | 96 % | 11,29 |
-| **Total** | **100 %** |  | **65,23 %** |
+| Laboratoire privé et sécurité | 17,65 % | 63 % | 11,12 |
+| R&D et conception de produits | 11,76 % | 52 % | 6,12 |
+| Tests et amélioration continue | 11,76 % | 98 % | 11,52 |
+| **Total** | **100 %** |  | **66,29 %** |
 
 Calcul : somme de (poids × note du domaine) / 100.
 
@@ -52,10 +52,10 @@ Une file SQLite locale conserve les missions et leurs états ; un worker peut la
 ### Laboratoire privé et sécurité — 45 %
 Le dossier local du laboratoire est ignoré par Git, les contrôles Gitleaks, CodeQL, Bandit et Ruff sont présents, et un contrôles statiques complémentaires ont été ajoutés. Il n'existe pas encore de tableau de bord privé hébergé avec authentification et autorisations côté serveur. GitHub Pages reste public.
 
-### R&D et conception de produits — 48 %
+### R&D et conception de produits — 52 %
 L'atelier de sélection de produits note les opportunités selon la douleur client, les preuves de demande, la faisabilité, la différenciation, le coût et l'accès au marché. Des prototypes commencent à exister, mais les entretiens clients, les preuves de marché indépendantes, les tests avec de vrais utilisateurs et la validation économique restent à faire.
 
-### Tests et amélioration continue — 96 %
+### Tests et amélioration continue — 98 %
 La suite compte maintenant 112 tests Python réussis sur le commit `e34f646a` le 19 novembre, après ajout des tests de migration SQLite et d'annulation coopérative des missions. Le dernier workflow avancé a réussi : Ruff, Bandit, Gitleaks, CodeQL Python et JavaScript, ainsi que les tests Playwright des trois pages et les parcours responsive de l'accueil et du documentaire à 390, 768 et 1 440 px. Le diagnostic du dépôt a vérifié 25 articles, 85 sources et 24 fichiers audio, cinq profils d'agents et l'absence de données de ville dans le site public. La boucle d'auto-évaluation produit un rapport et un backlog ; elle ne réécrit pas le code de production et ne déploie pas de corrections de façon autonome.
 
 ## Périmètre de développement
@@ -235,3 +235,31 @@ La file locale conserve les missions, leurs priorités, échéances et tentative
 - La ville reste une démonstration fictive, sans données municipales réelles.
 - Les modèles Godot sont des points de départ, pas un éditeur complet ni une compilation validée.
 - Un avancement supérieur à 100 % n'est pas une mesure réelle : « 110 % » peut seulement désigner un objectif symbolique de périmètre complet plus améliorations supplémentaires.
+
+
+## Atelier de création intégré et sécurité des prototypes — 22 novembre 2026, commit fe807070
+
+- **Atelier accessible depuis le tableau de bord privé local :** formulaire et API authentifiée pour générer les huit familles de projets (site, application web, jeu navigateur, Godot 2D, Godot 3D, logiciel Python, audio et vidéo). Le chemin de sortie est fixé dans `.laboratoire_prive/prototypes` ; l'API n'accepte aucun chemin de sortie fourni par le navigateur.
+- **Protection des prototypes :** génération refusée si un dossier de sortie est un lien symbolique ; répertoires de projets en permissions POSIX `0700`, fichiers en `0600`. Un nom déjà utilisé renvoie HTTP 409 au lieu d'écraser un projet existant. Le générateur ne lance aucun code et ne publie aucun fichier.
+- **Équipe d'agents étendue :** six rôles sont disponibles (chercheur, critique, architecte, rédacteur, auditeur, planificateur). Le tableau de bord permet de sélectionner les rôles ; la limite serveur reste de trois agents par mission et la durée maximale demeure bornée.
+- **200 tests Python réussis** sur le commit `fe807070`, dont les nouveaux tests de génération depuis le dashboard, de conflit de nom, de rejet de liens symboliques et de permissions privées. Playwright, Ruff, Bandit, CodeQL Python/JavaScript et Gitleaks ont réussi. Le build et le déploiement Pages ont réussi.
+- La surveillance de production a terminé **85 requêtes HTTP avec zéro erreur**, y compris le manifeste, les médias documentaires et les six variantes audio/vidéo/sous-titres.
+- Score pondéré révisé : **66,29 %**. Le projet reste incomplet ; ce chiffre est une estimation de périmètre, pas une certification.
+
+### Révision des domaines
+
+- Média, veille et site public : 95 %.
+- Fournisseurs IA et orchestration : 40 % (six rôles, mais Hugging Face n'est pas confirmé comme fournisseur gratuit disponible).
+- Missions persistantes et autonomie : 46 % (file locale, relances bornées, maximum trois agents ; pas de service cloud autonome permanent).
+- Laboratoire privé et sécurité : 63 % (dashboard local, génération de prototypes privée, protections de chemin et permissions ; pas de dashboard distant authentifié).
+- R&D et conception de produits : 52 % (atelier multi-format et modèles Godot 2D/3D ; les projets ne sont pas encore compilés/testés dans Godot et ne constituent pas un IDE complet).
+- Tests et amélioration continue : 98 % (200 tests Python et contrôles automatisés réussis ; essais sur appareils physiques et validation réelle des jeux restent à faire).
+
+### Limites toujours ouvertes
+
+- Pas de classement mondial des défis : les points restent locaux au navigateur.
+- Pas de backend privé hébergé ; le tableau de bord fonctionne uniquement sur la machine qui exécute Python.
+- Les workflows GitHub Actions sont des exécutions planifiées, pas des agents permanents 24 h/24.
+- La ville 3D est une simulation fictive, pas un jumeau numérique connecté.
+- Les modèles Godot créent des squelettes, pas des jeux finalisés ; aucun test de compilation Godot n'a été effectué.
+- « 110 % » ne peut pas être un pourcentage réel de complétude : le maximum mesurable reste 100 %, les améliorations supplémentaires se décrivent séparément.
