@@ -1,10 +1,227 @@
 {
-  "created_at": "2026-11-22T11:06:55.851541+00:00",
-  "expires_at": "2026-12-22T11:06:55.851541+00:00",
-  "audio_file": "documentaire-test-20261122T110655Z.mp3",
-  "video_file": "documentaire-test-20261122T110655Z.mp4",
-  "archive_file": "documentaire-test-20261122T110655Z.md",
+  "created_at": "2026-11-22T11:20:15.224319+00:00",
+  "expires_at": "2026-12-22T11:20:15.224319+00:00",
+  "audio_file": "documentaire-test-20261122T112015Z.mp3",
+  "video_file": "documentaire-test-20261122T112015Z.mp4",
+  "archive_file": "documentaire-test-20261122T112015Z.md",
   "title": "Les actualités Tech & Gaming : quatre dossiers à vérifier",
   "retention_days": 30,
-  "translations": {}
+  "translations": {
+    "en": {
+      "name": "English",
+      "audio": "documentaire-en-20261122T112015Z.mp3",
+      "video": "documentaire-en-20261122T112015Z.mp4",
+      "subtitles": "documentaire-en-20261122T112015Z.vtt",
+      "text": {
+        "title": "Tech & Gaming News: Four Stories to Verify",
+        "intro": "This documentary compiles four recent stories already published by the Observatory. The summaries, verdicts, and advice are reproduced without adding new facts. The links allow consulting the original sources and uncertainties remain noted.",
+        "chapters": [
+          {
+            "title": "GTA VI: PS5 Crashes and Violent NPCs Reported",
+            "summary": "Since its launch, GTA VI has faced crashes on PS5 marked by error CE‑108255‑1, as well as violent reactions from NPCs, according to several players. These incidents remain sporadic and no official confirmation has been published. The non‑Ultimate edition has also been criticized for limited access to exclusive stores, while the actress from Mandy expressed enthusiasm about the virality of her character. Feedback remains uncertain regarding the overall impact on the gaming experience.",
+            "verdict": "Sources consulted indicate technical problems and AI behavior issues, but no official confirmation is available. Feedback on the non‑Ultimate edition and the popularity of a character remain anecdotal.",
+            "tip": "Monitor official Rockstar updates to confirm resolution of crashes and NPC behavior."
+          },
+          {
+            "title": "GTA 6: PS5 Crashes and Violent NPCs Reported",
+            "summary": "Players of GTA 6 have reported crashes on PS5 accompanied by error CE‑108255‑1, with no official Rockstar update. Meanwhile, the game's NPCs appear to react extremely violently, prompting some players to avoid them. These incidents have not yet been confirmed by developers, and the bug's origin remains unknown. Readers interested in the recent launch of GTA 6 should monitor future Rockstar statements.",
+            "verdict": "Incidents reported without official confirmation",
+            "tip": "Check Rockstar updates and official forums for clarification."
+          },
+          {
+            "title": "Path of Exile 2: Insufficient Details in Sources",
+            "summary": "The retrieved results indicate news related to Path of Exile 2, but the available excerpts mainly reproduce titles and do not provide enough information to confirm the scope, effects, or details of the announcement. Consult the original article and the organization's press release before accepting details.",
+            "verdict": "The retrieved excerpts are insufficient to confirm details.",
+            "tip": "Read the original article and look for an official press release before sharing the information."
+          },
+          {
+            "title": "Warhammer 40,000: Dawn of War IV: Insufficient Details in Sources",
+            "summary": "The retrieved results indicate news related to Warhammer 40,000: Dawn of War IV, but the available excerpts mainly reproduce titles and do not provide enough information to confirm the scope, effects, or details of the announcement. Consult the original article and the organization's press release before accepting details.",
+            "verdict": "The retrieved excerpts are insufficient to confirm details.",
+            "tip": "Read the original article and look for an official press release before sharing the information."
+          }
+        ]
+      }
+    },
+    "es": {
+      "name": "Español",
+      "audio": "documentaire-es-20261122T112015Z.mp3",
+      "video": "documentaire-es-20261122T112015Z.mp4",
+      "subtitles": "documentaire-es-20261122T112015Z.vtt",
+      "text": {
+        "title": "Noticias de Tecnología y Juegos: cuatro casos a revisar",
+        "intro": "Este documental compila cuatro casos recientes ya publicados por el Observatorio. Los resúmenes, veredictos y consejos se repiten sin añadir nuevos hechos. Los enlaces permiten consultar las fuentes originales y las incertidumbres permanecen señaladas.",
+        "chapters": [
+          {
+            "title": "GTA VI: caídas en PS5 y NPCs violentos reportados",
+            "summary": "Desde su lanzamiento, GTA VI enfrenta caídas en PS5 marcadas por el error CE‑108255‑1, así como reacciones violentas de NPCs, según varios jugadores. Estos incidentes son esporádicos y no se ha publicado ninguna confirmación oficial. La edición no‑Ultimate también ha sido criticada por el acceso limitado a tiendas exclusivas, mientras que la actriz de Mandy expresó su entusiasmo por la viralidad de su personaje. Los comentarios siguen siendo inciertos respecto al impacto global en la experiencia de juego.",
+            "verdict": "Las fuentes consultadas indican problemas técnicos y de comportamiento de la IA, pero no hay confirmación oficial. Los comentarios sobre la edición no‑Ultimate y la popularidad de un personaje son anecdóticos.",
+            "tip": "Supervisa las actualizaciones oficiales de Rockstar para confirmar la resolución de las caídas y los comportamientos de los NPCs."
+          },
+          {
+            "title": "GTA 6: caídas en PS5 y NPCs violentos reportados",
+            "summary": "Jugadores de GTA 6 han reportado caídas en PS5 acompañadas del error CE‑108255‑1, sin actualización oficial de Rockstar. Paralelamente, los NPCs del juego parecen reaccionar de forma extremadamente violenta, llevando a algunos jugadores a evitarlos. Estos incidentes aún no han sido confirmados por los desarrolladores, y el origen del bug es desconocido. Los lectores interesados en el reciente lanzamiento de GTA 6 deben vigilar los futuros comunicados de Rockstar.",
+            "verdict": "Incidentes reportados sin confirmación oficial",
+            "tip": "Verifica las actualizaciones de Rockstar y los foros oficiales para aclaraciones."
+          },
+          {
+            "title": "Path of Exile 2: detalles insuficientes en las fuentes",
+            "summary": "Los resultados recuperados indican una noticia relacionada con Path of Exile 2, pero los fragmentos disponibles reproducen principalmente los títulos y no proporcionan suficientes elementos para confirmar el alcance, los efectos o las modalidades del anuncio. Consulta el artículo original y el comunicado de la organización correspondiente antes de retener detalles.",
+            "verdict": "Los fragmentos recuperados no son suficientes para confirmar los detalles.",
+            "tip": "Lee el artículo original y busca un comunicado oficial antes de compartir la información."
+          },
+          {
+            "title": "Warhammer 40,000: Dawn of War IV: detalles insuficientes en las fuentes",
+            "summary": "Los resultados recuperados indican una noticia relacionada con Warhammer 40,000: Dawn of War IV, pero los fragmentos disponibles reproducen principalmente los títulos y no proporcionan suficientes elementos para confirmar el alcance, los efectos o las modalidades del anuncio. Consulta el artículo original y el comunicado de la organización correspondiente antes de retener detalles.",
+            "verdict": "Los fragmentos recuperados no son suficientes para confirmar los detalles.",
+            "tip": "Lee el artículo original y busca un comunicado oficial antes de compartir la información."
+          }
+        ]
+      }
+    },
+    "de": {
+      "name": "Deutsch",
+      "audio": "documentaire-de-20261122T112015Z.mp3",
+      "video": "documentaire-de-20261122T112015Z.mp4",
+      "subtitles": "documentaire-de-20261122T112015Z.vtt",
+      "text": {
+        "title": "Tech & Gaming Nachrichten: vier zu prüfende Fälle",
+        "intro": "Dieses Dokument sammelt vier kürzlich veröffentlichte Fälle des Observatoriums. Die Zusammenfassungen, Urteile und Ratschläge werden ohne neue Fakten wiedergegeben. Die Links ermöglichen die Originalquellen zu prüfen und Unsicherheiten bleiben angegeben.",
+        "chapters": [
+          {
+            "title": "GTA VI: PS5 Abstürze und gewalttätige NPCs gemeldet",
+            "summary": "Seit seiner Veröffentlichung erlebt GTA VI Abstürze auf der PS5, gekennzeichnet durch den Fehler CE‑108255‑1, sowie gewalttätige Reaktionen von NPCs, laut mehreren Spielern. Diese Vorfälle bleiben sporadisch und es wurde keine offizielle Bestätigung veröffentlicht. Die Nicht-Ultimate-Ausgabe wurde ebenfalls kritisiert wegen eingeschränktem Zugang zu exklusiven Shops, während die Schauspielerin von Mandy ihre Begeisterung über die Viralität ihrer Figur zum Ausdruck brachte. Die Rückmeldungen bleiben daher unsicher hinsichtlich der Gesamtwirkung auf das Spielerlebnis.",
+            "verdict": "Die konsultierten Quellen weisen auf technische Probleme und KI-Verhaltensweisen hin, jedoch keine offizielle Bestätigung. Rückmeldungen zur Nicht-Ultimate-Ausgabe und zur Beliebtheit einer Figur bleiben anekdotisch.",
+            "tip": "Beobachten Sie die offiziellen Rockstar-Updates, um die Behebung von Abstürzen und NPC-Verhalten zu bestätigen."
+          },
+          {
+            "title": "GTA 6: PS5 Abstürze und gewalttätige NPCs gemeldet",
+            "summary": "Spieler von GTA 6 berichteten Abstürze auf der PS5 mit dem Fehler CE‑108255‑1, ohne offizielle Rockstar-Update. Gleichzeitig reagieren die NPCs des Spiels extrem gewalttätig, was einige Spieler dazu veranlasst, sie zu meiden. Diese Vorfälle wurden noch nicht von den Entwicklern bestätigt, und die Ursache des Bugs ist unbekannt. Interessierte Leser zum jüngsten Launch von GTA 6 sollten zukünftige Rockstar-Kommunikationen beobachten.",
+            "verdict": "Gemeldete Vorfälle ohne offizielle Bestätigung",
+            "tip": "Überprüfen Sie Rockstar-Updates und offizielle Foren auf Klarstellungen."
+          },
+          {
+            "title": "Path of Exile 2: unzureichende Details in den Quellen",
+            "summary": "Die abgerufenen Ergebnisse deuten auf eine Nachricht zu Path of Exile 2 hin, jedoch enthalten die verfügbaren Auszüge hauptsächlich Titel und liefern nicht genügend Informationen, um Umfang, Effekte oder Modalitäten der Ankündigung zu bestätigen. Konsultieren Sie den Originalartikel und die Pressemitteilung der betreffenden Organisation, bevor Sie Details festhalten.",
+            "verdict": "Die abgerufenen Auszüge reichen nicht aus, um Details zu bestätigen.",
+            "tip": "Lesen Sie den Originalartikel und suchen Sie nach einer offiziellen Pressemitteilung, bevor Sie die Information teilen."
+          },
+          {
+            "title": "Warhammer 40,000: Dawn of War IV: unzureichende Details in den Quellen",
+            "summary": "Die abgerufenen Ergebnisse deuten auf eine Nachricht zu Warhammer 40,000: Dawn of War IV hin, jedoch enthalten die verfügbaren Auszüge hauptsächlich Titel und liefern nicht genügend Informationen, um Umfang, Effekte oder Modalitäten der Ankündigung zu bestätigen. Konsultieren Sie den Originalartikel und die Pressemitteilung der betreffenden Organisation, bevor Sie Details festhalten.",
+            "verdict": "Die abgerufenen Auszüge reichen nicht aus, um Details zu bestätigen.",
+            "tip": "Lesen Sie den Originalartikel und suchen Sie nach einer offiziellen Pressemitteilung, bevor Sie die Information teilen."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "name": "Português",
+      "audio": "documentaire-pt-20261122T112015Z.mp3",
+      "video": "documentaire-pt-20261122T112015Z.mp4",
+      "subtitles": "documentaire-pt-20261122T112015Z.vtt",
+      "text": {
+        "title": "Notícias de Tech & Gaming: quatro arquivos a verificar",
+        "intro": "Este documentário compila quatro arquivos recentes já publicados pelo Observatório. Os resumos, veredictos e conselhos são reproduzidos sem adicionar novos fatos. Os links permitem consultar as fontes originais e as incertezas permanecem sinalizadas.",
+        "chapters": [
+          {
+            "title": "GTA VI: falhas no PS5 e NPCs violentos relatados",
+            "summary": "Desde seu lançamento, GTA VI enfrenta falhas no PS5 marcadas pelo erro CE‑108255‑1, além de reações violentas de NPCs, segundo vários jogadores. Esses incidentes permanecem esporádicos e nenhuma confirmação oficial foi publicada. A edição não‑Ultimate também foi criticada por acesso limitado às lojas exclusivas, enquanto a atriz de Mandy expressou entusiasmo pela viralidade de seu personagem. Os retornos permanecem incertos quanto ao impacto global na experiência de jogo.",
+            "verdict": "As fontes consultadas indicam problemas técnicos e de comportamento da IA, mas nenhuma confirmação oficial está disponível. Os retornos sobre a edição não‑Ultimate e a popularidade de um personagem permanecem anedóticos.",
+            "tip": "Acompanhe as atualizações oficiais da Rockstar para confirmar a resolução das falhas e dos comportamentos dos NPCs."
+          },
+          {
+            "title": "GTA 6: falhas no PS5 e NPCs violentos relatados",
+            "summary": "Jogadores de GTA 6 relataram falhas no PS5 acompanhadas do erro CE‑108255‑1, sem atualização oficial da Rockstar. Paralelamente, os NPCs do jogo parecem reagir de forma extremamente violenta, levando alguns jogadores a evitá-los. Esses incidentes ainda não foram confirmados pelos desenvolvedores, e a origem do bug permanece desconhecida. Os leitores interessados no recente lançamento de GTA 6 devem monitorar os futuros comunicados da Rockstar.",
+            "verdict": "Incidentes relatados sem confirmação oficial",
+            "tip": "Verifique as atualizações da Rockstar e os fóruns oficiais para esclarecimentos."
+          },
+          {
+            "title": "Path of Exile 2: detalhes insuficientes nas fontes",
+            "summary": "Os resultados recuperados indicam uma notícia relacionada a Path of Exile 2, mas os trechos disponíveis retomam principalmente os títulos e não fornecem elementos suficientes para confirmar a extensão, os efeitos ou as modalidades do anúncio. Consulte o artigo original e o comunicado da organização envolvida antes de aceitar detalhes.",
+            "verdict": "Os trechos recuperados não são suficientes para confirmar os detalhes.",
+            "tip": "Leia o artigo original e procure um comunicado oficial antes de compartilhar a informação."
+          },
+          {
+            "title": "Warhammer 40,000: Dawn of War IV: detalhes insuficientes nas fontes",
+            "summary": "Os resultados recuperados indicam uma notícia relacionada a Warhammer 40,000: Dawn of War IV, mas os trechos disponíveis retomam principalmente os títulos e não fornecem elementos suficientes para confirmar a extensão, os efeitos ou as modalidades do anúncio. Consulte o artigo original e o comunicado da organização envolvida antes de aceitar detalhes.",
+            "verdict": "Os trechos recuperados não são suficientes para confirmar os detalhes.",
+            "tip": "Leia o artigo original e procure um comunicado oficial antes de compartilhar a informação."
+          }
+        ]
+      }
+    },
+    "ar": {
+      "name": "العربية",
+      "audio": "documentaire-ar-20261122T112015Z.mp3",
+      "video": "documentaire-ar-20261122T112015Z.mp4",
+      "subtitles": "documentaire-ar-20261122T112015Z.vtt",
+      "text": {
+        "title": "أخبار التقنية والألعاب: أربعة ملفات للتحقق",
+        "intro": "هذا الوثائقي يجمع أربعة ملفات حديثة منشورة بالفعل من قبل المراقب. الملخصات والحكم والنصائح معاد تدوينها دون إضافة حقائق جديدة. الروابط تسمح بالاطلاع على المصادر الأصلية وتظل الشكوك معلنة.",
+        "chapters": [
+          {
+            "title": "GTA VI: انقطاعات PS5 وشخصيات غير لاعب عدوانية مُبلغ عنها",
+            "summary": "منذ إطلاقه، يواجه GTA VI انقطاعات على PS5 مع خطأ CE‑108255‑1، بالإضافة إلى ردود فعل عدوانية من شخصيات غير لاعب، وفقًا لعدة لاعبين. هذه الحوادث لا تزال متقطعة ولا توجد تأكيدات رسمية منشورة. النسخة غير Ultimate أيضًا تعرضت للانتقاد بسبب الوصول المحدود إلى المتاجر الحصرية، بينما أعربت ممثلة Mandy عن حماسها تجاه انتشار شخصيتها. لا تزال الملاحظات غير مؤكدة بشأن الأثر العام على تجربة اللعب.",
+            "verdict": "المصادر التي تم الاطلاع عليها تشير إلى مشاكل تقنية وسلوكيات للذكاء الاصطناعي، لكن لا توجد تأكيدات رسمية متاحة. الملاحظات حول النسخة غير Ultimate وشعبية شخصية ما تبقى حكايات.",
+            "tip": "راقب التحديثات الرسمية من Rockstar لتأكيد حل الانقطاعات وسلوكيات الشخصيات غير اللاعب."
+          },
+          {
+            "title": "GTA 6: انقطاعات PS5 وشخصيات غير لاعب عدوانية مُبلغ عنها",
+            "summary": "أبلغ لاعبو GTA 6 عن انقطاعات على PS5 مصحوبة بخطأ CE‑108255‑1، دون تحديث رسمي من Rockstar. في الوقت نفسه، يبدو أن شخصيات غير اللاعب في اللعبة تتفاعل بشكل عدواني للغاية، مما يدفع بعض اللاعبين لتجنبها. لم يتم تأكيد هذه الحوادث بعد من قبل المطورين، ولا يزال أصل الخطأ غير معروف. يجب على القرّاء المهتمين بإطلاق GTA 6 حديثًا مراقبة البيانات الرسمية المستقبلية من Rockstar.",
+            "verdict": "حوادث مُبلغ عنها دون تأكيد رسمي",
+            "tip": "تحقق من تحديثات Rockstar والمنتديات الرسمية للحصول على توضيحات."
+          },
+          {
+            "title": "Path of Exile 2: تفاصيل غير كافية في المصادر",
+            "summary": "تشير النتائج المسترجعة إلى خبر متعلق بـ Path of Exile 2، لكن المقتطفات المتاحة تقتصر على العناوين ولا توفر عناصر كافية لتأكيد نطاق أو تأثير أو تفاصيل الإعلان. راجع المقال الأصلي والبيان الرسمي للمنظمة المعنية قبل اعتماد أي تفاصيل.",
+            "verdict": "المقتطفات المسترجعة لا تكفي لتأكيد التفاصيل",
+            "tip": "اقرأ المقال الأصلي وابحث عن بيان رسمي قبل مشاركة المعلومات."
+          },
+          {
+            "title": "Warhammer 40,000: Dawn of War IV: تفاصيل غير كافية في المصادر",
+            "summary": "تشير النتائج المسترجعة إلى خبر متعلق بـ Warhammer 40,000: Dawn of War IV، لكن المقتطفات المتاحة تقتصر على العناوين ولا توفر عناصر كافية لتأكيد نطاق أو تأثير أو تفاصيل الإعلان. راجع المقال الأصلي والبيان الرسمي للمنظمة المعنية قبل اعتماد أي تفاصيل.",
+            "verdict": "المقتطفات المسترجعة لا تكفي لتأكيد التفاصيل",
+            "tip": "اقرأ المقال الأصلي وابحث عن بيان رسمي قبل مشاركة المعلومات."
+          }
+        ]
+      }
+    },
+    "zh": {
+      "name": "中文",
+      "audio": "documentaire-zh-20261122T112015Z.mp3",
+      "video": "documentaire-zh-20261122T112015Z.mp4",
+      "subtitles": "documentaire-zh-20261122T112015Z.vtt",
+      "text": {
+        "title": "科技与游戏新闻：四个待核实的专题",
+        "intro": "本纪录片汇编了四个已由观察站发布的最新专题。摘要、结论和建议均按原样呈现，不添加新事实。链接可供查阅原始来源，未确认信息仍以不确定标注。",
+        "chapters": [
+          {
+            "title": "GTA VI：PS5 崩溃与 NPC 暴力行为报告",
+            "summary": "自发布以来，GTA VI 在 PS5 上出现 CE‑108255‑1 错误的崩溃，并有玩家报告 NPC 产生暴力反应。这些事件仍为零星，官方尚未确认。非 Ultimate 版亦因限量访问专属商店受到批评，Mandy 演员对其角色的病毒式传播表示热情。整体体验的影响仍不确定。",
+            "verdict": "资料显示存在技术问题和 AI 行为异常，但无官方确认。非 Ultimate 版和角色受欢迎程度仅为轶事。",
+            "tip": "关注 Rockstar 官方更新以确认崩溃和 NPC 行为的修复。"
+          },
+          {
+            "title": "GTA 6：PS5 崩溃与 NPC 暴力行为报告",
+            "summary": "GTA 6 玩家报告 PS5 崩溃并出现 CE‑108255‑1 错误，Rockstar 未发布官方更新。与此同时，游戏中的 NPC 似乎表现出极端暴力，导致部分玩家避免与其互动。此类事件尚未得到开发者确认，错误来源未知。对近期 GTA 6 发布感兴趣的读者应关注 Rockstar 的后续公告。",
+            "verdict": "已报告事件但无官方确认",
+            "tip": "检查 Rockstar 更新和官方论坛以获取澄清。"
+          },
+          {
+            "title": "Path of Exile 2：来源信息不足",
+            "summary": "检索结果显示与 Path of Exile 2 相关的新闻，但可用摘录主要为标题，未提供足够信息以确认公告的范围、影响或细节。请在引用前查阅原始文章和相关组织的公告。",
+            "verdict": "检索摘录不足以确认细节",
+            "tip": "阅读原始文章并寻找官方公告后再分享信息。"
+          },
+          {
+            "title": "Warhammer 40,000: Dawn of War IV：来源信息不足",
+            "summary": "检索结果显示与 Warhammer 40,000: Dawn of War IV 相关的新闻，但可用摘录主要为标题，未提供足够信息以确认公告的范围、影响或细节。请在引用前查阅原始文章和相关组织的公告。",
+            "verdict": "检索摘录不足以确认细节",
+            "tip": "阅读原始文章并寻找官方公告后再分享信息。"
+          }
+        ]
+      }
+    }
+  }
 }
