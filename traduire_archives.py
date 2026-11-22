@@ -24,24 +24,39 @@ def backfill_translations(max_items: int = MAX_PER_RUN) -> dict:
     if not isinstance(articles, list) or any(not isinstance(item, dict) for item in articles):
         raise RuntimeError("Le catalogue d'articles est invalide ; aucune modification effectuée.")
 
+    def is_complete(article):
+        translations = article.get("translations")
+        return isinstance(translations, dict) and all(
+            isinstance(translations.get(language), dict)
+            and all(
+                isinstance(translations[language].get(field), str)
+                and translations[language][field].strip()
+                for field in main.ARTICLE_TRANSLATION_FIELDS
+            )
+            for language in main.ARTICLE_TRANSLATION_LANGUAGES
+        )
+
     translated = 0
-    remaining = sum(not isinstance(item.get("translations"), dict) or not item["translations"] for item in articles)
+    remaining = sum(not is_complete(item) for item in articles)
     # Traiter les plus anciens d'abord, sans retirer ni réordonner les articles.
     for article in reversed(articles):
         if translated >= max_items:
             break
-        if isinstance(article.get("translations"), dict) and article["translations"]:
+        if is_complete(article):
             continue
         result = main.traduire_article(article)
         if not result:
             # Un quota ou fournisseur indisponible arrête proprement le lot.
             break
-        article["translations"] = result
+        existing = article.get("translations")
+        merged = dict(existing) if isinstance(existing, dict) else {}
+        merged.update(result)
+        article["translations"] = merged
         temporary = path.with_suffix(path.suffix + ".tmp")
         temporary.write_text(json.dumps(articles, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         temporary.replace(path)
         translated += 1
-        remaining -= 1
+        remaining = sum(not is_complete(item) for item in articles)
     summary = {"translated": translated, "remaining": remaining, "total": len(articles)}
     print(json.dumps(summary, ensure_ascii=False))
     return summary
