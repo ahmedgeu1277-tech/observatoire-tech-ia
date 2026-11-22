@@ -110,10 +110,45 @@ Godot est un moteur libre ; la compilation et les tests de jeu doivent être eff
 """
     },
     "unity-3d": {
-        "Packages/manifest.json": "{\\n  \\"dependencies\\": {\\n    \\"com.unity.collab-proxy\\": \\"2.4.3\\",\\n    \\"com.unity.ide.visualstudio\\": \\"2.0.22\\",\\n    \\"com.unity.test-framework\\": \\"1.1.33\\",\\n    \\"com.unity.textmeshpro\\": \\"3.0.6\\",\\n    \\"com.unity.timeline\\": \\"1.8.7\\",\\n    \\"com.unity.ugui\\": \\"1.0.0\\"\\n  }\\n}\\n",
-        "ProjectSettings/ProjectVersion.txt": "m_EditorVersion: 2022.3.20f1\\nm_EditorVersionWithRevision: 2022.3.20f1 (0e25a174756c)\\n",
-        "Assets/Scripts/PlayerController.cs": "using UnityEngine;\\n\\n[RequireComponent(typeof(CharacterController))]\\npublic sealed class PlayerController : MonoBehaviour\\n{\\n    [SerializeField] private float speed = 5f;\\n    private CharacterController controller;\\n\\n    private void Awake() => controller = GetComponent<CharacterController>();\\n\\n    private void Update()\\n    {\\n        float x = Input.GetAxis(\\\"Horizontal\\\");\\n        float z = Input.GetAxis(\\\"Vertical\\\");\\n        Vector3 direction = transform.right * x + transform.forward * z;\\n        controller.SimpleMove(direction.normalized * speed);\\n    }\\n}\\n",
-        "README.md": "# __NAME__ — Unity 3D\\n\\nProjet de démarrage pour Unity 2022.3 LTS. Ouvre ce dossier avec Unity Hub, crée une scène, ajoute un objet avec CharacterController et attache Assets/Scripts/PlayerController.cs.\\n\\nLe modèle fournit une base de déplacement clavier, mais ne contient pas de scène, d'assets ni de build prêt à publier. Vérifie la version de l'éditeur et les dépendances avant compilation. Le générateur ne télécharge pas Unity, n'exécute aucun code et ne publie rien.\\n"
+        "Packages/manifest.json": """{
+  "dependencies": {
+    "com.unity.collab-proxy": "2.4.3",
+    "com.unity.ide.visualstudio": "2.0.22",
+    "com.unity.test-framework": "1.1.33",
+    "com.unity.textmeshpro": "3.0.6",
+    "com.unity.timeline": "1.8.7",
+    "com.unity.ugui": "1.0.0"
+  }
+}
+""",
+        "ProjectSettings/ProjectVersion.txt": """m_EditorVersion: 2022.3.20f1
+m_EditorVersionWithRevision: 2022.3.20f1 (0e25a174756c)
+""",
+        "Assets/Scripts/PlayerController.cs": """using UnityEngine;
+
+[RequireComponent(typeof(CharacterController))]
+public sealed class PlayerController : MonoBehaviour
+{
+    [SerializeField] private float speed = 5f;
+    private CharacterController controller;
+
+    private void Awake() => controller = GetComponent<CharacterController>();
+
+    private void Update()
+    {
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+        Vector3 direction = transform.right * x + transform.forward * z;
+        controller.SimpleMove(direction.normalized * speed);
+    }
+}
+""",
+        "README.md": """# __NAME__ — Unity 3D
+
+Projet de démarrage pour Unity 2022.3 LTS. Ouvre ce dossier avec Unity Hub, crée une scène, ajoute un objet avec CharacterController et attache Assets/Scripts/PlayerController.cs.
+
+Le modèle fournit une base de déplacement clavier, mais ne contient pas de scène, d'assets ni de build prêt à publier. Vérifie la version de l'éditeur et les dépendances avant compilation. Le générateur ne télécharge pas Unity, n'exécute aucun code et ne publie rien.
+"""
     },
     "godot-3d": {
         "project.godot": """config_version=5
