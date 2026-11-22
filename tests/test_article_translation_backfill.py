@@ -21,8 +21,15 @@ class ArticleTranslationBackfillTests(unittest.TestCase):
     def tearDown(self):
         self.temp.cleanup()
 
+    @patch(
+        "traduire_archives.main.create_translated_audio",
+        side_effect=lambda article, data: {
+            lang: {**fields, "audio_url": f"audio/{lang}.mp3"}
+            for lang, fields in data.items()
+        },
+    )
     @patch("traduire_archives.main.traduire_article")
-    def test_translates_oldest_first_and_preserves_sources(self, translate):
+    def test_translates_oldest_first_and_preserves_sources(self, translate, _audio):
         translate.return_value = {
             language: {
                 "theme": "Translated theme",
