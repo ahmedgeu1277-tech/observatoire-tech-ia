@@ -51,13 +51,14 @@ def update_status(path: Path, task_id: str, status: str, due_at: str | None = No
     if due_at is not None:
         if not isinstance(due_at, str) or len(due_at) > 40:
             raise ValueError("Échéance invalide.")
-        try:
-            from datetime import datetime
-            parsed_due = datetime.fromisoformat(due_at.replace("Z", "+00:00"))
-        except ValueError as exc:
-            raise ValueError("Échéance invalide.") from exc
-        if parsed_due.tzinfo is None:
-            raise ValueError("L'échéance doit inclure un fuseau horaire.")
+        if due_at:
+            try:
+                from datetime import datetime
+                parsed_due = datetime.fromisoformat(due_at.replace("Z", "+00:00"))
+            except ValueError as exc:
+                raise ValueError("Échéance invalide.") from exc
+            if parsed_due.tzinfo is None:
+                raise ValueError("L'échéance doit inclure un fuseau horaire.")
     target = Path(path)
     rows = _read(target)
     from datetime import UTC, datetime
