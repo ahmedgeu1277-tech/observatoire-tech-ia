@@ -57,6 +57,31 @@ class ArticleTranslationBackfillTests(unittest.TestCase):
         self.assertEqual(result["translated"], 0)
         self.assertEqual(self.path.read_text(encoding="utf-8"), before)
 
+    @patch(
+        "traduire_archives.main.create_translated_audio",
+        side_effect=lambda article, data: {
+            lang: {**fields, "audio_url": f"audio/{lang}.mp3"}
+            for lang, fields in data.items()
+        },
+    )
+    @patch("traduire_archives.main.traduire_article")
+    def test_accepts_five_articles_in_one_bounded_batch(self, translate, _audio):
+        self.items = [
+            {"id": str(index), "title": f"Article {index}", "sources": []}
+            for index in range(6)
+        ]
+        self.path.write_text(json.dumps(self.items), encoding="utf-8")
+        translate.return_value = {
+            language: {
+                "theme": "Thème", "title": "Titre", "summary": "Résumé",
+                "verdict": "Verdict", "tip": "Conseil", "ai_notice": "IA",
+            }
+            for language in ("en", "es", "de", "pt", "ar", "zh")
+        }
+        with patch.object(main, "ARTICLES_FILE", self.path):
+            result = backfill_translations(5)
+        self.assertEqual(result, {"translated": 5, "remaining": 1, "total": 6})
+
     def test_rejects_oversized_batch(self):
         with patch.object(main, "ARTICLES_FILE", self.path):
             with self.assertRaises(ValueError):
