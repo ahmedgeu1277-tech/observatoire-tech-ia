@@ -177,7 +177,7 @@ async function inspectPage(browser, route, viewport) {
           window.observatoireApplyArticleLanguage("de");
         }, {target: audioIndexes.target, alternate: alternateIndex});
         const translatedAudioExpected = await page.evaluate(index =>
-          "./" + window.nexoraArticles[index].audio_url.replace(/^\\.\\//, "").replace(/^site\\//, ""),
+          "./" + window.nexoraArticles[index].audio_url.replace(/^\.\//, "").replace(/^site\//, ""),
         alternateIndex);
         const translatedAudioActual = await page.locator("#articles .article").nth(audioIndexes.target)
           .locator("audio").getAttribute("src");
