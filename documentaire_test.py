@@ -138,7 +138,7 @@ def generer_documentaire():
         .replace("{{AUDIO}}", html.escape(audio_name, quote=True))
         .replace("{{EXPIRY}}", html.escape(expires.isoformat()))
         .replace("{{SECTIONS}}", "".join(sections))
-        .replace("{{TRANSLATIONS_JSON}}", json.dumps(translations, ensure_ascii=False).replace("<", "\\\\u003c"))
+        .replace("{{TRANSLATIONS_JSON}}", json.dumps(translations, ensure_ascii=False).replace("<", "\\u003c"))
     )
     PAGE.write_text(page, encoding="utf-8")
     print(f"Documentaire généré ; médias et copie écrite conservés jusqu'au {expires.isoformat()}.")
