@@ -189,10 +189,10 @@ async function inspectPage(browser, route, viewport) {
       if (JSON.stringify(restored.sections) !== JSON.stringify(frenchBaseline.sections)) {
         fail("Documentaire : le texte français n'est pas restauré après changement de langue.");
       }
-      if (restored.audio !== "audio/" + document.querySelector("#documentary-audio").getAttribute("src").split("/").pop()) {
+      if (!/^audio\/documentaire-test-.*\.mp3$/.test(restored.audio || "")) {
         fail("Documentaire : le lecteur audio français n'est pas restauré.");
       }
-      if (!restored.video || restored.video.includes("documentaire-en-")) {
+      if (!/^video\/documentaire-test-.*\.mp4$/.test(restored.video || "")) {
         fail("Documentaire : la vidéo française n'est pas restaurée.");
       }
       if (restored.subtitles !== null) fail("Documentaire : les sous-titres traduits restent actifs en français.");
