@@ -35,6 +35,56 @@ class RepositoryHealthTests(unittest.TestCase):
             self.assertEqual(check_repository(root)["articles"], 1)
             self.assertEqual(check_repository(root)["agent_profiles"], 1)
 
+
+    def _documentary_fixture(self, root):
+        (root / "site" / "video").mkdir(parents=True, exist_ok=True)
+        (root / "site" / "audio" / "documentary.mp3").write_bytes(b"audio")
+        (root / "site" / "video" / "documentary.mp4").write_bytes(b"video")
+        (root / "site" / "video" / "documentary-en.vtt").write_text("WEBVTT\\n", encoding="utf-8")
+        manifest = {
+            "audio_file": "documentary.mp3",
+            "video_file": "documentary.mp4",
+            "translations": {
+                "en": {
+                    "audio": "documentary.mp3",
+                    "video": "documentary.mp4",
+                    "subtitles": "documentary-en.vtt"
+                }
+            }
+        }
+        (root / "site" / "documentaire-test.json").write_text(
+            json.dumps(manifest), encoding="utf-8"
+        )
+
+    def test_documentary_manifest_media_must_exist(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            self._fixture(root)
+            self._documentary_fixture(root)
+            result = check_repository(root)
+            self.assertEqual(result["documentary_media_files"], 5)
+
+    def test_missing_documentary_video_is_rejected(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            self._fixture(root)
+            self._documentary_fixture(root)
+            (root / "site" / "video" / "documentary.mp4").unlink()
+            with self.assertRaisesRegex(ValueError, "Média du documentaire absent"):
+                check_repository(root)
+
+    def test_documentary_media_path_traversal_is_rejected(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            self._fixture(root)
+            self._documentary_fixture(root)
+            path = root / "site" / "documentaire-test.json"
+            data = json.loads(path.read_text(encoding="utf-8"))
+            data["translations"]["en"]["video"] = "../secret.mp4"
+            path.write_text(json.dumps(data), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "Référence média invalide"):
+                check_repository(root)
+
     def test_private_city_state_must_not_be_published(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
