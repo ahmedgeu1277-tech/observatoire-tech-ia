@@ -98,8 +98,8 @@ func _process(delta: float) -> void:
     queue_redraw()
 
 func _draw() -> void:
-    draw_circle(player_position, 18.0, Color("#52a77b"))
-    draw_string(ThemeDB.fallback_font, Vector2(24, 36), "Move with arrow keys", HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color("#25352b"))
+    draw_circle(player_position, 18.0, Color(0.32, 0.65, 0.48))
+    draw_string(ThemeDB.fallback_font, Vector2(24, 36), "Move with arrow keys", HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color(0.14, 0.21, 0.17))
 """,
         "README.md": """# __NAME__ — Godot 2D
 
@@ -139,7 +139,7 @@ func _ready() -> void:
     var mesh := BoxMesh.new()
     mesh.size = Vector3.ONE
     var material := StandardMaterial3D.new()
-    material.albedo_color = Color("#52a77b")
+    material.albedo_color = Color(0.32, 0.65, 0.48)
     mesh.material = material
     cube.mesh = mesh
     add_child(cube)
