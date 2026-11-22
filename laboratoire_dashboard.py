@@ -108,9 +108,9 @@ def create_server(port: int = 8765, queue: MissionQueue | None = None, token: st
                 return
             if self.path == "/api/missions":
                 self.send_json(200, mission_queue.list_missions())
+                return
             if self.path == "/api/opportunities":
                 self.send_json(200, atelier_produits.list_opportunities(atelier_produits.DEFAULT_PRODUCTS_DIR))
-                return
                 return
             if self.path.startswith("/api/missions/"):
                 mission_id = unquote(self.path.removeprefix("/api/missions/"))
