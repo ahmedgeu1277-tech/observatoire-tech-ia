@@ -52,7 +52,7 @@ def backfill_translations(max_items: int = MAX_PER_RUN) -> dict:
     def save():
         temporary = path.with_suffix(path.suffix + ".tmp")
         temporary.write_text(
-            json.dumps(articles, ensure_ascii=False, indent=2) + "\\n",
+            json.dumps(articles, ensure_ascii=False, indent=2) + "\n",
             encoding="utf-8",
         )
         temporary.replace(path)
@@ -96,7 +96,7 @@ def backfill_translations(max_items: int = MAX_PER_RUN) -> dict:
         processed += 1
         remaining = sum(not (text_complete(item) and audio_complete(item)) for item in articles)
 
-    summary = {"processed": processed, "remaining": remaining, "total": len(articles)}
+    summary = {"translated": processed, "remaining": remaining, "total": len(articles)}
     print(json.dumps(summary, ensure_ascii=False))
     return summary
 
