@@ -20,6 +20,8 @@ python atelier_creation.py MonJeu --type jeu-web
 python atelier_creation.py MonVideo --type video
 ```
 
+Le générateur propose aussi un modèle Unity 3D (Unity 2022.3 LTS) avec manifeste de paquets, version d'éditeur et contrôleur C# de déplacement. Il s'agit d'un squelette : la scène, les objets, les assets et le build doivent être créés et validés dans Unity. Le modèle ne télécharge pas le moteur et n'exécute pas le code.
+
 Les modèles sont des points de départ, pas des produits finis. Le générateur ne lance aucun code, n'accède à aucun compte externe et ne publie rien. Roblox reste un adaptateur spécifique via `studio_roblox.py`; d'autres moteurs (Godot, Unity, Unreal) nécessitent des intégrations, SDK, licences et tests dédiés.
 
 ## Architecture cible
