@@ -13,9 +13,11 @@ Le site présente des articles et des documentaires issus de sources publiques. 
 - Collecte planifiée de sources publiques et génération d'articles assistée par IA.
 - Narration audio lorsque le fournisseur vocal est disponible.
 - Génération de documentaires vidéo à partir de contenus éditoriaux.
-- Démonstration publique interactive d'une ville fictive : quatre quartiers et indicateurs synthétiques, sans exposition des données internes.
+- Démonstration publique d'une ville fictive : quatre quartiers, vue WebGL 3D légère avec repli isométrique 2D, et indicateurs synthétiques sans exposition des données internes.
+- Application web installable (PWA) : pages essentielles et catalogue d'articles mis en cache pour consultation hors ligne après une première visite. Les gros fichiers audio/vidéo ne sont volontairement pas mis en cache afin de préserver le stockage des téléphones et tablettes.
 - Recherche textuelle et filtres par thème sur les articles ; six défis éducatifs avec progression et rang personnel enregistrés localement (sans classement mondial).
 - Tableau de bord privé local avec file de missions, portefeuille R&D et feuille de route persistante de sept chantiers avec priorités, statuts et échéances modifiables, conservée hors du dépôt public.
+- Générateur local de squelettes de projets : site, application web, jeu navigateur, vidéo, audio, logiciel Python et projets Godot 2D/3D. Il crée des fichiers de départ sans exécuter le code ni publier les projets.
 - Archivage des publications récentes et nettoyage programmé des anciennes archives.
 - File locale de missions IA avec trois rôles spécialisés maximum, durée limitée, annulation coopérative, relance manuelle plafonnée à trois tentatives et exécution manuelle de lots de trois missions maximum.
 - Tests automatisés, contrôles de qualité/sécurité et surveillance du site réellement publié dans GitHub Actions.
@@ -30,7 +32,7 @@ Le sélecteur de la page d'accueil propose sept langues pour l'interface : fran�
 
 - Un service privé hébergé avec authentification et stockage persistant.
 - Des agents indépendants fonctionnant en continu ou des missions autonomes de plusieurs jours.
-- Une plateforme complète de création logicielle/vidéo utilisable depuis mobile et PC.
+- Une plateforme complète de création logicielle/vidéo utilisable depuis mobile et PC ; les modèles Godot sont des squelettes de départ, pas un éditeur de jeu intégré.
 - Une supervision permanente garantissant la disponibilité des fournisseurs IA.
 
 Les prototypes et outils du dépôt ne doivent pas être présentés comme des services finalisés.
