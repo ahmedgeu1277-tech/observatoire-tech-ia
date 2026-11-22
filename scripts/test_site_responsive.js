@@ -6,7 +6,7 @@
 const { chromium } = require("playwright");
 
 const BASE = process.env.SITE_BASE_URL || "http://127.0.0.1:4173";
-const PAGES = ["/site/index.html", "/site/documentaire-test.html", "/site/ville-demo.html", "/site/methode.html"];
+const PAGES = ["/site/index.html", "/site/documentaire-test.html", "/site/ville-demo.html", "/site/methode.html", "/site/atelier.html"];
 const failures = [];
 
 function fail(message) { failures.push(message); }
