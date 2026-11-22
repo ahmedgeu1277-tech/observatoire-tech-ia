@@ -1,5 +1,36 @@
 [
   {
+    "id": "20261122T100159-ed580cd5",
+    "date": "2026-11-22T10:01+00:00",
+    "theme": "Gaming et jeux vidéo — veille générale (recherche de secours)",
+    "title": "Plantages et PNJ violents signalés dans GTA 6 sur PS5",
+    "summary": "Des joueurs de GTA 6 ont rapporté des plantages accompagnés de l’erreur CE‑108255‑1 sur PS5, ainsi que des PNJ réagissant de façon extrêmement violente. Ces incidents sont encore non confirmés par Rockstar, et aucune donnée précise sur leur origine ou fréquence n’est disponible. Les fans restent donc incertains quant à la gravité du problème et aux mesures correctives à venir.",
+    "verdict": "Incertain",
+    "tip": "Surveillez les mises à jour officielles de Rockstar pour des corrections potentielles.",
+    "sources": [
+      {
+        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
+        "description": "Allons en paix.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
+        "source_type": "media"
+      },
+      {
+        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
+        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261122T100159-ed580cd5.mp3"
+  },
+  {
     "id": "20261122T094033-0ac10440",
     "date": "2026-11-22T09:40+00:00",
     "theme": "GTA VI — lancement et premiers retours vérifiés",
@@ -1122,54 +1153,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261118T222345-0d6370bf.mp3"
-  },
-  {
-    "id": "20261118T221900-536a6b8c",
-    "date": "2026-11-18T22:19+00:00",
-    "theme": "GTA VI — lancement et premiers retours vérifiés",
-    "title": "GTA VI : détails chiffrés non confirmés",
-    "summary": "Les sources consultées mentionnent GTA VI, mais elles ne fournissent pas suffisamment d'éléments pour confirmer les caractéristiques chiffrées avancées. Les performances, la compatibilité et les spécifications techniques doivent être vérifiées dans les fiches officielles.",
-    "verdict": "Les chiffres et caractéristiques détaillés ne sont pas établis par les sources consultées.",
-    "tip": "Consulter les annonces et fiches techniques officielles avant de retenir des chiffres précis.",
-    "sources": [
-      {
-        "title": "GTA 6 bat tous les records de streaming avant même sa sortie mondiale",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 18:54:26 +0000",
-        "description": "Si on ne fait qu'en parler, ça compte ?",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94079/gta-6-bat-tous-les-records-de-streaming-avant-meme-sa-sortie-mondiale",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 : la mise à jour 1.002.000 est obligatoire pour jouer, voici ce qu’elle contient",
-        "publisher": "big-n.fr",
-        "domain": "news.google.com",
-        "published": "Fri, 13 Nov 2026 14:20:45 GMT",
-        "description": "GTA 6 : la mise à jour 1.002.000 est obligatoire pour jouer, voici ce qu’elle contient    big-n.fr",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB6SHhSMEVYal9QemZqcC1ERTRGZmVIVGxBTWlENW1LOE9qZUN4cnZrOUdzNFA1VHhSdlBEckNUeWZlTTFsV2hpZ2dzZHJIR1JOTzlnMFJEZnZXYl9GZFh4VjU4R1ZCSEFEQVRMLUZfUDI2S3FEQkV2aEJEWm52dk0?oc=5",
-        "source_type": "media"
-      },
-      {
-        "title": "Dans GTA 6, vous serez obligé de doomscroller si vous voulez voir tout ce que le jeu a à offrir",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Wed, 18 Nov 2026 16:00:35 +0000",
-        "description": "Scroller, encore scroller, toujours scroller...",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94069/dans-gta-6-vous-serez-oblige-de-doomscroller-si-vous-voulez-voir-tout-ce-que-le-jeu-a-a-offrir",
-        "source_type": "media"
-      },
-      {
-        "title": "GTA 6 : le FSR 4.1 apparaît dans les fichiers du jeu sur Xbox, faut-il espérer une meilleure qualité d’image ?",
-        "publisher": "Xboxygen",
-        "domain": "news.google.com",
-        "published": "Thu, 12 Nov 2026 15:51:50 GMT",
-        "description": "GTA 6 : le FSR 4.1 apparaît dans les fichiers du jeu sur Xbox, faut-il espérer une meilleure qualité d’image ?    Xboxygen",
-        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPNkQtSTRnYWlTcHRaMjlvUmhsOHBET29hRTlRX29mVl8zQU5CdVV0SktEODNqUTlVQ182d2tLSHJ1WjkyTTJRRE85cFQtNjVqa203RmstODBHbE94OXQta2VWZUFRdElILTVZU2RuRVZuTFF0Vk1JQTloSzlPNXpVT1RfQ2VfQTBjZDBpOWREV2h5NzBjLUZsNkctV0ZQY3JyVlNTNlp6T0MwTXVMejNsdkVFNTBPd0NWNjNpQVhyRTZreFZndFFTS05HQkJSTlYyQ0J3RU5FanE?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261118T221900-536a6b8c.mp3"
   }
 ]
