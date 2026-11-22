@@ -1,6 +1,6 @@
-# Observatoire Tech & IA
+# NEXORA — Tech, IA & Gaming
 
-Site éditorial consacré à l'actualité publique de la technologie, de l'intelligence artificielle et du jeu vidéo.
+Média indépendant consacré à l'actualité de la technologie, de l'intelligence artificielle et du gaming.
 
 ## Site public
 
