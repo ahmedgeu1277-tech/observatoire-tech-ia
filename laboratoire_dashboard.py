@@ -245,6 +245,8 @@ def create_server(port: int = 8765, queue: MissionQueue | None = None, token: st
                         self.send_json(409, {"cancelled": False})
                     return
                 self.send_json(404, {"error": "Route introuvable."})
+            except FileExistsError as exc:
+                self.send_json(409, {"error": str(exc)[:200]})
             except (ValueError, TypeError, json.JSONDecodeError) as exc:
                 self.send_json(400, {"error": str(exc)[:200]})
 
