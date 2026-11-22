@@ -64,7 +64,7 @@ zh:{brand:"观察站 · 演示实验室",back:"← 返回媒体主页",language:
 const names={centre:"centre",energie:"energyDistrict",mobilite:"mobilityDistrict",recherche:"researchDistrict"};
 let lang="fr";try{lang=localStorage.getItem("observatoire-language")||"fr"}catch(_){}
 const selector=document.getElementById("language");
-function apply(value){lang=L[value]?value:"fr";const t=L[lang];document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+function apply(value){lang=L[value]?value:"fr";const t=L[lang];document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";document.title=t.title+" — "+t.brand.split(" · ")[0];selector.setAttribute("aria-label",t.language);
 document.querySelectorAll("[data-i18n]").forEach(n=>{const k=n.dataset.i18n;if(t[k]!==undefined)n.textContent=t[k]});
 selector.value=lang;try{localStorage.setItem("observatoire-language",lang)}catch(_){};updateDetail("centre")}
 function updateDetail(id){const t=L[lang];document.getElementById("district-detail").textContent=t.details[id];document.getElementById("simulation-status").textContent=t.selected+t[names[id]]+"."}
