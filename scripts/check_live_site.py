@@ -119,6 +119,21 @@ def safe_media_path(folder: str, filename: object) -> str | None:
     return f"site/{folder}/{quote(filename)}"
 
 
+def safe_article_audio_path(audio_url: object) -> str | None:
+    """Autorise uniquement un nom simple dans le dossier audio public."""
+    if not isinstance(audio_url, str) or not audio_url.startswith("audio/"):
+        return None
+    parsed = urlparse(audio_url)
+    filename = parsed.path.removeprefix("audio/")
+    if (
+        parsed.scheme or parsed.netloc or parsed.query or parsed.fragment
+        or "\\" in audio_url or "/" in filename or filename in ("", ".", "..")
+        or ".." in filename
+    ):
+        return None
+    return f"site/audio/{quote(filename)}"
+
+
 def main() -> int:
     print(f"Surveillance de production : {BASE_URL}")
     for path, label, mime in (
@@ -143,13 +158,32 @@ def main() -> int:
                 failures.append(f"Article {article.get('id', index)}: aucune source.")
             audio = article.get("audio_url")
             if audio:
-                parsed = urlparse(str(audio))
-                if parsed.scheme or parsed.netloc or not str(audio).startswith("audio/") or ".." in parsed.path.split("/"):
+                media_path = safe_article_audio_path(audio)
+                if not media_path:
                     failures.append(f"Article {article.get('id', index)}: chemin audio non autorisé.")
                 else:
-                    media_path = "site/" + str(audio)
                     check_url(media_path, f"audio article {article.get('id', index)}",
                               expected_type="audio/")
+            translations = article.get("translations", {})
+            if not isinstance(translations, dict):
+                failures.append(f"Article {article.get('id', index)}: traductions invalides.")
+                continue
+            for language, translated in translations.items():
+                if language not in {"en", "es", "de", "pt", "ar", "zh"} or not isinstance(translated, dict):
+                    failures.append(f"Article {article.get('id', index)}: variante {language} invalide.")
+                    continue
+                for field in ("theme", "title", "summary", "verdict", "tip", "ai_notice"):
+                    if not isinstance(translated.get(field), str) or not translated[field].strip():
+                        failures.append(f"Article {article.get('id', index)}: champ {field} manquant pour {language}.")
+                        break
+                translated_audio = translated.get("audio_url")
+                if translated_audio:
+                    media_path = safe_article_audio_path(translated_audio)
+                    if not media_path:
+                        failures.append(f"Article {article.get('id', index)}: chemin audio traduit invalide ({language}).")
+                    else:
+                        check_url(media_path, f"audio article {article.get('id', index)} {language}",
+                                  expected_type="audio/")
 
     manifest = read_json("site/documentaire-test.json", "manifeste documentaire")
     if isinstance(manifest, dict):
