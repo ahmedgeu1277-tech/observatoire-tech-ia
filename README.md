@@ -8,7 +8,11 @@ https://ahmedgeu1277-tech.github.io/observatoire-tech-ia/
 
 Le site présente des articles et des documentaires issus de sources publiques. Les contenus générés avec l'aide de l'IA peuvent comporter des erreurs : consultez les sources originales avant de prendre une décision.
 
-## Centre de pilotage public\n\nLa page [Centre de pilotage](https://ahmedgeu1277-tech.github.io/observatoire-tech-ia/espace.html) regroupe les accès aux outils publics et propose un contrôle depuis le navigateur des pages, articles, audios et médias documentaires réellement publiés. Ce contrôle est ponctuel : il ne remplace pas la surveillance GitHub Actions.\n\n## Fonctionnalités actuellement présentes
+## Centre de pilotage public
+
+La page [Centre de pilotage](https://ahmedgeu1277-tech.github.io/observatoire-tech-ia/espace.html) regroupe les accès aux outils publics et propose un contrôle depuis le navigateur des pages, articles, audios et médias documentaires réellement publiés. Ce contrôle est ponctuel : il ne remplace pas la surveillance GitHub Actions.
+
+## Fonctionnalités actuellement présentes
 
 - Collecte planifiée de sources publiques et génération d'articles assistée par IA.
 - Narration audio lorsque le fournisseur vocal est disponible.
@@ -17,8 +21,8 @@ Le site présente des articles et des documentaires issus de sources publiques. 
 - Application web installable (PWA) : pages essentielles et catalogue d'articles mis en cache pour consultation hors ligne après une première visite. Les gros fichiers audio/vidéo ne sont volontairement pas mis en cache afin de préserver le stockage des téléphones et tablettes.
 - Recherche textuelle et filtres par thème sur les articles ; six défis éducatifs avec progression et rang personnel enregistrés localement. La progression peut être exportée/importée en JSON versionné pour la sauvegarder ou la transférer ; il n'existe pas encore de classement mondial.
 - Tableau de bord privé local avec file de missions, portefeuille R&D et feuille de route persistante de sept chantiers avec priorités, statuts et échéances modifiables, conservée hors du dépôt public.
-- Atelier public dans le navigateur : génère et télécharge localement un ZIP de huit types de projets (site, application, jeu web, Godot 2D/3D, Python, audio, vidéo) en sept langues, sans téléversement ni exécution de code.
-- Atelier complémentaire dans le tableau de bord privé local : mêmes familles de squelettes, écrites dans un espace privé avec permissions restreintes ; aucun code n'est exécuté et aucun projet n'est publié automatiquement.
+- Atelier public dans le navigateur : génère et télécharge localement un ZIP de neuf types de projets (site, application, jeu web, Godot 2D/3D, Unity 3D, Python, audio, vidéo) en sept langues, sans téléversement ni exécution de code.
+- Atelier complémentaire dans le tableau de bord privé local : mêmes familles de squelettes, dont Unity 3D, écrites dans un espace privé avec permissions restreintes ; aucun code n'est exécuté et aucun projet n'est publié automatiquement.
 - Équipe de six rôles d'agents (chercheur, critique, architecte, rédacteur, auditeur, planificateur) ; une mission peut en mobiliser au maximum trois, avec durée et tentatives bornées.
 - Archivage des publications récentes et nettoyage programmé des anciennes archives.
 - File locale de missions IA avec trois rôles spécialisés maximum, durée limitée, annulation coopérative, relance manuelle plafonnée à trois tentatives et exécution manuelle de lots de trois missions maximum.
