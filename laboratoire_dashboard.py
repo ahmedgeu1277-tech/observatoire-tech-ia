@@ -7,8 +7,8 @@ from __future__ import annotations
 import argparse
 import json
 import secrets
-from pathlib import Path
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
 from urllib.parse import unquote
 
 import atelier_creation
