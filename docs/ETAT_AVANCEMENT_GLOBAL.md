@@ -115,3 +115,10 @@ L'estimation pondérée est passée à **56,48 / 100** en portant le domaine « 
 - Le serveur écoute exclusivement sur `127.0.0.1`, utilise un jeton aléatoire en mémoire, refuse les requêtes inter-origines, limite les corps JSON à 16 Ko et applique des en-têtes CSP, no-store, no-referrer et anti-iframe.
 - L'interface n'est pas intégrée à GitHub Pages et n'est pas un tableau de bord distant. Elle nécessite de lancer manuellement `python laboratoire_dashboard.py` sur une machine qui exécute le projet ; elle s'arrête avec Ctrl+C.
 - Les missions sont triées par priorité puis échéance, avec migration SQLite pour les bases existantes. L'exécution reste bornée à trois agents et 180 secondes par mission ; aucun code généré n'est exécuté.
+
+
+## Narrations audio traduites des articles — 22 novembre 2026
+
+- Lorsqu'une traduction textuelle d'article est validée, le système tente aussi de générer une narration Edge TTS dans la langue correspondante (anglais, espagnol, allemand, portugais, arabe et chinois). Chaque fichier est référencé dans la variante de traduction ; le lecteur de la page d'accueil suit la langue sélectionnée si l'audio existe.
+- Si une voix ou un service TTS échoue, l'article et sa traduction textuelle restent publiables ; le lecteur revient à l'audio français. Les fichiers traduits sont inclus dans le rattrapage progressif des archives et la politique de conservation des audios.
+- La génération de voix est best-effort : elle n'est pas garantie pour chaque langue ni chaque article. Les tests navigateur vérifient le changement de source audio lorsqu'un fichier traduit est disponible.
