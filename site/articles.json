@@ -1,7 +1,7 @@
 [
   {
-    "id": "20261122T124359-63d5a9ef",
-    "date": "2026-11-22T12:43+00:00",
+    "id": "20261122T124825-69f7eeac",
+    "date": "2026-11-22T12:48+00:00",
     "theme": "Veille générale — résumé documentaire de secours",
     "title": "Veille technologique : sources à consulter",
     "summary": "Les flux consultés ont fourni des liens vers des publications sur la technologie, l’intelligence artificielle et les jeux vidéo. Ce résumé de secours ne confirme aucune annonce, date, disponibilité, prix ou caractéristique précise : les éléments détaillés doivent être vérifiés directement dans les articles d’origine. Cette sélection sert de point d’entrée documentaire et ne remplace pas la lecture des sources.",
@@ -55,45 +55,7 @@
       }
     ],
     "ai_notice": "Résumé documentaire de secours assemblé automatiquement à partir des liens collectés ; aucune annonce spécifique n’est confirmée.",
-    "translations": {
-      "en": {
-        "title": "Technology Watch: Sources to Consult",
-        "summary": "The consulted feeds provided links to publications on technology, artificial intelligence, and video games. This backup summary does not confirm any announcement, date, availability, price, or specific feature: the detailed items must be verified directly in the original articles. This selection serves as a documentary entry point and does not replace reading the sources.",
-        "verdict": "The links are available, but no specific announcement is validated by this summary.",
-        "tip": "Open the original articles and verify each important piece of information in its primary source."
-      },
-      "es": {
-        "title": "Vigilancia tecnológica: fuentes a consultar",
-        "summary": "Los flujos consultados proporcionaron enlaces a publicaciones sobre tecnología, inteligencia artificial y videojuegos. Este resumen de respaldo no confirma ningún anuncio, fecha, disponibilidad, precio o característica específica: los elementos detallados deben verificarse directamente en los artículos originales. Esta selección sirve como punto de entrada documental y no reemplaza la lectura de las fuentes.",
-        "verdict": "Los enlaces están disponibles, pero ningún anuncio específico está validado por este resumen.",
-        "tip": "Abra los artículos originales y verifique cada información importante en su fuente primaria."
-      },
-      "de": {
-        "title": "Technologie-Überwachung: zu konsultierende Quellen",
-        "summary": "Die konsultierten Feeds lieferten Links zu Veröffentlichungen über Technologie, künstliche Intelligenz und Videospiele. Diese Backup-Zusammenfassung bestätigt keine Ankündigung, kein Datum, keine Verfügbarkeit, keinen Preis oder spezifische Eigenschaft: die detaillierten Angaben müssen direkt in den Originalartikeln überprüft werden. Diese Auswahl dient als dokumentarischer Einstiegspunkt und ersetzt nicht das Lesen der Quellen.",
-        "verdict": "Die Links sind verfügbar, aber keine spezifische Ankündigung wird durch diese Zusammenfassung bestätigt.",
-        "tip": "Öffnen Sie die Originalartikel und überprüfen Sie jede wichtige Information in ihrer Primärquelle."
-      },
-      "pt": {
-        "title": "Monitoramento tecnológico: fontes a consultar",
-        "summary": "Os fluxos consultados forneceram links para publicações sobre tecnologia, inteligência artificial e videogames. Este resumo de backup não confirma nenhuma anúncio, data, disponibilidade, preço ou característica específica: os itens detalhados devem ser verificados diretamente nos artigos originais. Esta seleção serve como ponto de entrada documental e não substitui a leitura das fontes.",
-        "verdict": "Os links estão disponíveis, mas nenhuma anúncio específico é validado por este resumo.",
-        "tip": "Abra os artigos originais e verifique cada informação importante em sua fonte primária."
-      },
-      "ar": {
-        "title": "المراقبة التقنية: المصادر التي يجب الاطلاع عليها",
-        "summary": "قدمت التدفقات التي تم استشارتها روابط إلى منشورات حول التكنولوجيا والذكاء الاصطناعي وألعاب الفيديو. لا يؤكد هذا الملخص الاحتياطي أي إعلان، تاريخ، توافر، سعر أو ميزة محددة: يجب التحقق من العناصر المفصلة مباشرةً في المقالات الأصلية. تُعد هذه الاختيار نقطة دخول وثائقية ولا تحل محل قراءة المصادر.",
-        "verdict": "الروابط متاحة، لكن لا يتم تأكيد أي إعلان محدد من خلال هذا الملخص.",
-        "tip": "افتح المقالات الأصلية وتحقق من كل معلومة مهمة في المصدر الأساسي."
-      },
-      "zh": {
-        "title": "技术监测：待查阅来源",
-        "summary": "所查询的流提供了关于技术、人工智能和视频游戏的出版物链接。此备份摘要未确认任何公告、日期、可用性、价格或具体特征：详细项目必须直接在原始文章中核实。这一选择作为文献入口点，并不取代阅读来源。",
-        "verdict": "链接可用，但此摘要未验证任何具体公告。",
-        "tip": "打开原始文章并在其原始来源中核实每条重要信息。"
-      }
-    },
-    "audio_url": "audio/20261122T124359-63d5a9ef.mp3"
+    "audio_url": "audio/20261122T124825-69f7eeac.mp3"
   },
   {
     "id": "20261122T110358-71bb2ee0",
