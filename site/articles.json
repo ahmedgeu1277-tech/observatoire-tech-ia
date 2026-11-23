@@ -1470,7 +1470,63 @@
       }
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261119T185533-8b7fb8c5.mp3"
+    "audio_url": "audio/20261119T185533-8b7fb8c5.mp3",
+    "translations": {
+      "en": {
+        "theme": "Artificial Intelligence News",
+        "title": "OpenAI launches Performance Factory to keep ChatGPT fast",
+        "summary": "OpenAI unveiled the Performance Factory, a set of Codex-powered workflows that detect and fix performance bottlenecks to keep ChatGPT responsive. The system, detailed in a publisher article, promises continuous improvement, but its real effectiveness in varied environments remains to be confirmed. Internal reports highlight that coding agents accelerate AI research, though their performance remains uneven, introducing uncertainty about the speed and stability of recursive improvement.",
+        "verdict": "The information comes exclusively from OpenAI press releases.",
+        "tip": "Readers interested in language model performance should monitor Performance Factory integration tests in real-world use cases.",
+        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links for full context.",
+        "audio_url": "audio/20261119T185533-8b7fb8c5-en.mp3"
+      },
+      "es": {
+        "theme": "Noticias de Inteligencia Artificial",
+        "title": "OpenAI lanza Performance Factory para mantener ChatGPT rápido",
+        "summary": "OpenAI reveló la Performance Factory, un conjunto de flujos de trabajo impulsados por Codex que detectan y corrigen cuellos de botella de rendimiento para mantener ChatGPT receptivo. El sistema, detallado en un artículo del editor, promete una mejora continua, pero su efectividad real en entornos variados sigue por confirmar. Los informes internos destacan que los agentes de codificación aceleran la investigación en IA, aunque sus rendimientos siguen siendo inestables, introduciendo incertidumbre sobre la rapidez y estabilidad de la mejora recursiva.",
+        "verdict": "La información proviene exclusivamente de comunicados de prensa de OpenAI.",
+        "tip": "Los lectores interesados en el rendimiento de los modelos de lenguaje deberían vigilar las pruebas de integración de Performance Factory en casos de uso reales.",
+        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulte los enlaces para obtener el contexto completo.",
+        "audio_url": "audio/20261119T185533-8b7fb8c5-es.mp3"
+      },
+      "de": {
+        "theme": "Künstliche Intelligenz Nachrichten",
+        "title": "OpenAI startet Performance Factory, um ChatGPT schnell zu halten",
+        "summary": "OpenAI hat die Performance Factory vorgestellt, eine Reihe von Codex-gestützten Workflows, die Leistungsengpässe erkennen und beheben, um ChatGPT reaktionsfähig zu halten. Das System, im Artikel des Verlags detailliert, verspricht kontinuierliche Verbesserungen, aber seine tatsächliche Wirksamkeit in unterschiedlichen Umgebungen muss noch bestätigt werden. Interne Berichte betonen, dass Codierungsagenten die KI-Forschung beschleunigen, obwohl ihre Leistungen uneinheitlich bleiben, was Unsicherheit über die Geschwindigkeit und Stabilität der rekursiven Verbesserung schafft.",
+        "verdict": "Die Informationen stammen ausschließlich aus OpenAI-Pressemitteilungen.",
+        "tip": "Leser, die an der Leistung von Sprachmodellen interessiert sind, sollten die Integrationstests der Performance Factory in realen Anwendungsfällen beobachten.",
+        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Prüfen Sie die Links für den vollständigen Kontext.",
+        "audio_url": "audio/20261119T185533-8b7fb8c5-de.mp3"
+      },
+      "pt": {
+        "theme": "Notícias de Inteligência Artificial",
+        "title": "OpenAI lança Performance Factory para manter ChatGPT rápido",
+        "summary": "OpenAI revelou a Performance Factory, um conjunto de fluxos de trabalho alimentados por Codex que detectam e corrigem gargalos de desempenho para manter o ChatGPT responsivo. O sistema, detalhado em um artigo do editor, promete melhoria contínua, mas sua eficácia real em ambientes variados ainda precisa ser confirmada. Relatórios internos destacam que os agentes de codificação aceleram a pesquisa em IA, embora seus desempenhos permaneçam inconsistentes, introduzindo incerteza sobre a rapidez e estabilidade da melhoria recursiva.",
+        "verdict": "As informações vêm exclusivamente dos comunicados da OpenAI.",
+        "tip": "Os leitores interessados no desempenho de modelos de linguagem devem monitorar os testes de integração da Performance Factory em casos de uso reais.",
+        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Consulte os links para obter o contexto completo.",
+        "audio_url": "audio/20261119T185533-8b7fb8c5-pt.mp3"
+      },
+      "ar": {
+        "theme": "أخبار الذكاء الاصطناعي",
+        "title": "أطلق OpenAI Performance Factory للحفاظ على سرعة ChatGPT",
+        "summary": "كشف OpenAI عن Performance Factory، مجموعة من سير العمل المدعومة بـ Codex التي تكشف وتصحح عنق الزجاجة في الأداء للحفاظ على استجابة ChatGPT. النظام، المفصل في مقال للناشر، يعد بتحسين مستمر، لكن فعاليته الحقيقية في بيئات متنوعة لا تزال بحاجة إلى تأكيد. تُبرز التقارير الداخلية أن وكلاء الترميز يسرّعون البحث في الذكاء الاصطناعي، رغم أن أدائهم يظل غير متساوٍ، ما يضيف عدم يقين حول سرعة واستقرار التحسين التكراري.",
+        "verdict": "المعلومات تأتي حصريًا من بيانات OpenAI.",
+        "tip": "يجب على القرّاء المهتمين بأداء نماذج اللغة مراقبة اختبارات تكامل Performance Factory في حالات استخدام حقيقية.",
+        "ai_notice": "مقال مكتوب بمساعدة groq من المصادر المذكورة. راجع الروابط للحصول على السياق الكامل.",
+        "audio_url": "audio/20261119T185533-8b7fb8c5-ar.mp3"
+      },
+      "zh": {
+        "theme": "人工智能新闻",
+        "title": "OpenAI 推出 Performance Factory 以保持 ChatGPT 的快速响应",
+        "summary": "OpenAI 发布了 Performance Factory，一套由 Codex 驱动的工作流，用于检测并修复性能瓶颈，以保持 ChatGPT 的响应速度。该系统在出版商的文章中进行了详细说明，承诺持续改进，但其在不同环境中的实际效果仍需确认。内部报告强调，编码代理加速了 AI 研究，尽管其性能仍不均衡，带来了对递归改进速度和稳定性的疑虑。",
+        "verdict": "信息仅来自 OpenAI 的官方公告。",
+        "tip": "对语言模型性能感兴趣的读者应关注 Performance Factory 在真实使用案例中的集成测试。",
+        "ai_notice": "本文使用 groq 的帮助根据所列来源撰写。请查看链接以获取完整背景。",
+        "audio_url": "audio/20261119T185533-8b7fb8c5-zh.mp3"
+      }
+    }
   },
   {
     "id": "20261119T185257-97805821",
@@ -1501,6 +1557,62 @@
       }
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261119T185257-97805821.mp3"
+    "audio_url": "audio/20261119T185257-97805821.mp3",
+    "translations": {
+      "en": {
+        "theme": "Technology, AI and video games — general backup monitoring",
+        "title": "GTA 6 hacked and layoffs at Ubisoft",
+        "summary": "Millions of Xbox players exploited a \"New Zealand trick\" to access GTA 6 before its official launch, raising security concerns. Meanwhile, Ubisoft confirmed the elimination of 166 positions in two major studios, which could slow innovation in the medium term, though the exact impact on its projects remains uncertain.",
+        "verdict": "The facts are confirmed by IGN France. The implications for the industry remain to be observed.",
+        "tip": "Watch Rockstar updates and Ubisoft announcements to understand the impact of the layoffs.",
+        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links to find the full context.",
+        "audio_url": "audio/20261119T185257-97805821-en.mp3"
+      },
+      "es": {
+        "theme": "Tecnología, IA y videojuegos — vigilancia general de respaldo",
+        "title": "GTA 6 pirateado y despidos en Ubisoft",
+        "summary": "Millones de jugadores de Xbox explotaron un \"truco neozelandés\" para acceder a GTA 6 antes de su lanzamiento oficial, lo que plantea dudas de seguridad. Mientras tanto, Ubisoft confirmó la eliminación de 166 puestos en dos estudios principales, lo que podría frenar la innovación a medio plazo, aunque el impacto exacto en sus proyectos sigue siendo incierto.",
+        "verdict": "Los hechos están confirmados por IGN France. Las implicaciones para la industria siguen por observar.",
+        "tip": "Supervisa las actualizaciones de Rockstar y los anuncios de Ubisoft para comprender el impacto de los despidos.",
+        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulta los enlaces para encontrar el contexto completo.",
+        "audio_url": "audio/20261119T185257-97805821-es.mp3"
+      },
+      "de": {
+        "theme": "Technologie, KI und Videospiele — allgemeine Backup-Überwachung",
+        "title": "GTA 6 gehackt und Entlassungen bei Ubisoft",
+        "summary": "Millionen Xbox-Spieler nutzten einen \"neuseeländischen Trick\", um GTA 6 vor seiner offiziellen Veröffentlichung zu erreichen, was Sicherheitsfragen aufwirft. Gleichzeitig bestätigte Ubisoft die Abschaffung von 166 Positionen in zwei großen Studios, was die Innovation mittelfristig bremsen könnte, obwohl die genaue Auswirkung auf seine Projekte ungewiss bleibt.",
+        "verdict": "Die Fakten wurden von IGN France bestätigt. Die Auswirkungen auf die Branche bleiben abzuwarten.",
+        "tip": "Behalte Rockstar-Updates und Ubisoft-Ankündigungen im Auge, um die Auswirkungen der Entlassungen zu verstehen.",
+        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Prüfe die Links, um den vollständigen Kontext zu finden.",
+        "audio_url": "audio/20261119T185257-97805821-de.mp3"
+      },
+      "pt": {
+        "theme": "Tecnologia, IA e videogames — monitoramento geral de backup",
+        "title": "GTA 6 hackeado e demissões na Ubisoft",
+        "summary": "Milhões de jogadores Xbox exploraram um \"truque neozelandês\" para acessar GTA 6 antes do seu lançamento oficial, levantando questões de segurança. Enquanto isso, a Ubisoft confirmou a eliminação de 166 cargos em dois estúdios principais, o que pode retardar a inovação a médio prazo, embora o impacto exato em seus projetos permaneça incerto.",
+        "verdict": "Os fatos são confirmados pela IGN France. As implicações para a indústria ainda precisam ser observadas.",
+        "tip": "Acompanhe as atualizações da Rockstar e os anúncios da Ubisoft para entender o impacto das demissões.",
+        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Consulte os links para encontrar o contexto completo.",
+        "audio_url": "audio/20261119T185257-97805821-pt.mp3"
+      },
+      "ar": {
+        "theme": "التكنولوجيا، الذكاء الاصطناعي وألعاب الفيديو — المراقبة العامة للنسخ الاحتياطي",
+        "title": "تم اختراق GTA 6 وتخفيضات في Ubisoft",
+        "summary": "استغل ملايين لاعبي Xbox \"خدعة نيوزيلندية\" للوصول إلى GTA 6 قبل إطلاقه الرسمي، ما أثار مخاوف أمنية. في الوقت نفسه، أكدت Ubisoft إلغاء 166 منصبًا في استوديوين رئيسيين، مما قد يبطئ الابتكار على المدى المتوسط، رغم أن الأثر الدقيق على مشاريعها لا يزال غير مؤكد.",
+        "verdict": "الأحداث مؤكدة من قبل IGN France. تبقى الآثار على الصناعة قيد الملاحظة.",
+        "tip": "راقب تحديثات Rockstar وإعلانات Ubisoft لفهم تأثير التخفيضات.",
+        "ai_notice": "مقالة مكتوبة بمساعدة groq من المصادر المذكورة. راجع الروابط للعثور على السياق الكامل.",
+        "audio_url": "audio/20261119T185257-97805821-ar.mp3"
+      },
+      "zh": {
+        "theme": "技术、人工智能与电子游戏——一般备份监控",
+        "title": "GTA 6 被黑及 Ubisoft 裁员",
+        "summary": "数百万 Xbox 玩家利用“新西兰技巧”在官方发布前访问 GTA 6，引发安全问题。与此同时，Ubisoft 确认在两家主要工作室裁撤 166 个岗位，这可能在中期内抑制创新，尽管其项目的确切影响仍不确定。",
+        "verdict": "事实已由 IGN France 确认。行业影响仍待观察。",
+        "tip": "关注 Rockstar 的更新和 Ubisoft 的公告，以了解裁员的影响。",
+        "ai_notice": "文章由 groq 根据所示来源撰写。请查看链接以获取完整背景。",
+        "audio_url": "audio/20261119T185257-97805821-zh.mp3"
+      }
+    }
   }
 ]
