@@ -457,10 +457,11 @@ class NewsFallbackTests(unittest.TestCase):
                 return None
 
         empty = b"<rss><channel></channel></rss>"
-        fresh = b"""<rss><channel>
-        <item><title>Actualite recente</title><link>https://example.org/fresh</link><description>Information recente et suffisamment longue.</description><pubDate>Mon, 16 Nov 2026 10:00:00 GMT</pubDate></item>
+        recent_date = (datetime.now(UTC) - timedelta(days=6)).strftime("%a, %d %b %Y %H:%M:%S GMT")
+        fresh = f"""<rss><channel>
+        <item><title>Actualite recente</title><link>https://example.org/fresh</link><description>Information recente et suffisamment longue.</description><pubDate>{recent_date}</pubDate></item>
         <item><title>Actualite ancienne</title><link>https://example.org/old</link><description>Information ancienne et suffisamment longue.</description><pubDate>Mon, 01 Oct 2026 10:00:00 GMT</pubDate></item>
-        </channel></rss>"""
+        </channel></rss>""".encode("utf-8")
         mock_get.side_effect = [Response(empty), Response(fresh)]
         result = main.fetch_news("test actualité", limit=5)
         self.assertEqual([item["title"] for item in result], ["Actualite recente"])
