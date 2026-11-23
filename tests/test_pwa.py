@@ -56,8 +56,15 @@ class ProgressiveWebAppTests(unittest.TestCase):
 
     def test_browser_workshop_offers_all_eight_project_templates(self):
         page = (SITE / "atelier.html").read_text(encoding="utf-8")
-        for template in ("site", "webapp", "jeu-web", "godot-2d", "godot-3d", "logiciel-python", "video", "audio"):
+        for template in ("site", "webapp", "jeu-web", "godot-2d", "godot-3d", "unity-3d", "logiciel-python", "video", "audio"):
             self.assertIn(f'["{template}"', page)
+
+    def test_browser_workshop_unity_template_contains_project_files(self):
+        page = (SITE / "atelier.html").read_text(encoding="utf-8")
+        self.assertIn('"unity-3d":{', page)
+        self.assertIn('ProjectSettings/ProjectVersion.txt', page)
+        self.assertIn('Assets/Scripts/PlayerController.cs', page)
+        self.assertIn('m_EditorVersion: 2022.3.20f1', page)
 
     def test_browser_workshop_supports_seven_languages_and_rejects_bad_names(self):
         page = (SITE / "atelier.html").read_text(encoding="utf-8")
