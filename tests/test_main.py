@@ -1,7 +1,7 @@
 import json
 import tempfile
 import unittest
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from unittest.mock import patch
 
@@ -461,7 +461,7 @@ class NewsFallbackTests(unittest.TestCase):
         fresh = f"""<rss><channel>
         <item><title>Actualite recente</title><link>https://example.org/fresh</link><description>Information recente et suffisamment longue.</description><pubDate>{recent_date}</pubDate></item>
         <item><title>Actualite ancienne</title><link>https://example.org/old</link><description>Information ancienne et suffisamment longue.</description><pubDate>Mon, 01 Oct 2026 10:00:00 GMT</pubDate></item>
-        </channel></rss>""".encode("utf-8")
+        </channel></rss>""".encode()
         mock_get.side_effect = [Response(empty), Response(fresh)]
         result = main.fetch_news("test actualité", limit=5)
         self.assertEqual([item["title"] for item in result], ["Actualite recente"])
