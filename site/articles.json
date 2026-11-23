@@ -1,5 +1,36 @@
 [
   {
+    "id": "20261123T184857-039c53e9",
+    "date": "2026-11-23T18:48+00:00",
+    "theme": "GTA VI — lancement et premiers retours vérifiés",
+    "title": "GTA VI : fuites, libération de hacker et doutes sur la légitimité des fichiers",
+    "summary": "Un fichier .exe prétendument issu d’une recompilation native du jeu a été publié par le leaker Cyberleek, mais aucune confirmation officielle n’existe, ce qui soulève des doutes sur sa légitimité. Parallèlement, un juge a libéré le hacker responsable de la fuite massive de 2022, lui adressant un avertissement, laissant planer l’incertitude sur les conséquences juridiques et la sécurité des données futures. Les lecteurs doivent donc rester prudents face à ces informations non vérifiées.",
+    "verdict": "Les sources consultées ne confirment pas l’existence d’une version officielle du fichier .exe ni la date de sortie de GTA VI. Elles indiquent uniquement des fuites et des décisions judiciaires sans preuve de légitimité.",
+    "tip": "Surveillez les communiqués officiels de Rockstar pour toute confirmation future.",
+    "sources": [
+      {
+        "title": "Le leaker GTA 6, Cyberleek, publie un fichier .exe qui correspondrait à un projet de recompilation natif du jeu sur PC, réalisé à partir d'une version Xbox",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Mon, 23 Nov 2026 18:06:28 +0000",
+        "description": "Le leaker persiste et signe : il ne s'agit pas d'une arnaque crypto.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94205/le-leaker-gta-6-cyberleek-publie-un-fichier-exe-qui-correspondrait-a-un-projet-de-recompilation-nati",
+        "source_type": "media"
+      },
+      {
+        "title": "Un juge libère le hacker à l’origine de la fuite massive concernant GTA 6 en 2022, en lui adressant un avertissement : « Que cela ne se reproduise plus »",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Mon, 23 Nov 2026 16:48:25 +0000",
+        "description": "Pan sur les doigts.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94204/un-juge-libere-le-hacker-a-lorigine-de-la-fuite-massive-concernant-gta-6-en-2022-en-lui-adressant-un",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261123T184857-039c53e9.mp3"
+  },
+  {
     "id": "20261123T172941-000293a5",
     "date": "2026-11-23T17:29+00:00",
     "theme": "Gaming et jeux vidéo — veille générale (recherche de secours)",
@@ -1471,92 +1502,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261119T191554-ffa1a263.mp3"
-  },
-  {
-    "id": "20261119T185533-8b7fb8c5",
-    "date": "2026-11-19T18:55+00:00",
-    "theme": "Actualités intelligence artificielle",
-    "title": "OpenAI lance la Performance Factory pour maintenir ChatGPT rapide",
-    "summary": "OpenAI a dévoilé la Performance Factory, un ensemble de flux de travail alimentés par Codex qui détecte et corrige les goulets d’étranglement de performance afin de garder ChatGPT réactif. Le système, détaillé dans un article de l’éditeur, promet une amélioration continue, mais son efficacité réelle dans des environnements variés reste à confirmer. Les rapports internes soulignent que les agents de codage accélèrent la recherche en IA, bien que leurs performances restent inégales, introduisant une incertitude sur la rapidité et la stabilité de l’amélioration récursive.",
-    "verdict": "Les informations proviennent exclusivement des communiqués d’OpenAI.",
-    "tip": "Les lecteurs intéressés par la performance des modèles de langage devraient surveiller les tests d’intégration de la Performance Factory dans des cas d’usage réels.",
-    "sources": [
-      {
-        "title": "How OpenAI’s Performance Factory keeps ChatGPT fast",
-        "publisher": "OpenAI",
-        "domain": "openai.com",
-        "published": "Thu, 19 Nov 2026 08:00:00 GMT",
-        "description": "Learn how OpenAI built the Performance Factory, a system of Codex-powered workflows that finds and fixes performance issues to help keep ChatGPT fast.",
-        "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
-        "source_type": "source_editeur"
-      },
-      {
-        "title": "Research acceleration: The jagged frontier",
-        "publisher": "OpenAI",
-        "domain": "openai.com",
-        "published": "Wed, 18 Nov 2026 08:00:00 GMT",
-        "description": "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement.",
-        "url": "https://openai.com/index/research-acceleration-jagged-frontier",
-        "source_type": "source_editeur"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261119T185533-8b7fb8c5.mp3",
-    "translations": {
-      "en": {
-        "theme": "Artificial Intelligence News",
-        "title": "OpenAI launches Performance Factory to keep ChatGPT fast",
-        "summary": "OpenAI unveiled the Performance Factory, a set of Codex-powered workflows that detect and fix performance bottlenecks to keep ChatGPT responsive. The system, detailed in a publisher article, promises continuous improvement, but its real effectiveness in varied environments remains to be confirmed. Internal reports highlight that coding agents accelerate AI research, though their performance remains uneven, introducing uncertainty about the speed and stability of recursive improvement.",
-        "verdict": "The information comes exclusively from OpenAI press releases.",
-        "tip": "Readers interested in language model performance should monitor Performance Factory integration tests in real-world use cases.",
-        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links for full context.",
-        "audio_url": "audio/20261119T185533-8b7fb8c5-en.mp3"
-      },
-      "es": {
-        "theme": "Noticias de Inteligencia Artificial",
-        "title": "OpenAI lanza Performance Factory para mantener ChatGPT rápido",
-        "summary": "OpenAI reveló la Performance Factory, un conjunto de flujos de trabajo impulsados por Codex que detectan y corrigen cuellos de botella de rendimiento para mantener ChatGPT receptivo. El sistema, detallado en un artículo del editor, promete una mejora continua, pero su efectividad real en entornos variados sigue por confirmar. Los informes internos destacan que los agentes de codificación aceleran la investigación en IA, aunque sus rendimientos siguen siendo inestables, introduciendo incertidumbre sobre la rapidez y estabilidad de la mejora recursiva.",
-        "verdict": "La información proviene exclusivamente de comunicados de prensa de OpenAI.",
-        "tip": "Los lectores interesados en el rendimiento de los modelos de lenguaje deberían vigilar las pruebas de integración de Performance Factory en casos de uso reales.",
-        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulte los enlaces para obtener el contexto completo.",
-        "audio_url": "audio/20261119T185533-8b7fb8c5-es.mp3"
-      },
-      "de": {
-        "theme": "Künstliche Intelligenz Nachrichten",
-        "title": "OpenAI startet Performance Factory, um ChatGPT schnell zu halten",
-        "summary": "OpenAI hat die Performance Factory vorgestellt, eine Reihe von Codex-gestützten Workflows, die Leistungsengpässe erkennen und beheben, um ChatGPT reaktionsfähig zu halten. Das System, im Artikel des Verlags detailliert, verspricht kontinuierliche Verbesserungen, aber seine tatsächliche Wirksamkeit in unterschiedlichen Umgebungen muss noch bestätigt werden. Interne Berichte betonen, dass Codierungsagenten die KI-Forschung beschleunigen, obwohl ihre Leistungen uneinheitlich bleiben, was Unsicherheit über die Geschwindigkeit und Stabilität der rekursiven Verbesserung schafft.",
-        "verdict": "Die Informationen stammen ausschließlich aus OpenAI-Pressemitteilungen.",
-        "tip": "Leser, die an der Leistung von Sprachmodellen interessiert sind, sollten die Integrationstests der Performance Factory in realen Anwendungsfällen beobachten.",
-        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Prüfen Sie die Links für den vollständigen Kontext.",
-        "audio_url": "audio/20261119T185533-8b7fb8c5-de.mp3"
-      },
-      "pt": {
-        "theme": "Notícias de Inteligência Artificial",
-        "title": "OpenAI lança Performance Factory para manter ChatGPT rápido",
-        "summary": "OpenAI revelou a Performance Factory, um conjunto de fluxos de trabalho alimentados por Codex que detectam e corrigem gargalos de desempenho para manter o ChatGPT responsivo. O sistema, detalhado em um artigo do editor, promete melhoria contínua, mas sua eficácia real em ambientes variados ainda precisa ser confirmada. Relatórios internos destacam que os agentes de codificação aceleram a pesquisa em IA, embora seus desempenhos permaneçam inconsistentes, introduzindo incerteza sobre a rapidez e estabilidade da melhoria recursiva.",
-        "verdict": "As informações vêm exclusivamente dos comunicados da OpenAI.",
-        "tip": "Os leitores interessados no desempenho de modelos de linguagem devem monitorar os testes de integração da Performance Factory em casos de uso reais.",
-        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Consulte os links para obter o contexto completo.",
-        "audio_url": "audio/20261119T185533-8b7fb8c5-pt.mp3"
-      },
-      "ar": {
-        "theme": "أخبار الذكاء الاصطناعي",
-        "title": "أطلق OpenAI Performance Factory للحفاظ على سرعة ChatGPT",
-        "summary": "كشف OpenAI عن Performance Factory، مجموعة من سير العمل المدعومة بـ Codex التي تكشف وتصحح عنق الزجاجة في الأداء للحفاظ على استجابة ChatGPT. النظام، المفصل في مقال للناشر، يعد بتحسين مستمر، لكن فعاليته الحقيقية في بيئات متنوعة لا تزال بحاجة إلى تأكيد. تُبرز التقارير الداخلية أن وكلاء الترميز يسرّعون البحث في الذكاء الاصطناعي، رغم أن أدائهم يظل غير متساوٍ، ما يضيف عدم يقين حول سرعة واستقرار التحسين التكراري.",
-        "verdict": "المعلومات تأتي حصريًا من بيانات OpenAI.",
-        "tip": "يجب على القرّاء المهتمين بأداء نماذج اللغة مراقبة اختبارات تكامل Performance Factory في حالات استخدام حقيقية.",
-        "ai_notice": "مقال مكتوب بمساعدة groq من المصادر المذكورة. راجع الروابط للحصول على السياق الكامل.",
-        "audio_url": "audio/20261119T185533-8b7fb8c5-ar.mp3"
-      },
-      "zh": {
-        "theme": "人工智能新闻",
-        "title": "OpenAI 推出 Performance Factory 以保持 ChatGPT 的快速响应",
-        "summary": "OpenAI 发布了 Performance Factory，一套由 Codex 驱动的工作流，用于检测并修复性能瓶颈，以保持 ChatGPT 的响应速度。该系统在出版商的文章中进行了详细说明，承诺持续改进，但其在不同环境中的实际效果仍需确认。内部报告强调，编码代理加速了 AI 研究，尽管其性能仍不均衡，带来了对递归改进速度和稳定性的疑虑。",
-        "verdict": "信息仅来自 OpenAI 的官方公告。",
-        "tip": "对语言模型性能感兴趣的读者应关注 Performance Factory 在真实使用案例中的集成测试。",
-        "ai_notice": "本文使用 groq 的帮助根据所列来源撰写。请查看链接以获取完整背景。",
-        "audio_url": "audio/20261119T185533-8b7fb8c5-zh.mp3"
-      }
-    }
   }
 ]
