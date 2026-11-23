@@ -1,5 +1,36 @@
 [
   {
+    "id": "20261123T172941-000293a5",
+    "date": "2026-11-23T17:29+00:00",
+    "theme": "Gaming et jeux vidéo — veille générale (recherche de secours)",
+    "title": "Boutique Sandfall et libération du hacker GTA 6",
+    "summary": "La boutique officielle de Sandfall Interactive pour *Clair Obscur : Expedition 33* a été annoncée par IGN France, mais aucune source indépendante ne confirme son ouverture ni son catalogue complet. Parallèlement, un juge a libéré le hacker responsable de la fuite massive de GTA 6 en 2022, avec un avertissement, sans détailler les conditions de libération. Les lecteurs restent dans l’incertitude quant à la disponibilité réelle du jeu et aux implications de la décision judiciaire.",
+    "verdict": "Les informations proviennent uniquement d’articles IGN France ; aucune confirmation officielle de l’éditeur n’est disponible.",
+    "tip": "Vérifier les sites officiels de Sandfall Interactive et les communiqués judiciaires pour plus de détails.",
+    "sources": [
+      {
+        "title": "La boutique officielle de Sandfall Interactive dédiée à Clair Obscur: Expedition 33 est officiellement ouverte",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Mon, 23 Nov 2026 16:55:39 +0000",
+        "description": "De quoi faire un peu de concurrence à la boutique IGN, mais c'est de bonne guerre !",
+        "url": "https://fr.ign.com/clair-obscur-expedition-33/94202/la-boutique-officielle-de-sandfall-interactive-dediee-a-clair-obscur-expedition-33-est-officiellemen",
+        "source_type": "media"
+      },
+      {
+        "title": "Un juge libère le hacker à l’origine de la fuite massive concernant GTA 6 en 2022, en lui adressant un avertissement : « Que cela ne se reproduise plus »",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Mon, 23 Nov 2026 16:48:25 +0000",
+        "description": "Pan sur les doigts.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94204/un-juge-libere-le-hacker-a-lorigine-de-la-fuite-massive-concernant-gta-6-en-2022-en-lui-adressant-un",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261123T172941-000293a5.mp3"
+  },
+  {
     "id": "20261122T214906-6d7186d0",
     "date": "2026-11-22T21:49+00:00",
     "theme": "GTA VI — lancement et premiers retours vérifiés",
@@ -1525,93 +1556,6 @@
         "tip": "对语言模型性能感兴趣的读者应关注 Performance Factory 在真实使用案例中的集成测试。",
         "ai_notice": "本文使用 groq 的帮助根据所列来源撰写。请查看链接以获取完整背景。",
         "audio_url": "audio/20261119T185533-8b7fb8c5-zh.mp3"
-      }
-    }
-  },
-  {
-    "id": "20261119T185257-97805821",
-    "date": "2026-11-19T18:52+00:00",
-    "theme": "Technologie, IA et jeux vidéo — veille générale de secours",
-    "title": "GTA 6 piraté et licenciements chez Ubisoft",
-    "summary": "Des millions de joueurs Xbox ont exploité une « astuce néo‑zélandaise » pour accéder à GTA 6 avant son lancement officiel, soulevant des questions de sécurité. Parallèlement, Ubisoft a confirmé la suppression de 166 postes dans deux studios majeurs, ce qui pourrait freiner l’innovation à moyen terme, bien que l’impact exact sur ses projets reste incertain.",
-    "verdict": "Les faits sont confirmés par IGN France. Les implications pour l’industrie restent à observer.",
-    "tip": "Surveillez les mises à jour de Rockstar et les annonces d’Ubisoft pour comprendre l’impact des licenciements.",
-    "sources": [
-      {
-        "title": "Plusieurs millions de joueurs Xbox ont utilisé \"l'astuce néo-zélandaise\" pour jouer à GTA 6 avant tout le monde",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 18:45:54 +0000",
-        "description": "Bande d'impatients.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94101/plusieurs-millions-de-joueurs-xbox-ont-utilise-lastuce-neo-zelandaise-pour-jouer-a-gta-6-avant-tout",
-        "source_type": "media"
-      },
-      {
-        "title": "Ubisoft confirme de nouveaux licenciements : 166 emplois sont supprimés au sein de deux studios majeurs",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 17:37:12 +0000",
-        "description": "Perte de personnel dans des bureaux importants à Montréal et au Québec.",
-        "url": "https://fr.ign.com/assassins-creed-codename-red/94097/ubisoft-confirme-de-nouveaux-licenciements-166-emplois-sont-supprimes-au-sein-de-deux-studios-majeur",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261119T185257-97805821.mp3",
-    "translations": {
-      "en": {
-        "theme": "Technology, AI and video games — general backup monitoring",
-        "title": "GTA 6 hacked and layoffs at Ubisoft",
-        "summary": "Millions of Xbox players exploited a \"New Zealand trick\" to access GTA 6 before its official launch, raising security concerns. Meanwhile, Ubisoft confirmed the elimination of 166 positions in two major studios, which could slow innovation in the medium term, though the exact impact on its projects remains uncertain.",
-        "verdict": "The facts are confirmed by IGN France. The implications for the industry remain to be observed.",
-        "tip": "Watch Rockstar updates and Ubisoft announcements to understand the impact of the layoffs.",
-        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links to find the full context.",
-        "audio_url": "audio/20261119T185257-97805821-en.mp3"
-      },
-      "es": {
-        "theme": "Tecnología, IA y videojuegos — vigilancia general de respaldo",
-        "title": "GTA 6 pirateado y despidos en Ubisoft",
-        "summary": "Millones de jugadores de Xbox explotaron un \"truco neozelandés\" para acceder a GTA 6 antes de su lanzamiento oficial, lo que plantea dudas de seguridad. Mientras tanto, Ubisoft confirmó la eliminación de 166 puestos en dos estudios principales, lo que podría frenar la innovación a medio plazo, aunque el impacto exacto en sus proyectos sigue siendo incierto.",
-        "verdict": "Los hechos están confirmados por IGN France. Las implicaciones para la industria siguen por observar.",
-        "tip": "Supervisa las actualizaciones de Rockstar y los anuncios de Ubisoft para comprender el impacto de los despidos.",
-        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulta los enlaces para encontrar el contexto completo.",
-        "audio_url": "audio/20261119T185257-97805821-es.mp3"
-      },
-      "de": {
-        "theme": "Technologie, KI und Videospiele — allgemeine Backup-Überwachung",
-        "title": "GTA 6 gehackt und Entlassungen bei Ubisoft",
-        "summary": "Millionen Xbox-Spieler nutzten einen \"neuseeländischen Trick\", um GTA 6 vor seiner offiziellen Veröffentlichung zu erreichen, was Sicherheitsfragen aufwirft. Gleichzeitig bestätigte Ubisoft die Abschaffung von 166 Positionen in zwei großen Studios, was die Innovation mittelfristig bremsen könnte, obwohl die genaue Auswirkung auf seine Projekte ungewiss bleibt.",
-        "verdict": "Die Fakten wurden von IGN France bestätigt. Die Auswirkungen auf die Branche bleiben abzuwarten.",
-        "tip": "Behalte Rockstar-Updates und Ubisoft-Ankündigungen im Auge, um die Auswirkungen der Entlassungen zu verstehen.",
-        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Prüfe die Links, um den vollständigen Kontext zu finden.",
-        "audio_url": "audio/20261119T185257-97805821-de.mp3"
-      },
-      "pt": {
-        "theme": "Tecnologia, IA e videogames — monitoramento geral de backup",
-        "title": "GTA 6 hackeado e demissões na Ubisoft",
-        "summary": "Milhões de jogadores Xbox exploraram um \"truque neozelandês\" para acessar GTA 6 antes do seu lançamento oficial, levantando questões de segurança. Enquanto isso, a Ubisoft confirmou a eliminação de 166 cargos em dois estúdios principais, o que pode retardar a inovação a médio prazo, embora o impacto exato em seus projetos permaneça incerto.",
-        "verdict": "Os fatos são confirmados pela IGN France. As implicações para a indústria ainda precisam ser observadas.",
-        "tip": "Acompanhe as atualizações da Rockstar e os anúncios da Ubisoft para entender o impacto das demissões.",
-        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Consulte os links para encontrar o contexto completo.",
-        "audio_url": "audio/20261119T185257-97805821-pt.mp3"
-      },
-      "ar": {
-        "theme": "التكنولوجيا، الذكاء الاصطناعي وألعاب الفيديو — المراقبة العامة للنسخ الاحتياطي",
-        "title": "تم اختراق GTA 6 وتخفيضات في Ubisoft",
-        "summary": "استغل ملايين لاعبي Xbox \"خدعة نيوزيلندية\" للوصول إلى GTA 6 قبل إطلاقه الرسمي، ما أثار مخاوف أمنية. في الوقت نفسه، أكدت Ubisoft إلغاء 166 منصبًا في استوديوين رئيسيين، مما قد يبطئ الابتكار على المدى المتوسط، رغم أن الأثر الدقيق على مشاريعها لا يزال غير مؤكد.",
-        "verdict": "الأحداث مؤكدة من قبل IGN France. تبقى الآثار على الصناعة قيد الملاحظة.",
-        "tip": "راقب تحديثات Rockstar وإعلانات Ubisoft لفهم تأثير التخفيضات.",
-        "ai_notice": "مقالة مكتوبة بمساعدة groq من المصادر المذكورة. راجع الروابط للعثور على السياق الكامل.",
-        "audio_url": "audio/20261119T185257-97805821-ar.mp3"
-      },
-      "zh": {
-        "theme": "技术、人工智能与电子游戏——一般备份监控",
-        "title": "GTA 6 被黑及 Ubisoft 裁员",
-        "summary": "数百万 Xbox 玩家利用“新西兰技巧”在官方发布前访问 GTA 6，引发安全问题。与此同时，Ubisoft 确认在两家主要工作室裁撤 166 个岗位，这可能在中期内抑制创新，尽管其项目的确切影响仍不确定。",
-        "verdict": "事实已由 IGN France 确认。行业影响仍待观察。",
-        "tip": "关注 Rockstar 的更新和 Ubisoft 的公告，以了解裁员的影响。",
-        "ai_notice": "文章由 groq 根据所示来源撰写。请查看链接以获取完整背景。",
-        "audio_url": "audio/20261119T185257-97805821-zh.mp3"
       }
     }
   }
