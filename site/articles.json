@@ -1,5 +1,36 @@
 [
   {
+    "id": "20261124T184753-b282b416",
+    "date": "2026-11-24T18:47+00:00",
+    "theme": "Technologie, IA et jeux vidéo — veille générale de secours",
+    "title": "GTA 6 et Fortnite : deux nouvelles histoires de l’économie du jeu",
+    "summary": "Les joueurs de GTA 6 ont trouvé une faille qui, selon IGN France, permettrait de gagner jusqu’à 100 000 $ en dix minutes, bien que la véracité de ces chiffres reste incertaine. Parallèlement, Fortnite introduit des skins Scott Pilgrim et Ramona Flowers, mais le prix en V‑Bucks n’a pas encore été confirmé, rendant difficile l’évaluation de l’impact économique de ce crossover. Les deux reportages soulignent l’incertitude autour des chiffres annoncés.",
+    "verdict": "Les informations proviennent de sources médiatiques indépendantes (IGN France) et ne constituent pas des confirmations officielles. Les chiffres de GTA 6 et le prix des skins Fortnite restent à vérifier par des sources officielles.",
+    "tip": "Les lecteurs intéressés par les stratégies de monétisation dans les jeux vidéo devraient surveiller les mises à jour officielles de Rockstar et Epic Games pour confirmer ces données.",
+    "sources": [
+      {
+        "title": "Les joueurs de GTA 6 optimisent à l'extrême une faille pour faire de l'argent facile, au point de générer 100 000 $ en seulement 10 minutes",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Tue, 24 Nov 2026 17:42:46 +0000",
+        "description": "C'est pas la crise pour tout le monde.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94226/les-joueurs-de-gta-6-optimisent-a-lextreme-une-faille-pour-faire-de-largent-facile-au-point-de-gener",
+        "source_type": "media"
+      },
+      {
+        "title": "Scott Pilgrim et Ramona Flowers débarquent dans Fortnite cette semaine",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Tue, 24 Nov 2026 15:09:22 +0000",
+        "description": "Ex factor. Scott Pilgrim va rejoindre l'univers de Fortnite plus tard cette semaine, à l'occasion du prochain crossover du célèbre battle royale. Des skins à l'effigie de Scott Pilgrim et Ramona Flowers seront proposés dans la boutique, pour un montant en V-Bucks encore inconnu. On précise quand même qu'il s'agit des versions …",
+        "url": "https://fr.ign.com/fortnite/94227/scott-pilgrim-et-ramona-flowers-debarquent-dans-fortnite-cette-semaine",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261124T184753-b282b416.mp3"
+  },
+  {
     "id": "20261124T145039-d31bf4bc",
     "date": "2026-11-24T14:50+00:00",
     "theme": "GTA VI — lancement et premiers retours vérifiés",
@@ -1480,36 +1511,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261120T094953-2c7e863d.mp3"
-  },
-  {
-    "id": "20261119T191658-97892ea1",
-    "date": "2026-11-19T19:16+00:00",
-    "theme": "Technologie, IA et jeux vidéo — veille générale de secours",
-    "title": "Précommandes chinoises et piratage de GTA 6 : deux tendances concurrentes",
-    "summary": "Les précommandes de l’OSTA O1 Pro sont déjà ouvertes en Chine, indiquant un intérêt croissant pour les formats larges sur les consoles de nouvelle génération. Parallèlement, plusieurs millions de joueurs Xbox ont exploité une « astuce néo‑zélandaise » pour accéder à GTA 6 avant sa sortie officielle, soulevant des questions de sécurité et de gestion des droits numériques. Les chiffres exacts restent non confirmés, mais ces deux phénomènes montrent l’essor des stratégies de distribution et de contournement dans l’industrie.",
-    "verdict": "Incertain",
-    "tip": "Les données précises sur le nombre de précommandes et d’utilisateurs de l’astuce ne sont pas confirmées par des sources officielles.",
-    "sources": [
-      {
-        "title": "OSTA O1 Pro : format large, trois coloris et précommandes ouvertes en Chine avant la conférence du 20 novembre",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 19:00:30 +0000",
-        "description": "Un format large qui intrigue.",
-        "url": "https://fr.ign.com/osta-o1-pro/94096/osta-o1-pro-format-large-trois-coloris-et-precommandes-ouvertes-en-chine-avant-la-conference-du-20-n",
-        "source_type": "media"
-      },
-      {
-        "title": "Plusieurs millions de joueurs Xbox ont utilisé \"l'astuce néo-zélandaise\" pour jouer à GTA 6 avant tout le monde",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Thu, 19 Nov 2026 18:45:54 +0000",
-        "description": "Bande d'impatients.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94101/plusieurs-millions-de-joueurs-xbox-ont-utilise-lastuce-neo-zelandaise-pour-jouer-a-gta-6-avant-tout",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261119T191658-97892ea1.mp3"
   }
 ]
