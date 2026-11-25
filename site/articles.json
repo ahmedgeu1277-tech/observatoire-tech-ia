@@ -1,5 +1,45 @@
 [
   {
+    "id": "20261125T184141-55d5bcf7",
+    "date": "2026-11-25T18:41+00:00",
+    "theme": "Technologies d'IA et d'accessibilité dans le gaming moderne",
+    "title": "Rockstar renforce la protection de GTA 6, Take‑Two nettoie les portages",
+    "summary": "Rockstar a imposé un NDA très restrictif pour GTA 6, comme le rapporte IGN France, sans que les détails précis soient confirmés par l’éditeur. Parallèlement, Take‑Two semble retirer les versions PC non officielles du jeu et a bloqué un fan‑portage sur iPhone après une plainte. Ces actions montrent une vigilance accrue sur la propriété intellectuelle, mais l’impact concret sur les développeurs indépendants reste incertain.",
+    "verdict": "Les informations proviennent uniquement de sources médiatiques IGN France ; aucune confirmation officielle n’est disponible.",
+    "tip": "Vérifier les communiqués officiels de Rockstar et Take‑Two pour confirmer la portée du NDA et les décisions de retrait des portages.",
+    "sources": [
+      {
+        "title": "« Incroyablement secret » - Une actrice de GTA 6 dévoile des détails de « l'énorme » NDA de Rockstar",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Wed, 25 Nov 2026 18:00:35 +0000",
+        "description": "« Avez-vous déjà signé des documents pour acheter une maison ? »",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94270/incroyablement-secret-une-actrice-de-gta-6-devoile-des-details-de-lenorme-nda-de-rockstar",
+        "source_type": "media"
+      },
+      {
+        "title": "Take-Two semble en plein nettoyage de portage PC de GTA 6, tandis que les vibecoders font la course à première place",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Wed, 25 Nov 2026 17:55:57 +0000",
+        "description": "Ca travaille dur.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94276/take-two-semble-en-plein-nettoyage-de-portage-pc-de-gta-6-tandis-que-les-vibecoders-font-la-course-a",
+        "source_type": "media"
+      },
+      {
+        "title": "Un portage de fan de GTA 5 sur iPhone s'arrête net après une plainte de Take-Two",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Wed, 25 Nov 2026 17:47:17 +0000",
+        "description": "Grillé.",
+        "url": "https://fr.ign.com/grand-theft-auto-v/94274/un-portage-de-fan-de-gta-5-sur-iphone-sarrete-net-apres-une-plainte-de-take-two",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261125T184141-55d5bcf7.mp3"
+  },
+  {
     "id": "20261125T095942-74cc754a",
     "date": "2026-11-25T09:59+00:00",
     "theme": "GTA VI — lancement et premiers retours vérifiés",
@@ -1590,102 +1630,6 @@
         "tip": "遇到 CE‑108255‑1 错误的玩家应检查系统和游戏更新，并联系技术支持。",
         "ai_notice": "文章使用 groq 辅助撰写，基于所示来源。请查看链接获取完整背景。",
         "audio_url": "audio/20261122T094033-0ac10440-zh.mp3"
-      }
-    }
-  },
-  {
-    "id": "20261121T093949-bf8441b5",
-    "date": "2026-11-21T09:39+00:00",
-    "theme": "Technologie, IA et jeux vidéo — veille générale de secours",
-    "title": "GTA 6 : un lancement record mais des chiffres à vérifier",
-    "summary": "Le premier jour de sortie de GTA 6, les ventes ont été estimées à 3,79 milliards de dollars, ce qui placerait le jeu au sommet des lancements de divertissement. Cette valeur provient d’une estimation de l’éditeur, et son exactitude reste incertaine. Le titre propose aussi une perspective FPS, mais les détails techniques de cette fonctionnalité ne sont pas encore clairs. Les lecteurs peuvent donc suivre les confirmations officielles pour valider ces chiffres et comprendre la mise en œuvre du mode FPS.",
-    "verdict": "Les chiffres de vente sont des estimations non confirmées ; la perspective FPS est annoncée mais non détaillée.",
-    "tip": "Vérifiez les communiqués officiels de Rockstar pour les chiffres définitifs et les spécifications techniques du mode FPS.",
-    "sources": [
-      {
-        "title": "GTA 6 est le plus gros lancement de tous les temps dans le secteur du divertissement, avec 3,79 milliards de dollars dès le premier jour",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Fri, 20 Nov 2026 20:09:06 +0000",
-        "description": "Gros braquage.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94151/gta-6-est-le-plus-gros-lancement-de-tous-les-temps-dans-le-secteur-du-divertissement-avec-379-millia",
-        "source_type": "media"
-      },
-      {
-        "title": "Le saviez-vous ? Il est possible de jouer à GTA 6 en vue FPS",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Fri, 20 Nov 2026 17:18:20 +0000",
-        "description": "Une nouvelle perspective.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94140/le-saviez-vous-il-est-possible-de-jouer-a-gta-6-en-vue-fps",
-        "source_type": "media"
-      },
-      {
-        "title": "Le jeu de société Cyberpunk Edgerunners en images",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Fri, 20 Nov 2026 17:13:00 +0000",
-        "description": "",
-        "url": "https://fr.ign.com/cyberpunk-edgerunners/94146/le-jeu-de-societe-cyberpunk-edgerunners-en-images",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261121T093949-bf8441b5.mp3",
-    "translations": {
-      "en": {
-        "theme": "Technology, AI and video games — general backup watch",
-        "title": "GTA 6: a record launch but figures to verify",
-        "summary": "On the first day of GTA 6's release, sales were estimated at $3.79 billion, which would place the game at the top of entertainment launches. This figure comes from a publisher estimate, and its accuracy remains uncertain. The title also offers an FPS perspective, but the technical details of this feature are not yet clear. Readers can therefore follow official confirmations to validate these numbers and understand the implementation of the FPS mode.",
-        "verdict": "Sales figures are unconfirmed estimates; the FPS perspective is announced but not detailed.",
-        "tip": "Check Rockstar's official statements for definitive figures and technical specifications of the FPS mode.",
-        "ai_notice": "Article written with the help of groq from the indicated sources. Refer to the links for the full context.",
-        "audio_url": "audio/20261121T093949-bf8441b5-en.mp3"
-      },
-      "es": {
-        "theme": "Tecnología, IA y videojuegos — vigilancia general de respaldo",
-        "title": "GTA 6: un lanzamiento récord pero cifras a verificar",
-        "summary": "El primer día de lanzamiento de GTA 6, las ventas se estimaron en 3,79 mil millones de dólares, lo que colocaría el juego en la cima de los lanzamientos de entretenimiento. Este valor proviene de una estimación del editor, y su exactitud sigue siendo incierta. El título también ofrece una perspectiva FPS, pero los detalles técnicos de esta función aún no están claros. Los lectores pueden seguir las confirmaciones oficiales para validar estos números y comprender la implementación del modo FPS.",
-        "verdict": "Las cifras de ventas son estimaciones no confirmadas; la perspectiva FPS está anunciada pero no detallada.",
-        "tip": "Verifique los comunicados oficiales de Rockstar para obtener cifras definitivas y especificaciones técnicas del modo FPS.",
-        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulte los enlaces para obtener el contexto completo.",
-        "audio_url": "audio/20261121T093949-bf8441b5-es.mp3"
-      },
-      "de": {
-        "theme": "Technologie, KI und Videospiele — allgemeine Backup-Überwachung",
-        "title": "GTA 6: ein Rekordstart, aber Zahlen zu überprüfen",
-        "summary": "Am ersten Tag der Veröffentlichung von GTA 6 wurden die Verkäufe auf 3,79 Milliarden US-Dollar geschätzt, was das Spiel an die Spitze der Unterhaltungsstarts stellen würde. Dieser Wert stammt aus einer Schätzung des Verlags, und seine Genauigkeit bleibt ungewiss. Der Titel bietet auch eine FPS-Perspektive, aber die technischen Details dieser Funktion sind noch nicht klar. Leser können daher offizielle Bestätigungen verfolgen, um diese Zahlen zu validieren und die Umsetzung des FPS-Modus zu verstehen.",
-        "verdict": "Verkaufszahlen sind ungeprüfte Schätzungen; die FPS-Perspektive ist angekündigt, aber nicht detailliert.",
-        "tip": "Überprüfen Sie die offiziellen Erklärungen von Rockstar für endgültige Zahlen und technische Spezifikationen des FPS-Modus.",
-        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Konsultieren Sie die Links für den vollständigen Kontext.",
-        "audio_url": "audio/20261121T093949-bf8441b5-de.mp3"
-      },
-      "pt": {
-        "theme": "Tecnologia, IA e videogames — monitoramento geral de backup",
-        "title": "GTA 6: um lançamento recorde, mas números a verificar",
-        "summary": "No primeiro dia de lançamento do GTA 6, as vendas foram estimadas em 3,79 bilhões de dólares, o que colocaria o jogo no topo dos lançamentos de entretenimento. Esse valor vem de uma estimativa do editor, e sua precisão permanece incerta. O título também oferece uma perspectiva FPS, mas os detalhes técnicos dessa funcionalidade ainda não estão claros. Os leitores podem, portanto, acompanhar as confirmações oficiais para validar esses números e entender a implementação do modo FPS.",
-        "verdict": "Os números de venda são estimativas não confirmadas; a perspectiva FPS é anunciada, mas não detalhada.",
-        "tip": "Verifique os comunicados oficiais da Rockstar para obter os números definitivos e as especificações técnicas do modo FPS.",
-        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Consulte os links para obter o contexto completo.",
-        "audio_url": "audio/20261121T093949-bf8441b5-pt.mp3"
-      },
-      "ar": {
-        "theme": "التكنولوجيا والذكاء الاصطناعي وألعاب الفيديو — المراقبة العامة للنسخ الاحتياطي",
-        "title": "GTA 6: إطلاق قياسي لكن الأرقام تحتاج للتحقق",
-        "summary": "في اليوم الأول من إصدار GTA 6، تم تقدير المبيعات بـ3.79 مليار دولار، ما قد يضع اللعبة في قمة إطلاقات الترفيه. تأتي هذه القيمة من تقدير للناشر، ودقتها لا تزال غير مؤكدة. كما يقدم العنوان منظور FPS، لكن تفاصيل التقنية لهذه الميزة غير واضحة بعد. يمكن للقراء متابعة التأكيدات الرسمية للتحقق من هذه الأرقام وفهم تنفيذ وضع FPS.",
-        "verdict": "أرقام المبيعات تقديرات غير مؤكدة؛ منظور FPS معلن لكنه غير مفصل.",
-        "tip": "تحقق من البيانات الرسمية لشركة Rockstar للحصول على الأرقام النهائية والمواصفات التقنية لوضع FPS.",
-        "ai_notice": "مقالة مكتوبة بمساعدة groq من المصادر المذكورة. راجع الروابط للحصول على السياق الكامل.",
-        "audio_url": "audio/20261121T093949-bf8441b5-ar.mp3"
-      },
-      "zh": {
-        "theme": "技术、人工智能与电子游戏——一般备份监测",
-        "title": "GTA 6：创纪录的发布，但数字需核实",
-        "summary": "在 GTA 6 首发当天，销量估计为 37.9 亿美元，这将使游戏位居娱乐发布榜首。该数字来自发行商的估算，其准确性仍不确定。该标题还提供 FPS 视角，但该功能的技术细节尚不清楚。读者可以关注官方确认，以验证这些数字并了解 FPS 模式的实现方式。",
-        "verdict": "销量数字为未经确认的估算；FPS 视角已宣布但未详细说明。",
-        "tip": "请查看 Rockstar 的官方公告，以获取最终数字和 FPS 模式的技术规格。",
-        "ai_notice": "文章使用 groq 根据所列来源撰写。请参阅链接获取完整背景。",
-        "audio_url": "audio/20261121T093949-bf8441b5-zh.mp3"
       }
     }
   }
