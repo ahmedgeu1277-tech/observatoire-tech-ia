@@ -1,5 +1,101 @@
 [
   {
+    "id": "20261125T095942-74cc754a",
+    "date": "2026-11-25T09:59+00:00",
+    "theme": "GTA VI — lancement et premiers retours vérifiés",
+    "title": "GTA VI : cartes Panini et rumeurs d’« hack » à 100 k $",
+    "summary": "Les cartes à collectionner officielles de GTA VI, lancées en partenariat avec Panini America, sont déjà disponibles en précommande, mais aucune donnée de vente n’a encore été publiée, laissant l’impact commercial incertain. Par ailleurs, un groupe de joueurs aurait exploité une faille du jeu pour générer 100 000 $ en dix minutes, bien que la vérification indépendante de cette affirmation n’ait pas encore été confirmée. Les lecteurs peuvent donc suivre l’évolution des ventes de cartes et la résolution de la faille, sans que ces éléments ne soient encore prouvés.",
+    "verdict": "Les informations disponibles restent provisoires : les cartes sont en précommande sans chiffres de vente, et l’exploit financier n’est pas confirmé.",
+    "tip": "Surveillez les communiqués officiels de Rockstar et les rapports de sécurité pour confirmer l’impact commercial des cartes et la validité de l’« hack ».",
+    "sources": [
+      {
+        "title": "Le set de cartes à collectionner GTA 6 - Rockstar x Panini America",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Wed, 25 Nov 2026 08:50:24 +0000",
+        "description": "",
+        "url": "https://fr.ign.com/gallery/94240/rockstar-x-panini-america-gta-6-trading-cards",
+        "source_type": "media"
+      },
+      {
+        "title": "GTA 6 va avoir droit à ses propres cartes sous licence officielle, inspirées des collectibles qu'on trouve dans le jeu",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Wed, 25 Nov 2026 08:50:24 +0000",
+        "description": "La chasse est ouverte.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94239/gta-6-va-avoir-droit-a-ses-propres-cartes-sous-licence-officielle-inspirees-des-collectibles-quon-tr",
+        "source_type": "media"
+      },
+      {
+        "title": "Les joueurs de GTA 6 optimisent à l'extrême une faille pour faire de l'argent facile, au point de générer 100 000 $ en seulement 10 minutes",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Tue, 24 Nov 2026 17:42:46 +0000",
+        "description": "C'est pas la crise pour tout le monde.",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94226/les-joueurs-de-gta-6-optimisent-a-lextreme-une-faille-pour-faire-de-largent-facile-au-point-de-gener",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "translations": {
+      "en": {
+        "theme": "GTA VI — launch and initial verified feedback",
+        "title": "GTA VI: Panini cards and rumors of a $100k \"hack\"",
+        "summary": "The official GTA VI collectible cards, released in partnership with Panini America, are already available for pre‑order, but no sales data has yet been published, leaving commercial impact uncertain. Additionally, a group of players allegedly exploited a game flaw to generate $100,000 in ten minutes, though independent verification of this claim has not yet been confirmed. Readers can therefore follow the evolution of card sales and the resolution of the flaw, without these elements being proven yet.",
+        "verdict": "The available information remains provisional: the cards are pre‑ordered without sales figures, and the financial exploit is unconfirmed.",
+        "tip": "Monitor Rockstar’s official statements and security reports to confirm the commercial impact of the cards and the validity of the \"hack\".",
+        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links for the full context.",
+        "audio_url": "audio/20261125T095942-74cc754a-en.mp3"
+      },
+      "es": {
+        "theme": "GTA VI — lanzamiento y primeros comentarios verificados",
+        "title": "GTA VI: tarjetas Panini y rumores de un \"hack\" de 100 k$",
+        "summary": "Las tarjetas coleccionables oficiales de GTA VI, lanzadas en asociación con Panini America, ya están disponibles para pre‑orden, pero aún no se han publicado datos de ventas, dejando el impacto comercial incierto. Además, un grupo de jugadores habría explotado una falla del juego para generar 100 000 $ en diez minutos, aunque la verificación independiente de esta afirmación aún no se ha confirmado. Los lectores pueden seguir la evolución de las ventas de tarjetas y la resolución de la falla, sin que estos elementos estén probados todavía.",
+        "verdict": "La información disponible sigue siendo provisional: las tarjetas están en pre‑orden sin cifras de ventas, y el exploit financiero no está confirmado.",
+        "tip": "Supervisa los comunicados oficiales de Rockstar y los informes de seguridad para confirmar el impacto comercial de las tarjetas y la validez del \"hack\".",
+        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulta los enlaces para obtener el contexto completo.",
+        "audio_url": "audio/20261125T095942-74cc754a-es.mp3"
+      },
+      "de": {
+        "theme": "GTA VI — Start und erste verifizierte Rückmeldungen",
+        "title": "GTA VI: Panini-Karten und Gerüchte über einen 100 k$ \"Hack\"",
+        "summary": "Die offiziellen Sammelkarten von GTA VI, die in Partnerschaft mit Panini America veröffentlicht wurden, sind bereits vorbestellbar, jedoch wurden noch keine Verkaufszahlen veröffentlicht, sodass die kommerzielle Wirkung ungewiss bleibt. Darüber hinaus soll eine Gruppe von Spielern einen Spielfehler ausgenutzt haben, um in zehn Minuten 100 000 $ zu generieren, obwohl die unabhängige Verifizierung dieser Behauptung noch nicht bestätigt wurde. Leser können daher die Entwicklung der Kartenverkäufe und die Behebung des Fehlers verfolgen, ohne dass diese Elemente noch bewiesen sind.",
+        "verdict": "Die verfügbaren Informationen bleiben vorläufig: die Karten sind vorbestellbar ohne Verkaufszahlen, und der finanzielle Exploit ist nicht bestätigt.",
+        "tip": "Beobachten Sie die offiziellen Mitteilungen von Rockstar und Sicherheitsberichte, um die kommerzielle Wirkung der Karten und die Gültigkeit des \"Hack\" zu bestätigen.",
+        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Prüfen Sie die Links für den vollständigen Kontext.",
+        "audio_url": "audio/20261125T095942-74cc754a-de.mp3"
+      },
+      "pt": {
+        "theme": "GTA VI — lançamento e primeiros retornos verificados",
+        "title": "GTA VI: cartas Panini e rumores de um \"hack\" de 100 k$",
+        "summary": "As cartas colecionáveis oficiais do GTA VI, lançadas em parceria com a Panini America, já estão disponíveis para pré‑pedido, mas ainda não foram divulgados dados de vendas, deixando o impacto comercial incerto. Além disso, um grupo de jogadores teria explorado uma falha do jogo para gerar 100 000 $ em dez minutos, embora a verificação independente dessa afirmação ainda não tenha sido confirmada. Os leitores podem, portanto, acompanhar a evolução das vendas das cartas e a resolução da falha, sem que esses elementos ainda estejam provados.",
+        "verdict": "As informações disponíveis permanecem provisórias: as cartas estão em pré‑pedido sem números de vendas, e o exploit financeiro não está confirmado.",
+        "tip": "Acompanhe os comunicados oficiais da Rockstar e os relatórios de segurança para confirmar o impacto comercial das cartas e a validade do \"hack\".",
+        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Consulte os links para obter o contexto completo.",
+        "audio_url": "audio/20261125T095942-74cc754a-pt.mp3"
+      },
+      "ar": {
+        "theme": "GTA VI — الإطلاق والردود الأولية المُتحققة",
+        "title": "GTA VI: بطاقات بانيني وشائعات عن \"هَك\" بقيمة 100 k$",
+        "summary": "البطاقات الرسمية للعبة GTA VI، التي أطلقت بالتعاون مع بانيني أمريكا، متاحة بالفعل للطلب المسبق، لكن لم تُنشر بيانات مبيعات بعد، مما يترك تأثيرها التجاري غير مؤكد. بالإضافة إلى ذلك، يُزعم أن مجموعة من اللاعبين استغلت ثغرة في اللعبة لتوليد 100 000$ خلال عشر دقائق، رغم أن التحقق المستقل من هذا الادعاء لم يُؤكد بعد. يمكن للقراء متابعة تطور مبيعات البطاقات وحل الثغرة، دون أن تُثبت هذه العناصر بعد.",
+        "verdict": "المعلومات المتاحة لا تزال مؤقتة: البطاقات متاحة للطلب المسبق دون أرقام مبيعات، والاختراق المالي غير مؤكد.",
+        "tip": "راقب البيانات الرسمية من Rockstar وتقارير الأمان لتأكيد التأثير التجاري للبطاقات وصحة \"الهَك\".",
+        "ai_notice": "مقالة مكتوبة بمساعدة groq من المصادر المذكورة. راجع الروابط للحصول على السياق الكامل.",
+        "audio_url": "audio/20261125T095942-74cc754a-ar.mp3"
+      },
+      "zh": {
+        "theme": "GTA VI — 上线与初步核实反馈",
+        "title": "GTA VI：Panini 卡片与 10 万美元“黑客”传闻",
+        "summary": "GTA VI 官方收藏卡片与 Panini America 合作发布，已可预购，但尚未公布销售数据，商业影响仍不确定。此外，一组玩家据称利用游戏漏洞在十分钟内生成 100,000 美元，然而该说法的独立验证尚未得到确认。读者可以跟踪卡片销售进展和漏洞修复情况，但这些要素尚未得到证明。",
+        "verdict": "可获得的信息仍属临时性：卡片已预购但无销售数字，财务漏洞未得到确认。",
+        "tip": "请关注 Rockstar 官方公告和安全报告，以确认卡片的商业影响和“黑客”真实性。",
+        "ai_notice": "本文使用 groq 根据所列来源撰写。请查看链接获取完整背景。",
+        "audio_url": "audio/20261125T095942-74cc754a-zh.mp3"
+      }
+    },
+    "audio_url": "audio/20261125T095942-74cc754a.mp3"
+  },
+  {
     "id": "20261124T184753-b282b416",
     "date": "2026-11-24T18:47+00:00",
     "theme": "Technologie, IA et jeux vidéo — veille générale de secours",
@@ -1480,36 +1576,5 @@
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "audio_url": "audio/20261121T093949-bf8441b5.mp3"
-  },
-  {
-    "id": "20261120T094953-2c7e863d",
-    "date": "2026-11-20T09:49+00:00",
-    "theme": "GTA VI — lancement et premiers retours vérifiés",
-    "title": "GTA VI : buzz autour d’un PNJ et impact sur les ventes",
-    "summary": "Les premiers retours sur GTA VI soulignent un PNJ controversé qui fait le tour des réseaux, bien que son contenu reste à confirmer. Cette attention médiatique coïncide avec une baisse de 14 % des dépenses en jeux vidéo en octobre, probablement liée à l’attente du titre. Les fans restent incertains sur les détails du personnage et sur l’influence exacte de ce phénomène sur les ventes.",
-    "verdict": "Les sources consultées ne confirment pas la véracité du contenu du PNJ, ni l’impact direct sur les ventes, mais indiquent un lien probable entre l’attente du jeu et la baisse des dépenses.",
-    "tip": "Surveillez les prochaines analyses de la communauté et les données de vente pour clarifier l’effet du buzz sur GTA VI.",
-    "sources": [
-      {
-        "title": "Ce PNJ de GTA 6 fait le buzz sur les réseaux – elle pourrait bien cacher un sombre secret",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Fri, 20 Nov 2026 09:28:14 +0000",
-        "description": "Psychopathe.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94111/ce-pnj-de-gta-6-fait-le-buzz-sur-les-reseaux-elle-pourrait-bien-cacher-un-sombre-secret",
-        "source_type": "media"
-      },
-      {
-        "title": "Les dépenses en jeux vidéo ont chuté de 14 % en octobre, probablement parce que tout le monde se préparait pour GTA 6",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Fri, 20 Nov 2026 09:14:21 +0000",
-        "description": "Difficile de passer après. Enfin, aussi de passer juste avant.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94112/les-depenses-en-jeux-video-ont-chute-de-14-en-octobre-probablement-parce-que-tout-le-monde-se-prepar",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261120T094953-2c7e863d.mp3"
   }
 ]
