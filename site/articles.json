@@ -1,5 +1,36 @@
 [
   {
+    "id": "20261126T184627-49f9eacb",
+    "date": "2026-11-26T18:46+00:00",
+    "theme": "Technologies d’IA et innovations disruptives dans le gaming",
+    "title": "Delta Force Invitationals et GTA 6 : deux annonces qui soulèvent des questions",
+    "summary": "Le championnat LAN Delta Force Invitationals démarre ce week‑end en Suède, promettant d’énormes récompenses en jeu, mais sans préciser leur valeur, ce qui laisse les joueurs incertains de l’impact économique réel. Parallèlement, Rockstar a retiré certaines armes jugées « too much » de GTA 6, sans détailler les critères de sélection, ce qui soulève des doutes sur la justification technique de ces décisions. Ces deux développements montrent comment les éditeurs ajustent leurs contenus tout en gardant certains détails confidentiels.",
+    "verdict": "Les informations proviennent de deux articles IGN France publiés le même jour. Les détails précis sur les prix et les critères de sélection restent inconnus.",
+    "tip": "Vérifiez les communiqués officiels de Delta Force et Rockstar pour des précisions sur les récompenses et les décisions de contenu.",
+    "sources": [
+      {
+        "title": "Tout ce qu’il faut savoir avant la grande finale des Delta Force Invitationals",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 26 Nov 2026 16:50:27 +0000",
+        "description": "Le championnat LAN de trois jours de ce shooter débute ce week-end en Suède - avec d’énormes récompenses en jeu pour ceux qui suivront l’événement !",
+        "url": "https://fr.ign.com/delta-force-mobile/94293/tout-ce-quil-faut-savoir-avant-la-grande-finale-des-delta-force-invitationals",
+        "source_type": "media"
+      },
+      {
+        "title": "Les tronçonneuses « auraient été un peu too much' même pour GTA 6, selon Rockstar qui explique pourquoi certaines armes manquent à l'appel",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 26 Nov 2026 16:26:41 +0000",
+        "description": "On a vu des joueurs très bien s'en passer...",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94292/les-tronconneuses-auraient-ete-un-peu-too-much-meme-pour-gta-6-selon-rockstar-qui-explique-pourquoi",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261126T184627-49f9eacb.mp3"
+  },
+  {
     "id": "20261126T095853-9291498b",
     "date": "2026-11-26T09:58+00:00",
     "theme": "Veille générale — résumé documentaire de secours",
@@ -1805,111 +1836,6 @@
         "tip": "请关注Rockstar的官方更新，以获取潜在修复。",
         "ai_notice": "文章使用groq根据所示来源撰写。请查看链接以获取完整背景。",
         "audio_url": "audio/20261122T100159-ed580cd5-zh.mp3"
-      }
-    }
-  },
-  {
-    "id": "20261122T094033-0ac10440",
-    "date": "2026-11-22T09:40+00:00",
-    "theme": "GTA VI — lancement et premiers retours vérifiés",
-    "title": "GTA VI : plantages, PNJ violents et réactions des boutiques",
-    "summary": "Depuis son lancement, GTA VI fait face à des plantages sur PS5 signalés par l’erreur CE‑108255‑1 et à des PNJ qui ripostent de façon extrêmement violente, selon les retours des joueurs. Les boutiques exclusives ont également refusé l’accueil des acheteurs de l’édition non Ultimate, suscitant des critiques. L’actrice de Mandy a exprimé son enthousiasme, mais aucune donnée ne confirme un impact commercial. Les détails restent à confirmer par Rockstar.",
-    "verdict": "Les incidents de stabilité et de comportement des PNJ sont rapportés par les joueurs, mais aucune confirmation officielle n’est disponible. Les réactions négatives dans les boutiques exclusives sont également documentées, sans preuve d’une politique officielle de Rockstar.",
-    "tip": "Les joueurs rencontrant l’erreur CE‑108255‑1 devraient vérifier les mises à jour du système et du jeu, et contacter le support technique.",
-    "sources": [
-      {
-        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
-        "description": "Allons en paix.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
-        "source_type": "media"
-      },
-      {
-        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
-        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
-        "source_type": "media"
-      },
-      {
-        "title": "Les joueurs de GTA 6 réagissent après que des boutiques exclusives ont accueilli les acheteurs de l’édition non Ultimate avec des portes fermées",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Sat, 21 Nov 2026 21:27:24 +0000",
-        "description": "Trop select.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94167/les-joueurs-de-gta-6-reagissent-apres-que-des-boutiques-exclusives-ont-accueilli-les-acheteurs-de-le",
-        "source_type": "media"
-      },
-      {
-        "title": "L’actrice qui incarne Mandy dans GTA 6 s’exprime avec enthousiasme après que son personnage est devenu viral",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Sat, 21 Nov 2026 09:27:07 +0000",
-        "description": "« Vous savez bien que nous avons tous mangé une pomme. »",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94152/lactrice-qui-incarne-mandy-dans-gta-6-sexprime-avec-enthousiasme-apres-que-son-personnage-est-devenu",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261122T094033-0ac10440.mp3",
-    "translations": {
-      "en": {
-        "theme": "GTA VI — launch and initial verified feedback",
-        "title": "GTA VI: crashes, violent NPCs and store reactions",
-        "summary": "Since its launch, GTA VI has been experiencing crashes on PS5 reported as error CE‑108255‑1 and NPCs that respond with extreme violence, according to player feedback. Exclusive stores have also refused to accept buyers of the non‑Ultimate edition, sparking criticism. The actress from Mandy expressed her enthusiasm, but no data confirms a commercial impact. Details remain to be confirmed by Rockstar.",
-        "verdict": "Stability incidents and NPC behavior are reported by players, but no official confirmation is available. Negative reactions in exclusive stores are also documented, without evidence of an official Rockstar policy.",
-        "tip": "Players encountering error CE‑108255‑1 should check system and game updates and contact technical support.",
-        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links to find the full context.",
-        "audio_url": "audio/20261122T094033-0ac10440-en.mp3"
-      },
-      "es": {
-        "theme": "GTA VI — lanzamiento y primeros comentarios verificados",
-        "title": "GTA VI: fallos, NPCs violentos y reacciones en las tiendas",
-        "summary": "Desde su lanzamiento, GTA VI ha sufrido caídas en PS5 reportadas con el error CE‑108255‑1 y NPCs que responden con violencia extrema, según los comentarios de los jugadores. Las tiendas exclusivas también han rechazado a los compradores de la edición no Ultimate, provocando críticas. La actriz de Mandy expresó su entusiasmo, pero no hay datos que confirmen un impacto comercial. Los detalles siguen pendientes de confirmación por Rockstar.",
-        "verdict": "Los incidentes de estabilidad y el comportamiento de los NPCs son reportados por los jugadores, pero no hay confirmación oficial disponible. Las reacciones negativas en las tiendas exclusivas también están documentadas, sin evidencia de una política oficial de Rockstar.",
-        "tip": "Los jugadores que encuentren el error CE‑108255‑1 deben comprobar las actualizaciones del sistema y del juego y contactar al soporte técnico.",
-        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulte los enlaces para encontrar el contexto completo.",
-        "audio_url": "audio/20261122T094033-0ac10440-es.mp3"
-      },
-      "de": {
-        "theme": "GTA VI — Start und erste verifizierte Rückmeldungen",
-        "title": "GTA VI: Abstürze, gewalttätige NPCs und Reaktionen in den Geschäften",
-        "summary": "Seit seinem Start erlebt GTA VI Abstürze auf PS5, die als Fehler CE‑108255‑1 gemeldet werden, sowie NPCs, die mit extremer Gewalt reagieren, laut Spielerfeedback. Exklusive Geschäfte haben zudem die Annahme von Käufern der Nicht-Ultimate-Ausgabe verweigert, was Kritik ausgelöst hat. Die Schauspielerin von Mandy zeigte ihre Begeisterung, jedoch gibt es keine Daten, die einen kommerziellen Einfluss bestätigen. Details müssen noch von Rockstar bestätigt werden.",
-        "verdict": "Stabilitätsvorfälle und NPC-Verhalten werden von Spielern gemeldet, jedoch ist keine offizielle Bestätigung verfügbar. Negative Reaktionen in exklusiven Geschäften sind ebenfalls dokumentiert, ohne Beweise für eine offizielle Rockstar-Politik.",
-        "tip": "Spieler, die den Fehler CE‑108255‑1 erleben, sollten System- und Spielupdates prüfen und den technischen Support kontaktieren.",
-        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Prüfen Sie die Links, um den vollständigen Kontext zu finden.",
-        "audio_url": "audio/20261122T094033-0ac10440-de.mp3"
-      },
-      "pt": {
-        "theme": "GTA VI — lançamento e primeiros retornos verificados",
-        "title": "GTA VI: falhas, NPCs violentos e reações nas lojas",
-        "summary": "Desde o seu lançamento, GTA VI tem enfrentado falhas no PS5 relatadas como erro CE‑108255‑1 e NPCs que respondem com extrema violência, de acordo com os feedbacks dos jogadores. As lojas exclusivas também recusaram a aceitação de compradores da edição não Ultimate, gerando críticas. A atriz de Mandy expressou seu entusiasmo, mas não há dados que confirmem um impacto comercial. Os detalhes ainda precisam ser confirmados pela Rockstar.",
-        "verdict": "Incidentes de estabilidade e comportamento dos NPCs são relatados pelos jogadores, mas nenhuma confirmação oficial está disponível. Reações negativas nas lojas exclusivas também estão documentadas, sem evidências de uma política oficial da Rockstar.",
-        "tip": "Jogadores que encontrarem o erro CE‑108255‑1 devem verificar as atualizações do sistema e do jogo e entrar em contato com o suporte técnico.",
-        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Consulte os links para encontrar o contexto completo.",
-        "audio_url": "audio/20261122T094033-0ac10440-pt.mp3"
-      },
-      "ar": {
-        "theme": "GTA VI — الإطلاق وردود الفعل الأولية المُتحققة",
-        "title": "GTA VI: الانهيارات، NPC عدوانية وردود فعل المتاجر",
-        "summary": "منذ إطلاقه، يواجه GTA VI انهيارات على PS5 يُبلغ عنها كخطأ CE‑108255‑1 وNPC يتصرفون بعنف شديد، وفقًا لتعليقات اللاعبين. كما رفضت المتاجر الحصرية قبول مشترين النسخة غير Ultimate، ما أثار الانتقادات. أعربت ممثلة Mandy عن حماسها، لكن لا توجد بيانات تؤكد تأثير تجاري. لا تزال التفاصيل بحاجة إلى تأكيد من Rockstar.",
-        "verdict": "تُبلغ اللاعبين عن حوادث الاستقرار وسلوك NPC، لكن لا توجد تأكيدات رسمية متاحة. تُوثق ردود الفعل السلبية في المتاجر الحصرية أيضًا، دون دليل على سياسة رسمية من Rockstar.",
-        "tip": "يجب على اللاعبين الذين يواجهون الخطأ CE‑108255‑1 التحقق من تحديثات النظام واللعبة والتواصل مع الدعم الفني.",
-        "ai_notice": "مقالة مكتوبة بمساعدة groq من المصادر المذكورة. راجع الروابط للعثور على السياق الكامل.",
-        "audio_url": "audio/20261122T094033-0ac10440-ar.mp3"
-      },
-      "zh": {
-        "theme": "GTA VI — 上线与初步验证反馈",
-        "title": "GTA VI：崩溃、暴力 NPC 与商店反应",
-        "summary": "自上线以来，GTA VI 在 PS5 上出现 CE‑108255‑1 错误导致的崩溃，并出现 NPC 以极端暴力方式回应，玩家反馈如此。独家商店亦拒绝接待非 Ultimate 版购买者，引发批评。Mandy 的女演员表达了热情，但暂无数据确认商业影响。细节仍待 Rockstar 确认。",
-        "verdict": "玩家报告了稳定性问题和 NPC 行为，但暂无官方确认。独家商店的负面反应亦已记录，未见 Rockstar 官方政策证据。",
-        "tip": "遇到 CE‑108255‑1 错误的玩家应检查系统和游戏更新，并联系技术支持。",
-        "ai_notice": "文章使用 groq 辅助撰写，基于所示来源。请查看链接获取完整背景。",
-        "audio_url": "audio/20261122T094033-0ac10440-zh.mp3"
       }
     }
   }
