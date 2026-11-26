@@ -1,188 +1,224 @@
 {
-  "created_at": "2026-11-25T11:03:32.354661+00:00",
-  "expires_at": "2026-12-25T11:03:32.354661+00:00",
-  "audio_file": "documentaire-test-20261125T110332Z.mp3",
-  "video_file": "documentaire-test-20261125T110332Z.mp4",
-  "archive_file": "documentaire-test-20261125T110332Z.md",
+  "created_at": "2026-11-26T11:05:10.758618+00:00",
+  "expires_at": "2026-12-26T11:05:10.758618+00:00",
+  "audio_file": "documentaire-test-20261126T110510Z.mp3",
+  "video_file": "documentaire-test-20261126T110510Z.mp4",
+  "archive_file": "documentaire-test-20261126T110510Z.md",
   "title": "Les actualités Tech & Gaming : quatre dossiers à vérifier",
   "retention_days": 30,
   "translations": {
     "en": {
       "name": "English",
-      "audio": "documentaire-en-20261125T110332Z.mp3",
-      "video": "documentaire-en-20261125T110332Z.mp4",
-      "subtitles": "documentaire-en-20261125T110332Z.vtt",
+      "audio": "documentaire-en-20261126T110510Z.mp3",
+      "video": "documentaire-en-20261126T110510Z.mp4",
+      "subtitles": "documentaire-en-20261126T110510Z.vtt",
       "text": {
         "title": "Tech & Gaming News: Four Stories to Verify",
         "intro": "This documentary compiles four recent dossiers already published by the Observatory. The summaries, verdicts and tips are reproduced without adding new facts. The links allow consulting the original sources and uncertainties remain noted.",
         "chapters": [
           {
-            "title": "GTA VI: Panini Cards and Rumors of a $100k \"Hack\"",
-            "summary": "The official collectible cards for GTA VI, launched in partnership with Panini America, are already available for pre‑order, but no sales data has yet been released, leaving commercial impact uncertain. Additionally, a group of players allegedly exploited a game flaw to generate $100,000 in ten minutes, though independent verification of this claim has not yet been confirmed. Readers can therefore follow the evolution of card sales and the resolution of the flaw, without these elements being proven yet.",
+            "title": "Technology Watch: Sources to Consult",
+            "summary": "The consulted feeds provided links to publications on technology, artificial intelligence and video games. This backup summary does not confirm any announcement, date, availability, price or specific feature: the detailed items must be verified directly in the original articles. This selection serves as a documentary entry point and does not replace reading the sources.",
+            "verdict": "The links are available, but no specific announcement is validated by this summary.",
+            "tip": "Open the original articles and verify each important piece of information in its primary source."
+          },
+          {
+            "title": "Rockstar Strengthens GTA 6 Protection, Take‑Two Cleans Up Ports",
+            "summary": "Rockstar imposed a very restrictive NDA for GTA 6, as reported by IGN France, without the precise details being confirmed by the publisher. Meanwhile, Take‑Two appears to be removing unofficial PC versions of the game and blocked a fan port on iPhone after a complaint. These actions show increased vigilance over intellectual property, but the concrete impact on independent developers remains uncertain.",
+            "verdict": "The information comes solely from media sources IGN France; no official confirmation is available.",
+            "tip": "Check Rockstar and Take‑Two official statements to confirm the scope of the NDA and the port removal decisions."
+          },
+          {
+            "title": "GTA VI: Panini Cards and Rumors of a $100 k \"Hack\"",
+            "summary": "The official collectible cards for GTA VI, launched in partnership with Panini America, are already available for pre‑order, but no sales data has yet been released, leaving commercial impact uncertain. Additionally, a group of players allegedly exploited a game flaw to generate $100,000 in ten minutes, though independent verification of this claim has not yet been confirmed. Readers can therefore follow the card sales evolution and the flaw resolution, without these elements being proven yet.",
             "verdict": "The available information remains provisional: the cards are pre‑ordered without sales figures, and the financial exploit is not confirmed.",
-            "tip": "Monitor Rockstar’s official statements and security reports to confirm the commercial impact of the cards and the validity of the \"hack\"."
+            "tip": "Monitor Rockstar official statements and security reports to confirm the commercial impact of the cards and the validity of the \"hack\"."
           },
           {
-            "title": "GTA 6 and Fortnite: Two New Stories of Game Economy",
-            "summary": "GTA 6 players have found a flaw that, according to IGN France, would allow earning up to $100,000 in ten minutes, though the veracity of these figures remains uncertain. Meanwhile, Fortnite introduces Scott Pilgrim and Ramona Flowers skins, but the price in V‑Bucks has not yet been confirmed, making it difficult to assess the economic impact of this crossover. Both reports highlight uncertainty around the announced figures.",
-            "verdict": "The information comes from independent media sources (IGN France) and does not constitute official confirmation. The GTA 6 figures and Fortnite skin price remain to be verified by official sources.",
+            "title": "GTA 6 and Fortnite: Two New Stories of Game Economy",
+            "summary": "GTA 6 players found a flaw that, according to IGN France, would allow earning up to $100,000 in ten minutes, though the veracity of these figures remains uncertain. Meanwhile, Fortnite introduces Scott Pilgrim and Ramona Flowers skins, but the price in V‑Bucks has not yet been confirmed, making it difficult to assess the economic impact of this crossover. Both reports highlight uncertainty around the announced figures.",
+            "verdict": "The information comes from independent media sources (IGN France) and does not constitute official confirmation. The GTA 6 figures and Fortnite skin price remain to be verified by official sources.",
             "tip": "Readers interested in monetization strategies in video games should monitor official updates from Rockstar and Epic Games to confirm these data."
-          },
-          {
-            "title": "2026 Video Game Release Calendar and Announcements: Unconfirmed Figures",
-            "summary": "The consulted sources mention the 2026 video game release calendar and announcements, but they do not provide enough information to confirm the advanced numerical characteristics. Performance, compatibility, and technical specifications must be verified in official sheets.",
-            "verdict": "The detailed figures and characteristics are not established by the consulted sources.",
-            "tip": "Consult official announcements and technical sheets before adopting precise figures."
-          },
-          {
-            "title": "Sandfall Store and Release of GTA 6 Hacker",
-            "summary": "The official Sandfall Interactive store for *Clair Obscur: Expedition 33* was announced by IGN France, but no independent source confirms its opening or full catalogue. Meanwhile, a judge released the hacker responsible for the massive GTA 6 leak in 2022, with a warning, without detailing the release conditions. Readers remain uncertain about the actual availability of the game and the implications of the judicial decision.",
-            "verdict": "The information comes solely from IGN France articles; no official publisher confirmation is available.",
-            "tip": "Check Sandfall Interactive’s official sites and judicial releases for more details."
           }
         ]
       }
     },
     "es": {
       "name": "Español",
-      "audio": "documentaire-es-20261125T110332Z.mp3",
-      "video": "documentaire-es-20261125T110332Z.mp4",
-      "subtitles": "documentaire-es-20261125T110332Z.vtt",
+      "audio": "documentaire-es-20261126T110510Z.mp3",
+      "video": "documentaire-es-20261126T110510Z.mp4",
+      "subtitles": "documentaire-es-20261126T110510Z.vtt",
       "text": {
         "title": "Noticias de Tecnología y Juegos: cuatro dossiers a verificar",
-        "intro": "Este documental compila cuatro dossiers recientes ya publicados por el Observatorio. Los resúmenes, veredictos y consejos se repiten sin añadir nuevos hechos. Los enlaces permiten consultar las fuentes originales y las incertidumbres siguen señaladas.",
+        "intro": "Este documental compila cuatro dossiers recientes ya publicados por el Observatorio. Los resúmenes, veredictos y consejos se reproducen sin añadir nuevos hechos. Los enlaces permiten consultar las fuentes originales y las incertidumbres siguen señaladas.",
         "chapters": [
           {
-            "title": "GTA VI: tarjetas Panini y rumores de «hack» de 100 k $",
-            "summary": "Las tarjetas de colección oficiales de GTA VI, lanzadas en asociación con Panini America, ya están disponibles en preventa, pero aún no se han publicado datos de ventas, dejando incierto el impacto comercial. Además, un grupo de jugadores habría explotado una falla del juego para generar 100 000 $ en diez minutos, aunque la verificación independiente de esta afirmación aún no se ha confirmado. Los lectores pueden seguir la evolución de las ventas de tarjetas y la resolución de la falla, sin que estos elementos estén aún probados.",
+            "title": "Vigilancia tecnológica: fuentes a consultar",
+            "summary": "Los flujos consultados proporcionaron enlaces a publicaciones sobre tecnología, inteligencia artificial y videojuegos. Este resumen de respaldo no confirma ninguna anuncio, fecha, disponibilidad, precio o característica precisa: los elementos detallados deben verificarse directamente en los artículos originales. Esta selección sirve como punto de entrada documental y no reemplaza la lectura de las fuentes.",
+            "verdict": "Los enlaces están disponibles, pero ninguna anuncio preciso está validado por este resumen.",
+            "tip": "Abrir los artículos originales y verificar cada información importante en su fuente primaria."
+          },
+          {
+            "title": "Rockstar refuerza la protección de GTA 6, Take‑Two limpia las portadas",
+            "summary": "Rockstar impuso un NDA muy restrictivo para GTA 6, según IGN France, sin que los detalles precisos estén confirmados por el editor. Paralelamente, Take‑Two parece retirar las versiones PC no oficiales del juego y bloqueó una portada fan en iPhone tras una denuncia. Estas acciones muestran una mayor vigilancia sobre la propiedad intelectual, pero el impacto concreto sobre los desarrolladores independientes sigue incierto.",
+            "verdict": "La información proviene únicamente de fuentes mediáticas IGN France; no hay confirmación oficial disponible.",
+            "tip": "Verificar los comunicados oficiales de Rockstar y Take‑Two para confirmar el alcance del NDA y las decisiones de retiro de portadas."
+          },
+          {
+            "title": "GTA VI: tarjetas Panini y rumores de «hack» a 100 k $",
+            "summary": "Las tarjetas coleccionables oficiales de GTA VI, lanzadas en asociación con Panini America, ya están disponibles en preventa, pero aún no se han publicado datos de ventas, dejando el impacto comercial incierto. Además, un grupo de jugadores habría explotado una falla del juego para generar 100 000 $ en diez minutos, aunque la verificación independiente de esta afirmación aún no se ha confirmado. Los lectores pueden seguir la evolución de las ventas de tarjetas y la resolución de la falla, sin que estos elementos estén probados.",
             "verdict": "La información disponible sigue siendo provisional: las tarjetas están en preventa sin cifras de venta, y el exploit financiero no está confirmado.",
             "tip": "Supervisa los comunicados oficiales de Rockstar y los informes de seguridad para confirmar el impacto comercial de las tarjetas y la validez del «hack»."
           },
           {
             "title": "GTA 6 y Fortnite: dos nuevas historias de la economía del juego",
-            "summary": "Los jugadores de GTA 6 encontraron una falla que, según IGN France, permitiría ganar hasta 100 000 $ en diez minutos, aunque la veracidad de estos números sigue siendo incierta. Paralelamente, Fortnite introduce skins de Scott Pilgrim y Ramona Flowers, pero el precio en V‑Bucks aún no ha sido confirmado, dificultando la evaluación del impacto económico de este crossover. Los dos reportajes destacan la incertidumbre alrededor de los números anunciados.",
+            "summary": "Los jugadores de GTA 6 encontraron una falla que, según IGN France, permitiría ganar hasta 100 000 $ en diez minutos, aunque la veracidad de estos números sigue incierta. Paralelamente, Fortnite introduce skins Scott Pilgrim y Ramona Flowers, pero el precio en V‑Bucks aún no ha sido confirmado, dificultando la evaluación del impacto económico de este crossover. Los dos reportajes subrayan la incertidumbre alrededor de los números anunciados.",
             "verdict": "La información proviene de fuentes mediáticas independientes (IGN France) y no constituye confirmaciones oficiales. Los números de GTA 6 y el precio de los skins de Fortnite siguen por verificar con fuentes oficiales.",
             "tip": "Los lectores interesados en estrategias de monetización en videojuegos deberían vigilar las actualizaciones oficiales de Rockstar y Epic Games para confirmar estos datos."
-          },
-          {
-            "title": "Calendario de lanzamientos de videojuegos 2026 y anuncios: detalles numéricos no confirmados",
-            "summary": "Las fuentes consultadas mencionan el calendario de lanzamientos de videojuegos 2026 y anuncios, pero no proporcionan suficientes elementos para confirmar las características numéricas avanzadas. El rendimiento, la compatibilidad y las especificaciones técnicas deben verificarse en las fichas oficiales.",
-            "verdict": "Los números y características detalladas no están establecidos por las fuentes consultadas.",
-            "tip": "Consulta los anuncios y fichas técnicas oficiales antes de fijar cifras precisas."
-          },
-          {
-            "title": "Tienda Sandfall y liberación del hacker de GTA 6",
-            "summary": "La tienda oficial de Sandfall Interactive para *Clair Obscur : Expedition 33* fue anunciada por IGN France, pero ninguna fuente independiente confirma su apertura ni su catálogo completo. Paralelamente, un juez liberó al hacker responsable de la fuga masiva de GTA 6 en 2022, con una advertencia, sin detallar las condiciones de la liberación. Los lectores permanecen en la incertidumbre respecto a la disponibilidad real del juego y las implicaciones de la decisión judicial.",
-            "verdict": "La información proviene únicamente de artículos de IGN France; no hay confirmación oficial del editor.",
-            "tip": "Verifica los sitios oficiales de Sandfall Interactive y los comunicados judiciales para más detalles."
           }
         ]
       }
     },
     "de": {
       "name": "Deutsch",
-      "audio": "documentaire-de-20261125T110332Z.mp3",
-      "video": "documentaire-de-20261125T110332Z.mp4",
-      "subtitles": "documentaire-de-20261125T110332Z.vtt",
+      "audio": "documentaire-de-20261126T110510Z.mp3",
+      "video": "documentaire-de-20261126T110510Z.mp4",
+      "subtitles": "documentaire-de-20261126T110510Z.vtt",
       "text": {
-        "title": "Tech & Gaming Nachrichten: vier Fälle zu prüfen",
-        "intro": "Dieses Dokument sammelt vier aktuelle Fälle, die bereits vom Observatorium veröffentlicht wurden. Die Zusammenfassungen, Urteile und Ratschläge werden ohne neue Fakten wiedergegeben. Die Links ermöglichen die Konsultation der Originalquellen, und Unsicherheiten bleiben gekennzeichnet.",
+        "title": "Tech & Gaming Nachrichten: vier zu prüfende Fälle",
+        "intro": "Dieser Dokumentarfilm fasst vier kürzlich veröffentlichte Fälle des Observatoriums zusammen. Die Zusammenfassungen, Urteile und Ratschläge werden ohne neue Fakten wiedergegeben. Die Links ermöglichen die Originalquellen zu konsultieren und Unsicherheiten bleiben gekennzeichnet.",
         "chapters": [
           {
-            "title": "GTA VI: Panini-Karten und Gerüchte über einen \"Hack\" von 100 k $",
-            "summary": "Die offiziellen Sammelkarten von GTA VI, die in Partnerschaft mit Panini America veröffentlicht wurden, sind bereits vorbestellbar, jedoch wurden noch keine Verkaufszahlen veröffentlicht, sodass die kommerzielle Wirkung ungewiss bleibt. Darüber hinaus soll eine Gruppe von Spielern eine Schwachstelle im Spiel ausgenutzt haben, um in zehn Minuten 100 000 $ zu generieren, obwohl die unabhängige Überprüfung dieser Behauptung noch nicht bestätigt wurde. Die Leser können daher die Entwicklung der Kartenverkäufe und die Behebung der Schwachstelle verfolgen, ohne dass diese Elemente noch bewiesen sind.",
+            "title": "Technologisches Monitoring: zu konsultierende Quellen",
+            "summary": "Die überprüften Quellen lieferten Links zu Veröffentlichungen über Technologie, künstliche Intelligenz und Videospiele. Diese Notfallzusammenfassung bestätigt keine Ankündigung, Datum, Verfügbarkeit, Preis oder genaue Eigenschaft: die detaillierten Elemente müssen direkt in den Originalartikeln überprüft werden. Diese Auswahl dient als dokumentarischer Einstiegspunkt und ersetzt nicht das Lesen der Quellen.",
+            "verdict": "Die Links sind verfügbar, aber keine genaue Ankündigung wird durch diese Zusammenfassung bestätigt.",
+            "tip": "Öffnen Sie die Originalartikel und überprüfen Sie jede wichtige Information in ihrer Primärquelle."
+          },
+          {
+            "title": "Rockstar stärkt den Schutz von GTA 6, Take‑Two räumt Portierungen auf",
+            "summary": "Rockstar hat laut IGN France ein sehr restriktives NDA für GTA 6 eingeführt, ohne dass die genauen Details vom Verlag bestätigt wurden. Gleichzeitig scheint Take‑Two die nicht offiziellen PC-Versionen des Spiels zurückzuziehen und hat ein Fan‑Porting auf dem iPhone nach einer Beschwerde blockiert. Diese Maßnahmen zeigen eine erhöhte Wachsamkeit hinsichtlich des geistigen Eigentums, aber die konkrete Auswirkung auf unabhängige Entwickler bleibt unsicher.",
+            "verdict": "Die Informationen stammen ausschließlich aus den Medienquellen IGN France; es gibt keine offizielle Bestätigung.",
+            "tip": "Überprüfen Sie die offiziellen Pressemitteilungen von Rockstar und Take‑Two, um die Reichweite des NDAs und die Entscheidungen zur Rücknahme von Portierungen zu bestätigen."
+          },
+          {
+            "title": "GTA VI: Panini-Karten und Gerüchte über einen „Hack“ von 100 k $",
+            "summary": "Die offiziellen Sammelkarten von GTA VI, die in Partnerschaft mit Panini America veröffentlicht wurden, sind bereits vorbestellbar, aber es wurden noch keine Verkaufszahlen veröffentlicht, sodass die kommerzielle Wirkung unsicher bleibt. Darüber hinaus soll eine Gruppe von Spielern eine Schwachstelle im Spiel ausgenutzt haben, um in zehn Minuten 100 000 $ zu generieren, obwohl die unabhängige Verifizierung dieser Behauptung noch nicht bestätigt wurde. Leser können daher die Entwicklung der Kartenverkäufe und die Behebung der Schwachstelle verfolgen, ohne dass diese Elemente noch bewiesen sind.",
             "verdict": "Die verfügbaren Informationen bleiben vorläufig: die Karten sind vorbestellbar ohne Verkaufszahlen, und der finanzielle Exploit ist nicht bestätigt.",
-            "tip": "Beobachten Sie die offiziellen Mitteilungen von Rockstar und die Sicherheitsberichte, um die kommerzielle Wirkung der Karten und die Gültigkeit des \"Hack\" zu bestätigen."
+            "tip": "Beobachten Sie die offiziellen Pressemitteilungen von Rockstar und die Sicherheitsberichte, um die kommerzielle Wirkung der Karten und die Gültigkeit des „Hack“ zu bestätigen."
           },
           {
             "title": "GTA 6 und Fortnite: zwei neue Geschichten zur Spielwirtschaft",
-            "summary": "Spieler von GTA 6 haben eine Schwachstelle gefunden, die laut IGN France angeblich bis zu 100 000 $ in zehn Minuten ermöglichen würde, obwohl die Richtigkeit dieser Zahlen ungewiss bleibt. Gleichzeitig führt Fortnite Skins von Scott Pilgrim und Ramona Flowers ein, aber der Preis in V‑Bucks wurde noch nicht bestätigt, was die Bewertung der wirtschaftlichen Auswirkungen dieses Crossovers erschwert. Beide Reportagen betonen die Unsicherheit um die angegebenen Zahlen.",
-            "verdict": "Die Informationen stammen aus unabhängigen Medienquellen (IGN France) und stellen keine offiziellen Bestätigungen dar. Die Zahlen zu GTA 6 und der Preis der Fortnite-Skins müssen noch von offiziellen Quellen verifiziert werden.",
+            "summary": "Spieler von GTA 6 haben angeblich eine Schwachstelle gefunden, die laut IGN France bis zu 100 000 $ in zehn Minuten ermöglichen würde, obwohl die Richtigkeit dieser Zahlen unsicher bleibt. Gleichzeitig führt Fortnite Skins von Scott Pilgrim und Ramona Flowers ein, aber der Preis in V‑Bucks wurde noch nicht bestätigt, was die Bewertung der wirtschaftlichen Wirkung dieses Crossovers erschwert. Beide Reportagen betonen die Unsicherheit der angegebenen Zahlen.",
+            "verdict": "Die Informationen stammen aus unabhängigen Medienquellen (IGN France) und stellen keine offiziellen Bestätigungen dar. Die Zahlen zu GTA 6 und der Preis der Fortnite-Skins müssen noch durch offizielle Quellen verifiziert werden.",
             "tip": "Leser, die an Monetarisierungsstrategien in Videospielen interessiert sind, sollten die offiziellen Updates von Rockstar und Epic Games verfolgen, um diese Daten zu bestätigen."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "name": "Português",
+      "audio": "documentaire-pt-20261126T110510Z.mp3",
+      "video": "documentaire-pt-20261126T110510Z.mp4",
+      "subtitles": "documentaire-pt-20261126T110510Z.vtt",
+      "text": {
+        "title": "Notícias de Tecnologia e Jogos: quatro casos a verificar",
+        "intro": "Este documentário compila quatro casos recentes já publicados pelo Observatório. Os resumos, veredictos e conselhos são reproduzidos sem adicionar novos fatos. Os links permitem consultar as fontes originais e as incertezas permanecem sinalizadas.",
+        "chapters": [
+          {
+            "title": "Monitoramento tecnológico: fontes a consultar",
+            "summary": "Os fluxos consultados forneceram links para publicações sobre tecnologia, inteligência artificial e videogames. Este resumo de reserva não confirma nenhuma anúncio, data, disponibilidade, preço ou característica específica: os detalhes devem ser verificados diretamente nos artigos originais. Esta seleção serve como ponto de entrada documental e não substitui a leitura das fontes.",
+            "verdict": "Os links estão disponíveis, mas nenhuma anúncio precisa é validada por este resumo.",
+            "tip": "Abrir os artigos originais e verificar cada informação importante em sua fonte primária."
           },
           {
-            "title": "Veröffentlichungsplan für Videospiele 2026 und Ankündigungen: nicht bestätigte Zahlen",
-            "summary": "Die konsultierten Quellen erwähnen den Veröffentlichungsplan für Videospiele 2026 und Ankündigungen, liefern jedoch nicht genügend Informationen, um die vorgestellten Zahlen zu bestätigen. Die Leistung, Kompatibilität und technischen Spezifikationen müssen in den offiziellen Datenblättern überprüft werden.",
-            "verdict": "Die detaillierten Zahlen und Merkmale sind in den konsultierten Quellen nicht festgelegt.",
-            "tip": "Konsultieren Sie die offiziellen Ankündigungen und technischen Datenblätter, bevor Sie genaue Zahlen festhalten."
+            "title": "Rockstar reforça proteção de GTA 6, Take‑Two limpa portagens",
+            "summary": "Rockstar impôs um NDA muito restritivo para GTA 6, como relata IGN France, sem que os detalhes precisos sejam confirmados pelo editor. Paralelamente, Take‑Two parece retirar as versões PC não oficiais do jogo e bloqueou um fan‑portagem no iPhone após uma denúncia. Essas ações mostram uma vigilância aumentada sobre a propriedade intelectual, mas o impacto concreto sobre desenvolvedores independentes permanece incerto.",
+            "verdict": "As informações vêm apenas de fontes midiáticas IGN France; nenhuma confirmação oficial está disponível.",
+            "tip": "Verificar os comunicados oficiais da Rockstar e Take‑Two para confirmar o alcance do NDA e as decisões de retirada das portagens."
           },
           {
-            "title": "Sandfall-Shop und Freilassung des GTA 6-Hackers",
-            "summary": "Der offizielle Shop von Sandfall Interactive für *Clair Obscur : Expedition 33* wurde von IGN France angekündigt, jedoch bestätigt keine unabhängige Quelle seine Eröffnung oder sein vollständiges Sortiment. Gleichzeitig hat ein Richter den Hacker, der 2022 die massive GTA 6-Leckage verursacht hat, freigesprochen, mit einer Verwarnung, ohne die Bedingungen der Freilassung zu erläutern. Die Leser bleiben unsicher über die tatsächliche Verfügbarkeit des Spiels und die Implikationen der gerichtlichen Entscheidung.",
-            "verdict": "Die Informationen stammen ausschließlich aus IGN France-Artikeln; es gibt keine offizielle Bestätigung des Herausgebers.",
-            "tip": "Überprüfen Sie die offiziellen Websites von Sandfall Interactive und die gerichtlichen Mitteilungen für weitere Details."
+            "title": "GTA VI: cartas Panini e rumores de \"hack\" a 100 k $",
+            "summary": "As cartas colecionáveis oficiais de GTA VI, lançadas em parceria com Panini America, já estão disponíveis em pré‑pedido, mas nenhum dado de venda foi publicado, deixando o impacto comercial incerto. Por outro lado, um grupo de jogadores teria explorado uma falha do jogo para gerar 100 000 $ em dez minutos, embora a verificação independente dessa afirmação ainda não tenha sido confirmada. Os leitores podem, portanto, acompanhar a evolução das vendas das cartas e a resolução da falha, sem que esses elementos ainda sejam provados.",
+            "verdict": "As informações disponíveis permanecem provisórias: as cartas estão em pré‑pedido sem números de venda, e o exploit financeiro não é confirmado.",
+            "tip": "Acompanhe os comunicados oficiais da Rockstar e os relatórios de segurança para confirmar o impacto comercial das cartas e a validade do \"hack\"."
+          },
+          {
+            "title": "GTA 6 e Fortnite: duas novas histórias da economia do jogo",
+            "summary": "Os jogadores de GTA 6 encontraram uma falha que, segundo IGN France, permitiria ganhar até 100 000 $ em dez minutos, embora a veracidade desses números permaneça incerta. Paralelamente, Fortnite introduz skins Scott Pilgrim e Ramona Flowers, mas o preço em V‑Bucks ainda não foi confirmado, dificultando a avaliação do impacto econômico desse crossover. Os dois reportagens destacam a incerteza em torno dos números anunciados.",
+            "verdict": "As informações vêm de fontes midiáticas independentes (IGN France) e não constituem confirmações oficiais. Os números de GTA 6 e o preço das skins Fortnite ainda precisam ser verificados por fontes oficiais.",
+            "tip": "Os leitores interessados em estratégias de monetização em videogames devem acompanhar as atualizações oficiais da Rockstar e da Epic Games para confirmar esses dados."
           }
         ]
       }
     },
     "ar": {
       "name": "العربية",
-      "audio": "documentaire-ar-20261125T110332Z.mp3",
-      "video": "documentaire-ar-20261125T110332Z.mp4",
-      "subtitles": "documentaire-ar-20261125T110332Z.vtt",
+      "audio": "documentaire-ar-20261126T110510Z.mp3",
+      "video": "documentaire-ar-20261126T110510Z.mp4",
+      "subtitles": "documentaire-ar-20261126T110510Z.vtt",
       "text": {
         "title": "أخبار التقنية والألعاب: أربعة ملفات للتحقق",
-        "intro": "هذا الوثائقي يجمع أربعة ملفات حديثة منشورة بالفعل من قبل المراقب. الملخصات والحكم والنصائح معاد تدوينها دون إضافة حقائق جديدة. الروابط تسمح بالاطلاع على المصادر الأصلية وتظل الشكوك معلقة.",
+        "intro": "هذا الوثائقي يجمع أربعة ملفات حديثة منشورة بالفعل من قبل المراقبة. الملخصات والحكم والنصائح مكررة دون إضافة حقائق جديدة. الروابط تسمح بالاطلاع على المصادر الأصلية وتظل الشكوك معلقة.",
         "chapters": [
           {
-            "title": "GTA VI: بطاقات Panini وشائعات «هجوم» بقيمة 100 k$",
+            "title": "المراقبة التقنية: مصادر للرجوع إليها",
+            "summary": "المسارات التي تم استعراضها وفرت روابط إلى منشورات حول التكنولوجيا، الذكاء الاصطناعي، وألعاب الفيديو. هذا الملخص الاحتياطي لا يؤكد أي إعلان، تاريخ، توفر، سعر أو ميزة محددة: يجب التحقق من العناصر المفصلة مباشرةً في المقالات الأصلية. هذا الاختيار يعمل كنقطة دخول وثائقية ولا يحل محل قراءة المصادر.",
+            "verdict": "الروابط متاحة، لكن لا يوجد إعلان محدد تم التحقق منه في هذا الملخص.",
+            "tip": "افتح المقالات الأصلية وتحقق من كل معلومة مهمة في المصدر الأساسي."
+          },
+          {
+            "title": "روكستار تعزز حماية GTA 6، تايكو تزيل النسخ المنقولة",
+            "summary": "روكستار فرضت NDA صارمًا لـ GTA 6، كما يذكر IGN France، دون أن يتم تأكيد التفاصيل الدقيقة من قبل الناشر. في الوقت نفسه، يبدو أن تايكو تزيل نسخ PC غير الرسمية للعبة وعرقلت نقلًا من طرف محب بعد شكوى. تُظهر هذه الإجراءات حذرًا متزايدًا بشأن الملكية الفكرية، لكن الأثر الفعلي على المطورين المستقلين غير مؤكد.",
+            "verdict": "المعلومات تأتي فقط من مصادر إعلامية IGN France؛ لا توجد تأكيدات رسمية متاحة.",
+            "tip": "تحقق من البيانات الرسمية لروكستار وتايكو لتأكيد نطاق NDA وقرارات إزالة النسخ المنقولة."
+          },
+          {
+            "title": "GTA VI: بطاقات بانيني وشائعات \"هجوم\" بقيمة 100 k$",
             "summary": "بطاقات جمع GTA VI الرسمية، التي أطلقتها شراكة مع Panini America، متاحة بالفعل للطلب المسبق، لكن لم تُنشر بيانات مبيعات بعد، مما يترك الأثر التجاري غير مؤكد. علاوة على ذلك، يُزعم أن مجموعة من اللاعبين استغلت ثغرة في اللعبة لتوليد 100 000$ في عشر دقائق، رغم أن التحقق المستقل من هذا الادعاء لم يُؤكد بعد. يمكن للقراء متابعة تطور مبيعات البطاقات وحل الثغرة، دون أن تكون هذه العناصر مثبتة بعد.",
             "verdict": "المعلومات المتاحة لا تزال مؤقتة: البطاقات متاحة للطلب المسبق دون أرقام مبيعات، والاختراق المالي غير مؤكد.",
-            "tip": "راقب البيانات الرسمية من Rockstar وتقارير الأمان لتأكيد الأثر التجاري للبطاقات وصحة «الهجوم»."
+            "tip": "راقب البيانات الرسمية لروكستار وتقارير الأمان لتأكيد الأثر التجاري للبطاقات وصحة \"الهجوم\"."
           },
           {
-            "title": "GTA 6 و Fortnite: قصتان جديدتان عن اقتصاد اللعبة",
-            "summary": "وجد لاعبو GTA 6 ثغرة، وفقًا لـ IGN France، قد تسمح لكسب ما يصل إلى 100 000$ في عشر دقائق، رغم أن صحة هذه الأرقام غير مؤكدة. في الوقت نفسه، يقدم Fortnite شخصيات Scott Pilgrim و Ramona Flowers، لكن سعرها بالـ V‑Bucks لم يُؤكد بعد، مما يجعل من الصعب تقييم الأثر الاقتصادي لهذا التداخل. يسلط كلا التقريرين الضوء على عدم اليقين حول الأرقام المعلنة.",
-            "verdict": "المعلومات تأتي من مصادر إعلامية مستقلة (IGN France) ولا تشكل تأكيدًا رسميًا. الأرقام الخاصة بـ GTA 6 وسعر شخصيات Fortnite لا تزال بحاجة إلى التحقق من المصادر الرسمية.",
-            "tip": "يجب على القرّاء المهتمين باستراتيجيات التسيير في ألعاب الفيديو متابعة التحديثات الرسمية من Rockstar وEpic Games لتأكيد هذه البيانات."
-          },
-          {
-            "title": "جدول مواعيد إصدار ألعاب الفيديو 2026 والإعلانات: تفاصيل رقمية غير مؤكدة",
-            "summary": "تشير المصادر التي تم الاطلاع عليها إلى جدول مواعيد إصدار ألعاب الفيديو 2026 والإعلانات، لكنها لا توفر ما يكفي من العناصر لتأكيد الخصائص الرقمية المقدمة. يجب التحقق من الأداء والتوافق والمواصفات التقنية في الأوراق الرسمية.",
-            "verdict": "الأرقام والخصائص المفصلة غير مثبتة من قبل المصادر التي تم الاطلاع عليها.",
-            "tip": "استشر الإعلانات والأوراق التقنية الرسمية قبل اعتماد أرقام دقيقة."
-          },
-          {
-            "title": "متجر Sandfall وإطلاق سراح القراصنة GTA 6",
-            "summary": "أعلن IGN France عن المتجر الرسمي لـ Sandfall Interactive لألعاب *Clair Obscur : Expedition 33*، لكن لا توجد مصادر مستقلة تؤكد افتتاحه أو كتالوجه الكامل. في الوقت نفسه، أطلق قاضي سراح القراصنة المسؤول عن تسريب GTA 6 الضخم في 2022، مع تحذير، دون تفصيل شروط الإفراج. يظل القرّاء في حالة عدم اليقين بشأن توفر اللعبة الفعلي وتداعيات القرار القضائي.",
-            "verdict": "المعلومات تأتي فقط من مقالات IGN France؛ لا توجد تأكيدات رسمية من الناشر.",
-            "tip": "تحقق من المواقع الرسمية لـ Sandfall Interactive والبيانات القضائية لمزيد من التفاصيل."
+            "title": "GTA 6 و Fortnite: قصتان جديدتان عن اقتصاد الألعاب",
+            "summary": "وجد لاعبو GTA 6 ثغرة، وفقًا لـ IGN France، تسمح لكسب ما يصل إلى 100 000$ في عشر دقائق، رغم أن صحة هذه الأرقام غير مؤكدة. في الوقت نفسه، يقدم Fortnite شخصيات Scott Pilgrim و Ramona Flowers، لكن سعر V‑Bucks لم يُؤكد بعد، مما يجعل من الصعب تقييم الأثر الاقتصادي لهذا التداخل. يسلط كلا التقريرين الضوء على عدم اليقين حول الأرقام المعلنة.",
+            "verdict": "المعلومات تأتي من مصادر إعلامية مستقلة (IGN France) ولا تشكل تأكيدًا رسميًا. الأرقام الخاصة بـ GTA 6 وسعر شخصيات Fortnite لا تزال بحاجة إلى التحقق من مصادر رسمية.",
+            "tip": "يجب على القراء المهتمين باستراتيجيات التسيير في ألعاب الفيديو متابعة التحديثات الرسمية لروكستار وإيبيك جيمز لتأكيد هذه البيانات."
           }
         ]
       }
     },
     "zh": {
       "name": "中文",
-      "audio": "documentaire-zh-20261125T110332Z.mp3",
-      "video": "documentaire-zh-20261125T110332Z.mp4",
-      "subtitles": "documentaire-zh-20261125T110332Z.vtt",
+      "audio": "documentaire-zh-20261126T110510Z.mp3",
+      "video": "documentaire-zh-20261126T110510Z.mp4",
+      "subtitles": "documentaire-zh-20261126T110510Z.vtt",
       "text": {
-        "title": "Tech & Gaming 新闻：四个待核实的文件",
-        "intro": "本纪录片汇编了观测站已发布的四个最新文件。摘要、结论和建议均按原样复制，不添加新事实。链接可供查阅原始来源，未确定的信息仍被标注。",
+        "title": "Tech & Gaming 新闻：四个待核实的专题",
+        "intro": "本纪录片汇总了观测站已发布的四个近期专题。摘要、结论和建议均按原样引用，不添加新事实。链接可用于查看原始来源，未确定的信息仍以不确定形式标注。",
         "chapters": [
           {
-            "title": "GTA VI：Panini 卡片与 10 万美元“黑客”传闻",
-            "summary": "GTA VI 官方收藏卡片与 Panini America 合作推出，已可预购，但尚未公布销售数据，商业影响仍不确定。此外，一组玩家据称利用游戏漏洞在十分钟内赚取 100,000 美元，独立验证尚未确认。读者可关注卡片销量和漏洞修复进展，但这些尚未得到证实。",
-            "verdict": "可获得的信息仍为临时性：卡片已预购但无销量数据，财务漏洞未得到确认。",
-            "tip": "关注 Rockstar 官方公告和安全报告，以确认卡片的商业影响及“黑客”真实性。"
+            "title": "技术监测：可参考的来源",
+            "summary": "所查阅的流媒体提供了关于技术、人工智能和电子游戏的出版物链接。本备份摘要未确认任何公告、日期、可用性、价格或具体特征：详细内容需直接在原始文章中核实。本选择作为文档入口点，并不替代阅读原始来源。",
+            "verdict": "链接可用，但本摘要未验证任何具体公告。",
+            "tip": "打开原始文章并在其原始来源中核实每条重要信息。"
           },
           {
-            "title": "GTA 6 与 Fortnite：游戏经济的两则新故事",
-            "summary": "GTA 6 玩家发现一漏洞，据 IGN France 称可在十分钟内赚取 100,000 美元，但这些数字真实性仍不确定。同时，Fortnite 推出 Scott Pilgrim 与 Ramona Flowers 皮肤，但 V‑Bucks 价格尚未确认，难以评估此跨界的经济影响。两篇报道均强调所公布数字的不确定性。",
-            "verdict": "信息来源为独立媒体（IGN France），并非官方确认。GTA 6 的数字和 Fortnite 皮肤价格仍需官方核实。",
-            "tip": "对游戏货币化策略感兴趣的读者应关注 Rockstar 与 Epic Games 的官方更新，以确认这些数据。"
+            "title": "Rockstar 加强 GTA 6 保护，Take‑Two 清理移植版",
+            "summary": "Rockstar 对 GTA 6 施加了极为严格的 NDA，正如 IGN France 报道所述，且未得到发行商的具体确认。与此同时，Take‑Two 似乎正在移除非官方 PC 版本，并在收到投诉后阻止了 iPhone 上的粉丝移植。这些行动显示了对知识产权的更高警惕，但对独立开发者的实际影响仍不确定。",
+            "verdict": "信息仅来自 IGN France 媒体来源；暂无官方确认。",
+            "tip": "核实 Rockstar 和 Take‑Two 的官方公告，以确认 NDA 范围及移植版撤回决定。"
           },
           {
-            "title": "2026 年游戏发行日程与公告：未确认的数值细节",
-            "summary": "所查资料提及 2026 年游戏发行日程与公告，但未提供足够信息以确认所述数值。性能、兼容性与技术规格需在官方资料中核实。",
-            "verdict": "所列数字与细节未被所查资料确立。",
-            "tip": "在确定具体数字前，请先查阅官方公告与技术规格表。"
+            "title": "GTA VI：Panini 卡牌与 10 万美元“黑客”传闻",
+            "summary": "GTA VI 官方收藏卡牌已与 Panini America 合作推出预售，但尚未公布任何销售数据，商业影响仍不确定。另一方面，一组玩家据称利用游戏漏洞在十分钟内赚取 100,000 美元，独立验证尚未完成。读者可关注卡牌销量和漏洞修复进展，但这些信息尚未得到证实。",
+            "verdict": "可用信息仍为临时性：卡牌已预售但无销售数字，财务漏洞未得到确认。",
+            "tip": "关注 Rockstar 官方公告和安全报告，以确认卡牌商业影响及“黑客”有效性。"
           },
           {
-            "title": "Sandfall 商店与 GTA 6 黑客释放",
-            "summary": "Sandfall Interactive 官方商店针对 *Clair Obscur : Expedition 33* 的发布已由 IGN France 报道，但无独立来源确认其开业或完整目录。与此同时，法官释放了 2022 年 GTA 6 大规模泄露的黑客，附带警告，但未说明释放条件。读者对游戏实际可用性与司法决定的影响仍处于不确定状态。",
-            "verdict": "信息仅来自 IGN France 文章；未获得发行商官方确认。",
-            "tip": "请核实 Sandfall Interactive 官方网站及司法公告，以获取更多细节。"
+            "title": "GTA 6 与 Fortnite：游戏经济的两条新故事线",
+            "summary": "GTA 6 玩家发现的漏洞，据 IGN France 称可在十分钟内赚取 100,000 美元，但这些数字的真实性仍不确定。与此同时，Fortnite 推出了 Scott Pilgrim 和 Ramona Flowers 皮肤，但 V‑Bucks 价格尚未确认，难以评估此跨界合作的经济影响。两篇报道均强调对公布数字的不确定性。",
+            "verdict": "信息来自独立媒体来源（IGN France），并非官方确认。GTA 6 的数字和 Fortnite 皮肤价格仍需官方核实。",
+            "tip": "对游戏货币化策略感兴趣的读者应关注 Rockstar 和 Epic Games 的官方更新，以确认这些数据。"
           }
         ]
       }
