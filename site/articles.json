@@ -1375,7 +1375,63 @@
       }
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261122T103544-742b732c.mp3"
+    "audio_url": "audio/20261122T103544-742b732c.mp3",
+    "translations": {
+      "en": {
+        "theme": "Gaming and video games — general monitoring (backup research)",
+        "title": "GTA 6: PS5 crashes and violent NPCs reported",
+        "summary": "Players of GTA 6 have reported crashes on PS5 accompanied by the CE‑108255‑1 error, without an official Rockstar update. Meanwhile, the game's NPCs appear to react extremely violently, prompting some players to avoid them. These incidents have not yet been confirmed by the developers, and the origin of the bug remains unknown. Readers interested in the recent launch of GTA 6 should monitor future Rockstar statements.",
+        "verdict": "Incidents reported without official confirmation",
+        "tip": "Check Rockstar updates and official forums for clarification.",
+        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links to find the full context.",
+        "audio_url": "audio/20261122T103544-742b732c-en.mp3"
+      },
+      "es": {
+        "theme": "Gaming y videojuegos — monitoreo general (búsqueda de respaldo)",
+        "title": "GTA 6: se reportan fallos en PS5 y NPCs violentos",
+        "summary": "Los jugadores de GTA 6 han informado de caídas en PS5 acompañadas del error CE‑108255‑1, sin una actualización oficial de Rockstar. Mientras tanto, los NPC del juego parecen reaccionar de manera extremadamente violenta, lo que lleva a algunos jugadores a evitarlos. Estos incidentes aún no han sido confirmados por los desarrolladores y la causa del error sigue siendo desconocida. Los lectores interesados en el reciente lanzamiento de GTA 6 deben vigilar los futuros comunicados de Rockstar.",
+        "verdict": "Incidentes reportados sin confirmación oficial",
+        "tip": "Verifica las actualizaciones de Rockstar y los foros oficiales para aclaraciones.",
+        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulta los enlaces para encontrar el contexto completo.",
+        "audio_url": "audio/20261122T103544-742b732c-es.mp3"
+      },
+      "de": {
+        "theme": "Gaming und Videospiele — allgemeine Überwachung (Backup-Forschung)",
+        "title": "GTA 6: PS5-Abstürze und gewalttätige NPCs gemeldet",
+        "summary": "Spieler von GTA 6 haben Abstürze auf PS5 gemeldet, begleitet von dem Fehler CE‑108255‑1, ohne dass Rockstar offiziell ein Update veröffentlicht hat. Gleichzeitig scheinen die NPCs im Spiel extrem gewalttätig zu reagieren, was einige Spieler dazu veranlasst, sie zu meiden. Diese Vorfälle wurden noch nicht von den Entwicklern bestätigt, und die Ursache des Fehlers ist unbekannt. Leser, die an der jüngsten Veröffentlichung von GTA 6 interessiert sind, sollten zukünftige Mitteilungen von Rockstar beobachten.",
+        "verdict": "Gemeldete Vorfälle ohne offizielle Bestätigung",
+        "tip": "Überprüfen Sie Rockstar‑Updates und offizielle Foren auf Klarstellungen.",
+        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Prüfen Sie die Links, um den vollständigen Kontext zu finden.",
+        "audio_url": "audio/20261122T103544-742b732c-de.mp3"
+      },
+      "pt": {
+        "theme": "Jogos e videogames — monitoramento geral (pesquisa de backup)",
+        "title": "GTA 6: falhas no PS5 e NPCs violentos relatados",
+        "summary": "Jogadores de GTA 6 relataram falhas no PS5 acompanhadas do erro CE‑108255‑1, sem atualização oficial da Rockstar. Enquanto isso, os NPCs do jogo parecem reagir de forma extremamente violenta, levando alguns jogadores a evitá-los. Esses incidentes ainda não foram confirmados pelos desenvolvedores, e a origem do bug permanece desconhecida. Leitores interessados no recente lançamento de GTA 6 devem acompanhar os futuros comunicados da Rockstar.",
+        "verdict": "Incidentes relatados sem confirmação oficial",
+        "tip": "Verifique as atualizações da Rockstar e os fóruns oficiais para esclarecimentos.",
+        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Consulte os links para encontrar o contexto completo.",
+        "audio_url": "audio/20261122T103544-742b732c-pt.mp3"
+      },
+      "ar": {
+        "theme": "الألعاب وألعاب الفيديو — المراقبة العامة (البحث الاحتياطي)",
+        "title": "GTA 6: تقارير عن تعطل PS5 وشخصيات غير لاعبة عنيفة",
+        "summary": "أبلغ لاعبو GTA 6 عن تعطل على PS5 مصحوبًا بخطأ CE‑108255‑1، دون تحديث رسمي من Rockstar. في الوقت نفسه، يبدو أن شخصيات غير اللاعبين في اللعبة تتفاعل بشكل عنيف للغاية، مما يدفع بعض اللاعبين إلى تجنبها. لم يتم تأكيد هذه الحوادث بعد من قبل المطورين، ولا تزال أصول الخطأ غير معروفة. يجب على القراء المهتمين بإطلاق GTA 6 الأخير مراقبة البيانات الصحفية المستقبلية من Rockstar.",
+        "verdict": "حوادث مُبلغ عنها دون تأكيد رسمي",
+        "tip": "تحقق من تحديثات Rockstar والمنتديات الرسمية للحصول على توضيحات.",
+        "ai_notice": "تم كتابة المقال بمساعدة groq من المصادر المذكورة. راجع الروابط للعثور على السياق الكامل.",
+        "audio_url": "audio/20261122T103544-742b732c-ar.mp3"
+      },
+      "zh": {
+        "theme": "游戏与视频游戏 — 一般监测（备份研究）",
+        "title": "GTA 6：报告PS5崩溃和暴力NPC",
+        "summary": "GTA 6玩家报告了PS5崩溃并伴随CE‑108255‑1错误，Rockstar尚未发布官方更新。与此同时，游戏中的NPC似乎表现出极端暴力行为，导致部分玩家避免与之互动。这些事件尚未得到开发者确认，错误来源仍不明。对GTA 6近期发布感兴趣的读者应关注Rockstar的后续公告。",
+        "verdict": "未得到官方确认的事件报告",
+        "tip": "请检查Rockstar更新和官方论坛以获取澄清。",
+        "ai_notice": "文章使用groq根据所示来源撰写。请查看链接以获取完整背景。",
+        "audio_url": "audio/20261122T103544-742b732c-zh.mp3"
+      }
+    }
   },
   {
     "id": "20261122T102204-632c7b13",
@@ -1406,7 +1462,63 @@
       }
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261122T102204-632c7b13.mp3"
+    "audio_url": "audio/20261122T102204-632c7b13.mp3",
+    "translations": {
+      "en": {
+        "theme": "Path of Exile 2 — full launch announced December 11, 2026",
+        "title": "Path of Exile 2: insufficient details in sources",
+        "summary": "The retrieved results report news related to Path of Exile 2, but the available excerpts mainly reproduce titles and do not provide enough information to confirm the scope, effects, or details of the announcement. Refer to the original article and the organization’s statement before accepting details.",
+        "verdict": "The retrieved excerpts are insufficient to confirm the details.",
+        "tip": "Read the original article and look for an official statement before sharing the information.",
+        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links to find the full context.",
+        "audio_url": "audio/20261122T102204-632c7b13-en.mp3"
+      },
+      "es": {
+        "theme": "Path of Exile 2 — lanzamiento completo anunciado el 11 de diciembre de 2026",
+        "title": "Path of Exile 2: detalles insuficientes en las fuentes",
+        "summary": "Los resultados recuperados informan sobre noticias relacionadas con Path of Exile 2, pero los fragmentos disponibles reproducen principalmente los títulos y no proporcionan suficientes elementos para confirmar el alcance, los efectos o los detalles de la anuncio. Consulte el artículo original y el comunicado de la organización antes de aceptar detalles.",
+        "verdict": "Los fragmentos recuperados no son suficientes para confirmar los detalles.",
+        "tip": "Lea el artículo original y busque un comunicado oficial antes de compartir la información.",
+        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulte los enlaces para encontrar el contexto completo.",
+        "audio_url": "audio/20261122T102204-632c7b13-es.mp3"
+      },
+      "de": {
+        "theme": "Path of Exile 2 — vollständige Veröffentlichung angekündigt am 11. Dezember 2026",
+        "title": "Path of Exile 2: unzureichende Details in den Quellen",
+        "summary": "Die abgerufenen Ergebnisse berichten über Nachrichten zu Path of Exile 2, aber die verfügbaren Auszüge wiedergeben hauptsächlich die Titel und liefern nicht genügend Informationen, um den Umfang, die Auswirkungen oder die Modalitäten der Ankündigung zu bestätigen. Konsultieren Sie den Originalartikel und die Stellungnahme der Organisation, bevor Sie Details übernehmen.",
+        "verdict": "Die abgerufenen Auszüge reichen nicht aus, um die Details zu bestätigen.",
+        "tip": "Lesen Sie den Originalartikel und suchen Sie nach einer offiziellen Stellungnahme, bevor Sie die Information teilen.",
+        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Prüfen Sie die Links, um den vollständigen Kontext zu finden.",
+        "audio_url": "audio/20261122T102204-632c7b13-de.mp3"
+      },
+      "pt": {
+        "theme": "Path of Exile 2 — lançamento completo anunciado em 11 de dezembro de 2026",
+        "title": "Path of Exile 2: detalhes insuficientes nas fontes",
+        "summary": "Os resultados recuperados indicam notícias relacionadas ao Path of Exile 2, mas os trechos disponíveis reproduzem principalmente os títulos e não fornecem elementos suficientes para confirmar o escopo, os efeitos ou os detalhes da anúncio. Consulte o artigo original e a declaração da organização antes de aceitar detalhes.",
+        "verdict": "Os trechos recuperados não são suficientes para confirmar os detalhes.",
+        "tip": "Leia o artigo original e procure uma declaração oficial antes de compartilhar a informação.",
+        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Verifique os links para encontrar o contexto completo.",
+        "audio_url": "audio/20261122T102204-632c7b13-pt.mp3"
+      },
+      "ar": {
+        "theme": "مسار الهروب 2 — الإطلاق الكامل معلن في 11 ديسمبر 2026",
+        "title": "مسار الهروب 2: تفاصيل غير كافية في المصادر",
+        "summary": "تشير النتائج المسترجعة إلى أخبار متعلقة بمسار الهروب 2، لكن المقتطفات المتاحة تعيد في الغالب العناوين ولا توفر ما يكفي من المعلومات لتأكيد نطاق أو تأثير أو تفاصيل الإعلان. راجع المقال الأصلي وبيان المنظمة المعنية قبل اعتماد التفاصيل.",
+        "verdict": "المقتطفات المسترجعة غير كافية لتأكيد التفاصيل.",
+        "tip": "اقرأ المقال الأصلي وابحث عن بيان رسمي قبل مشاركة المعلومات.",
+        "ai_notice": "مقال مكتوب بمساعدة groq من المصادر المحددة. راجع الروابط للعثور على السياق الكامل.",
+        "audio_url": "audio/20261122T102204-632c7b13-ar.mp3"
+      },
+      "zh": {
+        "theme": "Path of Exile 2 — 2026年12月11日宣布完整发布",
+        "title": "Path of Exile 2：来源信息不足",
+        "summary": "检索到的结果报告了与 Path of Exile 2 相关的新闻，但可用摘录主要复制标题，未提供足够信息来确认公告的范围、影响或细节。在接受细节之前，请参阅原始文章和相关组织的声明。",
+        "verdict": "检索到的摘录不足以确认细节。",
+        "tip": "阅读原始文章并寻找官方声明后再分享信息。",
+        "ai_notice": "文章使用 groq 根据所示来源撰写。请查看链接以获取完整背景。",
+        "audio_url": "audio/20261122T102204-632c7b13-zh.mp3"
+      }
+    }
   },
   {
     "id": "20261122T101552-c59ad2a2",
@@ -1455,7 +1567,63 @@
       }
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261122T101552-c59ad2a2.mp3"
+    "audio_url": "audio/20261122T101552-c59ad2a2.mp3",
+    "translations": {
+      "en": {
+        "theme": "GTA VI — launch and verified early feedback",
+        "title": "GTA VI: crashes, violent NPCs and closed shops reported",
+        "summary": "Early feedback on GTA VI shows crashes on PS5 with error CE‑108255‑1 and NPCs reacting extremely violently, indicating stability and AI issues. Some buyers of the non‑Ultimate edition also encountered exclusive shops shutting their doors, while the actress from Mandy expresses enthusiasm after her character’s viral success. Incidents remain sporadic and no official confirmation has yet been released.",
+        "verdict": "Sources consulted indicate technical malfunctions and user experience problems, but no official evidence has confirmed these issues.",
+        "tip": "Players should remain vigilant and report crashes through official channels.",
+        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links to find the full context.",
+        "audio_url": "audio/20261122T101552-c59ad2a2-en.mp3"
+      },
+      "es": {
+        "theme": "GTA VI — lanzamiento y primeros comentarios verificados",
+        "title": "GTA VI: se reportan fallos, NPCs violentos y tiendas cerradas",
+        "summary": "Los primeros comentarios sobre GTA VI muestran fallos en PS5 con el error CE‑108255‑1 y NPCs que reaccionan de forma extremadamente violenta, indicando problemas de estabilidad e IA. Algunos compradores de la edición no Ultimate también encontraron tiendas exclusivas cerrando sus puertas, mientras la actriz de Mandy expresa su entusiasmo tras la viralidad de su personaje. Los incidentes siguen siendo esporádicos y aún no se ha publicado ninguna confirmación oficial.",
+        "verdict": "Las fuentes consultadas indican fallos técnicos y problemas de experiencia de usuario, pero no hay evidencia oficial que confirme estos problemas.",
+        "tip": "Los jugadores deben mantenerse vigilantes y reportar los fallos a través de los canales oficiales.",
+        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulte los enlaces para encontrar el contexto completo.",
+        "audio_url": "audio/20261122T101552-c59ad2a2-es.mp3"
+      },
+      "de": {
+        "theme": "GTA VI — Start und verifizierte erste Rückmeldungen",
+        "title": "GTA VI: Abstürze, gewalttätige NPCs und geschlossene Geschäfte gemeldet",
+        "summary": "Frühe Rückmeldungen zu GTA VI zeigen Abstürze auf PS5 mit dem Fehler CE‑108255‑1 und NPCs, die extrem gewalttätig reagieren, was auf Stabilitäts- und KI-Probleme hinweist. Einige Käufer der Nicht‑Ultimate-Ausgabe stießen ebenfalls auf exklusive Geschäfte, die ihre Türen schlossen, während die Schauspielerin aus Mandy ihre Begeisterung nach der Viralität ihres Charakters zum Ausdruck bringt. Die Vorfälle bleiben sporadisch und es wurde noch keine offizielle Bestätigung veröffentlicht.",
+        "verdict": "Die konsultierten Quellen deuten auf technische Fehlfunktionen und Probleme mit der Benutzererfahrung hin, aber es gibt keine offizielle Bestätigung dieser Probleme.",
+        "tip": "Spieler sollten wachsam bleiben und Abstürze über die offiziellen Kanäle melden.",
+        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Prüfen Sie die Links, um den vollständigen Kontext zu finden.",
+        "audio_url": "audio/20261122T101552-c59ad2a2-de.mp3"
+      },
+      "pt": {
+        "theme": "GTA VI — lançamento e primeiros retornos verificados",
+        "title": "GTA VI: falhas, NPCs violentos e lojas fechadas relatados",
+        "summary": "Os primeiros retornos sobre GTA VI mostram falhas no PS5 com o erro CE‑108255‑1 e NPCs reagindo de forma extremamente violenta, indicando problemas de estabilidade e IA. Alguns compradores da edição não Ultimate também encontraram lojas exclusivas fechando suas portas, enquanto a atriz de Mandy expressa entusiasmo após a viralidade de seu personagem. Os incidentes permanecem esporádicos e ainda não há confirmação oficial publicada.",
+        "verdict": "As fontes consultadas indicam falhas técnicas e problemas de experiência do usuário, mas nenhuma prova oficial confirmou esses problemas.",
+        "tip": "Os jogadores devem permanecer vigilantes e relatar falhas pelos canais oficiais.",
+        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Consulte os links para encontrar o contexto completo.",
+        "audio_url": "audio/20261122T101552-c59ad2a2-pt.mp3"
+      },
+      "ar": {
+        "theme": "GTA VI — الإطلاق وردود الفعل الأولية المُتحققة",
+        "title": "GTA VI: تقارير عن الأعطال، NPC عدوانية ومتاجر مغلقة",
+        "summary": "تُظهر ردود الفعل الأولية على GTA VI أعطالاً على PS5 مع الخطأ CE‑108255‑1 وNPC تتفاعل بشكل عنيف للغاية، ما يشير إلى مشاكل في الاستقرار والذكاء الاصطناعي. بعض المشترين للنسخة غير Ultimate واجهوا أيضًا متاجر حصرية تغلق أبوابها، بينما تعبر الممثلة من Mandy عن حماسها بعد انتشار شخصيتها. ما زالت الحوادث متقطعة ولم تُنشر أي تأكيدات رسمية بعد.",
+        "verdict": "المصادر التي تم استشارتها تشير إلى عيوب تقنية ومشاكل في تجربة المستخدم، لكن لا توجد أدلة رسمية تؤكد هذه المشكلات.",
+        "tip": "يجب على اللاعبين البقاء يقظين والإبلاغ عن الأعطال عبر القنوات الرسمية.",
+        "ai_notice": "تم كتابة المقال بمساعدة groq استنادًا إلى المصادر المذكورة. راجع الروابط للعثور على السياق الكامل.",
+        "audio_url": "audio/20261122T101552-c59ad2a2-ar.mp3"
+      },
+      "zh": {
+        "theme": "GTA VI — 上线与已验证的早期反馈",
+        "title": "GTA VI：报告崩溃、暴力 NPC 与商店关闭",
+        "summary": "GTA VI 的早期反馈显示 PS5 上出现 CE‑108255‑1 错误的崩溃，以及 NPC 以极端暴力方式反应，表明存在稳定性和 AI 问题。一些非 Ultimate 版购买者也遇到过独家商店关闭门口的情况，而 Mandy 的演员在其角色走红后表达了热情。事件仍然零星，尚未发布任何官方确认。",
+        "verdict": "所咨询的来源表明存在技术故障和用户体验问题，但尚未有官方证据确认这些问题。",
+        "tip": "玩家应保持警惕，并通过官方渠道报告崩溃。",
+        "ai_notice": "本文使用 groq 根据所述来源撰写。请查看链接以获取完整背景。",
+        "audio_url": "audio/20261122T101552-c59ad2a2-zh.mp3"
+      }
+    }
   },
   {
     "id": "20261122T101432-aa6ea4ad",
@@ -1495,7 +1663,63 @@
       }
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261122T101432-aa6ea4ad.mp3"
+    "audio_url": "audio/20261122T101432-aa6ea4ad.mp3",
+    "translations": {
+      "en": {
+        "theme": "Warhammer 40,000: Dawn of War IV — release announced for December 2026",
+        "title": "Warhammer 40,000: Dawn of War IV: insufficient details in sources",
+        "summary": "The retrieved results report news related to Warhammer 40,000: Dawn of War IV, but the available excerpts mainly reproduce titles and do not provide enough information to confirm the scope, effects, or details of the announcement. Refer to the original article and the organization’s statement before accepting details.",
+        "verdict": "The retrieved excerpts are insufficient to confirm the details.",
+        "tip": "Read the original article and look for an official statement before sharing the information.",
+        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links to find the full context.",
+        "audio_url": "audio/20261122T101432-aa6ea4ad-en.mp3"
+      },
+      "es": {
+        "theme": "Warhammer 40,000: Dawn of War IV — anuncio de lanzamiento en diciembre de 2026",
+        "title": "Warhammer 40,000: Dawn of War IV: detalles insuficientes en las fuentes",
+        "summary": "Los resultados recuperados informan sobre noticias relacionadas con Warhammer 40,000: Dawn of War IV, pero los fragmentos disponibles reproducen principalmente los títulos y no proporcionan suficientes elementos para confirmar el alcance, los efectos o los detalles de la anuncio. Consulte el artículo original y el comunicado de la organización antes de aceptar los detalles.",
+        "verdict": "Los fragmentos recuperados no son suficientes para confirmar los detalles.",
+        "tip": "Lea el artículo original y busque un comunicado oficial antes de compartir la información.",
+        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulte los enlaces para encontrar el contexto completo.",
+        "audio_url": "audio/20261122T101432-aa6ea4ad-es.mp3"
+      },
+      "de": {
+        "theme": "Warhammer 40,000: Dawn of War IV — Veröffentlichung angekündigt für Dezember 2026",
+        "title": "Warhammer 40,000: Dawn of War IV: unzureichende Details in den Quellen",
+        "summary": "Die abgerufenen Ergebnisse berichten über Nachrichten zu Warhammer 40,000: Dawn of War IV, aber die verfügbaren Auszüge wiedergeben hauptsächlich die Titel und liefern nicht genügend Informationen, um den Umfang, die Auswirkungen oder die Modalitäten der Ankündigung zu bestätigen. Konsultieren Sie den Originalartikel und die Stellungnahme der betreffenden Organisation, bevor Sie Details übernehmen.",
+        "verdict": "Die abgerufenen Auszüge reichen nicht aus, um die Details zu bestätigen.",
+        "tip": "Lesen Sie den Originalartikel und suchen Sie nach einer offiziellen Mitteilung, bevor Sie die Information teilen.",
+        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Prüfen Sie die Links, um den vollständigen Kontext zu finden.",
+        "audio_url": "audio/20261122T101432-aa6ea4ad-de.mp3"
+      },
+      "pt": {
+        "theme": "Warhammer 40,000: Dawn of War IV — lançamento anunciado para dezembro de 2026",
+        "title": "Warhammer 40,000: Dawn of War IV: detalhes insuficientes nas fontes",
+        "summary": "Os resultados recuperados indicam notícias relacionadas a Warhammer 40,000: Dawn of War IV, mas os trechos disponíveis reproduzem principalmente os títulos e não fornecem elementos suficientes para confirmar o escopo, os efeitos ou os detalhes da anúncio. Consulte o artigo original e o comunicado da organização antes de aceitar os detalhes.",
+        "verdict": "Os trechos recuperados não são suficientes para confirmar os detalhes.",
+        "tip": "Leia o artigo original e procure um comunicado oficial antes de compartilhar a informação.",
+        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Verifique os links para encontrar o contexto completo.",
+        "audio_url": "audio/20261122T101432-aa6ea4ad-pt.mp3"
+      },
+      "ar": {
+        "theme": "Warhammer 40,000: Dawn of War IV — الإعلان عن الإصدار في ديسمبر 2026",
+        "title": "Warhammer 40,000: Dawn of War IV: تفاصيل غير كافية في المصادر",
+        "summary": "تشير النتائج المسترجعة إلى أخبار متعلقة بـ Warhammer 40,000: Dawn of War IV، لكن المقتطفات المتاحة تعيد بشكل أساسي العناوين ولا توفر عناصر كافية لتأكيد نطاق أو تأثير أو تفاصيل الإعلان. راجع المقال الأصلي وبيان المنظمة المعنية قبل اعتماد التفاصيل.",
+        "verdict": "المقتطفات المسترجعة لا تكفي لتأكيد التفاصيل.",
+        "tip": "اقرأ المقال الأصلي وابحث عن بيان رسمي قبل مشاركة المعلومات.",
+        "ai_notice": "مقال مكتوب بمساعدة groq من المصادر المحددة. راجع الروابط للعثور على السياق الكامل.",
+        "audio_url": "audio/20261122T101432-aa6ea4ad-ar.mp3"
+      },
+      "zh": {
+        "theme": "Warhammer 40,000: Dawn of War IV — 2026年12月发布已宣布",
+        "title": "Warhammer 40,000: Dawn of War IV：来源信息不足",
+        "summary": "检索到的结果报告了与 Warhammer 40,000: Dawn of War IV 相关的新闻，但可用摘录主要复制标题，未提供足够信息来确认公告的范围、影响或细节。在接受细节之前，请参阅原始文章和相关组织的声明。",
+        "verdict": "检索到的摘录不足以确认细节。",
+        "tip": "在分享信息之前，请阅读原始文章并寻找官方声明。",
+        "ai_notice": "本文使用 groq 根据所示来源撰写。请查看链接以获取完整背景。",
+        "audio_url": "audio/20261122T101432-aa6ea4ad-zh.mp3"
+      }
+    }
   },
   {
     "id": "20261122T100159-ed580cd5",
