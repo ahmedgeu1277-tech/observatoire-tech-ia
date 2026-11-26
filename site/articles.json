@@ -1,5 +1,63 @@
 [
   {
+    "id": "20261126T095853-9291498b",
+    "date": "2026-11-26T09:58+00:00",
+    "theme": "Veille générale — résumé documentaire de secours",
+    "title": "Veille technologique : sources à consulter",
+    "summary": "Les flux consultés ont fourni des liens vers des publications sur la technologie, l’intelligence artificielle et les jeux vidéo. Ce résumé de secours ne confirme aucune annonce, date, disponibilité, prix ou caractéristique précise : les éléments détaillés doivent être vérifiés directement dans les articles d’origine. Cette sélection sert de point d’entrée documentaire et ne remplace pas la lecture des sources.",
+    "verdict": "Les liens sont disponibles, mais aucune annonce précise n’est validée par ce résumé.",
+    "tip": "Ouvrir les articles d’origine et vérifier chaque information importante dans sa source primaire.",
+    "sources": [
+      {
+        "title": "Rockstar explique pourquoi vos actes de violence et vos crimes ont davantage de conséquences dans GTA 6",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 26 Nov 2026 09:47:11 +0000",
+        "description": "\"Ça a plus de sens.\"",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94280/rockstar-explique-pourquoi-vos-actes-de-violence-et-vos-crimes-ont-davantage-de-consequences-dans-gt",
+        "source_type": "media"
+      },
+      {
+        "title": "GTA 6 : Le test video d'IGN France",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 26 Nov 2026 09:47:11 +0000",
+        "description": "",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94119/gta-6-le-test-video-dign-france",
+        "source_type": "media"
+      },
+      {
+        "title": "LEGO annonce 4 nouveaux sets basés sur la série Harry Potter de HBO",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 26 Nov 2026 09:06:37 +0000",
+        "description": "Prêts à retourner à Poudlard ?",
+        "url": "https://fr.ign.com/harry-potter-the-series/94282/lego-annonce-4-nouveaux-sets-bases-sur-la-serie-harry-potter-de-hbo",
+        "source_type": "media"
+      },
+      {
+        "title": "Samsung annonce le tout premier moniteur gaming record à 1 100 Hz",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Thu, 26 Nov 2026 08:50:55 +0000",
+        "description": "Vers l’infini et au-delà ?",
+        "url": "https://fr.ign.com/samsung-odyssey-g6-g60h/94279/samsung-annonce-le-tout-premier-moniteur-gaming-record-a-1-100-hz",
+        "source_type": "media"
+      },
+      {
+        "title": "Call of Duty Modern Warfare 4 : sur Steam [2026]",
+        "publisher": "shattered.io",
+        "domain": "news.google.com",
+        "published": "Sat, 21 Nov 2026 18:02:08 GMT",
+        "description": "Call of Duty Modern Warfare 4 : sur Steam [2026]    shattered.io",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1uTERtcXVHRXlQc25fSTJ0TkRYQlNDdjJQXzJOUlFsOGVXeUYwZEJ4RDM3aXRIMG5UZDRrQ0hLT3ZwNDdrNTlfTGZsOUpnTHR1SUJoRUZPMmhEaVFkNmxuWDFsY3drTVh4ODZSR0JRTkM1cmxYZksyU3BMTQ?oc=5",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Résumé documentaire de secours assemblé automatiquement à partir des liens collectés ; aucune annonce spécifique n’est confirmée.",
+    "audio_url": "audio/20261126T095853-9291498b.mp3"
+  },
+  {
     "id": "20261125T184141-55d5bcf7",
     "date": "2026-11-25T18:41+00:00",
     "theme": "Technologies d'IA et d'accessibilité dans le gaming moderne",
@@ -403,64 +461,6 @@
       }
     },
     "audio_url": "audio/20261122T214906-6d7186d0.mp3"
-  },
-  {
-    "id": "20261122T183413-a8778944",
-    "date": "2026-11-22T18:34+00:00",
-    "theme": "Veille générale — résumé documentaire de secours",
-    "title": "Veille technologique : sources à consulter",
-    "summary": "Les flux consultés ont fourni des liens vers des publications sur la technologie, l’intelligence artificielle et les jeux vidéo. Ce résumé de secours ne confirme aucune annonce, date, disponibilité, prix ou caractéristique précise : les éléments détaillés doivent être vérifiés directement dans les articles d’origine. Cette sélection sert de point d’entrée documentaire et ne remplace pas la lecture des sources.",
-    "verdict": "Les liens sont disponibles, mais aucune annonce précise n’est validée par ce résumé.",
-    "tip": "Ouvrir les articles d’origine et vérifier chaque information importante dans sa source primaire.",
-    "sources": [
-      {
-        "title": "On a fait le test du jeu dans le jeu : Time Jackers Rewind, un peu cher mais ça offre un accès à GTA 6",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Sun, 22 Nov 2026 16:20:29 +0000",
-        "description": "A 80€ ça fait cher la pépite indé. À 80 euros pour une heure de jeu, ça fait quand même un peu cher pour une petite pépite indépendante. Heureusement, le jeu offre également un accès à GTA VI. Comme quoi, il y a encore des développeurs qui savent faire des cadeaux.",
-        "url": "https://fr.ign.com/time-jackers-rewind/94172/on-a-fait-le-test-du-jeu-dans-le-jeu-time-jackers-rewind-un-peu-cher-mais-ca-offre-un-acces-a-gta-6",
-        "source_type": "media"
-      },
-      {
-        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
-        "description": "Allons en paix.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
-        "source_type": "media"
-      },
-      {
-        "title": "La figurine Hot Toys Avengers: Doomsday - Lord Doom en images",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Sun, 22 Nov 2026 08:27:19 +0000",
-        "description": "",
-        "url": "https://fr.ign.com/gallery/94170/hot-toys-avengers-doomsday-lord-doom-figure-image-gallery",
-        "source_type": "media"
-      },
-      {
-        "title": "La star d'Avengers: Doomsday Hayley Atwell tease un nouveau trailer pour lundi",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Sun, 22 Nov 2026 08:27:19 +0000",
-        "description": "La sortie se rapproche.",
-        "url": "https://fr.ign.com/avengers-doomsday/94169/la-star-davengers-doomsday-hayley-atwell-tease-un-nouveau-trailer-pour-lundi",
-        "source_type": "media"
-      },
-      {
-        "title": "\"C'est la révolution technologique qui va structurer les prochaines années\": face aux États-Unis et à la Chine, \"l'Europe peut être dans la course\", mais elle doit accélérer, estime Emmanuel Macron",
-        "publisher": "BFM",
-        "domain": "news.google.com",
-        "published": "Tue, 17 Nov 2026 16:05:13 GMT",
-        "description": "\"C'est la révolution technologique qui va structurer les prochaines années\": face aux États-Unis et à la Chine, \"l'Europe peut être dans la course\", mais elle doit accélérer, estime Emmanuel Macron    BFM",
-        "url": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxQRUpQdnVYeXc3aEFOcWl2ejB6U3F5Z2xDS2t4ZnIwc0h2NzMyOTBwMy15U25BMlFGbVN4dTdrdkxyOU4zVU9CcWwwNV9KY0M0cTl1Z0NtazRRYUpmckx0cjZPaXlsTlRSWV94NE9ReW9ZVE54R1JJUjNLeUhrUGJLV1F1aHZWa1hhZ2JFUk9QMk1ZWjh1bXMteUlfRkJGSV9LOGR2TGs0VmlfdThuZFBra2dDWVdTRTJFMVJ0bFo3cmhwOTh3MDNVWnJRY05kRVdUV2tJQVdMN1llT2RmR1NBNU9TY056WV9pSDJINUZkdDNDUHVac0pDbTB2dGZIYlJscnk5ZzU3NXJKbzF1UzVnSVkta2I0Y3NzcHEzSkNGYzc3QWh2WUVrdVZMMVgwV09Hc3dCMVRTTWg1UWttLWg2Vl9qWThLajRHazBkUWZOV3BrMW90NURGaUg2X2N0Z3R2ZERoVUF4eDdTd0F6Wm1mQ3NSS0F3SXl5clB3?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Résumé documentaire de secours assemblé automatiquement à partir des liens collectés ; aucune annonce spécifique n’est confirmée.",
-    "audio_url": "audio/20261122T183413-a8778944.mp3"
   },
   {
     "id": "20261122T180134-0b1098e4",
