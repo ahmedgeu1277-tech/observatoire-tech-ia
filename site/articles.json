@@ -1526,7 +1526,63 @@
       }
     ],
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261122T100159-ed580cd5.mp3"
+    "audio_url": "audio/20261122T100159-ed580cd5.mp3",
+    "translations": {
+      "en": {
+        "theme": "Gaming and video games — general monitoring (backup research)",
+        "title": "Crashes and violent NPCs reported in GTA 6 on PS5",
+        "summary": "Players of GTA 6 have reported crashes accompanied by the CE‑108255‑1 error on PS5, as well as NPCs reacting extremely violently. These incidents are still unconfirmed by Rockstar, and no precise data on their origin or frequency is available. Fans therefore remain uncertain about the severity of the problem and the corrective measures to come.",
+        "verdict": "Uncertain",
+        "tip": "Monitor Rockstar’s official updates for potential fixes.",
+        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links to find the full context.",
+        "audio_url": "audio/20261122T100159-ed580cd5-en.mp3"
+      },
+      "es": {
+        "theme": "Gaming y videojuegos — monitoreo general (investigación de respaldo)",
+        "title": "Se reportan caídas y NPCs violentos en GTA 6 en PS5",
+        "summary": "Los jugadores de GTA 6 han informado caídas acompañadas del error CE‑108255‑1 en PS5, así como NPCs que reaccionan de manera extremadamente violenta. Estos incidentes aún no están confirmados por Rockstar, y no hay datos precisos sobre su origen o frecuencia. Los fans, por lo tanto, siguen siendo inciertos sobre la gravedad del problema y las medidas correctivas que se avecinan.",
+        "verdict": "Incierto",
+        "tip": "Supervisa las actualizaciones oficiales de Rockstar para posibles correcciones.",
+        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulta los enlaces para encontrar el contexto completo.",
+        "audio_url": "audio/20261122T100159-ed580cd5-es.mp3"
+      },
+      "de": {
+        "theme": "Gaming und Videospiele — allgemeine Überwachung (Backup-Forschung)",
+        "title": "Ausfälle und gewalttätige NPCs in GTA 6 auf PS5 gemeldet",
+        "summary": "Spieler von GTA 6 haben Ausfälle gemeldet, die von dem CE‑108255‑1-Fehler auf PS5 begleitet werden, sowie NPCs, die extrem gewalttätig reagieren. Diese Vorfälle sind von Rockstar noch nicht bestätigt, und es liegen keine genauen Daten zu Herkunft oder Häufigkeit vor. Fans bleiben daher unsicher über die Schwere des Problems und die kommenden Korrekturmaßnahmen.",
+        "verdict": "Unsicher",
+        "tip": "Beobachte die offiziellen Rockstar-Updates auf mögliche Korrekturen.",
+        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Prüfe die Links, um den vollständigen Kontext zu finden.",
+        "audio_url": "audio/20261122T100159-ed580cd5-de.mp3"
+      },
+      "pt": {
+        "theme": "Jogos e videogames — monitoramento geral (pesquisa de backup)",
+        "title": "Falhas e NPCs violentos relatados em GTA 6 no PS5",
+        "summary": "Jogadores de GTA 6 relataram falhas acompanhadas do erro CE‑108255‑1 no PS5, além de NPCs reagindo de forma extremamente violenta. Esses incidentes ainda não foram confirmados pela Rockstar, e não há dados precisos sobre sua origem ou frequência. Os fãs, portanto, permanecem incertos quanto à gravidade do problema e às medidas corretivas futuras.",
+        "verdict": "Incerto",
+        "tip": "Monitore as atualizações oficiais da Rockstar para possíveis correções.",
+        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Consulte os links para encontrar o contexto completo.",
+        "audio_url": "audio/20261122T100159-ed580cd5-pt.mp3"
+      },
+      "ar": {
+        "theme": "الألعاب وألعاب الفيديو — المراقبة العامة (البحث الاحتياطي)",
+        "title": "تقرير عن الأعطال والـ NPC العنيفة في GTA 6 على PS5",
+        "summary": "أبلغ لاعبو GTA 6 عن أعطال مصحوبة بخطأ CE‑108255‑1 على PS5، بالإضافة إلى NPC يتصرفون بشكل عنيف للغاية. لا تزال هذه الحوادث غير مؤكدة من قبل Rockstar، ولا توجد بيانات دقيقة حول أصلها أو تكرارها. يظل المتابعون غير متأكدين من خطورة المشكلة والإجراءات التصحيحية المستقبلية.",
+        "verdict": "غير مؤكد",
+        "tip": "راقب تحديثات Rockstar الرسمية للعثور على إصلاحات محتملة.",
+        "ai_notice": "تم كتابة المقال بمساعدة groq من المصادر المذكورة. راجع الروابط للعثور على السياق الكامل.",
+        "audio_url": "audio/20261122T100159-ed580cd5-ar.mp3"
+      },
+      "zh": {
+        "theme": "游戏与视频游戏 — 一般监测（备份研究）",
+        "title": "在PS5上报告GTA 6崩溃和暴力NPC",
+        "summary": "GTA 6玩家报告了伴随CE‑108255‑1错误的崩溃，以及极度暴力的NPC反应。这些事件尚未得到Rockstar的确认，也没有关于其来源或频率的精确信息。粉丝们因此对问题的严重性和即将采取的纠正措施仍不确定。",
+        "verdict": "不确定",
+        "tip": "请关注Rockstar的官方更新，以获取潜在修复。",
+        "ai_notice": "文章使用groq根据所示来源撰写。请查看链接以获取完整背景。",
+        "audio_url": "audio/20261122T100159-ed580cd5-zh.mp3"
+      }
+    }
   },
   {
     "id": "20261122T094033-0ac10440",
