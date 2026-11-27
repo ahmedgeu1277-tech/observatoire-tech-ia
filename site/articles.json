@@ -1348,40 +1348,58 @@
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "translations": {
       "en": {
-        "title": "GTA 6: PS5 crashes and violent NPCs without explanation",
+        "theme": "AI Technologies and Accessibility in Modern Gaming",
+        "title": "GTA 6: PS5 Crashes and Violent NPCs Without Explanation",
         "summary": "GTA 6 players have reported crashes on PS5 accompanied by the CE‑108255‑1 error, with developers yet to release an update. Meanwhile, the game's NPCs appear to react extremely violently, raising questions about content moderation. The reasons for these issues remain unknown and no official confirmation has been given.",
         "verdict": "Unknown",
-        "tip": "Check official updates and Rockstar statements for more details."
+        "tip": "Check official updates and Rockstar statements for more details.",
+        "ai_notice": "Article written with the help of groq from the indicated sources. Refer to the links for full context.",
+        "audio_url": "audio/20261122T125109-d0073e4b-en.mp3"
       },
       "es": {
+        "theme": "Tecnologías de IA y accesibilidad en los videojuegos modernos",
         "title": "GTA 6: caídas en PS5 y NPCs violentos sin explicación",
-        "summary": "Los jugadores de GTA 6 han reportado caídas en PS5 acompañadas del error CE‑108255‑1, sin que los desarrolladores hayan publicado una actualización. Paralelamente, los NPC del juego parecen reaccionar de forma extremadamente violenta, planteando dudas sobre la moderación de contenido. Las causas de estos problemas siguen siendo desconocidas y no se ha dado ninguna confirmación oficial.",
+        "summary": "Los jugadores de GTA 6 han reportado caídas en PS5 acompañadas del error CE‑108255‑1, sin que los desarrolladores hayan publicado una actualización. Al mismo tiempo, los NPC del juego parecen reaccionar de forma extremadamente violenta, lo que plantea preguntas sobre la moderación de contenido. Las razones de estos problemas siguen siendo desconocidas y no se ha dado ninguna confirmación oficial.",
         "verdict": "Desconocido",
-        "tip": "Verifica las actualizaciones oficiales y los comunicados de Rockstar para más detalles."
+        "tip": "Verifica las actualizaciones oficiales y los comunicados de Rockstar para más detalles.",
+        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulta los enlaces para obtener el contexto completo.",
+        "audio_url": "audio/20261122T125109-d0073e4b-es.mp3"
       },
       "de": {
+        "theme": "KI-Technologien und Barrierefreiheit im modernen Gaming",
         "title": "GTA 6: PS5-Abstürze und gewalttätige NPCs ohne Erklärung",
-        "summary": "GTA 6-Spieler haben Abstürze auf PS5 gemeldet, begleitet von dem Fehler CE‑108255‑1, ohne dass die Entwickler noch ein Update veröffentlicht haben. Gleichzeitig reagieren die NPCs im Spiel extrem gewalttätig, was Fragen zur Inhaltsmoderation aufwirft. Die Gründe für diese Probleme sind unbekannt und es wurde keine offizielle Bestätigung gegeben.",
+        "summary": "GTA 6-Spieler haben Abstürze auf der PS5 gemeldet, begleitet von dem Fehler CE‑108255‑1, wobei die Entwickler noch keine Aktualisierung veröffentlicht haben. Gleichzeitig reagieren die NPCs des Spiels extrem gewalttätig, was Fragen zur Inhaltsmoderation aufwirft. Die Gründe für diese Probleme sind unbekannt und es wurde keine offizielle Bestätigung gegeben.",
         "verdict": "Unbekannt",
-        "tip": "Überprüfen Sie offizielle Updates und Rockstar-Kommuniqués für weitere Details."
+        "tip": "Überprüfen Sie offizielle Updates und Rockstar-Kommuniqués für weitere Details.",
+        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Bitte prüfen Sie die Links für den vollständigen Kontext.",
+        "audio_url": "audio/20261122T125109-d0073e4b-de.mp3"
       },
       "pt": {
+        "theme": "Tecnologias de IA e acessibilidade nos jogos modernos",
         "title": "GTA 6: falhas no PS5 e NPCs violentos sem explicação",
-        "summary": "Jogadores de GTA 6 relataram falhas no PS5 acompanhadas do erro CE‑108255‑1, sem que os desenvolvedores tenham publicado uma atualização ainda. Paralelamente, os NPCs do jogo parecem reagir de forma extremamente violenta, levantando questões sobre a moderação de conteúdo. As razões desses problemas permanecem desconhecidas e nenhuma confirmação oficial foi dada.",
+        "summary": "Jogadores de GTA 6 relataram falhas no PS5 acompanhadas do erro CE‑108255‑1, sem que os desenvolvedores tenham publicado uma atualização. Paralelamente, os NPCs do jogo parecem reagir de forma extremamente violenta, levantando questões sobre a moderação de conteúdo. As razões desses problemas permanecem desconhecidas e nenhuma confirmação oficial foi dada.",
         "verdict": "Desconhecido",
-        "tip": "Verifique as atualizações oficiais e os comunicados da Rockstar para mais detalhes."
+        "tip": "Verifique as atualizações oficiais e os comunicados da Rockstar para mais detalhes.",
+        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Consulte os links para obter o contexto completo.",
+        "audio_url": "audio/20261122T125109-d0073e4b-pt.mp3"
       },
       "ar": {
-        "title": "GTA 6: تعطل PS5 وشخصيات غير لاعب عنيفة بدون شرح",
+        "theme": "تكنولوجيا الذكاء الاصطناعي وإمكانية الوصول في ألعاب الفيديو الحديثة",
+        "title": "GTA 6: تعطل PS5 وشخصيات غير لاعب عنيفة بدون تفسير",
         "summary": "أبلغ لاعبو GTA 6 عن تعطل على PS5 مصحوب بخطأ CE‑108255‑1، دون أن ينشر المطورون تحديثًا بعد. في الوقت نفسه، يبدو أن شخصيات غير اللاعب في اللعبة تتفاعل بشكل عنيف للغاية، مما يثير تساؤلات حول رقابة المحتوى. أسباب هذه المشكلات لا تزال غير معروفة ولم يتم تأكيدها رسميًا.",
         "verdict": "مجهول",
-        "tip": "تحقق من التحديثات الرسمية والبيانات الصحفية لشركة Rockstar لمزيد من التفاصيل."
+        "tip": "تحقق من التحديثات الرسمية والبيانات الصحفية لشركة Rockstar لمزيد من التفاصيل.",
+        "ai_notice": "تم كتابة المقال بمساعدة groq من المصادر المذكورة. راجع الروابط للحصول على السياق الكامل.",
+        "audio_url": "audio/20261122T125109-d0073e4b-ar.mp3"
       },
       "zh": {
-        "title": "GTA 6：PS5 崩溃与暴力 NPC 无解释",
-        "summary": "GTA 6 玩家报告 PS5 崩溃并伴随 CE‑108255‑1 错误，开发者尚未发布更新。与此同时，游戏中的 NPC 似乎表现出极端暴力行为，引发对内容审核的质疑。这些问题的原因仍不明，官方尚未确认。",
+        "theme": "现代游戏中的AI技术与无障碍性",
+        "title": "GTA 6：PS5崩溃与暴力NPC无解释",
+        "summary": "GTA 6玩家报告了PS5上的崩溃，并伴随CE‑108255‑1错误，开发者尚未发布更新。同时，游戏中的NPC似乎表现出极端暴力行为，引发了对内容审核的质疑。这些问题的原因仍不明，尚未得到官方确认。",
         "verdict": "未知",
-        "tip": "请查看官方更新和 Rockstar 的公告以获取更多细节。"
+        "tip": "请查看官方更新和Rockstar的公告以获取更多细节。",
+        "ai_notice": "本文使用groq根据所示来源撰写。请参阅链接获取完整背景。",
+        "audio_url": "audio/20261122T125109-d0073e4b-zh.mp3"
       }
     },
     "audio_url": "audio/20261122T125109-d0073e4b.mp3"
