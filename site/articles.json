@@ -1,5 +1,54 @@
 [
   {
+    "id": "20261127T184455-14114cbd",
+    "date": "2026-11-27T18:44+00:00",
+    "theme": "Calendrier des sorties jeux vidéo 2026 et annonces",
+    "title": "Calendrier 2026 : extension « Sea of Sorrow » confirmée, autres titres restent incertains",
+    "summary": "Team Cherry a annoncé la date de sortie de l’extension *Sea of Sorrow* de *Hollow Knight: Silksong* via IGN France. Les événements de novembre 2026, comme celui d’UGC Bercy pour *Avengers: Doomsday* ou les rumeurs de *GTA 6*, n’ont pas encore de dates officielles. Les lecteurs peuvent donc planifier l’extension, mais rester vigilants quant aux autres titres qui n’ont pas de calendrier confirmé.",
+    "verdict": "Les informations disponibles confirment uniquement la date de *Sea of Sorrow* ; les autres jeux mentionnés ne disposent pas encore de dates officielles.",
+    "tip": "Vérifiez les communiqués officiels de chaque éditeur pour les mises à jour ultérieures.",
+    "sources": [
+      {
+        "title": "Avengers: Doomsday vous donne rendez-vous à UGC Bercy pour un événement exceptionnel",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Fri, 27 Nov 2026 17:33:47 +0000",
+        "description": "Aux grands maux, les grands remèdes.",
+        "url": "https://fr.ign.com/movies/94318/avengers-doomsday-vous-donne-rendez-vous-a-ugc-bercy-pour-un-evenement-exceptionnel",
+        "source_type": "media"
+      },
+      {
+        "title": "Cocorico ! Les fans de GTA 6 ont retrouvé le vrai Jason Duval - et il est Français !",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Fri, 27 Nov 2026 16:37:50 +0000",
+        "description": "Pas mal non ?",
+        "url": "https://fr.ign.com/grand-theft-auto-6/94317/cocorico-les-fans-de-gta-6-ont-retrouve-le-vrai-jason-duval-et-il-est-francais",
+        "source_type": "media"
+      },
+      {
+        "title": "Hollow Knight: Silksong - Team Cherry dévoile la date de sortie de l'extension Sea of Sorrow",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Fri, 27 Nov 2026 15:43:25 +0000",
+        "description": "Via une présentation courte et efficace.",
+        "url": "https://fr.ign.com/hollow-knight-silksong/94315/hollow-knight-silksong-team-cherry-devoile-la-date-de-sortie-de-lextension-sea-of-sorrow",
+        "source_type": "media"
+      },
+      {
+        "title": "Sorties jeux vidéo novembre 2026 : les nouveautés attendues sur PC et consoles",
+        "publisher": "Sortir à Paris",
+        "domain": "news.google.com",
+        "published": "Tue, 24 Nov 2026 08:00:00 GMT",
+        "description": "Sorties jeux vidéo novembre 2026 : les nouveautés attendues sur PC et consoles    Sortir à Paris",
+        "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPWlBsWmdBZml4b3VoSEtpeWpnTVEySmpNWGtpVWtRRXB0enpLRXBDWUx0VVZLeGZmSjhXYkhacmxtQ0RTSkdWMzNETFJrYUE3RzdrMmQxMnMzX0dVal9Mb3dwTzZwV3hReUdNT3BuWmhRdVJrTFVOck9MbUpnUF95LWhJR2J5eENBMTk2VGJfTldjSlFsSWlMRmZVaGFBZ2Q0eXRDaS1EX1dtVGRGMHZoQzdNbFZzenBiRGJLYmFiRk1mRVM4dnF1TDM0ZWR5WDVlX2c?oc=5",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "audio_url": "audio/20261127T184455-14114cbd.mp3"
+  },
+  {
     "id": "20261127T095701-1c378c1c",
     "date": "2026-11-27T09:57+00:00",
     "theme": "Dragon Quest Monsters: The Withered World — sortie annoncée le 3 décembre 2026",
@@ -1767,102 +1816,6 @@
         "tip": "玩家应保持警惕，并通过官方渠道报告崩溃。",
         "ai_notice": "本文使用 groq 根据所述来源撰写。请查看链接以获取完整背景。",
         "audio_url": "audio/20261122T101552-c59ad2a2-zh.mp3"
-      }
-    }
-  },
-  {
-    "id": "20261122T101432-aa6ea4ad",
-    "date": "2026-11-22T10:14+00:00",
-    "theme": "Warhammer 40,000: Dawn of War IV — sortie annoncée en décembre 2026",
-    "title": "Warhammer 40,000: Dawn of War IV : détails insuffisants dans les sources",
-    "summary": "Les résultats récupérés signalent une actualité liée à Warhammer 40,000: Dawn of War IV, mais les extraits disponibles reprennent surtout les titres et ne fournissent pas assez d'éléments pour confirmer la portée, les effets ou les modalités de l'annonce. Consultez l'article d'origine et le communiqué de l'organisation concernée avant de retenir des détails.",
-    "verdict": "Les extraits récupérés ne suffisent pas pour confirmer les détails.",
-    "tip": "Lire l'article original et rechercher un communiqué officiel avant de partager l'information.",
-    "sources": [
-      {
-        "title": "Warhammer 40,000: Dawn of War 4 est-il multijoueur et/ou coopératif ?",
-        "publisher": "gamewave",
-        "domain": "news.google.com",
-        "published": "Mon, 16 Nov 2026 14:35:00 GMT",
-        "description": "Warhammer 40,000: Dawn of War 4 est-il multijoueur et/ou coopératif ?    gamewave",
-        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNTlRDTXpDZVlweV81M0QwUXh5WHZacjhpZWVNOGFkaWFhUzZlekFURTFzekd4VFB3U1dvOEZDVXU5NWpDWDhZc1RBU0hGLWt2cUJaNjZfc19CSmJkRERUTkE2UlhocGxLQ290MGtNV3hjaG5VQzNzLVRrbmNmdGxwcWszN0xuMWs0UlVMdFd4M3pqdk1wN29tS0RmX1pSYTJPRTJwRFpUQWkyRnU4c19uc01aeU56NEVpQ2c?oc=5",
-        "source_type": "media"
-      },
-      {
-        "title": "Warhammer 40,000: Dawn of War 4 accès anticipé : Comment y jouer en avance ?",
-        "publisher": "gamewave",
-        "domain": "news.google.com",
-        "published": "Tue, 17 Nov 2026 15:22:00 GMT",
-        "description": "Warhammer 40,000: Dawn of War 4 accès anticipé : Comment y jouer en avance ?    gamewave",
-        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOUXRsZWl6Nlc1RDh3a1Jid1pZZVZuN1l6MW5zNVdzY3FkVzVjRlprODk3MFIxWlEzR09WNmd1OVZYcmhneWxVd0hrLU1URkVNaWM0Wk1KNHFjc25WMHlRa1lIOFJpVGt2WEFFWDdTcWNPaW1nT0ZobmhaTE5ldkowVUlqOGREcFlhMzJmZlVmLURiNUFDb2JCeUlxS0xueUlWUUJXSElCVkppaVJNdWJsNHVUVDFwanJYa0xSOFExSWc?oc=5",
-        "source_type": "media"
-      },
-      {
-        "title": "Warhammer 40,000: Dawn of War 4 : Différentes éditions, précommande et prix",
-        "publisher": "gamewave",
-        "domain": "news.google.com",
-        "published": "Tue, 17 Nov 2026 16:21:00 GMT",
-        "description": "Warhammer 40,000: Dawn of War 4 : Différentes éditions, précommande et prix    gamewave",
-        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQN0o2bjU0N0lZVFQ5aENIOG9Bb0tfR0RpeC1KQmRhYzRtTWdjWUlaNVpobEZRSWRWWGIyVGpNVVZjV2xGY3RYMTU2UkplbllpNW16c28tYndXMHJUNTRvRm1NYlBaTXlraVJYWjY4c1EyWi1ValBCN3U5NnpVWVpRaVYyN01UeC16RlVPUnMxWng4WFJteXBYWTBaVGwwY0ZTZHJ4MHNieGMzQlNoZlJCRUNkZERlU3JWQjkzRGoyTG8?oc=5",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261122T101432-aa6ea4ad.mp3",
-    "translations": {
-      "en": {
-        "theme": "Warhammer 40,000: Dawn of War IV — release announced for December 2026",
-        "title": "Warhammer 40,000: Dawn of War IV: insufficient details in sources",
-        "summary": "The retrieved results report news related to Warhammer 40,000: Dawn of War IV, but the available excerpts mainly reproduce titles and do not provide enough information to confirm the scope, effects, or details of the announcement. Refer to the original article and the organization’s statement before accepting details.",
-        "verdict": "The retrieved excerpts are insufficient to confirm the details.",
-        "tip": "Read the original article and look for an official statement before sharing the information.",
-        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links to find the full context.",
-        "audio_url": "audio/20261122T101432-aa6ea4ad-en.mp3"
-      },
-      "es": {
-        "theme": "Warhammer 40,000: Dawn of War IV — anuncio de lanzamiento en diciembre de 2026",
-        "title": "Warhammer 40,000: Dawn of War IV: detalles insuficientes en las fuentes",
-        "summary": "Los resultados recuperados informan sobre noticias relacionadas con Warhammer 40,000: Dawn of War IV, pero los fragmentos disponibles reproducen principalmente los títulos y no proporcionan suficientes elementos para confirmar el alcance, los efectos o los detalles de la anuncio. Consulte el artículo original y el comunicado de la organización antes de aceptar los detalles.",
-        "verdict": "Los fragmentos recuperados no son suficientes para confirmar los detalles.",
-        "tip": "Lea el artículo original y busque un comunicado oficial antes de compartir la información.",
-        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulte los enlaces para encontrar el contexto completo.",
-        "audio_url": "audio/20261122T101432-aa6ea4ad-es.mp3"
-      },
-      "de": {
-        "theme": "Warhammer 40,000: Dawn of War IV — Veröffentlichung angekündigt für Dezember 2026",
-        "title": "Warhammer 40,000: Dawn of War IV: unzureichende Details in den Quellen",
-        "summary": "Die abgerufenen Ergebnisse berichten über Nachrichten zu Warhammer 40,000: Dawn of War IV, aber die verfügbaren Auszüge wiedergeben hauptsächlich die Titel und liefern nicht genügend Informationen, um den Umfang, die Auswirkungen oder die Modalitäten der Ankündigung zu bestätigen. Konsultieren Sie den Originalartikel und die Stellungnahme der betreffenden Organisation, bevor Sie Details übernehmen.",
-        "verdict": "Die abgerufenen Auszüge reichen nicht aus, um die Details zu bestätigen.",
-        "tip": "Lesen Sie den Originalartikel und suchen Sie nach einer offiziellen Mitteilung, bevor Sie die Information teilen.",
-        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Prüfen Sie die Links, um den vollständigen Kontext zu finden.",
-        "audio_url": "audio/20261122T101432-aa6ea4ad-de.mp3"
-      },
-      "pt": {
-        "theme": "Warhammer 40,000: Dawn of War IV — lançamento anunciado para dezembro de 2026",
-        "title": "Warhammer 40,000: Dawn of War IV: detalhes insuficientes nas fontes",
-        "summary": "Os resultados recuperados indicam notícias relacionadas a Warhammer 40,000: Dawn of War IV, mas os trechos disponíveis reproduzem principalmente os títulos e não fornecem elementos suficientes para confirmar o escopo, os efeitos ou os detalhes da anúncio. Consulte o artigo original e o comunicado da organização antes de aceitar os detalhes.",
-        "verdict": "Os trechos recuperados não são suficientes para confirmar os detalhes.",
-        "tip": "Leia o artigo original e procure um comunicado oficial antes de compartilhar a informação.",
-        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Verifique os links para encontrar o contexto completo.",
-        "audio_url": "audio/20261122T101432-aa6ea4ad-pt.mp3"
-      },
-      "ar": {
-        "theme": "Warhammer 40,000: Dawn of War IV — الإعلان عن الإصدار في ديسمبر 2026",
-        "title": "Warhammer 40,000: Dawn of War IV: تفاصيل غير كافية في المصادر",
-        "summary": "تشير النتائج المسترجعة إلى أخبار متعلقة بـ Warhammer 40,000: Dawn of War IV، لكن المقتطفات المتاحة تعيد بشكل أساسي العناوين ولا توفر عناصر كافية لتأكيد نطاق أو تأثير أو تفاصيل الإعلان. راجع المقال الأصلي وبيان المنظمة المعنية قبل اعتماد التفاصيل.",
-        "verdict": "المقتطفات المسترجعة لا تكفي لتأكيد التفاصيل.",
-        "tip": "اقرأ المقال الأصلي وابحث عن بيان رسمي قبل مشاركة المعلومات.",
-        "ai_notice": "مقال مكتوب بمساعدة groq من المصادر المحددة. راجع الروابط للعثور على السياق الكامل.",
-        "audio_url": "audio/20261122T101432-aa6ea4ad-ar.mp3"
-      },
-      "zh": {
-        "theme": "Warhammer 40,000: Dawn of War IV — 2026年12月发布已宣布",
-        "title": "Warhammer 40,000: Dawn of War IV：来源信息不足",
-        "summary": "检索到的结果报告了与 Warhammer 40,000: Dawn of War IV 相关的新闻，但可用摘录主要复制标题，未提供足够信息来确认公告的范围、影响或细节。在接受细节之前，请参阅原始文章和相关组织的声明。",
-        "verdict": "检索到的摘录不足以确认细节。",
-        "tip": "在分享信息之前，请阅读原始文章并寻找官方声明。",
-        "ai_notice": "本文使用 groq 根据所示来源撰写。请查看链接以获取完整背景。",
-        "audio_url": "audio/20261122T101432-aa6ea4ad-zh.mp3"
       }
     }
   }
