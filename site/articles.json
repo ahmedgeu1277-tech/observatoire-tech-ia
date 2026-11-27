@@ -1339,40 +1339,58 @@
     "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
     "translations": {
       "en": {
-        "title": "GTA VI: Initial crashes and violent behavior reported on PS5",
-        "summary": "Since its launch, GTA VI has received mixed feedback: some PS5 players encounter the CE‑108255‑1 error and crashes, while others describe NPCs reacting with extreme violence. These incidents, reported by IGN France, remain to be confirmed by independent testing, and the exact extent of the malfunctions is uncertain. Players are therefore awaiting Rockstar updates to stabilize the title.",
-        "verdict": "First impressions are mixed, with technical issues reported but no definitive evidence of their scope.",
-        "tip": "Keep an eye on future Rockstar updates and community feedback to confirm the extent of the problems."
+        "theme": "GTA VI — launch and verified early feedback",
+        "title": "GTA VI: Initial crashes and violent behavior reported on PS5",
+        "summary": "Since its launch, GTA VI has received mixed feedback: some PS5 players encounter the CE‑108255‑1 error and crashes, while others report NPCs reacting with extreme violence. These incidents, reported by IGN France, remain to be confirmed by independent testing, and the exact extent of the malfunctions is uncertain. Players are therefore awaiting Rockstar updates to stabilize the title.",
+        "verdict": "First impressions are mixed, with technical issues reported but no definitive proof of their scope.",
+        "tip": "Keep an eye on future Rockstar updates and community feedback to confirm the extent of the problems.",
+        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links to find the full context.",
+        "audio_url": "audio/20261122T125000-bab5acef-en.mp3"
       },
       "es": {
-        "title": "GTA VI: Se reportan primeros fallos y comportamientos violentos en PS5",
-        "summary": "Desde su lanzamiento, GTA VI ha recibido comentarios mixtos: algunos jugadores de PS5 encuentran el error CE‑108255‑1 y fallos, mientras que otros describen a los NPC reaccionando con violencia extrema. Estos incidentes, reportados por IGN France, aún deben confirmarse mediante pruebas independientes, y la magnitud exacta de los fallos sigue siendo incierta. Los jugadores esperan por lo tanto actualizaciones de Rockstar para estabilizar el título.",
-        "verdict": "Las primeras impresiones son mixtas, con problemas técnicos reportados pero sin evidencia definitiva de su alcance.",
-        "tip": "Mantente atento a las futuras actualizaciones de Rockstar y a los comentarios de la comunidad para confirmar la magnitud de los problemas."
+        "theme": "GTA VI — lanzamiento y primeros comentarios verificados",
+        "title": "GTA VI: primeros fallos y comportamientos violentos reportados en PS5",
+        "summary": "Desde su lanzamiento, GTA VI ha recibido comentarios mixtos: algunos jugadores de PS5 encuentran el error CE‑108255‑1 y fallos, mientras que otros describen a los NPC reaccionando con violencia extrema. Estos incidentes, reportados por IGN France, aún deben confirmarse mediante pruebas independientes, y la magnitud exacta de los fallos sigue siendo incierta. Los jugadores esperan actualizaciones de Rockstar para estabilizar el título.",
+        "verdict": "Las primeras impresiones son mixtas, con problemas técnicos reportados pero sin prueba definitiva de su alcance.",
+        "tip": "Mantente atento a las futuras actualizaciones de Rockstar y a los comentarios de la comunidad para confirmar la magnitud de los problemas.",
+        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulta los enlaces para encontrar el contexto completo.",
+        "audio_url": "audio/20261122T125000-bab5acef-es.mp3"
       },
       "de": {
-        "title": "GTA VI: Erste Abstürze und gewalttätiges Verhalten auf PS5 gemeldet",
-        "summary": "Seit seiner Veröffentlichung erhält GTA VI gemischte Rückmeldungen: Einige PS5-Spieler stoßen auf den Fehler CE‑108255‑1 und Abstürze, während andere von NPCs berichten, die extrem gewalttätig reagieren. Diese Vorfälle, gemeldet von IGN France, müssen noch durch unabhängige Tests bestätigt werden, und das genaue Ausmaß der Fehlfunktionen bleibt ungewiss. Die Spieler erwarten daher Updates von Rockstar, um das Spiel zu stabilisieren.",
-        "verdict": "Der erste Eindruck ist gemischt, mit gemeldeten technischen Problemen, jedoch ohne endgültigen Beweis für deren Umfang.",
-        "tip": "Behalte zukünftige Rockstar-Updates und das Feedback der Community im Auge, um das Ausmaß der Probleme zu bestätigen."
+        "theme": "GTA VI — Start und verifizierte erste Rückmeldungen",
+        "title": "GTA VI: Erste Abstürze und gemeldete gewalttätiges Verhalten auf PS5",
+        "summary": "Seit seinem Start erhält GTA VI gemischte Rückmeldungen: Einige PS5-Spieler stoßen auf den Fehler CE‑108255‑1 und Abstürze, während andere berichten, dass NPCs extrem gewalttätig reagieren. Diese Vorfälle, gemeldet von IGN France, müssen noch durch unabhängige Tests bestätigt werden, und das genaue Ausmaß der Fehlfunktionen bleibt ungewiss. Spieler erwarten daher Rockstar-Updates, um das Spiel zu stabilisieren.",
+        "verdict": "Erste Eindrücke sind gemischt, mit gemeldeten technischen Problemen, aber ohne endgültigen Beweis für deren Umfang.",
+        "tip": "Behalte zukünftige Rockstar-Updates und Community-Feedback im Auge, um das Ausmaß der Probleme zu bestätigen.",
+        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Prüfe die Links, um den vollständigen Kontext zu finden.",
+        "audio_url": "audio/20261122T125000-bab5acef-de.mp3"
       },
       "pt": {
-        "title": "GTA VI: Primeiros travamentos e comportamentos violentos relatados no PS5",
-        "summary": "Desde o seu lançamento, o GTA VI tem recebido feedback misto: alguns jogadores de PS5 encontram o erro CE‑108255‑1 e travamentos, enquanto outros descrevem NPCs reagindo com violência extrema. Esses incidentes, relatados pela IGN France, ainda precisam ser confirmados por testes independentes, e a extensão exata das falhas permanece incerta. Os jogadores, portanto, aguardam atualizações da Rockstar para estabilizar o título.",
-        "verdict": "As primeiras impressões são mistas, com problemas técnicos relatados, mas sem prova definitiva de sua abrangência.",
-        "tip": "Fique atento às futuras atualizações da Rockstar e ao feedback da comunidade para confirmar a extensão dos problemas."
+        "theme": "GTA VI — lançamento e primeiros retornos verificados",
+        "title": "GTA VI: primeiros travamentos e comportamentos violentos relatados no PS5",
+        "summary": "Desde o seu lançamento, o GTA VI tem recebido feedback misto: alguns jogadores no PS5 encontram o erro CE‑108255‑1 e travamentos, enquanto outros descrevem NPCs reagindo com violência extrema. Esses incidentes, relatados pela IGN France, ainda precisam ser confirmados por testes independentes, e a extensão exata das falhas permanece incerta. Os jogadores aguardam atualizações da Rockstar para estabilizar o título.",
+        "verdict": "As primeiras impressões são mistas, com problemas técnicos relatados, mas sem prova definitiva de sua extensão.",
+        "tip": "Fique atento às futuras atualizações da Rockstar e ao feedback da comunidade para confirmar a extensão dos problemas.",
+        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Consulte os links para encontrar o contexto completo.",
+        "audio_url": "audio/20261122T125000-bab5acef-pt.mp3"
       },
       "ar": {
-        "title": "GTA VI: تقارير عن تعطل أولي وسلوك عنيف على PS5",
-        "summary": "منذ إطلاقه، تلقت GTA VI تعليقات مختلطة: يواجه بعض لاعبي PS5 خطأ CE‑108255‑1 وتعطل، بينما يصف آخرون NPC يتصرفون بعنف شديد. هذه الحوادث، التي أبلغت عنها IGN France، لا تزال بحاجة إلى تأكيد من خلال اختبارات مستقلة، ويظل مدى الخطأ غير مؤكد. ينتظر اللاعبون تحديثات من Rockstar لتثبيت اللعبة.",
+        "theme": "GTA VI — الإطلاق وردود الفعل الأولية المُتحققة",
+        "title": "GTA VI: الانهيارات الأولية والسلوك العنيف المبلغ عنه على PS5",
+        "summary": "منذ إطلاقه، تلقت GTA VI تعليقات مختلطة: يواجه بعض لاعبي PS5 خطأ CE‑108255‑1 وانهيارات، بينما يصف آخرون NPC يتصرفون بعنف شديد. هذه الحوادث، التي أبلغ عنها IGN France، لا تزال بحاجة إلى تأكيد من خلال اختبارات مستقلة، ويظل مدى الخطأ غير مؤكد. ينتظر اللاعبون تحديثات Rockstar لتثبيت اللعبة.",
         "verdict": "الانطباعات الأولى مختلطة، مع وجود مشاكل تقنية مُبلغ عنها ولكن دون دليل نهائي على نطاقها.",
-        "tip": "تابع تحديثات Rockstar المستقبلية وتعليقات المجتمع لتأكيد مدى المشاكل."
+        "tip": "تابع تحديثات Rockstar المستقبلية وتعليقات المجتمع لتأكيد مدى المشكلات.",
+        "ai_notice": "مقالة مكتوبة بمساعدة groq من المصادر المذكورة. راجع الروابط للعثور على السياق الكامل.",
+        "audio_url": "audio/20261122T125000-bab5acef-ar.mp3"
       },
       "zh": {
-        "title": "GTA VI：PS5 上首次崩溃和暴力行为报告",
-        "summary": "自发布以来，GTA VI 收到褒贬不一的反馈：一些 PS5 玩家遇到 CE‑108255‑1 错误和崩溃，而另一些玩家则描述 NPC 以极端暴力方式反应。IGN France 报道的这些事件仍需通过独立测试确认，故障的确切程度仍不确定。玩家们因此期待 Rockstar 的更新以稳定游戏。",
-        "verdict": "初步印象褒贬不一，已报告技术问题，但尚无确凿证据证明其范围。",
-        "tip": "关注 Rockstar 的未来更新和社区反馈，以确认问题的范围。"
+        "theme": "GTA VI — 上线与已验证的初步反馈",
+        "title": "GTA VI：PS5 上的首次崩溃与暴力行为报告",
+        "summary": "自上线以来，GTA VI 收到混合反馈：一些 PS5 玩家遇到 CE‑108255‑1 错误和崩溃，而其他玩家则描述 NPC 以极端暴力方式反应。这些事件由 IGN France 报告，仍需通过独立测试确认，故障的确切范围仍不确定。玩家正在等待 Rockstar 的更新以稳定游戏。",
+        "verdict": "初步印象混合，已报告技术问题，但尚无确凿证据证明其范围。",
+        "tip": "关注 Rockstar 的未来更新和社区反馈，以确认问题的范围。",
+        "ai_notice": "文章使用 groq 根据所列来源撰写。请查看链接以获取完整背景。",
+        "audio_url": "audio/20261122T125000-bab5acef-zh.mp3"
       }
     },
     "audio_url": "audio/20261122T125000-bab5acef.mp3"
