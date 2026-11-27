@@ -1,5 +1,83 @@
 [
   {
+    "id": "20261127T095701-1c378c1c",
+    "date": "2026-11-27T09:57+00:00",
+    "theme": "Dragon Quest Monsters: The Withered World — sortie annoncée le 3 décembre 2026",
+    "title": "Dragon Quest Monsters: The Withered World : détails insuffisants dans les sources",
+    "summary": "Les résultats récupérés signalent une actualité liée à Dragon Quest Monsters: The Withered World, mais les extraits disponibles reprennent surtout les titres et ne fournissent pas assez d'éléments pour confirmer la portée, les effets ou les modalités de l'annonce. Consultez l'article d'origine et le communiqué de l'organisation concernée avant de retenir des détails.",
+    "verdict": "Les extraits récupérés ne suffisent pas pour confirmer les détails.",
+    "tip": "Lire l'article original et rechercher un communiqué officiel avant de partager l'information.",
+    "sources": [
+      {
+        "title": "Funghi Days annoncé sur console pour les 15 ans de la série Nameko",
+        "publisher": "big-n.fr",
+        "domain": "news.google.com",
+        "published": "Thu, 26 Nov 2026 03:29:58 GMT",
+        "description": "Funghi Days annoncé sur console pour les 15 ans de la série Nameko    big-n.fr",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNckRia3hGbFhEVXJwZDBhbUpjSUFKU055QkZxSjQyYjVKaHkyRmIxdEhXeEJKdmZSYlpaQmh5R085TWhfbFBscFpFM21oWFdOaTBuSktnaENEYWcwOGhZUW5rTy1nU3RsT3VFU3FXYTNWZW9CaWtfc2NhNE9ERjgxT0FR?oc=5",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "translations": {
+      "en": {
+        "theme": "Dragon Quest Monsters: The Withered World — release announced December 3, 2026",
+        "title": "Dragon Quest Monsters: The Withered World: insufficient details in sources",
+        "summary": "The retrieved results indicate news related to Dragon Quest Monsters: The Withered World, but the available excerpts mainly contain titles and do not provide enough information to confirm the scope, effects, or details of the announcement. Refer to the original article and the organization’s statement before accepting details.",
+        "verdict": "The retrieved excerpts are insufficient to confirm the details.",
+        "tip": "Read the original article and look for an official statement before sharing the information.",
+        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links for the full context.",
+        "audio_url": "audio/20261127T095701-1c378c1c-en.mp3"
+      },
+      "es": {
+        "theme": "Dragon Quest Monsters: The Withered World — anuncio de lanzamiento el 3 de diciembre de 2026",
+        "title": "Dragon Quest Monsters: The Withered World: detalles insuficientes en las fuentes",
+        "summary": "Los resultados recuperados indican noticias relacionadas con Dragon Quest Monsters: The Withered World, pero los fragmentos disponibles contienen principalmente títulos y no proporcionan suficientes datos para confirmar el alcance, los efectos o los detalles del anuncio. Consulte el artículo original y el comunicado de la organización antes de aceptar detalles.",
+        "verdict": "Los fragmentos recuperados no son suficientes para confirmar los detalles.",
+        "tip": "Lea el artículo original y busque un comunicado oficial antes de compartir la información.",
+        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulte los enlaces para obtener el contexto completo.",
+        "audio_url": "audio/20261127T095701-1c378c1c-es.mp3"
+      },
+      "de": {
+        "theme": "Dragon Quest Monsters: The Withered World — Veröffentlichung am 3. Dezember 2026 angekündigt",
+        "title": "Dragon Quest Monsters: The Withered World: unzureichende Details in den Quellen",
+        "summary": "Die abgerufenen Ergebnisse deuten auf Nachrichten zu Dragon Quest Monsters: The Withered World hin, aber die verfügbaren Auszüge enthalten hauptsächlich Titel und liefern nicht genügend Informationen, um den Umfang, die Auswirkungen oder die Modalitäten der Ankündigung zu bestätigen. Konsultieren Sie den Originalartikel und die Stellungnahme der betreffenden Organisation, bevor Sie Details übernehmen.",
+        "verdict": "Die abgerufenen Auszüge reichen nicht aus, um die Details zu bestätigen.",
+        "tip": "Lesen Sie den Originalartikel und suchen Sie nach einer offiziellen Mitteilung, bevor Sie die Information teilen.",
+        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Prüfen Sie die Links für den vollständigen Kontext.",
+        "audio_url": "audio/20261127T095701-1c378c1c-de.mp3"
+      },
+      "pt": {
+        "theme": "Dragon Quest Monsters: The Withered World — lançamento anunciado em 3 de dezembro de 2026",
+        "title": "Dragon Quest Monsters: The Withered World: detalhes insuficientes nas fontes",
+        "summary": "Os resultados recuperados indicam notícias relacionadas a Dragon Quest Monsters: The Withered World, mas os trechos disponíveis contêm principalmente títulos e não fornecem informações suficientes para confirmar o escopo, os efeitos ou os detalhes do anúncio. Consulte o artigo original e a declaração da organização antes de aceitar detalhes.",
+        "verdict": "Os trechos recuperados não são suficientes para confirmar os detalhes.",
+        "tip": "Leia o artigo original e procure uma declaração oficial antes de compartilhar a informação.",
+        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Verifique os links para obter o contexto completo.",
+        "audio_url": "audio/20261127T095701-1c378c1c-pt.mp3"
+      },
+      "ar": {
+        "theme": "Dragon Quest Monsters: The Withered World — الإعلان عن الإصدار في 3 ديسمبر 2026",
+        "title": "Dragon Quest Monsters: The Withered World: تفاصيل غير كافية في المصادر",
+        "summary": "تشير النتائج المسترجعة إلى أخبار متعلقة بـ Dragon Quest Monsters: The Withered World، لكن المقتطفات المتاحة تحتوي أساساً على العناوين ولا توفر معلومات كافية لتأكيد نطاق أو تأثير أو تفاصيل الإعلان. راجع المقال الأصلي وبيان المنظمة المعنية قبل اعتماد التفاصيل.",
+        "verdict": "المقتطفات المسترجعة غير كافية لتأكيد التفاصيل.",
+        "tip": "اقرأ المقال الأصلي وابحث عن بيان رسمي قبل مشاركة المعلومات.",
+        "ai_notice": "مقال مكتوب بمساعدة groq من المصادر المحددة. راجع الروابط للحصول على السياق الكامل.",
+        "audio_url": "audio/20261127T095701-1c378c1c-ar.mp3"
+      },
+      "zh": {
+        "theme": "Dragon Quest Monsters: The Withered World — 2026年12月3日发布公告",
+        "title": "Dragon Quest Monsters: The Withered World：来源信息不足",
+        "summary": "检索到的结果表明与 Dragon Quest Monsters: The Withered World 相关的新闻，但可用摘录主要包含标题，未提供足够信息来确认公告的范围、影响或细节。在接受细节之前，请参阅原始文章和相关组织的声明。",
+        "verdict": "检索到的摘录不足以确认细节。",
+        "tip": "在分享信息之前，请阅读原始文章并寻找官方声明。",
+        "ai_notice": "文章使用 groq 根据所示来源撰写。请查看链接以获取完整背景。",
+        "audio_url": "audio/20261127T095701-1c378c1c-zh.mp3"
+      }
+    },
+    "audio_url": "audio/20261127T095701-1c378c1c.mp3"
+  },
+  {
     "id": "20261126T184627-49f9eacb",
     "date": "2026-11-26T18:46+00:00",
     "theme": "Technologies d’IA et innovations disruptives dans le gaming",
@@ -1767,93 +1845,6 @@
         "tip": "在分享信息之前，请阅读原始文章并寻找官方声明。",
         "ai_notice": "本文使用 groq 根据所示来源撰写。请查看链接以获取完整背景。",
         "audio_url": "audio/20261122T101432-aa6ea4ad-zh.mp3"
-      }
-    }
-  },
-  {
-    "id": "20261122T100159-ed580cd5",
-    "date": "2026-11-22T10:01+00:00",
-    "theme": "Gaming et jeux vidéo — veille générale (recherche de secours)",
-    "title": "Plantages et PNJ violents signalés dans GTA 6 sur PS5",
-    "summary": "Des joueurs de GTA 6 ont rapporté des plantages accompagnés de l’erreur CE‑108255‑1 sur PS5, ainsi que des PNJ réagissant de façon extrêmement violente. Ces incidents sont encore non confirmés par Rockstar, et aucune donnée précise sur leur origine ou fréquence n’est disponible. Les fans restent donc incertains quant à la gravité du problème et aux mesures correctives à venir.",
-    "verdict": "Incertain",
-    "tip": "Surveillez les mises à jour officielles de Rockstar pour des corrections potentielles.",
-    "sources": [
-      {
-        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
-        "description": "Allons en paix.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
-        "source_type": "media"
-      },
-      {
-        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
-        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261122T100159-ed580cd5.mp3",
-    "translations": {
-      "en": {
-        "theme": "Gaming and video games — general monitoring (backup research)",
-        "title": "Crashes and violent NPCs reported in GTA 6 on PS5",
-        "summary": "Players of GTA 6 have reported crashes accompanied by the CE‑108255‑1 error on PS5, as well as NPCs reacting extremely violently. These incidents are still unconfirmed by Rockstar, and no precise data on their origin or frequency is available. Fans therefore remain uncertain about the severity of the problem and the corrective measures to come.",
-        "verdict": "Uncertain",
-        "tip": "Monitor Rockstar’s official updates for potential fixes.",
-        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links to find the full context.",
-        "audio_url": "audio/20261122T100159-ed580cd5-en.mp3"
-      },
-      "es": {
-        "theme": "Gaming y videojuegos — monitoreo general (investigación de respaldo)",
-        "title": "Se reportan caídas y NPCs violentos en GTA 6 en PS5",
-        "summary": "Los jugadores de GTA 6 han informado caídas acompañadas del error CE‑108255‑1 en PS5, así como NPCs que reaccionan de manera extremadamente violenta. Estos incidentes aún no están confirmados por Rockstar, y no hay datos precisos sobre su origen o frecuencia. Los fans, por lo tanto, siguen siendo inciertos sobre la gravedad del problema y las medidas correctivas que se avecinan.",
-        "verdict": "Incierto",
-        "tip": "Supervisa las actualizaciones oficiales de Rockstar para posibles correcciones.",
-        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulta los enlaces para encontrar el contexto completo.",
-        "audio_url": "audio/20261122T100159-ed580cd5-es.mp3"
-      },
-      "de": {
-        "theme": "Gaming und Videospiele — allgemeine Überwachung (Backup-Forschung)",
-        "title": "Ausfälle und gewalttätige NPCs in GTA 6 auf PS5 gemeldet",
-        "summary": "Spieler von GTA 6 haben Ausfälle gemeldet, die von dem CE‑108255‑1-Fehler auf PS5 begleitet werden, sowie NPCs, die extrem gewalttätig reagieren. Diese Vorfälle sind von Rockstar noch nicht bestätigt, und es liegen keine genauen Daten zu Herkunft oder Häufigkeit vor. Fans bleiben daher unsicher über die Schwere des Problems und die kommenden Korrekturmaßnahmen.",
-        "verdict": "Unsicher",
-        "tip": "Beobachte die offiziellen Rockstar-Updates auf mögliche Korrekturen.",
-        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Prüfe die Links, um den vollständigen Kontext zu finden.",
-        "audio_url": "audio/20261122T100159-ed580cd5-de.mp3"
-      },
-      "pt": {
-        "theme": "Jogos e videogames — monitoramento geral (pesquisa de backup)",
-        "title": "Falhas e NPCs violentos relatados em GTA 6 no PS5",
-        "summary": "Jogadores de GTA 6 relataram falhas acompanhadas do erro CE‑108255‑1 no PS5, além de NPCs reagindo de forma extremamente violenta. Esses incidentes ainda não foram confirmados pela Rockstar, e não há dados precisos sobre sua origem ou frequência. Os fãs, portanto, permanecem incertos quanto à gravidade do problema e às medidas corretivas futuras.",
-        "verdict": "Incerto",
-        "tip": "Monitore as atualizações oficiais da Rockstar para possíveis correções.",
-        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Consulte os links para encontrar o contexto completo.",
-        "audio_url": "audio/20261122T100159-ed580cd5-pt.mp3"
-      },
-      "ar": {
-        "theme": "الألعاب وألعاب الفيديو — المراقبة العامة (البحث الاحتياطي)",
-        "title": "تقرير عن الأعطال والـ NPC العنيفة في GTA 6 على PS5",
-        "summary": "أبلغ لاعبو GTA 6 عن أعطال مصحوبة بخطأ CE‑108255‑1 على PS5، بالإضافة إلى NPC يتصرفون بشكل عنيف للغاية. لا تزال هذه الحوادث غير مؤكدة من قبل Rockstar، ولا توجد بيانات دقيقة حول أصلها أو تكرارها. يظل المتابعون غير متأكدين من خطورة المشكلة والإجراءات التصحيحية المستقبلية.",
-        "verdict": "غير مؤكد",
-        "tip": "راقب تحديثات Rockstar الرسمية للعثور على إصلاحات محتملة.",
-        "ai_notice": "تم كتابة المقال بمساعدة groq من المصادر المذكورة. راجع الروابط للعثور على السياق الكامل.",
-        "audio_url": "audio/20261122T100159-ed580cd5-ar.mp3"
-      },
-      "zh": {
-        "theme": "游戏与视频游戏 — 一般监测（备份研究）",
-        "title": "在PS5上报告GTA 6崩溃和暴力NPC",
-        "summary": "GTA 6玩家报告了伴随CE‑108255‑1错误的崩溃，以及极度暴力的NPC反应。这些事件尚未得到Rockstar的确认，也没有关于其来源或频率的精确信息。粉丝们因此对问题的严重性和即将采取的纠正措施仍不确定。",
-        "verdict": "不确定",
-        "tip": "请关注Rockstar的官方更新，以获取潜在修复。",
-        "ai_notice": "文章使用groq根据所示来源撰写。请查看链接以获取完整背景。",
-        "audio_url": "audio/20261122T100159-ed580cd5-zh.mp3"
       }
     }
   }
