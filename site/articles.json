@@ -1,5 +1,92 @@
 [
   {
+    "id": "20261128T094352-7f1e28dc",
+    "date": "2026-11-28T09:43+00:00",
+    "theme": "Technologie, IA et jeux vidéo — veille générale de secours",
+    "title": "Technologie, IA et jeux vidéo : détails insuffisants dans les sources",
+    "summary": "Les résultats récupérés signalent une actualité liée à Technologie, IA et jeux vidéo, mais les extraits disponibles reprennent surtout les titres et ne fournissent pas assez d'éléments pour confirmer la portée, les effets ou les modalités de l'annonce. Consultez l'article d'origine et le communiqué de l'organisation concernée avant de retenir des détails.",
+    "verdict": "Les extraits récupérés ne suffisent pas pour confirmer les détails.",
+    "tip": "Lire l'article original et rechercher un communiqué officiel avant de partager l'information.",
+    "sources": [
+      {
+        "title": "TRIMUI Brick Hammer Pro U : la console portable Android en série limitée enfin disponible",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Sat, 28 Nov 2026 05:11:27 +0000",
+        "description": "Du métal sous Android 15.",
+        "url": "https://fr.ign.com/trimui-brick-hammer-pro-u/94320/trimui-brick-hammer-pro-u-la-console-portable-android-en-serie-limitee-enfin-disponible",
+        "source_type": "media"
+      },
+      {
+        "title": "Avengers: Doomsday vous donne rendez-vous à UGC Bercy pour un événement exceptionnel",
+        "publisher": "IGN France",
+        "domain": "fr.ign.com",
+        "published": "Fri, 27 Nov 2026 17:33:47 +0000",
+        "description": "Aux grands maux, les grands remèdes.",
+        "url": "https://fr.ign.com/movies/94318/avengers-doomsday-vous-donne-rendez-vous-a-ugc-bercy-pour-un-evenement-exceptionnel",
+        "source_type": "media"
+      }
+    ],
+    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
+    "translations": {
+      "en": {
+        "theme": "Technology, AI and video games — general backup monitoring",
+        "title": "Technology, AI and video games: insufficient details in sources",
+        "summary": "The retrieved results indicate news related to Technology, AI and video games, but the available excerpts mainly reproduce titles and do not provide enough information to confirm the scope, effects or modalities of the announcement. Refer to the original article and the organization's press release before accepting details.",
+        "verdict": "The retrieved excerpts are insufficient to confirm the details.",
+        "tip": "Read the original article and look for an official statement before sharing the information.",
+        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links to find the full context.",
+        "audio_url": "audio/20261128T094352-7f1e28dc-en.mp3"
+      },
+      "es": {
+        "theme": "Tecnología, IA y videojuegos — vigilancia general de respaldo",
+        "title": "Tecnología, IA y videojuegos: detalles insuficientes en las fuentes",
+        "summary": "Los resultados recuperados indican noticias relacionadas con Tecnología, IA y videojuegos, pero los fragmentos disponibles reproducen principalmente los títulos y no proporcionan suficientes elementos para confirmar el alcance, los efectos o las modalidades del anuncio. Consulte el artículo original y el comunicado de la organización antes de aceptar detalles.",
+        "verdict": "Los fragmentos recuperados no son suficientes para confirmar los detalles.",
+        "tip": "Lea el artículo original y busque un comunicado oficial antes de compartir la información.",
+        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulte los enlaces para encontrar el contexto completo.",
+        "audio_url": "audio/20261128T094352-7f1e28dc-es.mp3"
+      },
+      "de": {
+        "theme": "Technologie, KI und Videospiele — allgemeine Backup-Überwachung",
+        "title": "Technologie, KI und Videospiele: Unzureichende Details in den Quellen",
+        "summary": "Die abgerufenen Ergebnisse deuten auf Nachrichten im Zusammenhang mit Technologie, KI und Videospielen hin, aber die verfügbaren Auszüge wiedergeben hauptsächlich die Titel und liefern nicht genügend Informationen, um den Umfang, die Auswirkungen oder die Modalitäten der Ankündigung zu bestätigen. Konsultieren Sie den Originalartikel und die Pressemitteilung der betreffenden Organisation, bevor Sie Details übernehmen.",
+        "verdict": "Die abgerufenen Auszüge reichen nicht aus, um die Details zu bestätigen.",
+        "tip": "Lesen Sie den Originalartikel und suchen Sie nach einer offiziellen Stellungnahme, bevor Sie die Information teilen.",
+        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Prüfen Sie die Links, um den vollständigen Kontext zu finden.",
+        "audio_url": "audio/20261128T094352-7f1e28dc-de.mp3"
+      },
+      "pt": {
+        "theme": "Tecnologia, IA e videogames — monitoramento geral de backup",
+        "title": "Tecnologia, IA e videogames: detalhes insuficientes nas fontes",
+        "summary": "Os resultados recuperados indicam notícias relacionadas à Tecnologia, IA e videogames, mas os trechos disponíveis reproduzem principalmente os títulos e não fornecem elementos suficientes para confirmar o escopo, os efeitos ou as modalidades do anúncio. Consulte o artigo original e o comunicado da organização antes de aceitar detalhes.",
+        "verdict": "Os trechos recuperados não são suficientes para confirmar os detalhes.",
+        "tip": "Leia o artigo original e procure um comunicado oficial antes de compartilhar a informação.",
+        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Verifique os links para encontrar o contexto completo.",
+        "audio_url": "audio/20261128T094352-7f1e28dc-pt.mp3"
+      },
+      "ar": {
+        "theme": "التكنولوجيا والذكاء الاصطناعي وألعاب الفيديو — المراقبة العامة للنسخ الاحتياطي",
+        "title": "التكنولوجيا والذكاء الاصطناعي وألعاب الفيديو: تفاصيل غير كافية في المصادر",
+        "summary": "تشير النتائج المسترجعة إلى أخبار متعلقة بالتكنولوجيا والذكاء الاصطناعي وألعاب الفيديو، لكن المقتطفات المتاحة تعيد بشكل أساسي العناوين ولا توفر ما يكفي من العناصر لتأكيد نطاق أو تأثير أو نمط الإعلان. راجع المقال الأصلي والبيان الصحفي للمنظمة المعنية قبل اعتماد التفاصيل.",
+        "verdict": "المقتطفات المسترجعة لا تكفي لتأكيد التفاصيل.",
+        "tip": "اقرأ المقال الأصلي وابحث عن بيان رسمي قبل مشاركة المعلومات.",
+        "ai_notice": "مقالة مكتوبة بمساعدة groq من المصادر المحددة. راجع الروابط للعثور على السياق الكامل.",
+        "audio_url": "audio/20261128T094352-7f1e28dc-ar.mp3"
+      },
+      "zh": {
+        "theme": "技术、人工智能与电子游戏——一般备份监测",
+        "title": "技术、人工智能与电子游戏：来源信息不足",
+        "summary": "检索结果显示与技术、人工智能与电子游戏相关的新闻，但可用摘录主要复现标题，未能提供足够信息以确认公告的范围、影响或方式。在采纳细节前，请查阅原始文章和相关组织的新闻稿。",
+        "verdict": "检索摘录不足以确认细节。",
+        "tip": "阅读原始文章并寻找官方声明后再分享信息。",
+        "ai_notice": "文章由 groq 根据所示来源撰写。请查看链接以获取完整背景。",
+        "audio_url": "audio/20261128T094352-7f1e28dc-zh.mp3"
+      }
+    },
+    "audio_url": "audio/20261128T094352-7f1e28dc.mp3"
+  },
+  {
     "id": "20261127T184455-14114cbd",
     "date": "2026-11-27T18:44+00:00",
     "theme": "Calendrier des sorties jeux vidéo 2026 et annonces",
@@ -1711,111 +1798,6 @@
         "tip": "阅读原始文章并寻找官方声明后再分享信息。",
         "ai_notice": "文章使用 groq 根据所示来源撰写。请查看链接以获取完整背景。",
         "audio_url": "audio/20261122T102204-632c7b13-zh.mp3"
-      }
-    }
-  },
-  {
-    "id": "20261122T101552-c59ad2a2",
-    "date": "2026-11-22T10:15+00:00",
-    "theme": "GTA VI — lancement et premiers retours vérifiés",
-    "title": "GTA VI : plantages, PNJ violents et boutiques fermées signalés",
-    "summary": "Les premiers retours sur GTA VI montrent des plantages sur PS5 avec l’erreur CE‑108255‑1 et des PNJ qui réagissent de façon extrêmement violente, indiquant des problèmes de stabilité et d’IA. Certains acheteurs de l’édition non‑Ultimate ont également rencontré des boutiques exclusives fermant leurs portes, tandis que l’actrice de Mandy exprime son enthousiasme après la viralité de son personnage. Les incidents restent sporadiques et aucune confirmation officielle n’a encore été publiée.",
-    "verdict": "Les sources consultées indiquent des dysfonctionnements techniques et des problèmes d’expérience utilisateur, mais aucune preuve officielle n’a confirmé ces problèmes.",
-    "tip": "Les joueurs doivent rester vigilants et signaler les plantages via les canaux officiels.",
-    "sources": [
-      {
-        "title": "Les joueurs de GTA 6 tombent sur des PNJ qui ripostent si violemment qu’il vaut sans doute mieux les laisser tranquilles",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Sun, 22 Nov 2026 09:16:56 +0000",
-        "description": "Allons en paix.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94171/les-joueurs-de-gta-6-tombent-sur-des-pnj-qui-ripostent-si-violemment-quil-vaut-sans-doute-mieux-les",
-        "source_type": "media"
-      },
-      {
-        "title": "Des joueurs de GTA 6 signalent des plantages sur PS5 accompagnés de l’erreur CE-108255-1",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Sat, 21 Nov 2026 22:30:00 +0000",
-        "description": "Si vous voyez l'erreur CE-108255-1, ne l'approchez pas, et appelez la police.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94168/des-joueurs-de-gta-6-signalent-des-plantages-sur-ps5-accompagnes-de-lerreur-ce-108255-1",
-        "source_type": "media"
-      },
-      {
-        "title": "Les joueurs de GTA 6 réagissent après que des boutiques exclusives ont accueilli les acheteurs de l’édition non Ultimate avec des portes fermées",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Sat, 21 Nov 2026 21:27:24 +0000",
-        "description": "Trop select.",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94167/les-joueurs-de-gta-6-reagissent-apres-que-des-boutiques-exclusives-ont-accueilli-les-acheteurs-de-le",
-        "source_type": "media"
-      },
-      {
-        "title": "L’actrice qui incarne Mandy dans GTA 6 s’exprime avec enthousiasme après que son personnage est devenu viral",
-        "publisher": "IGN France",
-        "domain": "fr.ign.com",
-        "published": "Sat, 21 Nov 2026 09:27:07 +0000",
-        "description": "« Vous savez bien que nous avons tous mangé une pomme. »",
-        "url": "https://fr.ign.com/grand-theft-auto-6/94152/lactrice-qui-incarne-mandy-dans-gta-6-sexprime-avec-enthousiasme-apres-que-son-personnage-est-devenu",
-        "source_type": "media"
-      }
-    ],
-    "ai_notice": "Article rédigé avec l’aide de groq à partir des sources indiquées. Consultez les liens pour retrouver le contexte complet.",
-    "audio_url": "audio/20261122T101552-c59ad2a2.mp3",
-    "translations": {
-      "en": {
-        "theme": "GTA VI — launch and verified early feedback",
-        "title": "GTA VI: crashes, violent NPCs and closed shops reported",
-        "summary": "Early feedback on GTA VI shows crashes on PS5 with error CE‑108255‑1 and NPCs reacting extremely violently, indicating stability and AI issues. Some buyers of the non‑Ultimate edition also encountered exclusive shops shutting their doors, while the actress from Mandy expresses enthusiasm after her character’s viral success. Incidents remain sporadic and no official confirmation has yet been released.",
-        "verdict": "Sources consulted indicate technical malfunctions and user experience problems, but no official evidence has confirmed these issues.",
-        "tip": "Players should remain vigilant and report crashes through official channels.",
-        "ai_notice": "Article written with the help of groq from the indicated sources. Check the links to find the full context.",
-        "audio_url": "audio/20261122T101552-c59ad2a2-en.mp3"
-      },
-      "es": {
-        "theme": "GTA VI — lanzamiento y primeros comentarios verificados",
-        "title": "GTA VI: se reportan fallos, NPCs violentos y tiendas cerradas",
-        "summary": "Los primeros comentarios sobre GTA VI muestran fallos en PS5 con el error CE‑108255‑1 y NPCs que reaccionan de forma extremadamente violenta, indicando problemas de estabilidad e IA. Algunos compradores de la edición no Ultimate también encontraron tiendas exclusivas cerrando sus puertas, mientras la actriz de Mandy expresa su entusiasmo tras la viralidad de su personaje. Los incidentes siguen siendo esporádicos y aún no se ha publicado ninguna confirmación oficial.",
-        "verdict": "Las fuentes consultadas indican fallos técnicos y problemas de experiencia de usuario, pero no hay evidencia oficial que confirme estos problemas.",
-        "tip": "Los jugadores deben mantenerse vigilantes y reportar los fallos a través de los canales oficiales.",
-        "ai_notice": "Artículo redactado con la ayuda de groq a partir de las fuentes indicadas. Consulte los enlaces para encontrar el contexto completo.",
-        "audio_url": "audio/20261122T101552-c59ad2a2-es.mp3"
-      },
-      "de": {
-        "theme": "GTA VI — Start und verifizierte erste Rückmeldungen",
-        "title": "GTA VI: Abstürze, gewalttätige NPCs und geschlossene Geschäfte gemeldet",
-        "summary": "Frühe Rückmeldungen zu GTA VI zeigen Abstürze auf PS5 mit dem Fehler CE‑108255‑1 und NPCs, die extrem gewalttätig reagieren, was auf Stabilitäts- und KI-Probleme hinweist. Einige Käufer der Nicht‑Ultimate-Ausgabe stießen ebenfalls auf exklusive Geschäfte, die ihre Türen schlossen, während die Schauspielerin aus Mandy ihre Begeisterung nach der Viralität ihres Charakters zum Ausdruck bringt. Die Vorfälle bleiben sporadisch und es wurde noch keine offizielle Bestätigung veröffentlicht.",
-        "verdict": "Die konsultierten Quellen deuten auf technische Fehlfunktionen und Probleme mit der Benutzererfahrung hin, aber es gibt keine offizielle Bestätigung dieser Probleme.",
-        "tip": "Spieler sollten wachsam bleiben und Abstürze über die offiziellen Kanäle melden.",
-        "ai_notice": "Artikel verfasst mit Hilfe von groq aus den angegebenen Quellen. Prüfen Sie die Links, um den vollständigen Kontext zu finden.",
-        "audio_url": "audio/20261122T101552-c59ad2a2-de.mp3"
-      },
-      "pt": {
-        "theme": "GTA VI — lançamento e primeiros retornos verificados",
-        "title": "GTA VI: falhas, NPCs violentos e lojas fechadas relatados",
-        "summary": "Os primeiros retornos sobre GTA VI mostram falhas no PS5 com o erro CE‑108255‑1 e NPCs reagindo de forma extremamente violenta, indicando problemas de estabilidade e IA. Alguns compradores da edição não Ultimate também encontraram lojas exclusivas fechando suas portas, enquanto a atriz de Mandy expressa entusiasmo após a viralidade de seu personagem. Os incidentes permanecem esporádicos e ainda não há confirmação oficial publicada.",
-        "verdict": "As fontes consultadas indicam falhas técnicas e problemas de experiência do usuário, mas nenhuma prova oficial confirmou esses problemas.",
-        "tip": "Os jogadores devem permanecer vigilantes e relatar falhas pelos canais oficiais.",
-        "ai_notice": "Artigo escrito com a ajuda de groq a partir das fontes indicadas. Consulte os links para encontrar o contexto completo.",
-        "audio_url": "audio/20261122T101552-c59ad2a2-pt.mp3"
-      },
-      "ar": {
-        "theme": "GTA VI — الإطلاق وردود الفعل الأولية المُتحققة",
-        "title": "GTA VI: تقارير عن الأعطال، NPC عدوانية ومتاجر مغلقة",
-        "summary": "تُظهر ردود الفعل الأولية على GTA VI أعطالاً على PS5 مع الخطأ CE‑108255‑1 وNPC تتفاعل بشكل عنيف للغاية، ما يشير إلى مشاكل في الاستقرار والذكاء الاصطناعي. بعض المشترين للنسخة غير Ultimate واجهوا أيضًا متاجر حصرية تغلق أبوابها، بينما تعبر الممثلة من Mandy عن حماسها بعد انتشار شخصيتها. ما زالت الحوادث متقطعة ولم تُنشر أي تأكيدات رسمية بعد.",
-        "verdict": "المصادر التي تم استشارتها تشير إلى عيوب تقنية ومشاكل في تجربة المستخدم، لكن لا توجد أدلة رسمية تؤكد هذه المشكلات.",
-        "tip": "يجب على اللاعبين البقاء يقظين والإبلاغ عن الأعطال عبر القنوات الرسمية.",
-        "ai_notice": "تم كتابة المقال بمساعدة groq استنادًا إلى المصادر المذكورة. راجع الروابط للعثور على السياق الكامل.",
-        "audio_url": "audio/20261122T101552-c59ad2a2-ar.mp3"
-      },
-      "zh": {
-        "theme": "GTA VI — 上线与已验证的早期反馈",
-        "title": "GTA VI：报告崩溃、暴力 NPC 与商店关闭",
-        "summary": "GTA VI 的早期反馈显示 PS5 上出现 CE‑108255‑1 错误的崩溃，以及 NPC 以极端暴力方式反应，表明存在稳定性和 AI 问题。一些非 Ultimate 版购买者也遇到过独家商店关闭门口的情况，而 Mandy 的演员在其角色走红后表达了热情。事件仍然零星，尚未发布任何官方确认。",
-        "verdict": "所咨询的来源表明存在技术故障和用户体验问题，但尚未有官方证据确认这些问题。",
-        "tip": "玩家应保持警惕，并通过官方渠道报告崩溃。",
-        "ai_notice": "本文使用 groq 根据所述来源撰写。请查看链接以获取完整背景。",
-        "audio_url": "audio/20261122T101552-c59ad2a2-zh.mp3"
       }
     }
   }
